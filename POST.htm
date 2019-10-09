@@ -1,0 +1,315 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+<p align="center"><span style="text-transform: uppercase"><u>
+<font face="Arial" size="6" color="#FF0000"><b>Post Office Protocol</b></font></u></span></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><b><i>1)</i></b> Short 
+for <b><i>P</i></b><i>ost <b>O</b>ffice <b>P</b>rotocol,</i> a protocol used to 
+retrieve e-mail from a mail server. Most e-mail applications (sometimes called 
+an <i>e-mail client</i>) use the POP protocol, although some can use the newer 
+IMAP (Internet Message Access Protocol). </font></p>
+<p align="justify"><font face="Arial">There are two versions of POP. The first, 
+called <i>POP2,</i> became a standard in the mid-80's and requires SMTP to send 
+messages. The newer version, POP3, can be used with or without SMTP. </font></p>
+<p nd="3" align="justify"><font face="Arial"><b><i>(2)</i></b> Short for <b><i>p</i></b><i>oint
+<b>o</b>f <b>p</b>resence,</i> an access point to the Internet. ISPs have 
+typically multiple POPs. A point of presence is a physical location, either part 
+of the facilities of a telecommunications provider that the ISP rents or a 
+separate location from the telecommunications provider that houses servers, 
+routers, ATM switches and digital/analog call aggregators. </font></p>
+<p nd="4" align="justify"><font face="Arial"><b><i>(3)</i></b> Short for <b><i>P</i></b><i>rogrammed
+<b>Op</b>erator </i>(POP), a pseudo-opcode in a virtual machine language 
+executed by an interpretive program. The Programmed Operator instructions 
+provide the ability to define an instruction set for efficient encoding by 
+calling subprograms into primary memory. </font></p>
+<p align="justify"><font face="Arial">In computing, local e-mail clients use the
+<b>Post Office Protocol version 3</b> (<b>POP3</b>), an application-layer 
+Internet standard protocol, to retrieve e-mail from a remote server over a 
+TCP/IP connection. Nearly all subscribers to individual Internet service 
+provider e-mail accounts access their e-mail with client software that uses 
+POP3.</font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">POP3 has made earlier versions of the protocol obsolete, POP 
+(informally called POP1) and POP2. In contemporary usage, the less precise term
+<i>POP</i> almost always means <i>POP3</i> in the context of e-mail protocols.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">The design of POP3 and its predecessors supports end users with 
+intermittent connections (such as dial-up connections), allowing these users to 
+retrieve e-mail when connected and then to view and manipulate the retrieved 
+messages without needing to stay connected. Although most clients have an option 
+to <i>leave mail on server</i>, e-mail clients using POP3 generally connect, 
+retrieve all messages, store them on the user's PC as new messages, delete them 
+from the server, and then disconnect. In contrast, the newer, more capable 
+Internet Message Access Protocol (IMAP) supports both <i>connected</i> and <i>
+disconnected</i> modes of operation. E-mail clients using IMAP generally leave 
+messages on the server until the user explicitly deletes them. This and other 
+facets of IMAP operation allow multiple clients to access the same mailbox. Most 
+e-mail clients support either POP3 or IMAP to retrieve messages; however, fewer 
+Internet Service Providers (ISPs) support IMAP. The fundamental difference 
+between POP3 and IMAP4 is that POP3 offers access to a mail drop; the mail 
+exists on the server until it is collected by the client. Even if the client 
+leaves some or all messages on the server, the client's message store is 
+considered authoritative. In contrast, IMAP4 offers access to the mail store; 
+the client may store local copies of the messages, but these are considered to 
+be a temporary cache; the server's store is authoritative.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Clients with a <i>leave mail on server</i> option generally use 
+the POP3 UIDL (<b>U</b>nique <b>ID</b>entification <b>L</b>isting) command. Most 
+POP3 commands identify specific messages by their ordinal number on the mail 
+server. This creates a problem for a client intending to leave messages on the 
+server, since these message numbers may change from one connection to the server 
+to another. For example if a mailbox contains five messages at last connect, and 
+a different client then deletes message #3, the next connecting user will find 
+the last two messages' numbers decremented by one. UIDL provides a mechanism to 
+avoid these numbering issues. The server assigns a string of characters as a 
+permanent and unique ID for the message. When a POP3-compatible e-mail client 
+connects to the server, it can use the UIDL command to get the current mapping 
+from these message IDs to the ordinal message numbers. The client can then use 
+this mapping to determine which messages it has yet to download, which saves 
+time when downloading. IMAP has a similar mechanism, using a 32-bit UID (<b>U</b>nique
+<b>ID</b>entifier) that is required to be strictly ascending. The advantage of 
+the numeric UID is with large mailboxes; a client can request just the UIDs 
+greater than its previously stored &quot;highest UID&quot;. In POP, the client must fetch 
+the entire UIDL map.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Whether using POP3 or IMAP to retrieve messages, e-mail clients 
+typically use the SMTP_Submit profile of the SMTP protocol to send messages. 
+E-mail clients are commonly categorized as either <i>POP</i> or <i>IMAP</i> 
+clients, but in both cases the clients also use SMTP. There are extensions to 
+POP3 that allow some clients to transmit outbound mail via POP3 - these are 
+known as &quot;XTND XMIT&quot; extensions. The Qualcomm qpopper and CommuniGate Pro 
+servers and Eudora clients are examples of systems that optionally utilize the 
+XTND XMIT methods of authenticated client-to-server e-mail transmission.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">MIME serves as the standard for attachments and non-ASCII text 
+in e-mail. Although neither POP3 nor SMTP require MIME-formatted e-mail, 
+essentially all Internet e-mail comes MIME-formatted, so POP clients must also 
+understand and use MIME. IMAP, by design, assumes MIME-formatted e-mail.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Like many other older Internet protocols, POP3 originally 
+supported only an unencrypted login mechanism. Although plain text transmission 
+of passwords in POP3 still commonly occurs, POP3 currently supports several 
+authentication methods to provide varying levels of protection against 
+illegitimate access to a user's e-mail. One such method, <b>APOP</b>, uses the 
+MD5 hash function in an attempt to avoid replay attacks and disclosure of a 
+shared secret. Clients implementing APOP include Mozilla, Thunderbird, Opera, 
+Eudora, KMail and Novell Evolution. POP3 clients can also support SASL 
+authentication methods via the AUTH extension.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">POP3 works over a TCP/IP connection using TCP on network port 
+110. E-mail clients can encrypt POP3 traffic using TLS or SSL. A TLS or SSL 
+connection is negotiated using the <b>STLS</b> command. Some clients and 
+servers, like Google Gmail, instead use the deprecated alternate-port method, 
+which uses TCP port 995.</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><font face="Arial" size="3">
+<span class="mw-headline"><span lang="EN">POP4</span></span></font></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">While not yet an official standardized mail protocol, a proposal 
+has been outlined for a POP4 specification, complete with a working server 
+implementation.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">The proposed POP4 extension adds basic folder management, 
+multipart message support, as well as message flag management, allowing for a 
+light protocol which supports some popular IMAP features which POP3 currently 
+lacks.</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><font face="Arial" size="3">
+<span class="mw-headline"><span lang="EN">SDPS</span></span></font></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Demon Internet introduced extensions to POP3 that allow multiple 
+accounts per domain, and has become known as <i>Standard Dial-up POP3 Service</i> 
+(SDPS). </span></font></p>
+<p align="justify"><font face="Arial">The POP3 protocol is the third version of 
+POP (Post Office Protocol), a protocol that is used to transfer mail saved for a 
+user to the user's computer. POP3 has an assigned port of 110. In order to 
+manipulate mail on a POP server, we will need to authenticate first. We can do 
+this using the USER and PASS commands together. Following is part of a complete 
+session, in which we just authenticate. It is edited slightly to remove my 
+username and password on the remote system. User Input is Italicized.<br>
+&nbsp;</font></p>
+<div align="justify">
+  <pre><font face="Arial" size="3">$ <i>telnet pop.foo.bar 110</i>
+Trying 192.168.1.1...
+Connected to pop.foo.bar.
+Escape character is '^]'.
++OK QPOP (version 2.4) at pop.foo.bar starting.  
+<i>USER user.123</i>
++OK Password required for user.123.
+<i>PASS foo</i>
++OK user.123 has 3 messages (1548 octets).
+</font></pre>
+</div>
+<p align="justify"><font face="Arial"><br>
+This example will not exactly match that on your server, but it will be fairly 
+similar. Now that we have authenticated on the server, we have access to a wide 
+range of POP3 commands:<br>
+&nbsp;</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>STAT</b> - Displays number of 
+  messages and space taken by mailspool </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>LIST</b> - Displays space taken by 
+  each message </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>RETR <i>message_number</i></b> - 
+  Displays message <i>message_number</i> </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>DELE <i>message_number</i></b> - 
+  Deletes message <i>message_number</i> </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>QUIT</b> - Closes connection </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial"><b>TOP <i>message_number lines</i></b> - 
+  Displays <i>lines</i> from message <i>message_number</i> </font></li>
+</ul>
+<p align="justify"><font face="Arial">Note that the TOP command is not required 
+to be implemented by all POP3 servers. However, it is implemented by most POP 
+servers, so we will assume it to be available. Following is an example session 
+that utilizes all of the above POP commands.<br>
+&nbsp;</font></p>
+<div align="justify">
+  <pre><font face="Arial" size="3">$ telnet pop.foo.bar 110
+Trying 192.168.1.1...
+Connected to pop.foo.bar.
+Escape character is '^]'.
++OK QPOP (version 2.4) at pop.foo.bar starting.  
+<i>USER user.123</i>
++OK Password required for foo.123.
+<i>PASS foo</i>
++OK user.123 has 3 messages (1548 octets).
+<i>STAT</i>
++OK 3 1548
+<i>LIST</i>
++OK 3 messages (1548 octets)
+1 344
+2 386
+3 818
+.
+<i>TOP 1 10</i>
++OK 344 octets
+Return-Path: <user.123 />
+Received: (from user.123@localhost)
+by pop.foo.bar (8.8.8/8.8.8) id SAA29469
+for user.123; Wed, 3 Dec 1997 18:54:54 -0500 (EST)
+Date: Wed, 3 Dec 1997 18:54:54 -0500 (EST)
+From: Pat Gunn <user.123 />
+Message-Id: &lt;199712032354.SAA29469@pop.foo.bar&gt;
+X-Real-To: user.123
+Subject: Hi!
+X-UIDL: b7bf8f395f5fea1e6ad4964ca202e979
+Status: U
+
+.
+<i>TOP 2 10</i>
++OK 386 octets
+Return-Path: <user.123 />
+Received: (from user.123@localhost)
+by pop.foo.bar (8.8.8/8.8.8) id SAA29614
+for user.123; Wed, 3 Dec 1997 18:55:43 -0500 (EST)
+Date: Wed, 3 Dec 1997 18:55:43 -0500 (EST)
+From: Pat Gunn <user.123 />
+Message-Id: &lt;199712032355.SAA29614@pop.foo.bar&gt;
+X-Real-To: user.123
+Subject: Hi!
+Content-Type: text/plain
+X-UIDL: f6aba8f9429ffcb4f343c6b061cd82bb
+Status: U
+
+Hi Pat! What's up?
+
+.
+<i>TOP 3 5</i>
++OK 818 octets
+Return-Path: <user.123 />
+Received: (from user.123@localhost)
+by pop.foo.bar (8.8.8/8.8.8) id SAA29769
+for user.123; Wed, 3 Dec 1997 18:56:38 -0500 (EST)
+Date: Wed, 3 Dec 1997 18:56:38 -0500 (EST)
+From: Pat Gunn <user.123 />
+Message-Id: &lt;199712032356.SAA29769@pop.foo.bar&gt;
+X-Real-To: user.123
+Subject: Long message
+Content-Type: text/plain
+X-UIDL: fe81b45a152922cb1b05f0b1bb905944
+Status: U
+
+blah blahblahblahblahblahblahblahblahblahblah
+blahblahblahblahblahblahblahblahblahblahblah
+blahblahblahblahblahblahblahblahblahblah
+blahblahblahblahblahblahblahblahblahblahblah
+blahblahblahblahblahblahblahblahblahblahblahblahblah
+.
+<i>DELE 3</i>
++OK Message 3 has been deleted.
+<i>RETR 2</i>
++OK 386 octets
+Return-Path: <user.123 />
+Received: (from user.123@localhost)
+by pop.foo.bar (8.8.8/8.8.8) id SAA29614
+for user.123; Wed, 3 Dec 1997 18:55:43 -0500 (EST)
+Date: Wed, 3 Dec 1997 18:55:43 -0500 (EST)
+From: Pat Gunn <user.123 />
+Message-Id: &lt;199712032355.SAA29614@pop.foo.bar&gt;
+X-Real-To: user.123
+Subject: Hi!
+Content-Type: text/plain
+X-UIDL: f6aba8f9429ffcb4f343c6b061cd82bb
+Status: U
+
+Hi Pat! What's up?
+
+.
+<i>DELE 2</i>
++OK Message 2 has been deleted.
+<i>DELE 1</i>
++OK Message 1 has been deleted.
+<i>QUIT</i>
++OK Pop server at pop.foo.bar signing off.
+Connection closed by foreign host.
+</font></pre>
+</div>
+<p align="justify"><font face="Arial">Sometimes when one receives very large 
+files through mail, common mail clients have problems downloading the mail over 
+modems. Using the methods described here, it is possible to fix a oversized mail 
+spool in a matter of seconds, or to grab a message quickly using the POP3 
+protocol if you're away from your computer. Things to remember while doing this:<br>
+&nbsp;</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">You need to remember your username and 
+  password to do this :) </font></li>
+  <li>
+  <p align="justify"><font face="Arial">The <b>TOP</b> command can be used to 
+  identify various messages </font></li>
+</ul>
+<p align="justify"><font face="Arial">If there an error occurs, the POP server 
+will respond with <b>-ERR reason</b> instead of <b>+OK description</b>.</font></p>
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+
+</body>
+
+</html>

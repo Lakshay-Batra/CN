@@ -1,0 +1,321 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman"}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h4
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman"}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic}
+ div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font color="#FF0000" face="Arial" size="6"><b>TRANSPORT 
+LAYER</b></font></u></p>
+<p align="center" style="text-align: justify">
+<span style="font-family: Arial; color: black; background: #FFFF66">Design
+</span><span style="font-family: Arial; color: black; background: #A0FFFF">
+issues&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Multipoint-to-point
+  <span style="background: #99FF99">transport</span> should provide similar 
+  functionalities as TCP </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">In order delivery </span>
+    </li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">reliability </span></li>
+  </ul>
+  </li>
+</ul>
+<p class="MsoNormal" align="justify">
+<span style="font-family: Arial; color: black">&nbsp;Sources with heterogeneous 
+resources&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Cannot be server centric
+  </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">In TCP server controls
+    <i>what to send &amp; when to send</i> </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">If multiple sources, who 
+    should control? </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Who should maintain 
+    state information?</span></li>
+  </ul>
+  </li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Server migration </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Need for synchronization 
+    of status between servers </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Who will transfer the 
+    state from old server to new one?</span></li>
+  </ul>
+  </li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Heterogeneous resources:
+  </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Multiple states 
+    corresponding to each source is needed </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Multiple state 
+    information </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Server centric not a 
+    good idea </span></li>
+  </ul>
+  </li>
+</ul>
+<p class="MsoNormal" align="justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Receiver centric
+  <span style="background: #FFFF66">design</span> – better idea </span></li>
+</ul>
+<p align="center" style="text-align: justify"><font face="Arial">&nbsp;Receiver 
+controls what to send &amp; when to send &amp; who should send </font>
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Multiple states </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">TCB state: congestion 
+    window, round-trip time, timers, etc </span></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Packet reordering due to multiple 
+    sources.</font></li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Decoupling of 
+  functionalities </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">A multipoint-to-point 
+    connection with only one source should incur the same overheads as a 
+    point-to-point one </span></li>
+  </ul>
+  </li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Per-connection vs. 
+  per-path functionalities </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Buffer and socket 
+    management: per connection </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Congestion control: per 
+    path </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Reliability: 
+    per-connection or per-path?</span></li>
+  </ul>
+  </li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Packet scheduling </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Packets from multiple 
+    sources should be received in-sequence to avoid head-of-line blocking </span>
+    </li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">minimize re-sequencing 
+    delay </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Peer heterogeneity 
+    (bandwidth/latency mismatches and fluctuations) and peer dynamics 
+    (departures and/or arrivals) </span></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Scheduling granularity vs. 
+    synchronization overheads.&nbsp;</font></li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Sender-receiver 
+  interaction of TCP is transposed&nbsp;</span></li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">REQ –DATA handshake </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Retain the self clocking 
+    mechanism in TCP that uses the DATA –ACK handshake </span></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Allow the receiver to control which 
+    data the sender should send on a per-packet granularity&nbsp;</font></li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">REQ </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Generated based on the 
+    available buffer space at the receiver (flow control) and the congestion 
+    window size</span></li>
+  </ul>
+  </li>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">The window size controls the amount of 
+    pending REQs, while the return of DATA clocks the progression of the window 
+    (congestion control) &nbsp;</font></li>
+  </ul>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Loss is inferred through 
+  out-of-order DATA arrivals or timeouts –the receiver has complete knowledge of 
+  the state of the received buffer (reliability) </span></li>
+</ul>
+<p class="MsoNormal" align="justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Improved robustness using 
+  two modes: cumulative mode and pull mode </span></li>
+</ul>
+<p align="center" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;Radical Reception Control 
+Protocol (R<sup>2CP)</sup>&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><sup><span style="font-family: Arial">RCP for multi-homed 
+  mobile hosts</span></sup><span style="font-family: Arial"> </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><sup><span style="font-family: Arial">A receiver-only 
+    extension which can communicate with one or multiple RCP senders</span></sup><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><sup><span style="font-family: Arial">Multi-state
+    <span style="background: #99FF99">transport</span> protocol built atop 
+    RCP</span></sup><span style="font-family: Arial"> </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><sup><span style="font-family: Arial">Multipoint-to-point 
+    communication (as well as unicast)</span></sup><span style="font-family: Arial">
+    </span></li>
+  </ul>
+  </li>
+</ul>
+<p align="right" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;(R<sup>2CP)</sup>&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><sup><span style="font-family: Arial">Receiver drives the 
+  operation of congestion control and reliability for individual paths</span></sup><span style="font-family: Arial">
+  </span></li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><sup><span style="font-family: Arial">Receiver is 
+  responsible for packet scheduling from multiple sources</span></sup><span style="font-family: Arial">
+  </span></li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><sup><span style="font-family: Arial">Receiver controls 
+  when, which and how much to request from each source</span></sup><span style="font-family: Arial">
+  </span></li>
+</ul>
+<p align="right" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;Other
+<span style="background: #A0FFFF">issues&nbsp;</span></span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Peer selection and load 
+  balancing </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Peer departures and 
+    arrivals </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Self-interest peers and 
+    untrusting peers </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Fairness model </span>
+    </li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Deployment
+    <span style="background: #A0FFFF">issues </span></span></li>
+  </ul>
+  </li>
+</ul>
+<p align="center" style="text-align: justify">
+<span style="font-family: Arial; color: black">Radical Reception Control 
+Protocol&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial">Content replication </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Reliability vs. 
+    timeliness </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Requesting peers later 
+    become content suppliers </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Out-of-band loss 
+    recovery </span></li>
+    <li class="MsoNormal" style="color: black">
+    <p align="justify"><span style="font-family: Arial">Reliable delivery can be 
+    achieved without impacting the timely delivery of the data from the 
+    (primary) source</span></li>
+  </ul>
+  </li>
+</ul>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

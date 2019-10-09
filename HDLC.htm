@@ -1,0 +1,345 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The HDLC protocol is a general purpose protocol which operates at the 
+data link layer of the OSI reference model</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><b><font face="Arial" size="5" color="#FF0000">HDLC</font></b></u></p>
+<p align="justify"><font face="Arial">The HDLC protocol is a general purpose 
+protocol which operates at the data link layer of the OSI reference model. The 
+protocol uses the services of a physical layer, and provides either a best 
+effort or reliable communications path between the transmitter and receiver 
+(i.e. with acknowledged data transfer). The type of service provided depends 
+upon the HDLC mode which is used.<br>
+<br>
+Each piece of data is encapsulated in an HDLC frame by adding a trailer and a 
+header. The header contains an HDLC address and an HDLC control field. The 
+trailer is found at the end of the frame, and contains a Cyclic Redundancy Check 
+(CRC) which detects any errors which may occur during transmission. The frames 
+are separated by HDLC flag sequences which are transmitted between each frame 
+and whenever there is no data to be</font></p>
+<p align="center"><font face="Arial">&nbsp;transmitted.<br>
+<img border="0" src="hdlc-frame.gif" width="344" height="149"></font></p>
+<p align="justify"><font face="Arial"><i>HDLC Frame Structure showing flags, 
+header (address and control), data and trailer (CRC-16).</i></font></p>
+<h3 align="justify"><font face="Arial" size="3">HDLC Protocol Overview</font></h3>
+<p align="justify"><font face="Arial">High-level data link control (HDLC), 
+documented in ISO 3309, specifies a packitization standard for serial links. 
+HDLC supports several modes of operation, including a simple sliding window mode 
+for reliable delivery. Since Internet provide retransmission at higher levels (i.e, 
+TCP), most Internet applications use HDLC's unreliable delivery mode, Unnumbered 
+Information. </font></p>
+<p align="justify"><font face="Arial">HDLC's frame structure: </font></p>
+<p align="center"><img border="0" src="hdlc11.gif" width="347" height="59"></p>
+<p align="justify"><font face="Arial">The beginning and end of an HDLC frame are 
+marked by flag characters - </font><tt><font face="Arial">01111110</font></tt><font face="Arial"> 
+binary. No flag character may appear in the intervening data. To enforce this 
+requirement, the data may need to be modified (in a transparent manner). On 
+bit-synchronous links, a binary 0 is inserted after every sequence of five 1s (<em>bit 
+stuffing</em>). Thus, the longest sequence of 1s that may appear of the link is
+</font><tt><font face="Arial">0111110</font></tt><font face="Arial"> - one less 
+than the flag character. The receiver, upon seeing five 1s, examines the next 
+bit. If 0, the bit is discarded and the frame continues. If 1, then this must be 
+the flag sequence at the end of the frame. </font></p>
+<p align="justify"><font face="Arial">At the end of the frame, a Frame Check 
+Sequence (FCS) is used to verify the data integrity. The FCS is a CRC calculated 
+using polynomial </font><tt><font face="Arial">x^16 + x^12 + x^5 + 1</font></tt><font face="Arial">.
+</font></p>
+<p align="justify"><font face="Arial">Between HDLC frames, the link idles. Most 
+synchronous links constantly transmit data; these links can transmit all 1s 
+during the inter-frame period (<em>mark idle</em>), or all flag characters (<em>flag 
+idle</em>). </font></p>
+<p align="justify"><font face="Arial">Many varients of HDLC have been developed. 
+Both PPP and SLIP use a subnet of HDLC's functionality. ISDN's D channel uses a 
+slightly modified version of HDLC. Cisco routers' default serial link 
+encapsulation is HDLC. </font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial">HDLC [High-level Data Link Control] is a 
+group of protocols for transmitting [synchronous] data [Packets] between 
+[Point-to-Point] nodes. In HDLC, data is organized into a frame. HDLC protocol 
+resides with Layer 2 of the OSI model, the data link layer.<br>
+HDLC uses zero insertion/deletion process [bit stuffing] to ensure that the bit 
+pattern of the delimiter flag does not occur in the fields between flags. The 
+HDLC frame is synchronous and therefore relies on the physical layer to provide 
+method of clocking and synchronizing the transmission and reception of frames.</font></p>
+<p align="center"><font face="Arial">
+<img border="0" src="HDLC1.gif" width="383" height="37"></font></p>
+<p align="center"><font face="Arial"><b>General HDLC Frame</b></font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Opening Flag</b>, 8 bits [01111110], [7E hex]<br>
+<b>Address</b>, 8 bits [ could be more]<br>
+<b>Control</b>, 8 bits, or 16 bits<br>
+<b>Data</b> [Payload], Variable, not used in some frames, or may be padded to 
+complete the fill<br>
+<b>CRC</b>, 16 bits, or 32 bits<br>
+<b>Closing Flag</b>, 8 bits [01111110], [7E hex]<br>
+<br>
+User data which contains 7E is resolved using an escape sequence which converts 
+7E to 7D-5E [with 7D being the escape character]. If 7D is used in the data 
+stream it again is converted into 7D-5D. Address 11111111 is known as all 
+stations, 00000000 is this station.<br>
+<br>
+Frames may be aborted by sending an abort sequence [01111111] instead of the 
+normal flag sequence [01111110]. An abort sequence will cause the frame to be 
+discarded. During idle times when no frames are being transmitted idle flags 
+[11111111] may be sent to fill the area between frames. A continuous series of 
+flags [01111110] may be sent to fill the area between frames instead of sending 
+idle flags [11111111].</font></p>
+<p align="center"><font face="Arial">
+<img border="0" src="HDLC2.gif" width="569" height="33"></font></p>
+<p align="center"><font face="Arial"><b>Fill between Frames</b></font></p>
+<p align="justify"><font face="Arial"><b>HDLC Opening Flag</b><br>
+8 bits [01111110], [7E hex]<br>
+The Opening flag may be preceded by additional flags [01111110] or idle flags 
+[11111111], both used as inter-frame fill. </font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial">
+<img border="0" src="HDLC_Address_Field.gif" width="721" height="117"><br>
+<b>HDLC Address Field</b> </font></p>
+<p align="justify"><font face="Arial"><b>HDLC Address Field</b><br>
+The length of the address field depends on the data link layer protocol used, 
+but is normally 0, 8 or 16 bits in length. In many cases the address field is 
+typically just a single byte, but an Extended Address [EA] bit may be used 
+allowing for multi-byte addresses. A one residing in the LSB bit indicates [the 
+end of the field] that the length of the address field will be 8 bits long. A 
+zero in this bit location [now the first byte of a multi-byte field] indicates 
+the continuation of the field [adding 8 additional bits]. The SDLC protocol will 
+use only an 8 bit address. The SS7 protocol, which is used in point-to-point 
+links, does not use an address field at all.<br>
+<br>
+The first [MSB] bit in the Address field indicates if the frame is a unicast or 
+multicast message. A zero in the MSB bit location indicates a unicast message; 
+the remaining bits indicate the destination node address. A one in the MSB bit 
+location indicates multicast message, the remaining bits indicate the group 
+address.<br>
+<br>
+<br>
+<b>HDLC Control Field</b><br>
+The Control field is 8 or 16 bits and defines the frame type; Control or Data. 
+The Control field is protocol dependent.<br>
+<br>
+<b>HDLC Data Field</b><br>
+The Data field may vary in length depending upon the protocol using the frame. 
+Layer 3 frames are carried in the data field.<br>
+<br>
+<b>HDLC FCS Field</b><br>
+FCS [16 bits] = X<sup>16</sup> + X<sup>12</sup> + X<sup>5</sup> + 1<br>
+FCS [32 bits] = X<sup>32</sup> + X<sup>26</sup> + X<sup>23</sup> + X<sup>22</sup> 
++ X<sup>16</sup> + X<sup>12</sup> + X<sup>11</sup> + X<sup>10</sup> + X<sup>8</sup> 
++ X<sup>7</sup> + X<sup>5</sup> + X<sup>4</sup> + X<sup>2</sup> + X + 1 </font>
+</p>
+<p align="justify"><font face="Arial"><br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial"><b>Frame Encapsulation</b>:<br>
+A few different versions of the HDLC frame are shown below. These include the 
+PPP [Point-to-Point Protocol] HDLC frame, and the Ethernet HDLC frame. </font>
+</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial">
+<img border="0" src="HDLC_Ethernet.gif" width="552" height="101"><br>
+<b>Ethernet HDLC Frame Encapsulation</b> </font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial"><b>Ethernet Frame Encapsulation</b>:<br>
+The <b>Preamble</b> [a specific bit pattern] Informs the receiving station that 
+a new packet is arriving and synchronizes the receive clock with the transmitted 
+clock. Used in Ethernet, not HDLC.<br>
+<br>
+The <b>Address Field</b> consists of a Source Address and/or a Destination 
+Address. The Source and Destination Addresses identify the sender [Source] and 
+receiver [Destination]. The Source Address is used to identify to the network 
+that's sending data. The Destination Address is used to identify who should be 
+receiving the data. Some protocols may only have one address.<br>
+<br>
+The <b>Control Field</b> indicates the type of Information that is being sent as 
+Data. It identifies the purpose of the packet as Data or Control information, 
+and may also indicate the size of the packet and Data.<br>
+<br>
+The <b>Data Field</b> is the actual information being transmitted. It can 
+contain Control Information for handshaking, or actual Data used by 
+applications.<br>
+<br>
+The <b>CRC</b> [Cyclic Redundancy Checking] or FCS [Frame Check Sequence] 
+contains an error checking number that the Destination can use to verify that 
+the packet is error free.<br>
+<br>
+The <b>End Frame Delimiter</b> has a specific bit pattern. This bit pattern 
+identifies the end of the packet to the Destination. Protocols with fixed packet 
+size may not require an End Frame Delimiter.</font></p>
+<p align="center"><font face="Arial">
+<img border="0" src="HDLC_PPP.gif" width="540" height="41"><br>
+<b>Point-to-Point Protocol HDLC Frame Encapsulation</b> </font></p>
+<p align="justify"><font face="Arial"><b>Point-to-Point Protocol Frame 
+Encapsulation</b>:<br>
+Point-to-Point Protocol [PPP] is used in transporting multi-protocol datagrams 
+over point-to-point links. PPP is capable of operating on many DTE / DCE 
+interfaces (such as, RS-232C, RS-422, RS-423 or V.35). PPP is used with 
+full-duplex circuits [dedicated or circuit-switched] operating in either an 
+asynchronous (start/stop), bit-synchronous, or octet-synchronous mode, 
+transparent to PPP Data Link Layer frames. PPP does not require the use of 
+control signals, such as Request To Send (RTS), Clear To Send (CTS), Data 
+Carrier Detect (DCD), and Data Terminal Ready (DTR). For asynchronous links, 
+inter-octet and inter-frame time fill MUST be accomplished by transmitting 
+continuous &quot;1&quot; bits. </font></p>
+<p align="justify"><b><font face="Arial">Protocol Overall Description:<br>
+</font></b><font face="Arial">Layer 2 of the OSI model is the data link layer. 
+One of the most common layer 2 protocols is the HDLC protocol. In fact, many 
+other common layer 2 protocols are heavily based on HDLC, particularly its 
+framing structure: namely, <font color="#0000ff">SDLC</font>, SS#7, LAPB ,LAPD 
+and ADCCP (advanced data communications control procedure - used by ANSI). The 
+basic framing structure of the HDLC protocol is shown below:</font></p>
+<p align="justify"><font face="Arial">HDLC uses zero insertion/deletion process 
+(commonly known as bit stuffing) to ensure that the bit pattern of the delimiter 
+flag does not occur in the fields between flags. The HDLC frame is synchronous 
+and therefore relies on the physical layer to provide method of clocking and 
+synchronizing the transmission and reception of frames.</font></p>
+<p align="justify"><font face="Arial">The HDLC protocol is defined by ISO for 
+use on both point-to-point and multipoint (multidrop) data links. It supports 
+full duplex transparent-mode operation and is now extensively used in both 
+multipoint and computer networks.</font></p>
+<p align="justify"><b><font face="Arial">HDLC Operation Modes:</font></b></p>
+<p align="justify"><font face="Arial">HDLC has three operational modes:</font></p>
+<p align="justify"><font face="Arial">&nbsp;</font></p>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">Normal Response Mode (NRM - Normal 
+  Response Mode is used in unbalanced configurations. In this mode, slave 
+  stations (or secondary) can only transmit when specially instructed by the 
+  master (primary station). The link may be point-to-point or multipoint. In the 
+  latter case only one primary station is allowed.<br>
+&nbsp;</font></li>
+  <li>
+  <p align="justify"><font face="Arial">Asynchronous Response Mode (ARM - 
+  Asynchronous Response Mode: This mode is used in unbalanced configurations. 
+  [unbalanced configurations]. It allows a secondary station to initiate a 
+  transmission without receiving permission from the primary station . This mode 
+  is normally used with point-to-point configurations and full duplex links and 
+  allows the secondary station to send frames asynchronously with respect to the 
+  primary station)<br>
+&nbsp;</font></li>
+  <li>
+  <p align="justify"><font face="Arial">Asynchronous Balanced Mode (ABM - The 
+  Asynchronous Balanced Mode (ABM), is used mainly on full duplex point-to-point 
+  links for computer to computer communications and for connections between a 
+  computer and a packed switched data network, in this case each station has an 
+  equal status and performs the role of both primary and secondary functions. 
+  This mode is used in the protocol set known as X.25.) </font></li>
+</ol>
+<p align="justify"><b><font face="Arial">Frame Formats:</font></b></p>
+<p align="justify"><font face="Arial">The standard frame of the HDLC protocol 
+handles both data and control messages. It has the following format:</font></p>
+<p align="center"><img border="0" src="htmlfr.gif" width="496" height="120"></p>
+<p align="justify"><font face="Arial">The length of the address field is commonly 0,8 or 16 bits, depending on the 
+data link layer protocol.<br>
+For instance the SDLC use only 8 bit address, while SS#7 has no address field at 
+all because it is always used in point to point links.</font></p>
+<p align="justify"><font face="Arial">The 8 or 16 bit control field provides a 
+flow control number and defines the frame type (control or data). The exact use 
+and structure of this field depends upon the protocol using the frame.</font></p>
+<p align="justify"><font face="Arial">Data is transmitted in the data field , 
+which can vary in length depending upon the protocol using the frame. Layer 3 
+frames are carried in the data field.</font></p>
+<p align="justify"><font face="Arial">Error Control is implemented by appending 
+a cyclic redundancy check <i>(CRC- The Frame Control Sequence (FCS) is the HDLC 
+frame is in most cases - 16 bit wide , the generator polynomial used is normally 
+CRC-CCITT: x^16+x^12+x^5+1</i>) to the frame, which is 16 bits long in most 
+protocols.</font></p>
+<p align="justify"><b><font face="Arial">Frame Classes:</font></b></p>
+<p align="justify"><font face="Arial">In the HDLC protocol , three classes of 
+frames are used :<br>
+&nbsp;</font></p>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">Unnumbered frames - (<i>Unnumbered 
+  frames are used for link management, for example they are used to set up the 
+  logical link between the primary station and a secondary station, and to 
+  inform the secondary station about the mode of operation which is used</i>.)&nbsp; 
+  are used for link management. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Information frames - (<i>Information 
+  frames are those who carry the actual data. The Information frames can be used 
+  to piggyback acknowledgment information relating to the flow of Information 
+  frames in the reverse direction when the link is being operated in ABM or 
+  ARM.)</i> are used to carry the actual data. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Supervisory frames - are used for error 
+  and flow control. </font></li>
+</ol>
+<p align="justify"><font face="Arial"><b>Frame types:</b> Three classes of 
+frames are used in HDLC. Some of the different types of frame in each class are 
+described below.<br>
+Unnumbered frames are used for link management. SNRM (<i>SNRM is one kind of 
+unnumbered frame that is used to set up logical link between the primary and the 
+secondary station and to inform the secondary station of the mode of operation 
+to be used.</i>)&nbsp; and SABM (<i>SABM is one kind of unnumbered frame that is used 
+to set up logical link between the primary and the secondary station and to 
+inform the secondary station of the mode of operation to be used.</i>)&nbsp; frames , 
+for example, are used both to set up logical link between the primary and the 
+secondary station and to inform the secondary station of the mode of operation 
+to be used. A logical link is subsequently cleared by the primary station 
+sending a DISC (<i>DISC is one kind of unnumbered frame. It is used to clear a 
+logical link</i>)&nbsp; frame. The UA (<i>UA is one kind of unnumbered frame. It is 
+used as an acknowledgment to other frames</i>)&nbsp; frame is used as an 
+acknowledgment to the other frames in this class.<br>
+There are four types of supervisory frames but only RR (<i>A kind of a 
+supervisory frame, which means: Receiver Ready. The Receiver signals the the 
+transmitter that both, the physical layer and the application layer above it are 
+ready to process messages.</i>)&nbsp; and RNR (<i>A kind of a supervisory frame , 
+which means receiver not ready. This response is initiated by the application, 
+if it is not ready, to process messagse. It means that layer 0 (the physical 
+layer) is functional, but the application above it is not</i>.) are used in both 
+NRM and ABM These frames are used both to indicate the willingness or otherwise 
+of a secondary station to receive an information frame from the primary station, 
+and for acknowledgment purposes. REJ (<i>A kind of frame that is used only in 
+ABM which permits simultaneous two-way communication across a point to point 
+link. It is used with the go back N procedure</i>) and SREJ (<i>A kind of frame 
+that is used only in ABM which permits simultaneous two-way communication across 
+a point to point link. It is used with a selective repeat transmission procedure</i>) 
+frames are used only in ABM which permits simultaneous two-way communication 
+across a point to point link. The two frames are used to indicate to the other 
+station that a sequence error has occurred, that is an information frame 
+containing an out of sequence N(s) has been received. the SREJ frame is used 
+with a selective repeat transmission procedure, whereas the REJ frame is used 
+with a go back N procedure.</font></p>
+<p align="justify"><font face="Arial">&nbsp;</font></p>
+<h1 align="justify"><font face="Arial" size="3">Protocol operation</font></h1>
+<p align="justify"><font face="Arial">The two basic functions in the protocol 
+are link management and data transfer (which includes error and flow control).<br>
+&nbsp;</font></p>
+<h1 align="justify"><font face="Arial" size="3">Link management</font></h1>
+<p align="justify"><font face="Arial">. Prior to any kind of transmission 
+(either between two stations connected by a point to point link or between a 
+primary and secondary station a multidrop link) a logical connection (<i>A 
+logical connection between the two communication parties is accomplished by the 
+exchange of two unnumbered frames. The procedure for setting a logical 
+connection (In a multidrop link) is given below: The SNRM is first sent by the 
+primary station with the poll bit set to 1 and the address of the appropriate 
+secondary in the address field. The secondary responds with a UA frame with the 
+final bit set and its own address in the address field. After all the data has 
+been transferred, the link is clears by the primary sending a DISC frame and the 
+secondary responding with a UA</i>) between the two communication parties must 
+be established.</font></p>
+<p align="center"><font face="Arial">
+<img border="0" src="htmlfr1.gif" width="348" height="246"><br>
+</font><b><font face="Arial" size="3">Data transfer</font></b></p>
+<p align="justify"><font face="Arial">In NRM all data (information frames) if 
+transferred under the control of the primary station. The unnumbered poll frame 
+with the P bit set to 1 is normally used by the primary to poll a secondary. If 
+the secondary has no data to transmit, it returns an RNR frame with the F bit 
+set. If data is waiting, it transmits the data, typically as a sequence of 
+information frames.<br>
+The two most important aspects associated with the data transfer phase are error 
+control and flow control. Essentially, error control uses a continues RQ 
+procedure with either a selective repeat or a go back N transmission strategy, 
+while flow controls based on a window mechanism.</font></p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

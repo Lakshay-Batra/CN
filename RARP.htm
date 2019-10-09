@@ -1,0 +1,280 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+span.editsection
+	{}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+<h3 align="center"><font color="#FF0000" size="6"><b>
+<span lang="EN" style="font-family: Arial; text-decoration: underline; text-transform: uppercase">
+Reverse Address Resolution Protocol</span></b></font></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span><span lang="EN" style="font-family: Arial"><b>RARP</b> is a network layer 
+protocol used to resolve an
+<a href="http://en.wikipedia.org/wiki/Internet_Protocol" title="Internet Protocol" style="color: #000033; text-decoration: underline; text-underline: single">
+IP</a> address from a given hardware address (such as an Ethernet address). It 
+has been rendered obsolete by BOOTP and the more modern DHCP, which both support 
+a much greater feature set than RARP.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The primary limitations of RARP are 
+that each MAC must be manually configured on a central server, and that the 
+protocol only conveys an IP address. This leaves configuration of subnetting, 
+gateways, and other information to other protocols or the user.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Another limitation of RARP compared 
+to BOOTP or DHCP is that it is a non-IP protocol. This means that like ARP it 
+can't be handled by the TCP/IP stack on the client, but is instead implemented 
+separately.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span lang="EN" style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">RARP (Reverse Address Resolution Protocol) is a 
+protocol by which a physical machine in a local area network can request to 
+learn its IP address from a gateway server's Address Resolution Protocol (ARP) 
+table or cache. A network administrator creates a table in a local area 
+network's gateway router that maps the physical machine (or Media Access Control 
+- MAC address) addresses to corresponding Internet Protocol addresses. When a 
+new machine is set up, its RARP client program requests from the RARP server on 
+the router to be sent its IP address. Assuming that an entry has been set up in 
+the router table, the RARP server will return the IP address to the machine 
+which can store it for future use. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">RARP is 
+available for Ethernet,
+<term>Fiber Distributed-Data Interface</term>, and Token Ring LANs. </span></p>
+<p class="content" style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">TCP/IP uses the Address 
+Resolution Protocol (ARP) and the Reverse Address Resolution Protocol (RARP) to 
+initialize the use of Internet addressing on an Ethernet or other network that 
+uses its own media access control (MAC). ARP allows a host to communicate with 
+other hosts when only the Internet address of its neighbors is known. Before 
+using IP, the host sends a broadcast ARP request containing the Internet address 
+of the desired destination system. </span></p>
+<p class="content" style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">The ARP/RARP header 
+structure is shown in the illustration below.</span></p>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="396" style="width: 297.0pt; border: 1.0pt outset white; background: #ADC6E4">
+  <tr>
+    <td colspan="2" valign="top" style="border: 1.0pt inset white; padding: 1.5pt; background: white">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">16 </span></td>
+    <td valign="top" style="border: 1.0pt inset white; padding: 1.5pt; background: white">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">32 bits </span></td>
+  </tr>
+  <tr>
+    <td colspan="2" valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Hardware 
+    Type </span></td>
+    <td valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Protocol 
+    Type </span></td>
+  </tr>
+  <tr>
+    <td width="37%" valign="top" style="width: 37.0%; border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">HLen (8)
+    </span></td>
+    <td valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Plen (8)
+    </span></td>
+    <td width="52%" valign="top" style="width: 52.0%; border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Operation
+    </span></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Sender 
+    Hardware Address </span></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Sender 
+    Protocol Address </span></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Target 
+    Hardware Address </span></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top" style="border: 1.0pt inset white; padding: 1.5pt">
+    <p style="text-align: justify"><span style="font-family: Arial">Target 
+    Protocol Address </span></td>
+  </tr>
+  <tr>
+    <td colspan="3" valign="top" style="border: 1.0pt inset white; padding: 1.5pt; background: white">
+    <p class="MsoNormal" style="text-align: justify"><span class="blackitalic">
+    <span style="font-family: Arial">ARP/RARP header structure </span></span>
+    </td>
+  </tr>
+  <![if !supportMisalignedColumns]>
+  <tr height="0">
+    <td width="147" style="border: medium none">&nbsp;</td>
+    <td width="44" style="border: medium none">&nbsp;</td>
+    <td width="206" style="border: medium none">&nbsp;</td>
+  </tr>
+  <![endif]>
+</table>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Hardware type</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">Specifies a hardware 
+interface type for which the sender requires a response.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Protocol type</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">Specifies the type of 
+high-level protocol address the sender has supplied.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">HLen</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">Hardware address length.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">PLen</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">Protocol address length.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Operation</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">The values are as 
+follows:</span></span></span></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="75%" style="width: 75.0%">
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">1</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">ARP request.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">2</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">ARP response.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">3</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">RARP request.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">4</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">RARP response.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">5</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Dynamic RARP request.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">6</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Dynamic RARP reply.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">7</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Dynamic RARP error.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">8</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">InARP request.</span></td>
+  </tr>
+  <tr>
+    <td width="8%" style="width: 8.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">9</span></td>
+    <td width="92%" style="width: 92.0%; padding: 0in">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">InARP reply.</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Sender hardware address</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">HLen bytes in length.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Sender protocol address</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">PLen bytes in length.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Target hardware address</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">HLen bytes in length.</span></span></span></p>
+<p style="text-align: justify"><span class="contenttitles1">
+<span style="font-family: Arial">Target protocol address</span></span><span style="font-family: Arial"><br>
+<span class="content1"><span style="font-family: Arial">PLen bytes in length.</span></span></span></p>
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+
+</body>
+
+</html>

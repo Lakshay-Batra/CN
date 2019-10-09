@@ -1,0 +1,109 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<b>
+<p align="center"><span style="text-transform: uppercase"><u>
+<font size="6" color="#FF0000" face="Arial">Hierarchical state routing</font></u></span></p>
+</b>
+<p align="justify"><font face="Arial"><b>Hierarchical state routing</b> (HSR), 
+proposed in <i>Scalable Routing Strategies for Ad Hoc Wireless Networks</i> by 
+Iwata et. al. (1999), is a typical example of a
+hierarchical
+routing protocol. </font></p>
+<p align="justify"><font face="Arial">HSR maintains a hierarchical
+topology, where elected <span class="brokenlink">cluster heads</span> at the 
+lowest level become members of the next higher level. On the higher level, super 
+clusters are formed, and so on.
+Nodes which want to communicate to a node outside of their
+cluster ask their cluster head to forward their packet to the next level, 
+until a cluster head of the other node is in the same cluster. The packet then 
+travels down to the destination node. </font></p>
+<p align="justify"><font face="Arial">Furthermore, HSR proposes to cluster nodes 
+in a logical way instead of in a geological way: members of the same company or 
+in the same battle group are clustered together, assuming they will communicate 
+much within the logical cluster. </font></p>
+<p align="justify"><font face="Arial">HSR does not specify how a cluster is to 
+be formed.</font></p>
+<p class="MsoNormal" style="margin-left: .25in" align="justify"><b>
+<span style="font-family: Arial">Hierarchical Routing</span></b><span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">Aggregate routers into regions, 
+“autonomous systems” (AS)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">routers in same AS run same routing 
+protocol</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">“intra-AS” routing protocol</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">routers in different AS can run 
+different intra-AS routing protocol</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><u><span style="font-family: Arial">Gateway router</span></u></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">Direct link to router in another AS</span></p>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">&nbsp;&nbsp;<b>Hierarchical Routing</b></span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">• Scalability challenge: As networks grow in 
+size, the</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">routing tables grow proportionally.</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">• Solution:</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">– Use hierarchical routing, where routers are 
+divided into regions and each</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">of the other regions are condensed into a 
+single router.</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">– Collect routing information in a large 
+internet</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">• Intradomain (interior) routing: routing 
+internally in a network (region)</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">• Interdomain (exterior) routing: routing 
+between networks (/regions)</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">– Reduce the routing information to be kept in 
+a network (region)</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">• May use some default routers towards other 
+networks (/regions)</span></p>
+<p class="MsoNormal" style="text-autospace: none" align="justify">
+<span style="font-family: Arial">• This is simple, as all to know is which 
+routes are used towards the external</span></p>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">&nbsp;</span><span style="font-size: 12.0pt; line-height: 150%; font-family: Arial">As 
+the network grows larger the amount of resources necessary to take care or 
+routing table becomes enormous and makes routing impossible. Here appears the 
+idea of hierarchical routing that suggests that routers should be divided into
+<b>regions</b>, with each router knowing all the details about how to route 
+packets within its own region, but knowing nothing about the internal structure 
+of other regions.</span></p>
+<p class="MsoBodyTextIndent" style="text-indent: 20.7pt; margin-right: .5in" align="justify">
+<span style="font-size: 12.0pt; line-height: 150%; font-family: Arial">
+Unfortunately the gains in routing table size &amp; CPU time are not free, the 
+penalty of increasing path length has to be paid.It has been discovered that the 
+optimal number of nested levels for an N router subnet is <i>ln N</i>, requiring 
+a total of <i>eln N </i>entries per router.</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

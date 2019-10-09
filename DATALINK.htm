@@ -1,0 +1,219 @@
+<html>
+
+<head>
+<basefont size="4">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+td{font-family:arial,sans-serif }
+td{color:#000}
+.j{width:34em}
+a{font-family:arial,sans-serif }
+a:link{color:#00c}
+		.bodyCopyA { FONT-SIZE: 9pt; FONT-COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif } 
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="3"><b><a href="Main.htm">
+<font face="Arial">MAIN</font></a></b></font></p>
+
+<h3 align="center"><font face="Arial" size="6" color="#FF0000">
+<span style="text-transform: uppercase; text-decoration: underline">Data Link 
+Layer Protocol</span></font></h3>
+<p align="justify"><b><font face="Arial"><span class="hw"><font size="3">Data link protocol</font></span><font size="3">
+</font></font></b><font size="3"> </p>
+<p align="justify"></font><font size="3" face="Arial">In communications, the transmission of a unit of data from one node to 
+another (OSI layer 2). It is responsible for ensuring that the bits received are 
+the same as the bits sent. Following are the major categories: </font> </p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial" size="3"><b><span class="shw">Asynchronous Transmission</span></b><br>
+<br>
+Originating from mechanical teletype machines, asynchronous transmission treats 
+each character as a unit with start and stop bits appended to it. It is the 
+common form of transmission between the serial port of a computer or terminal 
+and a modem. ASCII, or teletype, protocols provide little or no error checking. 
+File transfer protocols, such as Zmodem and Ymodem, provide data link services 
+and higher-level services, collectively known as transport services. </font> </p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial" size="3"><b><span class="shw">Synchronous Transmission</span></b><br>
+<br>
+Developed for mainframe networks using higher speeds than teletype terminals, 
+synchronous transmission sends contiguous blocks of data, with both sending and 
+receiving stations synchronized to each other. Synchronous protocols include 
+error checking. Examples are IBM's SDLC, Digital's DDCMP, and the international 
+HDLC. </font> </p>
+<p>&nbsp;</p>
+<p align="justify"><font face="Arial"><b><span class="shw"><font size="3">LANs</font></span></b><font size="3"><br>
+<br>
+Developed for medium to high transmission speeds between stations, LANs 
+typically use collision detection (CSMA/CD) or token passing methods for 
+transmitting data between nodes. Common examples are Ethernet, Token Ring and 
+FDDI. </font></font><font size="3"> </p>
+<p align="justify"><font face="Arial">The IEEE 802 specification for LANs breaks the data link layer into two 
+sublayers: the LLC (Logical Link Control) and MAC (Media Access Control). The 
+LLC provides a common interface point to the MAC layers, which specify the 
+access method used. The following compares the data link layer in LANs to IBM's 
+SNA and ISO's OSI model. </font> </p>
+<p align="center">
+<img border="0" src="DATLINK.gif" width="408" height="312"></font></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><font size="3" face="Arial">The <b><i>NOAAPORT</i></b> Broadcast System (NBS) uses a subset of the 
+high-level data-link control (HDLC) protocol for its Data-Link Layer. The 
+Data-Link Layer, as defined by the International Standards Organization (ISO) 
+Open Systems Interconnection (OSI) reference model, provides point-to-point 
+communications over a physical transmission medium by creating and recognizing 
+frame boundaries. The NBS uses the HDLC frame and HDLC framing boundaries for 
+this purpose.</font><font size="3"></p>
+<p align="justify"><font face="Arial">The HDLC framing code or flag sequence consists of a 0 bit followed by six 1 
+bits followed by a 0 bit (01111110). It is used to demarcate the boundaries of a 
+message packet. The rest of the message packet uses the general format shown 
+below. This consists of a beginning frame flag sequence (F), an address field 
+(A), a control field (C), an optional information field (I), the frame check 
+sequence (FCS), and an ending frame flag sequence (F).</font></p>
+</font>
+<center>
+<table frame="border">
+  <tr>
+    <th colSpan="6"><font face="Arial">HDLC Frame Structure</font></th>
+  </tr>
+  <tr>
+    <th><font face="Arial">01111110</font></th>
+    <td align="middle"><font face="Arial">Address</font></td>
+    <td align="middle"><font face="Arial">Control</font></td>
+    <td align="middle"><font face="Arial">Information</font></td>
+    <td align="middle"><font face="Arial">FCS</font></td>
+    <th><font face="Arial">0111110</font></th>
+  </tr>
+</table>
+</center>
+<font size="3">
+<p align="justify"><font face="Arial">Because the NBS is a point-to-multipoint system, the address field is set to 
+the broadcast address: 11111111. The control field is always present in the 
+frame but is not used by the Satellite Broadcast Network (SBN) protocol. As a 
+result, the SBN protocol does not look at its value but assumes that it is 
+present in the frame. The optional information field houses the SBN protocol and 
+its associated data. The FCS field is used by the HDLC protocol to verify the 
+integrity of each HDLC frame. In general, the NBS uses the HDLC frame to envelop 
+the SBN message packets. The following table provides more details of the HDLC 
+framing.</font></font></p>
+<table frame="border">
+  <tr>
+    <th colSpan="5"><font face="Arial">Details of HDLC Framing</font></th>
+  </tr>
+  <tr>
+    <th><font face="Arial">Field</font></th>
+    <th><font face="Arial">Description</font></th>
+    <th><font face="Arial">Size (octets)</font></th>
+    <th><font face="Arial">Value</font></th>
+    <th><font face="Arial">Meaning of Value</font></th>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">A</font></td>
+    <td align="middle"><font face="Arial">Link-level address of the destination</font></td>
+    <td align="middle"><font face="Arial">1</font></td>
+    <td align="middle"><font face="Arial">11111111</font></td>
+    <td align="middle"><font face="Arial">Broadcast message</font></td>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">C</font></td>
+    <td align="middle"><font face="Arial">Command/response<br>
+    control codes</font></td>
+    <td align="middle"><font face="Arial">1</font></td>
+    <td align="middle"><font face="Arial">NA¹</font></td>
+    <td align="middle"><font face="Arial">HDLC control is not used.</font></td>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">I</font></td>
+    <td align="middle"><font face="Arial">Data (optional)</font></td>
+    <td align="middle"><font face="Arial">32-5200</font></td>
+    <td align="middle"><font face="Arial">NA¹</font></td>
+    <td align="middle"><font face="Arial">This field contains the data packet that is further 
+    defined in the SBN protocol.</font></td>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">FCS</font></td>
+    <td align="middle"><font face="Arial">Error detection code</font></td>
+    <td align="middle"><font face="Arial">2</font></td>
+    <td align="middle"><font face="Arial">NA¹</font></td>
+    <td align="middle"><font face="Arial">This field contains the calculated CRC-16.</font></td>
+  </tr>
+  <tr>
+    <td colSpan="5"><font face="Arial"><b>Note 1:</b> Not applicable</font></td>
+  </tr>
+</table>
+<font size="3">
+<p align="justify"><font face="Arial">The 0 bit insertion/deletion required by HDLC enables the flag sequence to 
+frame bit streams into a packet, thus allowing the data between framing flags to 
+contain any bit pattern. This is known as transparency. At the transmitting 
+station, a 0 bit is inserted after each sequence of five consecutive 1s. At the 
+receiving station, the 0 bit that follows every five consecutive 1 bits is 
+deleted.</font></p>
+<p align="justify"><font face="Arial">The NBS encodes the data using nonreturn-to-zero (NRZ) encoding. This encodes 
+a 1 as a high level and a 0 as a low level. With this encoding method, only a 
+minimal amount of clocking information is available in the data stream in the 
+form of transitions on bit-cell boundaries, which do not allow for 
+self-clocking.</font></p>
+<p align="justify"><font face="Arial">The Cyclical Redundancy Check (CRC)-16 FCS uses the International Telegraph 
+and Telephone Consultative Committee (CCITT) Rec. V.41 generating polynomial X16 
++ X12 + X5 + 1.</font></p>
+<p align="justify"></font><font size="3" face="Arial">The remainder of the HDLC protocol is unused.</font></p>
+<font size="3">
+<h1 align="justify"><font face="Arial"><span style="font-size:12.0pt">High Level 
+Link Control (HDLC) Protocol</span></font></h1>
+<p align="justify"><span style="font-family:Arial">The HDLC protocol is a 
+general purpose </span><font face="Arial">protocol</font><span style="font-family:Arial"> 
+which operates at the data link layer of the </span><font face="Arial">OSI 
+reference model</font><span style="font-family:Arial">. The protocol uses the 
+services of a physical layer, and provides either a </span><font face="Arial">
+<i>best effort</i></font><span style="font-family:Arial"> or </span>
+<font face="Arial"><i>reliable</i></font><span style="font-family:
+Arial"> communications path between the transmitter and receiver (i.e. with
+</span><font face="Arial">acknowledged</font><span style="font-family:Arial"> 
+data transfer). The type of service provided depends upon the </span>
+<font face="Arial">HDLC mode</font><span style="font-family:Arial"> which is 
+used.</span></p>
+<p align="justify"><span style="font-family:Arial">Each piece of data is </span>
+<font face="Arial">encapsulated</font><span style="font-family:Arial"> in an 
+HDLC frame by adding a trailer and a header. The header contains an </span>
+<font face="Arial">HDLC address</font><span style="font-family:Arial"> and an
+</span><font face="Arial">HDLC control field</font><span style="font-family:Arial">. 
+The trailer is found at the end of the frame, and contains a </span>
+<font face="Arial">Cyclic Redundancy Check (CRC)</font><span style="font-family:Arial"> 
+which detects any errors which may occur during transmission. The frames are 
+separated by </span><font face="Arial">HDLC flag</font><span style="font-family:Arial"> 
+sequences which are transmitted between each frame and whenever there is no data 
+to be transmitted.</span></p>
+<p class="MsoNormal"><font face="Arial">&nbsp;</font></p>
+<p align="center">
+<font face="Arial">
+<img src="hdlc-frame.gif" align="bottom" NATURALSIZEFLAG="3" width="344" height="149"></font></p>
+<p align="center"></font><font face="Arial"><i><font size="3">HDLC Frame Structure showing flags, header (address and 
+control), data and trailer (CRC-16).</font></i></font></p>
+<h3 align="justify"><font face="Arial" size="3">Logical Link Control Sublayer</font></h3>
+<p align="justify"><font size="3" face="Arial">The uppermost sublayer is </font>
+<font size="3"> <i>
+<font face="Arial">Logical Link Control</font></i><font face="Arial"> (LLC). This sublayer
+multiplexes protocols running atop the data link layer, and optionally 
+provides flow control, acknowledgment, and error recovery.</font></font></p>
+<h3 align="justify"><font face="Arial" size="3">Media Access Control Sublayer</font></h3>
+<p align="justify"><font size="3" face="Arial">The sublayer below it is </font>
+<font size="3"> <i>
+<font face="Arial">Media Access Control</font></i><font face="Arial"> (MAC). Sometimes this refers to the sublayer that 
+determines who is allowed to access the media at any one time (usually CSMA/CD). 
+Other times it refers to a frame structure with MAC addresses inside, specially 
+speaking about ethernet over switches. There are generally two forms of media 
+access control: distributed and centralised. Both of these may be compared to 
+communication between people.</font></p>
+<p align="center"></font><font face="Arial"><b><a href="Main.htm">
+<font size="3" face="Arial">MAIN</font></a></b></font></p>
+
+</body>
+
+</html>

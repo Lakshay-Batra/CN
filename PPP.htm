@@ -1,0 +1,72 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h3 align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font face="Arial" size="6" color="#FF0000">Pont to point Protocol</font></span></h3>
+<p align="justify"><font face="Arial">The Point-to-Point Protocol (PPP), 
+documented in RFC 1661, is currently (early 1996) the best solution for dial-up 
+Internet connections, including ISDN. </font></p>
+<p align="justify"><font face="Arial">PPP is a layered protocol, starting with a 
+Link Control Protocol (LCP) for link establishment, configuration and testing. 
+Once the LCP is initialized, one or many of several Network Control Protocols (NCPs) 
+can be used to transport traffic for a particular protocol suite. The IP Control 
+Protocol (IPCP), documented in RFC 1332, permits the transport of IP packets 
+over a PPP link. Other NCPs exist for Appletalk (RFC 1378), OSI (RFC 1377), 
+DECnet Phase IV (RFC 1762), Vines (RFC 1763), XNS (RFC 1764) and transparent 
+Ethernet bridging (RFC 1638). </font></p>
+<p align="justify"><font face="Arial">Here are some key PPP features, all of 
+which are lacking in SLIP: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><b>Address Notification</b> allows a 
+  server to inform a dial-up client of its IP address for that link, but the 
+  mechanism is powerful enough for clients to request IP addresses and supports 
+  fallback configurations. SLIP required the user to configure this information 
+  manually. PPP options have also been specified (RFC 1877) for notification of 
+  name server addresses, both Internet and NetBios. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><b>Authentication</b> is available as an 
+  option, either with the Password Authentication Protocol (PAP), or the 
+  Challenge-Handshake Authentication Protocol (CHAP). Both are documented in RFC 
+  1334. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><b>Multiple Protocols</b> can 
+  interoperate on the same link, simply by running additional NCPs. For example, 
+  both IP and IPX traffic can share a PPP link. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><b>Link Monitoring</b> facilities 
+  include a link-level echo facility which can periodically check link operation</font></li>
+</ul>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

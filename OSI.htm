@@ -1,0 +1,396 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+td{font-family:arial,sans-serif }
+td{color:#000}
+.j{width:34em}
+a{font-family:arial,sans-serif }
+a:link{color:#00c}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline"><b>
+<font face="Arial" size="6" color="#FF0000">osi model</font></b></span></p>
+<p><font face="Arial"><b>Layer:</b> In computer programming, layering is the 
+organization of programming into separate functional components that interact in 
+some sequential and hierarchical way, with each layer usually having an 
+interface only to the layer above it and the layer below it. </font></p>
+<p><font face="Arial">Communication programs are often layered. The reference 
+model for communication programs, Open System Interconnection (OSI), is a 
+layered set of protocols in which programming at both ends of a communications 
+exchange uses an identical set of layers. In the OSI model, there are seven 
+layers, each reflecting a different function that has to be performed in order 
+for program-to-program communication to take place between computers. </font>
+</p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The International Standards Organization (ISO) developed a theoretical model of 
+how networks should behave and how they are put together. This model is called 
+the Open Standards Interconnect (OSI) Model.</font></p>
+<p><font face="Arial">The ISO's Open Standards Interconnect document series defines a model for 
+networking which specifies:</font></p>
+<ul>
+  <li><font face="Arial">How information should be handled when being transported over a network.
+  </font>
+  </li>
+  <li><font face="Arial">How software should interact with the network. </font> </li>
+  <li><font face="Arial"><em>Layers</em> at which specific networking functions are performed.
+  </font> </li>
+  <li><font face="Arial">Layer specific functions should be invisible to the layer above it and 
+  below it. </font> </li>
+  <li><font face="Arial">The method of communication at the boundaries between layers.
+  </font> </li>
+</ul>
+<p align="center"><font face="Arial"><img src="OSI_Model.jpg" width="570" height="436"></font></p>
+<p align="center"><span style="text-transform: uppercase"><b>
+<font face="Arial">OSI MODEL </font></b></span></p>
+<p><font face="Arial">OSI Model includes 7 layers:</font></p>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+Physical Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">The <em>
+physical</em> layer provides for physical connectivity between networked 
+devices. Transmission and receipt of data from the physical medium (copper wire, fiber, radio frequencies, barbed wire, string 
+etc.) is managed at this layer.</font></p>
+<p><font face="Arial">The <em>physical </em>layer receives data from the </font>
+<em>
+<font face="Arial">data link</font></em><font face="Arial"> Layer, and transmits it to the wire. The <em>physical</em> 
+layer controls the electrical and mechanical functions related to the 
+transmission and receipt of a communications signal. 
+It also manages the encoding and decoding of data contained within the modulated signal.</font></p>
+<p><font face="Arial">Note that for two devices to communicate, they must be connected to the same 
+type of physical medium (wiring). 802.3 
+Ethernet to 802.3 
+Ethernet, <b>Fiber Distributed Data Interface </b>(FDDI)&nbsp; 
+to FDDI, 
+serial to serial etc. Two end stations using different protocols can only 
+communicate through a multi-protocol bridge 
+or a router.</font></p>
+<p><font face="Arial">The physical layer is responsible for two jobs:</font></p>
+<ol>
+  <li><font face="Arial">Communication with the </font>
+  <em>
+  <font face="Arial">data link</font></em><font face="Arial"> layer above it.
+  </font> </li>
+  <li><font face="Arial">Fragmentation of data into frames </font>
+  </li>
+  <li><font face="Arial">Reassembly of frames into </font>
+  <em>
+  <font face="Arial">data link</font></em><font face="Arial"> Protocol Data Units. </font>
+  </li>
+  <li><font face="Arial">Transmission and receipt of data. </font> </li>
+</ol>
+<p><font face="Arial">It should be noted that in most modern network interface adaptors, the <em>
+physical</em> and </font>
+<em>
+<font face="Arial">data link</font></em><font face="Arial"> functions are performed by the adaptor.</font></p>
+<h3><font size="3" face="Arial">Example Physical Protocols</font></h3>
+<ul>
+  <li>
+  <font face="Arial">CSMA/CD </font> </li>
+  <li><font face="Arial">CSMA/CA </font> </li>
+  <li>
+  <font face="Arial">B8ZS </font> </li>
+  <li><font face="Arial">2B1Q </font> </li>
+  <li><font face="Arial">PCM </font> </li>
+  <li><font face="Arial">QAM V.24 </font> </li>
+  <li><font face="Arial">V.35 </font> </li>
+  <li><font face="Arial">EIA/TIA-232 </font> </li>
+  <li><font face="Arial">EIA/TIA-449 </font> </li>
+  <li><font face="Arial">FDDI </font> </li>
+  <li><font face="Arial">802.3 </font> </li>
+  <li><font face="Arial">802.5 </font> </li>
+  <li><font face="Arial">Ethernet </font> </li>
+  <li><font face="Arial">RJ45 </font> </li>
+  <li><font face="Arial">NRZ </font> </li>
+  <li><font face="Arial">NRZI</font></li>
+</ul>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+data Link Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">The
+<em>data link</em> Layer is the second layer of the OSI model. 
+The <em>data link</em> layer performs various functions depending upon the 
+hardware protocol used, but has four primary functions: </font>
+</p>
+<ol>
+  <li><font face="Arial">COMMUNICATION with the Network 
+  layer above. </font>
+  </li>
+  <li><font face="Arial">SEGMENTATION of upper layer datagrams (also called packets) into frames in sizes that can be handled 
+  by the communications hardware. </font>
+  </li>
+  <li><font face="Arial">BIT ORDERING. The data link layer organizes the pattern of data bits into frames before transmission. The frame formatting issues such as stop and 
+  start bits, bit order, parity and other functions are handled here. Management 
+  of big-endian / little-endian issues are also managed at this layer.
+  </font>
+  </li>
+  <li><font face="Arial">COMMUNICATION with the Physical layer below </font>
+  </li>
+</ol>
+<p><font face="Arial">This layer provides reliable transit of data across a physical link. The <em>
+data link</em> layer is concerned with physical addressing, network topology, 
+physical link management, error notification, ordered delivery of frames, and 
+flow control.</font></p>
+<p><font face="Arial">It should be noted that in most modern network interface adaptors, the Physical 
+and Datalink functions are performed by the network interface adaptor.</font></p>
+<h3><font size="3" face="Arial">EXAMPLE</font></h3>
+<p>
+<font face="Arial">Ethernet Network Adaptors uses a 
+Media Access Control (MAC) address, 
+which is a physical address that (somewhat) uniquely identifies a network card 
+to the physical network. The Ethernet 
+Adaptor's primary job at the <em>data link</em> layer is to transmit Ethernet 
+frames onto the wire. It places its own MAC address 
+in the frame, followed by the destination MAC address 
+to which it wishes to communicate, sets various other values in the Ethernet frame (protocol type etc.) and then transmits on the wire. The CSMA/CD 
+protocol that Ethernet 
+uses to control access to the common network bus could be said to occur at the 
+data link layer of the OSI model or could also be called a <em>data link 
+function.For E.g.:</em></font></p>
+<p>&nbsp;</p>
+<ul>
+  <li><font face="Arial">IEEE 802.2 </font> </li>
+  <li><font face="Arial">IEEE 802.3 </font> </li>
+  <li><font face="Arial">802.5 - Token Ring </font> </li>
+  <li><font face="Arial">HDLC </font> </li>
+  <li><font face="Arial">Frame Relay </font> </li>
+  <li><font face="Arial">FDDI </font> </li>
+  <li><font face="Arial">ATM </font> </li>
+  <li><font face="Arial">PPP</font></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+Network Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">It is 
+the <em>network</em> layer's job to figure out the <em>network</em> topology, 
+handle routing and to prepare data for transmission. The <em>network</em> layer 
+is concerned with the following primary functions:</font></p>
+<ol>
+  <li><font face="Arial">Communication with the Transport layer above. </font>
+  </li>
+  <li><font face="Arial">Encapsulation of Transport data into <em>Network</em> layer Protocol Data Units. </font>
+  </li>
+  <li><font face="Arial">Management of connectivity and routing between hosts or networks. </font>
+  </li>
+  <li><font face="Arial">Communication with the </font>
+  <em>
+  <font face="Arial">data link</font></em><font face="Arial"> layer below.
+  </font> </li>
+</ol>
+<p><font face="Arial">Examples of <em>network</em> layer protocols include:</font></p>
+<ul>
+  <li>
+  <font face="Arial">Internet Protocol </font> </li>
+  <li>
+  <font face="Arial">Internet Control Message Protocol (ICMP or &quot;ping (Packet 
+  Inter Net Groper)&quot;) </font> </li>
+  <li>
+  <font face="Arial">Internet Gateway Management Protocol (IGMP) </font> </li>
+  <li><font face="Arial"><b>Internetwork Packet Exchange/Sequenced Packet Exchange</b></font></li>
+  <li><font face="Arial">Appletal Datagram Delivery Protocol</font></li>
+</ul>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+Transport Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">If 
+networking software performs reliable data tranfer functions, then the detection 
+of errors, and retransmission of data to recover those errors or lost data will 
+occur in software managing this layer. The <em>transport</em> layer may use a 
+variety of techniques such as a Cyclic Redundancy Check, windowing and 
+acknowledgements. If data is lost or damaged it is the <em>transport </em>
+layer's responsibility to recover from that error.</font></p>
+<ol>
+  <li><font face="Arial">Communicate with the Session 
+  layer above. </font>
+  </li>
+  <li><font face="Arial">Reassemble <em>transport</em> Protocol Data Units into data streams
+  </font> </li>
+  <li>
+  <font face="Arial">Reliable protocols operating at this layer will </font>
+  <ul>
+    <li><font face="Arial">Detect errors and lost data </font> </li>
+    <li><font face="Arial">Recover lost data </font> </li>
+    <li><font face="Arial">Manage retransmission of data. </font> </li>
+  </ul>
+  </li>
+  <li><font face="Arial">Segmentation of data streams into <em>transport</em> Protocol Data Units.
+  </font>
+  </li>
+  <li><font face="Arial">Communicate with the Network 
+  layer below. </font>
+  </li>
+</ol>
+<p><font face="Arial">Examples of <em>transport</em> layer protocols include:</font></p>
+<ul>
+  <li>
+  <font face="Arial">Transmission Control Protocol (Reliable) </font>
+  </li>
+  <li>
+  <font face="Arial">User Datagram Protocol (Unreliable) </font>
+  </li>
+  <li><font face="Arial"><b>Sequenced Packet Exchange</b></font></li>
+</ul>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+SESSION Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">The <em>
+session</em> layer tracks connections, also called sessions. The <em>session</em> 
+layer should keep track of multiple file downloads requested by a particiular FTP 
+application, or multiple telnet 
+connections from a single terminal client, or web page 
+retrievals from a web server.</font></p>
+<p><font face="Arial">With TCP/IP 
+this functionality is handled by application software addressing a connection to 
+a remote machine and using a different local port number for each connection.</font></p>
+<p><font face="Arial">The <em>session</em> layer performs the following functions:</font></p>
+<ol>
+  <li><font face="Arial">Communication with the Presentation layer above. </font>
+  </li>
+  <li><font face="Arial">Organize and manage one or more connections per application, between 
+  hosts. </font> </li>
+  <li><font face="Arial">Communication with the Transport layer below. </font>
+  </li>
+</ol>
+<h3><font size="3" face="Arial">EXAMPLE</font></h3>
+<p><font face="Arial"><em>Sessions</em> are used to keep track of individual connections to remote 
+servers. Your web browser is an excellent example of the use of <em>sessions</em>.</font></p>
+<p><font face="Arial">Your web browser (an </font>
+<em>
+<font face="Arial">application</font></em><font face="Arial"> layer object) opens a web page. 
+That page contains text, graphics, Macromedia Flash objects and perhaps a Java 
+applet. The graphics, the Flash object and the Java applet are all stored as 
+separate files on the web server. To access them, a separate download must be 
+started. Your web browser opens a separate <em>session</em> to the web server 
+to download each of the individual files. The <em>session</em> layer keeps track 
+of which packets and data belong to which file and keeps track of where they go 
+(in this case, to your web browser).For 
+e.g.:</font></p>
+<ul>
+  <li><font face="Arial">RPC </font> </li>
+  <li><font face="Arial">SQL </font> </li>
+  <li><font face="Arial">NetBIOS names </font> </li>
+  <li><font face="Arial">Appletalk ASP </font> </li>
+  <li><font face="Arial">DECnet SCP</font></li>
+</ul>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+Presentation Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">The
+<em>presentation</em> layer handles the conversion of data between a 
+Standards-based or platform independant formats to a format understood by the 
+local machine. This allows for data to be transported between devices and still 
+be understood.</font></p>
+<p><font face="Arial"><br>
+The <em>presentation </em>layer performs the folowing functions: </font> </p>
+<ol>
+  <li><font face="Arial">Communication with the </font>
+  <em><font face="Arial">application</font></em><font face="Arial"> layer above.
+  </font> </li>
+  <li><font face="Arial">Translation of data conforming to cross-platform standards into formats 
+  understood by the local machine. </font> </li>
+  <li><font face="Arial">Communication with the </font> <em>
+  <font face="Arial">session</font></em><font face="Arial"> 
+  layer below.<br>
+&nbsp;</font></li>
+</ol>
+<h3><font size="3" face="Arial">Examples of Presentation Layer Functions</font></h3>
+<ul>
+  <li><font face="Arial">Conversion of a Sun .RAS raster graphic to JPG. </font> </li>
+  <li><font face="Arial">Conversion of ASCII to IBM EBCDIC </font> </li>
+  <li><font face="Arial">Conversion of .PICT on a MAC to .jpg </font> </li>
+  <li><font face="Arial">Conversion of .wav to .mp3</font></li>
+  <li><font face="Arial">MIDI </font> </li>
+  <li><font face="Arial">HTML </font> </li>
+  <li><font face="Arial">GIF </font> </li>
+  <li><font face="Arial">TIFF </font> </li>
+  <li><font face="Arial">JPEG </font> </li>
+  <li><font face="Arial">ASCII </font> </li>
+  <li><font face="Arial">EBCDIC</font></li>
+</ul>
+<p><span style="text-transform: uppercase"><b><u><font face="Arial">
+Application :Layer</font></u><font face="Arial">: </font></b></span>
+<font face="Arial">The 
+OSI model defines the <em>application</em> layer as being the user interface. 
+The OSI application layer is responsible for displaying data and images to the 
+user in a human-recognizable format and to interface with the </font>
+<em>
+<font face="Arial">presentation</font></em><font face="Arial"> layer below it.</font></p>
+<p><font face="Arial">Examples of applications that utilize the network are:</font></p>
+<ul>
+  <li>
+  <font face="Arial">Telnet </font> </li>
+  <li>
+  <font face="Arial">FTP </font>
+  </li>
+  <li><font face="Arial">Instant Message software (AIM, MSN, ICQ, Yahoo) </font> </li>
+  <li><font face="Arial">IRC (mIRC) </font> </li>
+  <li><font face="Arial">America Online (the client software) </font> </li>
+  <li><font face="Arial">Microsoft Windows File Shares </font> </li>
+  <li><font face="Arial">Microsoft Internet Explorer (a web browser) </font> </li>
+  <li><font face="Arial">Network games of Doom, Quake, Unreal (first-person 3D shooter video games)
+  </font>
+  </li>
+  <li><font face="Arial">FTP </font> </li>
+  <li><font face="Arial">DNS </font> </li>
+  <li><font face="Arial">SNMP </font> </li>
+  <li><font face="Arial">SMTP gateways </font> </li>
+  <li><font face="Arial">Web browser </font> </li>
+  <li><font face="Arial">Network File System (NFS) </font> </li>
+  <li><font face="Arial">Telnet and Remote Login (rlogin) </font> </li>
+  <li><font face="Arial">X.400 </font> </li>
+  <li><font face="Arial">FTAM </font> </li>
+  <li><font face="Arial">Database software </font> </li>
+  <li><font face="Arial">Print Server Software</font></li>
+</ul>
+<p><span style="text-transform: uppercase"><u><b><font face="Arial">
+Functions Of 7 Layer: Summery)</font></b></u></span></p>
+<p><font face="Arial"><font color="#8c0000"><b>Layer 7:</b>Application Layer</font>
+</font> </p>
+<p><font face="Arial">Defines interface to user processes for communication and data transfer in 
+network</font></p>
+<p><font face="Arial">Provides standardized services such as virtual terminal, file and job 
+transfer and operations</font></p>
+<p><font color="#8c0000" face="Arial"><b>Layer 6:</b>Presentation Layer </font></p>
+<p><font face="Arial">Masks the differences of data formats between dissimilar systems</font></p>
+<p><font face="Arial">Specifies architecture-independent data transfer format</font></p>
+<p><font face="Arial">Encodes and decodes data; Encrypts and decrypts data; Compresses and 
+decompresses data</font></p>
+<p><font face="Arial"><font color="#8c0000"><b>Layer 5:</b>Session Layer</font>
+</font> </p>
+<p><font face="Arial">Manages user sessions and dialogues</font></p>
+<p><font face="Arial">Controls establishment and termination of logic links between users</font></p>
+<p><font face="Arial">Reports upper layer errors</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial"><font color="#8c0000"><b>Layer 4:</b>Transport Layer</font>
+</font> </p>
+<p><font face="Arial">Manages end-to-end message delivery in network</font></p>
+<p><font face="Arial">Provides reliable and sequential packet delivery through error recovery and 
+flow control mechanisms</font></p>
+<p><font face="Arial">Provides connectionless oriented packet delivery</font></p>
+<p><font face="Arial"><font color="#8c0000"><b>Layer 3:</b>Network Layer</font>
+</font> </p>
+<p><font face="Arial">Determines how data are transferred between network devices</font></p>
+<p><font face="Arial">Routes packets according to unique network device addresses</font></p>
+<p><font face="Arial">Provides flow and congestion control to prevent network resource depletion</font></p>
+<p><font face="Arial"><font color="#8c0000"><b>Layer 2:</b>Data Link Layer</font>
+</font> </p>
+<p><font face="Arial">Defines procedures for operating the communication links</font></p>
+<p><font face="Arial">Frames packets</font></p>
+<p><font face="Arial">Detects and corrects packets transmit errors</font></p>
+<p><font face="Arial"><font color="#8c0000"><b>Layer 1:</b>Physical Layer</font>
+</font> </p>
+<p><font face="Arial">Defines physical means of sending data over network devices</font></p>
+<p><font face="Arial">Interfaces between network medium and devices</font></p>
+<p><font face="Arial">Defines optical, electrical and mechanical characteristics</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

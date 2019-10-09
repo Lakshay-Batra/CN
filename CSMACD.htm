@@ -1,0 +1,419 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.hw2
+	{}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+span.brokenlink
+	{}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+   A:link { text-decoration: none }-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm"><u>MAIN</u></a></b></font></p>
+<h1 align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font face="Arial" color="#FF0000" size="5">Carrier Sense Multiple Access with 
+Collision Detection</font></span></h1>
+<p SID92="2" sDQik="0" align="justify"><font face="Arial">CSMA/CD (Carrier Sense 
+Multiple Access / Collision Detection) is the protocol used in
+<a href="http://www.tech-faq.com/ethernet.shtml" SID92="0" sDQik="0">Ethernet</a>
+</font>
+<font style="font-weight: 400; color: blue !important; font-family: Verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+networks</span></font><font face="Arial"> to ensure that only one network node 
+is transmitting on the network wire at any one time.</font></p>
+<blockquote>
+  <ul>
+    <li>
+    <p SID92="1" sDQik="0" align="justify"><font face="Arial">
+    <i SID92="0" sDQik="0">Carrier Sense</i> means that every Ethernet device 
+    listens to the Ethernet wire before it attempts to transmit. If the Ethernet 
+    device senses that another device is transmitting, it will wait to transmit.</font></li>
+    <li>
+    <p SID92="1" sDQik="0" align="justify"><font face="Arial">
+    <i SID92="0" sDQik="0">Multiple Access</i> means that more than one Ethernet 
+    device can be sensing (listening and waiting to transmit) at a time.</font></li>
+    <li>
+    <p SID92="1" sDQik="0" align="justify"><font face="Arial">
+    <i SID92="0" sDQik="0">Collision Detection</i> means that when multiple 
+    Ethernet devices accidentally transmit at the same time, they are able to 
+    detect this error.</font></li>
+  </ul>
+</blockquote>
+<h2 SID92="0" sDQik="0" align="justify"><font size="3" face="Arial">How 
+Collisions Occur under CSMA/CD</font></h2>
+<p SID92="0" sDQik="0" align="justify"><font face="Arial">Imagine a very simple
+</font>
+<font style="font-weight: 400; color: blue !important; font-family: Verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+Ethernet </span></font>
+<font style="font-weight: 400; color: blue !important; font-family: Verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+network</span></font><font face="Arial"> with only two nodes.</font></p>
+<blockquote>
+  <ul>
+    <li>
+    <p SID92="0" sDQik="0" align="justify"><font face="Arial">Each node, 
+    independently, decides to send an Ethernet frame to the other node.</font></li>
+    <li>
+    <p SID92="0" sDQik="0" align="justify"><font face="Arial">Both nodes listen 
+    to the Ethernet wire and sense that no carrier is present.</font></li>
+    <li>
+    <p SID92="0" sDQik="0" align="justify"><font face="Arial">Both nodes 
+    transmit simultaneously, causing a collision.</font></li>
+    <li>
+    <p SID92="0" sDQik="0" align="justify"><font face="Arial">Both nodes detect 
+    the collision and each node waits a random amount of time before 
+    transmitting again.</font></li>
+  </ul>
+</blockquote>
+<p SID92="0" sDQik="0" align="justify"><font face="Arial">Collisions are normal 
+on an Ethernet network. A small amount of collisions are expected in the 
+protocol design.</font></p>
+<p SID92="0" sDQik="0" align="justify"><font face="Arial">If too many nodes are 
+transmitting on an Ethernet network the number of collisions can rise to an 
+unacceptable level. This can reduce the amount of available bandwidth on an 
+Ethernet network because so much bandwidth is lost in retransmission.</font></p>
+<p SID92="0" sDQik="0" align="justify"><font face="Arial">Ethernet switches 
+greatly reduce the already minor difficulties experienced with the CSMA/CD 
+protocol.</font></p>
+<p SID92="0" sDQik="0" align="justify"><font face="Arial"><b>How Ethernet 
+CSMA/CD Works</b></font></p>
+<p align="justify"><font SID92="29" sDQik="0" face="Arial">When you're studying 
+for your CCNA exams, you're going to study the theory of </font>
+<font face="verdana" SID92="29" sDQik="0">
+<font style="font-weight: 400; color: blue !important; font-family: verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative; border-bottom: 1px solid blue; background-color: transparent">
+technologies</span></font></font><font SID92="29" sDQik="0" face="Arial"> we 
+basically take for granted in networking. CSMA/CD is one of those technologies. 
+It works beautifully and you don't even have to configure it. But to be an 
+effective </font><font face="verdana" SID92="29" sDQik="0">
+<font style="font-weight: 400; color: blue !important; font-family: verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+network</span></font></font><font SID92="29" sDQik="0" face="Arial"> 
+troubleshooter (and to pass the 640-811, 640-801, and 640-821 exams), you have 
+to know Ethernet inside and out, and that means knowing CSMA/CD. <br>
+<br>
+The first Ethernet standards were 10Base5 and 10Base2. </font>
+<font face="verdana" SID92="29" sDQik="0">
+<font style="font-weight: 400; color: blue !important; font-family: verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+Network </span>
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+devices</span></font><font SID92="29" sDQik="0" face="Arial"> such as hubs, 
+repeaters, and switches weren't in the picture yet. The sole physical components 
+were the Ethernet cards in the </font>
+<font style="font-weight: 400; color: blue !important; font-family: verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+computers</span></font><font SID92="29" sDQik="0" face="Arial"> and coaxial 
+cable. The cable made up a bus that all the connected devices would use. (This 
+type of bus is referred to as a shared bus.) <br>
+</font></font><font SID92="29" sDQik="0" face="Arial"><br>
+If only one of the hosts on this network wanted to send data, there would be no 
+problem. When two hosts would send at the same time, though, a collision would 
+occur. When the signals would collide, both would be rendered unusable. A 
+standard had to be created that would have the hosts follow rules relating to 
+when they could send data and when they could not. This standard is Carrier 
+Sense Multiple Access with Collision Detection, referred to as CSMA/CD. <br>
+<br>
+If two of the three computers on this segment send data at the same time, a 
+collision occurs. <br>
+<br>
+To avoid this, CSMA/CD forces computers to “listen” to the Ethernet before 
+sending in order to make sure that no other host on the wire is sending. When 
+the Ethernet segment is not busy, the device that wants to send data can do so. 
+The sender will then continue to listen, to make sure that sending the data 
+didn’t cause a collision. <br>
+<br>
+If a collision is heard, both of the senders will send a jam signal over the 
+Ethernet. This jam signal indicates to all other devices on the Ethernet segment 
+that there has been a collision, and they should not send data onto the wire. (A 
+second indication of a collision is the noise created by the collision itself.)
+<br>
+<br>
+After sending the jam signal, each of the senders will wait a random amount of 
+time before beginning the entire process over. The random time helps to ensure 
+that the two devices don't transmit simultaneously again. </font></p>
+<p align="justify">&nbsp;</p>
+<h3 align="justify"><font size="3" face="Arial">A Shared Medium</font></h3>
+<p align="justify"><font face="Arial">The Ethernet network may be used to 
+provide shared access by a group of attached nodes to the physical medium which 
+connects the nodes. These nodes are said to form a Collision Domain. All frames 
+sent on the medium are physically received by all receivers, however the Medium 
+Access Control (MAC) header contains a MAC destination address which ensure only 
+the specified destination actually forwards the received frame (the other 
+computers all discard the frames which are not addressed to them). </font></p>
+<p align="justify"><font face="Arial">Consider a LAN with four computers each 
+with a Network Interface Card (NIC) connected by a common Ethernet cable:</font></p>
+<p align="center"><font face="Arial">
+<img src="shared-medium-1.gif" align="bottom" width="525" height="127"></font></p>
+<p align="justify"><font face="Arial">One computer (Blue) uses a NIC to send a 
+frame to the shared medium, which has a destination address corresponding to the 
+source address of the NIC in the red computer.</font></p>
+<p align="center"><font face="Arial">
+<img src="shared-medium-2.gif" align="bottom" width="532" height="131"></font></p>
+<p align="justify"><font face="Arial">The cable propagates the signal in both 
+directions, so that the signal (eventually) reaches the NICs in all four of the 
+computers. Termination resistors at the ends of the cable absorb the frame 
+energy, preventing reflection of the signal back along the cable.</font></p>
+<p align="center"><font face="Arial">
+<img src="shared-medium-3.gif" align="bottom" width="534" height="129"></font></p>
+<p align="justify"><font face="Arial">All the NICs receive the frame and each 
+examines it to check its length and checksum. The header destination MAC address 
+is next examined, to see if the frame should be accepted, and forwarded to the 
+network-layer software in the computer.</font></p>
+<p align="center"><font face="Arial">
+<img src="shared-medium-4.gif" align="bottom" width="551" height="134"></font></p>
+<p align="justify"><font face="Arial">Only the NIC in the red computer 
+recognises the frame destination address as valid, and therefore this NIC alone 
+forwards the contents of the frame to the network layer. The NICs in the other 
+computers discard the unwanted frame.</font></p>
+<p align="justify"><font face="Arial">The shared cable allows any NIC to send 
+whenever it wishes, but if two NICs happen to transmit at the same time, a 
+collision will occur, resulting in the data being corrupted.</font></p>
+<h3 align="justify"><font size="3" face="Arial">ALOHA &amp; Collisions</font></h3>
+<p align="justify"><font face="Arial">To control which NICs are allowed to 
+transmit at any given time, a protocol is required. The simplest protocol is 
+known as ALOHA (this is actually an Hawaiian word, meaning &quot;hello&quot;). ALOHA 
+allows any NIC to transmit at any time, but states that each NIC must add a 
+checksum/CRC at the end of its transmission to allow the receiver(s) to identify 
+whether the frame was correctly received.</font></p>
+<p align="justify"><font face="Arial">ALOHA is therefore a best effort service, 
+and does not guarantee that the frame of data will actually reach the remote 
+recipient without corruption. It therefore relies on ARQ protocols to retransmit 
+any data which is corrupted. An ALOHA network only works well when the medium 
+has a low utilisation, since this leads to a low probability of the transmission 
+colliding with that of another computer, and hence a reasonable chance that the 
+data is not corrupted.</font></p>
+<h3 align="justify"><font size="3" face="Arial">Carrier Sense Multiple Access 
+(CSMA)</font></h3>
+<p align="justify"><font face="Arial">Ethernet uses a refinement of ALOHA, known 
+as Carrier Sense Multiple Access (CSMA), which improves performance when there 
+is a higher medium utilisation. When a NIC has data to transmit, the NIC <b><i>
+first</i></b> listens to the cable (using a transceiver) to see if a carrier 
+(signal) is being transmitted by another node. This may be achieved by 
+monitoring whether a current is flowing in the cable (each bit corresponds to 
+18-20 milliAmps (mA)). The individual bits are sent by encoding them with a 10 
+(or 100 MHz for Fast Ethernet) clock using Manchester encoding. Data is only 
+sent when no carrier is observed (i.e. no current present) and the physical 
+medium is therefore idle. Any NIC which does not need to transmit, listens to 
+see if other NICs have started to transmit information to it.</font></p>
+<p align="justify"><font face="Arial">However, this alone is unable to prevent 
+two NICs transmitting at the same time. If two NICs <i>simultaneously</i> try 
+transmit, then both could see an idle physical medium (i.e. neither will see the 
+other's carrier signal), and both will conclude that no other NIC is currently 
+using the medium. In this case, both will then decide to transmit and a <i>
+collision</i> will occur. The collision will result in the corruption of the 
+frame being sent, which will subsequently be discarded by the receiver since a 
+corrupted Ethernet frame will (with a very high probability) not have a valid 
+32-bit MAC CRC at the end.</font></p>
+<h3 align="justify"><font size="3" face="Arial">Collision Detection (CD)</font></h3>
+<p align="justify"><font face="Arial">A second element to the Ethernet access 
+protocol is used to detect when a collision occurs. When there is data waiting 
+to be sent, each transmitting NIC also monitors its own transmission. If it 
+observes a collision (excess current above what it is generating, i.e. &gt; 24 mA 
+for coaxial Ethernet), it stops transmission immediately and instead transmits a 
+32-bit jam sequence. The purpose of this sequence is to ensure that any other 
+node which may currently be receiving this frame will receive the jam signal in 
+place of the correct 32-bit MAC CRC, this causes the other receivers to discard 
+the frame due to a CRC error.</font></p>
+<p align="justify"><font face="Arial">To ensure that all NICs start to receive a 
+frame before the transmitting NIC has finished sending it, Ethernet defines a 
+minimum frame size (i.e. no frame may have less than 46 bytes of payload). The 
+minimum frame size is related to the distance which the network spans, the type 
+of media being used and the number of repeaters which the signal may have to 
+pass through to reach the furthest part of the LAN. Together these define a 
+value known as the <i>Ethernet Slot Time</i>, corresponding to 512 bit times at 
+10 Mbps<i>.</i></font></p>
+<p align="center"><font face="Arial">When two or more transmitting NICs each 
+detect a corruption of their own data (i.e. a collision), each responds in the 
+same way by transmitting the jam sequence. The following sequence depicts a 
+collision:</font></p>
+<p align="center"><font face="Arial">
+<img src="enet-collision-1.gif" align="bottom" width="592" height="115"></font></p>
+<p align="justify"><font face="Arial">At time t=0, a frame is sent on the idle 
+medium by NIC A.</font></p>
+<p align="center"><font face="Arial">
+<img src="enet-collision-2.gif" align="bottom" width="604" height="110"></font></p>
+<p align="justify"><font face="Arial">A short time later, NIC B also transmits. 
+(In this case, the medium, as observed by the NIC at B happens to be idle too).</font></p>
+<p align="center"><font face="Arial">
+<img src="enet-collision-3.gif" align="bottom" width="626" height="114"></font></p>
+<p align="justify"><font face="Arial">After a period, equal to the propagation 
+delay of the network, the NIC at B detects the other transmission from A, and is 
+aware of a collision, but NIC A has not yet observed that NIC B was also 
+transmitting. B continues to transmit, sending the Ethernet Jam sequence (32 
+bits).</font></p>
+<p align="center"><font face="Arial">
+<img src="enet-collision-4.gif" align="bottom" width="630" height="121"></font></p>
+<p align="justify"><font face="Arial">After one complete round trip propagation 
+time (twice the one way propagation delay), both NICs are aware of the 
+collision. B will shortly cease transmission of the Jam Sequence, however A will 
+continue to transmit a complete Jam Sequence. Finally the cable becomes idle.</font></p>
+<h3 align="justify"><font size="3" face="Arial">Retransmission Back-Off</font></h3>
+<p align="justify"><font face="Arial">An overview of the transmit procedure is 
+shown below. The transmitter initialises the number of transmissions of the 
+current frame (n) to zero, and starts listening to the cable (using the carrier 
+sense logic (CS) - e.g., by observing the Rx signal at transceiver to see if any 
+bits are being sent). If the cable is not idle, it waits (defers) until the 
+cable is idle. It then waits for a small Inter-Frame Gap (IFG) (e.g., 9.6 
+microseconds) to allow to time for all receiving nodes to return to prepare 
+themselves for the next transmission.</font></p>
+<p align="justify"><font face="Arial">Transmission then starts with the 
+preamble, followed by the frame data and finally the CRC-32. After this time, 
+the transceiver Tx logic is turned off and the transceiver returns to passively 
+monitoring the cable for other transmissions.</font></p>
+<p align="justify"><font face="Arial">During this process, a transmitter must 
+also continuoulsy monitor the collision detection logic (CD) in the transceiver 
+to detect if a collision ocurs. If it does, the transmitter aborts the 
+transmission (stops sending bits) within a few bit periods, and starts the 
+collision procedure, by sending a Jam Signal to the transceiver Tx logic. It 
+then calculates a retransmission time.</font></p>
+<p align="center"><font face="Arial">
+<img src="enet-tx-algorithm.gif" align="bottom" width="591" height="441"></font></p>
+<p align="justify"><font face="Arial">If all NICs attempted to retransmit 
+immediately following a collision, then this would certainly result in another 
+collision. Therefore a procedure is required to ensure that there is only a low 
+probability of simultaneous retransmission. The scheme adopted by Ethernet uses 
+a random back-off period, where each node selects a random number, multiplies 
+this by the slot time (minimum frame period, 51.2 µS) and waits for this random 
+period before attempting retransmission. The small Inter-Frame Gap (IFG) (e.g., 
+9.6 microseconds) is also added.</font></p>
+<p align="justify"><font face="Arial">On a busy network, a retransmission may 
+still collide with another retransmission (or possibly new frames being sent for 
+the first time by another NIC). The protocol therefore counts the number of 
+retransmission attempts (using a variable N in the above figure) and attempts to 
+retransmit the same frame up to 15 times.</font></p>
+<p align="justify"><font face="Arial">For each retransmission, the transmitter 
+constructs a set of numbers:</font></p>
+<blockquote>
+  <p align="justify"><font face="Arial">{0, 1, 2, 3, 4, 5, ... L} where L is ([2 
+  to the power (K)]-1) and where K=N; K&lt;= 10;</font></p>
+</blockquote>
+<p align="justify"><font face="Arial">A random value R is picked from this set, 
+and the transmitter waits (defers) for a period</font></p>
+<blockquote>
+  <p align="justify"><font face="Arial">R x (slot time) i.e. R x 51.2 Micro 
+  Seconds</font></p>
+</blockquote>
+<p align="justify"><font face="Arial">For example, after two collisions, N=2, 
+therefore K=2, and the set is {0, 1, 2, 3} giving a one in four chance of 
+collision. This corresponds to a wait selected from {0, 51.2, 102.4, 153.6} 
+micro seconds.</font></p>
+<p align="center"><font face="Arial">
+<img src="enet-retx.gif" align="bottom" border="0" NATURALSIZEFLAG="0" width="478" height="296"></font></p>
+<p align="justify"><font face="Arial">After 3 collisions, N = 3, and the set is 
+{0, 1, 2, 3, 4, 5, 6, 7}, that is a one in eight chance of collision.</font></p>
+<p align="justify"><font face="Arial">But after 4 collisions, N=4, the set 
+becomes {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15}, that is a one in 
+16 chance of collision.</font></p>
+<p align="justify"><font face="Arial">The scaling is performed by multiplication 
+and is known as exponential back-off. This is what lets CSMA/CD scale to large 
+numbers of NICs - even when collisions may occur. The first ten times, the 
+back-off waiting time for the transmitter suffering collision is scaled to a 
+larger value. The algorithm includes a threshold of 1024. The reasoning is that 
+the more attempts that are required, the more greater the number of NICs which 
+are trying to send at the same time, and therefore the longer the period which 
+needs to be deferred. Since a set of numbers {0,1,...,1023} is a large set of 
+numbers, there is very little advantage from further increasing the set size.</font></p>
+<p align="justify"><font face="Arial">Each transmitter also limits the maximum 
+number of retransmissions of a single frame to 16 attempts (N=15). After this 
+number of attempts, the transmitter gives up transmission and discards the 
+frame, logging an error. In practice, a network that is not overloaded should 
+never discard frames in this way.</font></p>
+<h3 align="justify"><font size="3" face="Arial">Late Collisions</font></h3>
+<p align="justify"><font face="Arial">In a proper functioning Ethernet network, 
+a NIC may experience collision within the first slot time after it starts 
+transmission. This is the reason why an Ethernet NIC monitors the CD signal 
+during this time and use CSMA/CD. A faulty CD circuit, or misbehaving NIC or 
+transceiver may lead to a late collision (i.e. after one slot time). Most 
+Ethernet NICs therefore continue to monitor the CD signal during the entire 
+transmission. If they observe a late collision, they will normally inform the 
+sender of the error condition.</font></p>
+<h3 align="justify"><font size="3" face="Arial">Performance of CSMA / CD</font></h3>
+<p align="justify"><font face="Arial">It is simple to calculate the performance 
+of a CSMA/CD network where only one node attempts to transmit at any time. In 
+this case, the NIC may saturate the medium and near 100% utilisation of the link 
+may be achieved, providing almost 10 Mbps of throughput on a 10 Mbps LAN.</font></p>
+<p align="justify"><font face="Arial">However, when two or more NICs attempt to 
+transmit at the same time, the performance of Ethernet is less predictable (and 
+not covered by this course). The fall in utilisation and throughput occurs 
+because some bandwidth is wasted by collisions and back-off delays. In practice, 
+a busy shared 10 Mbps Ethernet network will typically supply 2-4 Mbps of 
+throughput to the NICs connected to it.</font></p>
+<p align="justify"><font face="Arial">As the level of utilisation of the network 
+increases, particularly if there are many NICs competing to share the bandwidth, 
+an overload condition may occur. In this case, the throughput of Ethernet LANs 
+reduces very considerably, and much of the capacity is wasted by the CSMA/CD 
+algorithm, and very little is available for sending useful data. This is the 
+reason why a shared Ethernet LAN should not connect more than 1024 computers. 
+Many engineers use a threshold of 40% Utilisation to determine if a LAN is 
+overloaded. A LAN with a higher utilisation will observe a high collision rate, 
+and likely a very variable transmission time (due to back off). Separating the 
+LAN in to two or more collision domains using bridges or switches would likely 
+provide a significant benefit (assuming appropriate positioning of the bridges 
+or switches).</font></p>
+<p align="justify"><font face="Arial">Shared networks may also be constructed 
+using Fast Ethernet, operating at 100 Mbps. Since Fast Ethernet always uses 
+fibre or twisted pair, a
+<a href="http://www.erg.abdn.ac.uk/users/gorry/course/lan-pages/hub.html">hub
+</a>or switch is always required.</font></p>
+<h3 align="justify"><font size="3" face="Arial">Ethernet Capture</font></h3>
+<div align="justify">
+  <font face="Arial">A drawback of sharing a medium using CSMA/CD, is that the 
+  sharing is not necessarily fair. When each computer connected to the LAN has 
+  little data to send, the network exhibits almost equal access time for each 
+  NIC. However, if one NIC starts sending an excessive number of frames, it may 
+  dominate the LAN. Such conditions may occur, for instance, when one NIC in a 
+  LAN acts as a source of high quality packetised video. The effect is known as 
+  &quot;Ethernet Capture&quot;.</font></div>
+<div align="center">
+  <font face="Arial">
+  <img src="enet-capture.gif" align="bottom" border="0" width="444" height="276"></font></div>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial"><i>Ethernet Capture by Node A.</i></font></p>
+<p align="justify"><font face="Arial">The figure above illustrates Ethernet 
+Capture. Computer A dominates computer B. Originally both computers have data to 
+transmit. A transmits first. A and B then both simultaneously try to transmit. B 
+picks a larger retransmission interval than A (shown in red) and defers. A 
+sends, then sends again. There is a short pause, and then both A and B attempt 
+to resume transmission. A and B both back-off, however, since B was already in 
+back-off (it failed to retransmit), it chooses from a larger range of back-off 
+times (using the exponential back-off algorithm). A is therefore more likely to 
+succeed, which it does in the example. The next pause in transmission, A and B 
+both attempt to send, however, since this fails in this case, B further 
+increases its back-off and is now unable to fairly compete with A.</font></p>
+<p align="justify"><font face="Arial">Ethernet Capture may also arise when many 
+sources compete with one source which has much more data to send. Under these 
+situations some nodes may be &quot;locked out&quot; of using the medium for a period of 
+time. The use of higher speed transmission (e.g. 100 Mbps) significantly reduces 
+the probability of Capture, and the use full duplex cabling eliminates the 
+effect.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm"><u>MAIN</u></a></font></b></p>
+
+</body>
+
+</html>

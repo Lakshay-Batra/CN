@@ -1,0 +1,997 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic}
+span.pco
+	{}
+span.articlebody1
+	{font-family:Arial;
+	}
+span.Hyperlink56
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" align="center"><font face="Arial">
+<span style="text-transform: uppercase"><u><b><span style="color: #FF0000">
+<font size="6">INTERNET PROTOCOL</font></span></b></u></span></font></p>
+<p class="MsoNormal" align="justify"><span class="articlebody1">
+<span style="color: black">Every machine on the Internet has a unique 
+identifying number, called an IP Address. A typical IP address looks like this:
+</span></span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial; color: black">
+  <font size="3">216.27.61.137 </font></span></li>
+</ul>
+<p align="justify"><span style="font-family: Arial; color: black">To make it 
+easier for us humans to remember, IP addresses are normally expressed in decimal 
+format as a &quot;<i>dotted decimal number</i>&quot; like the one above. But computers 
+communicate in <span class="Hyperlink56">binary</span> form. Look at the same IP 
+address in binary: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><span style="font-family: Arial"><font size="3">
+  11011000.00011011.00111101.10001001 </font></span></li>
+</ul>
+<p align="justify"><span style="font-family: Arial; color: black">The four 
+numbers in an IP address are called <b>octets</b>, because they each have eight 
+positions when viewed in binary form. If you add all the positions together, you 
+get 32, which is why IP addresses are considered 32-bit numbers. Since each of 
+the eight positions can have two different states (1 or 0) the total number of 
+possible combinations per octet is 2</span><sup><span style="font-family: Arial; color: black">8</span></sup><span style="font-family: Arial; color: black"> 
+or 256. So each octet can contain any value between 0 and 255. Combine the four 
+octets and you get 2</span><sup><span style="font-family: Arial; color: black">32</span></sup><span style="font-family: Arial; color: black"> 
+or a possible 4,294,967,296 unique values! </span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Out of the 
+almost 4.3 billion possible combinations, certain values are restricted from use 
+as typical IP addresses. For example, the IP address 0.0.0.0 is reserved for the 
+default network and the address 255.255.255.255 is used for
+<span class="Hyperlink56">broadcasts</span>. </span></p>
+<p align="justify"><span style="font-family: Arial; color: black">The octets 
+serve a purpose other than simply separating the numbers. They are used to 
+create <b>classes</b> of IP addresses that can be assigned to a particular 
+business, government or other entity based on size and need. The octets are 
+split into two sections: <b>Net</b> and <b>Host</b>. The Net section always 
+contains the first octet. It is used to identify the network that a computer 
+belongs to. Host (sometimes referred to as <b>Node</b>) identifies the actual 
+computer on the network. The Host section always contains the last octet. There 
+are five IP classes plus certain special addresses: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Default 
+  Network</font></span></b><span style="font-family: Arial"><font size="3"> - 
+  The IP address of <b>0.0.0.0</b> is used for the default network. </font>
+  </span></li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Class A</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - This class is for very large networks, such as a major international company 
+  might have. IP addresses with a first octet from 1 to 126 are part of this 
+  class. The other three octets are used to identify each host. This means that 
+  there are 126 Class A networks each with 16,777,214 (2</font></span><sup><span style="font-family: Arial"><font size="3">24</font></span></sup><span style="font-family: Arial"><font size="3"> 
+  -2) possible hosts for a total of 2,147,483,648 (2</font></span><sup><span style="font-family: Arial"><font size="3">31</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  unique IP addresses. Class A networks account for half of the total available 
+  IP addresses. In Class A networks, the high order bit value (the very first 
+  binary number) in the first octet is always 0. </font></span></li>
+</ul>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt">
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Net</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Host or Node</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">115.</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">24.53.107</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+  </table>
+</div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Loopback</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - The IP address <b>127.0.0.1</b> is used as the loopback address. This means 
+  that it is used by the host computer to send a message back to itself. It is 
+  commonly used for troubleshooting and network testing. </font></span></li>
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Class B</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - Class B is used for medium-sized networks. A good example is a large college 
+  campus. IP addresses with a first octet from 128 to 191 are part of this 
+  class. Class B addresses also include the second octet as part of the Net 
+  identifier. The other two octets are used to identify each host. This means 
+  that there are 16,384 (2</font></span><sup><span style="font-family: Arial"><font size="3">14</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  Class B networks each with 65,534 (2</font></span><sup><span style="font-family: Arial"><font size="3">16</font></span></sup><span style="font-family: Arial"><font size="3"> 
+  -2) possible hosts for a total of 1,073,741,824 (2</font></span><sup><span style="font-family: Arial"><font size="3">30</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  unique IP addresses. Class B networks make up a quarter of the total available 
+  IP addresses. Class B networks have a first bit value of 1 and a second bit 
+  value of 0 in the first octet. </font></span></li>
+</ul>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt">
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Net</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Host or Node</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">145.24.</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">53.107</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+  </table>
+</div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Class C</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - Class C addresses are commonly used for small to mid-size businesses. IP 
+  addresses with a first octet from 192 to 223 are part of this class. Class C 
+  addresses also include the second and third octets as part of the Net 
+  identifier. The last octet is used to identify each host. This means that 
+  there are 2,097,152 (2</font></span><sup><span style="font-family: Arial"><font size="3">21</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  Class C networks each with 254 (2</font></span><sup><span style="font-family: Arial"><font size="3">8</font></span></sup><span style="font-family: Arial"><font size="3"> 
+  -2) possible hosts for a total of 536,870,912 (2</font></span><sup><span style="font-family: Arial"><font size="3">29</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  unique IP addresses. Class C networks make up an eighth of the total available 
+  IP addresses. Class C networks have a first bit value of 1, second bit value 
+  of 1 and a third bit value of 0 in the first octet. </font></span></li>
+</ul>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt">
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Net</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Host or Node</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">195.24.53.</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">107</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+  </table>
+</div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Class D</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - Used for <span class="Hyperlink56">multicasts</span>, Class D is slightly 
+  different from the first three classes. It has a first bit value of 1, second 
+  bit value of 1, third bit value of 1 and fourth bit value of 0. The other 28 
+  bits are used to identify the group of computers the multicast message is 
+  intended for. Class D accounts for 1/16</font></span><sup><span style="font-family: Arial"><font size="3">th</font></span></sup><span style="font-family: Arial"><font size="3"> 
+  (268,435,456 or 2</font></span><sup><span style="font-family: Arial"><font size="3">28</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  of the available IP addresses. </font></span></li>
+</ul>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt">
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Net</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Host or Node</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">224.</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">24.53.107</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+  </table>
+</div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">Class E</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - Class E is used for experimental purposes only. Like Class D, it is 
+  different from the first three classes. It has a first bit value of 1, second 
+  bit value of 1, third bit value of 1 and fourth bit value of 1. The other 28 
+  bits are used to identify the group of computers the multicast message is 
+  intended for. Class E accounts for 1/16</font></span><sup><span style="font-family: Arial"><font size="3">th</font></span></sup><span style="font-family: Arial"><font size="3"> 
+  (268,435,456 or 2</font></span><sup><span style="font-family: Arial"><font size="3">28</font></span></sup><span style="font-family: Arial"><font size="3">) 
+  of the available IP addresses. </font></span></li>
+</ul>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt">
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Net</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Host or Node</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+    <tr>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">240.</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+      <td style="padding: 2.25pt">
+      <p class="MsoNormal" align="center" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">24.53.107</font></span></b><span style="font-family: Arial; color: black"><font size="3">
+      </font></span></td>
+    </tr>
+  </table>
+</div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">
+  Broadcast</font></span></b><span style="font-family: Arial"><font size="3"> - 
+  Messages that are intended for all computers on a network are sent as
+  <span class="Hyperlink56">broadcasts</span>. These messages always use the IP 
+  address <b>255.255.255.255</b>. </font></span></li>
+</ul>
+<h3 align="justify">&nbsp;</h3>
+<h3 align="justify"><font face="Arial" size="3">Address Classes</font></h3>
+<p align="justify"><font face="Arial">In the original Internet routing scheme 
+developed in the 1970s, sites were assigned addresses from one of three <em>
+classes</em>: Class A, Class B and Class C. The address classes differ in size 
+and number. Class A addresses are the largest, but there are few of them. Class 
+Cs are the smallest, but they are numerous. Classes D and E are also defined, 
+but not used in normal operation. </font></p>
+<p align="justify"><font face="Arial">To say that class-based IP addressing in 
+still used would be true only in the loosest sense. Many addressing designs are 
+still class-based, but an increasing number can only be explained using the more 
+general concept of CIDR, which is backwards compatible with address classes.
+</font></p>
+<p align="justify"><font face="Arial">Suffice it to say that at one point in 
+time, you could request the Internet NIC to assign you a class A, B or C 
+address. To get the larger class B addresses, you might have to supply some 
+justification, but only the class A was really tough to get. In any case, NIC 
+would set the network bits, or n-bits, to some unique value and inform the local 
+network engineer. It would then be up to the engineer to assign each of his 
+hosts an IP address starting with the assigned n-bits, followed by host bits, or 
+h-bits, to make the address unique. </font></p>
+<p align="justify"><font face="Arial">Internet routing used to work like this: A 
+router receiving an IP packet extracted its Destination Address, which was 
+classified (literally) by examining its first one to four bits. Once the 
+address's class had been determined, it was broken down into network and host 
+bits. Routers ignored the host bits, and only needed to match the network bits 
+to find a route to the network. Once a packet reached its target network, its 
+host field was examined for final delivery. </font></p>
+<h4 align="justify"><font face="Arial" size="3">Summary of IP Address Classes</font></h4>
+<p class="MsoNormal" align="justify"><font face="Arial">Class A - </font>
+<tt style="font-family: Arial">0nnnnnnn hhhhhhhh hhhhhhhh hhhhhhhh</tt><font face="Arial">
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">First bit 0; 7 network bits; 24 host bits </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Initial byte: 0 - 127 </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">126 Class As exist (0 and 127 are reserved) </font>
+</p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">16,777,214 hosts on each Class A </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Class B - </font>
+<tt style="font-family: Arial">10nnnnnn nnnnnnnn hhhhhhhh hhhhhhhh</tt><font face="Arial">
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">First two bits 10; 14 network bits; 16 host bits
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Initial byte: 128 - 191 </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">16,384 Class Bs exist </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">65,532 hosts on each Class B </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Class C - </font>
+<tt style="font-family: Arial">110nnnnn nnnnnnnn nnnnnnnn hhhhhhhh</tt><font face="Arial">
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">First three bits 110; 21 network bits; 8 host bits
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Initial byte: 192 - 223 </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">2,097,152 Class Cs exist </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">254 hosts on each Class C </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Class D - </font>
+<tt style="font-family: Arial">1110mmmm mmmmmmmm mmmmmmmm mmmmmmmm</tt><font face="Arial">
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">First four bits 1110; 28 multicast address bits </font>
+</p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Initial byte: 224 - 247 </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Class Ds are multicast addresses - see RFC 1112 </font>
+</p>
+<p class="MsoNormal" align="justify"><font face="Arial">Class E - </font>
+<tt style="font-family: Arial">1111rrrr rrrrrrrr rrrrrrrr rrrrrrrr</tt><font face="Arial">
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">First four bits 1111; 28 reserved address bits </font>
+</p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Initial byte: 248 - 255 </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Reserved for experimental use </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">&nbsp;</font></p>
+<h3 align="justify"><font face="Arial" size="3">Subnetting:</font><span style="font-weight: 400"><font face="Arial" size="3"> 
+Subnetting, documented in RFC 950, originally referred to the subdivision of a 
+class-based network into subnetworks, but now refers more generally to the 
+subdivision of a CIDR block into smaller CIDR blocks. Subnetting allows single 
+routing entries to refer either to the larger block or to its individual 
+constituents. This permits a single, general routing entry to be used through 
+most of the Internet, more specific routes only being required for routers in 
+the subnetted block. </font></span></h3>
+<p align="justify"><font face="Arial">A <em>subnet mask</em> is a 32-bit number 
+that determines how an IP address is split into network and host portions, on a 
+bitwise basis. For example, 255.255.0.0 is a standard class B subnet mask, since 
+the first two bytes are all ones (network), and the last two bytes are all zeros 
+(host). In a subnetted network, the network portion is extended. For example, a 
+subnet mask of 255.255.255.0 would subnet a class B address space using its 
+third byte. Using this scheme, the first two bytes of an IP address would 
+identify the class B network, the next byte would identify the subnet within 
+that network, and the final byte would select an individual host. Since subnet 
+masks are used on a bit-by-bit basis, masks like 255.255.240.0 (4 bits of 
+subnet; 12 bits of host) are perfectly normal. </font></p>
+<p align="justify"><font face="Arial">In a traditional subnetted network, 
+several restrictions apply, which have been lifted by CIDR. However, if older, 
+non-CIDR routing protocols (such as RIP version 1) are in use, these 
+restrictions must still be observed. </font></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><b>Identical subnet masks.</b> Since 
+  non-CIDR routing updates do not include subnet masks, a router must assume 
+  that the subnet mask it has been configured with is valid for all subnets. 
+  Therefore, a single mask must be used for all subnets with a network. 
+  Different masks can be used for different networks. </font></li>
+</ol>
+<p style="margin-left: .5in" align="justify"><font face="Arial">Based on this 
+assumption, a router can exchange subnet routes with other routers within the 
+network. Since the subnet masks are identical across the network, the routers 
+will interpret these routes in the same manner. However, routers not attached to 
+the subnetted network can't interpret these subnet routes, since they lack the 
+subnet mask. Therefore, subnet routes are not relayed to routers on other 
+networks. This leads to our second restriction. </font></p>
+<ol start="2" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><b>Contiguous subnets.</b> A subnetted 
+  network can't be split into isolated portions. All the subnets must be 
+  contiguous, since routing information can't be passed to non-members. Within a 
+  network, all subnets must be able to reach all other subnets without passing 
+  traffic through other networks. </font></li>
+</ol>
+<h4 align="justify"><font face="Arial" size="3">Variable Length Subnet Masks (VLSM)</font></h4>
+<p align="justify"><font face="Arial">VLSM, conceptually a stepping stone from 
+subnetting to CIDR, lifted the restrictions of subnetting by relaying subnet 
+information through routing protocols. This idea leads us directly to CIDR.
+</font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">&nbsp;</font></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="width: 100.0%">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Class</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Leftmost bits</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Start address</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Finish address</b></font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">A</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">0xxx</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">0.0.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">127.255.255.255</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">B</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">10xx</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">128.0.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">191.255.255.255</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">C</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">110x</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">192.0.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">223.255.255.255</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">D</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">1110</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">224.0.0.0 </font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">239.255.255.255</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">E</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">1111</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">240.0.0.0 </font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">255.255.255.255</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial">All <b>Class C</b> addresses, for example, 
+have the leftmost three bits set to '110', but each of the remaining 29 bits may 
+be set to either '0' or '1' independently (as represented by an </font>
+<tt style="font-family: Arial">x</tt><font face="Arial"> in these bit 
+positions): </font></p>
+<p class="MsoNormal" align="justify"><tt style="font-family: Arial">110xxxxx 
+xxxxxxxx xxxxxxxx xxxxxxxx </tt></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Converting the above to 
+dotted decimal notation, it follows that all Class C addresses fall in the range 
+from 192.0.0.0 through 223.255.255.255. </font></p>
+<h5 align="justify"><font face="Arial" size="3">IP Address Class E and Limited 
+Broadcast</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">The IPv4 networking 
+standard defines <b>Class E</b> addresses as <b>reserved</b>, meaning that they 
+should not be used on IP networks. Some research organizations use Class E 
+addresses for experimental purposes. However, nodes that try to use these 
+addresses on the Internet will be unable to communicate properly. </font></p>
+<p align="justify"><font face="Arial">A special type of IP address is the <b>
+limited broadcast</b> address <b>255.255.255.255</b>. A broadcast involves 
+delivering a message from one sender to many recipients. Senders direct an IP 
+broadcast to 255.255.255.255 to indicate all other nodes on the local network 
+(LAN) should pick up that message. This broadcast is 'limited' in that it does 
+not reach every node on the Internet, only nodes on the LAN. </font></p>
+<p align="justify"><font face="Arial">Technically, IP reserves the entire range 
+of addresses from 255.0.0.0 through 255.255.255.255 for broadcast, and this 
+range should not be considered part of the normal Class E range. </font></p>
+<h5 align="justify"><font face="Arial" size="3">IP Address Class D and Multicast</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">The IPv4 networking 
+standard defines <b>Class D</b> addresses as reserved for <b>multicast</b>. 
+Multicast is a mechanism for defining groups of nodes and sending IP messages to 
+that group rather than to every node on the LAN (broadcast) or just one other 
+node (<b>unicast</b>). </font></p>
+<p align="justify"><font face="Arial">Multicast is mainly used on research 
+networks. As with Class E, Class D addresses should not be used by ordinary 
+nodes on the Internet. </font></p>
+<h5 align="justify"><font face="Arial" size="3">IP Address Class A, Class B, and 
+Class C</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">Class A, Class B, and 
+Class C are the three classes of addresses used on IP networks in common 
+practice, with three exceptions as explained next.</font></p>
+<p class="MsoNormal" align="justify"><b><span style="font-family: Arial">
+<font size="3">IP Loop back Address</font></span></b></p>
+<p class="MsoNormal" align="justify"><b><span style="font-family: Arial">
+127.0.0.1</span></b><span style="font-family: Arial"> is the <b>loop back</b> 
+address in IP. Loop back is a test mechanism of network adapters. Messages sent 
+to 127.0.0.1 do not get delivered to the network. Instead, the adapter 
+intercepts all loop back messages and returns them to the sending application. 
+IP applications often use this feature to test the behavior of their network 
+interface.</span></p>
+<p class="MsoNormal" align="justify"><font face="Arial">As with broadcast, IP 
+officially reserves the entire range from <b>127.0.0.0</b> through <b>
+127.255.255.255</b> for loopback purposes. Nodes should not use this range on 
+the Internet, and it should not be considered part of the normal Class A range.
+</font></p>
+<h5 align="justify"><font face="Arial" size="3">Zero Addresses</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">As with the loopback 
+range, the address range from <b>0.0.0.0</b> through <b>0.255.255.255</b> should 
+not be considered part of the normal Class A range. 0.x.x.x addresses serve no 
+particular function in IP, but nodes attempting to use them will be unable to 
+communicate properly on the Internet. </font></p>
+<h5 align="justify"><font face="Arial" size="3">Private Addresses</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">The IP standard defines 
+specific address ranges within Class A, Class B, and Class C reserved for use by 
+private networks (intranets). The table below lists these reserved ranges of the 
+IP address space. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">&nbsp;</font></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="width: 100.0%">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Class</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Private start address</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Private finish address</b></font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">A</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">10.0.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">10.255.255.255</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">B</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">172.16.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">172.31.255.255</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">C</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">192.168.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">192.168.255.255</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial">Nodes are effectively free to use 
+addresses in the private ranges if they are not connected to the Internet, or if 
+they reside behind firewalls or other gateways that use Network Address 
+Translation (NAT). </font></p>
+<h5 align="justify">&nbsp;</h5>
+<h5 align="justify"><font face="Arial" size="3">IPv6 Address Types</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">IPv6 does not use 
+classes. IPv6 supports the following three IP address types: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">unicast </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">multicast </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">anycast </font></li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><span class="pco">
+Description: </span>IP is used by many higher level network protocols, 
+principally TCP and UDP. Many Internet software applications including Web 
+browsers, FTP clients, and email programs, rely on Internet Protocol.</font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span class="pco">&nbsp;</span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span class="pco">
+Datagram Format: </span>A base header 20 bytes (5 &quot;longwords&quot;) in length, with 
+the option for expanded header options, followed by data.</font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span class="pco">
+Header: </span><br>
+<br>
+<b>Word 1</b> - </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Version - 4 bits </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Header Length (in longwords) - 4 bits
+  </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Type of Service / Differentiated 
+  Services Code Point (DSCP) - 8 bits </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Datagram Length (in bytes) - 16 bits
+  </font></li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>Word 2</b> - </font>
+</p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">ID Number - 16 bits </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Fragmentation Flags - 3 bits </font>
+  </li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Fragmentation Offset - 13 bits </font>
+  </li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>Word 3</b> - </font>
+</p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Time to Live - 8 bits </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Transport Protocol - 8 bits </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Header Checksum - 16 bits </font></li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>Word 4</b> - </font>
+</p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Source IP Address - 32 bits </font></li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>Word 5</b> - </font>
+</p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Destination IP Address - 32 bits </font>
+  </li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>Variable length 
+fields</b> - </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Options </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Padding </font></li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial"><span class="pco">
+Payload: </span>IP datagram payloads can be of variable length. The minimum size 
+of an IP datagram is 28 bytes, using the minimum 20 bytes of header information, 
+followed by the minimum of 8 bytes of data. The maximum size of an IP datagram 
+payload is 65,535 bytes minus the header size.</font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span class="pco">
+Footer: </span>Internet Protocol does not use its own datagram footer.</font></p>
+<h5 align="justify">&nbsp;</h5>
+<h5 align="justify"><font face="Arial" size="3">DNS Name Space</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">DNS allows nodes on the 
+public Internet to be assigned both an IP address and a corresponding name, 
+called a <b>domain name</b>. For DNS to work as designed, these names must be 
+unique worldwide. Hence an entire &quot;cottage industry&quot; has emerged around the 
+purchasing of domain names in the Internet name space. DNS is a <b>hierarchical</b> 
+system. DNS organizes all registered names in a tree structure. </font></p>
+<p align="justify"><font face="Arial">At the base or <b>root</b> of the tree are 
+a group of <b>top-level domains</b> including familiar names like </font>
+<tt style="font-family: Arial">com</tt><font face="Arial">, </font>
+<tt style="font-family: Arial">org</tt><font face="Arial">, and </font>
+<tt style="font-family: Arial">edu</tt><font face="Arial"> and numerous <b>
+country-level domains</b> like </font><tt style="font-family: Arial">fi</tt><font face="Arial"> 
+(Finland), </font><tt style="font-family: Arial">ca</tt><font face="Arial"> 
+(Canada), and </font><tt style="font-family: Arial">my</tt><font face="Arial"> 
+(Malaysia). One generally cannot purchase names at this level. However, in a 
+well-publicized and controversial event in 2000, the island nation of Tuvalu 
+agreed to receive a large payment in return for rights to the root domain </font>
+<tt style="font-family: Arial">tv</tt><font face="Arial">. </font></p>
+<p align="justify"><font face="Arial">Below this level are the second-level <b>
+registered domains</b> such as </font><tt style="font-family: Arial">about.com</tt><font face="Arial">. 
+These are domains that organizations can purchase from any of numerous 
+accredited <b>registrars</b>. For nodes in the </font>
+<tt style="font-family: Arial">com</tt><font face="Arial">, </font>
+<tt style="font-family: Arial">org</tt><font face="Arial">, and </font>
+<tt style="font-family: Arial">edu</tt><font face="Arial"> domains, the Internet 
+Corporation for Assigned Names and Numbers (ICANN) oversees registrations.
+</font></p>
+<p align="justify"><font face="Arial">Below that, <b>local domains</b> like
+</font><tt style="font-family: Arial">compnetworking.about.com</tt><font face="Arial"> 
+are defined and administered by the overall domain owner. DNS supports 
+additional tree levels as well. The period ('.') always separates each level of 
+the hierarchy in DNS. </font></p>
+<h5 align="justify"><font face="Arial" size="3">DNS Root Level and Other Servers</font></h5>
+<p align="justify"><font face="Arial">DNS is also a <b>distributed</b> system. 
+The DNS database contains a list of registered domain names. It further contains 
+a mapping or conversion between each name and one or more IP addresses. However, 
+DNS requires a coordinated effort among many computers (servers); no one 
+computer holds the entire DNS database. Each <b>DNS server</b> maintain just one 
+piece of the overall hierarchy - one level of the tree and then only a subset or
+<b>zone</b> within that level. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">The top level of the DNS 
+hierarchy, also called the <b>root</b> level, is maintained by a set of 13 
+servers called <b>root name servers</b>. These servers have gained some 
+notoriety for their unique role on the Internet. Maintained by various 
+independent agencies, the servers are uniquely named </font>
+<tt style="font-family: Arial">A</tt><font face="Arial">, </font>
+<tt style="font-family: Arial">B</tt><font face="Arial">, </font>
+<tt style="font-family: Arial">C</tt><font face="Arial"> and so on up to </font>
+<tt style="font-family: Arial">M</tt><font face="Arial">. Ten of these servers 
+reside in the United States, one in Japan, one in London, and one in Stockholm, 
+Sweden.</font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">&nbsp;</font><font face="Arial" size="3">DNS 
+Resolvers</font></b></p>
+<p class="MsoNormal" align="justify"><font face="Arial">DNS works in a 
+client/server fashion. DNS servers respond to requests from DNS clients called
+<b>resolvers</b>. ISPs and other organizations set up local DNS resolvers as 
+well as servers. Most DNS servers also act as resolvers, routing requests up the 
+tree to higher-level DNS servers, and also delegating requests to other servers. 
+DNS servers eventually return the requested mapping (either address-to-name or 
+name-to-address) to the resolver. </font></p>
+<h5 align="justify"><font face="Arial" size="3">DNS and DHCP</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">DNS was not designed to 
+work with dynamic addressing such as that supported by DHCP. DNS requires that 
+fixed (<b>static</b>) addresses be maintained in the database. Web servers in 
+particular require fixed IP addresses for this reason. </font></p>
+<p align="justify"><span style="font-family: Arial">Computer networks consist of 
+individual segments of network cable. The electrical properties of cabling limit 
+the useful size of any given segment such that even a modestly-sized local-area 
+network (LAN) will require several of them. Gateway devices like routers and 
+bridges connect these segments together although not in a perfectly seamless 
+way...</span></p>
+<p align="justify"><font face="Arial">&nbsp;</font></p>
+<p align="justify"><font face="Arial">Besides partitioning through the use of 
+cable, subdividing of the network can also be done at a higher level. <b>Subnets</b> 
+support virtual network segments that partition traffic flowing through the 
+cable rather than the cables themselves. The subnet configuration often matches 
+the segment layout one-to-one, but subnets can also subdivide a given network 
+segment. </font></p>
+<h5 align="justify"><font face="Arial" size="3">IP Network Numbering</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">Even without subnetting 
+(explained later), hosts on the Internet or any other IP network are assigned a
+<b>network number</b>. Network numbering allows a group of hosts (peers) to 
+communicate efficiently with each other. Hosts on the same network may be 
+computers located in the same facility or all computers used by a workgroup, for 
+example. <b>Multi-homed</b> hosts, that contain multiple network adapters, can 
+belong to multiple networks, but each adapter is assigned exactly one network 
+number. </font></p>
+<p align="justify"><font face="Arial">Network numbers look very much like IP 
+addresses, but the two should not be confused. Consider for example the host IP 
+address 10.0.0.1, an address commonly used on private networks. Because it is a 
+Class A address, with no subnetting employed, its leftmost byte (eight bits) by 
+default refer to the network address and all other bits remain set at zero. 
+Thus, 10.0.0.0 is the network number corresponding to IP address 10.0.0.1.
+</font></p>
+<p align="justify"><font face="Arial">The portion of the IP address that does 
+not refer to the network refers instead to the <b>host address</b> - literally, 
+the unique identifier of the host on that network. In the above example, the 
+host address becomes '0.0.0.1' or simply '1'. Also note that a network address 
+becomes a reserved address that should not be assigned to any actual host. 
+Configuring a live host at 10.0.0.0 in the example above could impact 
+communications for all hosts on that network. </font></p>
+<p align="justify"><font face="Arial">The table below illustrates the default 
+numbering scheme for Class A, B, and C networks. </font></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="100%" style="width: 100.0%">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Class</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Host address range</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Network address</b></font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3"><b>Default mask</b></font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">A</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">&nbsp; &nbsp; 0.0.0.0 - 127.255.255.255</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">x.0.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">255.0.0.0</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">B</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">128.0.0.0 - 191.255.255.255</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">x.x.0.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">255.255.0.0</font></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">C</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">192.0.0.0 - 223.255.255.255</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">x.x.x.0</font></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" align="center" style="text-align: justify">
+    <font face="Arial" size="3">255.255.255.0</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial">In general, a network address uses the 
+leftmost byte of its hosts' addressing if the hosts fall within the Class A 
+range, the leftmost two bytes for hosts in Class B, and the leftmost three bytes 
+for hosts in Class C. This algorithm is applied in practice through the use of a
+<b>network mask</b>. The above table shows the decimal representation of the 
+default network masks that is commonly used by network operating systems. Note 
+that the decimal value '255' corresponds to one byte that has all bits set to 
+one (11111111). </font></p>
+<h5 align="justify"><font face="Arial" size="3">Benefit of Network Addressing</font></h5>
+<p class="MsoNormal" align="justify"><font face="Arial">Network addressing 
+fundamentally organizes hosts into groups. This can improve security (by 
+isolating critical nodes) and can reduce network traffic (by preventing 
+transmissions between nodes that do not need to communicate with each other). 
+Overall, network addressing becomes even more powerful when introducing 
+subnetting and/or supernetting.</font></p>
+<h5 align="justify"><span style="font-family: Arial; font-weight: normal">
+<font size="3">A subnet allows the flow of network traffic between hosts to be 
+segregated based on a network configuration. By organizing hosts into logical 
+groups, subnetting can improve network security and performance.</font></span></h5>
+<h5 align="justify"><font face="Arial" size="3">
+<span style="font-weight: normal">&nbsp;</span></font></h5>
+<h5 align="justify"><font face="Arial" size="3">Subnet Mask</font></h5>
+<p align="justify"><font face="Arial">Perhaps the most recognizable aspect of 
+subnetting is the subnet mask. Like IP addresses, a subnet mask contains four 
+bytes (32 bits) and is often written using the same &quot;dotted-decimal&quot; notation. 
+For example, a very common subnet mask in its binary representation </font></p>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11111111 11111111 11111111 00000000</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+</div>
+<p class="MsoNormal" align="justify"><font face="Arial">is typically shown in 
+the equivalent, more readable form </font></p>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 255.255.255.0</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+</div>
+<h5 align="justify"><font face="Arial" size="3">Applying a Subnet Mask</font></h5>
+<p align="justify"><font face="Arial">A subnet mask neither works like an IP 
+address, nor does it exist independently from them. Instead, subnet masks 
+accompany an IP address and the two values work together. Applying the subnet 
+mask to an IP address splits the address into two parts, an &quot;extended network 
+address&quot; and a host address.</font></p>
+<p align="justify"><font face="Arial">For a subnet mask to be valid, its 
+leftmost bits must be set to '1'. For example, </font></p>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 00000000 00000000 00000000 00000000</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+</div>
+<p class="MsoNormal" align="justify"><font face="Arial">is an invalid subnet 
+mask because the leftmost bit is set to '0'. </font></p>
+<p align="justify"><font face="Arial">Conversely, the rightmost bits in a valid 
+subnet mask must be set to '0', not '1'. Therefore, </font></p>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;</span></pre>
+</div>
+<div align="justify">
+  <pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Arial; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-size: 12.0pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11111111 11111111 11111111 11111111</span></pre>
+</div>
+<p class="MsoNormal" align="justify"><font face="Arial">is invalid. </font></p>
+<p align="justify"><font face="Arial">All valid subnet masks contain two parts: 
+the left side with all mask bits set to '1' (the extended network portion) and 
+the right side with all bits set to '0' (the host portion), such as the first 
+example above.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

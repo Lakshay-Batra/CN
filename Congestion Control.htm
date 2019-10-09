@@ -1,0 +1,271 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	background:#6365CE;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	color:white;
+	font-weight:bold}
+span.mw-headline
+	{}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h1 align="center"><font color="#FF0000" face="Arial">
+<span style="text-transform: uppercase; text-decoration: underline">Congestion 
+Control</span></font></h1>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">In data networking and queueing theory, <b>network congestion</b> 
+occurs when incremental increases in offered load lead either only to small 
+increases in network throughput, or to an actual reduction in network 
+throughput.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Network protocols which use aggressive retransmissions to 
+compensate for packet loss tend to keep systems in a state of network congestion 
+even after the initial load has been reduced to a level which would not normally 
+have induced network congestion. Thus, networks using these protocols can 
+exhibit two stable states under the same level of load. The stable state with 
+low throughput is known as congestive collapse.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Modern networks use congestion control and network congestion 
+avoidance techniques to try to avoid congestion collapse. These include 
+exponential backoff in protocols such as TCP and on Ethernets, and fair queueing 
+in devices such as routers.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">The<b> TCP congestion avoidance </b>algorithm is the primary 
+basis for congestion control in the Internet.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Problems occur when many concurrent TCP flows are experiencing 
+port queue buffer tail-drops. Then TCP's automatic congestion avoidance is not 
+enough. All flows that experience port queue buffer tail-drop will begin a TCP 
+retrain at the same moment - this is called TCP global synchronization.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">One solution is to use random early detection (RED) on network 
+equipments port queue buffer. On network equipment ports with more than one 
+queue buffer, weighted random early detection (WRED) could be used if available. 
+RED indirectly signals to sender and receiver by deleting some packets, eg. when 
+the average queue buffer lengths are more than 50% filled and deletes 
+exponentially more packets, when the average queue buffer lengths are 
+approaching 100%. The average queue buffer lengths are computed over 1 second at 
+a time.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Some network equipment are equipped with ports that can follow 
+and measure each flow (<b>flowbased-RED/WRED</b>) and are hereby able to signal 
+to a too big bandwidth flow according to some QoS policy. A policy could divide 
+the bandwidth among all flows by some criteria.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Another approach is to use IP ECN. ECN is only used when the two 
+hosts signal that they want to use it. With this method, an ECN bit is used to 
+signal that there is explicit congestion. This is better in some ways than the 
+indirect packet delete congestion notification performed by the RED/WRED 
+algorithms, but it requires explicit support by both hosts to be effective. Some 
+outdated or buggy network equipment drops packets with the ECN bit set, rather 
+than ignoring the bit. When a router receives a packet marked as ECN capable and 
+anticipates (using RED) congestion, it will set a flag notifying the sender to 
+decrease its window size (sending rate). The intent is to avoid resending 
+packets.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Cisco has taken a step further in their Catalyst 4000 series 
+with engine IV. Engine IV has the possibility to classify all 
+connection-oriented flows in &quot;aggressive&quot; (bad) and &quot;adaptive&quot; (good). It 
+ensures that no flows fill the port queues for a long time. <b>DBL</b> can 
+utilize <b>IP ECN</b> instead of packet-delete-signalling.</span></font></p>
+<p align="justify"><font face="Arial">Congestion occurs in a network device when 
+packets (data) arrive faster than they can be forwarded. </font></p>
+<h4 align="justify"><font face="Arial">Congestion in Switches</font></h4>
+<p align="justify"><font face="Arial">Since switches have large number of inputs 
+(which may regulary have packets destined for a single output), they likely 
+sites of network congestion </font></p>
+<p align="justify"><font face="Arial">To reach the an equivalent level of 
+performance, output buffered switches require more buffers and a faster switch 
+fabric than input buffered switches. </font></p>
+<p align="justify"><font face="Arial">Congestion will fill all buffers. Dead 
+time or spare capacity is required to empty full buffers. </font></p>
+<p align="justify"><font face="Arial">Buffering is provided to deal with bursts 
+of traffic that exceed the line speed of the egress port. </font></p>
+<p align="justify"><font face="Arial">Head-of-Line Blocking is a statistical 
+phenomenon associated with the input-buffered, FCFS, 1xfabric switches, that can 
+result in lower than line rate output capacity on certain ports. </font></p>
+<p align="justify"><font face="Arial">With some traffic patterns HOL blocking 
+may contribute to congestion by reducing the capacity of heavily utilized 
+outputs when there are 2 or more such outputs. Where there is only 1 heavily 
+utilized output, HOL blocking is not a factor. </font></p>
+<p align="justify"><font face="Arial"><i>How does this relate to the GIGAswitch/FDDI?</i>
+</font></p>
+<p align="justify"><font face="Arial">It is an input &amp; output buffered switch. 
+(Output if buffered to make it possible to not lose packets when injecting them 
+into the outgoing FDDI. Half duplex FDDI may not be fast enough to keep up with 
+the switch's output stream.) The switch has a 1x crossbar fabric. </font></p>
+<p align="justify"><font face="Arial">Output capacity may be reduced by running 
+in half-duplex. Or, per-packet overhead can be a factor. There can also be a 
+secondary effect due to HOL blocking, when several output ports are 
+simultaneously congested </font></p>
+<p align="justify"><font face="Arial"><i>What can be done about congestion?</i>
+</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Provide more ports to busy destinations.
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Add crossbar capacity and/or buffering 
+  to busy ports. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Fast retransmission time-outs should be 
+  raised on hosts attached to a GIGAswitch. </font></li>
+</ul>
+<p align="justify"><font face="Arial"><i>What could DIGITAL do?</i> </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">They could reduce the expense of hunt 
+  group solution (using an additional GIGAswitch). </font></li>
+  <li>
+  <p align="justify"><font face="Arial">They could direct packets destined to 
+  congested outputs to a separate input queue </font></li>
+  <li>
+  <p align="justify"><font face="Arial">They could add input buffer memory.
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">They could provide MAC with 2x crossbar 
+  capacity. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">These and other features are being 
+  considered, but no commitments have been made to any of these at this time.
+  </font></li>
+</ul>
+<p align="justify"><font face="Arial">TCP will push the network towards 
+congestion. </font></p>
+<p align="justify"><font face="Arial">For any congested switch, he best way to 
+reduce congestion is to add ports to busy destinations. </font></p>
+<p align="justify"><font face="Arial">Dealing with congestion by addressing HOL 
+blocking can be expensive, and will have limited effect, since most effects of 
+congestion are not caused by HOL blocking. If utilized, such measures should be 
+applied to high cost links. </font></p>
+<p align="justify"><font face="Arial">A congestion control system typically monitors various 
+factors like CPU occupancy, link occupancy and messaging delay. Based on these 
+factors it takes a decision if the system is overloaded. If the system is 
+overloaded, it initiates actions to reduce the load by asking front end 
+processors to reject traffic. The throttling of traffic will reduce the load but 
+it there will be a certain time delay before which the monitored variables like 
+CPU and Link occupancy show downward trend. Congestion control systems are 
+designed to take this into account by spacing out congestion control actions. If 
+the system continues to be overloaded, subsequent congestion control actions can 
+further increase the traffic throttling. If the traffic load is just right, the 
+system maintains current traffic throttling actions. If the system gets under 
+loaded, the traffic throttling is reduced.</font></p>
+<h2 align="justify"><font face="Arial" size="3">Congestion Control Basics</font></h2>
+<p align="justify"><font face="Arial">A system is said to be congested if it is being offered 
+more traffic than its rated capacity. Most of the time, the system overload is 
+due to too many active users. System maintenance and repair actions can also 
+lead to system congestion. Whatever be the cause of overload, it will manifest 
+as depletion of resources that are critical to the operation of the system. 
+These resources can be CPU, free buffers, link bandwidth etc. Resource crunch 
+will lead to lengthening of various queues for these resources. Due to 
+lengthening of queues the response time of the system to external events will 
+increase beyond permissible limits. For example, in
+<a href="http://www.eventhelix.com/ThoughtProjects/Xenon/" style="text-decoration: none">
+Xenon</a>, system overload will lead to increase in dial tone delay.</font></p>
+<h2 align="justify"><font face="Arial" size="3">Impact of Overload on System Performance</font></h2>
+<p align="justify"><font face="Arial">Increase in response time will lead to application level 
+timeouts. This will further worsen the situation because applications will 
+needlessly resend messages on timeouts, causing further congestion. If this 
+condition continues the system might reach a condition where it can service no 
+users. Thus in absence of any congestion control, the system will perform much 
+below its rated capacity, leave alone handling the excess traffic. Refer to the 
+figures below for a comparison of systems load handling capability with and 
+without congestion control. (The system load is represented in Busy Hour Call 
+Attempts, i.e. BHCA. The system has a rated capacity of 5000 BHCA).</font></p>
+<p align="center"><font face="Arial">
+<img alt="Graph of System Performance without Congestion Control" src="Conges1.gif" border="0" width="504" height="256"></font></p>
+<p align="center"><font face="Arial">
+<img alt="Graph of system performance with congestion control" src="Conges2.gif" border="0" width="504" height="256"></font></p>
+<h2 align="justify"><font face="Arial" size="3">Congestion Control Mechanism</font></h2>
+<p align="justify"><font face="Arial">The main objective of congestion control is to keep the 
+system running pretty close to its rated capacity, even when faced with extreme 
+overload. This is achieved by restricting users that are allowed service. The 
+idea is to give satisfactory service to a small percentage of users rather than 
+give highly degraded service to all the users. The users that were given service 
+will leave the system after completion of service. This will reduce the load on 
+the system. Now a different set of users can be given service. Thus in a phased 
+manner, all users will get some service from the system.</font></p>
+<p align="justify"><font face="Arial">An important requirement for the above mentioned scheme to 
+work is that user blocking be done by the system should not overload main 
+processors in the system. This is achieved by asking front end processors in the 
+system to block the excess traffic. Thus the main processors do not even see the 
+rejected traffic. They have to work only on the traffic that has been accepted, 
+thus the main processors will be able to handle traffic pretty close to the 
+rated capacity (See the graph above).</font></p>
+<h2 align="justify"><font face="Arial" size="3">Congestion Control Triggers</font></h2>
+<p align="justify"><font face="Arial">Overload in a system can be detected by monitoring the CPU 
+idle time and the length of various queues in the system. The CPU idle time is a 
+very good measure of the traffic being handled by the CPU. It has been observed 
+that CPU idle time decreases in direct proportion to the traffic being offered 
+to the processor. Congestion of other resources in the system can be monitored 
+by checking the length of the queue for the entities waiting for it. For 
+example, monitoring the transmit queue length for a link gives a good idea of 
+loading of the link. The receive queue length for a link gives a good idea of 
+loading of the processor, as lengthening of this queue signifies that the 
+processor receiving the message does not have enough time to process it.</font></p>
+<p align="justify"><font face="Arial">CPU Congestion triggers are generated when the CPU idle 
+time falls below a certain threshold. Link congestion triggers are generated 
+when transmit queue length exceeds a predetermined threshold.</font></p>
+<h2 align="justify"><font face="Arial" size="3">Congestion Control Example</font></h2>
+<p align="justify"><font face="Arial">In this section we will give a brief description of 
+congestion control in a telephone exchange.</font></p>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">The CPU idle time on the main processor in the exchange 
+  falls below 30%.&nbsp; </font></li>
+  <li>
+  <p align="justify"><font face="Arial">CPU congestion trigger is reported to the overload 
+  control task. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">The overload control task asks the front end processors 
+  to block calls in 1 : 8 ratio, i.e. one out of every eight calls will be 
+  dropped by the front end processors. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Dropping of calls will ease the load on the main 
+  processor. This might lead to CPU congestion abatement triggers being received 
+  by the overload control task (CPU idle time is 40%). </font></li>
+  <li>
+  <p align="justify"><font face="Arial">The overload control task maintains the 1 : 8 blocking 
+  as it recognizes that reduction in CPU load is an affect of the currently 
+  applied call blocking. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">When the busy hour passes, call traffic would go down 
+  but the system is still blocking calls. This will result in yet another 
+  trigger reporting further rise in CPU idle time to 50%.&nbsp; </font></li>
+  <li>
+  <p align="justify"><font face="Arial">At this point overload control task figures out that 1 
+  : 8&nbsp; call blocking is probably unnecessary. Thus it asks the front end 
+  processors to stop 1 : 8 blocking. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Now the CPU idle time might measure 60%, but this is 
+  below the congestion onset threshold, so no further action is taken. </font>
+  </li>
+</ol>
+<p align="justify"><font face="Arial">The timing of overload control action is extremely 
+important. If overload control is introduced too soon the exchange would be 
+rejecting traffic that it could have handled without any problems. On the other 
+hand, if congestion control is delayed too long, the exchange might crash due to 
+heavy traffic.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

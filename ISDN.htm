@@ -1,0 +1,241 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h5 align="center"><span style="text-transform: uppercase"><u><font face="Arial" size="6" color="#FF0000">Integrated 
+Services Digital Network</font></u></span></h5>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Integrated Services 
+Digital Network (ISDN)</span> is comprised of digital telephony and 
+data-transport services offered by regional telephone carriers. ISDN involves 
+the digitization of the telephone network, which permits voice, data, text, 
+graphics, music, video, and other source material to be transmitted over 
+existing telephone wires. The emergence of ISDN represents an effort to 
+standardize subscriber services, user/network interfaces, and network and 
+internetwork capabilities. ISDN applications include high-speed image 
+applications (such as Group IV facsimile), additional telephone lines in homes 
+to serve the telecommuting industry, high-speed file transfer, and 
+videoconferencing. Voice service is also an application for ISDN. This chapter 
+summarizes the underlying technologies and services associated with ISDN. </font>
+</p>
+<h2 class="p_H_Head1" align="justify"><font face="Arial" size="3">ISDN Devices
+</font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN devices include 
+terminals, terminal adapters (TAs), network-termination devices, 
+line-termination equipment, and exchange-termination equipment. ISDN terminals 
+come in two types. Specialized ISDN terminals are referred to as terminal 
+equipment type 1 (TE1). Non-ISDN terminals, such as DTE, that predate the ISDN 
+standards are referred to as terminal equipment type 2 (TE2). TE1s connect to 
+the ISDN network through a four-wire, twisted-pair digital link. TE2s connect to 
+the ISDN network through a TA. The ISDN TA can be either a standalone device or 
+a board inside the TE2. If the TE2 is implemented as a standalone device, it 
+connects to the TA via a standard physical-layer interface. Examples include EIA/TIA-232-C 
+(formerly RS-232-C), V.24, and V.35. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">Beyond the TE1 and TE2 
+devices, the next connection point in the ISDN network is the network 
+termination type 1 (NT1) or network termination type 2 (NT2) device. These <br>
+are network-termination devices that connect the four-wire subscriber wiring to 
+the conventional two-wire local loop. In North America, the NT1 is a customer 
+premises equipment (CPE) device. In most other parts of the world, the NT1 is 
+part of the network provided by the carrier. The NT2 is a more complicated 
+device that typically is found in digital private branch exchanges (PBXs) and 
+that performs Layer 2 and 3 protocol functions and concentration services. An 
+NT1/2 device also exists as a single device that combines the functions of an 
+NT1 and an NT2. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN specifies a number 
+of reference points that define logical interfaces between functional groups, 
+such as TAs and NT1s. ISDN reference points include the following: </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">R—</span>The 
+reference point between non-ISDN equipment and a TA. </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">S—</span>The 
+reference point between user terminals and the NT2. </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">T—</span>The 
+reference point between NT1 and NT2 devices. </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">U—</span>The 
+reference point between NT1 devices and line-termination equipment in the 
+carrier network. The U reference point is relevant only in North America, where 
+the NT1 function is not provided by the carrier network. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">Figure 12-1 illustrates 
+a sample ISDN configuration and shows three devices attached to an ISDN switch 
+at the central office. Two of these devices are ISDN-compatible, so they can be 
+attached through an S reference point to NT2 devices. The third device (a 
+standard, non-ISDN telephone) attaches through the reference point to a TA. Any 
+of these devices also could attach to an NT1/2 device, which would replace both 
+the NT1 and the NT2. In addition, although they are not shown, similar user 
+stations are attached to the far-right ISDN switch. </font></p>
+<p class="pTC_TableCap" align="center"><font face="Arial">Figure&nbsp;12-1 Sample 
+ISDN Configuration Illustrates Relationships Between Devices and Reference 
+Points</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020565" height="376" hspace="0" src="ct841201.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1" align="justify"><font face="Arial" size="3">Services
+</font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">There are two types of 
+services associated with ISDN: </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">BRI
+</font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">PRI
+</font></p>
+<h3 class="p_H_Head2" align="justify"><font face="Arial" size="3">ISDN BRI 
+Service </font></h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">The ISDN Basic Rate 
+Interface (BRI) service offers two B channels and one D channel (2B+D). BRI 
+B-channel service operates at 64 kbps and is meant to carry user data; BRI 
+D-channel service operates at 16 kbps and is meant to carry control and 
+signaling information, although it can support user data transmission under 
+certain circumstances. The D channel signaling protocol comprises Layers 1 
+through 3 of the OSI reference model. BRI also provides for framing control and 
+other overhead, bringing its total bit rate to 192 kbps. <br>
+The BRI physical layer specification is International Telecommunication 
+Union-Telecommunications Standards Section (ITU-T) (formerly the Consultative 
+Committee for International Telegraph and Telephone [CCITT]) I.430. </font></p>
+<h3 class="p_H_Head2" align="justify"><font face="Arial" size="3">ISDN PRI 
+Service </font></h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN Primary Rate 
+Interface (PRI) service offers 23 B channels and 1 D channel in North America 
+and Japan, yielding a total bit rate of 1.544 Mbps (the PRI D channel runs at 64 
+kbps). ISDN PRI in Europe, Australia, and other parts of the world provides 30 B 
+channels plus one 64-kbps D channel and a total interface rate of 2.048 Mbps. 
+The PRI physical layer specification is ITU-T I.431. </font></p>
+<h2 class="p_H_Head1" align="justify"><font face="Arial" size="3">ISDN 
+Specifications </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">This section describes 
+the various ISDN specifications for Layer 1, Layer 2, and Layer 3. </font></p>
+<h3 class="p_H_Head2" align="justify"><font face="Arial" size="3">Layer 1 </font>
+</h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN physical layer 
+(Layer 1) frame formats differ depending on whether the frame is outbound (from 
+terminal to network) or inbound (from network to terminal). Both physical layer 
+interfaces are shown in Figure 12-2. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">The frames are 48 bits 
+long, of which 36 bits represent data. The bits of an ISDN physical layer frame 
+are used as follows: </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">F</span>—Provides 
+synchronization </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">L</span>—Adjusts 
+the average bit value </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">E—</span>Ensures 
+contention resolution when several terminals on a passive bus contend for a 
+channel </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">A—</span>Activates 
+devices </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">S—</span>Is 
+unassigned </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">B1</span>,
+<span style="font-weight: bold; font-style: normal">B2</span>, and
+<span style="font-weight: bold; font-style: normal">D</span>—Handle user data
+</font></p>
+<p class="pTC_TableCap" align="center"><font face="Arial">Figure&nbsp;12-2 ISDN 
+Physical Layer Frame Formats Differ Depending on Their Direction</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020591" height="387" hspace="0" src="ct841202.jpg" width="552" border="0"></font></div>
+<p class="pB1_Body1" align="justify"><font face="Arial">Multiple ISDN user 
+devices can be physically attached to one circuit. In this configuration, 
+collisions can result if two terminals transmit simultaneously. Therefore, ISDN 
+provides features to determine link contention. When an NT receives a D bit from 
+the TE, it echoes back the bit in the next E-bit position. The TE expects the 
+next E bit to be the same as its last transmitted D bit. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">Terminals cannot 
+transmit into the D channel unless they first detect a specific number of ones 
+(indicating &quot;no signal&quot;) corresponding to a pre-established priority. If the TE 
+detects a bit in the echo (E) channel that is different from its D bits, it must 
+stop transmitting immediately. This simple technique ensures that only one 
+terminal can transmit its D message at one time. After successful D-message 
+transmission, the terminal has its priority reduced by requiring it to detect 
+more continuous ones before transmitting. Terminals cannot raise their priority 
+until all other devices on the same line have had an opportunity to send a D 
+message. Telephone connections have higher priority than all other services, and 
+signaling information has a higher priority than nonsignaling information.
+</font></p>
+<h3 class="p_H_Head2" align="justify"><font face="Arial" size="3">Layer 2 </font>
+</h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">Layer 2 of the ISDN 
+signaling protocol is Link Access Procedure, D channel (LAPD). LAPD is similar 
+to High-Level Data Link Control (HDLC) and Link Access Procedure, Balanced (LAPB) 
+(see Chapter 16, &quot;Synchronous Data Link Control and Derivatives,&quot; and Chapter 
+17, &quot;X.25,&quot; for more information on these protocols). As the expansion of the 
+LAPD acronym indicates, this layer is used across the D channel to ensure that 
+control and signaling information flows and is received properly. The LAPD frame 
+format (see Figure 12-3) is very similar to that of HDLC; like HDLC, LAPD uses 
+supervisory, information, and unnumbered frames. The LAPD protocol is formally 
+specified in ITU-T Q.920 and ITU-T Q.921. </font></p>
+<p class="pTC_TableCap" align="center"><font face="Arial">Figure&nbsp;12-3 LAPD Frame 
+Format Is Similar to That of HDLC and LAPB</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020601" height="287" hspace="0" src="ct841203.jpg" width="552" border="0"></font></div>
+<p class="pB1_Body1" align="justify"><font face="Arial">The LAPD Flag and 
+Control fields are identical to those of HDLC. The LAPD Address field can be 
+either 1 or 2 bytes long. If the extended address bit of the first byte is set, 
+the address is 1 byte; if it is not set, the address is 2 bytes. The first 
+Address-field byte contains the service access point identifier (SAPI), which 
+identifies the portal at which LAPD services are provided to Layer 3. The C/R 
+bit indicates whether the frame contains a command or a response. The Terminal 
+Endpoint Identifier (TEI) field identifies either a single terminal or multiple 
+terminals. A TEI of all ones indicates a broadcast. </font></p>
+<h3 class="p_H_Head2" align="justify"><font face="Arial" size="3">Layer 3 </font>
+</h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">Two Layer 3 
+specifications are used for ISDN signaling: ITU-T (formerly CCITT) I.450 (also 
+known as ITU-T Q.930) and ITU-T I.451 (also known as ITU-T Q.931). Together, 
+these protocols support user-to-user, circuit-switched, and packet-switched 
+connections. A variety of call-establishment, call-termination, information, and 
+miscellaneous messages are specified, including SETUP, CONNECT, RELEASE, USER 
+INFORMATION, CANCEL, STATUS, and DISCONNECT. These messages are functionally 
+similar to those provided by the X.25 protocol (see Chapter 17 for more 
+information). Figure 12-4, from ITU-T I.451, shows the typical stages of an ISDN 
+circuit-switched call. </font></p>
+<p class="pTC_TableCap" align="center"><font face="Arial">Figure&nbsp;12-4 An ISDN 
+Circuit-Switched Call Moves Through Various Stages to Its Destination</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020609" height="659" hspace="0" src="ct841204.jpg" width="552" border="0"></font></div>
+<p class="pTC_TableCap" align="justify">&nbsp;</p>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN is comprised of 
+digital telephony and data-transport services offered by regional telephone 
+carriers. ISDN involves the digitization of the telephone network to transmit 
+voice, data, text, graphics, music, video, and other source material over 
+existing telephone wires. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN devices include the 
+following: </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Terminals
+</font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Terminal 
+adapters (TAs) </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Network-termination 
+devices </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Line-termination 
+equipment </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Exchange-termination 
+equipment </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">The ISDN specification 
+references specific connection points that define logical interfaces between 
+devices. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN uses the following 
+two types of services: </font></p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Basic 
+Rate Interface (BRI, which offers two B channels and one D channel (2B+D) </font>
+</p>
+<p class="pBu1_Bullet1" align="justify"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Primary 
+Rate Interface (PRI), which offers 23 B channels and 1 D channel in North 
+America and Japan, and 30 B channels and 1 D channel in Europe and Australia
+</font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">ISDN runs on the bottom 
+three layers of the OSI reference model, and each layer uses a different 
+specification to transmit data.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

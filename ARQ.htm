@@ -1,0 +1,477 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="ARQ_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" style="text-autospace: none" align="center">
+<span style="font-family: Arial; color: #FF0000; text-transform: uppercase; font-weight: 700; text-decoration: underline">
+<font size="6">Automatic Repeat Request (ARQ)</font></span></p>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: black">Error Control</span></b></p>
+<p class="MsoNormal" style="text-autospace: none; margin-left: .25in">
+<span style="font-family: Arial; color: black">&nbsp;</span><span style="color: black">•<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Purpose </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">A technique used to 
+ensure that a data stream is delivered accurately to the user despite errors 
+that occur during transmission</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Automatic Repeat 
+Request (ARQ) forms the basis for peer-to-peer protocols</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">For both hop-by-hop 
+and end-to-end approaches</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Information flow 
+can be in one direction or both directions</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="color: black">•<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Assumptions</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Frames arrive at 
+the receiver in the same order in which they are sent</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="color: black">•<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Types</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Stop-and-wait ARQ</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Go-back-N ARQ</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: 1.0in">
+<span style="color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Selective Repeat 
+ARQ</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;</span><b><span style="font-family: Arial; color: black">ARQ 
+Error Control</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in">
+<b><span style="font-family: Arial; color: black">Types of errors: </span></b>
+<span style="font-family: Arial; color: black">Lost frames, damaged frames</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: 1.5in">
+<span style="font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Most Error Control 
+techniques are based on (1) Error Detection Scheme (e.g., Parity checks, CRC), 
+and (2) Retransmission Scheme</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: 1.5in">
+<span style="font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Error control 
+schemes that involve error detection and retransmission of lost or corrupted 
+frames are referred to as Automatic Repeat Request (ARQ<i>) </i>error control</span></p>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-autospace: none" align="center"><b>
+<span style="font-family: Arial; color: black"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1035" type="#_x0000_t75" style='width:486pt;
+ height:141.75pt;mso-wrap-style:none;mso-position-horizontal-relative:char;
+ mso-position-vertical:absolute;mso-position-vertical-relative:line;
+ v-text-anchor:middle' fillcolor="#0c9" strokeweight="1pt">
+ <v:imagedata src="ARQ_files/image001.wmz" o:title=""/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=648 height=189
+src="ARQ_files/image002.gif" v:shapes="_x0000_s1035"><![endif]></span></b></p>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: black">Automatic Repeat Request (ARQ)</span></b></p>
+<ul style="margin-top: 0in; margin-bottom: 0in" type="disc">
+  <li class="MsoNormal" style="color: black; text-autospace: none">
+  <span style="font-family: Arial">When the receiver detects errors in a frame, 
+  how does it request the transmitter to resend the corresponding packet?</span></li>
+  <li class="MsoNormal" style="color: black; text-autospace: none">
+  <span style="font-family: Arial">The problem is that the feedback channel is 
+  error prone also!</span></li>
+  <li class="MsoNormal" style="color: black; text-autospace: none">
+  <span style="font-family: Arial">The simplest strategy is stop and wait:</span>
+  <ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+    <li class="MsoNormal" style="color: black; text-autospace: none">
+    <span style="font-family: Arial">The sender sends a frame and waits fro an 
+    ACK or NAK; then sends new packet or resends the old packet.</span></li>
+  </ul>
+  </li>
+</ul>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-family: Arial; color: black">Simplex Stop and Wait Protocol</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• <b>Flow control</b> deals with 
+problem that sender transmits frames faster than receiver can accept, and 
+solution is to limit sender into sending no faster than receiver can handle</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Consider the simplex case: data 
+is transmitted in one direction (Note although data frames are transmitted in 
+one direction, frames are going in both directions, i.e. link is duplex)</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• <b>Stop and wait:</b> sender 
+sends one data frame, waits for acknowledgement (ACK) from receiver before 
+proceeding to transmit next frame</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– This simple flow control will 
+break down if ACK gets lost or errors occur </span>
+<span style="font-family: Wingdings; color: black">à</span><span style="font-family: Arial; color: black"> 
+sender may wait for ACK that never arrives</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify" align="center">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1025" type="#_x0000_t75" style='width:431.25pt;height:442.5pt'>
+ <v:imagedata src="ARQ_files/image003.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=590
+src="ARQ_files/image004.gif" v:shapes="_x0000_s1025"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-family: Arial; color: black">Simplex Stop and Wait with ARQ</span></b></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="Stop and Wait ARQ" style='width:241.5pt;
+ height:397.5pt'>
+ <v:imagedata src="ARQ_files/image005.jpg" o:href="file:///K:\CNNN\DCN%20Data-link%20Control%20and%20Protocols_files\stop_and_wait_arq.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=322 height=530
+src="ARQ_files/image005.jpg" alt="Stop and Wait ARQ" v:shapes="_x0000_s1026"><![endif]></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+transition may occur in Stop-and-Wait ARQ:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The sender maintains a timeout counter.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">When a frame is sent, the sender starts the 
+  timeout counter.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">If acknowledgement of frame comes in time, 
+  the sender transmits the next frame in queue.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">If acknowledgement does not come in time, the 
+  sender assumes that either the frame or its acknowledgement is lost in 
+  transit. Sender retransmits the frame and starts the timeout counter.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">If a negative acknowledgement is received, 
+  the sender retransmits the frame.</span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;• For noisy link, pure stop and 
+wait protocol will break down, and solution is to incorporate some error control 
+mechanism</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Stop and wait with ARQ: 
+Automatic Repeat Request (ARQ), an error control method, is incorporated with 
+stop and wait flow control protocol</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– If error is detected by 
+receiver, it discards the frame and sends a negative ACK (NAK), causing sender 
+to re-send the frame</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– In case a frame never got to 
+receiver, sender has a timer: each time a frame is sent, timer is set</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: 40.5pt">
+<span style="font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">If no ACK or NAK is 
+received during timeout period, it re-sends the frame</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– Timer introduces a problem: 
+Suppose timeout and sender retransmits a frame but receiver actually received 
+the previous transmission </span>
+<span style="font-family: Wingdings; color: black">à</span><span style="font-family: Arial; color: black"> 
+receiver has duplicated copies</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– To avoid receiving and 
+accepting two copies of same frame, frames and ACKs are alternatively labeled 0 
+or 1: ACK0 for frame 1, ACK1 for frame 0</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• An important link parameter is 
+defined by </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: .5in; text-autospace: none; margin-left: 1.0in">
+<i><span style="font-family: Arial; color: black">a =propagation time/frame 
+time=Rd/V L</span></i></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">where R is data rate (bps), d is 
+link distance (m), V is propagation velocity (m/s) and L frame length (bits)</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• In error-free case, efficiency 
+or maximum link utilisation of stop and Wait with ARQ is:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">U =1/(1 + 2a)</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Illustration of how stop and 
+wait with ARQ works:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">ACK0: frame 1 is received, 
+waiting for next (frame 0)</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">ACK1: frame 0 is received, 
+waiting for next (frame 1)</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">This is to have 1-bit sequence 
+number, and implies receiver have buffer for one frame</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" style='width:290.25pt;height:282.75pt'>
+ <v:imagedata src="ARQ_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=387 height=377
+src="ARQ_files/image007.jpg" v:shapes="_x0000_s1027"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• For an LAN with R = 10 Mbps and 
+d = 1 km, using V = 2 × 10<sup>8</sup> m/s and L = 500 bits, a = 0.1 and 
+stop-and-wait procedure has U = 0.83, which has adequate line utilization But 
+for a satellite link, link utilisation for stop-and-wait procedure may only be U 
+= 0.001 or lower, which is clearly wasteful</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span><b><span style="font-family: Arial; color: black">Go-back-n 
+ARQ</span></b></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span><span style="font-family: Arial">Stop 
+and wait ARQ mechanism does not utilize the resources at their best. When the 
+acknowledgement is received, the sender sits idle and does nothing. In Go-Back-N 
+ARQ method, both sender and receiver maintain a window.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" alt="Go-back-n ARQ" style='width:310.5pt;
+ height:408pt'>
+ <v:imagedata src="ARQ_files/image008.jpg" o:href="file:///K:\CNNN\DCN%20Data-link%20Control%20and%20Protocols_files\go_back_n_arq.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=414 height=544
+src="ARQ_files/image008.jpg" alt="Go-back-n ARQ" v:shapes="_x0000_s1028"><![endif]></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The 
+sending-window size enables the sender to send multiple frames without receiving 
+the acknowledgement of the previous ones. The receiving-window enables the 
+receiver to receive multiple frames and acknowledge them. The receiver keeps 
+track of incoming frame’s sequence number.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">When the sender 
+sends all the frames in window, it checks up to what sequence number it has 
+received positive acknowledgement. If all frames are positively acknowledged, 
+the sender sends next set of frames. If sender finds that it has received NACK 
+or has not received any ACK for a particular frame, it retransmits all the 
+frames after which it does not receive any positive ACK.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span><span style="font-family: Arial; color: black">• 
+The basic idea of go-back-n error control is: If frame i is damaged, receiver 
+requests retransmission of all frames starting from frame i</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" style='width:372pt;height:96.75pt'>
+ <v:imagedata src="ARQ_files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=496 height=129
+src="ARQ_files/image010.jpg" v:shapes="_x0000_s1029"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Notice that all possible cases 
+of damaged frame and ACK / NAK must be taken into account </span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• For n-bit sequence number, 
+maximum window size is N = 2<sup>n</sup></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&#8722; 1 not N = 2<sup>n </sup></span>
+<span style="font-family: Wingdings; color: black">à</span><span style="font-family: Arial; color: black"> 
+With N = 2<sup>n</sup> confusion may occur</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" style='width:252.75pt;height:104.25pt'>
+ <v:imagedata src="ARQ_files/image011.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=337 height=139
+src="ARQ_files/image012.jpg" v:shapes="_x0000_s1030"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Consider n = 3, if N = 8 what 
+may happen:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– Suppose that sender transmits 
+frame 0 and gets an ACK1</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– It then transmits frames 
+1,2,3,4,5,6,7,0 (this is allowed, as they are within the sending window of size 
+8) and gets another ACK1</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– This could means that all eight 
+frames were received correctly</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– It could also mean that all 
+eight frames were lost, and receiver is repeating its previous ACK1</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: CMSSBX10; color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">With N = 7, this 
+confusing situation is avoided</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-family: Arial; color: black">Selective-Reject ARQ</span></b></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span><span style="font-family: Arial">In 
+Go-back-N ARQ, it is assumed that the receiver does not have any buffer space 
+for its window size and has to process each frame as it comes. This enforces the 
+sender to retransmit all the frames which are not acknowledged.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1031" type="#_x0000_t75" alt="" style='width:310.5pt;height:408pt'>
+ <v:imagedata src="ARQ_files/image013.jpg" o:href="file:///K:\CNNN\DCN%20Data-link%20Control%20and%20Protocols_files\selective_repeat.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=414 height=544
+src="ARQ_files/image013.jpg" v:shapes="_x0000_s1031"><![endif]></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">In 
+Selective-Repeat ARQ, the receiver while keeping track of sequence numbers, 
+buffers the frames in memory and sends NACK for only frame which is missing or 
+damaged.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The sender in 
+this case, sends only packet for which NACK is received.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span><span style="font-family: Arial; color: black">• 
+In selective-reject ARQ error control, the only frames retransmitted are those 
+receive a NAK or which time out An illustrative example:</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" style='width:312.75pt;height:103.5pt'>
+ <v:imagedata src="ARQ_files/image014.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=417 height=138
+src="ARQ_files/image015.jpg" v:shapes="_x0000_s1032"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Selective-reject would appear 
+to be more efficient than go-back-n, but it is harder to implement and less used
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• The window size is also more 
+restrictive: for n-bit sequence number, the maximum window size is N =2<sup>n</sup>/2 
+to avoid possible confusion</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Go-back-n and selective-reject 
+can be seen as trade-offs between link bandwidth (data rate) and data link layer 
+buffer space</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– If link bandwidth is large but 
+buffer space is scarce, go-back-n is preferred</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: CMSSBX10; color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">If link bandwidth 
+is small but buffer space is pretty, selective-reject is preferred</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;</span><b><span style="font-family: Arial; color: black">From 
+Simplex to Duplex</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;• So far, we consider data 
+transmission in one direction (simplex), although the link is duplex</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• If two sides exchange data 
+(duplex), each needs to maintain two windows: one for transmitting and one for 
+receiving</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• In duplex communication, frames 
+transmitted from either side can be data, ACKs and NAKs </span>
+<span style="font-family: Wingdings; color: black">à</span><span style="font-family: Arial; color: black"> 
+the need to distinguish them</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Frame type: Recall in frame 
+header there is a control field, and part of it is typically used as frame type 
+field to tell what type the frame is</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Piggybacking: In duplex 
+situations, piggybacking is often used </span>
+<span style="font-family: Wingdings; color: black">à</span><span style="font-family: Arial; color: black"> 
+If one has data and an ACK to send, it sends both in one frame</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">• Discussion so far: data link 
+layer is primarily concerned with making point-to-point link reliable</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– It is responsible for 
+transmitting frames from sender to receiver (service to network layer), and can 
+only uses physical layer to do the job</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">– It has to take into account 
+that transmission error may occur and sender/receiver may operate at different 
+speeds </span><span style="font-family: Wingdings; color: black">à</span><span style="font-family: Arial; color: black"> 
+error control/flow control (ACKs, NAKs, CRC, windows, sequence numbers)</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: CMSSBX10; color: black">–<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Next lecture will 
+see how all these fit into some data link layer protocols</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none"><b>
+<span style="font-family: Arial; color: black">Sliding Window with Go-back-n C 
+Codes</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" style='width:6in;height:579pt'>
+ <v:imagedata src="ARQ_files/image016.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=576 height=772
+src="ARQ_files/image017.gif" v:shapes="_x0000_s1033"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" style='width:431.25pt;height:561pt'>
+ <v:imagedata src="ARQ_files/image018.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=748
+src="ARQ_files/image019.gif" v:shapes="_x0000_s1034"><![endif]></span></p>
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

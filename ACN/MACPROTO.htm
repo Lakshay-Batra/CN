@@ -1,0 +1,312 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="center"><b><font face="Arial">
+<a href="ACNMAIN.htm">MAIN</a></font></b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<font FACE="Arial" size="6" color="#FF0000">
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">
+<span style="text-transform: uppercase; text-decoration: underline; font-weight: 700">
+Wireless LAN MAC Protocols</span></p>
+</font><font FACE="CMR10" SIZE="2">
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+</font><font face="Arial">
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The MAC (Medium Access Control) protocols can be roughly categorized into three 
+broad classes. The fixed assignment set will have schemes like TDMA, CDMA and 
+FDMA. These protocols lack the flexibility in allocating resources and thus have 
+problems with configuration changes. This makes them unsuitable for dynamic and 
+burst wireless packet data networks. The random assignment class consisting of 
+ALOHA and CSMA is very flexible instead and is what is predominantly used in 
+wireless LAN protocols. The demand assignment with schemes like Token Ring, GAMA 
+and PRMA attempt to combine the nice features of both the above but special 
+effort is needed to implement them in the wireless case (Eg. Token Ring needs to 
+know its neighbors). There are systems designed using one or more of these 
+classes. For instance cellular networks use ALOHA to get the code when entering 
+a cell and CDMA for subsequent communication. For the purposes of this paper we 
+restrict ourselves to second (more interesting) class of random assignment. To 
+have a reasonable working set at hand, we do not consider protocols proposed in 
+the context of wireless ATM; these deal with ATM specific issues like different 
+traffic types. The multiple access problem arises for broadcast media, when 
+multiple users share a common channel to communicate (as against point-to-point 
+connection)[19]. The two major objectives of any such protocol are maximization 
+of the channel capacity utilization and minimization of latency between a 
+station deciding to transmit and able to transmit. There is an inherent tension 
+in these two desirable goals. Other goals which might be equally important in 
+some cases could be fairness and stability.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; We briefly mention some of 
+fundamental techniques used in the wireless LAN communication. In Carrier Sense 
+Multiple Access (CSMA) a station senses the medium before transmitting and 
+defers to any ongoing transmission. This requires a special carrier sensing 
+circuit. Two extensions to CSMA are collision detection (CSMA/CD) and collision 
+avoidance (CSMA/CA). In the for mer the senders detect collision (and thus 
+immediately learns of transmission failure) and stops transmitting to reduce the 
+overhead of a collision. In collision avoidance, the sender waits for an Inter 
+Frame Spacing (IFS) before contending for the channel after the channel becomes 
+idle. Collision avoidance can also be achieved by the second basic primitive 
+RTS/CTS exchange. In RTS/CTS exchange a sender transmits an RTS (ready to send) 
+packet to the receiver before the data transmission. The data is transmitted 
+only after reception of a CTS (clear to send) from the receiver, which the 
+receiver sends on reception of a successful RTS. This technique is referred to 
+as packet sensing (PSMA), (a station takes decision based on semantics of the 
+packet received in full and not carrier sense).<br>
+&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">This section 
+presents an overview of the existing body of research in the area of wireless 
+LAN MAC protocols.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.1 ALOHA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+The history of wireless communication can be traced back to ALOHA. Aloha was 
+designed by Abramson in 1970 for linking the various Hawaiian islands. It is a 
+very simple protocol in which a station sends data whenever it has data to send. 
+The receipt of an acknowledgement (which might be implicit) assures the sender 
+that data has been delivered successfully, else it is sent again after a random 
+time gap. Aloha is useful in cases in which carrier sensing is not possible or 
+impractical (like in satellite communications). It can be easily shown using 
+simple traffic load assumptions that peak Aloha performance is only 18 %. While 
+this channel utilization might seem bad, Aloha's biggest strengths is its 
+simplicity which can justify its usage in cases where high utilizations is not 
+the primary concern. Subsequent variations like slotted ALOHA and reservation 
+ALOHA significantly improve the performance.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.2 CSMA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+The fundamental reason for low channel utilization of Aloha protocol is that 
+senders don't defer to each other even when another transmission is in progress. 
+CSMA rectifies this problem by carrier sensing (explained above). In 
+p-persistent CSMA, the station sends a packet with probability p as soon as the 
+carrier becomes idle. In non-persistent CSMA a station will set a random time 
+interval when it senses that the channel is busy and tries to transmit again 
+after that instead of continuously monitoring the channel. Without a scheme like 
+exponential back-off&nbsp; p-persistent CSMA can be unstable when offered loads 
+are high, as many stations begin transmission simultaneously when the current 
+transmission ends.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.3 BTMA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">It 
+was recognized by Kleinrock and Tobagi that wireless systems suffer from, the 
+now well known, hidden terminal problems In the same document the authors 
+presented BTMA, a solution to deal with the hidden terminal problem. BTMA is an 
+acronym for busy tone multiple access. The available frequency is divided into 
+data channel and a control channel. While a station is receiving data on the 
+former channel, it places a busy-tone on the control channel. This signals to 
+other potential senders that the receiver is busy and they should defer their 
+transmissions. This protects the system from hidden terminal problems. BTMA can 
+also be used to get rid of the exposed terminal problems if the sender ignores 
+the carrier sense signal when there is no busy- tone on the control channel. The 
+problem with BTMA is that it requires to split the channel into two making 
+receivers more complex. The two bands also need to be separated by a guard band, 
+which wastes channel frequency. Also since the propagation characteristics of 
+the radio link are dependent on frequency, a station might hear just one of the 
+two signals (busy-tone or data).</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.4 SRMA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+The first protocol to propose handshake between the sender and receiver was SRMA 
+or split-channel reservation multiple access. SRMA proposes use of a separate 
+channel for RTS/CTS exchange (explained above). SRMA gets rid of the need for 
+transmitting a continuous busy-tone signal and thus might end up saving some 
+power. While the original proposal required two separate channels and the 
+associated hardware complexity, there is nothing in the scheme that prevents it 
+from being used only in a single channel.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.5 MACA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+MACA (multiple access collision avoidance) was the rst modern protocol which 
+used RTS/CTS exchange and underscored the benefit of it over the then existing 
+protocols (which were largely CSMA/CA based). The motivation was again the 
+hidden terminal problem and the inspiration AppleTalk. In MACA before a station 
+sends the data it sends an RTS message to the receiver. On success the receiver 
+responds with a CTS. The nearby stations are also listening to this exchange. If 
+a station hears RTS it waits for the corresponding CTS. If it does not hear CTS, 
+it means any transmission it has will not interfere with the receiver. The 
+assumption here is if you cannot hear the receiver, the receiver cannot hear you 
+too. This helps alleviate the exposed terminal problem. Any station, other than 
+the original RTS sender, on hearing CTS will defer its transmission. The time 
+for which to defer transmission depends on the packet length to be transmitted 
+which is contained in the CTS packet. This takes care of the hidden terminal 
+problem. Binary exponential back-off was used in case of collisions of RTS 
+packets. MACA requires much simpler hardware because of absence of carrier 
+sense.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.6 MACAW</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+Various practical problems with MACA were identified by MACAW (MACA for 
+Wireless) and proposed changes that solves some of them. This was one of the rst 
+wireless MAC protocol that was designed with fairness in mind. MACAW gets rid of 
+Ethernet like unfairness associated with binary exponential back-off algorithms 
+by proposing a copying form of back-off counter in which nodes use the back-off 
+counter of a successful transmission to contend fairly in the next cycle. Also 
+separate back-off parameters were introduced (corresponding to different 
+streams) to avoid this copied parameter to spread widely even to areas with no 
+congestion. It also proposed a multiple stream model for fairness among streams 
+emerging from the same station. MACAW acknowledged the importance of link layer 
+acknowledgements and made the protocol from RTS- CTS-Data to RTS-CTS-Data-ACK. 
+With the introduction of this ACK packet means that exposed terminals should not 
+transmit now, or else they will trash the incoming ack. There are two ways of 
+dealing with this, carrier sense or an explicit packet specifying the length of 
+the transmission</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">at 
+the start of it. MACAW takes the latter approach to keep the hardware simple and 
+calls this packet DS (data sending). Another control packet RRTS (Request for 
+RTS) was added to let the receiver contend for the sender to improve fairness in 
+cases when there are two receivers in the vicinity of each other (thus only one 
+can receive). By making the protocol significantly more complex MACAW lost 
+performance when the channel was lightly loaded but led to much better 
+throughput and fairer allocation in presence of high loads.</p>
+</font>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b><font face="Arial">3.7 FAMA</font></b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">
+<font face="Arial"><img border="0" src="MACPRO1.jpg" width="401" height="270"></font></p>
+<font FACE="Arial">
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+On first thought MACA seems to solve the hidden terminal problem, but that's not 
+quite true. This happens primarily because the neighbors may not be able to hear 
+CTS/RTS messages correctly. For example consider the topology in figure 1 in 
+which only adjacent nodes can hear each other. A completes a successful RTS-CTS 
+exchange with B and starts transmitting data. C which is a neighbor of B also 
+started a RTS sequence just at the time B replied CTS to A, and hence is not 
+able to realize that B is going to be in conservation. (B's CTS, C's RTS collide 
+at C). D sends a CTS signal to C and C now thinks he has acquired the channel 
+and starts transmitting the data which collides at B. One solution to this 
+problem would be to make the length of CTS packet longer then the RTS packet, 
+which would make sure that C hears the B's CTS message. This is only one 
+instance in which the protocol fails and one can easily come up with other 
+scenarios where it fails. Floor acquisition multiple access, FAMA, represents a 
+family of MAC protocols which operate in two phases, acquire the channel (floor 
+acquisition) followed by the actual transmission of data. </p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+These protocols ensures that data packets will be collision free and multiple 
+packets can be sent by the sender. A key distinguishing observation is that this 
+guarantees once channel is successfully acquired transmission of data packets is 
+collision free unlike in MACA (or MACAW), where even after a successful RTS-CTS 
+exchange, data packets can collide with other nearby transmissions (like above). 
+FAMA has various variants each having different timing requirements for floor 
+acquisition and performance characteristics. The variants are based on 
+techniques used to acquire the floor and scope of the problem addressed (like 
+single hop vs. ad hoc networks). For example author's prove that sending RTS 
+packets without sensing the medium is inherently inefficient than using non 
+persistent CSMA based techniques. An important and novel contribution of the 
+work is derivation of sufficient timing requirements that must be met for 
+correctness based on propagation delay, packet sizes, RTS/CTS sending timings, 
+and Rx/Tx-turnarounds.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.8 GAMA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+GAMA-PS (Group Allocation Multiple Access with Packet Sensing) is a channel 
+access protocol for asynchronous, packet-sensing wireless networks. The idea is 
+to organize the channel into cycles dynamically. Each cycle is composed of a 
+contention period and a group-transmission period. Every member interested in 
+transmission contends for membership in the transmission group. Once a station 
+is in the group, it is able to transmit a data packet during each cycle without&nbsp; 
+collision. The membership persists as long as it has some data to send. The 
+group is maintained in a distributed manner. All members of the group hear to 
+the channel to learn about other members in the group, its own position in the 
+group etc. Joining a group is based on RTS/CTS mechanism. In some sense this is 
+a mixture of TDMA and CSMA. When the network is lightly loaded it's behavior is 
+much like CSMA. As the number of senders increases the cycle size increases up 
+to a maximum and it behaves pretty much like TDMA.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.9 DFWMAC</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+Apart from all the pure &quot;research&quot; protocol design described above, there have 
+been many important standardization efforts. For space and time constraints we 
+mention only two of them here (the important ones missed out are Bluetooth and 
+HomeRF). The IEEE 802.11 standard can be used in either an ad hoc infrastructure 
+less setup or with a supportive base station based environment. The sharing is 
+achieved using either a distributed coordination function (DCF) or a point 
+coordination function (PCF). The DCF protocol DFWMAC (Distributed Foundation 
+Wireless MAC), which uses IFS (Inter Frame Spacing) for collision avoidance. The 
+802.11 standard defines three types of IFS's for three different access 
+priorities. After SIFS (Short IFS), only acks, CTS and data frames in response 
+to a poll by base station may be sent. After PIFS (PCF-IFS), any frames from the 
+contention free period maybe sent and all other packets may be sent after DIFS (DCF-IFS). 
+A SIFS is the shortest while DIFS is the longest duration. A station that 
+intends to transmit and senses channel busy will wait for the end of 
+transmission followed by a time period of DIFS length. After this it randomly 
+selects a time slot within the back-off window. If no other station has started 
+transmitting before the end of this slot is reached, it starts its own 
+transmission. If another station has seized the channel, the station freezes its 
+back-off<br>
+counter, waits for the end of transmission and now only waits for the slots 
+remaining from the previous competition. This provides better delay bounds in 
+presence of high loads and avoids starvation. This basic access scheme can 
+optionally be extended by use of a RTS/CTS message exchange.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The stations in this case compete for sending the RTS messages. The DCF service 
+above does not provide any sort of guarantees. In order to provide time bounded 
+traffic the PCF mode maybe used for contention free asynchronous transfers. In 
+this the base station polls the stations that are on its polling list and allows 
+them undisturbed access. To get on the polling list (either once or 
+periodically), the stations contend through the DCF mode.</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+<b>3.10 EY-NPMA</b></p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+The ETSI Hiperlan is a standard for wireless communication in Europe. It uses 
+EY-NPMA (elimination yield - non-preemptive multiple access) protocol. EY-NPMA 
+supports time bounded delivery of packets. This is achieved by dynamic 
+assignment of access priorities which depend on the remaining lifetime of the 
+packet (the exact priority is a function of the user assigned priority</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+and lifetime of the packet). The MAC protocol for Hiperlan is a unique one, 
+which does not resemble anything we have talked about till now. The multiple 
+access problem in EY-NPMA is broken down into three phases. In the priority 
+resolution phase the station listens to the medium till the priority slots for 
+the higher priorities have gone idle. If the channel was idle for some number 
+priority slots only the stations with the same highest priority survive. The 
+elimination phase every station transmits a burst with a random length, bounded 
+and defined by a certain discrete probability distribution. In this phase the 
+station transmitting the longest burst wins,</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="justify">
+which the winning station nds out because the channel will be idle when it stops 
+transmitting. This station will then wait for a random period in the yield 
+phase. If it does not sense anything on the channel at the end of this phase, it 
+transmits its data.&nbsp; Both protocols were found to be stable even at offered 
+loads of 400%. DFWMAC gives better throughput percentage (of total achievable) 
+than EY-NPMA. The mean access delay seen in DFWMAC is generally lower than that 
+in EY-NPMA. But since the EY-NPMA protocol requires a minimal number of Rx/Tx-turnarounds 
+it might provide better throughput in low load conditions. For a given packet 
+size, throughout and delay are inverse of each other in both protocols which is 
+expected in such contention based protocols. Detailed simulations were carried 
+out in [14] to analyze the performance of DFWMAC for fairness and throughput.</p>
+</font>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="center">&nbsp;</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0" align="center"><b><font face="Arial">
+<a href="ACNMAIN.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

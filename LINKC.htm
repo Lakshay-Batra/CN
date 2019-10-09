@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p style="background: #F8FCFF" align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p style="background: #F8FCFF" align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font face="Arial"><span lang="EN"><b><font size="6" color="#FF0000">Link 
+Control Protocol</font></b></span></font></span></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">In computing, the <b>Link Control Protocol</b> (LCP) forms part 
+of the Point-to-Point Protocol. In setting up PPP communications, both the 
+sending and receiving devices send out LCP packets to determine specific 
+information that the prospective data transmission will require. The LCP 
+protocol:</span></font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="background: #F8FCFF">
+  <p align="justify"><font face="Arial"><span lang="EN">checks the identity of 
+  the linked device and either accepts or rejects the peer device </span></font>
+  </li>
+  <li class="MsoNormal" style="background: #F8FCFF">
+  <p align="justify"><font face="Arial"><span lang="EN">determines the 
+  acceptable packet size for transmission </span></font></li>
+  <li class="MsoNormal" style="background: #F8FCFF">
+  <p align="justify"><font face="Arial"><span lang="EN">searches for errors in 
+  configuration </span></font></li>
+  <li class="MsoNormal" style="background: #F8FCFF">
+  <p align="justify"><font face="Arial"><span lang="EN">can terminate the link 
+  if requirements exceed the parameters </span></font></li>
+</ul>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Devices cannot use PPP to transmit data over a network until the 
+LCP packet determines the acceptability of the link, but LCP packets are 
+embedded into PPP packets and therefore a basic PPP connection has to be 
+established before LCP can reconfigure it. The LCP over PPP packets have control 
+code 0xC021 and their info field contains the LCP packet, which has four fields. 
+(Code, Id, Length, Data)</span></font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="background: #F8FCFF">
+  <p align="justify"><font face="Arial"><span lang="EN">Code: Operation 
+  requested: configure link, terminate link, ... and acknowledge and deny codes.
+  </span></font></li>
+  <li class="MsoNormal" style="background: #F8FCFF">
+  <p align="justify"><font face="Arial"><span lang="EN">data: Parameters for the 
+  operation</span></font></li>
+</ul>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

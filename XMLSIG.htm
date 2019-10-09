@@ -1,0 +1,567 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="XMLSIG_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h5
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font face="Arial" size="6" color="#FF0000"><b>XML 
+SIGNATURE</b></font></u></p>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">Current security 
+technologies in common deployment are insufficient for securing business 
+transactions on the Web. Most existing browser-based security mechanisms, 
+generally adequate for low-value business-to-consumer transactions, do not 
+provide the enhanced security or flexibility required for protecting high-value 
+commercial transactions and the sensitive data exchanges that comprise them.
+</span></p>
+<p align="justify"><span style="font-family: Arial">For instance, Secure Sockets Layer (SSL) 
+provides for the secure interchange of sensitive data between a browser and Web 
+server, but once received, the data is all too frequently left unprotected on 
+the server. In fact, SSL protects the data at a point in its travels when its 
+confidentiality is, relatively speaking, far less likely to be attacked. If you 
+were a hacker, which would you think is a better application of your time: 
+sniffing IP packets in transit in order to obtain a single user's credit card 
+number or breaking into a back-end database containing thousands of credit card 
+numbers? This problem is aggravated in the case where a message is routed from 
+server to server. If the data itself were encrypted, as opposed to just its 
+transport, it would help reduce the incidents of unencrypted data left 
+vulnerable on public servers. </span></p>
+<p align="justify"><span style="font-family: Arial">As important as protecting the 
+confidentiality of business messages is ensuring their long-term authenticity 
+(who sent them?), data integrity (have they been modified in transit?), and 
+support for non-repudiation (can the sender deny sending them?); in other words, 
+functionality that ubiquitous, existing Internet security technologies (e.g., 
+SSL and username/password) do not provide alone. The globally-recognized method 
+for satisfying these requirements for secure business transactions is to use 
+digital certificates to enable the encryption and digital signing of the 
+exchanged data. A brief introduction to these concepts is provided below. The 
+term &quot;public key infrastructure&quot; (PKI) is used to describe the processes, 
+policies, and standards that govern the issuance, maintenance, and revocation of 
+the certificates, public, and private keys that the encryption and signing 
+operations require.</span></p>
+<p align="justify"><span style="font-family: Arial">The very features that make XML so powerful 
+for business transactions (e.g., semantically rich and structured data, 
+text-based, and Web-ready nature) provide both challenges and opportunities for 
+the application of encryption and digital signature operations to XML-encoded 
+data. For example, in many workflow scenarios where an XML document flows 
+stepwise between participants, and where a digital signature implies some sort 
+of commitment or assertion, each participant may wish to sign only that portion 
+for which they are responsible and assume a concomitant level of liability. 
+Older standards for digital signatures provide neither syntax for capturing this 
+sort of high-granularity signature nor mechanisms for expressing which portion a 
+principal wishes to sign. </span></p>
+<p align="justify"><span style="font-family: Arial">Two new security initiatives designed to 
+both account for and take advantage of the special nature of XML data are XML 
+Signature and XML Encryption. Both are currently progressing through the 
+standardization process. XML Signature is a joint effort between the World Wide 
+Web Consortium (W3C) and Internet Engineering Task Force (IETF), and XML 
+Encryption is solely W3C effort. This article presents a brief introduction to 
+the XML Signature specification and the underlying cryptographic concepts.</span></p>
+<h3 align="justify"><font face="Arial"><a name="key"><span style="font-size: 12.0pt">An Introduction to Public Key 
+Cryptography</span></a></font></h3>
+<p align="justify"><span style="font-family: Arial">Public key cryptography allows users of an 
+insecure network, like the Internet, to exchange data with confidence that it 
+will be neither modified nor inappropriately accessed. This is accomplished 
+through a transformation of the data according to an algorithm parameterized by 
+a pair of numbers -- the so-called public and private keys. Each participant in 
+the exchange has such a pair of keys. They make the public key freely available 
+to anyone wishing to communicate with them, and they keep the other key private 
+and protected. Although the keys are mathematically related, if the cryptosystem 
+has been designed and implemented securely, it is computationally infeasible to 
+derive the private key from knowledge of the public key.</span></p>
+<p align="justify"><span style="font-family: Arial">The nature of the relation between the 
+public and private keys is such that a cryptographic transformation encoded with 
+one key can only be reversed with the other. This defining feature of public key 
+encryption technology enables confidentiality because a message encrypted with 
+the public key of a specific recipient can only be decrypted by the holder of 
+the matching private key (i.e., the recipient, if they have properly protected 
+access to the private key). Even if intercepted by someone else, without the 
+appropriate private key, this third party will be unable to decrypt the message. 
+It's crucial that confidentiality can be supported without requiring that the 
+sender and recipient exchange any &quot;secret&quot; data in addition to the message 
+itself, as is the case in symmetric cryptography. Indeed it was precisely the 
+requirement of key exchange between sender and recipient, which quickly becomes 
+impractical as the number of participants increases, that motivated the 
+invention of public-key cryptography.</span></p>
+<p align="justify"><span style="font-family: Arial">Although confidentiality is typically the 
+first aspect of cryptography that comes to mind, the special relationship 
+between public and private keys also enables functionality that has no parallel 
+in symmetric cryptography; namely, authentication (ensuring that the identity of 
+the sender can be determined by anyone) and integrity (ensuring that any 
+alterations of the message content can be easily spotted by anyone). These new 
+features and, through them, support for non-repudiation (ensuring the origin or 
+delivery of data in order to protect the sender against false denial by the 
+recipient that the data has been received or to protect the recipient against 
+false denial by the sender that the data has been sent) provide electronic 
+messages with a mechanism analogous to signatures in the paper world, that is, a 
+digital signature. </span></p>
+<p align="justify"><span style="font-family: Arial">To create a digital signature for a message, 
+the data to be signed is transformed by an algorithm that takes as input the 
+private key of the sender. Because a transformation determined by the sender's 
+private key can only be undone if the reverse transform takes as a parameter the 
+sender's public key, a recipient of the transformed data can be confident of the 
+origin of the data (the identity of the sender). If the data can be verified 
+using the sender's public key, then it must have been signed using the 
+corresponding private key (to which only the sender should have access). </span>
+</p>
+<p align="justify"><span style="font-family: Arial">For signature verification to be meaningful, 
+the verifier must have confidence that the public key does actually belong to 
+the sender (otherwise an impostor could claim to be the sender, presenting her 
+own public key in place of the real one). A certificate, issued by a 
+Certification Authority, is an assertion of the validity of the binding between 
+the certificate's subject and her public key such that other users can be 
+confident that the public key does indeed correspond to the subject who claims 
+it as her own.</span></p>
+<p align="justify"><span style="font-family: Arial">Largely due to the performance 
+characteristics of public-key algorithms, the entire message data is typically 
+not itself transformed directly with the private key. Instead a small unique 
+thumbprint of the document, called a &quot;hash&quot; or &quot;digest&quot;, is transformed. Because 
+the hashing algorithm is very sensitive to any changes in the source document, 
+the hash of the original allows a recipient to verify that the document was not 
+altered (by comparing the hash that was sent to them with the hash they 
+calculate from the document they received). Additionally, by transforming the 
+hash with their private key, the sender also allows the recipient to verify that 
+it was indeed the sender that performed the transformation (because the 
+recipient was able to use the sender's public key to &quot;undo&quot; the transformation). 
+The hash of a document, transformed with the sender's private key, thereby acts 
+as a digital signature for that document and can be transmitted openly along 
+with the document to the recipient. The recipient verifies the signature by 
+taking a hash of the message and inputting it to a verification algorithm along 
+with the signature that accompanied the message and the sender's public key. If 
+the result is successful, the recipient can be confident of both the 
+authenticity and integrity of the message. </span></p>
+<h3 align="justify"><font face="Arial"><a name="sigs"><span style="font-size: 12.0pt">Introduction to XML 
+Signatures</span></a></font></h3>
+<p align="justify"><span style="font-family: Arial">XML signatures are digital signatures 
+designed for use in XML transactions. The standard defines a schema for 
+capturing the result of a digital signature operation applied to arbitrary (but 
+often XML) data. Like non-XML-aware digital signatures (e.g., PKCS), XML 
+signatures add authentication, data integrity, and support for non-repudiation 
+to the data that they sign. However, unlike non-XML digital signature standards, 
+XML signature has been designed to both account for and take advantage of the 
+Internet and XML.</span></p>
+<p align="justify"><span style="font-family: Arial">A fundamental feature of XML Signature is 
+the ability to sign only specific portions of the XML tree rather than the 
+complete document. This will be relevant when a single XML document may have a 
+long history in which the different components are authored at different times 
+by different parties, each signing only those elements relevant to itself. This 
+flexibility will also be critical in situations where it is important to ensure 
+the integrity of certain portions of an XML document, while leaving open the 
+possibility for other portions of the document to change. Consider, for example, 
+a signed XML form delivered to a user for completion. If the signature were over 
+the full XML form, any change by the user to the default form values would 
+invalidate the original signature.</span></p>
+<p align="justify"><span style="font-family: Arial">An XML signature can sign more than one type 
+of resource. For example, a single XML signature might cover character-encoded 
+data (HTML), binary-encoded data (a JPG), XML-encoded data, and a specific 
+section of an XML file.</span></p>
+<p align="justify"><span style="font-family: Arial">Signature validation requires that the data 
+object that was signed be accessible. The XML signature itself will generally 
+indicate the location of the original signed object. This reference can </span>
+</p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">be referenced by a URI 
+  within the XML signature; </span></li>
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">reside within the same 
+  resource as the XML signature (the signature is a sibling); </span></li>
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">be embedded within the 
+  XML signature (the signature is the parent); </span></li>
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">have its XML signature 
+  embedded within itself (the signature is the child). </span></li>
+</ul>
+<h3><font face="Arial"><a name="components"><span style="font-size: 12.0pt">The Components of an 
+XML Signature</span></a></font></h3>
+<p class="MsoNormal"><span style="font-family: Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1034" type="#_x0000_t75" alt="" style='width:337.5pt;
+ height:253.5pt'>
+ <v:imagedata src="XMLSIG_files/image001.jpg" o:href="file:///H:\ZCD\Education\M.Tech%20CN\UNIT%20VI\XML_com%20An%20Introduction%20to%20XML%20Digital%20Signatures_files\graphic.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=450 height=338
+src="XMLSIG_files/image001.jpg" v:shapes="_x0000_s1034"><![endif]></span></p>
+<h3 align="justify"><font face="Arial"><a name="xml-sig"><span style="font-size: 12.0pt">How to Create an XML 
+Signature</span></a></font></h3>
+<p align="justify"><span style="font-family: Arial">Here is a quick overview of how to create an 
+XML signature; please refer to the XML Signature specification for additional 
+information.</span></p>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">1. Determine which resources are to be 
+signed.</span></font></h4>
+<p align="justify"><span style="font-family: Arial">This will take the form of identifying the 
+resources through a Uniform Resource Identifier (URI). </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">&quot;http://www.abccompany.com/index.html&quot; 
+  would reference an HTML page on the Web </span></li>
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">&quot;http://www.abccompany.com/logo.gif&quot; 
+  would reference a GIF image on the Web </span></li>
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">&quot;http://www.abccompany.com/xml/po.xml&quot; 
+  would reference an XML file on the Web </span></li>
+  <li class="MsoNormal">
+  <p align="justify"><span style="font-family: Arial">&quot;http://www.abccompany.com/xml/po.xml#sender1&quot; 
+  would reference a specific element in an XML file on the Web </span></li>
+</ul>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">2. Calculate the digest of each resource.
+</span></font></h4>
+<p align="justify"><span style="font-family: Arial">In XML signatures, each referenced resource 
+is specified through a <code style="color: #003366">
+<font face="Arial">&lt;Reference&gt;</font></code> element and its 
+digest (calculated on the identified resource and not the
+<code style="color: #003366">
+<font face="Arial">&lt;Reference&gt;</font></code> element itself) is 
+placed in a <code style="color: #003366">
+<font face="Arial">&lt;DigestValue&gt;</font></code> child element like</span></p>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;Reference URI=&quot;http://www.abccompany.com/news/2000/03_27_00.htm&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot; /&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;DigestValue&gt;j6lwx3rvEPO0vKtMup4NbeVu8nk=&lt;/DigestValue&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/Reference&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;Reference </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;URI=&quot;http://www.w3.org/TR/2000/WD-xmldsig-core-20000228/signature-example.xml&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;/&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;DigestValue&gt;UrXLDLBIta6skoV5/A8Q38GEw44=&lt;/DigestValue&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/Reference&gt;</span></pre>
+</div>
+<p align="justify"><span style="font-family: Arial">The
+<code style="color: #003366">
+<font face="Arial">&lt;DigestMethod&gt;</font></code> element identifies 
+the algorithm used to calculate the digest.</span></p>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">3. Collect the Reference elements</span></font></h4>
+<p align="justify"><span style="font-family: Arial">Collect the
+<code style="color: #003366">
+<font face="Arial">&lt;Reference&gt;</font></code> elements (with their 
+associated digests) within a
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element like</span></p>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">SignedInfo Id=&quot;foobar&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;CanonicalizationMethod </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;Algorithm=&quot;http://www.w3.org/TR/2001/REC-xml-c14n-20010315&quot;/&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;SignatureMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#dsa-sha1&quot; /&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&lt;Reference URI=&quot;http://www.abccompany.com/news/2000/03_27_00.htm&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp; &lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot; /&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp; &lt;DigestValue&gt;j6lwx3rvEPO0vKtMup4NbeVu8nk=&lt;/DigestValue&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&lt;/Reference&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;Reference </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;URI=&quot;http://www.w3.org/TR/2000/WD-xmldsig-core-20000228/signature-example.xml&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp; &lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;/&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp; &lt;DigestValue&gt;UrXLDLBIta6skoV5/A8Q38GEw44=&lt;/DigestValue&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&lt;/Reference&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/SignedInfo&gt;</span></pre>
+</div>
+<p align="justify"><span style="font-family: Arial">The
+<code style="color: #003366">
+<font face="Arial">&lt;CanonicalizationMethod&gt;</font></code> element 
+indicates the algorithm was used to canonize the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element. Different 
+data streams with the same XML information set may have different textual 
+representations, e.g. differing as to whitespace. To help prevent inaccurate 
+verification results, XML information sets must first be canonized before 
+extracting their bit representation for signature processing. The
+<code style="color: #003366">
+<font face="Arial">&lt;SignatureMethod&gt;</font></code> element 
+identifies the algorithm used to produce the signature value.</span></p>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">4. Signing</span></font></h4>
+<p align="justify"><span style="font-family: Arial">Calculate the digest of the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element, sign that 
+digest and put the signature value in a
+<code style="color: #003366">
+<font face="Arial">&lt;SignatureValue&gt;</font></code> element. </span>
+</p>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;SignatureValue&gt;MC0E LE=&lt;/SignatureValue&gt;</span></pre>
+</div>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">&nbsp;</span></font></h4>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">&nbsp;</span></font></h4>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">5. Add key information</span></font></h4>
+<p align="justify"><span style="font-family: Arial">If keying information is to be included, 
+place it in a <code style="color: #003366">
+<font face="Arial">&lt;KeyInfo&gt;</font></code> element. Here the 
+keying information contains the X.509 certificate for the sender, which would 
+include the public key needed for signature verification.</span></p>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;KeyInfo&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;X509Data&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp; &lt;X509SubjectName&gt;CN=Ed Simon,O=XMLSec Inc.,ST=OTTAWA,C=CA&lt;/X509SubjectName&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp; &lt;X509Certificate&gt;MIID5jCCA0+gA...lVN&lt;/X509Certificate&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial"> &lt;/X509Data&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/KeyInfo&gt;</span></pre>
+</div>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">&nbsp;</span></font></h4>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">&nbsp;</span></font></h4>
+<h4 align="justify"><font face="Arial"><span style="font-size: 12.0pt">6. Enclose in a Signature element</span></font></h4>
+<p align="justify"><span style="font-family: Arial">Place the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code>,
+<code style="color: #003366">
+<font face="Arial">&lt;SignatureValue&gt;</font></code>, and
+<code style="color: #003366">
+<font face="Arial">&lt;KeyInfo&gt;</font></code> elements into a
+<code style="color: #003366">
+<font face="Arial">&lt;Signature&gt;</font></code> element. The
+<code style="color: #003366">
+<font face="Arial">&lt;Signature&gt;</font></code> element comprises the 
+XML signature. </span></p>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;Signature xmlns=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;SignedInfo Id=&quot;foobar&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;CanonicalizationMethod </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;Algorithm=&quot;http://www.w3.org/TR/2001/REC-xml-c14n-20010315&quot;/&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;SignatureMethod </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#dsa-sha1&quot; /&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;Reference URI=&quot;http://www.abccompany.com/news/2000/03_27_00.htm&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot; /&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;DigestValue&gt;j6lwx3rvEPO0vKtMup4NbeVu8nk=&lt;/DigestValue&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/Reference&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;Reference </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;URI=&quot;http://www.w3.org/TR/2000/WD-xmldsig-core-20000228/signature-example.xml&quot;&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;/&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;DigestValue&gt;UrXLDLBIta6skoV5/A8Q38GEw44=&lt;/DigestValue&gt; </span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/Reference&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/SignedInfo&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;SignatureValue&gt;MC0E~LE=&lt;/SignatureValue&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;KeyInfo&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;X509Data&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;X509SubjectName&gt;CN=Ed Simon,O=XMLSec Inc.,ST=OTTAWA,C=CA&lt;/X509SubjectName&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;X509Certificate&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">MIID5jCCA0+gA...lVN</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/X509Certificate&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/X509Data&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/KeyInfo&gt;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;</span></pre>
+</div>
+<div align="justify">
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&lt;/Signature&gt;</span></pre>
+</div>
+<h3 align="justify"><font face="Arial"><a name="verify"><span style="font-size: 12.0pt">Verifying an XML Signature</span></a></font></h3>
+<p align="justify"><span style="font-family: Arial">A brief description of how to verify an XML 
+signature:</span></p>
+<p style="text-indent: -.25in; margin-left: .5in" align="justify">
+<span style="font-family: Arial">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Verify the signature of the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element. To do so, 
+recalculate the digest of the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element (using the 
+digest algorithm specified in the
+<code style="color: #003366">
+<font face="Arial">&lt;SignatureMethod&gt;</font></code> element) and 
+use the public verification key to verify that the value of the
+<code style="color: #003366">
+<font face="Arial">&lt;SignatureValue&gt;</font></code> element is 
+correct for the digest of the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element. </span></p>
+<p style="text-indent: -.25in; margin-left: .5in" align="justify">
+<span style="font-family: Arial">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>If this step passes, recalculate 
+the digests of the references contained within the
+<code style="color: #003366">
+<font face="Arial">&lt;SignedInfo&gt;</font></code> element and compare 
+them to the digest values expressed in each
+<code style="color: #003366">
+<font face="Arial">&lt;Reference&gt;</font></code> element's 
+corresponding <code style="color: #003366">
+<font face="Arial">&lt;DigestValue&gt;</font></code> element. </span>
+</p>
+<p align="justify"><span style="font-family: Arial">&nbsp;</span></p>
+<p align="justify"><span style="font-family: Arial">As XML becomes a vital component of the 
+emerging electronic business infrastructure, we need trustable, secure XML 
+messages to form the basis of business transactions. One key to enabling secure 
+transactions is the concept of a digital signature, ensuring the integrity and 
+authenticity of origin for business documents. XML Signature is an evolving 
+standard for digital signatures that both addresses the special issues and 
+requirements that XML presents for signing operations and uses XML syntax for 
+capturing the result, simplifying its integration into XML applications.</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

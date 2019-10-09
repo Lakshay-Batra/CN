@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><span style="text-transform: uppercase"><u>
+<font face="Arial" color="#FF0000" size="6"><b>link-state routing protocol</b></font></u></span></p>
+<p><font face="Arial">A <b>link-state routing protocol</b> is one of the two 
+main classes of routing protocols used in packet-switched networks for computer 
+communications. Examples of link-state routing protocols include OSPF and IS-IS.</font></p>
+<p><font face="Arial">The link-state protocol is performed by every <i>switching 
+node</i> in the network (i.e. nodes which are prepared to forward packets; in 
+the Internet, these are called routers). The basic concept of link-state routing 
+is that every node receives a <i>map</i> of the connectivity of the network, in 
+the form of a graph showing which nodes are connected to which other nodes.</font></p>
+<p><font face="Arial">Each node then independently calculates the best <i>next 
+hop</i> from it for every possible destination in the network. (It does this 
+using only its local copy of the map, and without communicating in any other way 
+with any other node.) The collection of best next hops forms the routing table 
+for the node.</font></p>
+<p><font face="Arial">This contrasts with distance-vector routing protocols, 
+which work by having each node share its <b>routing table</b> with its 
+neighbors. In a link-state protocol, the only information passed between the 
+nodes is information used to construct the connectivity maps.</font></p>
+<h2><font size="3" face="Arial">Detailed description: Distributing maps</font></h2>
+<p><font face="Arial">This description covers only the simplest configuration; 
+i.e. one with no areas, so that all nodes do have a map of the entire network. 
+The hierarchical case is somewhat more complex; see the various protocol 
+specifications.</font></p>
+<p><font face="Arial">As previously mentioned, the first main stage in the 
+link-state algorithm is to give a map of the network to every node. This is done 
+with several simple subsidiary steps.</font></p>
+<div class="editsection" style="float: right; width: 30; height: 18; margin-left: 5px">
+  <font face="Arial">[</font></div>
+<h3><font size="3" face="Arial">Determining the neighbors of each node</font></h3>
+<p><font face="Arial">First, each node needs to determine what other nodes it is 
+connected to, over fully-working links; it does this using a simple <i>
+reachability protocol</i> which it runs separately with each of its 
+directly-connected neighbors.</font></p>
+<h3><font size="3" face="Arial">Distributing the information for the map</font></h3>
+<p><font face="Arial">Next, each node periodically makes up a short message, the
+<i>link-state advertisement</i>, which:</font></p>
+<ul lastCheckbox="null">
+  <li><font face="Arial">Identifies the node which is producing it. </font></li>
+  <li><font face="Arial">Identifies all the other nodes to which it is directly 
+  connected. </font></li>
+  <li><font face="Arial">Includes a <i>sequence number</i>, which increases 
+  every time the source node makes up a new version of the message. </font></li>
+</ul>
+<p><font face="Arial">This message is then <i>flooded</i> throughout the 
+network. As a necessary precursor, each node in the network remembers, for every 
+other node in the network, the sequence number of the last link-state message 
+which it received from that node. With that in hand, the method used is simple.</font></p>
+<p><font face="Arial">Starting with the node which originally produced the 
+message, it sends a copy to all of its neighbors. When a link-state 
+advertisement is received at a node, the node looks up the sequence number it 
+has stored for the source of that link-state message. If this message is newer 
+(i.e. has a higher sequence number), it is saved, and a copy is sent in turn to 
+each of that node's neighbors.</font></p>
+<p><font face="Arial">This procedure rapidly gets a copy of the latest version 
+of each node's link-state advertisement to every node in the network.</font></p>
+<h3><font size="3" face="Arial">Creating the map</font></h3>
+<p><font face="Arial">Finally, with the complete set of link-state 
+advertisements (one from each node in the network) in hand, it is obviously easy 
+to produce the graph for the map of the network.</font></p>
+<p><font face="Arial">The algorithm simply iterates over the collection of 
+link-state advertisements; for each one, it makes links on the map of the 
+network, from the node which sent that message, to all the nodes which that 
+message indicates are neighbors of the sending node.</font></p>
+<p><font face="Arial">No link is considered to have been correctly reported 
+unless the two ends agree; i.e. if one node reports that it is connected to 
+another, but the other node does not report that it is connected to the first, 
+there is a problem, and the link is not included on the map.</font></p>
+<h3><font size="3" face="Arial">Notes about this stage</font></h3>
+<p><font face="Arial">The link-state message giving information about the 
+neighbors is recomputed, and then flooded throughout the network, whenever there 
+is a change in the connectivity between the node and its neighbors, e.g. when a 
+link fails. Any such change will be detected by the reachability protocol which 
+each node runs with its neighbors.</font></p>
+<h2><font size="3" face="Arial">Detailed description: Calculating the routing 
+table</font></h2>
+<p><font face="Arial">As initially mentioned, the second main stage in the 
+link-state algorithm is to produce routing tables, by inspecting the maps. This 
+is again done with several steps.</font></p>
+<h3><font size="3" face="Arial">Calculating the shortest paths</font></h3>
+<p><font face="Arial">Each node independently runs an algorithm over the map to 
+determine the shortest path from themselves to every other node in the network; 
+generally some variant of Dijkstra's algorithm is used.</font></p>
+<p><font face="Arial">Basically, a node maintains two data structures: a tree 
+containing nodes which are &quot;done&quot;, and a list of <i>candidates</i>. The 
+algorithm starts with both structures empty; it then adds to the first one the 
+node itself. The algorithm then repetitively:</font></p>
+<ul>
+  <li><font face="Arial">Adds to the second (candidate) list all nodes which are 
+  connected to the node just added to the tree (excepting of course any nodes 
+  which are already in either the tree or the candidate list). </font></li>
+</ul>
+<ul>
+  <li><font face="Arial">Of the nodes in the candidate list, moves to the tree 
+  (attaching it to the appropriate neighbor node already there) the one which is 
+  the closest to any of the nodes already in the tree. </font></li>
+</ul>
+<ul>
+  <li><font face="Arial">Repeat as long as there are any nodes left in the 
+  candidate list. (When there are none, all the nodes in the network will have 
+  been added to the tree.) </font></li>
+</ul>
+<p><font face="Arial">This procedure ends with the tree containing all the nodes 
+in the network, with the node on which the algorithm is running as the <i>root</i> 
+of the tree. The shortest path from that node to any other node is indicated by 
+the list of nodes one traverses to get from the root of the tree, to the desired 
+node in the tree.</font></p>
+<h3><font size="3" face="Arial">Filling the routing table</font></h3>
+<p><font face="Arial">With the shortest paths in hand, filling in the routing 
+table is again obviously easy.</font></p>
+<p><font face="Arial">For any given destination node, the best next hop for that 
+destination is the node which is the first step from the root node, down the 
+branch in the shortest-path tree which leads toward the desired destination 
+node.</font></p>
+<p><font face="Arial">To create the routing table, it is only necessary to walk 
+the tree, remembering the identity of the node at the head of each branch, and 
+filling in the routing table entry for each node one comes across with that 
+identity.</font></p>
+<h3><font size="3" face="Arial">Optimizations to the algorithm</font></h3>
+<p><font face="Arial">The algorithm described above was made as simple as 
+possible, to aid in ease of understanding. In practice, there are a number of 
+optimizations which are used.</font></p>
+<p><font face="Arial">Most importantly, whenever a change in the connectivity 
+map happens, it is necessary to recomputed the shortest-path tree, and then 
+recreate the routing table. The BBN work discovered how to recomputed only that 
+part of the tree which could have been affected by a given change in the map.</font></p>
+<p><font face="Arial">Also, the routing table would normally be filled in as the 
+shortest-path tree is computed, instead of making it a separate operation.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

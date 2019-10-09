@@ -1,0 +1,99 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h2 style="text-align: center">
+<span style="font-family: Arial; text-decoration: underline">
+<font size="6" color="#FF0000">Static vs. Dynamic Routing</font></span></h2>
+<h2 style="text-align: justify"><strong>
+<span style="font-size: 12.0pt; font-family: Arial">
+<!-- #EndEditable -->Static Routing </span></strong></h2>
+<p style="text-align: justify"><b><span style="font-family: Arial">Static 
+routing</span></b><span style="font-family: Arial"> is not really a routing 
+protocol. Static routing is simply the process of manually entering routes into 
+a device's routing table via a configuration file that is loaded when the 
+routing device starts up. As an alternative, these routes can be entered by a 
+network administrator who configures the routes manually. Since these manually 
+configured routes don't change after they are configured (unless a human changes 
+them) they are called 'static' routes. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Static routing 
+is the simplest form of routing, but it is a manual process. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Use static 
+routing when you have very few devices to configure (&lt;5) and when you know the 
+routes will probably never change. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Static routing 
+also does not handle failures in external networks well because any route that 
+is configured manually must be updated or reconfigured manually to fix or repair 
+any lost connectivity.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span><strong><span style="font-size: 12.0pt; font-family: Arial">Dynamic 
+Routing </span></strong></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Dynamic 
+routing</span></b><span style="font-family: Arial"> protocols are supported by 
+software applications running on the routing device (the router) which 
+dynamically learn network destinations and how to get to them and also advertise 
+those destinations to other routers. This advertisement function allows all the 
+routers to learn about all the destination networks that exist and how to to 
+those networks.</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">A router</span></b><span style="font-family: Arial"> 
+using dynamic routing will 'learn' the routes to all networks that are directly 
+connected to the device. Next, the router will learn routes from other routers 
+that run the same routing protocol (RIP, RIP2, EIGRP, OSPF, IS-IS, BGP etc). 
+Each router will then sort through it's list of routes and select one or more 
+'best' routes for each network destination the router knows or has learned.
+</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Dynamic 
+routing</span></b><span style="font-family: Arial"> protocols will then 
+distribute this 'best route' information to other routers running the same 
+routing protocol, thereby extending the information on what networks exist and 
+can be reached. This gives dynamic routing protocols the ability to adapt to 
+logical network topology changes, equipment failures or network outages 'on the 
+fly'.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span><strong><span style="font-family: Arial; font-weight: normal">The 
+underlying </span><span style="font-family: Arial">difference </span>
+<span style="font-family: Arial; font-weight: normal">between dynamic and static 
+routing is that static routing is installed manually, while dynamic routing is 
+supported by software applications.</span></strong><b><span style="font-family: Arial">
+</span></b><span style="font-family: Arial">This results in differing 
+adaptability and as a consequence different uses.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span><b><span style="font-family: Arial">Static 
+routing</span></b><span style="font-family: Arial"> uses a configuration file, 
+which is loaded when the router is started up. Because it is manually 
+configured, it cannot change after installation unless a person changes it. This 
+means that in the event of a failure of the external network, the router must be 
+manually updated. Because of this, static routing is best used where there are 
+fewer than five devices and the routes are known to be stable.</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Dynamic 
+routers</span></b><span style="font-family: Arial"> are suitable for use in 
+networks where there are multiple routers. Dynamic routing, since it depends on 
+software applications, can adapt and learn network destinations both on its own 
+and from other routers on the network that are using the same routing protocol. 
+As such, dynamic routers can dynamically adapt to changes in the network as well 
+as any external network failures.</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Modern 
+networks</span></b><span style="font-family: Arial"> typically use a combination 
+of both types of routing, with a preference for dynamic routing because of its 
+flexibility. Static routing is however more secure and does not include any 
+advertising. </span></p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

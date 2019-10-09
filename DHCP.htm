@@ -1,0 +1,796 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+A.GlossLink {
+	COLOR: green
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h2 align="center"><u><font color="#FF0000" face="Arial" size="6">DHCP</font></u></h2>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial">The Dynamic Host Configuration Protocol (DHCP) provides 
+configuration parameters to Internet hosts in a client-server model. DHCP server 
+hosts allocate network addresses and deliver configuration parameters to other 
+(client) hosts. </font></p>
+<p style="margin-left: .5in" align="justify"><font face="Arial">DHCP consists of 
+two components: a protocol for delivering host-specific configuration parameters 
+from a server to a host and a mechanism for allocation of network addresses to 
+hosts. </font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">IP Address Allocation
+</font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial">DHCP supports three mechanisms for IP address allocation.
+</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Automatic allocation -- in which a permanent IP 
+address is assigned to the client. </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Dynamic allocation -- in which the address is assigned 
+for a limited period of time (a &quot;lease&quot;). </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Manual allocation -- in which the address is assigned 
+manually by the network administrator. </font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">Configuration 
+Parameters Delivery </font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial">The client sends a message to request configuration 
+parameters and the server responds with a message carrying the desired 
+parameters back to the client. </font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">
+<a name="BOOTPcompat">BOOTP</a> Compatibility </font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial">The format of DHCP messages is based on the format of BOOTP 
+messages due to the following reasons: </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">1.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">From the client's point of view, DHCP is an extension 
+of the BOOTP mechanism. This behavior allows existing BOOTP clients to 
+interoperate with DHCP servers without requiring any change to the clients' 
+initialization software. </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in" align="justify">
+<font face="Arial">2.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">DHCP supports the BOOTP relay agent behavior. </font>
+</p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">Use of Relay Agents
+</font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial">DHCP does not require a server on each subnet. To allow for 
+scale and economy, DHCP can work across routers or through the intervention of 
+BOOTP relay agents. A realy agent listens to DHCP messages and forwards them on 
+(and onto other network segments). This eliminates the necessity of having a 
+DHCP server on each physical network. </font></p>
+<p align="justify">&nbsp;</p>
+<ol>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="widxx">What is DHCP?</a>
+  </font></b></p>
+  <p align="justify"><font face="Arial">DHCP stands for &quot;Dynamic Host 
+  Configuration Protocol&quot;.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="widpx">What is DHCP's 
+  purpose?</a> </font></b></p>
+  <p align="justify"><font face="Arial">DHCP's purpose is to enable individual 
+  computers on an IP network to extract their configurations from a server (the 
+  'DHCP server') or servers, in particular, servers that have no exact 
+  information about the individual computers until they request the information. 
+  The overall purpose of this is to reduce the work necessary to administer a 
+  large IP network. The most significant piece of information distributed in 
+  this manner is the IP address.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cdwwa">Can DHCP work with 
+  Appletalk or IPX?</a></font></b></p>
+  <p align="justify"><font face="Arial">No, it is too tied to IP. Furthermore, 
+  they don't need it since they have always had automated mechanisms for 
+  assigning their own network addresses.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wcihw">Who Created It? How 
+  Was It Created?</a></font></b></p>
+  <p align="justify"><font face="Arial">DHCP was created by the Dynamic Host 
+  Configuration Working Group of the Internet Engineering Task Force (IETF; a 
+  volunteer organization which defines protocols for use on the Internet). As 
+  such, it's definition is recorded in an Internet RFC and the Internet 
+  Activities Board (IAB) is asserting its status as to Internet Standardization. 
+  As of this writing (June 1998), DHCP is an Internet Draft Standard Protocol 
+  and is Elective. BOOTP is an Internet Draft Standard Protocol and is 
+  Recommended. For more information on Internet standardization, see RFC2300 
+  (May 1998).</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hiidt">How is it different 
+  than BOOTP or RARP?</a> </font></b></p>
+  <p align="justify"><font face="Arial">DHCP is based on BOOTP and maintains 
+  some backward compatibility. The main difference is that BOOTP was designed 
+  for manual pre-configuration of the host information in a server database, 
+  while DHCP allows for dynamic allocation of network addresses and 
+  configurations to newly attached hosts. Additionally, DHCP allows for recovery 
+  and reallocation of network addresses through a leasing mechanism. </font></p>
+  <p align="justify"><font face="Arial">RARP is a protocol used by Sun and other 
+  vendors that allows a computer to find out its own IP number, which is one of 
+  the protocol parameters typically passed to the client system by DHCP or BOOTP. 
+  RARP doesn't support other parameters and using it, a server can only serve a 
+  single LAN. DHCP and BOOTP are designed so they can be routed.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hiidv">How is it different 
+  than VLANs?</a> </font></b></p>
+  <p align="justify"><font face="Arial">DHCP and VLANs, which are very different 
+  in concept, are sometimes cited as different solutions to the same problem. 
+  While they have a goal in common (easing moves of networked computers), VLANs 
+  represent a more revolutionary change to a LAN than DHCP. A DHCP server and 
+  forwarding agents can allow you to set things up so that you can unplug a 
+  client computer from one network or subnet and plug it into another and have 
+  it come alive immediately, it having been reconfigured automatically. In 
+  conjunction to Dynamic DNS, it could automatically be given its same name in 
+  its new place. VLAN-capable LAN equipment with dynamic VLAN assignment allows 
+  you to configure things so a client computer can be plugged into any port and 
+  have the same IP number (as well as name) and be on the same subnet. The VLAN-capable 
+  network either has its own configuration that lists which MAC addresses are to 
+  belong to each VLAN, or it makes the determination from the source IP address 
+  of the IP packets that the client computer sends. Some differences in the two 
+  approaches: </font>
+  <ul>
+    <li>
+    <p align="justify"><font face="Arial">DHCP handles changes by reconfiguring 
+    the client while a VLAN-capable network handles it by reconfiguring the 
+    network port the client is moved to. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">DHCP dynamic reconfiguration requires 
+    a DHCP server, forwarding agent in each router, and DHCP capability in each 
+    client's TCP/IP support. The analogous capability in VLANs requires that all 
+    hubs throughout the network be VLAN-capable, supporting the same VLAN 
+    scheme. To this point VLAN support is proprietary with no vendor 
+    interoperability, but standards are being developed. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">DHCP can configure a new client 
+    computer for you while a VLAN-capable network can't. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">DHCP is generally aimed at giving 
+    &quot;easy moves&quot; capability to networks that are divided into subnets on a 
+    geographical basis, or on separate networks. VLANs are generally aimed at 
+    allowing you to set up subnets on some basis other than geographical, e.g. 
+    instead of putting everyone in one office on the same subnet, putting each 
+    person on a subnet that has access to the servers that that person requires.
+    </font></li>
+  </ul>
+  <p align="justify"><font face="Arial">There is an issue with trying to use 
+  DHCP (or BOOTP) and VLANs at the same time, in particular, with the scheme by 
+  which the VLAN-capable network determines the client's VLAN based upon the 
+  client computer's source IP address. Doing so assumes the client computer is 
+  already configured, which precludes the use of network to get the 
+  configuration information from a DHCP or BOOTP server.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wppdd">What protocol and 
+  port does DHCP use?</a> </font></b></p>
+  <p align="justify"><font face="Arial">DHCP, like BOOTP runs over UDP, 
+  utilizing ports 67 and 68.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wiaia">What is an IP 
+  address?</a> </font></b></p>
+  <p align="justify"><font face="Arial">An IP address (also called an IP number) 
+  is a number (typically written as four numbers separated by periods, i.e. 
+  107.4.1.3 or 84.2.1.111) which uniquely identifies a computer that is making 
+  use of the Internet. It is analogous to your telephone number in that the 
+  telephone number is used by the telephone network to direct calls to you. The 
+  IP address is used by the Internet to direct data to your computer, e.g. the 
+  data your web browser retrieves and displays when you surf the net. One task 
+  of DHCP is to assist in the problem of getting a functional and unique IP 
+  number into the hands of the computers that make use of the Internet. </font>
+  </li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wiama">What is a MAC 
+  address?</a> </font></b></p>
+  <p align="justify"><font face="Arial">A MAC address (also called an Ethernet 
+  address or an IEEE MAC address) is a number (typically written as twelve 
+  hexadecimal digits, 0 through 9 and A through F, or as six hexadecimal numbers 
+  separated by periods or colons, i.e. 0080002012ef, 0:80:0:2:20:ef) which 
+  uniquely identifes a computer that has an Ethernet interface. Unlike the IP 
+  number, it includes no indication of where your computer is located. In DHCP's 
+  typical use, the server uses a requesting computer's MAC address to uniquely 
+  identify it.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wiadl">What is a DHCP lease?</a>
+  </font></b></p>
+  <p align="justify"><font face="Arial">A DHCP lease is the amount of time that 
+  the DHCP server grants to the DHCP client permission to use a particular IP 
+  address. A typical server allows its administrator to set the lease time.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wiaci">What is a Client ID?</a>
+  </font></b></p>
+  <p align="justify"><font face="Arial">What is termed the <i>Client ID</i> for 
+  the purposes of the DHCP protocol is whatever is used by the protocol to 
+  identify the client computer. By default, DHCP implementations typically 
+  employ the client's MAC address for this purpose, but the DHCP protocol allows 
+  other options. Some DHCP implementations have a setup option to specify the 
+  client ID you want. One alternative to the MAC address is simply a character 
+  string of your choice. In any case, in order for DHCP to function, you must be 
+  certain that no other client is using the client ID you choose, and you must 
+  be sure the DHCP server will accept it.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wscai">Why shouldn't clients 
+  assign IP numbers without the use of a server?</a> </font></b></p>
+  <p align="justify"><font face="Arial">It is theoretically possible to develop 
+  software for client-machines that finds an unused address by picking them out 
+  of the blue and broadcasting a request of all the other client machines to see 
+  if they are using them. Appletalk is designed around this idea, and Apple's 
+  MacTCP can be configured to do this for IP. However, this method of IP address 
+  assignment has disadvantages. </font>
+  <ol>
+    <li>
+    <p align="justify"><font face="Arial">A computer that needs a 
+    permanently-assigned IP number might be turned off and lose its number to a 
+    machine coming up. This has problems both for finding services and for 
+    security. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">A network might be temporarily divided 
+    into two non-communicating networks while a network component is not 
+    functioning. During this time, two different client-machines might end up 
+    claiming the same IP number. When the network comes back, they start 
+    malfunctioning. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">If such dynamic assignment is to be 
+    confined to ranges of IP addresses, then the ranges are configured in each 
+    desktop machine rather than being centrally administered. This can lead both 
+    to hidden configuration errors and to difficulty in changing the range. 
+    Another problem with the use of such ranges is keeping it easy to move a 
+    computer from one subnet to another.</font></li>
+  </ol>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cdssd">Can DHCP support 
+  statically defined addresses?</a> </font></b></p>
+  <p align="justify"><font face="Arial">Yes. At least there is nothing in the 
+  protocol to preclude this and one expects it to be a feature of any DHCP 
+  server. This is really a server matter and the client should work either way. 
+  The RFC refers to this as manual allocation.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hddhs">How does DHCP and 
+  BOOTP handle multiple subnets?</a> </font></b></p>
+  <p align="justify"><font face="Arial">For the situations where there is more 
+  than one LAN, each with its own subnet number, there are two ways. First of 
+  all, you can set up a seperate server on each subnet. Secondly, a feature of 
+  some routers known as &quot;BOOTP forwarding&quot; to forward DHCP or BOOTP requests to 
+  a server on another subnet and to forward the replies back to the client. The 
+  part of such a router (or server acting as a router) that does this is called 
+  a &quot;BOOTP forwarding agent&quot;. Typically you have to enable it on the interface 
+  to the subnet to be served and have to configure it with the IP address of the 
+  DHCP or BOOTP server. On a Cisco router, the address is known as the &quot;UDP 
+  Helper Address&quot;.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cabcb">Can a BOOTP client 
+  boot from a DHCP server?</a> </font></b></p>
+  <p align="justify"><font face="Arial">Only if the DHCP server is specifically 
+  written to also handle BOOTP queries.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cadcb">Can a DHCP client 
+  boot from a BOOTP server?</a> </font></b></p>
+  <p align="justify"><font face="Arial">Only if the DHCP client were 
+  specifically written to make use of the answer from a BOOTP server. It would 
+  presumably treat a BOOTP reply as an unending lease on the IP address.</font></p>
+  <p align="justify"><font face="Arial">In particular, the TCP/IP stack included 
+  with Windows 95 <i>does not</i> have this capability.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="iadss">Is a DHCP server 
+  &quot;supposed to&quot; be able to support a BOOTP client?</a> </font></b></p>
+  <p align="justify"><font face="Arial">The RFC on such interoperability (1534) 
+  is clear: &quot;In summary, a DHCP server: ... MAY support BOOTP clients,&quot; (section 
+  2). The word &quot;MAY&quot; indicates such support, however useful, is left as an 
+  option. </font></p>
+  <p align="justify"><font face="Arial">A source of confusion on this point is 
+  the following statement in section 1.5 of RFC 1541: &quot;DHCP must provide service 
+  to existing BOOTP clients.&quot; However, this statement is one in a list of 
+  &quot;general design goals for DHCP&quot;, i.e. what the designers of the DHCP protocol 
+  set as their own goals. It is not in a list of requirements for DHCP servers.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="iadcs">Is a DHCP client 
+  &quot;supposed to&quot; be able to use a BOOTP server?</a> </font></b></p>
+  <p align="justify"><font face="Arial">The RFC on such interoperability (1534) 
+  is clear: &quot;A DHCP client MAY use a reply from a BOOTP server if the 
+  configuration returned from the BOOTP server is acceptable to the DHCP 
+  client.&quot; (section 3). The word &quot;MAY&quot; indicates such support, however useful, 
+  is left as an option.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cadco">Can a DHCP client or 
+  server make a DNS server update the client's DNS entry to match the client's 
+  dynamically assigned address?</a> </font></b></p>
+  <p align="justify"><font face="Arial">RFCs 2136 and 2137 indicate a way in 
+  which DNS entries can be updated dynamically. Using this requires a DNS server 
+  that supports this feature and a DHCP server that makes use of it. The RFCs 
+  are very recent (as of 5/97) and implementations are few. In the mean time, 
+  there are DNS and DHCP servers that accomplish this through proprietary means.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cdsbe">Can a DHCP server 
+  back up another DHCP server?</a> </font></b></p>
+  <p align="justify"><font face="Arial">You can have two or more servers handing 
+  out leases for different addresses. If each has a dynamic pool accessible to 
+  the same clients, then even if one server is down, one of those clients can 
+  lease an address from the other server. </font></p>
+  <p align="justify"><font face="Arial">However, without communication between 
+  the two servers to share their information on current leases, when one server 
+  is down, any client with a lease from it will not be able to renew their lease 
+  with the other server. Such communication is the purpose of the &quot;server to 
+  server protocol&quot; (see next question). It is possible that some server vendors 
+  have addressed this issue with their own proprietary server-to-server 
+  communication.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="wwtst">When will the server 
+  to server protocol be defined?</a> </font></b></p>
+  <p align="justify"><font face="Arial">The DHC WG of the IETF is actively 
+  investigating the issues in inter-server communication. The protocol should be 
+  defined &quot;soon&quot;.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="iaseh">In a subnetted 
+  environment, how does the DHCP server discover what subnet a request has come 
+  from?</a> </font></b></p>
+  <p align="justify"><font face="Arial">DHCP client messages are sent to off-net 
+  servers by DHCP relay agents, which are often a part of an IP router. The DHCP 
+  relay agent records the subnet from which the message was received in the DHCP 
+  message header for use by the DHCP server. </font></p>
+  <p align="justify"><font face="Arial">Note: a DHCP relay agent is the same 
+  thing as a BOOTP relay agent, and technically speaking, the latter phrase is 
+  correct.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="iaslh">If a single LAN has 
+  more than one subnet number, how can addresses be served on subnets other than 
+  the primary one?</a> </font></b></p>
+  <p align="justify"><font face="Arial">A single LAN might have more than one 
+  subnet number applicable to the same set of ports (broadcast domain). 
+  Typically, one subnet is designated as primary, the others as secondary. A 
+  site may find it necessary to support addresses on more than one subnet number 
+  associated with a single interface. DHCP's scheme for handling this is that 
+  the server has to be configured with the necessary information and has to 
+  support such configuration &amp; allocation. Here are four cases a server might 
+  have to handle: </font>
+  <ol>
+    <li>
+    <p align="justify"><font face="Arial">Dynamic allocation supported on 
+    secondary subnet numbers on the LAN to which the server is attached. </font>
+    </li>
+    <li>
+    <p align="justify"><font face="Arial">Dynamic allocation supported on 
+    secondary subnet numbers on a LAN which is handled through a DHCP/BOOTP 
+    Relay. In this case, the DHCP/BOOTP Relay sends the server a gateway address 
+    associated with the primary subnet and the server must know what to do with 
+    it. </font></li>
+  </ol>
+  <p align="justify"><font face="Arial">The other two cases are the same 
+  capabilities during manual allocation. It is possible that a particular 
+  server-implementation can handle some of these cases, but not all of them.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="iaplh">If a physical LAN has 
+  more than one logical subnet, how can different groups of clients be allocated 
+  addresses on different subnets?</a> </font></b></p>
+  <p align="justify"><font face="Arial">One way to do this is to preconfigure 
+  each client with information about what group it belongs to. A DHCP feature 
+  designed for this is the user class option. To do this, the client software 
+  must allow the user class option to be preconfigured and the server software 
+  must support its use to control which pool a client's address is allocated 
+  from.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cdsra">Can DHCP support 
+  remote access?</a> </font></b></p>
+  <p align="justify"><font face="Arial">PPP has its own non-DHCP way in which 
+  communications servers can hand clients an IP address called IPCP (IP Control 
+  Protocol) but doesn't have the same flexibility as DHCP or BOOTP in handing 
+  out other parameters. Such a communications server may support the use of DHCP 
+  to acquire the IP addresses it gives out. This is sometimes called doing DHCP 
+  by proxy for the client. I know that Windows NT's remote access support does 
+  this. </font></p>
+  <p align="justify"><font face="Arial">A feature of DHCP under development (DHCPinform) 
+  is a method by which a DHCP server can supply parameters to a client that 
+  already has an IP number. With this, a PPP client could get its IP number 
+  using IPCP, then get the rest of its parameters using this feature of DHCP.
+  </font></p>
+  <p align="justify"><font face="Arial">SLIP has no standard way in which a 
+  server can hand a client an IP address, but many communications servers 
+  support non-standard ways of doing this that can be utilized by scripts, etc. 
+  Thus, like communications servers supporting PPP, such communications servers 
+  could also support the use of DHCP to acquire the IP addressees to give out.
+  </font></p>
+  <p align="justify"><font face="Arial">The DHCP protocol is capable of 
+  allocating an IP address to a device without an IEEE-style MAC address, such 
+  as a computer attached through SLIP or PPP, but to do so, it makes use of a 
+  feature which may or may not be supported by the DHCP server: the ability of 
+  the server to use something other than the MAC address to identify the client. 
+  Communications servers that acquire IP numbers for their clients via DHCP run 
+  into the same roadblock in that they have just one MAC address, but need to 
+  acquire more than one IP address. One way such a communications server can get 
+  around this problem is through the use of a set of unique pseudo-MAC addresses 
+  for the purposes of its communications with the DHCP server. Another way (used 
+  by Shiva) is to use a different &quot;client ID type&quot; for your hardware address. 
+  Client ID type 1 means you're using MAC addresses. However, client ID type 0 
+  means an ASCII string.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cacha">Can a client have a 
+  home address and still float?</a> </font></b></p>
+  <p align="justify"><font face="Arial">There is nothing in the protocol to keep 
+  a client that already has a leased or permanent IP number from getting 
+  a(nother) lease on a temporary basis on another subnet (i.e., for that laptop 
+  which is almost always in one office, but occasionally is plugged in in a 
+  conference room or class room). Thus it is left to the server implementation 
+  to support such a feature. I've heard that Microsoft's NT-based server can do 
+  it.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hcird">How can I relay DHCP 
+  if my router does not support it?</a> </font></b></p>
+  <p align="justify"><font face="Arial">A server on a net(subnet) can relay DHCP 
+  or BOOTP for that net. Microsoft has software to make Windows NT do this.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hcimf">How do I migrate my 
+  site from BOOTP to DHCP?</a> </font></b></p>
+  <p align="justify"><font face="Arial">I don't have an answer for this, but 
+  will offer a little discussion. The answer depends a lot on what BOOTP server 
+  you are using and how you are maintaining it. If you depend heavily on BOOTP 
+  server software to support your existing clients, then the demand to support 
+  clients that support DHCP but not BOOTP presents you with problems. In 
+  general, you are faced with the choice: </font>
+  <ol>
+    <li>
+    <p align="justify"><font face="Arial">Find a server that is administered 
+    like your BOOTP server only that also serves DHCP. For example, one popular 
+    BOOTP server, the CMU server, has been patched so that it will answer DHCP 
+    queries. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">Run both a DHCP and a BOOTP server. It 
+    would be good if I could find out the gotcha's of such a setup. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">Adapt your site's administration to 
+    one of the available DHCP/BOOTP servers. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">Handle the non-BOOTP clients 
+    specially, e.g. turn off DHCP and configure them statically: not a good 
+    solution, but certainly one that can be done to handle the first few non-BOOTP 
+    clients at your site.</font></li>
+  </ol>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="cylwm">Can you limit which 
+  MAC addresses are allowed to roam?</a> </font></b></p>
+  <p align="justify"><font face="Arial">Sites may choose to require central 
+  pre-configuration for all computers that will be able to acquire a dynamic 
+  address. A DHCP server could be designed to implement such a requirement, 
+  presumably as an option to the server administrator. See
+  <a href="http://www.dhcp-handbook.com/dhcp_faq.html#daslm">section below</a> 
+  on servers that implement this.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="itasm">Is there an SNMP MIB 
+  for DHCP?</a> </font></b></p>
+  <p align="justify"><font face="Arial">There is no standard MIB; creating one 
+  is on the list of possible activities of the DHCP working group. It is 
+  possible that some servers implement private MIBs.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="widsx">What is DHCP 
+  Spoofing?</a> </font></b></p>
+  <p align="justify"><font face="Arial">Ascend <i>Pipeline</i> ISDN routers 
+  (which attach Ethernets to ISDN lines) incorporate a feature that Ascend calls 
+  &quot;DHCP spoofing&quot; which is essentially a tiny server implementation that hands 
+  an IP address to a connecting Windows 95 computer, with the intention of 
+  giving it an IP number during its connection process.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hlsal">How long should a 
+  lease be?</a> </font></b></p>
+  <p align="justify"><font face="Arial">I've asked sites about this and have 
+  heard answers ranging from 15 minutes to a year. Most administrators will say 
+  it depends upon your goals, your site's usage patterns, and service 
+  arrangements for your DHCP server.</font></p>
+  <p align="justify"><font face="Arial">A very relevant factor is that the 
+  client starts trying to renew the lease when it is halfway through: thus, for 
+  example, with a 4 day lease, the client which has lost access to its DHCP 
+  server has 2 days from when it first tries to renew the lease until the lease 
+  expires and the client must stop using the network. During a 2-day outage, new 
+  users cannot get new leases, but no lease will expire for any computer turned 
+  on at the time that the outage commences. </font></p>
+  <p align="justify"><font face="Arial">Another factor is that the longer the 
+  lease the longer time it takes for client configuration changes controlled by 
+  DHCP to propogate. </font></p>
+  <p align="justify"><font face="Arial">Some relevant questions in deciding on a 
+  lease time: </font>
+  <dl>
+    <div align="justify">
+      <dt><font face="Arial">Do you have more users than addresses? </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If so, you want to keep the lease time 
+    short so people don't end up sitting on leases. Naturally, there are 
+    degrees. In this situation, I've heard examples cited of 15 minutes, 2 
+    hours, and 2 days. Naturally, if you know you will have 20 users using 10 
+    addresses in within a day, a 2 day lease is not practical. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">Are you supporting mobile users? </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If so, you may be in the situation of 
+    having more users than addresses on some particular IP number range. See 
+    above. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">Do you have a typical or minimum amount of time 
+      that you are trying to support? </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If your typical user is on for an hour 
+    at minimum, that suggest a hour lease at minimum. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">How many clients do you have and how fast are the 
+      communications lines over which the DHCP packets will be run? </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">The shorter the lease, the higher the 
+    server and network load. In general, a lease of at least 2 hours is long 
+    enough that the load of even thousands of clients is negligible. For shorter 
+    leases, there may be a point beyond which you will want to watch the load. 
+    Note that if you have a communication line down for a long enough time for 
+    the leases to expire, you might see an unusually high load it returns. If 
+    the lease-time is at least double the communication line outage, this is 
+    avoided. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">How long would it take to bring back up the DHCP 
+      server, and to what extent can your users live without it? </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If the lease time is at least double 
+    the server outage, then running clients who already have leases will not 
+    lose them. If you have a good idea of your longest likely server outage, you 
+    can avoid such problems. For example, if your server-coverage is likely to 
+    recover the server within three hours at any time that clients are using 
+    their addresses, then a six hour lease will handle such an outage. If you 
+    might have a server go down on Friday right after work and may need all 
+    Monday's work-day to fix it, then your maximum outage time is 3 days and a 
+    6-day lease will handle it. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">Do you have users who want to tell other users 
+      about their IP number? </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If your users are setting up their own 
+    web servers and telling people how to get to them either by telling people 
+    the IP number or through a permanent DNS entry, then they are looking for an 
+    IP number that won't be changing. While some sites would manually allocate 
+    any address that people expected to remain stable, other sites want to use 
+    DHCP's ability to automate distribution of relatively permanent addresses. 
+    The relevant time is the maximum amount of time that you wish to allow the 
+    user to keep their machine turned off yet keep their address. For example, 
+    in a university, if students might have their computers turned off for as 
+    long as three weeks between semesters, and you wish them to keep their IP 
+    address, then a lease of six weeks or longer would suffice. </font></dd>
+  </dl>
+  <p align="justify"><font face="Arial">Some examples of lease-times that sites 
+  have used &amp; their rationals: </font>
+  <dl>
+    <div align="justify">
+      <dt><font face="Arial">15 minutes </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">To keep the maximum number of 
+    addresses free for distribution in cases where there will be more users than 
+    addresses. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">6 hours </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Long enough to allow the DHCP server 
+    to be fixed, e.g. 3 hours. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">12 hours </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If you need to take back an address, 
+    then you know that it will only take one night for the users' lease to 
+    expire. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">3 days </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">This is apparently Microsoft's 
+    default, thus many sites use it. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">6 days </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Long enough that a weekend server 
+    outage that gets fixed on Monday will not result in leases terminating.
+    </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">4 months </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Long enough that students can keep 
+    their IP address over the summer hiatus. I believe this rational is workable 
+    if the summer hiatus is no more than 2 months. </font></dd>
+    <div align="justify">
+      <dt><font face="Arial">One year </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">If a user has not used their address 
+    in six months, then they are likely to be gone. Allows administrator to 
+    recover those addresses after someone has moved on.</font></dd>
+    <div align="justify">
+      <dt>&nbsp;</dt>
+    </div>
+  </dl>
+  </li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hcicw">How can I control 
+  which clients get leases from my server?</a> </font></b></p>
+  <p align="justify"><font face="Arial">There is no ideal answer: you have to 
+  give something up or do some extra work.</font><ul>
+    <li>
+    <p align="justify"><font face="Arial">You can put all your clients on a 
+    subnet of your own along with your own DHCP server. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">You can use manual allocation. </font>
+    </li>
+    <li>
+    <p align="justify"><font face="Arial">Perhaps you can find DHCP server 
+    software that allows you to list which MAC addresses the server will accept. 
+    DHCP servers that support roaming machines may be adapted to such use.
+    </font></li>
+    <li>
+    <p align="justify"><font face="Arial">You can use the user class option 
+    assuming your clients and server support it: it will require you to 
+    configure each of your clients with a user class name. You still depend upon 
+    the other clients to respect your wishes.</font></li>
+    <li>
+    <p align="justify">&nbsp;</li>
+  </ul>
+  </li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="hcipl">How can I prevent 
+  unauthorized laptops from using a network that uses DHCP for dynamic 
+  addressing?</a> </font></b></p>
+  <p align="justify"><font face="Arial">This would have to be done using a 
+  mechanism other than DHCP. DHCP does not prevent other clients from using the 
+  addresses it is set to hand out nor can it distinguish between a computer's 
+  permanent MAC address and one set by the computer's user. DHCP can impose no 
+  restrictions on what IP address can use a particular port nor control the IP 
+  address used by any client.</font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><b><font face="Arial"><a name="watgx">What are the <i>
+  Gotcha's</i>?</a> </font></b>
+  <ul>
+    <li>
+    <p align="justify"><font face="Arial">A malicious user could make trouble by 
+    putting up an unofficial DHCP server. </font>
+    <ul>
+      <li>
+      <p align="justify"><font face="Arial">The immediate problem would be a 
+      server passing out numbers already belonging to some computer yielding the 
+      potential for two or more &quot;innocent bystander&quot; nodes ending up with the 
+      same IP number. Net result is problems using the nodes, possibly 
+      intermittent of one or the other is sometimes turned off. </font></li>
+      <li>
+      <p align="justify"><font face="Arial">A lot of problems are possible if a 
+      renegade server manages to get a client to accept its lease offering, and 
+      feeds the client its own version of other booting parameters. One scenario 
+      is a client that loads its OS over the network via tftp being directed to 
+      a different file (possibly on a different server), thus allowing the 
+      perpetrator to take over the client. Given that boot parameters are often 
+      made to control many different things about the computers' operation and 
+      communication, many other scenarios are just as serious. </font></li>
+    </ul>
+    <p align="justify"><font face="Arial">Note that BOOTP has the same 
+    vulnerabilities. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">The &quot;broadcast flag&quot;: DHCP includes a 
+    way in which client implementations unable to receive a packet with a 
+    specific IP address can ask the server or relay agent to use the broadcast 
+    IP address in the replies (a &quot;flag&quot; set by the client in the requests). The 
+    definition of DHCP states that implementations &quot;should&quot; honor this flag, but 
+    it doesn't say they &quot;must&quot;. Some Microsoft TCP/IP implementations used this 
+    flag, which meant in practical terms, relay agents and servers had to 
+    implement it. A number of BOOTP-relay-agent implementations (e.g. in 
+    routers) handled DHCP just fine except for the need for this feature, thus 
+    they announced new versions stated to handle DHCP. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">Some of the virtual LAN schemes, i.e., 
+    those that use the packet's IP number to decide which &quot;virtual LAN&quot; a 
+    client-computer is on for the purposes of TCP/IP, don't work when using DHCP 
+    to dynamically assign addresses. DHCP servers and relay agents use their 
+    knowledge of what LAN the client-station is on to select the subnet number 
+    for the client-station's new IP address whereas such switches use the subnet 
+    number sent by the client-station to decide which (virtual) LAN to put the 
+    station on. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">Routers are sometimes configured so 
+    that one LAN on one port has multiple network (or subnet) numbers. When the 
+    router is relaying requests from such a LAN to the DHCP server, it must pass 
+    along as IP number that is associated with one of the network (or subnet) 
+    numbers. The only way the DHCP server can allocate addresses on one of the 
+    LAN's other network (or subnet) numbers is if the DHCP server is 
+    specifically written to have a feature to handle such cases, and it has a 
+    configuration describing the situation. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">The knowledge that a particular IP 
+    number is associated with a particular node is often used for various 
+    functions. Examples are: for security purposes, for network management, and 
+    even for identifying resources. Furthermore, if the DNS's names are going to 
+    identify IP numbers, the numbers, the IP numbers have to be stable. Dynamic 
+    configuration of the IP numbers undercuts such methods. For this reason, 
+    some sites try to keep the continued use of dynamically allocatable IP 
+    numbers to a minimum. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">With two or more servers serving a 
+    LAN, clients that are moved around (e.g. mobile clients) can end up with 
+    redundant leases. Consider a home site with two DHCP servers, a remote site 
+    with DHCP services, and a mobile client. The client first connects to the 
+    home site and receives an address from one of the two serves. He/she then 
+    travels to the remote site (without releasing the lease at the home site) 
+    and attempts to use the acquired address. It is of course NAK'ed and the 
+    client receives an address appropriate for the remote site. The client then 
+    returns home and tries to use the address from the remote site. It is NAK'ed 
+    but now the client broadcasts a DHCPDISCOVER to get a address. The server 
+    that holds the previous lease will offer the address back to the client but 
+    there is no guarantee that the client will accept that address; 
+    consequently, it is possible for the client to acquire an address on the 
+    other server and therefore have two leases within the site. The problem can 
+    be solved by using only one server per subnet/site and can be mitigated by 
+    short lease lengths. But in a very mobile environment, it is possible for 
+    these transient clients to consume more than their fair share of addresses.
+    </font></li>
+    <li>
+    <p align="justify"><font face="Arial">If departments, offices, or 
+    individuals run DHCP servers with their own small address pools on LANs 
+    shared by other departments, offices, or individuals, they can find that 
+    their addresses are being used by anyone on the LAN that happens to set 
+    their IP configuration to use DHCP. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">An easy mistake to make in setting up 
+    a DHCP server is to fail to set all the necessary global parameters. This 
+    can result in some functions working while others are not, or functions 
+    working when the client is set up manually, but failing to work when set to 
+    use DHCP. </font></li>
+    <li>
+    <p align="justify"><font face="Arial">Long leases can be disadvantageous in 
+    cases where you need to change a configuration parameter or withdraw an 
+    address from use. The length of the lease can mean the difference between 
+    having to go to every affected client and rebooting it, or merely waiting a 
+    certain amount of time for the leases to be renewed. (Note: one workaround 
+    is to fool with the client computer's clock).</font></li>
+  </ul>
+  </li>
+</ol>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

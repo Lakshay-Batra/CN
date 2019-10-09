@@ -1,0 +1,2779 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="IEEE802_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h4
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm" style="color: #00c">
+MAIN</a></font></b></p>
+<p align="center"><span style="text-transform: uppercase"><u><b>
+<font face="Arial" color="#FF0000" size="6">IEEE 802 Standards</font></b></u></span></p>
+<h4 style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">802 Standards. IEEE 802.2, 802.3, 802.5, 802.11</span></h4>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">The Institute of Electrical and Electronics 
+Engineers is a standards setting body. Each of their standards is numbered and a 
+subset of the number is the actual standard. The 802 family of standards is ones 
+developed for computer networking.<br>
+<br>
+In this section, you will learn:</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">- What the 802.2, 802.3, 802.5, 802.11 standards 
+encompass;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">- Features, topology, and network cabling for 
+each of these standards.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+First, let's discuss 802. IEEE, or Institute of Electrical and Electronics 
+Engineers, is a standards setting body. They create standards for things like 
+networking so products can be compatible with one another. You may have heard of 
+IEEE 802.11b - this is the standard that IEEE has set (in this example, 
+wireless-b networking).<br>
+In this section, we will look at several networking technologies: 802.2, 802.3, 
+802.5, 802.11, and FDDI. Each of these is just a standard set of technologies, 
+each with its own characteristics.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+<br>
+<b>802.2 Logical Link Control</b></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+The technical definition for 802.2 is &quot;the standard for the upper Data Link 
+Layer sublayer also known as the Logical Link Control layer. It is used with the 
+802.3, 802.4, and 802.5 standards (lower DL sublayers).&quot;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">802.2 &quot;specifies the general interface between 
+the network layer (IP, IPX, etc) and the data link layer (Ethernet, Token Ring, 
+etc).</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Basically, think of the 802.2 as the 
+&quot;translator&quot; for the Data Link Layer. 802.2 is concerned with managing traffic 
+over the physical network. It is responsible for flow and error control. The 
+Data Link Layer wants to send some data over the network, 802.2 Logical Link 
+Control helps make this possible. It also helps by identifying the line 
+protocol, like NetBIOS, or Netware.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">The LLC acts like a software bus allowing 
+multiple higher layer protocols to access one or more lower layer networks. For 
+example, if you have a server with multiple network interface cards, the LLC 
+will forward packers from those upper layer protocols to the appropriate network 
+interface. This allows the upper layer protocols to not need specific knowledge 
+of the lower layer networks in use.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+<br>
+<b>802.3 Ethernet</b></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Now that we have an overview of the OSI model, 
+we can continue on these topics. I hope you have a clearer picture of the 
+network model and where things fit on it.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">802.3 is the standard which Ethernet operates 
+by. It is the standard for CSMA/CD (Carrier Sense Multiple Access with Collision 
+Detection). This standard encompasses both the MAC and Physical Layer standards.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">CSMA/CD is what Ethernet uses to control access 
+to the network medium (network cable). If there is no data, any node may attempt 
+to transmit, if the nodes detect a collision, both stop transmitting and wait a 
+random amount of time before retransmitting the data.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">The original 802.3 standard is 10 Mbps (Megabits 
+per second). 802.3u defined the 100 Mbps (Fast Ethernet) standard, 
+802.3z/802.3ab defined 1000 Mbps Gigabit Ethernet, and 802.3ae define 10 Gigabit 
+Ethernet.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Commonly, Ethernet networks transmit data in 
+packets, or small bits of information. A packet can be a minimum size of 72 
+bytes or a maximum of 1518 bytes.<br>
+The most common topology for Ethernet is the star topology.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+<b>802.5 Token Ring</b></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">As we mentioned earlier when discussing the ring 
+topology, Token Ring was developed primarily by IBM. Token ring is designed to 
+use the ring topology and utilizes a token to control the transmission of data 
+on the network.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">The token is a special frame which is designed 
+to travel from node to node around the ring. When it does not have any data 
+attached to it, a node on the network can modify the frame, attach its data and 
+transmit. Each node on the network checks the token as it passes to see if the 
+data is intended for that node, if it is; it accepts the data and transmits a 
+new token. If it is not intended for that node, it retransmits the token on to 
+the next node.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">The token ring network is designed in such a way 
+that each node on the network is guaranteed access to the token at some point. 
+This equalizes the data transfer on the network. This is different from an 
+Ethernet network where each workstation has equal access to grab the available 
+bandwidth, with the possible of a node using more bandwidth than other nodes.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Originally, token ring operated at a speed of 
+about 4 Mbps and 16 Mbps. 802.5t allows for 100 Mbps speeds and 802.5v provides 
+for 1 Gbps over fibber.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Token ring can be run over a star topology as 
+well as the ring topology.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">There are three major cable types for token 
+ring: Unshielded twisted pair (UTP), Shielded twisted pair (STP), and fibber.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Token ring utilizes a Multi-station Access Unit 
+(MAU) as a central wiring hub. This is also sometimes called a MSAU when 
+referring to token ring networks.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+<b>802.11 Wireless Network Standards</b></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial"><br>
+802.11 is the collection of standards setup for wireless networking. You are 
+probably familiar with the three popular standards: 802.11a, 802.11b, 802.11g 
+and latest one is 802.11n. Each standard uses a frequency to connect to the 
+network and has a defined upper limit for data transfer speeds.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">802.11a was one of the first wireless standards. 
+802.11a operates in the 5Ghz radio band and can achieve a maximum of 54Mbps. 
+Wasn't as popular as the 802.11b standard due to higher prices and lower range.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">802.11b operates in the 2.4Ghz band and supports 
+up to 11 Mbps. Range of up to several hundred feet in theory. The first real 
+consumer option for wireless and very popular.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">802.11g is a standard in the 2.4Ghz band 
+operating at 54Mbps. Since it operates in the same band as 802.11b, 802.11g is 
+compatible with 802.11b equipment. 802.11a is not directly compatible with 
+802.11b or 802.11g since it operates in a different band.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Wireless LANs primarily use CSMA/CA - Carrier 
+Sense Multiple Access/Collision Avoidance. It has a &quot;listen before talk&quot; method 
+of minimizing collisions on the wireless network. This results in less need for 
+retransmitting data.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">Wireless standards operate within a wireless 
+topology.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: 0"><strong>
+<span style="font-family:Arial">IEEE 802.3</span></strong></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: 0"><b>
+<span style="font-family:Arial">Brief background of IEEE802 standards for LAN 
+and MAN</span></b></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">While connecting computers through networks we 
+need to have set of rules/standards for the data to travel from one computer to 
+other computer. The right example for this can be road traffic rules. It's self 
+understood, why we need traffic rules while driving, in same sense for the data 
+packets to travel from one computer terminal to other terminal they should also 
+follow set of rules and regulations. <br>
+One such set of rules for the networking traffic to follow is IEEE802 standards. 
+Its developed by IEEE (Institute of Electrical and Electronics Engineers, Inc.) 
+The IEEE is the world's leading professional association for the advancement of 
+technology. It's a non- profit organization offering its members immense 
+benefits. <br>
+The standards such as IEEE 802 helps industry provide advantages such as, 
+interoperability, low product cost, and easy to manage standards.</span></p>
+<p style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">IEEE standards deal with only Local Area 
+Networks (LAN) and Metropolitan Area Networks (MAN). See in the figure below, to 
+know where exactly the IEEE802 standards are used in a OSI layer.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1048" type="#_x0000_t75" alt="tcp/ip stack_ieee"
+ style='width:390.75pt;height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image001.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ieee802.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=521 height=243
+src="IEEE802_files/image001.jpg" alt="tcp/ip stack_ieee" v:shapes="_x0000_s1048"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+The IEEE 802 standards are further divided into many parts. <br>
+They are,</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+IEEE 802.1 Bridging (networking) and Network Management</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.2 Logical link control (upper part of 
+data link layer)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.3 Ethernet (CSMA/CD)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.4 Token bus (disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.5 Defines the MAC layer for a Token 
+Ring (inactive)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.6 Metropolitan Area Networks 
+(disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.7 Broadband LAN using Coaxial Cable 
+(disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.8 Fiber Optic TAG (disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.9 Integrated Services LAN (disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.10 Interoperable LAN Security 
+(disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.11 Wireless LAN &amp; Mesh (Wi-Fi 
+certification)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.12 demand priority (disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.13 Not Used</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.14 Cable modems (disbanded)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.15 Wireless PAN </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.15.1 (Bluetooth certification)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.15.4 (ZigBee certification)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.16 Broadband Wireless Access (WiMAX 
+certification) </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.16e (Mobile) Broadband Wireless Access</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.17 Resilient packet ring</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.18 Radio Regulatory TAG</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.19 Coexistence TAG</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.20 Mobile Broadband Wireless Access</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+IEEE 802.21 Media Independent Handoff</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">IEEE 802.22 Wireless Regional Area Network</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">Here we discuss 
+most popular and key parts of above list</span></p>
+<p style="text-align:justify"><b><span style="font-family:Arial">IEEE 802.3 
+Ethernet (CSMA/CD)</span></b></p>
+<p style="text-align:justify"><span style="font-family:Arial">A method called 
+Carrier Sense Multiple Access with Collision Detection (CSMA/CD) was used to 
+send data over shared single co-axial cable connected to all computers on a 
+network. In this method, the computer terminals (also called as stations) 
+transmits the data over cable whenever the cable is idle, If more than one 
+station transmit at same time and if they collide, the transmission will be 
+stopped by such stations. They will wait for some random time and restart 
+transmission.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">The concept of 
+sharing single cable or wire between multiple stations was used for first time 
+in Hawaiian Islands. It was called ALOHA systems; built to allow radio 
+communication between machines located at different places in Hawaiian Islands. 
+Later Xerox PARC built a 2.94 mbps CSMA/CD system to connect multiple personal 
+computers on a single cable. It was named as Ethernet.<br>
+Ethernet or IEEE802.3 standards only define MAC (Data link) and Physical layer 
+of standard OSI model. </span></p>
+<p style="text-align:justify"><span style="font-family:Arial">Don't confuse 
+TCP/IP with Ethernet. TCP/IP defines Transport and network layers. </span></p>
+<p style="text-align:justify"><b><span style="font-family:Arial">Wiring and 
+cabling standards of 802.3</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">There are four cabling standards as per 802.3, 
+each one has evolved over the time for their special advantages.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The four types of cables are,</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">10Base5</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">10Base2</span></p>
+<p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;text-align:justify"><span style="font-family:Arial">3. 
+10Base-T</span></p>
+<p style="margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;text-align:justify"><span style="font-family:Arial">4. 
+10Base-F</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">The table below 
+compares all four types of cables</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td width="76" style="width: 57.0pt; padding: .75pt; background: #FFFFCC">
+    <p class="MsoNormal" style="text-align:justify"><b>
+    <span style="font-family:
+  Arial">Technical Name</span></b></td>
+    <td width="93" style="width: 69.75pt; padding: .75pt; background: #FFFFCC">
+    <p class="MsoNormal" style="text-align:justify"><b>
+    <span style="font-family:
+  Arial">Cable/Wire type</span></b></td>
+    <td width="129" style="width: 96.75pt; padding: .75pt; background: #FFFFCC">
+    <p class="MsoNormal" style="text-align:justify"><b>
+    <span style="font-family:
+  Arial">Max. Segment/wire Length</span></b></td>
+    <td width="127" style="width: 95.25pt; padding: .75pt; background: #FFFFCC">
+    <p class="MsoNormal" style="text-align:justify"><b>
+    <span style="font-family:
+  Arial">Maximum number of Nodes/Segment</span></b></td>
+    <td width="103" style="width: 77.25pt; padding: .75pt; background: #FFFFCC">
+    <p class="MsoNormal" style="text-align:justify"><b>
+    <span style="font-family:
+  Arial">Advantages</span></b></td>
+  </tr>
+  <tr>
+    <td width="76" style="width:57.0pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">10Base5</span></td>
+    <td width="93" style="width:69.75pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">Thick coaxial</span></td>
+    <td width="129" style="width:96.75pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">500 meters</span></td>
+    <td width="127" style="width:95.25pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">100</span></td>
+    <td width="103" style="width:77.25pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">Long cable length</span></td>
+  </tr>
+  <tr style="height: 30.75pt">
+    <td width="76" style="width:57.0pt;padding:.75pt .75pt .75pt .75pt;height:30.75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">10Base2</span></td>
+    <td width="93" style="width:69.75pt;padding:.75pt .75pt .75pt .75pt;height:
+  30.75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">RG58 (thin) coaxial</span></td>
+    <td width="129" style="width:96.75pt;padding:.75pt .75pt .75pt .75pt;
+  height:30.75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">185 meters</span></td>
+    <td width="127" style="width:95.25pt;padding:.75pt .75pt .75pt .75pt;
+  height:30.75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">30</span></td>
+    <td width="103" style="width:77.25pt;padding:.75pt .75pt .75pt .75pt;
+  height:30.75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">Low cost</span></td>
+  </tr>
+  <tr>
+    <td width="76" style="width:57.0pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">10BaseT</span></td>
+    <td width="93" style="width:69.75pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">Twisted pair (like telephone wire)</span></td>
+    <td width="129" style="width:96.75pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">100 meters</span></td>
+    <td width="127" style="width:95.25pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">1024</span></td>
+    <td width="103" style="width:77.25pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">Easy to maintain</span></td>
+  </tr>
+  <tr>
+    <td width="76" style="width:57.0pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">10BaseF</span></td>
+    <td width="93" style="width:69.75pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">Fiber-optic</span></td>
+    <td width="129" style="width:96.75pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">2,000 meters</span></td>
+    <td width="127" style="width:95.25pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">1024</span></td>
+    <td width="103" style="width:77.25pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify">
+    <span style="font-family:Arial">No noise interference</span></td>
+  </tr>
+</table>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The 10 in the technical name refer to data speed 
+of 10Mbits/sec.<br>
+&quot;Link Integrity&quot; and &quot;Auto-partition&quot; are part of the 10BaseT specification. 
+This means that all network equipment claiming compliance with 10BaseT must 
+support Link Integrity and Auto-partitioning.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">10Base5</span></b><span style="font-family:Arial"><br>
+10 Base5 is also called as ThickNet or thick Ethernet. It uses RG-8 thick 
+coaxial trunk cable, which looks like orange colored garden hose. The cable is 
+tapered with taps called vampire taps in which a pin is carefully forced halfway 
+into the cable's core. The connection can be made to the desired computer 
+network interface card (NIC) from these vampire taps. ThickNet can travel 500 
+meters per segment, and it can have a maximum of 100 taps per segment. Each tap 
+requires a minimum distance of 2.5 meters before the next tap and has a maximum 
+drop distance of 50 meters. The cable must be terminated with a 50-ohm 
+terminator resistor.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Due to its complex and slow nature 10Base5 is no 
+more preferred. The severe drawback is entire line will fail for any single 
+failure on the trunk. This cable can be termed as obsolete/outdated technology.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The one plus point of ThickNet is that, once 
+it's up and running, it will continue to do so until you tell it otherwise. 
+Although it is slow and unwieldy, 10Base5 technology is very reliable.Here is 
+the figure showing how the cables are connected to Network Interface Cards 
+inside the computer using 10base5.<br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1049" type="#_x0000_t75" alt="10base5 wiring" style='width:330.75pt;
+ height:171.75pt'>
+ <v:imagedata src="IEEE802_files/image002.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\10base5_Vampire_connector_aiu_dix.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=441 height=229
+src="IEEE802_files/image002.jpg" alt="10base5 wiring" v:shapes="_x0000_s1049"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">10Base2</span></b><span style="font-family:Arial"><br>
+10Base2 is not very different from 10 Base5. The most notable physical 
+difference between 10Base2 and 10Base5 is the size of the co-axial cable. 
+10Base2 is thinner than the 10Base5 and so is called as ThinNet or thin 
+Ethernet. Another difference is that 10Base2 is set up in a daisy chain. Daisy 
+chain is a wiring scheme in which, for example, device A is wired to device B, 
+device B is wired to device C, device C is wired to device D, et cetera.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">10Base2 uses BNC connectors attached to a thin 
+coaxial cable. The maximum segment length of 10Base2 is 185 meters, and the 
+maximum number of devices per segment is 30.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">10Base is also outdated/obsolete technology. In 
+rare cases it could be deployed as a backbone for a network.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Here is the figure showing how the cables are 
+connected to Network Interface Cards inside the computer using 10base5.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1050" type="#_x0000_t75" alt="10base2 wiiring" style='width:405.75pt;
+ height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image003.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\10base5_bnc_connector_aiu_dix.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=541 height=243
+src="IEEE802_files/image003.jpg" alt="10base2 wiiring" v:shapes="_x0000_s1050"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">10Base-T</span></b><span style="font-family:Arial"><br>
+10Base-T is the most popular cabling method. Its also called Standard Ethernet, 
+or twisted pair, 10Base-T works on a star topology connecting all computers to a 
+hub. It is best used with Category 5 cable (so it can be upgraded to Fast 
+Ethernet) and can have a maximum of three hubs daisy-chained together.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Since it is simple and cheap to implement it is 
+most opted one. The specifications of Standard Ethernet include the following:<br>
+It uses RJ45 connectors on unshielded twisted-pair (UTP) cable.<br>
+The maximum cable length is 100 meters (before a repeater is needed).<br>
+The maximum number of devices per segment is 1,024 (although performance will 
+become quite poor before that number is ever reached).</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The 10Base-T standard is best employed within a 
+LAN where cost is a factor-and speed and distance are not.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Link Integrity is concerned with the condition 
+of the cable between the network adapter and the hub. If the cable is broken, 
+the hub will automatically disconnect that port.<br>
+Auto partitioning occurs when an Ethernet hub port experiences more than 31 
+collisions in a row. When this happens, the hub will turn off that port, 
+essentially isolating the problem.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+<b>10Base-F</b><br>
+In 10BaseF the twisted copper wires are replaced by a optical fiber. 10Base-F 
+uses a higher quality cabling technology, multimode (or single-mode) fiber-optic 
+cable, to transport data. The particular technology has two subdivisions that 
+must be addressed: the newer 10Base-FL and 10BaseFOIRL.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Because it is older, the 10BaseFOIRL 
+(Fiber-optic Inter-repeater Link) technology doesn't have quite the capabilities 
+of the newer 10Base-FL. With 10BaseFOIRL, you have the following specs:</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">It's based on IEEE 802.3.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The segment length is 1,000 meters.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">There are three sizes of duplex multimode fiber: 
+50-, 62.5-, or 100-micron. Of these three, 62.5-micron is the most common. ST or 
+SMA 905 connectors are used by 10BaseFOIRL. It must be used in a star 
+configuration.<br>
+AUI connectors have to be connected to fiber transceivers.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The much-improved 10Base-FL technology offers a 
+different set of specs: </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">It's based on the 10Base-F IEEE 802.3 spec.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">It's able to interoperate with FOIRL and is 
+designed to replace the FOIRL specification. The segment length is 2,000 meters 
+(if exclusively using 10Base-FL). The maximum number of devices per segment is 
+two; one is the station and the other is the hub. The maximum number of 
+repeaters that may be used between devices is two. NICs with standard AUI ports 
+must use a fiber-optic transceiver.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The benefits of optical fiber are, No radio or 
+magnetic interference. &nbsp;Transmissions are safe from electronic bugging, &nbsp;Cable 
+is extremely lightweight, &nbsp;10Base-FL fiber-optic technologies are best 
+implemented in long runs where reliability and security are critical.</span></p>
+<p style="text-align:justify"><b><span style="font-family:Arial">Different types 
+of cable topologies:</span></b></p>
+<p style="text-align:justify"><span style="font-family:Arial">The four types of 
+cable topologies are, linear, spine, tree, segmented.</span></p>
+<p style="text-align:justify"><b><span style="font-family:Arial">Linear</span></b><span style="font-family:Arial">: 
+The linear topology is like a single cable running in all portions of building. 
+The stations are connected to the cable through tapping. </span></p>
+<p style="text-align:justify"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1051" type="#_x0000_t75" alt="linear topology" style='width:211.5pt;
+ height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image004.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\linear_topology.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=282 height=243
+src="IEEE802_files/image004.jpg" alt="linear topology" v:shapes="_x0000_s1051"><![endif]><br>
+<b>Spine</b>: It looks like our back one spinal cord, where multiple numbers of 
+horizontal cables are connected to a vertical line through special amplifiers or 
+repeaters.<br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1052" type="#_x0000_t75" alt="spine topology" style='width:141pt;
+ height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image005.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\spine.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=188 height=243
+src="IEEE802_files/image005.jpg" alt="spine topology" v:shapes="_x0000_s1052"><![endif]><br>
+<br>
+<b>Tree</b>: This is most general topology because a network with two paths 
+between some pairs of stations would suffer from interference between the 
+signals.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1053" type="#_x0000_t75" alt="tree network topology" style='width:147.75pt;
+ height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image006.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\tree_topology.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=197 height=243
+src="IEEE802_files/image006.jpg" alt="tree network topology" v:shapes="_x0000_s1053"><![endif]><br>
+<b>Segmented:</b> Since each version of 802.3 has maximum cable length per 
+segment, to allow larger networks, repeaters can connect multiple cables. </span>
+</p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1054" type="#_x0000_t75" alt="repeater network" style='width:193.5pt;
+ height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image007.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\segmented_topology.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=258 height=243
+src="IEEE802_files/image007.jpg" alt="repeater network" v:shapes="_x0000_s1054"><![endif]><br>
+<b>Manchester Encoding:</b> The normal binary logics of one and zero are no more 
+used to send data from one station to other station. The reason of not using 
+plain binary signal is they cause ambiguities resulting in false interpretation 
+of sent data. The major culprit is zero, where even no data is sent the receiver 
+can assume it as zero. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">So to clear out the ambiguity or to ensure 
+proper interpretation of data, a coding technique called Manchester coding is 
+employed in IEEE802.3 standards.<br>
+There are two of Manchester coding, they are simple Manchester coding and 
+differential Manchester coding. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Summary<br>
+Each bit is transmitted in a fixed time (the &quot;period&quot;). A 0 is expressed by a 
+low-to-high transition, a 1 by high-to-low transition (according to G.E. Thomas' 
+convention -- in the IEEE 802.3 convention, the reverse is true).<br>
+The transitions which signify 0 or 1 occur at the midpoint of a period.<br>
+Transitions at the start of a period are overhead and don't signify data.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Manchester code always has a transition at the 
+middle of each bit period and may (depending on the information to be 
+transmitted) have a transition at the start of the period also. The direction of 
+the mid-bit transition indicates the data. Transitions at the period boundaries 
+do not carry information. They exist only to place the signal in the correct 
+state to allow the mid-bit transition. Although this allows the signal to be 
+self-clocking, it doubles the bandwidth requirement compared to NRZ coding 
+schemes (or see also NRZI).</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">In the Thomas convention, the result is that the 
+first half of a bit period matches the information bit and the second half is 
+its complement.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">If a Manchester encoded signal is inverted in 
+communication, it is transformed from one convention to the other. This 
+ambiguity can be overcome by using differential Manchester encoding.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1055" type="#_x0000_t75" alt="manchester code" style='width:385.5pt;
+ height:182.25pt'>
+ <v:imagedata src="IEEE802_files/image008.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\manchester_coding1.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=514 height=243
+src="IEEE802_files/image008.jpg" alt="manchester code" v:shapes="_x0000_s1055"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Differential Manchester Encoding Shown in above 
+figure is a variation of basic Manchester encoding.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">A '1' bit is indicated by making the first half 
+of the signal equal to the last half of the previous bit's signal i.e. no 
+transition at the start of the bit-time. A '0' bit is indicated by making the 
+first half of the signal opposite to the last half of the previous bit's signal 
+i.e. a zero bit is indicated by a transition at the beginning of the bit-time. 
+In the middle of the bit-time there is always a transition, whether from high to 
+low, or low to high. A reversed scheme is possible, and no advantage is given by 
+using either scheme.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">All 802.3 baseband systems use Manchester 
+encoding due to its simplicity. The high signal is +0.85 Volts and low signal is 
+-0.85 V giving a DC value of 0 volts.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">The 802.3 MAC sub layer protocol</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The IEEE802.3 based Ethernet frame consists of 
+preamble of 56 bit-size, start of the frame delimiter of 8bit size, destination 
+address of 48 bit-size, sources address of 48 bit-size, type field to identify 
+higher layer protocol of 16 bit-size, data field of variable bit-size, and frame 
+check sequence field of 32 bit size.<br>
+<br>
+The figure below explains better.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1056" type="#_x0000_t75" alt="The 802.3 MAC sub layer protocol"
+ style='width:422.25pt;height:57pt'>
+ <v:imagedata src="IEEE802_files/image009.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\802.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=563 height=76
+src="IEEE802_files/image009.jpg" alt="The 802.3 MAC sub layer protocol" v:shapes="_x0000_s1056"><![endif]><br>
+802.3 Ethernet MAC sub layer Protocol Minimum Frame Size </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Longest segment = 500 meters</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+At most 4 repeaters</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Maximum LAN length is 2500 m</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Maximum round-trip time is 50µsec</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">10 Mbps implies 100 nsec / bit, 500 bits takes 
+50 µsec</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">802.3 uses 512 bits (64 bytes) as minimum frame 
+size</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+<b>The binary Exponential Backoff Algorithm</b></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Exponential backoff is an algorithm that uses 
+feedback to multiplicatively decrease the rate of some process, in order to 
+gradually find an acceptable rate. It is often used in network congestion 
+avoidance to help determine the correct sending rate. For example, a sender 
+might send a message, set a timer to wait 0.25 seconds for an acknowledgment, 
+and if none arrives, retransmit the message and wait 0.5 seconds for an 
+acknowledgment. It will continue to retry until it receives an acknowledgement 
+and will wait, 1s, 2s, 4s, 8s, etc. each time before retrying.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Time slots are defined to be 51.2µsec during 
+contention period. After i collisions, backoff random number of intervals 
+between 0 and 2i -1. i is bounded at 10. After 16 attempts, the sender quits</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Basic Intuition used in the algorithm is,</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">-----&nbsp;Assume that number of contending stations 
+is small until proven otherwise</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">----- If i were fixed at 1023, lots of 
+unnecessary waiting</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">-----If i were fixed at 1, potential for 
+unbounded waiting</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">The performance of Ethernet (802.3)</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Here we evaluate the performance of 802.3 under 
+the conditions of full load and constant load.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Metcalfe and Boggs - ignore binary exponential 
+backoff and assume constant probability, p, of retransmission in each slot 
+probability that one station acquires a slot, A, is</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1057" type="#_x0000_t75" alt="ethernet performance" style='width:164.25pt;
+ height:27.75pt'>
+ <v:imagedata src="IEEE802_files/image010.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ethernet_performance_1.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=219 height=37
+src="IEEE802_files/image010.jpg" alt="ethernet performance" v:shapes="_x0000_s1057"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">where k = number of stations ready to transmit; 
+p = probability that a station will retransmit; A is maximized when p is 1/k; 
+When p is 1/k, A --&gt; 1/e as &nbsp;&nbsp;k --&gt; infinity</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1058" type="#_x0000_t75" alt="electronics engineering Herald"
+ style='width:81pt;height:15.75pt'>
+ <v:imagedata src="IEEE802_files/image011.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ethernet_performance_2.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=108 height=21
+src="IEEE802_files/image011.jpg" alt="electronics engineering Herald" v:shapes="_x0000_s1058"><![endif]>is 
+the probability that the contention window is j slots</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Mean number of slots per contention is:</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1059" type="#_x0000_t75" alt="electronics engineering Herald"
+ style='width:138pt;height:43.5pt'>
+ <v:imagedata src="IEEE802_files/image012.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ethernet_performance_3.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=184 height=58
+src="IEEE802_files/image012.jpg" alt="electronics engineering Herald" v:shapes="_x0000_s1059"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+Each slot is bounded by 2t, so the mean window size is bounded by &nbsp;Assuming 
+optimal p (p = 1/k), A= 1/e and &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1060" type="#_x0000_t75" alt="electronics engineering Herald"
+ style='width:99pt;height:15.75pt'>
+ <v:imagedata src="IEEE802_files/image013.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ethernet_performance_4.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=132 height=21
+src="IEEE802_files/image013.jpg" alt="electronics engineering Herald" v:shapes="_x0000_s1060"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><br>
+Let P be the mean transmission time / frame</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--[if gte vml 1]><v:shape
+ id="_x0000_s1061" type="#_x0000_t75" alt="channel effeciency" style='width:163.5pt;
+ height:33pt'>
+ <v:imagedata src="IEEE802_files/image014.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ethernet_performance_5.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=218 height=44
+src="IEEE802_files/image014.jpg" alt="channel effeciency" v:shapes="_x0000_s1061"><![endif]><br>
+<br>
+Let<br>
+F = frame length; B = bandwidth; L = cable length; c = speed of light; P = F/B 
+and<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--[if gte vml 1]><v:shape
+ id="_x0000_s1062" type="#_x0000_t75" alt="electronics engineering Herald"
+ style='width:181.5pt;height:33pt'>
+ <v:imagedata src="IEEE802_files/image015.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\ethernet_performance_6.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=242 height=44
+src="IEEE802_files/image015.jpg" alt="electronics engineering Herald" v:shapes="_x0000_s1062"><![endif]>
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">As BL increases, efficiency decreases, Here is 
+the chart showing channel effeciency V/S Number of stations trying to send</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1063" type="#_x0000_t75" alt="channel effeciency" style='width:337.5pt;
+ height:261.75pt'>
+ <v:imagedata src="IEEE802_files/image016.jpg" o:href="file:///K:\cnnnn22\ieee802%20standards_files\802_3_channel_effeciency.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=450 height=349
+src="IEEE802_files/image016.jpg" alt="channel effeciency" v:shapes="_x0000_s1063"><![endif]></span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">&nbsp;Switched 
+802.3 LANS</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">LAN switch is a 
+device with multiple inputs and outputs to interconnect multiple numbers of 
+hosts and computing terminals. LAN switch prevents data packet collision, and 
+maximizes transmission speed as well as bandwidth allocation. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The core job of 
+a switch is to take packets that arrive on an input and forward (or switch) them 
+to the right output so that they will reach their appropriate destination.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The heart of a 
+LAN switch is a high-speed backplane and room for typically 4-32 plug in line 
+cards, each containing one to eight connectors. Further each connector has a 10 
+Base-T twisted pair connection to a single host computer.<br>
+<br>
+The transmitting station sends a standard frame to the switch. The plug-in card 
+receives the frame and check for the destination address. If the address is of 
+local stations the frame will be sent to local station otherwise the frame is 
+sent over the high-speed back plane to the destination station's card. The 
+backplane runs at over 1Gbps using proprietary protocol. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Collision 
+prevention: There are two types of collision prevention; they are local on-card 
+LAN and buffer-input port card.<br>
+In case of local on-card LAN, collision are detected and handled like any other 
+CSMA/DC network- with retransmission using the binary backoff algorithm. Where 
+as in buffer-input port card, the incoming frame-data are stored in RAM. Once a 
+frame is completely received the card can then check to see if the frame is 
+destines for another port on the same card, or for a distant port.</span></p>
+<p style="text-align: center"><span style="font-family: Arial">
+<img border="0" src="switched_lan.jpg" width="477" height="259"></span></p>
+<p style="text-align: left"><span style="font-family: Arial"><br>
+In the figure above the port in upper right hand corner is connected to a single 
+station, but a 12-port hub. Even at the hub, the frames are transmitted to 
+destination station in same way through collision detection and binary backoff. 
+Successful frames are switched to the correct output line over the high speed 
+backplane. If all the input ports are connected to hubs, rather than to 
+individual stations, the switch just becomes an 802.3 to 802.3bridge.</span></p>
+<p style="text-align: left"><span style="font-family: Arial">&nbsp;</span><b><span style="font-family: Arial">IEEE802.4: 
+Token bus</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">In this system, 
+the nodes are physically connected as a bus, but logically form a ring with 
+tokens passed around to determine the turns for sending. It has the robustness 
+of the 802.3 broadcast cable and the known worst case behavior of a ring. The 
+structure of a token bus network is as follows:</span></p>
+<p style="text-align: center">
+<img border="0" src="tokenbus1.jpg" width="558" height="148"></p>
+<p style="text-align: justify"><span style="font-family: Arial">Token bus or 
+802.4 is more robust and reliable than 802.3 frames. The standard 802.4 is a 
+linear or tree shaped cable onto which the stations are attached. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Network is a 
+physical bus but a logical ring. The stations are numbered and are allowed to 
+access the medium sequentially. If there are n stations, and packet transmission 
+time is bounded to T, then the maximum waiting time is nT. Token bus MAC is 
+simple and robust. Token bus is mostly used in automation systems. <br>
+Data is subdivided into four priority classes. Each station has four packet 
+queues, one for each priority. When a station receives token, it is allowed to 
+transmit certain fixed time. During that time it transmits packets in the 
+decreasing order of priorities.</span></p>
+<p style="text-align: justify">
+<span style="font-family: Arial; font-weight: 700">Frame Structure:</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A 802.4 frame 
+has the following fields:<br>
+<b>Preamble</b>: The Preamble is for synchronizing the receiver's clock.<br>
+<b>Starting Delimiter (SD) and End Delimiter (ED)</b>: The SD and ED fields are 
+used to mark frame boundaries. Both contain analog encoding of symbols other 
+than 1 or 0 so that they cannot occur accidentally in the user data. Lengthy 
+field is no more needed. <br>
+<br>
+<b>Frame Control (FC)</b>: FC is used to distinguish data frames from control 
+frames. Data frames carries the frame's priority as well as a bit which the 
+destination can set as an acknowledgement. For control frames, the Frame Control 
+field is used to specify the frame type. Token passing and various ring 
+maintenance frames are the allowed frame types.<br>
+<b>Destination and Source Address: </b>The Destination and Source address fields 
+may be of 2 bytes (for a local address) or 6 bytes (for a global address).<br>
+<b>Data:</b> This is the actual data and it is of 8182 bytes when 2 byte 
+addresses are used and 8174 bytes for 6 byte addresses.<br>
+<b>Checksum:</b> A 4-byte checksum of the data for error detection. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Ring 
+Maintenance:</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">Whenever the 
+first node on the token bus comes up, it sends a Claim_token packet to 
+initialize the ring. If more than one station send this packet at the same time, 
+there is a collision. Collision is resolved by a contention mechanism, in which 
+the contending nodes send random data for 1, 2, 3 and 4 units of time depending 
+on the first two bits of their address. The node sending data for the longest 
+time wins. If two nodes have the same first two bits in their addresses, then 
+contention is done again based on the next two bits of their address and so on.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Once the ring is 
+set up, new nodes which are powered up may wish to join the ring. For this a 
+node sends Solicit_successor_1 packets from time to time, inviting bids from new 
+nodes to join the ring. This packet contains the address of the current node and 
+its current successor, and asks for nodes in between these two addresses to 
+reply. If more than one nodes respond, there will be collision. The node then 
+sends a Resolve_contention packet, and the contention is resolved using a 
+similar mechanism as described previously. Thus at a time only one node gets to 
+enter the ring. The last node in the ring will send a Solicit_successor_2 packet 
+containing the addresses of it and its successor. This packet asks nodes not 
+having addresses in between these two addresses to respond. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A question 
+arises that how frequently should a node send a Solicit_successor packet? If it 
+is sent too frequently, then overhead will be too high. Again if it is sent too 
+rarely, nodes will have to wait for a long time before joining the ring. If the 
+channel is not busy, a node will send a Solicit_successor packet after a fixed 
+number of token rotations. This number can be configured by the network 
+administrator. However if there is heavy traffic in the network, then a node 
+would defer the sending of bids for successors to join in.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">There may be 
+problems in the logical ring due to sudden failure of a node. What happens if a 
+node goes down along with the token? After passing the token, a node, say node 
+A, listens to the channel to see if its successor either transmits the token or 
+passes a frame. If neither happens, it resends a token. Still if nothing 
+happens, A sends a Who_follows packet, containing the address of the down node. 
+The successor of the down node, say node C, will now respond with a 
+Set_successor packet, containing its own address. This causes A to set its 
+successor node to C, and the logical ring is restored. However, if two 
+successive nodes go down suddenly, the ring will be dead and will have to be 
+built afresh, starting from a Claim_token packet.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">When a node 
+wants to shutdown normally, it sends a Set_successor packet to its predecessor, 
+naming its own successor. The ring then continues unbroken, and the node goes 
+out of the ring.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The various 
+control frames used for ring maintenance are shown below:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Frame Control Field</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Name</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Meaning</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000000</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Claim_token</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Claim token during ring maintenance</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000001</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Solicit_successor_1</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Allow stations to enter the ring</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000010</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Solicit_successor_2</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Allow stations to enter the ring</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000011</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Who_follows</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Recover from lost token</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000100</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Resolve_contention</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Used when multiple stations want to enter</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00001000</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Token</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Pass the token</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00001100</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Set_successor</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Allow the stations leave the ring</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+<b>Priority Scheme:</b></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Token bus 
+supports four distinct priority levels: 0, 2, 4 and 6.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">0 is the lowest 
+priority level and 6 the highest. The following times are defined by the token 
+bus:<br>
+THT: Token Holding Time. A node holding the token can send priority 6 data for a 
+maximum of this amount of time. <br>
+TRT_4: Token Rotation Time for class 4 data. This is the maximum time a token 
+can take to circulate and still allow transmission of class 4 data.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">TRT_2 and TRT_0: 
+Similar to TRT_4. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">When a station 
+receives data, it proceeds in the following manner:<br>
+It transmits priority 6 data for at most THT time, or as long as it has data.
+<br>
+Now if the time for the token to come back to it is less than TRT_4, it will 
+transmit priority 4 data, and for the amount of time allowed by TRT_4. Therefore 
+the maximum time for which it can send priority 4 data is= Actual TRT - THT - 
+TRT_4 <br>
+Similarly for priority 2 and priority 0 data.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">This mechanism 
+ensures that priority 6 data is always sent, making the system suitable for real 
+time data transmission. In fact this was one of the primary aims in the design 
+of token bus.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">IEEE 802.5: 
+Token Ring Network</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">Token Ring is 
+formed by the nodes connected in ring format as shown in the diagram below.
+</span></p>
+<p style="text-align: center"><span style="font-family: Arial">
+<img border="0" src="tokenring1.jpg" width="380" height="256"></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The principle 
+used in the token ring network is that a token is circulating in the ring and 
+whichever node grabs that token will have right to transmit the data. Whenever a 
+station wants to transmit a frame it inverts a single bit of the 3-byte token 
+which instantaneously changes it into a normal data packet. Because there is 
+only one token, there can atmost be one transmission at a time.<br>
+<br>
+Since the token rotates in the ring it is guarenteed that every node gets the 
+token with in some specified time. So there is an upper bound on the time of 
+waiting to grab the token so that starvation is avoided. <br>
+There is also an upper limit of 250 on the number of nodes in the network. To 
+distinguish the normal data packets from token (control packet) a special 
+sequence is assigned to the token packet. When any node gets the token it first 
+sends the data it wants to send, then recirculates the token.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">If a node 
+transmits the token and nobody wants to send the data the token comes back to 
+the sender. If the first bit of the token reaches the sender before the 
+transmission of the last bit, then error situation araises. So to avoid this we 
+should have: </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">propogation 
+delay + transmission of n-bits (1-bit delay in each node ) &gt; transmission of the 
+token time </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A station may 
+hold the token for the token-holding time. which is 10 ms unless the 
+installation sets a different value. If there is enough time left after the 
+first frame has been transmitted to send more frames, then these frames may be 
+sent as well. After all pending frames have been transmitted or the transmission 
+frame would exceed the token-holding time, the station regenerates the 3-byte 
+token frame and puts it back on the ring.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">If a node 
+transmits the token and nobody wants to send the data the token comes back to 
+the sender. If the first bit of the token reaches the sender before the 
+transmission of the last bit, then error situation araises. So to avoid this we 
+should have: </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">propogation 
+delay + transmission of n-bits (1-bit delay in each node ) &gt; transmission of the 
+token time </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A station may 
+hold the token for the token-holding time. which is 10 ms unless the 
+installation sets a different value. If there is enough time left after the 
+first frame has been transmitted to send more frames, then these frames may be 
+sent as well. After all pending frames have been transmitted or the transmission 
+frame would exceed the token-holding time, the station regenerates the 3-byte 
+token frame and puts it back on the ring. </span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Modes of 
+Operation</span></b><span style="font-family: Arial"><br>
+<b>Listen Mode:</b> In this mode the node listens to the data and transmits the 
+data to the next node. In this mode there is a one-bit delay associated with the 
+transmission.</span></p>
+<p align="center"><span style="font-family: Arial">
+<img border="0" src="tokenring2.jpg" width="317" height="243"></span></p>
+<p align="center"><span style="font-family: Arial"><b>Transmit Mode:</b> In this 
+mode the node just discards the any data and puts the data onto the network.<br>
+<img border="0" src="tokenring3.jpg" width="401" height="243"></span></p>
+<p align="center"><b><span style="font-family: Arial">By-pass Mode: </span></b>
+<span style="font-family: Arial">In this mode reached when the node is down. Any 
+data is just bypassed. There is no one-bit delay in this mode.<br>
+<img border="0" src="tokenring4.jpg" width="441" height="253"></span></p>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+<b>Token Ring Using Ring Concentrator</b></span></p>
+<p align="center"><span style="font-family: Arial"><br>
+<img border="0" src="tokenring5.jpg" width="444" height="253"></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">One problem with 
+a ring network is that if the cable breaks somewhere, the ring dies. This 
+problem is elegantly addressed by using a ring concentrator. A Token Ring 
+concentrator simply changes the topology from a physical ring to a star wired 
+ring. But the network still remains a ring logically. Physically, each station 
+is connected to the ring concentrator (wire center) by a cable containing at 
+least two twisted pairs, one for data to the station and one for data from the 
+station. The Token still circulates around the network and is still controlled 
+in the same manner, however, using a hub or a switch greatly improves 
+reliability because the hub can automatically bypass any ports that are 
+disconnected or have a cabling fault. This is done by having bypass relays 
+inside the concentrator that are energized by current from the stations. If the 
+ring breaks or station goes down, loss of the drive current will release the 
+relay and bypass the station. The ring can then continue operation with the bad 
+segment bypassed. </span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Removing 
+Packet from the Ring</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">There are 3 
+possibilities-</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">1. The source 
+itself removes the packet after one full round in the ring. <br>
+2. The destination removes it after accepting it: This has two potential 
+problems. Firstly, the solution &nbsp;&nbsp;&nbsp;&nbsp;won't work for broadcast or multicast, and 
+secondly, there would be no way to acknowledge the &nbsp;&nbsp;&nbsp;&nbsp;sender about the receipt 
+of the packet. <br>
+3. Have a specialized node only to discard packets: This is a bad solution as 
+the specialized node &nbsp;&nbsp;&nbsp;&nbsp;would know that the packet has been received by the 
+destination only when it receives the packet the &nbsp;&nbsp;&nbsp;&nbsp;second time and by that 
+time the packet may have actually made about one and half (or almost two in 
+&nbsp;&nbsp;&nbsp;&nbsp;the worst case) rounds in the ring. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Thus the first 
+solution is adopted with the source itself removing the packet from the ring 
+after a full one round. With this scheme, broadcasting and multicasting can be 
+handled as well as the destination can acknowledge the source about the receipt 
+of the packet (or can tell the source about some error). <br>
+<br>
+<b>Token Format</b></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The token is the 
+shortest frame transmitted (24 bit). MSB (Most Significant Bit) is always 
+transmitted first - as opposed to Ethernet</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">SD </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">AC</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">ED</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+SD = Starting Delimiter (1 Octet);AC = Access Control (1 Octet);ED = Ending 
+Delimiter (1 Octet);Starting Delimiter Format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+J = Code Violation;K = Code Violation<br>
+<br>
+Access Control Format: </span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">P</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">P</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">P</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">T</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">M</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">R</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">R</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">R</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">T=Token;T = 0 
+for Token ;T = 1 for Frame</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">When a station 
+with a Frame to transmit detects a token which has a priority equal to or less 
+than the Frame to be transmitted, it may change the token to a start-of-frame 
+sequence and transmit the Frame</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">P = Priority</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Priority Bits 
+indicate tokens priority, and therefore, which stations are allowed to use it. 
+Station can transmit if its priority as at least as high as that of the token.
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">M = Monitor
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The monitor bit 
+is used to prevent a token whose priority is greater than 0 or any frame from 
+continuously circulating on the ring. If an active monitor detects a frame or a 
+high priority token with the monitor bit equal to 1, the frame or token is 
+aborted. This bit shall be transmitted as 0 in all frame and tokens. The active 
+monitor inspects and modifies this bit. All other stations shall repeat this bit 
+as received.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">R = Reserved 
+bits </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The reserved 
+bits allow station with high priority Frames to request that the next token be 
+issued at the requested priority.<br>
+Ending Delimiter Format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">E</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">J = Code 
+Violation <br>
+K = Code Violation <br>
+I = Intermediate Frame Bit <br>
+E = Error Detected Bit</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Frame Format:</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">MSB (Most 
+Significant Bit) is always transmitted first - as opposed to Ethernet</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">SD </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">AC</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">FC</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">DA</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">SA</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">DATA</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">CRC</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">ED</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">FS</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">SD=Starting 
+Delimiter(1 octet)<br>
+AC=Access Control(1 octet)<br>
+FC = Frame Control (1 Octet)<br>
+DA = Destination Address (2 or 6 Octets)<br>
+SA = Source Address (2 or 6 Octets)<br>
+DATA = Information 0 or more octets up to 4027 <br>
+CRC = Checksum(4 Octets)<br>
+ED = Ending Delimiter (1 Octet)<br>
+FS=Frame Status</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Starting 
+Delimiter Format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">O</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">J = Code 
+Violation<br>
+K = Code Violation</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Access Control 
+Format</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">P</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">P</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">P</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">T</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">M</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">R</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">R</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">R</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">T=Token</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">When a station 
+with a Frame to transmit detects a token which has a priority equal to or less 
+than the Frame to be transmitted, it may change the token to a start-of-frame 
+sequence and transmit the Frame.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">P = Priority</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Bits Priority 
+Bits indicate tokens priority, and therefore, which stations are allowed to use 
+it. Station can transmit if its priority as at least as high as that of the 
+token.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">M = Monitor<br>
+The monitor bit is used to prevent a token whose priority is greater than 0 or 
+any frame from continuously circulating on the ring. if an active monitor 
+detects a frame or a high priority token with the monitor bit equal to 1, the 
+frame or token is aborted. This bit shall be transmitted as 0 in all frame and 
+tokens. The active monitor inspects and modifies this bit. All other stations 
+shall repeat this bit as received.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">R = Reserved 
+bits the reserved bits allow station with high priority Frames to request that 
+the next token be issued at the requested priority </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Frame Control 
+Format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">F</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">F</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">CONTROL BITS (6 BITS)</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">FF= Type of 
+Packet-Regular data packet or MAC layer packet<br>
+Control Bits= Used if the packet is for MAC layer protocol itself </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Source and 
+Destination Address Format:</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The addresses 
+can be of 2 bytes (local address) or 6 bytes (global address).</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">local address 
+format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I/G (1 BIT) </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">NODE ADDRESS (15 BITS)</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">alternatively</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I/G (1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">RING ADDRESS (7 BITS)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">NODE ADDRESS (8 BITS)</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+The first bit specifies individual or group address.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">universal 
+(global) address format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I/G (1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">L/U (1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">RING ADDRESS (14 BITS) </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">NODE ADDRESS (32 BITS)</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">The first bit 
+specifies individual or group address.<br>
+The second bit specifies local or global (universal) address.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">local group 
+addresses (16 bits):</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I/G (1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">T/B(1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">GROUP ADDRESS (14 BITS)</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+The first bit specifies an individual or group address.<br>
+The second bit specifies traditional or bit signature group address. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Traditional 
+Group Address: 2Exp14 groups can be defined.<br>
+Bit Signature Group Address: 14 grtoups are defined. A host can be a member of 
+none or any number of them. For multicasting, those group bits are set to which 
+the packet should go. For broadcasting, all 14 bits are set. A host receives a 
+packet only if it is a member of a group whose corresponding bit is set to 1.
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">universal group 
+addresses (16 bits):</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I/G (1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">RING NUMBER</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">T/B (1 BIT)</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">GROUP ADDRESS (14 BITS)</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+The description is similar to as above. <br>
+Data Format:</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">No upper limit 
+on amount of data as such, but it is limited by the token holding time. <br>
+Checksum:</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The source 
+computes and sets this value. Destination too calculates this value. If the two 
+are different, it indicates an error, otherwise the data may be correct. <br>
+Frame Status:</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">It contains the 
+A and C bits.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A bit set to 1: 
+destination recognized the packet.<br>
+C bit set to 1: destination accepted the packet.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">This arrangement 
+provides an automatic acknowledgement for each frame. The A and C bits are 
+present twice in the Frame Status to increase reliability in as much as they are 
+not covered by the checksum. <br>
+Ending Delimiter Format:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">J</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">K </span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">I</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">E</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+J = Code Violation<br>
+K = Code Violation<br>
+I = Intermediate Frame Bit<br>
+If this bit is set to 1, it indicates that this packet is an intermediate part 
+of a bigger packet, the last packet would have this bit set to 0. <br>
+E = Error Detected Bit<br>
+This bit is set if any interface detects an error.</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Ring 
+Maintenance</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">Each token ring 
+has a monitor that oversees the ring. Among the monitor's responsibilities are 
+seeing that the token is not lost, taking action when the ring breaks, cleaning 
+the ring when garbled frames appear and watching out for orphan frames. An 
+orphan frame occurs when a station transmits a short frame in it's entirety onto 
+a long ring and then crashes or is powered down before the frame can be removed. 
+If nothing is done, the frame circulates indefinitely. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Detection of 
+orphan frames: The monitor detects orphan frames by setting the monitor bit in 
+the Access Control byte whenever it passes through. If an incoming frame has 
+this bit set, something is wrong since the same frame has passed the monitor 
+twice. Evidently it was not removed by the source, so the monitor drains it.
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Lost Tokens: The 
+monitor has a timer that is set to the longest possible tokenless interval : 
+when each node transmits for the full token holding time. If this timer goes 
+off, the monitor drains the ring and issues a fresh token. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Garbled frames: 
+The monitor can detect such frames by their invalid format or checksum, drain 
+the ring and issue a fresh token. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The token ring 
+control frames for maintenance are:</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Control field</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Name</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Meaning</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000000</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Duplicate address test</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Test if two stations have the same address</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000010</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Beacon</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Used to locate breaks in the ring</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000011</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Claim token</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Attempt to become monitor</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000100</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Purge</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Reinitialize the ring</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000101</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Active monitor present</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Issued periodically by the monitor</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">00000110</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Standby monitor present</span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Announces the presence of potential 
+    monitors</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;The monitor 
+periodically issues a message &quot;Active Monitor Present&quot; informing all nodes of 
+its presence. When this message is not received for a specific time interval, 
+the nodes detect a monitor failure. Each node that believes it can function as a 
+monitor broadcasts a &quot;Standby Monitor Present&quot; message at regular intervals, 
+indicating that it is ready to take on the monitor's job. Any node that detects 
+failure of a monitor issues a &quot;Claim&quot; token. There are 3 possible outcomes : <br>
+If the issuing node gets back its own claim token, then it becomes the monitor.
+<br>
+If a packet different from a claim token is received, apparently a wrong guess 
+of monitor failure was made. In this case on receipt of our own claim token, we 
+discard it. Note that our claim token may have been removed by some other node 
+which has detected this error. <br>
+If some other node has also issued a claim token, then the node with the larger 
+address becomes the monitor. <br>
+In order to resolve errors of duplicate addresses, whenever a node comes up it 
+sends a &quot;Duplicate Address Detection&quot; message (with the destination = source) 
+across the network. If the address recognize bit has been set on receipt of the 
+message, the issuing node realizes a duplicate address and goes to standby mode. 
+A node informs other nodes of removal of a packet from the ring through a 
+&quot;Purge&quot; message. One maintenance function that the monitor cannot handle is 
+locating breaks in the ring. If there is no activity detected in the ring (e.g. 
+Failure of monitor to issue the Active Monitor Present token...) , the usual 
+procedures of sending a claim token are followed. If the claim token itself is 
+not received besides packets of any other kind, the node then sends &quot;Beacons&quot; at 
+regular intervals until a message is received indicating that the broken ring 
+has been repaired.</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">Phase Jitter 
+Compensation :</span></b><span style="font-family: Arial"><br>
+In a token ring the source starts discarding all it's previously transmitted 
+bits as soon as they circumnavigate the ring and reach the source. Hence, it's 
+not desirable that while a token is being sent some bits of the token which have 
+already been sent become available at the incoming end of the source. This 
+behavior though is desirable in case of data packets which ought to be drained 
+from the ring once they have gone around the ring. To achieve the aforesaid 
+behavior with respect to tokens, we would like the ring to hold at least 24 bits 
+at a time. How do we ensure this? </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Each node in a 
+ring introduces a 1 bit delay. So, one approach might be to set the minimum 
+limit on the number of nodes in a ring as 24. But, this is not a viable option. 
+The actual solution is as follows. We have one node in the ring designated as 
+&quot;monitor&quot;. The monitor maintains a 24 bits buffer with help of which it 
+introduces a 24 bit delay. The catch here is what if the clocks of nodes 
+following the source are faster than the source? In this case the 24 bit delay 
+of the monitor would be less than the 24 bit delay desired by the host. To avoid 
+this situation the monitor maintains 3 extra bits to compensate for the faster 
+bits. The 3 extra bits suffice even if bits are 10 % faster. This compensation 
+is called Phase Jitter Compensation.</span></p>
+<p style="text-align: justify"><i><span style="font-family: Arial">All the 
+802.11 specifications use the Ethernet protocol and Carrier Sense Multiple 
+Access with Collision Avoidance (CSMA/CA) for path sharing. The original 
+modulation used in 802.11 was phase-shift keying (PSK). However, other schemes, 
+such as complementary code keying (CCK), are used in some of the newer 
+specifications. The newer modulation methods provide higher data speed and 
+reduced vulnerability to interference</span></i></p>
+<table class="MsoNormalTable" border="1" cellspacing="5" cellpadding="0" style="border: 2.25pt outset">
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">802</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Overview</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Basics of physical and logical networking 
+    concepts.</span></b></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.1</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Bridging</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">LAN/MAN bridging and management. Covers 
+    management and the lower sub-layers of OSI Layer 2, including MAC-based 
+    bridging (Media Access Control), virtual LANs and port-based access control.</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.2</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Logical Link</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Commonly referred to as the LLC or Logical 
+    Link Control specification. The LLC is the top sub-layer in the data-link 
+    layer, OSI Layer 2. Interfaces with the network Layer 3.</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">802.3</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Ethernet</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&quot;Grandaddy&quot; of the 802 specifications. 
+    Provides asynchronous networking using &quot;carrier sense, multiple access with 
+    collision detect&quot; (CSMA/CD) over coax, twisted-pair copper, and fiber media. 
+    Current speeds range from 10 Mbps to 10 Gbps. </span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.4</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Token Bus</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Disbanded</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">802.5</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Token Ring</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">The original token-passing standard for 
+    twisted-pair, shielded copper cables. Supports copper and fiber cabling from 
+    4 Mbps to 100 Mbps. Often called &quot;IBM Token-Ring.&quot;</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.6</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Distributed queue dual bus (DQDB)</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&quot;Superseded **Revision of 802.1D-1990 
+    edition (ISO/IEC 10038). 802.1D incorporates P802.1p and P802.12e. It also 
+    incorporates and supersedes published standards 802.1j and 802.6k. 
+    Superseded by 802.1D-2004.&quot;</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.7</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Broadband LAN Practices</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Withdrawn Standard. Withdrawn Date: Feb 07, 
+    2003. No longer endorsed by the IEEE</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.8</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Fiber Optic Practices</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Withdrawn PAR. Standards project no longer 
+    endorsed by the IEEE. </span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.9</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Integrated Services LAN</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Withdrawn PAR. Standards project no longer 
+    endorsed by the IEEE. </span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.10</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Interoperable LAN security</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Superseded **Contains: IEEE Std 
+    802.10b-1992. </span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">802.11</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">&nbsp;</span></b><span style="font-family: Arial">Wi-Fi</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Wireless LAN Media Access Control and 
+    Physical Layer specification. 802.11a,b,g,etc. are amendments to the 
+    original 802.11 standard. Products that implement 802.11 standards must pass 
+    tests and are referred to as &quot;Wi-Fi certified.&quot;</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11a</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Specifies a PHY that operates in the 5 
+      GHz U-NII band in the US - initially 5.15-5.35 AND 5.725-5.85 - since 
+      expanded to additional frequencies</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Uses Orthogonal Frequency-Division 
+      Multiplexing</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhanced data speed to 54 Mbps</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Ratified <u>after</u> 802.11b</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11b</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhancement to 802.11 that added higher 
+      data rate modes to the DSSS (Direct Sequence Spread Spectrum) already 
+      defined in the original 802.11 standard</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Boosted data speed to 11 Mbps</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">22 MHz Bandwidth yields 3 non-overlaping 
+      channels in the frequency range of 2.400 GHz to 2.4835 GHz</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Beacons at 1 Mbps, falls back to 5.5, 2, 
+      or 1 Mbps from 11 Mbps max.</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11d</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhancement to 802.11a and 802.11b that 
+      allows for global roaming</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Particulars can be set at Media Access 
+      Control (MAC) layer</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11e</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhancement to 802.11 that includes 
+      quality of service (QoS) features</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Facilitates prioritization of data, 
+      voice, and video transmissions</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11g</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Extends the maximum data rate of WLAN 
+      devices that operate in the 2.4 GHz band, in a fashion that permits 
+      interoperation with 802.11b devices</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Uses OFDM Modulation (Orthogonal FDM)</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Operates at up to 54 megabits per second 
+      (Mbps), with fall-back speeds that include the &quot;b&quot; speeds</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11h</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhancement to 802.11a that resolves 
+      interference issues</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Dynamic frequency selection (DFS)</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Transmit power control (TPC)</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11i</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhancement to 802.11 that offers 
+      additional security for WLAN applications</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Defines more robust encryption, 
+      authentication, and key exchange, as well as options for key caching and 
+      pre-authentication</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11j</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Japanese regulatory extensions to 802.11a 
+      specification</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Frequency range 4.9 GHz to 5.0 GHz</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11k</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Radio resource measurements for networks 
+      using 802.11 family specifications</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11m</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Maintenance of 802.11 family 
+      specifications</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Corrections and amendments to existing 
+      documentation</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11n</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Higher-speed standards</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Several competing and non-compatible 
+      technologies; often called &quot;pre-n&quot;</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Top speeds claimed of 108, 240, and 350+ 
+      MHz</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Competing proposals come from the groups, 
+      EWC, TGn Sync, and WWiSE and are all variations based on MIMO (multiple 
+      input, multiple output)</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.11x</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Mis-used &quot;generic&quot; term for 802.11 family 
+      specifications</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.12</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Demand Priority</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Increases Ethernet data rate to 100 Mbps by 
+    controlling media utilization.</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.13</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Not used</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Not used</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.14</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Cable modems</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Withdrawn PAR. Standards project no longer 
+    endorsed by the IEEE.</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">&nbsp;802.15</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Wireless Personal Area Networks</span></b></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Communications specification that was 
+    approved in early 2002 by the IEEE for wireless personal area networks (WPANs).</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.15.1</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Bluetooth</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Short range (10m) wireless technology for 
+    cordless mouse, keyboard, and hands-free headset at 2.4 GHz.</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.15.3a</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">UWB</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Short range, high-bandwidth &quot;ultra 
+    wideband&quot; link</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.15.4</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">ZigBee</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Short range wireless sensor networks</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.15.5</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Mesh Network</span></td>
+    <td style="padding: 7.5pt">
+    <ul type="disc" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Extension of network coverage without 
+      increasing the transmit power or the receiver sensitivity</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Enhanced reliability via route redundancy</span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Easier network configuration - Better 
+      device battery life</span></li>
+    </ul>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.16</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Wireless Metropolitan Area Networks</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">This family of standards covers Fixed and 
+    Mobile Broadband Wireless Access methods used to create Wireless 
+    Metropolitan Area Networks (WMANs.) Connects Base Stations to the Internet 
+    using OFDM in unlicensed (900 MHz, 2.4, 5.8 GHz) or licensed (700 MHz, 2.5 – 
+    3.6 GHz) frequency bands. Products that implement 802.16 standards can 
+    undergo WiMAX certification testing.</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.17</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Resilient Packet Ring</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">IEEE working group description</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.18</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Radio Regulatory TAG</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;IEEE 802.18 standards committee </span>
+    </td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.19</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Coexistence</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">IEEE 802.19 Coexistence Technical Advisory 
+    Group</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.20</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Mobile Broadband Wireless Access</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">IEEE 802.20 mission and project scope</span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.21</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Media Independent Handoff</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">IEEE 802.21 mission and project scope
+    </span></td>
+  </tr>
+  <tr>
+    <td width="100" style="width: 75.0pt; padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">802.22</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Wireless Regional Area Network</span></td>
+    <td style="padding: 7.5pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">&nbsp;IEEE 802.22 mission and project scop</span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify"><b><span style="font-family: Arial">IEEE 802</span></b><span style="font-family: Arial"> 
+is a family of IEEE standards dealing with local area networks and metropolitan 
+area networks.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">More 
+specifically, the IEEE 802 standards are restricted to networks carrying 
+variable-size packets. By contrast, in cell relay networks data is transmitted 
+in short, uniformly sized units called cells. Isochronous networks, where data 
+is transmitted as a steady stream of octets, or groups of octets, at regular 
+time intervals, are also out of the scope of this standard. The number 802 was 
+simply the next free number IEEE could assign, though “802” is sometimes 
+associated with the date the first meeting was held — February 1980.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The services and 
+protocols specified in IEEE 802 map to the lower two layers (Data Link and 
+Physical) of the seven-layer OSI networking reference model. In fact, IEEE 802 
+splits the OSI Data Link Layer into two sub-layers named Logical Link Control 
+(LLC) and Media Access Control (MAC), so that the layers can be listed like 
+this:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Data link layer </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">LLC Sublayer</span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">MAC Sublayer</span></li>
+  </ul>
+  </li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Physical layer</span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">The IEEE 802 
+family of standards is maintained by the IEEE 802 LAN/MAN Standards Committee (LMSC). 
+The most widely used standards are for the Ethernet family, Token Ring, Wireless 
+LAN, Bridging and Virtual Bridged LANs. An individual Working Group provides the 
+focus for each area.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;</span></p>
+<h2 style="text-align: justify"><span class="mw-headline">
+<span style="font-size: 12.0pt; font-family: Arial">Working groups</span></span></h2>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">Name</font></span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">Description</font></span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">Note</font></span></b></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.1</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Higher Layer LAN Protocols</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">active</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.2</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">LLC</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.3</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Ethernet</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">active</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.4</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Token bus</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.5</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Token ring MAC layer</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.6</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">MANs (DQDB)</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.7</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Broadband LAN using Coaxial 
+    Cable</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.8</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Fiber Optic TAG</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.9</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Integrated Services LAN (ISLAN 
+    or isoEthernet)</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.10</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Interoperable LAN Security</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.11</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Wireless LAN (WLAN) &amp; Mesh (Wi-Fi 
+    certification)</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">active</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.12</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">100BaseVG</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.13</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Unused</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Reserved for Fast Ethernet 
+    development</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.14</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Cable modems</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">disbanded</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Wireless PAN</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">active</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.1</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Bluetooth certification</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.2</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15 and IEEE 802.11 
+    coexistence</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.3</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">High-Rate wireless PAN 
+    (e.g., UWB, etc.)</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.4</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Low-Rate wireless PAN (e.g., 
+    ZigBee, WirelessHART, MiWi, etc.)</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.5</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Mesh networking for WPAN</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.6</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Body area network</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.15.7</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Visible light communications</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.16</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Broadband Wireless Access (WiMAX 
+    certification)</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.16.1</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Local Multipoint 
+    Distribution Service</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.16.2</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Coexistence wireless access</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.17</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Resilient packet ring</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">hibernating</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.18</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Radio Regulatory TAG</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.19</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Coexistence TAG</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.20</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Mobile Broadband Wireless 
+    Access</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">hibernating</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.21</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Media Independent Handoff</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.22</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Wireless Regional Area 
+    Network</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.23</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Emergency Services Working 
+    Group</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.24</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Smart Grid TAG</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">New (November, 2012)</font></span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IEEE 802.25</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Omni-Range Area Network</font></span></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Not yet ratified</font></span></td>
+  </tr>
+</table>
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm" style="color: #00c">
+MAIN</a></font></b></p>
+
+</body>
+
+</html>

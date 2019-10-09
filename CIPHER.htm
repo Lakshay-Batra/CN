@@ -1,0 +1,864 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="CIPHER_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h2 style="text-align: center">
+<span style="font-family: Arial; text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">Cipher modes </font></span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">A <b>cipher</b> 
+(sometimes spelt <b>cypher</b>) is an algorithm for performing <strong>
+encryption</strong> (and the reverse, <b>decryption</b>) — a series of 
+well-defined steps that can be followed as a procedure. An alternative term is
+<b>encipherment</b>. The original information is known as <i>plaintext</i>, and 
+the encrypted form as <b>ciphertext</b>. The ciphertext message contains all the 
+information of the plaintext message, but is not in a format readable by a human 
+or computer without the proper mechanism to decrypt it; it should resemble 
+random gibberish to those not intended to read it. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Ciphers are 
+usually parameterized by a piece of auxiliary information, called a key. The 
+encrypting procedure is varied depending on the key which changes the detailed 
+operation of the algorithm. Without the key, the cipher cannot be used to 
+encrypt or decrypt. </span></p>
+<p style="text-align: justify">&nbsp;</p>
+<p style="text-align: justify"><span style="font-family: Arial">In 1981, The 
+(US) Department Of Commerce published a set of four 'standard modes of 
+operation' for the DES encryption algorithm. However, these modes of operation 
+are not algorithm-dependent, and implementers routinely use them with other 
+algorithms such as 3DES. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The first four 
+of the cipher modes we will explain here were the ones published in the Federal 
+Information Processing Standard. Others are creations and variations that have 
+become popular among implementers, or which have some unique property. </span>
+</p>
+<p style="text-align: justify"><span style="font-family: Arial">Cipher modes are 
+useful to protocol designers because they can be used to foil certain types of 
+known-plaintext attacks and mathematical operations which users could otherwise 
+employ to cheat in protocols. Also, they allow block ciphers to be used with 
+blocks of smaller sizes, or allow block ciphers to be used as stream ciphers, 
+usually with no degradation in security (well, a small flaw was found in OFB 
+mode for DES, but <i>usually</i> there's no degradation in security). </span>
+</p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span style="font-family: Arial">Electronic Code Book (ECB): </span></b>
+  <span style="font-family: Arial">In ECB mode, each block of the plaintext is 
+  operated on by the cipher and the result is the corresponding block of 
+  ciphertext. This is the simplest mode. </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span style="font-family: Arial">Cipher Block Chaining (CBC): </span></b>
+  <span style="font-family: Arial">In CBC mode, the first block of ciphertext is 
+  produced by first encrypting the first block of plaintext, then XORing the 
+  result with an initialization vector the same length as the block. Subsequent 
+  blocks of ciphertext are produced by encrypting the corresponding block of 
+  plaintext, and then XORing the result with the preceding block of ciphertext.
+  </span></li>
+</ul>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">To decrypt any block of a message sent using 
+this mode, the recipient XOR's the ciphertext with the preceding block of 
+ciphertext (or the initialization vector if it's the first block) and decrypts 
+the result using the cipher algorithm. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span style="font-family: Arial">Propagating Cipher Block Chaining (PCBC):
+  </span></b><span style="font-family: Arial">PCBC mode is much like CBC mode, 
+  except that both the plaintext and the ciphertext of the previous block are 
+  used, rather than just the ciphertext. It is called a &quot;Propagating&quot; mode 
+  because any one-bit error in transmission results in the rest of the message 
+  being garbled -- the error &quot;propagates&quot; through the decryption of subsequent 
+  blocks. </span></li>
+</ul>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">To encrypt the first block of a message using 
+PCBC, you XOR the plaintext with an initialization vector and encrypt the 
+result. To encrypt any subsequent block, use the same technique but substitute 
+the plaintext of the previous block XOR the ciphertext of the previous block for 
+the initialization vector. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">To decrypt the first block, you decrypt using 
+the cipher algorithm, then XOR the result with the initialization vector to 
+regain the plaintext. To decrypt any subsequent block, you have to first decrypt 
+the block before it, then use the plaintext XOR the ciphertext of the block 
+before it in the same way. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span style="font-family: Arial">Cipher Feedback Mode (CFB) </span></b>
+  <span style="font-family: Arial">is used when you need to be able to transmit 
+  data in smaller chunks than the blocksize. If you need to transmit only 8 bits 
+  at a time, for example, you can implement an 8-bit cipher feedback mode. We 
+  have to use the idea of a &quot;state vector&quot; whose size is the blocksize of the 
+  underlying block cipher. Encryption is started by filling the state vector 
+  with the initialization vector. Now, every time you want to transmit N bits in 
+  your N-bit CFB, you encrypt the whole queue, take the leftmost N bits, and XOR 
+  them with the N bits you want to transmit to get your ciphertext. But you're 
+  not done yet. Now shift your state vector N bits to the left (discarding the N 
+  leftmost bits) and put the N bits you just transmitted into the N rightmost 
+  bits of the state vector. </span></li>
+</ul>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">On the other end, the person who is receiving 
+the message does essentially the same thing: start by filling the state vector 
+with the initialization vector, then every time you receive N bits of 
+ciphertext, encrypt your state vector again, take the leftmost N bits, and XOR 
+it to the received ciphertext to get the plaintext. Then shift the state vector 
+left N bits and add the received ciphertext in the rightmost N bits. This works 
+for any N from 1 to the blocksize. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span style="font-family: Arial">Output Feedback Mode (OFB) </span></b>
+  <span style="font-family: Arial">is also defined as N-bit OFB for any N from 1 
+  to the blocksize inclusive. </span></li>
+</ul>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">Its definition is basically identical to the 
+definition of CFB mode, except that instead of replacing the rightmost N bits 
+with the XOR of the encryption output and the plaintext, you replace them with 
+the encryption output itself. This turns the block cipher into a pure stream 
+cipher, so the key stream has nothing to do with the plaintext. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">However, there is a subtle security problem 
+here: as a pure stream cipher, eventually the state vector will repeat a value 
+it had once before. And when it does, it starts repeating all subsequent values, 
+and you become the proud owner of the fabled &quot;Two-time pad&quot;, meaning a 
+cryptanalyst can read all the messages you transmitted with repeated parts of 
+the cycle. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">DES has the property that it acts as a 
+permutation of the space of 64-bit blocks, meaning that if you start with a 
+64-bit block and encrypt it repeatedly with DES, you will eventually get every 
+64-bit block before it starts to repeat. Since 2<sup>64</sup> is quite a large 
+number, you can use DES in 64-bit OFB mode without too many qualms. However, for 
+any other N, DES will develop cycles that average only 2<sup>32</sup> blocks 
+long -- and depending on the volume of data you plan on transmitting, this is a 
+definite security problem. So DES, in particular, should be avoided in any OFB 
+mode other than 64-bit OFB. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">Before using OFB mode with any other block 
+cipher, you should check the available mathematical work to find out whether it 
+will develop any short (say, less than a hundred times the most data you could 
+ever imagine being transmitted under one key in your application) cycles. 
+Because this type of math is very hard and proofs are hard to come by, I prefer 
+to avoid relying on the security of OFB mode. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">&nbsp;</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span style="font-family: Arial">Counter Mode </span></b>
+  <span style="font-family: Arial">- In Counter Mode, the state vector is simply 
+  a number the same size as the block of the block cipher. To encrypt any block, 
+  the number is incremented, then the incremented number is encrypted, then the 
+  output of that encryption is XORed to the plaintext, and the result of the XOR 
+  is the ciphertext. </span></li>
+</ul>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">This solves the problem of the OFB mode having 
+cycles of unpredictable (and potentially short) period in some cases; since the 
+counter doesn't cycle until it's stepped through all 2<sup>64</sup> numbers, 
+it's not a problem. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">There's nothing special about incrementing by 
+one; you can apply any permutation function you want to the counter and as long 
+as it is an actual permutation function (meaning all 2<sup>N</sup> values of an 
+N-bit block are used before it cycles), the result is still called &quot;Counter 
+Mode.&quot; </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">Obviously, Counter Mode should not be used with 
+block ciphers whose blocks are short enough that there is a risk of running a 
+full cycle on one key. Depending on the application, that means 64-bit or larger 
+blocks. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">A block cipher in counter mode is a pure stream 
+cipher, and is susceptible to bit flipping attacks, etc -- so be careful with it 
+when transmitting any data of known format. </span></p>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">And finally, it is possible to implement an 
+&quot;N-bit&quot; Counter Mode. If you want to transmit 9 bits at a time, you just do your 
+increment and block encryption normally, and then take the last 9 bits of the 
+block instead of the whole block to do your XOR with. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 140%; vertical-align: top">
+<span style="font-family: Arial; color: black">Cryptographic Provider Types</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 140%; vertical-align: top; margin-bottom: 7.5pt">
+<span style="font-family: Arial">The field of <i>cryptography</i> is large and 
+growing. There are many different standard data formats and protocols. These are 
+generally organized into groups or families, each of which has its own set of 
+data formats and way of doing things. Even if two families use the same 
+algorithm (for example, the <i>RC2</i> <i>block cipher</i>), they will often use 
+different <i>padding</i> schemes, different <i>key lengths</i>, and different 
+default modes. CryptoAPI is designed so that a CSP provider type represents a 
+particular family.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 140%; vertical-align: top">
+<span style="font-family: Arial">When an application connects to a CSP of a 
+particular type, each of the CryptoAPI functions will, by default, operate in a 
+way prescribed by the family that corresponds to that CSP type. An application's 
+choice of provider type specifies the following items:</span></p>
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="0" style="width: 0in; border-collapse: collapse">
+  <tr>
+    <td valign="bottom" style="padding: 3.75pt; background: #CCCCCC">
+    <p class="MsoNormal" style="text-align: justify; margin: 7.5pt 0in"><b>
+    <span style="font-family: Arial">Item</span></b></td>
+    <td valign="bottom" style="padding: 3.75pt; background: #CCCCCC">
+    <p class="MsoNormal" style="text-align: justify; margin: 7.5pt 0in"><b>
+    <span style="font-family: Arial">Description</span></b></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: 1.0pt solid #E0DFE3; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><i>Key exchange algorithm</i></span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: 1.0pt solid #E0DFE3; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Each provider type specifies one and only 
+    one key exchange algorithm. Every CSP of a particular type must implement 
+    this algorithm. Applications specify the key exchange algorithm to use by 
+    selecting a CSP of the appropriate provider type.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><i>Digital signature algorithm</i></span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Each provider type specifies one and only 
+    one digital signature algorithm. Every CSP of a particular type must 
+    implement this algorithm. Applications specify the digital signature 
+    algorithm to use by selecting a CSP of the appropriate provider type.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Key BLOB formats</span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">The provide type determines the format of 
+    the <i>key BLOB</i> used to export keys from the
+    <a href="http://windowssdk.msdn.microsoft.com/en-us/library/ms721572.aspx" style="color: blue; text-decoration: underline; text-underline: single">
+    <i>CSP</i></a> and to import keys into a CSP.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Digital signature format</span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">The provider type determines the digital 
+    signature format. This ensures that a signature produced by a CSP of a given 
+    provider type can be verified by any CSP of the same provider type.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Session key derivation scheme</span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">The provider type determines the method 
+    used to derived a <i>session key</i> from a <i>hash</i>.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Key length</span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Some provider types specify the length of
+    <i>public/private key pairs</i> and the session keys.</span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="border-left: 1.0pt solid #E0DFE3; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Default modes</span></td>
+    <td valign="top" style="border-left: medium none; border-right: 1.0pt solid #E0DFE3; border-top: medium none; border-bottom: 1.0pt solid #D5D5D3; padding: 3.75pt; background: #F7F7FF">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">The provider type often specifies default 
+    modes for various options, such as the block encryption <i>cipher mode</i> 
+    or the block encryption padding method.</span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">In cryptography, a block cipher 
+operates on blocks of fixed length, often 64 or 128 bits. To encrypt longer 
+messages, several <b>modes of operation</b> may be used. The earliest modes 
+described, such as ECB, CBC, OFB and CFB provide only confidentiality, and do 
+not ensure message integrity. Other modes have been designed which ensure both 
+confidentiality and message integrity, such as CCM mode, EAX mode and OCB mode. 
+Tweakable narrow-block encryption (LRW) mode and wide-block encryption (CMC and 
+EME) modes, designed to securely encrypt sectors of a disk, are described in the 
+article devoted to disk encryption.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Electronic 
+codebook (ECB)</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The simplest of the encryption modes 
+is the <b>electronic codebook</b> (ECB) mode, in which the message is split into 
+blocks and each is encrypted separately. The disadvantage of this method is that 
+identical plaintext blocks are encrypted to identical ciphertext blocks; thus, 
+it does not hide data patterns well. In some senses it doesn't provide message 
+confidentiality at all, and it is not recommended for cryptographic protocols.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Ecb_encryption.png" title="Image:Ecb_encryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="Image:Ecb_encryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Ecb_encryption.png" title="Image:Ecb_encryption.png"
+ style='width:450pt;height:183.75pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image001.png" o:href="http://upload.wikimedia.org/wikipedia/en/c/c4/Ecb_encryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Ecb_encryption.png"><img border=0
+width=600 height=245 src="CIPHER_files/image002.jpg"
+alt="Image:Ecb_encryption.png" title="Image:Ecb_encryption.png" v:shapes="_x0000_s1025"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Ecb_decryption.png" title="Image:Ecb_decryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="Image:Ecb_decryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Ecb_decryption.png" title="Image:Ecb_decryption.png"
+ style='width:450pt;height:169.5pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image003.png" o:href="http://upload.wikimedia.org/wikipedia/en/6/66/Ecb_decryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Ecb_decryption.png"><img border=0
+width=600 height=226 src="CIPHER_files/image004.jpg"
+alt="Image:Ecb_decryption.png" title="Image:Ecb_decryption.png" v:shapes="_x0000_s1026"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Here's a striking example of the 
+degree to which ECB can reveal patterns in the plaintext. A pixel-map version of 
+the image on the left was encrypted with ECB mode to create the center image:</span></p>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+      <p class="MsoNormal" style="text-align:justify">
+      <span style="font-family:Arial">
+      <a href="http://en.wikipedia.org/wiki/Image:Tux.jpg" title="Image:Tux.jpg" style="color: blue; text-decoration: underline; text-underline: single">
+      <span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" alt="Image:Tux.jpg"
+ href="http://en.wikipedia.org/wiki/Image:Tux.jpg" title="Image:Tux.jpg"
+ style='width:147pt;height:162pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image005.jpg" o:href="http://upload.wikimedia.org/wikipedia/en/5/56/Tux.jpg"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Tux.jpg"><img border=0 width=196
+height=216 src="CIPHER_files/image005.jpg" alt="Image:Tux.jpg"
+title="Image:Tux.jpg" v:shapes="_x0000_s1027"></a></span><![endif]></a></span></a></span></td>
+      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+      <p class="MsoNormal" style="text-align:justify">
+      <span style="font-family:Arial">
+      <a href="http://en.wikipedia.org/wiki/Image:Tux_ecb.jpg" title="Image:Tux_ecb.jpg" style="color: blue; text-decoration: underline; text-underline: single">
+      <span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" alt="Image:Tux_ecb.jpg"
+ href="http://en.wikipedia.org/wiki/Image:Tux_ecb.jpg" title="Image:Tux_ecb.jpg"
+ style='width:147pt;height:162pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image006.jpg" o:href="http://upload.wikimedia.org/wikipedia/en/f/f0/Tux_ecb.jpg"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Tux_ecb.jpg"><img border=0 width=196
+height=216 src="CIPHER_files/image006.jpg" alt="Image:Tux_ecb.jpg"
+title="Image:Tux_ecb.jpg" v:shapes="_x0000_s1028"></a></span><![endif]></a></span></a></span></td>
+      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+      <p class="MsoNormal" style="text-align:justify">
+      <span style="font-family:Arial">
+      <a href="http://en.wikipedia.org/wiki/Image:Tux_secure.jpg" title="Image:Tux_secure.jpg" style="color: blue; text-decoration: underline; text-underline: single">
+      <span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" alt="Image:Tux_secure.jpg"
+ href="http://en.wikipedia.org/wiki/Image:Tux_secure.jpg" title="Image:Tux_secure.jpg"
+ style='width:147pt;height:162pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image007.jpg" o:href="http://upload.wikimedia.org/wikipedia/en/a/a0/Tux_secure.jpg"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Tux_secure.jpg"><img border=0
+width=196 height=216 src="CIPHER_files/image007.jpg" alt="Image:Tux_secure.jpg"
+title="Image:Tux_secure.jpg" v:shapes="_x0000_s1029"></a></span><![endif]></a></span></a></span></td>
+    </tr>
+    <tr>
+      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+      <p class="MsoNormal" style="text-align:justify"><i>
+      <span style="font-family:
+  Arial">Original</span></i></td>
+      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+      <p class="MsoNormal" style="text-align:justify"><i>
+      <span style="font-family:
+  Arial">Encrypted using ECB mode</span></i></td>
+      <td style="padding:3.0pt 3.0pt 3.0pt 3.0pt">
+      <p class="MsoNormal" style="text-align:justify"><i>
+      <span style="font-family:
+  Arial">Encrypted using other modes</span></i></td>
+    </tr>
+  </table>
+</div>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The image on the right is how the 
+image might look encrypted with CBC, CTR or any of the other more secure modes 
+-- indistinguishable from random noise. Note that the random appearance of the 
+image on the right tells us very little about whether the image has been 
+securely encrypted; many kinds of insecure encryption have been developed which 
+would produce output just as 'random-looking'.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">ECB mode can also make protocols 
+without integrity protection even more susceptible to replay attacks, since each 
+block gets decrypted in exactly the same way. For example, the <i>Phantasy Star 
+Online: Blue Burst</i> online video game uses Blowfish in ECB mode. Before the 
+key exchange system was cracked leading to even easier methods, cheaters 
+repeated encrypted &quot;monster killed&quot; message packets, each an encrypted Blowfish 
+block, to illegitimately gain experience points quickly.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Initialization 
+vector (IV)</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">All modes (except ECB) require an <i>
+initialization vector</i>, or <i>IV</i> - a sort of dummy block to kick off the 
+process for the first real block, and also to provide some randomization for the 
+process. There is no need for the IV to be secret, but it is important that it 
+is never reused with the same key. For CBC and CFB, reusing an IV leaks some 
+information about the first block of plaintext and any common prefix shared by 
+the two messages. For OFB and CTR, reusing an IV completely destroys security. 
+In CBC mode, the IV must be randomly generated at encryption time.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Cipher-block 
+chaining (CBC)</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">In the <b>cipher-block chaining</b> 
+(CBC) mode, each block of plaintext is XORed with the previous ciphertext block 
+before being encrypted. This way, each ciphertext block is dependent on all 
+plaintext blocks up to that point. Also, to make each message unique, an 
+initialization vector is used in the first block.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Cbc_encryption.png" title="Image:Cbc_encryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" alt="Image:Cbc_encryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Cbc_encryption.png" title="Image:Cbc_encryption.png"
+ style='width:450pt;height:182.25pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image008.png" o:href="http://upload.wikimedia.org/wikipedia/en/d/d3/Cbc_encryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Cbc_encryption.png"><img border=0
+width=600 height=243 src="CIPHER_files/image009.jpg"
+alt="Image:Cbc_encryption.png" title="Image:Cbc_encryption.png" v:shapes="_x0000_s1030"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Cbc_decryption.png" title="Image:Cbc_decryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1031" type="#_x0000_t75" alt="Image:Cbc_decryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Cbc_decryption.png" title="Image:Cbc_decryption.png"
+ style='width:450pt;height:166.5pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image010.png" o:href="http://upload.wikimedia.org/wikipedia/en/6/66/Cbc_decryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Cbc_decryption.png"><img border=0
+width=600 height=222 src="CIPHER_files/image011.jpg"
+alt="Image:Cbc_decryption.png" title="Image:Cbc_decryption.png" v:shapes="_x0000_s1031"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">If the first block has index 1, the 
+mathematical formula for CBC encryption is</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" alt="C_i = E_K(P_i \oplus C_{i-1}), C_0 = IV"
+ style='width:189.75pt;height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image012.gif" o:href="http://upload.wikimedia.org/math/0/0/f/00fa22607d5abab10c6b654ae99dd749.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=253 height=23
+src="CIPHER_files/image012.gif" alt="C_i = E_K(P_i \oplus C_{i-1}), C_0 = IV"
+v:shapes="_x0000_s1032"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">while the mathematical formula for 
+CBC decryption is</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape id="_x0000_s1033"
+ type="#_x0000_t75" alt="P_i = D_K(C_i) \oplus C_{i-1}, C_0 = IV" style='width:192.75pt;
+ height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image013.gif" o:href="http://upload.wikimedia.org/math/2/d/6/2d6da3f91f0d035af2973579095feea3.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=257 height=23
+src="CIPHER_files/image013.gif" alt="P_i = D_K(C_i) \oplus C_{i-1}, C_0 = IV"
+v:shapes="_x0000_s1033"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><br>
+CBC is the most commonly used mode of operation. Its main drawbacks are that 
+encryption is sequential (i.e., it cannot be parallelized), and that the message 
+must be padded to a multiple of the cipher block size.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Note that a one-bit change in the 
+plaintext affects all following ciphertext, but a block of plaintext can be 
+recovered from just two adjacent blocks of ciphertext. As a consequence, 
+decryption <i>can</i> be parallelized, and a one-bit change to the ciphertext 
+causes complete corruption of the corresponding block of plaintext and inverts 
+the corresponding bit in the following block of plaintext.</span></p>
+<h3 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt">Propagating cipher-block chaining 
+(PCBC)</span></h3>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The propagating cipher-block chaining 
+mode was designed to cause small changes in the ciphertext to propagate 
+indefinitely when decrypting, as well as when encrypting. Encryption and 
+decryption routines are as follows:</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape id="_x0000_s1034"
+ type="#_x0000_t75" alt="C_i = E_K(P_i \oplus P_{i-1} \oplus C_{i-1}), P_0 \oplus C_0 = IV"
+ style='width:270pt;height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image014.gif" o:href="http://upload.wikimedia.org/math/2/e/c/2ec499341395652a00b7b049d04c045b.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=360 height=23
+src="CIPHER_files/image014.gif"
+alt="C_i = E_K(P_i \oplus P_{i-1} \oplus C_{i-1}), P_0 \oplus C_0 = IV" v:shapes="_x0000_s1034"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1035" type="#_x0000_t75" alt="P_i = D_K(C_i) \oplus P_{i-1} \oplus C_{i-1}, P_0 \oplus C_0 = IV"
+ style='width:271.5pt;height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image015.gif" o:href="http://upload.wikimedia.org/math/3/0/8/308c99fb79afb2a921762a8305eecb1c.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=362 height=23
+src="CIPHER_files/image015.gif"
+alt="P_i = D_K(C_i) \oplus P_{i-1} \oplus C_{i-1}, P_0 \oplus C_0 = IV" v:shapes="_x0000_s1035"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">PCBC is used in Kerberos and WASTE, 
+most notably, but otherwise is fairly uncommon.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Cipher feedback (CFB)</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The <b>cipher feedback</b> (CFB) 
+mode, a close relative of CBC, makes a block cipher into a self-synchronizing 
+stream cipher. The operation is very similar; in particular, CFB decryption is 
+almost identical to CBC decryption performed in reverse:</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1036" type="#_x0000_t75" alt="C_i = E_K (C_{i-1}) \oplus P_i"
+ style='width:131.25pt;height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image016.gif" o:href="http://upload.wikimedia.org/math/8/f/9/8f96f3ed0abec403db53fd0783695e9d.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=175 height=23
+src="CIPHER_files/image016.gif" alt="C_i = E_K (C_{i-1}) \oplus P_i" v:shapes="_x0000_s1036"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1037" type="#_x0000_t75" alt="P_i = E_K (C_{i-1}) \oplus C_i"
+ style='width:131.25pt;height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image017.gif" o:href="http://upload.wikimedia.org/math/f/d/8/fd8212807eb980bbfe556e3d34e0e77d.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=175 height=23
+src="CIPHER_files/image017.gif" alt="P_i = E_K (C_{i-1}) \oplus C_i" v:shapes="_x0000_s1037"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1038" type="#_x0000_t75" alt="C_{0} = \ \mbox{IV}" style='width:60pt;
+ height:15pt'>
+ <v:imagedata src="CIPHER_files/image018.gif" o:href="http://upload.wikimedia.org/math/c/2/0/c203aa4a5ef84dfbc9c33ac63972f6d4.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=80 height=20
+src="CIPHER_files/image018.gif" alt="C_{0} = \ \mbox{IV}" v:shapes="_x0000_s1038"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Cfb_encryption.png" title="Image:cfb_encryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1039" type="#_x0000_t75" alt="Image:cfb_encryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Cfb_encryption.png" title="Image:cfb_encryption.png"
+ style='width:450pt;height:214.5pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image019.png" o:href="http://upload.wikimedia.org/wikipedia/en/f/fd/Cfb_encryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Cfb_encryption.png"><img border=0
+width=600 height=286 src="CIPHER_files/image020.jpg"
+alt="Image:cfb_encryption.png" title="Image:cfb_encryption.png" v:shapes="_x0000_s1039"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Cfb_decryption.png" title="Image:cfb_decryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1040" type="#_x0000_t75" alt="Image:cfb_decryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Cfb_decryption.png" title="Image:cfb_decryption.png"
+ style='width:450pt;height:198pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image021.png" o:href="http://upload.wikimedia.org/wikipedia/en/7/75/Cfb_decryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Cfb_decryption.png"><img border=0
+width=600 height=264 src="CIPHER_files/image022.jpg"
+alt="Image:cfb_decryption.png" title="Image:cfb_decryption.png" v:shapes="_x0000_s1040"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Like CBC mode, changes in the 
+plaintext propagate forever in the ciphertext, and encryption cannot be 
+parallelized. Also like CBC, decryption can be parallelized. When decrypting, a 
+one-bit change in the ciphertext affects two plaintext blocks: a one-bit change 
+in the corresponding plaintext block, and complete corruption of the following 
+plaintext block. Later plaintext blocks are decrypted normally.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Because each stage of the CFB mode 
+depends on the encrypted value of the previous ciphertext XORed with the current 
+plaintext value, a form of pipelining is possible, since the only encryption 
+step which requires the plaintext is the final XOR. This is useful for 
+applications that require low latency between the arrival of plaintext and the 
+output of the corresponding ciphertext, such as certain applications of 
+streaming media.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">CFB shares two advantages over CBC 
+mode with the stream cipher modes OFB and CTR: the block cipher is only ever 
+used in the encrypting direction, and the message does not need to be padded to 
+a multiple of the cipher block size.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Output feedback 
+(OFB)</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The <b>output feedback</b> (OFB) mode 
+makes a block cipher into a synchronous stream cipher: it generates keystream 
+blocks, which are then
+<a href="http://en.wikipedia.org/wiki/XOR" title="XOR" style="color: blue; text-decoration: underline; text-underline: single">
+XORed</a> with the plaintext blocks to get the ciphertext. Just as with other 
+stream ciphers, flipping a bit in the ciphertext produces a flipped bit in the 
+plaintext at the same location. This property allows many error correcting codes 
+to function normally even if applied before encryption.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Because of the symmetry of the XOR 
+operation, encryption and decryption are exactly the same:</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1041" type="#_x0000_t75" alt="C_i = P_i \oplus O_i" style='width:86.25pt;
+ height:15pt'>
+ <v:imagedata src="CIPHER_files/image023.gif" o:href="http://upload.wikimedia.org/math/3/4/b/34bb20aec862b129c1ee47a6296e76ee.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=115 height=20
+src="CIPHER_files/image023.gif" alt="C_i = P_i \oplus O_i" v:shapes="_x0000_s1041"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1042" type="#_x0000_t75" alt="P_i = C_i \oplus O_i" style='width:86.25pt;
+ height:15pt'>
+ <v:imagedata src="CIPHER_files/image024.gif" o:href="http://upload.wikimedia.org/math/0/4/5/045adfc949eb1abb71fb501ec55355a9.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=115 height=20
+src="CIPHER_files/image024.gif" alt="P_i = C_i \oplus O_i" v:shapes="_x0000_s1042"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1043" type="#_x0000_t75" alt="O_i = \ E_K (O_{i-1})" style='width:103.5pt;
+ height:17.25pt'>
+ <v:imagedata src="CIPHER_files/image025.gif" o:href="http://upload.wikimedia.org/math/3/f/7/3f739e2dd3a146d33fd9ccb319f0de89.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=138 height=23
+src="CIPHER_files/image025.gif" alt="O_i = \ E_K (O_{i-1})" v:shapes="_x0000_s1043"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1044" type="#_x0000_t75" alt="O_{0} = \ \mbox{IV}" style='width:60pt;
+ height:15pt'>
+ <v:imagedata src="CIPHER_files/image026.gif" o:href="http://upload.wikimedia.org/math/3/3/e/33e89dd70429fea3be23cfc2df7ea00d.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=80 height=20
+src="CIPHER_files/image026.gif" alt="O_{0} = \ \mbox{IV}" v:shapes="_x0000_s1044"><![endif]></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Ofb_encryption.png" title="Image:ofb_encryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1045" type="#_x0000_t75" alt="Image:ofb_encryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Ofb_encryption.png" title="Image:ofb_encryption.png"
+ style='width:450pt;height:214.5pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image027.png" o:href="http://upload.wikimedia.org/wikipedia/en/a/a9/Ofb_encryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Ofb_encryption.png"><img border=0
+width=600 height=286 src="CIPHER_files/image028.jpg"
+alt="Image:ofb_encryption.png" title="Image:ofb_encryption.png" v:shapes="_x0000_s1045"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Ofb_decryption.png" title="Image:ofb_decryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1046" type="#_x0000_t75" alt="Image:ofb_decryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Ofb_decryption.png" title="Image:ofb_decryption.png"
+ style='width:450pt;height:214.5pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image029.png" o:href="http://upload.wikimedia.org/wikipedia/en/8/82/Ofb_decryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Ofb_decryption.png"><img border=0
+width=600 height=286 src="CIPHER_files/image030.jpg"
+alt="Image:ofb_decryption.png" title="Image:ofb_decryption.png" v:shapes="_x0000_s1046"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Each output feedback block cipher 
+operation depends on all previous ones, so cannot be performed in parallel.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Counter (CTR)</span></h2>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in; background: #F8FCFF">
+<i><span lang="EN" style="font-family: Arial">Note: CTR mode is also known as 
+Segmented Integer Counter (SIC) mode</span></i><span lang="EN" style="font-family: Arial">
+</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Like OFB, counter mode turns a block 
+cipher into a stream cipher. It generates the next keystream block by encrypting 
+successive values of a &quot;counter&quot;. The counter can be any simple function which 
+produces a sequence which is guaranteed not to repeat for a long time, although 
+an actual counter is the simplest and most popular. CTR mode has very similar 
+characteristics to OFB, but also allows a random access property for decryption 
+and is probably secure if the block cipher is strong. Note that nonce in this 
+graph is the same thing as the initialization vector (IV) in the other graphs. 
+The IV/nonce and the counter can either be concatenated, added or XORed together 
+to produce the actual unique counter block to encrypt.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Ctr_encryption.png" title="Image:Ctr_encryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1047" type="#_x0000_t75" alt="Image:Ctr_encryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Ctr_encryption.png" title="Image:Ctr_encryption.png"
+ style='width:450.75pt;height:181.5pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image031.png" o:href="http://upload.wikimedia.org/wikipedia/en/3/3f/Ctr_encryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Ctr_encryption.png"><img border=0
+width=601 height=242 src="CIPHER_files/image032.jpg"
+alt="Image:Ctr_encryption.png" title="Image:Ctr_encryption.png" v:shapes="_x0000_s1047"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Ctr_decryption.png" title="Image:Ctr_decryption.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1048" type="#_x0000_t75" alt="Image:Ctr_decryption.png"
+ href="http://en.wikipedia.org/wiki/Image:Ctr_decryption.png" title="Image:Ctr_decryption.png"
+ style='width:450pt;height:174.75pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image033.png" o:href="http://upload.wikimedia.org/wikipedia/en/3/34/Ctr_decryption.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Ctr_decryption.png"><img border=0
+width=600 height=233 src="CIPHER_files/image034.jpg"
+alt="Image:Ctr_decryption.png" title="Image:Ctr_decryption.png" v:shapes="_x0000_s1048"></a></span><![endif]></a></span></a></span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Integrity 
+protection and error propagation</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">The block cipher modes of operation 
+presented above provide no integrity protection in their operation. This means 
+that an attacker who does not know the key may still be able to modify the data 
+stream in ways useful to them, without surety of detection for the alteration. 
+It is now generally well understood that wherever data is encrypted, it is 
+nearly always essential to provide integrity protection, as the risks in not 
+doing so are high. For secure operation, the IV and ciphertext generated by 
+these modes should be authenticated with a secure MAC, which is checked before 
+decryption.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Before these issues were well 
+understood, it was common to discuss the &quot;error propagation&quot; properties of a 
+mode of operation as a means of evaluating it. It would be observed, for 
+example, that a one-block error in the transmitted ciphertext would result in a 
+one-block error in the reconstructed plaintext for ECB mode encryption, while in 
+CBC mode such an error would affect two blocks:</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Cbc_modification.png" title="Image:Cbc_modification.png" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1049" type="#_x0000_t75" alt="Image:Cbc_modification.png"
+ href="http://en.wikipedia.org/wiki/Image:Cbc_modification.png" title="Image:Cbc_modification.png"
+ style='width:450pt;height:201pt' o:button="t">
+ <v:imagedata src="CIPHER_files/image035.png" o:href="http://upload.wikimedia.org/wikipedia/en/d/df/Cbc_modification.png"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><a
+href="http://en.wikipedia.org/wiki/Image:Cbc_modification.png"><img border=0
+width=600 height=268 src="CIPHER_files/image036.jpg"
+alt="Image:Cbc_modification.png" title="Image:Cbc_modification.png" v:shapes="_x0000_s1049"></a></span><![endif]></a></span></a></span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Some felt that such resilience was 
+desirable in the face of random errors, while others argued that it increased 
+the scope for attackers to modify the message to their own ends.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">However, when proper integrity 
+protection is used such an error will result (with high probability) in the 
+entire message being rejected - if resistance to random error is desirable, 
+error-correcting codes should be applied after encryption.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Some modes of operation have been 
+designed to combine security and authentication. Examples of such modes are:
+<a href="http://en.wikipedia.org/w/index.php?title=IACBC&action=edit" title="IACBC" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color:#CC2200">IACBC</span></a>,
+<a href="http://en.wikipedia.org/w/index.php?title=IAPM&action=edit" title="IAPM" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color:#CC2200">IAPM</span></a>, OCB mode,
+<a href="http://en.wikipedia.org/wiki/EAX_mode" title="EAX mode" style="color: blue; text-decoration: underline; text-underline: single">
+EAX</a>,
+<a href="http://en.wikipedia.org/w/index.php?title=CWC_mode&action=edit" title="CWC mode" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color:#CC2200">CWC</span></a>,
+<a href="http://en.wikipedia.org/wiki/CCM_mode" title="CCM mode" style="color: blue; text-decoration: underline; text-underline: single">
+CCM</a>, and
+<a href="http://en.wikipedia.org/wiki/GCM_mode" title="GCM mode" style="color: blue; text-decoration: underline; text-underline: single">
+GCM</a>. These authenticated encryption modes are either classified as single 
+pass modes or double pass modes. Some modes also allow for the authentication of 
+unencrypted associated data, and these are called AEAD (Authenticated-Encryption 
+with Associated-Data) schemes. For example, EAX mode is a double pass AEAD 
+scheme while OCB mode is single pass.</span></p>
+<h2 style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Padding</span></h2>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Because a block cipher works on units 
+of a fixed
+<a href="http://en.wikipedia.org/wiki/Block_size_(cryptography)" title="Block size (cryptography)" style="color: blue; text-decoration: underline; text-underline: single">
+size</a>, but messages come in a variety of lengths, some modes (mainly CBC) 
+require that the final block be padded before encryption. Several padding 
+schemes exist. The simplest is to add null bytes to the plaintext to bring its 
+length up to a multiple of the block size, but care must be taken that the 
+original length of the plaintext can be recovered; this is so, for example, if 
+the plaintext is a C style string which contains no null bytes except at the 
+end. Slightly more complex is the original
+<a href="http://en.wikipedia.org/wiki/Data_Encryption_Standard" title="Data Encryption Standard" style="color: blue; text-decoration: underline; text-underline: single">
+DES</a> method, which is to add a single one bit, followed by enough zero bits 
+to fill out the block; if the message ends on a block boundary, a whole padding 
+block will be added. Most sophisticated are CBC-specific schemes such as 
+ciphertext stealing or residual block termination, which do not cause any extra 
+ciphertext expansion, but these schemes are relatively complex.
+<a href="http://en.wikipedia.org/wiki/Bruce_Schneier" title="Bruce Schneier" style="color: blue; text-decoration: underline; text-underline: single">
+Schneier</a> and Ferguson suggest two possibilities, both simple: append a byte 
+with value 128 (hex 80), followed by as many zero bytes as needed to fill the 
+last block, or pad the last block with <i>n</i> bytes all with value <i>n</i>.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">CFB, OFB and CTR modes do not require 
+any special measures to handle messages whose lengths are not multiples of the 
+block size, since they all work by XORing the plaintext with the output of the 
+block cipher. The last partial block of plaintext is XORed with the first few 
+bytes of the last key stream block, producing a final ciphertext block that is 
+the same size as the final partial plaintext block. This characteristic of 
+stream ciphers makes them suitable for applications that require the encrypted 
+ciphertext data to be the same size as the original plaintext data, and for 
+applications that transmit data in streaming form where it is inconvenient to 
+add padding bytes.&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

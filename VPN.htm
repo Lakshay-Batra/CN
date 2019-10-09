@@ -1,0 +1,464 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="VPN_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h1
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h1 style="text-align: center"><font color="#FF0000" size="6">
+<span lang="EN" style="font-family: Arial; text-transform: uppercase; text-decoration: underline">
+Virtual private network</span></font></h1>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">A <b>
+virtual private network</b> (<b>VPN</b>) is a private communications network 
+usually used within a company, or by several different companies or 
+organizations, to communicate over a wider network. VPN message traffic can be 
+carried over a public networking infrastructure (e.g. the Internet) on top of 
+standard protocols, or over a service provider's private network with a defined 
+Service Level Agreement (SLA) between the VPN customer and the VPN service 
+provider.</span></p>
+<h2 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Authentication 
+mechanism</span></h2>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">VPN</span></b><span lang="EN" style="font-family: Arial"> 
+involves two parts: the protected or &quot;inside&quot; network, which provides physical 
+and administrative security to protect the transmission; and a less trustworthy, 
+&quot;outside&quot; network or segment (usually through the Internet). Generally, a 
+firewall sits between a remote user's workstation or client and the host network 
+or server. As the user's client establishes the communication with the firewall, 
+the client may pass authentication data to an authentication service inside the 
+perimeter. A known trusted person, sometimes only when using trusted devices, 
+can be provided with appropriate security privileges to access resources not 
+available to general users.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Many 
+VPN client programs can be configured to require that all IP traffic must pass 
+through the tunnel while the VPN is active, for better security. From the user's 
+perspective, this means that while the VPN client is active, all access outside 
+their employer's secure network must pass through the same firewall as would be 
+the case while physically connected to the office ethernet. This reduces the 
+risk that an attacker might gain access to the secured network by attacking the 
+employee's laptop: to other computers on the employee's home network, or on the 
+public internet, it is as though the machine running the VPN client simply does 
+not exist. Such security is important because other computers local to the 
+network on which the client computer is operating may be untrusted or partially 
+trusted. Even with a home network that is protected from the outside internet by 
+a firewall, people who share a home may be simultaneously working for different 
+employers over their respective <b>VPN</b> connections from the shared home 
+network. Each employer would therefore want to ensure their proprietary data is 
+kept secure, even if another computer in the local network gets infected with
+malware. And if a travelling employee uses a VPN client from a Wi-Fi access 
+point in a public place, such security is even more important. However, the use 
+of IPX/SPX is one way users might still be able to access local resources.</span></p>
+<h2 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Types of VPNs</span></h2>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Secure VPNs</span></b><span lang="EN" style="font-family: Arial"> (SVPNs) use 
+cryptographic tunneling protocols to provide the necessary confidentiality 
+(preventing snooping), sender authentication (preventing identity spoofing), and 
+message
+integrity (preventing message alteration) to achieve the privacy intended. 
+When properly chosen, <b>implemented, and used</b>, such techniques can provide 
+secure communications over unsecured networks.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Because such choice, implementation, and use are <b>not trivial</b>, there are 
+many insecure VPN schemes on the market.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Secure 
+VPN technologies may also be used to enhance security as a &quot;security overlay&quot; 
+within dedicated networking infrastructures.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Secure 
+VPN protocols include the following:</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">IPsec (IP security) - commonly used 
+  over IPV4, and an obligatory part of IPv6. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">SSL used either for tunneling the 
+  entire network stack, such as in OpenVPN, or for securing what is essentially 
+  a web proxy. Although the latter is often called a &quot;SSL VPN&quot; by VPN vendors, 
+  it is not really a fully-fledged VPN. (See also TUN/TAP.) </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">PPTP (point-to-point tunneling 
+  protocol), developed jointly by a number of companies, including Microsoft.
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">L2TP (Layer 2 Tunnelling Protocol), 
+  including work by both Microsoft and Cisco. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">L2TPv3 (Layer 2 Tunnelling Protocol 
+  version 3). </span></li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Some 
+large ISPs now offer &quot;managed&quot; VPN service for business customers who want the 
+security and convenience of a VPN but prefer not to undertake administering a 
+VPN server themselves. In addition to providing remote workers with secure 
+access to their employer's internal network, sometimes other security and 
+management services are included as part of the package, such as keeping 
+anti-virus and anti-spyware programs updated on each client's computer.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Trusted VPNs</span></b><span lang="EN" style="font-family: Arial"> do not use 
+cryptographic tunneling, and instead rely on the security of a single provider's 
+network to protect the traffic. Multi-protocol label switching (MPLS) is 
+commonly used to build trusted VPNs. Other protocols for trusted VPNs include:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">L2F (Layer 2 Forwarding), developed 
+  by Cisco. </span></li>
+</ul>
+<h2 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Characteristics in 
+application</span></h2>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">A 
+well-designed VPN can provide great benefits for an organization. It can:</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Extend geographic connectivity.
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Improve security where data lines 
+  have not been ciphered. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Reduce operational costs versus 
+  traditional WAN. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Reduce transit time and 
+  transportation costs for remote users. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Simplify network topology in 
+  certain scenarios. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Provide global networking 
+  opportunities. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Provide telecommuter support.
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Provide broadband networking 
+  compatibility. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Provide faster ROI (return on 
+  investment) than traditional carrier leased/owned WAN lines. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Show a good economy of scale.
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Scale well, when used with a public 
+  key infrastructure. </span></li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+However, since VPNs extend the &quot;mother network&quot; by such an extent (almost every 
+employee) and with such ease (no dedicated lines to hire), there are certain 
+security implications that have to receive special attention:</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Security on the client side has to 
+  be tightened and enforced. Keywords: Central Client Administration, Security 
+  Policy Enforcement. It is common for a company to require that each employee 
+  wishing to use their VPN from home first install an approved hardware 
+  firewall. Some organizations, such as healthcare companies, with especially 
+  sensitive data even arrange for an employee's home to have two separate WAN 
+  connections: one for working on that employer's sensitive data and one for all 
+  other uses. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">The scale of access to the target 
+  network may have to be limited. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Logging must be evaluated and in 
+  most cases revised. </span></li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Any 
+single breach or failure may result in the privacy and security of the network 
+being compromised.</span></p>
+<h2 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Tunneling</span></h2>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Tunneling is the transmission of data intended for use only within a private, 
+usually corporate network through a public network in such a way that the 
+routing nodes in the public network are unaware that the transmission is part of 
+a private network. Tunneling is generally done by encapsulating the private 
+network data and protocol information within the public network transmission 
+units so that the private network protocol information appears to the public 
+network as data. Tunneling allows the use of the Internet, which is a public 
+network, to convey data on behalf of a private network.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Port 
+forwarding is one application of tunneling.</span></p>
+<h2 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">The four types of 
+VPN secure dialog</span></h2>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">The 
+most important part of a VPN solution is security. The very nature of VPNs — 
+putting private data on public networks — raises concerns about potential 
+threats to that data and the impact of data loss. A Virtual Private Network must 
+address all types of security threats by providing security services in the 
+areas of:</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Authentication (access control)</span></b><span lang="EN" style="font-family: Arial"> 
+- Authentication is the process of ensuring that a user or system is who the 
+user claims to be. There are many types of authentication mechanisms, but these 
+mechanisms all work off of one or more of the following principles: something 
+you know (a login name, a password), something you have (a token, a card key), 
+something you are (fingerprint, retinal scan). Weak authentication makes use of 
+one of these components, usually a simple login/password sequence. Strong 
+authentication combines at least two authentication components from different 
+areas.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">SSL 
+VPN is a jargon for explaining VPN communication based on Secure Socket Layer 
+Protocol. SSL VPN-Plus is a proprietary technology from NeoAccel Inc, providing 
+SSL functionality at the kernel level on Linux based platforms.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">&nbsp;</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">
+************************************************<br>
+</span><i>
+<span style="font-size: 12.0pt; font-family: Arial; font-weight: normal">Virtual 
+private networks</span></i><span style="font-size: 12.0pt; font-family: Arial; font-weight: normal">
+<i>(VPNs) </i>are a fairly quixotic subject; there is no single defining 
+product, nor even much of a consensus among VPN vendors as to what comprises a 
+VPN. Consequently, everyone knows what a VPN is, but establishing a single 
+definition can be remarkably difficult. Some definitions are sufficiently broad 
+as to enable one to claim that Frame Relay qualifies as a VPN when, in fact, it 
+is an overlay network. Although an overlay network secures transmissions through 
+a public network, it does so passively via logical separation of the data 
+streams.</span><span style="font-size: 12.0pt; font-family: Arial"> </span></h2>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">VPNs provide a more active form of security by 
+either encrypting or encapsulating data for transmission through an unsecured 
+network. These two types of security—encryption and encapsulation—form the 
+foundation of virtual private networking. However, both <i>encryption</i> and <i>
+encapsulation</i> are generic terms that describe a function that can be 
+performed by a myriad of specific technologies. To add to the confusion, these 
+two sets of technologies can be combined in different implementation topologies. 
+Thus, VPNs can vary widely from vendor to vendor. </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">This chapter provides an overview of building 
+VPNs using the Layer 2 Tunneling Protocol (L2TP), and it explores the possible 
+implementation topologies. </span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Layer 2 Tunneling Protocol
+</span></h2>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">The Internet Engineering Task Force (IETF) was 
+faced with competing proposals from Microsoft and Cisco Systems for a protocol 
+specification that would secure the transmission of IP datagrams through 
+uncontrolled and untrusted network domains. Microsoft's proposal was an attempt 
+to standardize the Point-to-Point Tunneling Protocol (PPTP), which it had 
+championed. Cisco, too, had a protocol designed to perform a similar function. 
+The IETF combined the best elements of each proposal and specified the open 
+standard L2TP. </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">The simplest description of L2TP's 
+functionality is that it carries the <i>Point-to-Point Protocol</i> (<i>PPP</i>) 
+through networks that aren't point-to-point. PPP has become the most popular 
+communications protocol for remote access using circuit-switched transmission 
+facilities such as POTS lines or ISDN to create a temporary point-to-point 
+connection between the calling device and its destination. </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">L2TP simulates a point-to-point connection by 
+encapsulating PPP datagrams for transportation through routed networks or 
+internetworks. Upon arrival at their intended destination, the encapsulation is 
+removed, and the PPP datagrams are restored to their original format. Thus, a 
+point-to-point communications session can be supported through disparate 
+networks. This technique is known as <i>tunneling</i>. </span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Operational Mechanics </span>
+</h2>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">In a traditional remote access scenario, a 
+remote user (or client) accesses a network by directly connecting a <i>network 
+access server</i> <i>(NAS)</i>. Generally, the NAS provides several distinct 
+functions: It terminates the point-to-point communications session of the remote 
+user, validates the identity of that user, and then serves that user with access 
+to the network. Although most remote access technologies bundle these functions 
+into a single device, L2TP separates them into two physically separate devices: 
+the <i>L2TP Access Server (LAS)</i> and the <i>L2TP Network Server</i> <i>(LNS)</i>.
+</span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">As its names imply, the L2TP Access Server 
+supports authentication, and ingress. Upon successful authentication, the remote 
+user's session is forwarded to the LNS, which lets that user into the network. 
+Their separation enables greater flexibility for implementation than other 
+remote access technologies. </span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Implementation Topologies
+</span></h3>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">L2TP can be implemented in two distinct 
+topologies: </span></p>
+<p class="pbu1bullet1" style="text-align: justify">
+<span style="font-family: Arial">•<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="" style='width:14.25pt;
+ height:1.5pt'>
+ <v:imagedata src="VPN_files/image001.png" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="VPN_files/image002.gif" v:shapes="_x0000_s1025"><![endif]>Client-aware 
+tunneling </span></p>
+<p class="pbu1bullet1" style="text-align: justify">
+<span style="font-family: Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="VPN_files/image001.png" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="VPN_files/image002.gif" v:shapes="_x0000_s1026"><![endif]>Client-transparent 
+tunneling </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">The distinction between these two topologies is 
+whether the client machine that is using L2TP to access a remote network is 
+aware that its connection is being tunneled. </span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Client-Aware Tunneling
+</span></h3>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">The first implementation topology is known as 
+client-aware tunneling. This name is derived from the remote client initiating 
+(hence, being &quot;aware&quot; of) the tunnel. In this scenario, the client establishes a 
+logical connection within a physical connection to the LAS. The client remains 
+aware of the tunneled connection all the way through to the LNS, and it can even 
+determine which of its traffic goes through the tunnel. </span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Client-Transparent Tunneling
+</span></h3>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">Client-transparent tunneling features L2TP 
+access concentrators (LACs) distributed geographically close to the remote 
+users. Such geographic dispersion is intended to reduce the long-distance 
+telephone charges that would otherwise be incurred by remote users dialing into 
+a centrally located LAC. </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">The remote users need not support L2TP 
+directly; they merely establish a point-to-point communication session with the 
+LAC using PPP. Ostensibly, the user will be encapsulating IP datagrams in PPP 
+frames. The LAC exchanges PPP messages with the remote user and establishes an 
+L2TP tunnel with the LNS through which the remote user's PPP messages are 
+passed. </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">The LNS is the remote user's gateway to its 
+home network. It is the terminus of the tunnel; it strips off all L2TP 
+encapsulation and serves up network access for the remote user. </span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Adding More Security </span>
+</h2>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">As useful as L2TP is, it is important to 
+recognize that it is not a panacea. It enables flexibility in delivering remote 
+access, but it does not afford a high degree of security for data in transit. 
+This is due in large part to the relatively nonsecure nature of PPP. In 
+fairness, PPP was designed explicitly for point-to-point communications, so 
+securing the connection should not have been a high priority. </span></p>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">An additional cause for concern stems from the 
+fact that L2TP's tunnels are not cryptographic. Their data payloads are 
+transmitted in the clear, wrapped only by L2TP and PPP framing. However, 
+additional security may be afforded by implementing the IPSec protocols in 
+conjunction with L2TP. The IPSec protocols support strong authentication 
+technologies as well as encryption. </span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Summary </span></h2>
+<p class="pb1body1" style="text-align: justify">
+<span style="font-family: Arial">VPNs offer a compelling vision of connectivity 
+through foreign networks at greatly reduced operating costs. However, the 
+reduced costs are accompanied by increased risk. L2TP offers an open standard 
+approach for supporting a remote access VPN. When augmented by IPSec protocols, 
+L2TP enables the realization of the promise of a VPN: an open standard 
+technology for securing remote access in a virtually private network. </span>
+</p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">Q—</span></b><i><span style="font-family: Arial">What 
+is a VPN? </span></i></p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">A—</span></b><span style="font-family: Arial">A 
+VPN is a generic term that describes any combination of technologies that can be 
+used to secure a connection through an otherwise unsecured or untrusted network.
+</span></p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">Q—</span></b><i><span style="font-family: Arial">Explain 
+the difference between L2TP's LAC and LSN. </span></i></p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">A—</span></b><span style="font-family: Arial">The 
+LAC provides authentication and access concentration for remote users. After a 
+remote user is authenticated, that user's communications session is then 
+forwarded to the LSN, which provides access to that user's home network. </span>
+</p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">Q—</span></b><i><span style="font-family: Arial">What 
+additional functionality does IPSec offer an L2TP implementation?</span></i><span style="font-family: Arial">
+</span></p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">A—</span></b><span style="font-family: Arial">L2TP's 
+native security mechanisms build on the assumption that the nature of a <br>
+point-to-point connection satisfies most of a remote user's security 
+requirements. IPSec complements L2TP by offering a more robust set of 
+technologies for authenticating remote users and for securing data in transit 
+through foreign networks by encrypting data. </span></p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">Q—</span></b><i><span style="font-family: Arial">What 
+is a tunnel?</span></i><span style="font-family: Arial"> </span></p>
+<p class="pb1body1" style="text-align: justify"><b>
+<span style="font-family: Arial">A—</span></b><span style="font-family: Arial">A 
+tunnel is a logical structure that encapsulates the frame and data of one 
+protocol inside the Payload or Data field of another protocol. Thus, the 
+encapsulated data frame may transit through networks that it would otherwise not 
+be capable of traversing.</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

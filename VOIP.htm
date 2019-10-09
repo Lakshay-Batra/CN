@@ -1,0 +1,642 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.title41
+	{font-family:Arial;
+	color:#3399FF}
+span.blacktext1
+	{font-family:Arial;
+	color:black}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	color:windowtext; margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font face="Arial" size="6" color="#FF0000"><b>VOIP</b></font></u></p>
+<p class="MsoNormal"><span style="font-family: Arial; color: black">Voice over 
+Internet Protocol (VoIP), is a technology that allows you to make telephone 
+calls using a broadband Internet connection instead of a regular (or analog) 
+phone line. Some services using VoIP may only allow you to call other people 
+using the same service, but others may allow you to call anyone who has a 
+telephone number - including local, long distance, mobile, and international 
+numbers. Also, while some services only work over your computer or a special 
+VoIP phone, other services allow you to use a traditional phone through an 
+adaptor.</span></p>
+<p class="MsoNormal"><font face="Arial">&nbsp;<span style="font-size: 12.0pt">Internet 
+Protocol (IP) is a connectionless protocol in which packets can take different 
+paths between the endpoints and all paths are shared by packets from different 
+transmissions. This enables efficient allocation of network resources, as 
+packets are routed on the paths with the least congestion. Header information 
+makes sure that the packets reach their intended destinations and helps 
+reconstruct the messages at the receiving end. To ensure QoS, however, all 
+packets should use the same path. IP headers are large (20 bytes) as compared to 
+the headers of Frame Relay frames (2 bytes) and of ATM cells (5 bytes). Headers 
+therefore add a lot of overhead to IP traffic. </span></font></p>
+<p class="blacktext" style="text-align: justify"><font face="Arial">
+<span style="font-size: 12.0pt">IP networks employ the same types of 
+bandwidth-saving schemes as the Frame Relay network, including fragmentation, 
+jitter buffering, prioritization, voice compression, silence suppression and 
+echo canceling. </span></font></p>
+<p style="text-align: justify"><span class="title41">Prioritization</span><span style="font-family: Arial">
+</span><span class="blacktext1">techniques used for VoIP are different from 
+those employed by Frame Relay access devices. Prioritization is directly related 
+to QoS. The key IP QoS protocol was RSVP, which allowed the sender to request a 
+certain set of traffic-handling characteristics for traffic flow, but was not 
+widely adopted. Today, the Intserv working group of the IETF is developing a 
+simpler, more promising solution. The Differentiated Services Model uses the 
+Type of Service (ToS) octet field of the IP header to classify traffic at the 
+borders between the customer and service provider or Internet service providers 
+(ISPs). Currently, there is still no viable QoS for IP services. </span></p>
+<p style="text-align: justify"><span class="title41">IP fragmentation</span><span class="blacktext1"> 
+is performed in a similar fashion as Frame Relay fragmentation. Fragmentation, 
+although required to reduce the overall delay of voice traffic, adds a lot of 
+overhead to IP transmissions due to the large size of IP headers. IP voice 
+traffic therefore consumes 50% more WAN bandwidth than Frame Relay voice 
+traffic. However, as IP matures, header compression and improved routers will 
+eliminate these shortcomings.</span></p>
+<p style="text-align: justify"><span class="title41">Voice compression</span><span class="blacktext1"> 
+is vital in Voice over IP because traffic usually travels over low-speed links. 
+Some small and medium-sized enterprises, for example, may be connected to the 
+virtual private network (VPN) at only 28.8 kbps. Microsoft Net meeting, for 
+example, a popular voice application for PCs and laptops, supports ITU G.723.1 
+voice compression for transmission over dial-up modems. The ITU G.723.1 standard 
+for voice compression over IP ensures toll quality voice.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">What is VoIP?</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">VoIP stands for <b>V</b>oice <b>o</b>ver
+<b>I</b>nternet <b>P</b>rotocol. As the term says VoIP tries to let go voice 
+(mainly human) through IP packets and, in definitive through Internet. VoIP can 
+use accelerating hardware to achieve this purpose and can also be used in a PC 
+environment.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">How does it work?</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Many years ago we discovered that 
+sending a signal to a remote destination could have be done also in a digital 
+fashion: before sending it we have to digitalize it with an ADC (analog to 
+digital converter), transmit it, and at the end transform it again in analog 
+format with DAC (digital to analog converter) to use it. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">VoIP works like that, 
+digitalizing voice in data packets, sending them and reconverting them in voice 
+at destination. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Digital format can be better 
+controlled: we can compress it, route it, convert it to a new better format, and 
+so on; also we saw that digital signal is more noise tolerant than the analog 
+one (see GSM vs TACS).</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">TCP/IP networks are made of IP 
+packets containing a header (to control communication) and a payload to 
+transport data: VoIP use it to go across the network and come to destination.</span></p>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">Voice (source) - - ADC - - - 
+  Internet - - - DAC - - Voice (dest)</span></div>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">What is the advantages using VoIP 
+rather PSTN? </span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">When you are using PSTN line, you 
+typically pay for time used to a PSTN line manager company: more time you stay 
+at phone and more you'll pay. In addition you couldn't talk with other that one 
+person at a time.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">In opposite with VoIP mechanism 
+you can talk all the time with every person you want (the needed is that other 
+person is also connected to Internet at the same time), as far as you want 
+(money independent) and, in addition, you can talk with many people at the same 
+time.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">If you're still not persuaded you 
+can consider that, at the same time, you can exchange data with people are you 
+talking with, sending images, graphs and videos.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Overview on a VoIP connection
+</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">To setup a VoIP communication we 
+need: </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">First the ADC to convert analog voice to 
+  digital signals (bits) </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Now the bits have to be compressed in a good 
+  format for transmission: there is a number of protocols we'll see after.
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Here we have to insert our voice packets in 
+  data packets using a real-time protocol (typically RTP over UDP over IP)
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">We need a signaling protocol to call users: 
+  ITU-T H323 does that. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">At RX we have to disassemble packets, extract 
+  datas, then convert them to analog voice signals and send them to sound card 
+  (or phone) </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">All that must be done in a real time fashion 
+  cause we cannot waiting for too long for a vocal answer! (see QoS section)
+  </span></li>
+</ol>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+  </p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Base 
+  architecture</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">Voice )) ADC - Compression Algo 
+  - Assembling RTP in TCP/IP ----</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ----&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;----&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">Voice (( DAC - Decompress. Algo 
+  - Disass. RTP from TCP/IP&nbsp; ----</span></div>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Analog to Digital Conversion
+</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">This is made by hardware, 
+typically by card integrated ADC. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Today every sound card allows you 
+convert with 16 bit a band of 22050 Hz (for sampling it you need a freq of 44100 
+Hz for Nyquist Principle) obtaining a throughput of 2 bytes * 44100 (samples per 
+second) = 88200 Bytes/s, 176.4 kBytes/s for stereo stream. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">For VoIP we needn't such a 
+throughput (176kBytes/s) to send voice packet: next we'll see other coding used 
+for it. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Compression Algorithms </span>
+</b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Now that we have digital data we 
+may convert it to a standard format that could be quickly transmitted. </span>
+</p>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">PCM, Pulse Code Modulation, 
+  Standard ITU-T G.711</span></div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Voice bandwidth is 4 kHz, so sampling 
+  bandwidth has to be 8 kHz (for Nyquist). </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">We represent each sample with 8 bit (having 
+  256 possible values). </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Throughput is 8000 Hz *8 bit = 64 kbit/s, as 
+  a typical digital phone line. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">In real application mu-law (North America) 
+  and a-law (Europe) variants are used which code analog signal a logarithmic 
+  scale using 12 or 13 bits instead of 8 bits (see Standard ITU-T G.711). </span>
+  </li>
+</ul>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">ADPCM, Adaptive differential 
+  PCM, Standard ITU-T G.726</span></div>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">It converts only the difference 
+between the actual and the previous voice packet requiring 32 kbps (see Standard 
+ITU-T G.726). </span></p>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">LD-CELP, Standard ITU-T G.728</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">CS-ACELP, Standard ITU-T G.729 
+  and G.729a</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">MP-MLQ, Standard ITU-T G.723.1, 
+  6.3kbps, Truespeech</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">ACELP, Standard ITU-T G.723.1, 
+  5.3kbps, Truespeech</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">LPC-10, able to reach 2.5 
+  kbps!!</span></div>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">This last protocols are the most 
+important cause can guarantee a very low minimal band using source coding; also 
+G.723.1 codecs have a very high MOS (Mean Opinion Score, used to measure voice 
+fidelity) but attention to elaboration performance required by them, up to 26 
+MIPS! </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">RTP Real Time Transport Protocol
+</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Now we have the raw data and we 
+want to encapsulate it into TCP/IP stack. We follow the structure: </span></p>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">VoIP data packets</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RTP</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UDP</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IP</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp; I,II layers</span></div>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">VoIP data packets live in RTP 
+(Real-Time Transport Protocol) packets which are inside UDP-IP packets. </span>
+</p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Firstly, VoIP doesn't use TCP 
+because it is too heavy for real time applications, so instead a UDP (datagram) 
+is used. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Secondly, UDP has no control over 
+the order in which packets arrive at the destination or how long it takes them 
+to get there (datagram concept). Both of these are very important to overall 
+voice quality (how well you can understand what the other person is saying) and 
+conversation quality (how easy it is to carry out a conversation). RTP solves 
+the problem enabling the receiver to put the packets back into the correct order 
+and not wait too long for packets that have either lost their way or are taking 
+too long to arrive (we don't need every single voice packet, but we need a 
+continuous flow of many of them and ordered). </span></p>
+<div style="mso-border-alt: solid #DDDDDD .75pt; border: 1.0pt solid #DDDDDD; padding-left: .25in; padding-right: .25in; padding-top: 9.0pt; padding-bottom: 9.0pt; background: white">
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;Real Time 
+  Transport Protocol</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp; 0 1 2 3 4 5 6 7 8 9 0 1 2 3 
+  4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; 
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; |V=2|P|X|&nbsp; CC&nbsp;&nbsp; |M|&nbsp;&nbsp;&nbsp;&nbsp; 
+  PT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sequence number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; 
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  timestamp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; 
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; synchronization 
+  source (SSRC) identifier&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; 
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+==+=+=+=+=+=+=+=+</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contributing 
+  source (CSRC) identifiers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; 
+  |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|</span></p>
+  <p class="MsoNormal" style="text-align: justify; border: medium none; padding: 0in; background: white">
+  <span style="font-family: Arial; color: black">&nbsp;&nbsp; 
+  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></div>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Where: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">V indicates the version of RTP used </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">P indicates the padding, a byte not used at 
+  bottom packet to reach the parity packet dimension </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">X is the presence of the header extension
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">CC field is the number of CSRC identifiers 
+  following the fixed header. CSRC field are used, for example, in conference 
+  case. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">M is a marker bit </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">PT payload type </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">For a complete description of RTP 
+protocol and all its applications see relative RFCs
+<a href="http://www.ietf.org/rfc/rfc1889.txt" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">1889</span></b></a> and
+<a href="http://www.ietf.org/rfc/rfc1890.txt" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">1890</span></b></a>.
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">RSVP </span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">There are also other protocols 
+used in VoIP, like RSVP, that can manage Quality of Service (QoS). </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">RSVP is a signaling protocol that 
+requests a certain amount of bandwidth and latency in every network hop that 
+supports it. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">For detailed info about RSVP see 
+the
+<a href="http://www.ietf.org/rfc/rfc2205.txt?number=2205" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">RFC 2205</span></b></a></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Quality of Service (QoS) </span>
+</b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">We said many times that VoIP 
+applications require a real-time data streaming cause we expect an interactive 
+data voice exchange. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Unfortunately, TCP/IP cannot 
+guarantee this kind of purpose, it just make a &quot;best effort&quot; to do it. So we 
+need to introduce tricks and policies that could manage the packet flow in EVERY 
+router we cross. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">So here are: </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">TOS field in IP protocol to describe type of 
+  service: high values indicate low urgency while more and more low values bring 
+  us more and more real-time urgency </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Queuing packets methods: </span>
+  <ol start="1" type="1" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">FIFO (First in First Out), the more stupid 
+    method that allows passing packets in arrive order. </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">WFQ (Weighted Fair Queuing), consisting in 
+    a fair passing of packets (for example, FTP cannot consume all available 
+    bandwidth), depending on kind of data flow, typically one packet for UDP and 
+    one for TCP in a fair fashion. </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">CQ (Custom Queuing), users can decide 
+    priority. </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">PQ (Priority Queuing), there is a number 
+    (typically 4) of queues with a priority level each one: first, packets in 
+    the first queue are sent, then (when first queue is empty) starts sending 
+    from the second one and so on. </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">CB-WFQ (Class Based Weighted Fair Queuing), 
+    like WFQ but, in addition, we have classes concept (up to 64) and the 
+    bandwidth value associated for each one. </span></li>
+  </ol>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Shaping capability, that allows to limit the 
+  source to a fixed bandwidth in: </span>
+  <ol start="1" type="1" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">download </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">upload </span></li>
+  </ol>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Congestion Avoidance, like RED (Random Early 
+  Detection). </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">For an exhaustive information 
+about QoS see
+<a href="http://www.ietf.org/html.charters/diffserv-charter.html" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">Differentiated Services</span></b></a> 
+at IETF. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">H323 Signaling Protocol </span>
+</b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">H323 protocol is used, for 
+example, by Microsoft Netmeeting to make VoIP calls. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">This protocol allow a variety of 
+elements talking each other: </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Terminals, clients that initialize VoIP 
+  connection. Although terminals could talk together without anyone else, we 
+  need some additional elements for a scalable vision. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Gatekeepers, that essentially operate: </span>
+  <ol start="1" type="1" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">address translation service, to use names 
+    instead IP addresses </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">admission control, to allow or deny some 
+    hosts or some users </span></li>
+    <li class="MsoNormal" style="color: black; text-align: justify">
+    <span style="font-family: Arial">bandwidth management </span></li>
+  </ol>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Gateways, points of reference for conversion 
+  TCP/IP - PSTN. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Multipoint </span>
+  <span style="font-family: Arial">Control</span><span style="font-family: Arial"> 
+  Units (MCUs) to provide conference. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Proxies Server also are used. </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">h323 allows not only VoIP but 
+also video and data communications. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Concerning VoIP, h323 can carry 
+audio codecs G.711, G.722, G.723, G.728 and G.729 while for video it supports 
+h261 and h263.</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Hardware requirement </span></b>
+</p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">To create a little VoIP system 
+you need the following hardware: </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">PC 386 or more </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Sound card, full duplex capable </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">a network card or connection to internet or 
+  other kind of interface to allow communication between 2 PCs </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">All that has to be present twice 
+to simulate a standard communication. The tool above are the minimal requirement 
+for a VoIP connection: next we'll see that we should (and in Internet we must) 
+use more hardware to do the same in a real situation. Sound card has be full 
+duplex unless we couldn't hear anything while speaking! As additional you can 
+use hardware cards (see next) able to manage data stream in a compressed format 
+(see Par 4.3). </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Hardware accelerating cards</span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">We can use special cards with 
+hardware accelerating capability. Two of them (and also the only ones directly 
+managed by the Linux kernel at this moment) are the </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Quicknet PhoneJack </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Quicknet LineJack </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">VoiceTronix V4PCI </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">VoiceTronix VPB4 </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">VoiceTronix VPB8L </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Quicknet PhoneJack is a sound 
+card that can use standard algorithms to compress audio stream like G723.1 
+(section 4.3) down to 4.1 Kbps rate. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">It can be connected directly to a 
+phone (POTS port) or a couple mic-speaker. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">It has a ISA or PCI connector 
+bus. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Quicknet LineJack works like 
+Phone Jack with some addition features (see next). </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">VoiceTronix V4PCI is a PCI card 
+pretty like Quicknet Line Jack but with 4 phone ports </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">VoiceTronix VPB4 is a ISA card 
+equivalent to V4PCI. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">VoiceTronix VPB8L is a logging 
+card with 8 ports. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">For more info see
+<a href="http://www.quicknet.net/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">Quicknet web site</span></b></a> 
+and
+<a href="http://www.voicetronix.com.au/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">VoiceTronix web site</span></b></a></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Hardware gateway cards </span>
+</b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Quicknet LineJack and VoiceTronix 
+cards can be connected to a PSTN line allowing VoIP gateway feature. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Then you'll need a software to 
+manage it (see after). </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Software requirement </span></b>
+</p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">We can choose what O.S. to use:
+</span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Win9x </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Linux </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Under Win9x we have Microsoft 
+Netmeeting, Internet Phone, DialPad or others or Internet Switchboard (from
+<a href="http://www.quicknet.net/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">Quicknet web site</span></b></a>) 
+for Quicknet cards. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Warning!!: Latest Quicknet cards 
+using Switchboard (older version too) NEED to be connected to Internet to get 
+working for managing Microtelco account (not free of charge), so if you plan to 
+remain isolated from Internet you need to install
+<a href="http://www.openh323.org/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">OpenH323 software</span></b></a>.
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">For VoiceTronix cards you can 
+find software at
+<a href="http://www.voicetronix.com.au/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">VoiceTronix web site</span></b></a></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Under Linux we have free software
+<a href="http://www.gnomemeeting.org/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">GnomeMeeting</span></b></a>, 
+a clone of Microsoft Net meeting, while in console mode we use (also free 
+software) applications from
+<a href="http://www.openh323.org/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">OpenH323</span></b></a> 
+web site: simph323 or ohphone that can also work with Quicknet accelerating 
+hardware. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Attention: all Openh323 source 
+code has to be compiled in a user directory (if not it is necessary to change 
+some environment variable). You are warned that compiling time could be very 
+high and you could need a lot of RAM to make it in a decent time. </span></p>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Gateway software </span></b></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">To manage gateway feature (join 
+TCP/IP VoIP to PSTN lines) you need some kind of software like this: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">
+  <a href="http://www.quicknet.net/" style="color: blue; text-decoration: underline; text-underline: single">
+  <b><span style="color: #003399; text-decoration: none">Internet SwitchBoard</span></b></a> 
+  (only when connected to Internet) for Windows systems also acting as a h323 
+  terminal; </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">PSTNGw for Linux and Windows systems you 
+  download from
+  <a href="http://www.openh323.org/code.html" style="color: blue; text-decoration: underline; text-underline: single">
+  <b><span style="color: #003399; text-decoration: none">OpenH323</span></b></a>.
+  </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify; margin-bottom: 6.0pt"><b>
+<span style="font-family: Arial; color: black">Gatekeeper software </span></b>
+</p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">You can download as gatekeeper 
+the Free product Openh323 Gatekeeper (GK) from
+<a href="http://www.gnugk.org/" style="color: blue; text-decoration: underline; text-underline: single">
+<b><span style="color: #003399; text-decoration: none">here</span></b></a>.
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 6.0pt; margin-bottom: .15in">
+<span style="font-family: Arial; color: black">Version 2.0 of it supports &quot;proxy 
+function&quot; to enabe talking from/to a private network.</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

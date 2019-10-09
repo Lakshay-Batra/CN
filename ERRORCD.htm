@@ -1,0 +1,1048 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="ERRORCD_files/filelist.xml">
+<title>MAIN</title>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="line-height: 107%; font-family: Arial; text-transform:uppercase; font-weight:700; text-decoration:underline">
+<font color="#FF0000" size="6">error detection &amp; correction methods</font></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">There are many reasons such as 
+noise, cross-talk etc., which may help data to get corrupted during 
+transmission. The upper layers work on some generalized view of network 
+architecture and are not aware of actual hardware data processing.Hence, the 
+upper layers expect error-free transmission between the systems. Most of the 
+applications would not function expectedly if they receive erroneous data. 
+Applications such as voice and video may not be that affected and with some 
+errors they may still function well.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">Data-link layer uses some error 
+control mechanism to ensure that frames (data bit streams) are transmitted with 
+certain level of accuracy. But to understand how errors is controlled, it is 
+essential to know what types of errors may occur.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 0in; margin-right: 2.4pt; margin-top: 2.4pt; margin-bottom: 2.4pt">
+<span style="font-family: Arial; color: #121214; letter-spacing: -.75pt">Types 
+of Errors</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">There may be three types of 
+errors:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family: Arial; color: black">Single bit error</span></b></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: .5in">
+<span style="font-family: Arial; color: black"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="Single bit error"
+ style='width:342.75pt;height:48pt'>
+ <v:imagedata src="ERRORCD_files/image001.jpg" o:href="file:///D:\CNNN\DCN%20Error%20Detection%20and%20Correction_files\single_bit_error.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=457 height=64
+src="ERRORCD_files/image001.jpg" alt="Single bit error" v:shapes="_x0000_s1025"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">In a frame, there is only one 
+bit, anywhere though, which is corrupt.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family: Arial; color: black">Multiple bits error</span></b></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: .5in">
+<span style="font-family: Arial; color: black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="Multiple bits error" style='width:342.75pt;
+ height:48pt'>
+ <v:imagedata src="ERRORCD_files/image002.jpg" o:href="file:///D:\CNNN\DCN%20Error%20Detection%20and%20Correction_files\multiple_bits_error.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=457 height=64
+src="ERRORCD_files/image002.jpg" alt="Multiple bits error" v:shapes="_x0000_s1026"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">Frame is received with more than 
+one bits in corrupted state.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family: Arial; color: black">Burst error</span></b></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: .5in">
+<span style="font-family: Arial; color: black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" alt="Burst error" style='width:342.75pt;
+ height:48pt'>
+ <v:imagedata src="ERRORCD_files/image003.jpg" o:href="file:///D:\CNNN\DCN%20Error%20Detection%20and%20Correction_files\burst_error.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=457 height=64
+src="ERRORCD_files/image003.jpg" alt="Burst error" v:shapes="_x0000_s1027"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">Frame contains more than1 
+consecutive bits corrupted.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">Error control mechanism may 
+involve two possible ways:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial; color: black">Error detection</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial; color: black">Error correction</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 0in; margin-right: 2.4pt; margin-top: 2.4pt; margin-bottom: 2.4pt">
+<span style="font-family: Arial; color: #121214; letter-spacing: -.75pt">Error 
+Detection</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">Errors in the received frames are 
+detected by means of Parity Check and Cyclic Redundancy Check (CRC). In both 
+cases, few extra bits are sent along with actual data to confirm that bits 
+received at other end are same as they were sent. If the counter-check at 
+receiver’ end fails, the bits are considered corrupted.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 0in; margin-right: 2.4pt; margin-top: 2.4pt; margin-bottom: 2.4pt">
+<span style="font-family: Arial; color: black">Parity Check</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">One extra bit is sent along with 
+the original bits to make number of 1s either even in case of even parity, or 
+odd in case of odd parity.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">The sender while creating a frame 
+counts the number of 1s in it. For example, if even parity is used and number of 
+1s is even then one bit with value 0 is added. This way number of 1s remains 
+even. If the number of 1s is odd, to make it even a bit with value 1 is added.
+</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 16.5pt">
+<span style="font-family: Arial; color: #313131">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" alt="Even Parity" style='width:328.5pt;
+ height:36pt'>
+ <v:imagedata src="ERRORCD_files/image004.jpg" o:href="file:///D:\CNNN\DCN%20Error%20Detection%20and%20Correction_files\even_parity.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=438 height=48
+src="ERRORCD_files/image004.jpg" alt="Even Parity" v:shapes="_x0000_s1028"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">The receiver simply counts the 
+number of 1s in a frame. If the count of 1s is even and even parity is used, the 
+frame is considered to be not-corrupted and is accepted. If the count of 1s is 
+odd and odd parity is used, the frame is still not corrupted.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">If a single bit flips in transit, 
+the receiver can detect it by counting the number of 1s. But when more than one 
+bits are erro neous, then it is very hard for the receiver to detect the error.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 0in; margin-right: 2.4pt; margin-top: 2.4pt; margin-bottom: 2.4pt">
+<span style="font-family: Arial; color: black">Cyclic Redundancy Check (CRC)</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">CRC is a different approach to 
+detect if the received frame contains valid data. This technique involves binary 
+division of the data bits being sent. The divisor is generated using 
+polynomials. The sender performs a division operation on the bits being sent and 
+calculates the remainder. Before sending the actual bits, the sender adds the 
+remainder at the end of the actual bits. Actual data bits plus the remainder is 
+called a codeword. The sender transmits data bits as codewords.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 16.5pt" align="center">
+<span style="font-family: Arial; color: #313131">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" alt="CRC" style='width:404.25pt;height:276pt'>
+ <v:imagedata src="ERRORCD_files/image005.jpg" o:href="file:///D:\CNNN\DCN%20Error%20Detection%20and%20Correction_files\crc.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=539 height=368
+src="ERRORCD_files/image005.jpg" alt=CRC v:shapes="_x0000_s1029"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">At the other end, the receiver 
+performs division operation on codewords using the same CRC divisor. If the 
+remainder contains all zeros the data bits are accepted, otherwise it is 
+considered as there some data corruption occurred in transit.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 0in; margin-right: 2.4pt; margin-top: 2.4pt; margin-bottom: 2.4pt">
+<span style="font-family: Arial; color: #121214; letter-spacing: -.75pt">Error 
+Correction</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">In the digital world, error 
+correction can be done in two ways:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family: Arial; color: black">Backward Error 
+Correction</span></b><span style="font-family: Arial; color: black">&nbsp; When the 
+receiver detects an error in the data received, it requests back the sender to 
+retransmit the data unit.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; line-height: 18.0pt; margin-left: 38.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<font face="Arial"><span style="color: black">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family: Arial; color: black">Forward Error 
+Correction</span></b><span style="font-family: Arial; color: black">&nbsp; When the 
+receiver detects some error in the data received, it executes error-correcting 
+code, which helps it to auto-recover and to correct some kinds of errors.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">The first one, Backward Error 
+Correction, is simple and can only be efficiently used where retransmitting is 
+not expensive. For example, fiber optics. But in case of wireless transmission 
+retransmitting may cost too much. In the latter case, Forward Error Correction 
+is used.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">To correct the error in data 
+frame, the receiver must know exactly which bit in the frame is corrupted. To 
+locate the bit in error, redundant bits are used as parity bits for error 
+detection. For example, we take ASCII words (7 bits data), then there could be 8 
+kind of information we need: first seven bits to tell us which bit is error and 
+one more bit to tell that there is no error.</span></p>
+<p class="MsoNormal" style="text-align: justify; line-height: 18.0pt; margin-left: 2.4pt; margin-right: 2.4pt; margin-top: 0in; margin-bottom: 12.0pt">
+<span style="font-family: Arial; color: black">For m data bits, r redundant bits 
+are used. r bits can provide 2r combinations of information. In m+r bit 
+codeword, there is possibility that the r bits themselves may get corrupted. So 
+the number of r bits used must inform about m+r bit locations plus no-error 
+information, i.e. m+r+1.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: #313131"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" alt="Required bits" style='width:105pt;
+ height:19.5pt'>
+ <v:imagedata src="ERRORCD_files/image006.jpg" o:href="file:///D:\CNNN\DCN%20Error%20Detection%20and%20Correction_files\required_bits.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=140 height=26
+src="ERRORCD_files/image006.jpg" alt="Required bits" v:shapes="_x0000_s1030"><![endif]></span></p>
+<p align="justify">&nbsp;</p>
+<p class="MsoNormal"><b><span style="font-family:Arial;color:black">
+<font size="4">Error Detection Methods</font></span></b><span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family:Arial">Vertical Redundancy Check (VRC)</span></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Append a single bit at the end of data 
+block such that the number of ones is even<br>
+</span><span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+Even Parity (odd parity is similar)<br>
+0110011 </span><span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+01100110<br>
+0110001 </span><span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+01100011</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">VRC is also known as <b>Parity Check</b></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Performance:</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Detects all odd-number errors in a data 
+block</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family:Arial">Longitudinal Redundancy Check (LRC)</span></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Organize data into a table and create a 
+parity for each column</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:group
+ id="_x0000_s1031" editas="canvas" style='width:6in;height:194.25pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2455,2160" coordsize="8633,3990">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1032" type="#_x0000_t75" style='position:absolute;left:2455;
+  top:2160;width:8633;height:3990' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202"
+  path="m,l,21600r21600,l21600,xe">
+  <v:stroke joinstyle="miter"/>
+  <v:path gradientshapeok="t" o:connecttype="rect"/>
+ </v:shapetype><v:shape id="_x0000_s1033" type="#_x0000_t202" style='position:absolute;
+  left:3313;top:2160;width:6088;height:508;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3">
+  <v:textbox inset="2.10819mm,1.0541mm,2.10819mm,1.0541mm">
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">11100111<span style="mso-spacerun:yes">&nbsp; </span>11011101<span style="mso-spacerun:yes">&nbsp;
+      </span>00111001<span style="mso-spacerun:yes">&nbsp; </span>10101001<o:p></o:p></span></div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1034" type="#_x0000_t202" style='position:absolute;
+  left:9513;top:2781;width:1575;height:1608;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3" stroked="f">
+  <v:textbox inset="2.10819mm,1.0541mm,2.10819mm,1.0541mm">
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">11100111<o:p></o:p></span></p>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">11011101<o:p></o:p></span></p>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">00111001<o:p></o:p></span></p>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">10101001<o:p></o:p></span></div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1035" style='position:absolute' from="4120,3041"
+  to="9613,3041">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1036" style='position:absolute' from="4120,2679"
+  to="4120,3041"/>
+ <v:line id="_x0000_s1037" style='position:absolute' from="5582,3405" to="9613,3405">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1038" style='position:absolute;flip:y' from="5582,2679"
+  to="5582,3405"/>
+ <v:line id="_x0000_s1039" style='position:absolute' from="7095,3767" to="9613,3767">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1040" style='position:absolute;flip:y' from="7095,2679"
+  to="7095,3767"/>
+ <v:line id="_x0000_s1041" style='position:absolute' from="8607,4130" to="9613,4130">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1042" style='position:absolute;flip:y' from="8607,2679"
+  to="8607,4130"/>
+ <v:line id="_x0000_s1043" style='position:absolute' from="9613,4389" to="10976,4389"/>
+ <v:shape id="_x0000_s1044" type="#_x0000_t202" style='position:absolute;
+  left:9513;top:4389;width:1575;height:495;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3" stroked="f">
+  <v:textbox inset="2.10819mm,1.0541mm,2.10819mm,1.0541mm">
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:red">10101010<o:p></o:p></span></div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1045" type="#_x0000_t202" style='position:absolute;
+  left:3488;top:5177;width:7588;height:508;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3">
+  <v:textbox inset="2.10819mm,1.0541mm,2.10819mm,1.0541mm">
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">11100111<span style="mso-spacerun:yes">&nbsp; </span>11011101<span style="mso-spacerun:yes">&nbsp;
+      </span>00111001<span style="mso-spacerun:yes">&nbsp; </span>10101001<span style="mso-spacerun:yes">&nbsp;
+      </span></span>
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:red">10101010</span><span style="font-size:15.0pt;mso-bidi-font-size:
+     18.0pt;font-family:Arial;color:black"><o:p></o:p></span></div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:line id="_x0000_s1046" style='position:absolute' from="10270,4804"
+  to="10270,5167">
+  <v:stroke endarrow="block"/>
+ </v:line><v:line id="_x0000_s1047" style='position:absolute;flip:x' from="2455,5426"
+  to="3466,5426">
+  <v:stroke endarrow="block"/>
+ </v:line><v:shape id="_x0000_s1048" type="#_x0000_t202" style='position:absolute;
+  left:5612;top:5655;width:1991;height:495;v-text-anchor:top-baseline'
+  filled="f" fillcolor="#bbe0e3" stroked="f">
+  <v:textbox inset="2.10819mm,1.0541mm,2.10819mm,1.0541mm">
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:black">Original Data<o:p></o:p></span></div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1049" type="#_x0000_t202" style='position:absolute;
+  left:9880;top:5634;width:841;height:495;v-text-anchor:top-baseline' filled="f"
+  fillcolor="#bbe0e3" stroked="f">
+  <v:textbox inset="2.10819mm,1.0541mm,2.10819mm,1.0541mm">
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal" style="mso-layout-grid-align:none;text-autospace:none">
+      <span style="font-size:15.0pt;mso-bidi-font-size:18.0pt;font-family:Arial;
+     color:red">LRC<o:p></o:p></span></div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=580 height=264
+src="ERRORCD_files/image007.gif" v:shapes="_x0000_s1031 _x0000_s1032 _x0000_s1033 _x0000_s1034 _x0000_s1035 _x0000_s1036 _x0000_s1037 _x0000_s1038 _x0000_s1039 _x0000_s1040 _x0000_s1041 _x0000_s1042 _x0000_s1043 _x0000_s1044 _x0000_s1045 _x0000_s1046 _x0000_s1047 _x0000_s1048 _x0000_s1049"><![endif]></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Performance:</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Detects all burst errors up to length n
+<br>
+(number of&nbsp; columns)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Misses burst errors of length n+1 if 
+there are n-1 uninverted bits between the first and last bit</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">If the block is badly garbled, the 
+probability of acceptance is </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family:Arial">Checksum</span></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Used by upper layer protocols</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Similar to LRC, uses one’s complement 
+arithmetic</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Cyclic Redundancy Check</span></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Powerful error detection scheme</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Rather than addition, binary division is 
+used </span><span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+Finite Algebra Theory (Galois Fields)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Can be easily implemented with small 
+amount of hardware</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Shift registers</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">–<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">XOR (for addition and subtraction)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Let us assume <i>k</i> message bits and
+<br>
+<i>n</i> bits of redundancy</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Associate bits with coefficients of a 
+polynomial<br>
+1&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0&nbsp;&nbsp;&nbsp;&nbsp; 1&nbsp;&nbsp;&nbsp; 1<br>
+1x<sup>6</sup>+0x<sup>5</sup>+1x<sup>4</sup>+1x<sup>3</sup>+0x<sup>2</sup>+1x+1<br>
+= x6+x4+x3+x+1</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Let M(x) be the <b>message polynomial</b></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Let P(x) be the <b>generator polynomial</b></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">P(x) is fixed for a given CRC scheme</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">P(x) is known both by sender and receiver</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Create a block polynomial F(x) based on 
+M(x) and P(x) such that F(x) is divisible by P(x)</span></p>
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1050" type="#_x0000_t75" style='position:absolute;margin-left:57.75pt;
+ margin-top:11.25pt;width:99.75pt;height:33pt;z-index:2;
+ mso-position-vertical:absolute'>
+ <v:imagedata src="ERRORCD_files/image008.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:2;left:87px;top:4214px;width:133px;height:44px'><img
+width=133 height=44 src="ERRORCD_files/image009.gif" v:shapes="_x0000_s1050"></span><![endif]></p>
+<p><span style="font-family:Arial">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span>•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Sending</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Multiply M(x) by x<sup>n</sup>
+</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Divide x<sup>n</sup>M(x) by P(x)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Ignore the quotient and keep the 
+reminder C(x)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Form and send F(x) = x<sup>n</sup>M(x)+C(x)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Receiving</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Receive F’(x)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Divide F’(x) by P(x)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<span style="font-family: Arial">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Accept if remainder is 0, reject 
+otherwise</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+&nbsp;</p>
+<p class="MsoNormal"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1051" type="#_x0000_t75" style='position:absolute;margin-left:30.75pt;
+ margin-top:2.25pt;width:219pt;height:114pt;z-index:3;mso-position-vertical:absolute'>
+ <v:imagedata src="ERRORCD_files/image010.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:3;left:51px;top:4659px;width:292px;height:152px'><img
+width=292 height=152 src="ERRORCD_files/image011.gif" v:shapes="_x0000_s1051"></span><![endif]></p>
+<p><span style="font-family:Arial">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span><b><span style="font-family:Arial">Note: 
+Binary modular addition is equivalent to binary modular subtraction </span>
+<span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+C(x)+C(x)=0</span></b></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1052" type="#_x0000_t75" style='width:431.25pt;height:273.75pt'>
+ <v:imagedata src="ERRORCD_files/image012.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=365
+src="ERRORCD_files/image013.jpg" v:shapes="_x0000_s1052"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Sent F(x), but received F’(x) = F(x)+E(x)<br>
+<br>
+When will E(x)/P(x) have no remainder,<br>
+i.e., when does CRC fail to catch an error?</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family:Arial">Single Bit Error</span></b><span style="font-family:Arial">
+</span><span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+E(x) = x<sup>i</sup><br>
+If P(x) has two or more terms, P(x) will not divide E(x)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><b><span style="font-family:Arial">2 Isolated Single Bit Errors</span></b><span style="font-family:Arial"> 
+(double errors)<br>
+E(x) = x<sup>i</sup>+x<sup>j</sup>, i&gt;j<br>
+E(x) = x<sup>j</sup>(x<sup>i-j</sup>+1)<br>
+Provided that P(x) is not divisible by x, a sufficient condition to detect all 
+double errors is that P(x) does not divide (x<sup>t</sup>+1) for any t up to i-j 
+(i.e.,&nbsp; block length)</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Properties of CRC</span></b></p>
+<ol style="margin-top: 0in; margin-bottom: 0in" start="3" type="1">
+  <li class="MsoNormal"><b><span style="font-family:Arial">Odd Number of Bit 
+  Errors</span></b><span style="font-family:Arial"><br>
+  If x+1 is a factor of P(x), all odd number of bit errors are detected<br>
+  <br>
+  <b>Proof: <br>
+  </b>Assume an odd number of errors has x+1 as a factor.<br>
+  Then E(x) = (x+1)T(x). <br>
+  Evaluate E(x) for x = 1<br>
+  </span><span style="font-family: Wingdings">à</span><span style="font-family:
+     Arial"> E(x) = E(1) = 1 since there are odd number of terms<br>
+  &nbsp;&nbsp;&nbsp; (x+1) = (1+1) = 0<br>
+  &nbsp;&nbsp;&nbsp; (x+1)T(x) = (1+1)T(1) = 0<br>
+  </span><span style="font-family: Symbol">\</span><span style="font-family:
+     Arial"> E(x) &#8800; (x+1)T(x)</span></li>
+  <li class="MsoNormal"><b><span style="font-family:Arial">Short Burst Errors</span></b><span style="font-family:Arial">
+  <br>
+  (Length t &#8804; n, number of redundant bits)<br>
+  E(x) = x<sup>j</sup>(x<sup>t-1</sup>+…+1) </span>
+  <span style="font-family: Wingdings">à</span><span style="font-family:Arial"> 
+  Length t, starting at bit position j<br>
+  If P(x) has an x<sup>0</sup> term and t &#8804; n, P(x) will not divide E(x) <br>
+  </span><span style="font-family: Symbol">\</span><span style="font-family:
+     Arial">All errors up to length n are detected</span></li>
+  <li class="MsoNormal"><b><span style="font-family:Arial">Long Burst Errors
+  </span></b><span style="font-family:Arial">(Length t = n+1)<br>
+  Undetectable only if burst error is the same as P(x)<br>
+  P(x) = x<sup>n</sup>+ … + 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n-1 bits between x<sup>n</sup> and x<sup>0</sup>
+  <br>
+  E(x) = 1 + … + 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; must match<br>
+  Probability of not detecting the error is 2<sup>-(n-1)</sup></span></li>
+  <li class="MsoNormal"><b><span style="font-family:Arial">Longer Burst Errors</span></b><span style="font-family:Arial"> 
+  (Length t &gt; n+1)<br>
+  Probability of not detecting the error is 2<sup>-n</sup></span></li>
+  <li class="MsoNormal"><span style="font-family:Arial">Example:</span>
+  <ol style="margin-top: 0in; margin-bottom: 0in" start="1" type="1">
+    <li class="MsoNormal"><span style="font-family:Arial">CRC-12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = x<sup>12</sup>+x<sup>11</sup>+x<sup>3</sup>+x<sup>2</sup>+x+1<br>
+    CRC-16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = x<sup>16</sup>+x<sup>15</sup>+x<sup>2</sup>+1<br>
+    CRC-CCITT&nbsp;&nbsp; = x<sup>16</sup>+x<sup>12</sup>+x<sup>5</sup>+1</span></li>
+    <li class="MsoNormal"><span style="font-family:Arial">CRC-16 and CRC-CCITT 
+    catch all</span>
+    <ol style="margin-top: 0in; margin-bottom: 0in" start="1" type="1">
+      <li class="MsoNormal"><span style="font-family:Arial">Single and double 
+      errors</span></li>
+      <li class="MsoNormal"><span style="font-family:Arial">Odd number of bit 
+      errors</span></li>
+      <li class="MsoNormal"><span style="font-family:Arial">Bursts of length 16 
+      or less</span></li>
+      <li class="MsoNormal"><span style="font-family:Arial">99.997% of 17-bit 
+      error bursts</span></li>
+      <li class="MsoNormal"><span style="font-family:Arial">99.998% of 18-bit 
+      and longer error bursts</span></li>
+    </ol>
+    </li>
+  </ol>
+  </li>
+</ol>
+<p class="MsoNormal"><b><span style="font-family: Arial; color: #0000FF">
+<font size="4">Redundancy</font></span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1053" type="#_x0000_t75" style='width:585pt;height:284.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image014.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=780 height=379
+src="ERRORCD_files/image015.gif" v:shapes="_x0000_s1053"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Four types of redundancy 
+checks are used &nbsp;in data communications</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1054" type="#_x0000_t75" style='width:609pt;height:120pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image016.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=812 height=160
+src="ERRORCD_files/image017.gif" v:shapes="_x0000_s1054"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span><b><span style="font-family:Arial">Vertical 
+Redundancy Check&nbsp; (VRC)</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1055" type="#_x0000_t75" style='width:603.75pt;height:263.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image018.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=805 height=351
+src="ERRORCD_files/image019.gif" v:shapes="_x0000_s1055"><![endif]></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">It can detect single bit error</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">It can detect burst errors only if 
+the total number of errors is odd.</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span><b><span style="font-family:Arial">Longitudinal 
+Redundancy Check (LRC)</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_3" o:spid="_x0000_s1056" type="#_x0000_t75" style='width:610.5pt;
+ height:90.75pt;visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image020.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=814 height=121
+src="ERRORCD_files/image021.gif" v:shapes="Picture_x0020_3"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span><span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">LCR increases the likelihood of 
+detecting burst errors.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">If two bits in one data units are 
+damaged and two bits in exactly the same positions in another data unit are also 
+damaged, the LRC checker will not detect an error.</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">VRC and LRC</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1057" type="#_x0000_t75" style='width:603.75pt;height:249.75pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image022.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=805 height=333
+src="ERRORCD_files/image023.gif" v:shapes="_x0000_s1057"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><font color="#0000FF" size="4"><b>
+<span style="font-family:Arial">Cyclic Redundancy Check (CRC)</span></b></font></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1058" type="#_x0000_t75" style='width:582.75pt;height:185.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image024.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=777 height=247
+src="ERRORCD_files/image025.gif" v:shapes="_x0000_s1058"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Given a k-bit frame or message, the 
+transmitter generates an n-bit sequence, known as a <i>frame check sequence (FCS),
+</i>so that the resulting frame, consisting of (k+n) bits, is exactly divisible 
+by some predetermined number.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">The receiver then divides the incoming 
+frame by the same number and, if there is no remainder, assumes that there was 
+no error.</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Binary Division (CRC):
+</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1059" type="#_x0000_t75" style='width:265.5pt;height:428.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image026.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=354 height=571
+src="ERRORCD_files/image027.gif" v:shapes="_x0000_s1059"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Polynomial</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1060" type="#_x0000_t75" style='width:451.5pt;height:57.75pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image028.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=602 height=77
+src="ERRORCD_files/image029.gif" v:shapes="_x0000_s1060"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Polynomial and Divisor</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1061" type="#_x0000_t75" style='width:252pt;height:263.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image030.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=336 height=351
+src="ERRORCD_files/image031.gif" v:shapes="_x0000_s1061"><![endif]></span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Standard Polynomials</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1062" type="#_x0000_t75" style='width:600pt;height:163.5pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image032.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=800 height=218
+src="ERRORCD_files/image033.gif" v:shapes="_x0000_s1062"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><font color="#0000FF" size="4"><b>
+<span style="font-family:Arial">Checksum</span></b></font></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1063" type="#_x0000_t75" style='width:431.25pt;height:213pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image034.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=284
+src="ERRORCD_files/image035.gif" v:shapes="_x0000_s1063"><![endif]></span></p>
+<p class="MsoNormal"><b><i><span style="font-family:Arial">At the sender</span></i></b><span style="font-family:Arial">&nbsp;&nbsp;</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The unit is divided into <i>k</i> 
+sections, each of <i>n</i> bits.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">All sections are added together 
+using one’s complement to get the sum.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The sum is complemented and 
+becomes the checksum.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The checksum is sent with the data</span></p>
+<p class="MsoNormal"><b><i><span style="font-family:Arial">At the receiver</span></i></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The unit is divided into <i>k</i> 
+sections, each of <i>n</i> bits.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">All sections are added together 
+using one’s complement to get the sum.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The sum is complemented.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings">Ü<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">If the result is zero, the data 
+are accepted: otherwise, they are rejected.</span></p>
+<p class="MsoNormal"><b><i><span style="font-family:Arial">Performance</span></i></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The checksum detects all errors 
+involving an odd number of bits.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">It detects most errors involving 
+an even number of bits.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings 3">â<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">If one or more bits of a segment 
+are damaged and the corresponding bit or bits of opposite value in a second 
+segment are also damaged, the sums of those columns will not change and the 
+receiver will not detect a problem.</span></p>
+<p class="MsoNormal"><font color="#0000FF"><b><i>
+<span style="font-family:Arial">Error Correction</span></i></b></font></p>
+<p class="MsoNormal"><span style="font-family:Arial">It can be handled in two 
+ways:</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">1)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">receiver can have the sender 
+retransmit the entire data unit.</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">2)<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The receiver can use an 
+error-correcting code, which automatically corrects certain errors.</span></p>
+<p class="MsoNormal"><b><i><span style="font-family:Arial">Single-bit error 
+correction</span></i></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; To correct an 
+error, the receiver reverses the value of the altered bit. To do so, it must 
+know which bit is in error.</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">Number of redundancy bits 
+needed</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Let data bits = <i>m</i></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">•<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family:Arial">Redundancy bits =<i> r</i></span></p>
+<p class="MsoNormal"><span style="font-family: Symbol">\</span><span style="font-family:Arial">Total 
+message sent =<i> m+r</i></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">The value of r must satisfy 
+the following relation: </span><b><span style="font-family:Arial">2<sup>r </sup>
+&#8805; m+r+1</span></b></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">&nbsp;</span></b></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Error Correction</span></b></p>
+<p class="MsoNormal"><b><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1064" type="#_x0000_t75" style='width:581.25pt;height:206.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image036.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=775 height=275
+src="ERRORCD_files/image037.gif" v:shapes="_x0000_s1064"><![endif]></span></b></p>
+<p class="MsoNormal"><font color="#0000FF" size="4">
+<span style="font-family:Arial">&nbsp;</span><b><span style="font-family:Arial">Hamming 
+Code</span></b></font></p>
+<p class="MsoNormal"><b><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1065" type="#_x0000_t75" style='width:575.25pt;height:156.75pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image038.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=767 height=209
+src="ERRORCD_files/image039.gif" v:shapes="_x0000_s1065"><![endif]></span></b></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">&nbsp;</span></b></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1066" type="#_x0000_t75" style='width:561pt;height:365.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image040.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=748 height=487
+src="ERRORCD_files/image041.gif" v:shapes="_x0000_s1066"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1067" type="#_x0000_t75" style='width:545.25pt;height:387.75pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image042.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=727 height=517
+src="ERRORCD_files/image043.gif" v:shapes="_x0000_s1067"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Example of Hamming Code</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1071" type="#_x0000_t75" style='width:570.75pt;height:389.25pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image044.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=761 height=519
+src="ERRORCD_files/image045.gif" v:shapes="_x0000_s1071"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Single-bit error</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1069" type="#_x0000_t75" style='width:583.5pt;height:147pt;
+ visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image046.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=778 height=196
+src="ERRORCD_files/image047.gif" v:shapes="_x0000_s1069"><![endif]></span></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Error </span></b></p>
+<p class="MsoNormal"><b><span style="font-family:Arial">Detection</span></b></p>
+<p class="MsoNormal"><span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial"><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_2" o:spid="_x0000_s1070" type="#_x0000_t75" style='width:564pt;
+ height:570pt;visibility:visible;mso-position-horizontal-relative:char;
+ mso-position-vertical-relative:line' fillcolor="#618ffd" strokeweight="1pt">
+ <v:imagedata src="ERRORCD_files/image048.wmz" o:title=""/>
+ <v:shadow color="#919191"/>
+ <o:lock v:ext="edit" aspectratio="f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=752 height=760
+src="ERRORCD_files/image049.gif" v:shapes="Picture_x0020_2"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial;color:black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1072" type="#_x0000_t75" style='width:308.25pt;height:285.75pt'>
+ <v:imagedata src="ERRORCD_files/image050.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=411 height=381
+src="ERRORCD_files/image051.gif" v:shapes="_x0000_s1072"><![endif]></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Codeword = message + 
+redundant</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">If two code words are 
+a Hamming distance d apart, it will require d single bit error to convert one 
+into the other</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">To detect d errors, 
+you need a distance of d+1 code</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">To correct d errors, 
+you need a distance 2d+1 code</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Example: parity bit 
+(even or odd)</span></p>
+<p class="MsoNormal" style="margin-left:.25in;text-indent:.25in">
+<span style="font-family:Arial;color:black">Hamming method: (m+r+1)&lt;=2<sup>r</sup></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">power of 2 (1,2,4, 
+...) check bits</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">the rest (3,5,6,7,9, 
+...) data bits</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">example bit 11 checked 
+by (1,2,8)</span></p>
+<p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p class="MsoNormal"><i><span style="font-family:Arial;color:black">Assume Xi 
+are data bits and Ri data bits</span></i></p>
+<p class="MsoNormal"><i><span style="font-family:Arial;color:black">&nbsp;</span></i></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X3 corresponds to R1 
+and R2</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X5 corresponds to R1 
+and R4</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X6 corresponds to R2 
+and R4</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X7 corresponds to R1, 
+R2 and R4</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X9 corresponds to R1 
+and R8</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X10 corresponds to R2 
+and R8</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">X11 corresponds to R1, 
+R2 and R8</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">R1 corresponds to {X3, 
+X5, X7,X9, X11}</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">R2 corresponds to {X3, 
+X6, X7,X10, X11}</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">R4 corresponds to {X5, 
+X6, X7}</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">R8 corresponds to {X9, 
+X10,X11}</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span style="font-family:Arial;color:black">Example</span></b><span style="font-family:Arial;color:black">: 
+m = 1101101 =&gt; ?? 1 ? 101 ? 101 =&gt; <b>11 </b>1 <b>0 </b>101 <b>0 </b>101</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">If the receiving node 
+received: <b>11 </b>1 <b>0 </b>1 1 1 <b>0 </b>101</span></p>
+<p class="MsoNormal" style="text-indent: -.5in; text-autospace: none; margin-left: 1.25in">
+<span style="font-size: 20.5pt; font-family: Wingdings; color: black">ð<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span style="font-family:Arial;color:black">R1 = 1, R2 = 0, R4= 
+1, R8 =0 =&gt; 0</span></b><span style="font-family:Arial;
+color:black">(1) + <b>1</b>(2) + <b>1</b>(4) + <b>0</b>(8) = 6</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">This implies that bit 
+6 is incorrect, as it is checked by R2 and R4</span></p>
+<p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial;color:black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1073" type="#_x0000_t75" style='width:317.25pt;height:438.75pt'>
+ <v:imagedata src="ERRORCD_files/image052.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=423 height=585
+src="ERRORCD_files/image053.gif" v:shapes="_x0000_s1073"><![endif]></span></p>
+<p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p class="MsoNormal"><span style="font-family:Arial;color:black">Polynomial code 
+(cyclic redundancy code or CRC code)</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Let r be the degree of 
+generator polynomial G(x). Append r zeros to the</span></p>
+<p class="MsoNormal" style="margin-left:.25in;text-indent:.25in">
+<span style="font-family:Arial;color:black">low-order end of the frame M(x) =&gt; x<sup>r</sup>M(x).</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Divide the bit string 
+corresponding to G(x) into the bit string corresponding to x<sup>r</sup>M(x) 
+using modulo 2 division</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Subtract the remainder 
+from the bit string corresponding to x<sup>r</sup>M(x) using modulo 2 
+subtraction. The result is the check-summed frame called polynomial T(x).</span></p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="justify">&nbsp;</p>
+
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>3</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font face="Arial" size="5" color="#FF0000"><b>DATA 
+TRANSMISSION</b></font></u></p>
+<p align="justify"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Data transmission means sending a stream of bits or bytes 
+from one location to another using any number of technologies, such as copper 
+wire, optical fiber, laser, radio, or infra-red light. Practical examples 
+include moving data from one data storage device to another such as accessing a 
+website, which involves data transfer from web servers to a user's browser.<br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial"><b>Serial transmission</b> bits are sent over a single 
+wire individually. Whilst only one bit is sent at a time, high transfer rates 
+are possible. This can be used over longer distances as a check digit or Parity 
+bit can be sent along it easily.<br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial"><b>Parallel transmission</b> Multiple wires are used and 
+transmit multiple bits simultaneously and is much faster than Serial 
+transmission as one byte can be sent rather than one bit. This method is used 
+internally within the computer, for example the internal buses, and sometimes 
+externally for such things as printers, how ever the major issue with this is 
+&quot;skewing&quot; because the wires in parallel data transmission have slightly 
+different properties (not intentionally) so some bits may arrive before others, 
+which means that the original &quot;meaning&quot; of the message is lost and thus leads to 
+corruption a parity bit can help to reduce this. how ever parallel data 
+transmission is therefore unsuitable for long distances (as already mentioned) 
+because skewing is far more likely.<br>
+<br>
+<b>Asynchronous transmission</b> uses start and stop bits to signify the 
+beginning bit ASCII character would actually be transmitted using 10 bits e.g.: 
+A &quot;0100 0001&quot; would become &quot;1 0100 0001 0&quot;. The extra one (or zero depending on 
+parity bit) at the start and end of the transmission tells the receiver first 
+that a character is coming and secondly that the character has ended. This 
+method of transmission is used when data is sent intermittently as opposed to in 
+a solid stream. In the previous example the start and stop bits are in bold. The 
+start and stop bits must be of opposite polarity. This allows the receiver to 
+recognize when the second packet of information is being sent.<br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial"><b>Synchronous transmission</b> uses no start and stop 
+bits but instead synchronizes transmission speeds at both the receiving and 
+sending end of the transmission using clock signals built into each component. A 
+continual stream of data is then sent between the two nodes. Due to there being 
+no start and stop bits the data transfer rate is quicker although more errors 
+will occur, as the clocks will eventually get out of sync, and the receiving 
+device would have the wrong time that had been agreed in protocol (computing) 
+for sending/receiving data, so some bytes could become corrupted (by losing 
+bits). Ways to get around this problem include re-synchronization of the clocks 
+and use of check digits to ensure the byte is correctly interpreted and 
+received.<br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial"><b>Asynchronous data transmission</b></font></p>
+<p align="justify"><font face="Arial">An asynchronous data transmission involves a mechanism 
+called a queue. In general, a queue is a service which temporarily holds 
+messages destined for a receiving task until that task is ready to process them. 
+The sending task passes messages off to the queue and does not wait for a 
+response from the receiver. The queue guarantees that if it accepts a message 
+then that message will be delivered. Cogent's asynchronous messaging is 
+implemented through a queue administrator, called Cascade QueueServer, or </font>
+<b class="command"><tt><font face="Arial">qserve</font></tt></b><font face="Arial">.</font></p>
+<p align="center"><font face="Arial">
+<img alt="Asynchronous data transmission" src="dh-queue.gif" align="middle" width="393" height="64"></font></p>
+<p align="justify"><font face="Arial"><b>&nbsp;Asynchronous data transmission</b></font></p>
+<p align="justify"><font face="Arial">In the example above, when task 1 sends a message to task 
+2 it does so through the queue administrator. Task 1 transmits the message to 
+the queue administrator, which replies immediately with an acknowledgment that 
+it has held the message for delivery pending a request from task 2. Task 1 can 
+now continue with its other duties without having to wait for task 2 to process 
+the message.</font></p>
+<p align="justify"><font face="Arial">The queue administrator then sends a <i class="firstterm">
+signal</i> to task 2 telling it that there is a message waiting for it in the 
+queue. A signal is a special operating system mechanism that cannot block on 
+another task and in this case acts like a flag to indicate to task 2 that there 
+is a message waiting. This means that the queue program is never blocked waiting 
+for a reply from a task that it has informed about a message waiting.</font></p>
+<p align="justify"><font face="Arial">Task 2 sends a request for the waiting message and 
+receives the data in a reply from the queue administrator. </font></p>
+<p align="justify"><font face="Arial">It should be noted that the queue administrator never 
+initiates a message transaction, and due to the nature of the send/receive/reply 
+mechanism it will never block while transmitting a reply. Thus a queue 
+administrator in this scenario will always be available to receive messages and 
+the originator of an asynchronous message will never block.</font></p>
+<p align="justify"><font face="Arial">There are a number of disadvantages to using asynchronous 
+message passing. The sender and receiver in an asynchronous transaction must 
+agree upon a queue name in order for the queue administrator to correctly route 
+a message. This requires either hard-coded queue names, command-line arguments, 
+or a queue-aware name server so tasks can discover the destination queue names. 
+The Cascade DataHub uses a queue-aware name server called </font>
+<b class="command"><tt><font face="Arial">nserve</font></tt></b><font face="Arial"> 
+to provide maximum flexibility in asynchronous connections.</font></p>
+<p align="justify"><font face="Arial">A second concern is that because asynchronous transmission 
+introduces additional message passing overhead into the transmission mechanism, 
+the speed of asynchronous transmission will tend to be slower than that of 
+synchronous data transfer. Perhaps the biggest drawback of the asynchronous 
+transmission method is that there must be a method of dealing with overflows in 
+the queue. If the receiving task fails to collect its messages from the queue 
+administrator, or if it cannot keep up with the rate at which messages are being 
+sent to the queue administrator, then eventually messages will build up and the 
+queue administrator will run out of buffer space. At this point, the queue 
+administrator must refuse further incoming messages until the receiver has 
+cleared some of its pending messages. The sending task must include a 
+contingency plan for undeliverable messages.</font></p>
+<p align="justify"><font face="Arial">A sending task may react in several ways to a full queue 
+situation: </font></p>
+<ol type="1">
+  <li>
+  <p align="justify"><font face="Arial"><b>Throw away data that cannot be put on the queue.&nbsp;</b> 
+  This is both the most common and least acceptable response to a full queue. 
+  The most recent data will be lost, and old data currently on the queue will be 
+  retained. Once the condition causing the full queue has been cleared, the most 
+  recent data will be unavailable. In the case of process control systems, this 
+  scenario will fail to transmit the most recent process changes. Obviously, 
+  this method is not attractive when you consider the potential loss of state 
+  change information and critical alarm data. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Throw away the oldest data on the queue.&nbsp;</b> This 
+  method is only viable if the queue is held internally to the sending task. In 
+  most cases, a task cannot walk the queue as it is provided by an external 
+  program or operating system facility. Even if the queue is available to the 
+  sender, there is no guarantee that the oldest data is the least important. In 
+  general, eliminating data solely on the basis of age is unacceptable. (In the 
+  case of the QNX queue administrator, </font><b class="command"><tt>
+  <font face="Arial">Mqueue</font></tt></b><font face="Arial">, this method of 
+  dealing with a full queue is not an option, as the queue is held externally to 
+  the sender.) </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Throw away the oldest duplicate data on the queue.&nbsp;</b> 
+  As above, this option is only available if the queue is internal to the 
+  sender. In addition, it implies that the data in the queue is of a known type 
+  and format, and can be examined for its similarity to new data. In the case of 
+  process control points, this is generally true, though it means that every 
+  point being transmitted must be compared to every queued message to determine 
+  whether it should replace a current message or go to the end of the queue. 
+  Depending on the implementation, this mechanism may not preserve time ordering 
+  in the queued data. The Cascade DataHub uses a generalized external queue 
+  mechanism, and so does not provide this type of data reduction. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Try to send the data again later.&nbsp;</b> If a task 
+  cannot deliver a message to the queue immediately, then it has the option of 
+  holding the message for later transmission. Once space is available in the 
+  queue, the message can be re-transmitted. This method actually means that the 
+  sender is implementing its own internal queue, duplicating the work of the 
+  queue facility, and so is subject to all of the same concerns regarding full 
+  buffers and data reduction. In general, this approach by itself is entirely 
+  useless, and is exactly equivalent to enlarging the size of the queue 
+  administrator's buffers. When used in combination with one of the other 
+  methods mentioned here, this approach could be very effective. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Try to send the data again later, throwing away old 
+  duplicate data from the retry queue only.&nbsp;</b> This is the method used by the 
+  Cascade DataHub to deal with undeliverable data. So long as the receiver is 
+  capable of keeping up with the data transmission rate, all point changes are 
+  deliverable. If the receiver allows its queue to fill, then the Cascade 
+  DataHub will flag the point as pending delivery to the recipient and will 
+  attempt to deliver the most recent value for that point as soon as there is 
+  room in the queue. If another change to a pending point is received by the 
+  DataHub, then the previous value is overwritten, so that when room in the 
+  queue becomes available, the new value is transmitted. In addition, the 
+  Cascade DataHub packages many point changes into a single message whenever 
+  there are several pending points to a task, thereby increasing the bandwidth 
+  of the queue administrator during periods of high load. In this way, the 
+  Cascade DataHub will transmit all point changes to any receiver that can 
+  handle the data rate, and guarantees that even slow receivers (such as GUI 
+  applications and applications on dial-up lines) will always receive the most 
+  recent point values even if they miss some intermediate values.</font></li>
+</ol>
+<p align="justify"><font face="Arial"><b>Synchronous data transmission</b></font></p>
+<p align="justify"><font face="Arial">Consider the following diagram that represents two 
+programs (or tasks) communicating with each other using send/receive/reply 
+message protocol.</font></p>
+<p align="center"><font face="Arial">
+<img alt="Synchronous data transmission" src="dh-sendreply.gif" align="middle" width="248" height="56"></font></p>
+<p align="justify"><font face="Arial"><b>&nbsp;Synchronous data transmission</b></font></p>
+<p align="justify"><font face="Arial">Task 1 sends a message to task 2. Using synchronous 
+transmission, task 1 will not be able to continue processing until it has either 
+received a reply from task 2 or the message transmission has failed. The message 
+may fail to send due to a couple of reasons. The recipient task may die which 
+means the message will fail to be sent, or the attempt to send the message may 
+time-out waiting for a reply.</font></p>
+<p align="justify"><font face="Arial">There may be a substantial time delay associated with task 
+2 processing the message and then sending back the reply to task 1. In the 
+example above, task 1 is said to be 'blocked' on task 2 until it receives the 
+reply to its original message.</font></p>
+<p align="justify"><font face="Arial">In many mission critical applications, having one task 
+blocked on another task is unacceptable because the blocked tasks are unable to 
+perform other duties for the duration of the message transaction.</font></p>
+<p align="justify"><font face="Arial">Synchronous transmission is, however, a fast and reliable 
+method of data transfer when you absolutely need to know that a message was 
+received by the recipient, or when the sending task must have a response before 
+it can continue processing.</font></p>
+<p align="justify">&nbsp;</p>
+<h1 align="justify"><font size="3" face="Arial">Synchronous Transmission</font></h1>
+<p align="justify"><font face="Arial">The principle difference between the 
+synchronous and asynchronous modes of transmission is that in the synchronous 
+case, the receiver uses a clock which is synchronised to the transmitter clock. 
+The clock may be transferred by:</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">A separate interface circuit (as in X.21 
+  or RS-449) or </font></li>
+  <li>
+  <p align="center"><font face="Arial">Encoded in the data (e.g. Manchester 
+  Encoding, AMI encoding, HDB3 encoding) <br clear="all">
+  <br clear="all">
+  <img src="dpll1.gif" align="bottom" border="0" width="491" height="258"></font></li>
+  <li>
+  <p align="center"><font face="Arial"><i>Communication 
+  by encoding the clock signal along with data.<br clear="all">
+&nbsp;</i></font></li>
+</ul>
+<p align="justify"><font face="Arial">An encoded clock is used in systems such 
+as G.703, and Ethernet. In an encoded system, the receiver can regenerate a copy 
+of the transmitter clock at the receiver using a digital phase locked loop 
+(dpll).</font></p>
+<p align="justify"><font face="Arial">Synchronous transmission has the advantage 
+that the timing information is accurately aligned to the received data, allowing 
+operation at much higher data rates. It also has the advantage that the receiver 
+tracks any clock drift which may arise (for instance due to temperature 
+variation). The penalty is however a more complex interface design, and 
+potentially a more difficult interface to configure (since there are many more 
+interface options). </font></p>
+<p align="justify"><b><font face="Arial">Analog vs. Digital Transmission</font></b></p>
+<p align="justify"><font face="Arial"><b>T</b>here are three predominant methods of encoding a 
+transmission signal. Amplitude modulation (AM), and frequency modulation (FM) 
+are both analog modulation schemes. The third method is digital modulation.</font></p>
+<table style="BORDER-COLLAPSE: collapse" borderColor="#111111" cellSpacing="0" cellPadding="0" width="530" border="2">
+  <tr>
+    <td align="middle" width="530" colSpan="4">
+    <p align="justify">
+    <font color="#000080" face="Arial"><b><i><a name="Table_1">Table 1</a> -</i></b> 
+    Comparison of AM, FM, and Digital Encoding Techniques</font></td>
+  </tr>
+  <tr>
+    <td align="middle" width="134" bgColor="#d9f2ff">
+    <p align="justify"><b><font face="Arial">
+    Parameter</font></b></td>
+    <td align="middle" width="132" bgColor="#d9f2ff">
+    <p align="justify"><b><font face="Arial">AM</font></b></td>
+    <td align="middle" width="132" bgColor="#d9f2ff">
+    <p align="justify"><b><font face="Arial">FM</font></b></td>
+    <td align="middle" width="132" bgColor="#d9f2ff">
+    <p align="justify"><b><font face="Arial">
+    Digital</font></b></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">
+    Signal-to-Noise Ratio</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">
+    Low-to-Moderate</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">
+    Moderate-High</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">High</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Performance 
+    vs. Attenuation</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Sensitive</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Tolerant</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Invariant</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Transmitter 
+    Cost</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">
+    Moderate-High</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Moderate</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">High</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Receiver 
+    Cost</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Moderate</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">
+    Moderate-High</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">High</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Receiver 
+    Gain Adjustment</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Often 
+    Required</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Not Required</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Not Required</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Installation</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Adjustments 
+    Requires</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">No 
+    Adjustments Required</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">No 
+    Adjustments Required</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Multichannel 
+    Capabilities</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Require High 
+    Linearity Optics</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Fewer 
+    Channels</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Good</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">Performance 
+    Over Time</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Moderate</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Excellent</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Excellent</font></td>
+  </tr>
+  <tr>
+    <td vAlign="center" align="left" width="134">
+    <p align="justify"><font face="Arial">
+    Environmental Factors</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Moderate</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Excellent</font></td>
+    <td vAlign="center" align="left" width="132">
+    <p align="justify"><font face="Arial">Excellent</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial"><b>A</b>M, FM, and digital modulation are described in 
+detail in other sections of this web site. One key difference between analog and 
+digital transmission involves the bandwidth, or transmission capacity required 
+for both schemes. Analog signals require much less bandwidth, only about 4.5 MHz 
+with a 143.2 Mb/s data rate. for the average NTSC video signal. By comparison, 
+some digital video transmission standards require as much as 74.25 MHz with a 
+data rate of 1485 Mb/s. Advances in single-mode optical fiber make these higher 
+rates more accessible for longer distances. Copper coax fails to perform at 
+these data rates. </font></p>
+<p align="justify"><font face="Arial"><b>A</b>nother difference between analog and digital 
+transmission deals with the hardware’s ability to recover the transmitted 
+signal. Analog modulation, which is continuously variable by nature, can often 
+require adjustment at the receiver end in order to reconstruct the transmitted 
+signal. Digital transmission, however, because it uses only 1’s and 0’s to 
+encode the signal, offers a simpler means of reconstructing the signal. Both 
+types of modulation can incorporate error detecting and error correcting 
+information to the transmitted signal. However, the latest trend in signal 
+transmission is forward error correcting (FEC). This scheme, which uses binary 
+numbers, is suited to digital transmission. Extra bits of information are 
+incorporated into the digital signal, allowing any transmission errors to be 
+corrected at the receive end.</font></p>
+<p align="justify"><font face="Arial"><b>A</b> third important difference relates to the cost of 
+analog transmission links compared to digital transmission links. Because the 
+circuitry required for digital transmission is more complex, the cost is often 
+much higher. In short distance applications, analog modulation will almost 
+always be the most cost-effective system to specify. However, today’s demand for 
+high speed Internet, video-on-demand, videoconferencing, and &quot;pushed&quot; data 
+directly to our home computers requires moderate to long-distance transmission 
+systems to specify digital equipment. And as is the case with any form of 
+technology, greater demand will lead to mass production, inevitably driving the 
+cost of digital systems down. However, it will always be true that the decision 
+to specify one type of modulation over the other involves the same system design 
+considerations.</font></p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="font-family: Arial; mso-color-index: 5; font-weight: 700; text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">pipelining</font></span></p>
+<p align="justify"><span style="font-family: Arial">Imagine in the above 
+example, if the sender could send more frames without waiting for the 
+acknowledgement for the first one, the channel could have been utilized more 
+efficiently. This technique is called </span>
+<span style="font-family: Arial; mso-color-index: 5">pipelining</span><span style="font-family: Arial">.
+</span></p>
+<ul>
+  <li>
+<p align="justify"><span style="font-family: Arial">Imagine the scenario, when 
+the sender always has something to send until the ack for the first frame 
+arrives.</span></p>
+  </li>
+  <li>
+<p align="justify"><span style="font-family: Arial">Clearly this is not Stop-n 
+Wait. </span></p>
+  </li>
+</ul>
+<p align="justify"><span style="font-family: Arial">Let Channel capacity is b 
+bits/sec Frame size l bits, Round trip propagation time is R</span></p>
+<p align="justify"><span style="font-family: Arial">The time required to 
+transmit a single frame is l/b.So, in stop n wait,<span style="mso-spacerun: yes">&nbsp;
+</span>the line is busy for l/b time and idle for R</span></p>
+<p align="justify"><span style="font-family: Arial">time, thus the line 
+utilization is = l/b divided by l/b + R = l/(l + bR). If l &lt; bR, the efficiency 
+will be less than 50%.</span></p>
+<p align="justify"><span style="font-family: Arial">What if one or more frames 
+has error. </span></p>
+<p align="justify"><span style="font-family: Arial">Two options : </span></p>
+<ul>
+  <li>
+<p align="justify"><span style="font-family: Arial">Throw away all the 
+subsequent frames and go back and start resending from the damaged frame. This 
+corresponds to size 1 window in the receiver. -<span style="mso-spacerun: yes">&nbsp;
+</span>Go back N Protocol.</span></p>
+  </li>
+  <li>
+<p align="justify"><span style="font-family: Arial">Buffer the subsequent frames 
+and wait for the damaged frame to be resent, once that comes handover the frames 
+in proper order to the NL-Selective Repeat Protocol. </span></p>
+  </li>
+</ul>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

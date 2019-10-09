@@ -1,0 +1,205 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>DATA COMMUNICATION</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><span style="text-transform: uppercase">
+<font color="#ff0000" size="6" face="Arial"><u><b>DATA COMMUNICATION</b></u></font><span style="line-height: 107%; font-family: Arial; font-weight:700; text-decoration:underline"><font size="6" color="#FF0000"> 
+System</font></span></span></p>
+<p align="justify"><font face="Arial"><b>Data Communication<br>
+</b><br>
+The distance over which data moves within a computer may vary from a few 
+thousandths of an inch, as is the case within a single IC chip, to as much as 
+several feet along the backplane of the main circuit board. Over such small 
+distances, digital data may be transmitted as direct, two-level electrical 
+signals over simple copper conductors. Except for the fastest computers, circuit 
+designers are not very concerned about the shape of the conductor or the analog 
+characteristics of signal transmission.<br>
+<br>
+Frequently, however, data must be sent beyond the local circuitry that 
+constitutes a computer. In many cases, the distances involved may be enormous. 
+Unfortunately, as the distance between the source of a message and its 
+destination increases, accurate transmission becomes increasingly difficult. 
+This results from the electrical distortion of signals traveling through long 
+conductors, and from noise added to the signal as it propagates through a 
+transmission medium. Although some precautions must be taken for data exchange 
+within a computer, the biggest problems occur when data is transferred to 
+devices outside the computer's circuitry. In this case, distortion and noise can 
+become so severe that information is lost.<br>
+<br>
+Data Communications concerns the transmission of digital messages to devices 
+external to the message source. &quot;External&quot; devices are generally thought of as 
+being independently powered circuitry that exists beyond the chassis of a 
+computer or other digital message source. As a rule, the maximum permissible 
+transmission rate of a message is directly proportional to signal power, and 
+inversely proportional to channel noise. It is the aim of any communications 
+system to provide the highest possible transmission rate at the lowest possible 
+power and with the least possible noise.<br>
+<br>
+<br>
+<b>Communications Channels<br>
+</b><br>
+A communications channel is a pathway over which information can be conveyed. It 
+may be defined by a physical wire that connects communicating devices, or by a 
+radio, laser, or other radiated energy source that has no obvious physical 
+presence. Information sent through a communications channel has a source from 
+which the information originates, and a destination to which the information is 
+delivered. Although information originates from a single source, there may be 
+more than one destination, depending upon how many receive stations are linked 
+to the channel and how much energy the transmitted signal possesses.<br>
+<br>
+In a digital communications channel, the information is represented by 
+individual data bits, which may be encapsulated into multibit message units. A 
+byte, which consists of eight bits, is an example of a message unit that may be 
+conveyed through a digital communications channel. A collection of bytes may 
+itself be grouped into a frame or other higher-level message unit. Such multiple 
+levels of encapsulation facilitate the handling of messages in a complex data 
+communications network.<br>
+<br>
+Any communications channel has a direction associated with it:<br>
+&nbsp;</font></p>
+<p align="center"><img border="0" src="DCS1.gif" width="433" height="197"></p>
+<p align="justify"><font face="Arial">The message source is the transmitter, and 
+the destination is the receiver. A channel whose direction of transmission is 
+unchanging is referred to as a simplex channel. For example, a radio station is 
+a simplex channel because it always transmits the signal to its listeners and 
+never allows them to transmit back.<br>
+<br>
+A half-duplex channel is a single physical channel in which the direction may be 
+reversed. Messages may flow in two directions, but never at the same time, in a 
+half-duplex system. In a telephone call, one party speaks while the other 
+listens. After a pause, the other party speaks and the first party listens. 
+Speaking simultaneously results in garbled sound that cannot be understood.<br>
+<br>
+A full-duplex channel allows simultaneous message exchange in both directions. 
+It really consists of two simplex channels, a forward channel and a reverse 
+channel, linking the same points. The transmission rate of the reverse channel 
+may be slower if it is used only for flow control of the forward channel.<br>
+<br>
+<br>
+<b>Serial Communications<br>
+</b><br>
+Most digital messages are vastly longer than just a few bits. Because it is 
+neither practical nor economic to transfer all bits of a long message 
+simultaneously, the message is broken into smaller parts and transmitted 
+sequentially. Bit-serial transmission conveys a message one bit at a time 
+through a channel. Each bit represents a part of the message. The individual 
+bits are then reassembled at the destination to compose the message. In general, 
+one channel will pass only one bit at a time. Thus, bit-serial transmission is 
+necessary in data communications if only a single channel is available. 
+Bit-serial transmission is normally just called serial transmission and is the 
+chosen communications method in many computer peripherals.<br>
+<br>
+Byte-serial transmission conveys eight bits at a time through eight parallel 
+channels. Although the raw transfer rate is eight times faster than in 
+bit-serial transmission, eight channels are needed, and the cost may be as much 
+as eight times higher to transmit the message. When distances are short, it may 
+nonetheless be both feasible and economic to use parallel channels in return for 
+high data rates. The popular Centronics printer interface is a case where 
+byte-serial transmission is used. As another example, it is common practice to 
+use a 16-bit-wide data bus to transfer data between a microprocessor and memory 
+chips; this provides the equivalent of 16 parallel channels. On the other hand, 
+when communicating with a timesharing system over a modem, only a single channel 
+is available, and bit-serial transmission is required. This figure illustrates 
+these ideas:<br>
+&nbsp;</font></p>
+<p align="center"><img border="0" src="DCS2.gif" width="205" height="256"></p>
+<p align="justify"><font face="Arial">The baud rate refers to the signaling rate 
+at which data is sent through a channel and is measured in electrical 
+transitions per second. In the EIA232 serial interface standard, one signal 
+transition, at most, occurs per bit, and the baud rate and bit rate are 
+identical. In this case, a rate of 9600 baud corresponds to a transfer of 9,600 
+data bits per second with a bit period of 104 microseconds (1/9600 sec.). If two 
+electrical transitions were required for each bit, as is the case in 
+non-return-to-zero coding, then at a rate of 9600 baud, only 4800 bits per 
+second could be conveyed. The channel efficiency is the number of bits of useful 
+information passed through the channel per second. It does not include framing, 
+formatting, and error detecting bits that may be added to the information bits 
+before a message is transmitted, and will always be less than one.<br>
+&nbsp;</font></p>
+<p align="center"><img border="0" src="DCS3.gif" width="415" height="132"></p>
+<p align="justify"><font face="Arial">The data rate of a channel is often 
+specified by its bit rate (often thought erroneously to be the same as baud 
+rate). However, an equivalent measure channel capacity is bandwidth. In general, 
+the maximum data rate a channel can support is directly proportional to the 
+channel's bandwidth and inversely proportional to the channel's noise level.<br>
+<br>
+A communications protocol is an agreed-upon convention that defines the order 
+and meaning of bits in a serial transmission. It may also specify a procedure 
+for exchanging messages. A protocol will define how many data bits compose a 
+message unit, the framing and formatting bits, any error-detecting bits that may 
+be added, and other information that governs control of the communications 
+hardware. Channel efficiency is determined by the protocol design rather than by 
+digital hardware considerations. Note that there is a tradeoff between channel 
+efficiency and reliability - protocols that provide greater immunity to noise by 
+adding error-detecting and -correcting codes must necessarily become less 
+efficient.<br>
+<br>
+<br>
+<b>Asynchronous vs. Synchronous Transmission<br>
+</b><br>
+<br>
+Serialized data is not generally sent at a uniform rate through a channel. 
+Instead, there is usually a burst of regularly spaced binary data bits followed 
+by a pause, after which the data flow resumes. Packets of binary data are sent 
+in this manner, possibly with variable-length pauses between packets, until the 
+message has been fully transmitted. In order for the receiving end to know the 
+proper moment to read individual binary bits from the channel, it must know 
+exactly when a packet begins and how much time elapses between bits. When this 
+timing information is known, the receiver is said to be synchronized with the 
+transmitter, and accurate data transfer becomes possible. Failure to remain 
+synchronized throughout a transmission will cause data to be corrupted or lost.<br>
+<br>
+Two basic techniques are employed to ensure correct synchronization. In 
+synchronous systems, separate channels are used to transmit data and timing 
+information. The timing channel transmits clock pulses to the receiver. Upon 
+receipt of a clock pulse, the receiver reads the data channel and latches the 
+bit value found on the channel at that moment. The data channel is not read 
+again until the next clock pulse arrives. Because the transmitter originates 
+both the data and the timing pulses, the receiver will read the data channel 
+only when told to do so by the transmitter (via the clock pulse), and 
+synchronization is guaranteed.<br>
+<br>
+Techniques exist to merge the timing signal with the data so that only a single 
+channel is required. This is especially useful when synchronous transmissions 
+are to be sent through a modem. Two methods in which a data signal is self-timed 
+are nonreturn-to-zero and biphase Manchester coding. These both refer to methods 
+for encoding a data stream into an electrical waveform for transmission.<br>
+<br>
+In asynchronous systems, a separate timing channel is not used. The transmitter 
+and receiver must be preset in advance to an agreed-upon baud rate. A very 
+accurate local oscillator within the receiver will then generate an internal 
+clock signal that is equal to the transmitter's within a fraction of a percent. 
+For the most common serial protocol, data is sent in small packets of 10 or 11 
+bits, eight of which constitute message information. When the channel is idle, 
+the signal voltage corresponds to a continuous logic '1'. A data packet always 
+begins with a logic '0' (the start bit) to signal the receiver that a 
+transmission is starting. The start bit triggers an internal timer in the 
+receiver that generates the needed clock pulses. Following the start bit, eight 
+bits of message data are sent bit by bit at the agreed upon baud rate. The 
+packet is concluded with a parity bit and stop bit. One complete packet is 
+illustrated below:<br>
+&nbsp;</font></p>
+<p align="center"><img border="0" src="DCS4.gif" width="462" height="317"></p>
+<p align="justify"><font face="Arial">The packet length is short in asynchronous 
+systems to minimize the risk that the local oscillators in the receiver and 
+transmitter will drift apart. When high-quality crystal oscillators are used, 
+synchronization can be guaranteed over an 11-bit period. Every time a new packet 
+is sent, the start bit resets the synchronization, so the pause between packets 
+can be arbitrarily long. Note that the EIA232 standard defines electrical, 
+timing, and mechanical characteristics of a serial interface. However, it does 
+not include the asynchronous serial protocol shown in the previous figure, or 
+the ASCII alphabet described next.</font></p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

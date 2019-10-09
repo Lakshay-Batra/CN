@@ -1,0 +1,423 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+span.renderedqtext
+	{}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" style="text-align: center"><font color="#FF0000" size="6">
+<span class="renderedqtext"><b>
+<span style="font-family: Arial; text-transform: uppercase; text-decoration: underline">
+Logical link control</span></b></span></font></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Logical Link Control (LLC) is one of two Data 
+Link Layer (DLL) network protocol sublayers within the Open System 
+Interconnection (OSI) data communication model. LLC is located in the upper DLL 
+area of OSI Layer 2 above the Physical Layer (PHY) of OSI Layer 1.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">LLC is 
+standardized as IEEE 802.2 by the Institute of Electrical and Electronics 
+Engineers (IEEE) .The LLC multiplexing interface includes the following network 
+protocol features:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Multipoint network operation</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Unified network media exchange</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Flow control</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Line protocol identification, like 
+  Synchronous Data Link Control (SDLC)</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Frame sequence number assignment</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Acknowledgement tracking</span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">Today, LLC is 
+only used for its multiplexing feature. Modern Transport Layer protocols, like 
+TCP or other application layer protocols, are used for source and destination 
+network flow management. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial"><br>
+A non-IEEE 802 protocol may be distributed between the LLC and Media Access 
+Control (MAC) layers, like Cisco’s High-Level Data Link Control (HDLC)</span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial"><b>In the IEEE 802 reference</b> model of 
+computer networking, the logical link control (LLC) data communication protocol 
+layer is the upper sublayer of the data link layer (layer 2) of the seven-layer 
+OSI model. The LLC sublayer provides multiplexing mechanisms that make it 
+possible for several network protocols (IP, IPX, Decnet and Appletalk) to 
+coexist within a multipoint network and to be transported over the same network 
+medium. It can also provide flow control and automatic repeat request (ARQ) 
+error management mechanisms.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">The LLC sublayer acts as an interface between 
+the media access control (MAC) sublayer and the network layer.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;</span><b><span style="font-family: Arial">Operation</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;The LLC sublayer is primarily concerned with:</span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span class="renderedqtext"><span style="font-family: Arial">•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Multiplexing protocols transmitted over the MAC layer (when transmitting) and 
+decoding them (when receiving).</span></span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span class="renderedqtext"><span style="font-family: Arial">•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Providing node-to-node flow and error control</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">In today's networks, flow control and error 
+management is typically taken care of by a transport layer protocol such as TCP, 
+or by some application layer protocol, in an end-to-end fashion, i.e. 
+retransmission is done from source to end destination. This implies that the 
+need for LLC sublayer flow control and error management has reduced. LLC is 
+consequently only a multiplexing feature in today's link layer protocols. An LLC 
+header tells the data link layer what to do with a packet once a frame is 
+received. It works like this: A host will receive a frame and look in the LLC 
+header to find out to what protocol stack the packet is destined - for example, 
+the IP protocol at the network layer or IPX. However, today most non-IP network 
+protocols are abandoned.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial; font-weight: 700">Application examples</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;X.25 and LAPB</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;An LLC sublayer was a key component in early 
+packet switching networks such as X.25 networks with the LAPB data link layer 
+protocol, where flow control and error management were carried out in a 
+node-to-node fashion, meaning that if an error was detected in a frame, the 
+frame was retransmitted from one switch to next instead. This extensive 
+handshaking between the nodes made the networks slow.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;Local area network (LAN) and metropolitan area 
+network (MAN) protocols</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;The IEEE 802.2 standard specifies the LLC 
+sublayer for all IEEE 802 local area networks, such as IEEE 802.3/Ethernet (if 
+the EtherType field is not used), IEEE 802.5, and IEEE 802.11. IEEE 802.2 is 
+also used in some non-IEEE 802 networks such as FDDI.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;Ethernet</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;Since bit errors are very rare in wired 
+networks, Ethernet does not provide flow control or automatic repeat request (ARQ), 
+meaning that incorrect packets are detected but only cancelled, not 
+retransmitted (except in case of collisions detected by the CSMA/CD MAC layer 
+protocol). Instead, retransmissions rely on higher layer protocols.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;As the EtherType in an Ethernet frame using 
+Ethernet II framing is used to multiplex different protocols on top of the 
+Ethernet MAC header it can be seen as an LLC identifier. However, Ethernet 
+frames lacking an EtherType have no LLC identifier in the Ethernet header, and, 
+instead, use an IEEE 802.2 LLC header after the Ethernet header to provide the 
+protocol multiplexing function.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;Wireless LAN</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;In wireless communications, bit errors are 
+very common. In wireless networks such as IEEE 802.11, flow control and error 
+management is part of the CSMA/CA MAC protocol, and not part of the LLC layer. 
+The LLC sublayer follows the IEEE 802.2 standard.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;HDLC</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;Some non-IEEE 802 protocols can be thought of 
+as being split into MAC and LLC layers. For example, while HDLC specifies both 
+MAC functions (framing of packets) and LLC functions (protocol multiplexing, 
+flow control, detection, and error control through a retransmission of dropped 
+packets when indicated), some protocols such as Cisco HDLC can use HDLC-like 
+packet framing and their own LLC protocol.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;PPP and modems</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;Over telephone network modems, PPP link layer 
+protocols can be considered as a LLC protocol, providing multiplexing, but it 
+does not provide flow control and error management. In a telephone network, bit 
+errors might be common, meaning that error management is crucial, but that is 
+today provided by modern protocols. Today's modem protocols have inherited LLC 
+features from the older LAPM link layer protocol, made for modem communication 
+in old X.25 networks.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;Cellular systems</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;The GPRS LLC layer also does ciphering and 
+deciphering of SN-PDU (SNDCP) packets.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">&nbsp;Power lines</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;Another example of a data link layer which is 
+split between LLC (for flow and error control) and MAC (for multiple access) is 
+the ITU-T G.hn standard, which provides high-speed local area networking over 
+existing home wiring (power lines, phone lines and coaxial cables).</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">Use &amp; Functions of LLC:</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">The primary functions of LLC layer are</span></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial"><br>
+<span class="renderedqtext">1) <i>Multiplexing:</i> LLC multiplexes info by 
+splitting it in 'frames' of data.</span><br>
+<span class="renderedqtext">Sending these frames across the line and arranging 
+them back in order. It’s like you the jigsaw picture puzzles A big large picture 
+is divided into small pieces. You give these pieces to your friend. The friend 
+puts them in order with the help of colors and shape. Thus obtaining the info 
+sent by you in the picture.</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">2) <i>Flow control:</i> LLC specifies the order 
+in which the frames are sent (using a header) which helps the receiver 
+understand what is to be done with the info once it’s received. </span></span>
+</p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">3) <i>Error control:</i> LLC can only detect 
+errors not correct them it uses Cyclic redundancy Check for (CRC) this. This is 
+like providing your friend with the preview of the original big picture along 
+with the small pieces as reference to know where he is going wrong.</span></span></p>
+<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+<h1 style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-size:12.0pt">Functions of LLC and MAC sub-layers of Data Link 
+Layer </span></h1>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">This post gives a brief overview of the two 
+sub-layers of the data link layer, namely<b> </b><strong>
+<span style="font-family: Arial; font-weight: normal">LLC (Logical Link Control)</span></strong><b> 
+and </b><strong><span style="font-family: Arial; font-weight: normal">MAC (Media 
+Access Control)</span></strong><b>.</b></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The data link layer functionality is usually 
+split it into logical sub-layers, the upper sub-layer, termed as LLC, that 
+interacts with the network layer above and the lower sub-layer, termed as MAC, 
+which interacts with the physical layer below, as shown in the diagram given 
+below:</span></p>
+<p class="MsoNormal" style="text-align: center">
+<img border="0" src="LLC22.JPG" width="361" height="331"></p>
+<p class="wp-caption-text" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family:Arial">Upper and Lower sub-layers of Data Link Layer</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">While LLC is responsible for handling multiple 
+Layer3 protocols (multiplexing/de-multiplexing) and link services like 
+reliability and flow control, the MAC is responsible for framing and media 
+access control for broadcast media. The functional overview of LLC and MAC 
+sub-layers are given in the diagram below :</span></p>
+<p class="MsoNormal" style="text-align: center">
+<img border="0" src="LLC23.JPG" width="691" height="209"></p>
+<p class="wp-caption-text" style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<b><span style="font-family:Arial">Role of LLC and MAC</span></b></p>
+<p class="wp-caption-text" style="margin:0in;margin-bottom:.0001pt;text-align:
+justify"><b><span style="font-family:Arial">Role of LLC and MAC</span></b></p>
+<h2 style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-size:12.0pt;font-family:Arial">&nbsp;</span></h2>
+<h2 style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-size:12.0pt;font-family:Arial">LLC</span></h2>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The primary responsibilities of LLC are <b>N</b><strong><span style="font-family: Arial; font-weight: normal">etwork 
+Layer protocol Multiplexing/De-Multiplexing</span></strong></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Interfacing with the Network (Layer3) above by 
+doing L3 protocol multiplexing/de-multiplexing. On receiving a frame from the 
+physical layer below, the LLC is responsible for looking at the L3 Protocol type 
+and handing over the datagram to the correct L3 protocol (de-multiplexing) at 
+the network layer above. On the sending side, LLC takes packets from different 
+L3 protocols like IP, IPX, ARP etc., and hands it over to the MAC layer after 
+filling the L3 protocol type in the LLC header portion of the frame 
+(multiplexing).</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">&nbsp;</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">Logical Link Services</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">LLC can optionally provide reliable frame 
+transmission by the sending node numbering each transmitted frame (sequence 
+number), the receiving node acknowledging each received frame (acknowledgment 
+number) and the sending node retransmitting lost frames. &nbsp;It can also optionally 
+provide flow control by allowing the receivers to control the sender’s rate 
+through control frames like RECEIVE READY and RECEIVE NOT READY etc.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Based on whether a logical connection is 
+established between the layer 2 peers and based on whether frames are 
+acknowledged by the peer, LLC can be classified to provide the following types 
+of service modes:</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">a) <strong>
+<span style="font-family: Arial; font-weight: normal">Connectionless 
+Unacknowledged Service :</span> </strong>This is a best effort service like IP 
+datagram service, with no connection establishment between L2 peers and also no 
+acknowledgment for data frames from the peer. Whenever there is data to be 
+transferred to the peer, it is sent directly, without any connection 
+establishment. Flow control may be optionally provided in this service. In 
+Internet, since reliability, flow control and error control are provided at the 
+transport layer by TCP, a simple connectionless unacknowledged service is enough 
+at the data link layer, provided the link is of good quality with low error 
+rates. Hence, this service mode is the most widely used mode in the Internet, 
+where TCP/IP is the basic protocol stack. This mode is used on almost all high 
+quality wired links like Ethernet and Optical.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">b) </span></b><strong>
+<span style="font-family: Arial; font-weight: normal">Connectionless 
+Acknowledged Service:</span></strong><span style="font-family:Arial"> In this 
+mode, data is directly sent between Layer2 peers without any logical link 
+establishment. But each frame is numbered using sequence numbers and the peer 
+acknowledges each frame received using an Acknowledgment number field. This 
+service mode is used in scenarios where the overhead of a connection 
+establishment is costly due to the extra delay involved, but where data 
+reliability is needed. The sender can track lost or damaged frames and 
+retransmit such frames to achieve reliability. This type of service is used in 
+wireless links, where the quality of link is not as good as wired links and so 
+frequent link establishment and teardown are unnecessary overheads, as these 
+control frames may themselves be corrupted or lost.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial">c) </span></b><strong>
+<span style="font-family: Arial; font-weight: normal">Connection Oriented 
+Service:</span><span style="font-family:Arial"> </span></strong>
+<span style="font-family:Arial">In this mode, procedures are laid out for 
+logical link establishment and disconnection. Before data transfer, a logical 
+connection is established between peers, before data transfer starts, through 
+the exchange of control frames, known as <strong><i>
+<span style="font-family: Arial; font-weight: normal">Supervisory Frames</span></i></strong>. 
+The logical connection is closed after the data exchange phase is over. Actual 
+data transfer starts &nbsp;after the connection establishment phase and frames 
+carrying higher layer data are known as <strong><i>
+<span style="font-family: Arial; font-weight: normal">Information Frames</span></i></strong><b><i>.</i></b> 
+A third category of frames, known as Unumbered Acknowledgment frames are used to 
+acknowledge received Supervisory frames.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">In this mode too, there are two variants that 
+are used, namely one without acknowledgement and another with acknowledgement.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">&nbsp;</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">Connection oriented service without 
+Acknowledgment</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Here, though a logical link is established 
+before actual data transfer happens, there is no concept of frames being 
+numbered and acknowledged through Sequence number and acknowledgment number 
+fields. It is just a best effort service, with reliability left to the higher 
+layer protocol. Many WAN protocols like HDLC, PPP, LAPB, LAPD etc. use this mode 
+of service.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">&nbsp;</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">Connection oriented service with Acknowledgment</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">Here, apart from a logical link being 
+established before data transfer happens, reliability and flow control services 
+are also provided by the LLC. Reliability is provided through the use of 
+sequence number, acknowledgment number and retransmission of lost frames using 
+strategies like <strong><span style="font-family: Arial; font-weight: normal">Go 
+Back N</span></strong> or <strong>
+<span style="font-family: Arial; font-weight: normal">Selective Repeat</span></strong><b>.
+</b><strong><span style="font-family: Arial; font-weight: normal">Flow control</span></strong> 
+is provided by using a <strong>
+<span style="font-family: Arial; font-weight: normal">sliding window mechanism</span></strong><b>.
+</b>This service mode is rarely used in the Internet, because Internet uses TCP, 
+that supports reliability and flow control at the transport layer. This service 
+mode is used in properietary protocols like Microsoft’s NetBIOS.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">&nbsp;</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">Note</span></strong><span style="font-family:Arial"> 
+that though connection establishment, reliability and flow control are optional 
+services at the data link layer, error detection is still a basic service 
+provided by the data link layer, through the use of CRC/checksums in the frame 
+trailer, that is added by the MAC sub-layer framing functionality.</span></p>
+<h2 style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-size:12.0pt;font-family:Arial">&nbsp;</span></h2>
+<h2 style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-size:12.0pt;font-family:Arial">MAC</span></h2>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">The MAC sub-layer interacts with the physical 
+layer and is primarily responsible for framing/de-framing and collision 
+resolution.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">&nbsp;</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">Framing/De-Framing</span></strong><span style="font-family:Arial">&nbsp;<strong>and 
+interaction with PHY</strong>: On the sending side, the MAC sub-layer is 
+responsible for creation of frames from network layer packets, by adding the 
+frame header and the frame trailer. While the frame header consists of layer2 
+addresses (known as MAC address) and a few other fields for control purposes, 
+the frame trailer consists of the CRC/checksum of the whole frame. After 
+creating a frame, the MAC layer is responsible for interacting with the physical 
+layer processor (PHY) to transmit the frame.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial">On the receiving side, the MAC sub-layer 
+receives frames from the PHY and is responsible for accepting each frame, by 
+examining the frame header. It is &nbsp;also responsible for verifying the checksum 
+to conclude whether the frame has come uncorrupted through the link without bit 
+errors. Since checksum computation and verification are computed intensive 
+tasks, the framing/de-framing functionality is done by <strong>
+<span style="font-family: Arial; font-weight: normal">dedicated piece of 
+hardware (e.g. NIC card on PCs)</span></strong><b>.</b></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">&nbsp;</span></strong></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><strong>
+<span style="font-family:Arial">Collision Resolution:</span></strong><span style="font-family:Arial"> 
+On shared or broadcast links, where multiple end nodes are connected to the same 
+link, there has to be a collision resolution protocol running on each node, so 
+that the link is used cooperatively. The MAC sub-layer is responsible for this 
+task and it is the MAC sub-block that implements standard collision resolution 
+protocols like CSMA/CD, CSMA etc. For half-duplex links, it is the MAC sub-layer 
+that makes sure that a node sends data on the link only during its turn. <em>For 
+full-duplex point-to-point links, the collision resolution functionality of MAC 
+sub-layer is not required.</em></span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family:Arial">In end nodes and in intermediate devices like L2 
+switches and Routers, the LLC functionality is implemented in <strong>
+<span style="font-family: Arial; letter-spacing: .6pt; font-weight: normal">
+network device driver software </span></strong>that is part of the Operating 
+System&nbsp;and the MAC functionality is implemented in dedicated piece of hardware.</span></p>
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

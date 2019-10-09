@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline"><b>
+<font face="Arial" size="6" color="#FF0000">MESSAGE SWITCHING</font></b></span></p>
+<h1><font face="Arial">Message Switching</font></h1>
+<p align="justify"><font face="Arial"><b>Message Switching:</b> A method of handling message traffic through a switching center, 
+either from local users or from other switching centers, whereby the message 
+traffic is stored and forwarded through the system.</font></p>
+<p align="justify"><font face="Arial">Sometimes there is no need for a
+circuit to be established all the way from the source to the destination. 
+Consider a connection between the users (A and D) in the figure below (i.e. A 
+and D) is represented by a series of links (AB, BC, and CD).</font></p>
+<p align="center"><font face="Arial">
+<img src="switching.gif" align="bottom" NATURALSIZEFLAG="3" width="291" height="86"></font></p>
+<p align="center"><font face="Arial"><i>A connection between two systems A &amp; D 
+formed from 3 links</i></font></p>
+<p align="justify"><font face="Arial">For instance, when a telex (or email) message is sent from 
+A to D, it first passes over a local connection (AB). It is then passed at some 
+later time to C (via link BC), and from there to the destination (via link CD). 
+At each message switch, the received message is stored, and a connection is 
+subsequently made to deliver the message to the neighboring message switch. 
+Message switching is also known as store-and-forward switching since the 
+messages are stored at intermediate nodes en route to their destinations.</font></p>
+<p align="center"><font face="Arial"><i>
+<img src="message-setup.gif" align="bottom" NATURALSIZEFLAG="3" width="384" height="277"></i></font></p>
+<p align="center"><font face="Arial"><i>The use of message switching to 
+communicate between A and D</i></font></p>
+<p align="justify"><font face="Arial">The figure illustrates message switching; transmission of 
+only one message is illustrated for simplicity. As the figure indicates, a 
+complete message is sent from node A to node B when the link interconnecting 
+them becomes available. Since the message may be competing with other messages 
+for access to facilities, a queuing delay may be incurred while waiting for the 
+link to become available. The message is stored at B until the next link becomes 
+available, with another queuing delay before it can be forwarded. It repeats 
+this process until it reaches its destination.</font></p>
+<p align="justify"><font face="Arial">Circuit setup delays are replaced by queuing delays. 
+Considerable extra delay may result from storage at individual nodes. A delay 
+for putting the message on the communications link (message length in bits 
+divided by link speed in bps) is also incurred at each node en route. Message 
+lengths are slightly longer than they are in circuit switching, after 
+establishment of the circuit, since header information must be included with 
+each message; the header includes information identifying the destination as 
+well as other types of information.</font></p>
+<p align="justify"><font face="Arial">Most message switched networks do not use dedicated 
+point-to-point links and therefore a call must be set-up using a
+circuit switched network. The figure below illustrates the use of message 
+switching over a circuit switched network, in this case using one intermediate 
+message switch.</font></p>
+<p align="center"><font face="Arial"><i>
+<img src="message.gif" align="bottom" NATURALSIZEFLAG="3" width="310" height="162"></i></font></p>
+<p align="center"><font face="Arial"><i>Message switching using
+circuit switched connections between message switches</i></font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

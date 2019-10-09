@@ -1,0 +1,648 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;
+	font-style:italic}
+span.mw-headline
+	{}
+-->
+</style>
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p style="text-align: center"><b><u><font face="Arial" size="6" color="#FF0000">
+ERROR CONTROL</font></u></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Data 
+link layer is layer 2 in OSI model. It is responsible for communications between 
+adjacent network nodes. It handles the data moving in and out across the 
+physical layer. It also provides a well defined service to the network layer. 
+Data link layer is divided into two sub layers. The Media Access Control (MAC) 
+and logical Link Control (LLC).</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Data-Link layer ensures that an initial connection has been set up, divides 
+output data into data frames, and handles the acknowledgements from a receiver 
+that the data arrived successfully. It also ensures that incoming data has been 
+received successfully by analyzing bit patterns at special places in the frames.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In the 
+following sections data link layer's functions- Error control and Flow control 
+has been discussed. After that MAC layer is explained. Multiple access protocols 
+are explained in the MAC layer section.</span></p>
+<p style="text-align: justify; margin-bottom:0">&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-autospace: none; margin-bottom: 0">
+<span style="font-family: Arial; color: black; font-weight: 700">Error Control</span></p>
+<p class="MsoNormal" align="center" style="text-align: justify; text-autospace: none; margin-bottom: 0">
+<span style="font-family:Arial;color:black">Digital transmission systems 
+introduce errors</span></p>
+<ul type="circle">
+  <li>
+  <p class="MsoNormal" style="text-autospace: none; margin-top: .15pt; margin-bottom: 0" align="justify">
+  <span style="font-family:Arial;color:black">Applications require certain 
+  reliability level Data applications require error-free transfer</span></li>
+  <li>
+  <p class="MsoNormal" style="text-autospace: none; margin-top: .15pt; margin-bottom: 0" align="justify">
+  <span style="font-family:Arial;color:black">Voice &amp; video applications 
+  tolerate some errors</span></li>
+</ul>
+<p class="MsoNormal" style="text-autospace: none; margin-top: .15pt; margin-bottom: 0" align="justify">
+<span style="font-family:Arial;color:black">Error control to ensure a data 
+stream is transmitted to a certain level of accuracy</span></p>
+<p style="text-align: justify">&nbsp;</p>
+<h2 style="text-align: justify"><span id="Error_Control">
+<span class="mw-headline">
+<span lang="EN" style="font-size: 12.0pt; font-style: normal">Error Control</span></span></h2>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Network is responsible for transmission of data from one device to another 
+device. The end to end transfer of data from a transmitting application to a 
+receiving application involves many steps, each subject to error. With the error 
+control process, we can be confident that the transmitted and received data are 
+identical. Data can be corrupted during transmission. For reliable 
+communication, error must be detected and corrected.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Error 
+control is the process of detecting and correcting both the bit level and packet 
+level errors.</span></p>
+<p style="text-align: justify"><i>
+<span lang="EN" style="font-family: Arial; font-weight:700">
+Types of Errors</span></i></p>
+<p style="text-align: justify">
+<span lang="EN" style="font-family: Arial; font-weight:700">Single 
+Bit Error</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">The 
+term single bit error means that only one bit of the data unit was changed from 
+1 to 0 and 0 to 1.</span></p>
+<p style="text-align: justify">
+<span lang="EN" style="font-family: Arial; font-weight:700">Burst 
+Error</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In 
+term burst error means that two or more bits in the data unit were changed. 
+Burst error is also called packet level error, where errors like packet loss, 
+duplication, reordering.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Error Detection</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Error 
+detection is the process of detecting the error during the transmission between 
+the sender and the receiver.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Types 
+of error detection</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Parity checking</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Cyclic Redundancy Check (CRC)</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Checksum</span></li>
+</ul>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Redundancy</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Redundancy allows a receiver to check whether received data was corrupted during 
+transmission. So that he can request a retransmission. Redundancy is the concept 
+of using extra bits for use in error detection. As shown in the figure sender 
+adds redundant bits (R) to the data unit and sends to receiver, when receiver 
+gets bits stream and passes through checking function. If no error then data 
+portion of the data unit is accepted and redundant bits are discarded. otherwise 
+asks for the retransmission.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Parity checking</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Parity 
+adds a single bit that indicates whether the number of 1 bits in the preceding 
+data is even or odd. If a single bit is changed in transmission, the message 
+will change parity and the error can be detected at this point. Parity checking 
+is not very robust, since if the number of bits changed is even, the check bit 
+will be invalid and the error will not be detected.</span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Single bit parity</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Two dimension parity</span></li>
+</ol>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Moreover, parity does not indicate which bit contained the error, even when it 
+can detect it. The data must be discarded entirely, and re-transmitted from 
+scratch. On a noisy transmission medium a successful transmission could take a 
+long time, or even never occur. Parity does have the advantage, however, that 
+it's about the best possible code that uses only a single bit of space.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Cyclic Redundancy Check</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">CRC is 
+a very efficient redundancy checking technique. It is based on binary division 
+of the data unit, the remainder of which (CRC) is added to the data unit and 
+sent to the receiver. The Receiver divides data unit by the same divisor. If the 
+remainder is zero then data unit is accepted and passed up the protocol stack, 
+otherwise it is considered as having been corrupted in transit, and the packet 
+is dropped.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Sequential steps in CRC are as follows.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Sender 
+follows following steps.</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Data unit is composite by number of 
+  0s, which is one less than the divisor.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Then it is divided by the 
+  predefined divisor using binary division technique. The remainder is called 
+  CRC. CRC is appended to the data unit and is sent to the receiver.</span></li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Receiver follows following steps.</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">When data unit arrives followed by 
+  the CRC it is divided by the same divisor which was used to find the CRC 
+  (remainder).</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">If the remainder result in this 
+  division process is zero then it is error free data, otherwise it is 
+  corrupted.</span></li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Diagram shows how to CRC process works.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">[a] 
+sender CRC generator [b] receiver CRC checker</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Checksum</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Check 
+sum is the third method for error detection mechanism. Checksum is used in the 
+upper layers, while Parity checking and CRC is used in the physical layer. 
+Checksum is also on the concept of redundancy.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In the 
+checksum mechanism two operations to perform.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Checksum generator</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Sender 
+uses checksum generator mechanism. First data unit is divided into equal 
+segments of n bits. Then all segments are added together using 1’s complement. 
+Then it complements ones again. It becomes Checksum and sends along with data 
+unit.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Exp:</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">If 16 
+bits 10001010 00100011 is to be sent to receiver.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial"><br>
+So the checksum is added to the data unit and sends to the receiver. Final data 
+unit is 10001010 00100011 01010000.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Checksum checker</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Receiver receives the data unit and divides into segments of equal size of 
+segments. All segments are added using 1’s complement. The result is completed 
+once again. If the result is zero, data will be accepted, otherwise rejected.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Exp:</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">The 
+final data is nonzero then it is rejected.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Error Correction</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">This 
+type of error control allows a receiver to reconstruct the original information 
+when it has been corrupted during transmission.</span></p>
+<p style="text-align: justify"><b><span lang="EN" style="font-family: Arial">
+Hamming Code</span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">It is 
+a single bit error correction method using redundant bits.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In 
+this method redundant bits are included with the original data. Now, the bits 
+are arranged such that different incorrect bits produce different error results 
+and the corrupt bit can be identified. Once the bit is identified, the receiver 
+can reverse its value and correct the error. Hamming code can be applied to any 
+length of data unit and uses the relationships between the data and the 
+redundancy bits.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Algorithm:</span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Parity bits are positions at the 
+  power of two (2 r).</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Rest of the positions is filled by 
+  original data.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Each parity bit will take care of 
+  its bits in the code.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">Final code will sends to the 
+  receiver.</span></li>
+</ol>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In the 
+above example we calculates the even parities for the various bit combinations. 
+the value for the each combination is the value for the corresponding 
+r(redundancy)bit. r1 will take care of bit 1,3,5,7,9,11. and it is set based on 
+the sum of even parity bit. the same method for rest of the parity bits.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial"><br>
+If the error occurred at bit 7 which is changed from 1 to 0, then receiver 
+recalculates the same sets of bits used by the sender. By this we can identify 
+the perfect location of error occurrence. once the bit is identified the 
+receiver can reverse its value and correct the error.</span></p>
+<p style="text-align: justify"><b>
+<span style="font-family: Arial; color: black">Error Control/Flow Control</span></b></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Peer-to-peer protocols and service models:</span><span style="font-family: Arial">
+  <br>
+  &nbsp; </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Peer-to-peer protocols describe the 
+    interaction of two processes or entities through the exchange of messages 
+    called Protocol Data Units (PDUs)</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Service model is used to describe the 
+    services provided by a protocol</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Service Data Units (SDUs) are passed 
+    between layers, while PDUs are the messages passed between peers.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">End-to-end vs. hop-by-hop</span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Data-link layer protocols and transport 
+    layer protocols have in common</span><span style="font-family: Arial">
+    </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">error control</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">flow control</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Consider error control at the TL and DLL:</span><span style="font-family: Arial">
+    </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Transport-layer protocols perform error 
+      detection and correction end-to-end, i.e., at end hosts. With this error 
+      correction, data delivered to the application layer will be correct.</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial">Data-link layer protocols are hop-by-hop; 
+      this means the error correction only assures that the data is delivered 
+      correctly to the next node on the end-to-end path (say a switch); if on 
+      the end-to-end path there is one data link with a data-link layer protocol 
+      that does not provide error correction (say for example, an ethernet 
+      link), the end-to-end error correction mechanism is needed to assure 
+      correct delivery to the application layer.</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+  </ul>
+  </li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial; color: black">Error control</span><span style="font-family: Arial">
+  </span></li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">In Section 3.8, we learned 
+    about error detection. Common methods used for error detection include 
+    parity codes, checksums, CRC codes.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">In this section, we study 
+    error correction mechanisms. Two types of error correction are used 
+    commonly: ARQ (Automatic Repeat reQuest) and FEC (Forward Error Correction). 
+    We shall only cover ARQ in this course. FEC codes are used to send in the 
+    forward direction along with the user data. The receiver is able to correct 
+    simple errors that may occur in the data stream using the FEC code.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">ARQ: The fundamental idea is 
+    to use acknowledgments (ACKs) sent from the receiver to the sender for data 
+    frames sent from the sender to the receiver. See the book for figures. We 
+    introduce concepts used in ARQ here:</span><span style="font-family: Arial">
+    </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Timers: Sender keeps a 
+      timer, if an ACK is not received before the timer expires, it resends the 
+      frame. How large should the timer value be?</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Need for sequence numbers 
+      for the frames: If a frame is properly received, but the ACK is lost, then 
+      the sender will time-out and retransmit. This will result in the receiver 
+      receiving duplicate frames. Hence frames need sequence numbers to allow 
+      the receiver to detect duplicates.</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Need for sequence numbers 
+      in the ACKs: If a frame 0 is sent, but the timer times-out before the ACK 
+      is received, the sender will resend frame 0. If the ACK for the first 
+      frame 0 arrives soon after the sender retransmitted frame 0, the sender 
+      will assume that the ACK was for the retransmitted frame 0 and hence send 
+      frame 1. Now if frame 1 gets lost, but the receiver sends another ACK for 
+      the retransmitted frame 0, the sender may mistakenly think this ACK is for 
+      frame 1. If ACKs said what frames they were acknowledging (using their 
+      sequence numbers), this problem would not arise.</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Checkpointing: periodically 
+      sending ENQ (enquiries) to see what frames were received.</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Three modes:</span><span style="font-family: Arial">
+    </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Stop-and-wait: Send a 
+      frame, wait for an ACK</span><span style="font-family: Arial"> </span>
+      <ul type="square" style="margin-bottom: 0in">
+        <li class="MsoNormal" style="text-align: justify">
+        <span style="font-family: Arial; color: black">inefficient because the 
+        Delay-BW product is low. Delay-BW product is bit rate times delay that 
+        elapses before any action can take place.Consider a 1.5Mbps link. If a 
+        1000-bit frame is sent and an ACK awaited before the next frame can be 
+        sent, and the round trip delay (including propagation delay) is 40ms, 
+        then the delay-BW product could have been 1.5Mbps times 40ms = 60Kbits. 
+        Instead of sending this, only 1K bits are sent in the same time period, 
+        which makes stop-and-wait inefficient.</span><span style="font-family: Arial">
+        </span></li>
+      </ul>
+      </li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Go-back-N: sender maintains 
+      a window of size W<sub>s</sub> frames. after frame 0 is sent, transmitter 
+      sends W<sub>s</sub> -1 frames. This is the maximum number of frames that 
+      can be outstanding (i.e., unacknowledged). Pipelining effect occurs 
+      improving the efficiency of the protocol. Upon receiving a NAK (negative 
+      ACK), or experiencing a time-out, the sender will retransmit. The sender 
+      keeps track of S<sub>recent</sub>, which lies between S<sub>last</sub> and 
+      S<sub>last</sub> + W<sub>s</sub> -1, where S<sub>last</sub> is the last 
+      transmitted and yet unacknowledged; S<sub>recent</sub> is the last one 
+      sent. The receiver maintains a variable R<sub>next</sub>, which is the 
+      sequence number of the next expected frame. Typically, this is the number 
+      that the receiver sends in an ACK. Go-back-N is an example of a 
+      sliding-window protocol. The window size at the sender should be less than 
+      2<sup>m</sup> if m bits are used for the sequence number.If W<sub>s</sub> 
+      = 2<sup>m</sup> then a problem could arise. If m = 2 bits and the window 
+      size is 4, and frames 0, 1, 2, 3 are sent and received properly, but all 
+      the ACKs are lost. Then the sender goes back N and retransmits frame 0. 
+      When the receiver receives this frame it is a duplicate, but the receiver 
+      does not know this; it thinks it is the next set!</span><span style="font-family: Arial">
+      </span>
+      <ul type="square" style="margin-bottom: 0in">
+        <li class="MsoNormal" style="text-align: justify">
+        <span style="font-family: Arial; color: black">Negative ACK: If the 
+        receiver knows for sure that it didn't get a packet that it should have, 
+        it will send a NAK.</span><span style="font-family: Arial"> </span></li>
+        <li class="MsoNormal" style="text-align: justify">
+        <span style="font-family: Arial; color: black">Piggybacking ACKs: ACKs 
+        are piggybacked on frames sent in the reverse direction if data flow is 
+        bidirectional. This makes the transfer more efficient. Thus the 
+        receivers at both ends maintains R<sub>next</sub>, while the senders 
+        maintain S<sub>last</sub> and S<sub>last</sub> +W<sub>s</sub> -1. </span>
+        </li>
+        <li class="MsoNormal" style="text-align: justify">
+        <span style="font-family: Arial; color: black">Cumulative vs. selective 
+        ACKs: In cumulative ACKs, instead of sending an ACK for every packet, a 
+        cumulative ACK acknowledges multiple packets. For example, the ACK-every-other-segment 
+        strategy is used in TCP implementations. In this strategy, every other 
+        packet is acknowledged, instead of every packet. Selective ACKs are used 
+        to indicate specific sequence numbers of packets that have been 
+        received. </span></li>
+      </ul>
+      </li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Selective ARQ:</span><span style="font-family: Arial">
+      </span>
+      <ul type="square" style="margin-bottom: 0in">
+        <li class="MsoNormal" style="text-align: justify">
+        <span style="font-family: Arial; color: black">If error rates are high, 
+        then Go-back-N becomes inefficient. Selective ARQ is a scheme in which 
+        only the errored frames are retransmitted. This is clearly more 
+        efficient. This comes at a cost of more complex receivers. The receiver 
+        now maintains a window W<sub>r</sub>. This is the maximum number of 
+        frames that the receiver is willing to receive. Out-of-sequence frames 
+        will be stored here. Timers are maintained on each frame. When the timer 
+        expires, only the potentially-errored frame is retransmitted. Can use 
+        NAKs if sequenced delivery is guaranteed. Also piggybacking can be used.</span><span style="font-family: Arial">
+        </span></li>
+      </ul>
+      </li>
+    </ul>
+    </li>
+  </ul>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial; color: black">Flow Control</span><span style="font-family: Arial">
+  <br>
+  &nbsp; </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Flow control refers to 
+    procedures that are used to prevent a transmitter from overrunning a 
+    receiver's buffer.</span><span style="font-family: Arial"> </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Three methods (covered the 
+    first two in class):</span><span style="font-family: Arial"> </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">On-Off</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Window based</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Rate based</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">ON-OFF technique is used by 
+    the receiver to let the sender to stop sending or start. OFF needs to be 
+    sent in advance as the buffer approaches capacity. When should the receiver 
+    send the OFF signal? The receiver should have capacity to hold 2(R<sub>send</sub> 
+    - R<sub>rcv</sub>)T<sub>prop</sub> when it sends the OFF signal. R<sub>send</sub> 
+    is the rate of the sender and R<sub>rcv</sub> is the rate at which the 
+    receiver depletes the buffer.&nbsp; </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">This is used in HDLC. An 
+      RNR (Receiver Not Ready) signal is sent as an OFF signal.</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Window based scheme: The 
+    receiver sends the size of the window that it can accept. The window used at 
+    the receiver to support selective ARQ could be the same as the flow control 
+    window or it could be different. TCP uses this mechanism for its end-to-end 
+    flow control. The ACK message not only carries the sequence number 
+    indicating the number of the next byte the receiver expects but also a 
+    window size indicating how many more bytes it can accept.</span><span style="font-family: Arial">
+    </span></li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial; color: black">Data link controls:</span><span style="font-family: Arial">
+  </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Framing bytes are used to 
+    define the start and end of frames</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Addressing is only necessary 
+    if the data link is shared medium. Since multiple users are listening, it 
+    becomes important to state who the frame is addressed to.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Error control: discussed 
+    above</span><span style="font-family: Arial"> </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Flow control: discussed 
+    above.</span><span style="font-family: Arial"> </span></li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial; color: black">Example protocol: Demonstrate 
+  how HDLC supports above four controls</span><span style="font-family: Arial">
+  </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Flags are used for framing. 
+    The flag pattern is 0111 1110. If this pattern appears in the data payload, 
+    bit insertion is done. After five 1s, a 0 is always inserted irrespective of 
+    whether the next bit is 1 or 0.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Addressing is used and needed 
+    in NRM.</span><span style="font-family: Arial"> </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Error control depends on the 
+    type of service offered; if it is acknowledged CL or CO, ARQ is used. Any of 
+    the three schemes described above Stop-and-Wait, Go-back-N and Selective ARQ</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Flow control scheme used is 
+    X-ON/X-OFF.</span><span style="font-family: Arial"> </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">HDLC modes:</span><span style="font-family: Arial">
+    </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Normal Response Mode (NRM) 
+      is unbalanced. There is a primary end and a secondary end. The primary end 
+      sends commands and the secondary responds. An unbalanced multipoint mode 
+      is possible. This is why an addressing field (8 bits) is used for the 
+      primary end to identify which secondary node should receive the frame.</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Asynchronous Balanced Mode 
+      (ABM): Both ends implement DLC controls and act as peers. In asynchronous 
+      mode, transmission of each character is preceeded by a start bit and 
+      succeeded by a stop bit, while in synchronous transmission, these start 
+      and stop bits are not needed.</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">HDLC Services:</span><span style="font-family: Arial">
+    </span>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Connection-oriented, where 
+      a connection is set up before transmission and released after.</span><span style="font-family: Arial">
+      </span></li>
+      <li class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial; color: black">Connectionless: could be 
+      acknowledged or unacknowledged.</span><span style="font-family: Arial">
+      </span></li>
+    </ul>
+    </li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">HDLC Frame Format </span>
+    </li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial; color: black">Example protocol: PPP</span><span style="font-family: Arial">
+  </span>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">PPP is a form of HDLC, which 
+    is commonly used today.</span><span style="font-family: Arial"> </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">When you dial up using your 
+    modem and connect your PC to your ISP's router/remote access server, the 
+    data link layer protocol run on the DS0 circuit you just established is PPP.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">PPP uses the ABM mode of HDLC. 
+    It provides a connectionless unacknowledged service.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Since it is ABM, multipoint 
+    is not used; this means the address byte does not change. It is set to all 
+    1's. This means all stations accept the frame. But since PPP has only two 
+    nodes, one node accepts any frame sent from the other node. </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Since it is unacknowledged, 
+    no supervisory frames are sent. So the control field is always 0000 0011. 
+    See control field for unnumbered frames in HDLC ppt file. First two bits are 
+    one to represent unnumbered frames. Unnumbered frames must be allowed to 
+    carry data in addition to carrying SABM (Set ABM mode - open connection), 
+    SABME (E: Extended - control field is 16 bits and sequence numbers are 7 
+    bits), unnumbered acks, etc. There are no &quot;numbers&quot; meaning no sequence 
+    numbers. The M bits of 0 must indicate a data type unnumbered frame. In the 
+    HLDC ppt file, control field is given as 11MM P/F MMM for unnumbered frames. 
+    Here in PPP header control field is shown as 0000 0011. Seems like an Endian 
+    difference! </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">PPP has one additional field 
+    over HDLC - it has a protocol type field to indicate what the type of higher 
+    layer protocol carried in the PPP frame.</span><span style="font-family: Arial">
+    </span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial; color: black">Also, PPP is byte-oriented, 
+    unlike HDLC, which is bit-oriented; therefore bit stuffing is not used when 
+    the flag pattern appears in the payload; instead an escape character is 
+    used.</span><span style="font-family: Arial"> </span></li>
+  </ul>
+  </li>
+</ul>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial; color: black">Example protocol: TCP</span><span style="font-family: Arial">
+  </span></li>
+</ul>
+</span>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

@@ -1,0 +1,1150 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+DIV.Section1 {
+	page: Section1
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font face="Arial" size="6" color="#FF0000"><b>NETWORK 
+COMMANDS</b></font></u></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">PING:</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">ping:</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -t ==&gt; repeatitive.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -n ==&gt; number of echo to be sent</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -l ==&gt; sending buffer size [Max: 65500 bytes]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -f ==&gt; Dont fragment.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -r count ==&gt; record route for count hops [3rd layer 
+device]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -j ==&gt; loose source route</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp; -k ==&gt; strict source route</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;Example:</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">ping -t -l 60000 192.168.230.1</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-f -l 1000</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-l 1000</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">To see the difference between fragmenting and 
+non-fragmenting, use -f</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;ping -r 3 192.168.230.1</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;Following routes:</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">strict route: MUST follow the route specified by us.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">loose route: Optionally it can follow different route.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Note: For loopback address, you can ping it and get returns 
+even when you are offline (not connected to any network). If you don't get any 
+valid replies, then there's a problem with the computer's Network settings.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">TRACERT:</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">tracert /?</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<b><u>
+<span lang="EN-GB">NETSTAT:</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; netstat /?</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; -a&nbsp; Displays all connections and listening ports.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; -e&nbsp; Displays Ethernet statistics. This may be combined with 
+the -s option.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; -n&nbsp; Displays addresses and port numbers in numerical form.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; -p proto&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Shows connections for the protocol specified 
+by proto; proto may be TCP or UDP.&nbsp; If used with the -s option to display 
+per-protocol statistics, proto may be TCP, UDP, or IP.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; -r&nbsp; Displays the routing table.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; -s&nbsp; Displays per-protocol statistics.&nbsp; By default, 
+statistics are shown for TCP, UDP and IP; the -p option may be used to specify a 
+subset of the default.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;Example:</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">netstat -a</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">netstat -e</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">netstat -r --&gt; try to find out which network card your PC is 
+actually using. [routing table]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Note: always use -a so as to see UDP packets also. When you 
+are offline, you shouldn't see any connection data! </span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Open a broswer connection to http and ftp server and see 'netstat 
+-an'. Can be while offline and online.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">AT:</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/i&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; interactive, which opens any window to show the 
+pinging - </span></font></p>
+<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">[optional] </span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/c &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; indicates command.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">AT [\\computername] [ [id] [/DELETE] | /DELETE [/YES]]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">AT [\\computername] time [/INTERACTIVE]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;&nbsp; [ /EVERY:date[,...] | /NEXT:date[,...]] &quot;command&quot;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">\\computername&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies a remote computer. 
+Commands are scheduled on the local computer if this parameter is omitted.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is an identification number assigned 
+to a scheduled command.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/delete &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cancels a scheduled command. If id is 
+omitted, all the scheduled commands on the computer are canceled.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/yes &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Used with cancel all jobs command when 
+no further confirmation is desired.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">time&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies the time when command is to 
+run.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/interactive&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Allows the job to interact with the 
+desktop of the user who is logged on at the time the job runs.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/every:date[,...]&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Runs the command on each 
+specified day(s) of the week or month. If date is omitted, the current day of 
+the month is assumed.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">/next:date[,...]&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Runs the specified command on 
+the next occurrence of the day (for example, next Thursday).&nbsp; If date is 
+omitted, the current day of the month is assumed.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&quot;command&quot;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the Windows NT command, or 
+batch program to be run. </span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">The <i>at</i> command does not automatically load cmd, the 
+command interpreter, before running commands. Unless you are running an 
+executable (.EXE) file, you must explicitly load CMD.EXE at the beginning of the 
+command;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">for example, cmd /c dir &gt; c:\test.out. </span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">at 13:15 /i cmd /c ping 192.168.232.2 -n 20</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">at \\ics-nwle2 13:15 /i cmd /c ping 192.168.234.245 -n 20</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">at 11:03am&nbsp; cmd /c ping 192.168.230.1 -t -l 3000</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">at 5:15pm&nbsp; cmd /c ping 192.168.231.1 -t -l 15000</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">NET Command:</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">net /?</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">net accounts --&gt; details ... normally used in domain set-up</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;</span></font></p>
+<h1 align="justify"><span lang="EN-GB"><font size="3" face="Arial">ROUTE Command</font></span></h1>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Manipulates network routing tables.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">ROUTE [-f] [command [destination] [MASK netmask] [gateway]]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-f&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Clears the routing tables of all 
+gateway entries.&nbsp; If this is used in conjunction with one of the commands, the 
+tables are cleared prior to running the command.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies one of four commands</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PRINT&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Prints a 
+route</span></font></p>
+<p class="MsoNormal" style="text-indent: 0.5in; text-align: justify; margin-left: 0.5in">
+<font face="Arial"><span lang="EN-GB">ADD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adds a route</span></font></p>
+<p class="MsoNormal" style="text-indent: 0.5in; text-align: justify; margin-left: 0.5in">
+<font face="Arial"><span lang="EN-GB">DELETE&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deletes a route</span></font></p>
+<p class="MsoNormal" style="text-indent: 0.5in; text-align: justify; margin-left: 0.5in">
+<font face="Arial"><span lang="EN-GB">CHANGE&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Modifies an existing 
+route</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">destination&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies the host to send command.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">MASK &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If the MASK keyword is present, the next 
+parameter is interpreted as the netmask parameter.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">netmask&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If provided, specifies a sub-net mask 
+value to be associated with this route entry.&nbsp; If not specified, if defaults to 
+255.255.255.255.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">gateway&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies gateway.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">All symbolic names used for destination or gateway is looked 
+up in the network and host name database files NETWORKS and HOSTS, respectively. 
+If the command is print or delete, wildcards may be used for the destination and 
+gateway, or the gateway argument may be omitted.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Example:</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">route PRINT --&gt; prints the routing table.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">route add &lt;destination&gt; mask &lt;subnetmask&gt; &lt;gateway&gt; metric
+</span></font></p>
+<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&lt;number&gt; IF &lt;number&gt;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">--&gt; destination is the destination network or ip address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">--&gt; subnetmask is the subnet mask to be used</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">--&gt; number after metric indicates the metric value.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">--&gt; number after IF indicates interface number</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;&nbsp;</span></font></p>
+<h1 align="justify"><span lang="EN-GB"><font size="3" face="Arial">ARP: Address 
+Resolution Protocol</font></span></h1>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">ARP -s inet_addr eth_addr [if_addr]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">ARP -d inet_addr [if_addr]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">ARP -a [inet_addr] [-N if_addr]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;-a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Displays current ARP entries by 
+interrogating the current protocol data.&nbsp; If inet_addr is specified, the IP and 
+Physical addresses for only the specified computer are displayed.&nbsp; If more than 
+one network interface uses ARP, entries for each ARP table are displayed.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;-g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Same as -a)</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp; inet_addr&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies an internet address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;-N if_addr&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Displays the ARP entries for the 
+network interface specified by if_addr.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;-d&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Deletes the host specified by 
+inet_addr.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;-s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Adds the host and 
+associates the Internet address inet_addr with the Physical address eth_addr. 
+The Physical address is given as 6 hexadecimal bytes separated by hyphens. The 
+entry is permanent.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">eth_addr&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Specifies a physical address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">if_addr&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If present, this specifies the 
+Internet address of the interface whose address translation table should be 
+modified.&nbsp; If not present, the first applicable interface will be used.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">nbtstat: Net Bios Stats [NetBios over TCP/IP]</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Displays protocol statistics and current TCP/IP connections 
+using NBT</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">NBTSTAT [-a RemoteName] [-A IP address] [-c] [-n] [-r] [-R] 
+[-s] </span></font></p>
+<p class="MsoNormal" style="text-align: justify">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">[S]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [interval]</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-a&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (adapter status) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists the 
+remote machine's name table given its name.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-A&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Adapter status) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists the 
+remote machine's name table given its IP address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-c&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (cache)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists the 
+remote name cache including the IP addresses.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-n&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (names)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists 
+local NetBIOS names.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-r&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (resolved)&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists names 
+resolved by broadcast and via WINS</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-R&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Reload)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Purges and 
+reloads the remote cache name table</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-S&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Sessions)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists sessions 
+table with the destination IP addresses.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">-s&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (sessions)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Lists 
+sessions table converting destination IP addresses to host names via the hosts 
+file.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">RemoteName&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Remote host machine 
+name.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">IP address&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dotted decimal 
+representation of the IP address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">interval&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Redisplays 
+selected statistics, pausing interval seconds between each display. Press Ctrl+C 
+to stop redisplaying statistics.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">Example:</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">nbtstat -a ics-ibm-srv --&gt; gives information about each card, 
+its services and mac address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">nbtstat -A 192.168.230.251 --&gt; gives information about that 
+concern that ip address along with mac address.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">nbtstat -c --&gt; finding cache entries for NetBios</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">nbtstat -S --&gt; gives NetBios session information.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">Some definitions:</span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span><b><u><span lang="EN-GB">Gopher:</span></u><span lang="EN-GB"> </span></b>
+<span lang="EN-GB">Powerful, yet simple, file retrieval tool. Its functionality 
+lies somewhere between FTP and a web browser. It has a very simple menu 
+interface that can be used to browse directories and retrieve files.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span><b><u><span lang="EN-GB">Email: </span></u></b></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">POP [Post Office Protocol]: All emails are downloaded when 
+client connects to server. If once viewed at one place, the same cant be viewed 
+at home.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">IMAP [Internet Message Access Protocol]: Only new once are 
+downloaded. Changes are made local and synchronized with the server 
+[disconnected mode]. Has flags indicating status like seen, deleted or answered.&nbsp;</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial"><b><u>
+<span lang="EN-GB">Samba server:</span></u></b><span lang="EN-GB"> To make Unix 
+file system available to Windows Machines.</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span><b><u><span lang="EN-GB">SMTP:</span></u></b><span lang="EN-GB"> MIME to compress the 
+attachment along with processing [converting to binary format].</span></font></p>
+<p class="MsoNormal" style="text-align: justify"><font face="Arial">
+<span lang="EN-GB">&nbsp;</span></font><b><u><span style="font-family: Arial">Internet Connection sharing:</span></u></b></p>
+<p style="text-indent: -0.25in; margin-left: 0.5in; margin-right: 0in; margin-top: 0in; margin-bottom: 0pt" align="justify">
+<font face="Arial">1.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Start </font><span style="font-family: Arial">à 
+Settings à Control Panel à Network and Dial-up connections</span></p>
+<p style="text-indent: -0.25in; margin-left: 0.5in; margin-right: 0in; margin-top: 0in; margin-bottom: 0pt" align="justify">
+<font face="Arial">2.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Double-click on a network card</font></p>
+<p style="text-indent: -0.25in; margin-left: 0.5in; margin-right: 0in; margin-top: 0in; margin-bottom: 0pt" align="justify">
+<font face="Arial">3.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Click on <b>Properties</b>.</font></p>
+<p style="text-indent: -0.25in; margin-left: 0.5in; margin-right: 0in; margin-top: 0in; margin-bottom: 0pt" align="justify">
+<font face="Arial">4.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Click on <b>Sharing</b> tab.</font></p>
+<p style="text-indent: -0.25in; margin-left: 0.5in; margin-right: 0in; margin-top: 0in; margin-bottom: 0pt" align="justify">
+<font face="Arial">5.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Enable the option ‘<b>Enable Internet Connection 
+Sharing for this connection</b>’.</font></p>
+<p align="justify"><font face="Arial">The network commands chapter explains 
+various tools which can be useful when networking with other computers both 
+within the network and accross the internet, obtaining more information about 
+other computers. This chapter also includes information on tools for network 
+configuration, file transfer and working with remote machines.</font></p>
+<p align="justify">&nbsp;</p>
+<div class="VARIABLELIST">
+  <dl>
+    <div align="justify">
+      <dt><font face="Arial">netstat </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Displays contents of /proc/net files. 
+    It works with the <span class="PRODUCTNAME">Linux</span> Network Subsystem, 
+    it will tell you what the status of ports are ie. open, closed, waiting, 
+    masquerade connections. It will also display various other things. It has 
+    many different options.</font></dd>
+    <div align="justify">
+      <dt><font face="Arial">tcpdump </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">This is a sniffer, a program that 
+    captures packets off a network interface and interprets them for you. It 
+    understands all basic internet protocols, and can be used to save entire 
+    packets for later inspection.</font></dd>
+    <div align="justify">
+      <dt><font face="Arial">ping </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">The ping command (named after the 
+    sound of an active sonar system) sends echo requests to the host you specify 
+    on the command line, and lists the responses received their round trip time.</font></p>
+    <p align="justify"><font face="Arial">You simply use ping as:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">ping ip_or_host_name</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">Note to stop ping (otherwise it goes 
+    forever) use <b class="KEYCAP">CTRL</b>-<b class="KEYCAP">C</b> (break).</font></p>
+    <div class="NOTE">
+      <table class="NOTE" width="90%" border="0">
+        <tr>
+          <td vAlign="top" align="middle" width="25">
+          <p align="justify"><font face="Arial">
+          <img alt="Note" hspace="5" src="note.gif" width="24" height="24"></font></td>
+          <th vAlign="center" align="left">
+          <p align="justify"><font face="Arial"><b>Please note</b></font></th>
+        </tr>
+        <tr>
+          <td>
+          <p align="justify"><font face="Arial">&nbsp;</font></td>
+          <td vAlign="top" align="left">
+          <p align="justify"><font face="Arial">Using ping/smbmount/ssh or other
+          <span class="PRODUCTNAME">UNIX</span> system programs with a computer 
+          name rather than IP address will only work if you have the computer 
+          listed in your /etc/hosts file. Here is an example:</font></p>
+          <p align="justify">&nbsp;</p>
+          <table width="90%" bgColor="#e0e0e0" border="1">
+            <tr>
+              <td><font color="#000000">
+              <div align="justify">
+                <pre class="SCREEN"><font size="3" face="Arial">192.168.1.100 new </font></pre>
+              </div>
+              </font></td>
+            </tr>
+          </table>
+          <p align="justify"><font face="Arial">This line says that their is a 
+          computer called “new” with IP address 192.168.1.100. Now that it 
+          exists in the /etc/hosts file I don't have to type the IP address 
+          anymore, just the name “new”.</font></p>
+          <p align="justify">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    </dd>
+    <div align="justify">
+      <dt><font face="Arial">hostname </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Tells the user the host name of the 
+    computer they are logged into. Note: may be called <em>host.</em></font></dd>
+    <div align="justify">
+      <dt><font face="Arial">traceroute </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial"><em>traceroute</em> will show the 
+    route of a packet. It attempts to list the series of hosts through which 
+    your packets travel on their way to a given destination. Also have a look at
+    <em>xtraceroute</em> (one of several graphical equivalents of this program).
+    </font></p>
+    <p align="justify"><font face="Arial">Command syntax:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">traceroute machine_name_or_ip</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    </dd>
+    <div align="justify">
+      <dt><font face="Arial">tracepath </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial"><em>tracepath</em> performs a very 
+    simlar function to <em>traceroute</em> the main difference is that <em>
+    tracepath</em> doesn't take complicated options.</font></p>
+    <p align="justify"><font face="Arial">Command syntax:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">tracepath machine_name_or_ip</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    </dd>
+    <div align="justify">
+      <dt><font face="Arial">findsmb </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial"><em>findsmb</em> is used to list info 
+    about machines that respond to SMB name queries (for example windows based 
+    machines sharing their hard disk's). </font></p>
+    <p align="justify"><font face="Arial">Command syntax:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">findsmb</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This would find all machines possible, 
+    you may need to specify a particular subnet to query those machines only...</font></dd>
+    <div align="justify">
+      <dt><font face="Arial">nmap </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">“ network exploration tool and 
+    security scanner”. <em>nmap</em> is a very advanced network tool used to 
+    query machines (local or remote) as to whether they are up and what ports 
+    are open on these machines. </font></p>
+    <p align="justify"><font face="Arial">A simple usage example:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">nmap machine_name</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This would query your own machine as 
+    to what ports it keeps open. <em>nmap</em> is a very powerful tool, 
+    documentation is available on the nmap site as well 
+    as the information in the manual page.</font></dd>
+  </dl>
+</div>
+<div class="SECT1">
+  <h1 class="SECT1" align="justify"><font size="3" face="Arial">13.1. Network 
+  Configuration</font></h1>
+  <div class="VARIABLELIST">
+    <dl>
+      <div align="justify">
+        <dt><font face="Arial">ifconfig </font></dt>
+      </div>
+      <dd>
+      <p align="justify"><font face="Arial">This command is used to configure 
+      network interfaces, or to display their current configuration. In addition 
+      to activating and deactivating interfaces with the “up” and “down” 
+      settings, this command is necessary for setting an interface's address 
+      information if you don't have the <em>ifcfg</em> script.</font></p>
+      <p align="justify"><font face="Arial">Use <em>ifconfig</em> as either:</font></p>
+      <table width="90%" bgColor="#e0e0e0" border="1">
+        <tr>
+          <td><font color="#000000">
+          <div align="justify">
+            <pre class="SCREEN"><font size="3" face="Arial">ifconfig</font></pre>
+          </div>
+          </font></td>
+        </tr>
+      </table>
+      <p align="justify"><font face="Arial">This will simply list all 
+      information on all network devices currently up.</font></p>
+      <table width="90%" bgColor="#e0e0e0" border="1">
+        <tr>
+          <td><font color="#000000">
+          <div align="justify">
+            <pre class="SCREEN"><font size="3" face="Arial">ifconfig eth0 down</font></pre>
+          </div>
+          </font></td>
+        </tr>
+      </table>
+      <p align="justify"><font face="Arial">This will take eth0 (assuming the 
+      device exists) down, it won't be able to receive or send anything until 
+      you put the device back “up” again.</font></p>
+      <p align="justify"><font face="Arial">Clearly there are a lot more options 
+      for this tool, you will need to read the manual/info page to learn more 
+      about them. </font></p>
+      <p align="justify">&nbsp;</dd>
+      <div align="justify">
+        <dt><font face="Arial">ifup </font></dt>
+      </div>
+      <dd>
+      <p align="justify"><font face="Arial">Use <em>ifup device-name </em>to 
+      bring an interface up by following a script (which will contain your 
+      default networking settings). Simply type<em> ifup </em>and you will get 
+      help on using the script.</font></p>
+      <p align="justify"><font face="Arial">For example typing:</font></p>
+      <table width="90%" bgColor="#e0e0e0" border="1">
+        <tr>
+          <td><font color="#000000">
+          <div align="justify">
+            <pre class="SCREEN"><font size="3" face="Arial">ifup eth0</font></pre>
+          </div>
+          </font></td>
+        </tr>
+      </table>
+      <p align="justify"><font face="Arial">Will bring eth0 up if it is 
+      currently down.</font></dd>
+      <div align="justify">
+        <dt><font face="Arial">ifdown </font></dt>
+      </div>
+      <dd>
+      <p align="justify"><font face="Arial">Use<em> ifdown device-name </em>to 
+      bring an interface down using a script (which will contain your default 
+      network settings). Simply type<em> ifdown </em>and you will get help on 
+      using the script.</font></p>
+      <p align="justify"><font face="Arial">For example typing:</font></p>
+      <table width="90%" bgColor="#e0e0e0" border="1">
+        <tr>
+          <td><font color="#000000">
+          <div align="justify">
+            <pre class="SCREEN"><font size="3" face="Arial">ifdown eth0</font></pre>
+          </div>
+          </font></td>
+        </tr>
+      </table>
+      <p align="justify"><font face="Arial">Will bring eth0 down if it is 
+      currently up.</font></dd>
+      <div align="justify">
+        <dt><font face="Arial">ifcfg </font></dt>
+      </div>
+      <dd>
+      <p align="justify"><font face="Arial">Use <em>ifcfg</em> to configure a 
+      particular interface. Simply type ifcfg to get help on using this script.</font></p>
+      <p align="justify"><font face="Arial">For example, to change eth0 from 
+      192.168.0.1 to 192.168.0.2 you could do:</font></p>
+      <table width="90%" bgColor="#e0e0e0" border="1">
+        <tr>
+          <td><font color="#000000">
+          <div align="justify">
+            <pre class="SCREEN"><font size="3" face="Arial">ifcfg eth0 del 192.168.0.1
+ifcfg eth0 add 192.168.0.2</font></pre>
+          </div>
+          </font></td>
+        </tr>
+      </table>
+      <p align="justify"><font face="Arial">The first command takes eth0 down 
+      and removes that stored IP address and the second one brings it back up 
+      with the new address.</font></dd>
+      <div align="justify">
+        <dt><font face="Arial">route </font></dt>
+      </div>
+      <dd>
+      <p align="justify"><font face="Arial">The <em>route</em> command is the 
+      tool used to display or modify the routing table. To add a gateway as the 
+      default you would type:</font></p>
+      <table width="90%" bgColor="#e0e0e0" border="1">
+        <tr>
+          <td><font color="#000000">
+          <div align="justify">
+            <pre class="SCREEN"><font size="3" face="Arial">route add default gw some_computer</font></pre>
+          </div>
+          </font></td>
+        </tr>
+      </table>
+      </dd>
+    </dl>
+  </div>
+</div>
+<p align="justify">&nbsp;</p>
+<h1 class="SECT1" align="justify"><font size="3" face="Arial">13.2. Internet 
+Specific Commands</font></h1>
+<p align="justify"><font face="Arial">Note that should DNS not be configured 
+correctly on your machine, you need to edit “/etc/resolv.conf” to make things 
+work...</font></p>
+<p align="justify">&nbsp;</p>
+<div class="VARIABLELIST">
+  <dl>
+    <div align="justify">
+      <dt><font face="Arial">host </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Performs a simple lookup of an 
+    internet address (using the Domain Name System, DNS). Simply type:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">host ip_address</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">or</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">host domain_name</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    </dd>
+    <div align="justify">
+      <dt><font face="Arial">dig </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">The &quot;domain information groper&quot; tool. 
+    More advanced then <em>host</em>... If you give a hostname as an argument to 
+    output information about that host, including it's IP address, hostname and 
+    various other information. </font></p>
+    <p align="justify"><font face="Arial">For example, to look up information 
+    about “www.amazon.com” type:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">dig www.amazon.com</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">To find the host name for a given IP 
+    address (ie a reverse lookup), use <em>dig</em> with the <em>`-x'</em> 
+    option.</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">dig -x 100.42.30.95</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This will look up the address (which 
+    may or may not exist) and returns the address of the host, for example if 
+    that was the address of “http://slashdot.org” then it would return “http://slashdot.org”.</font></p>
+    <p align="justify"><font face="Arial"><em>dig</em> takes a huge number of 
+    options (at the point of being too many), refer to the manual page for more 
+    information.</font></p>
+    <p align="justify">&nbsp;</dd>
+    <div align="justify">
+      <dt><font face="Arial">whois </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">(now <span class="ACRONYM">BW</span> 
+    whois) is used to look up the contact information from the “whois” 
+    databases, the servers are only likely to hold major sites. Note that 
+    contact information is likely to be hidden or restricted as it is often 
+    abused by crackers and others looking for a way to cause malicious damage to 
+    organisation's.</font></dd>
+    <div align="justify">
+      <dt><font face="Arial">wget </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">(GNU Web get) used to download files 
+    from the World Wide Web.</font></p>
+    <p align="justify"><font face="Arial">To archive a single web-site, use the
+    <em>-m</em> or <em>--mirror</em> (mirror) option.</font></p>
+    <p align="justify"><font face="Arial">Use<em> </em>the<em> -nc </em>(no 
+    clobber) option to stop <em>wget</em> from overwriting a file if you already 
+    have it.</font></p>
+    <p align="justify"><font face="Arial">Use the <em>-c</em> or <em>--continue</em> 
+    option to continue a file that was unfinished by wget or another program.</font></p>
+    <p align="justify"><font face="Arial">Simple usage example:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">wget url_for_file</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This would simply get a file from a 
+    site. </font></p>
+    <p align="justify"><font face="Arial"><em>wget</em> can also retrieve 
+    multiple files using standard wildcards, the same as the type used in bash, 
+    like *, [ ], ?. Simply use <em>wget</em> as per normal but use single 
+    quotation marks (' ') on the URL to prevent bash from expanding the 
+    wildcards. There are complications if you are retrieving from a http site 
+    (see below...).</font></p>
+    <p align="justify"><font face="Arial">Advanced usage example, (used from <em>
+    wget</em> manual page):</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">wget --spider --force-html -i bookmarks.html</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This will parse the file 
+    bookmarks.html and check that all the links exist.</font></p>
+    <p align="justify"><font face="Arial">Advanced usage: this is how you can 
+    download multiple files using http (using a wildcard...).</font></p>
+    <p align="justify"><font face="Arial">Notes: http doesn't support 
+    downloading using standard wildcards, ftp does so you may use wildcards with 
+    ftp and it will work fine. A work-around for this http limitation is shown 
+    below:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font face="Arial"><font size="3">wget -r -l1 --no-parent -A.gif http://www.website.com</font></font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This will download (recursively), to a 
+    depth of one, in other words in the current directory and not below that. 
+    This command will ignore references to the parent directory, and downloads 
+    anything that ends in “.gif”. If you wanted to download say, anything that 
+    ends with “.pdf” as well than add a <em>-A.pdf</em> before the website 
+    address. Simply change the website address and the type of file being 
+    downloaded to download something else. Note that doing <em>-A.gif</em> is 
+    the same as doing <em>-A “*.gif</em>” (double quotes only, single quotes 
+    will not work).</font></p>
+    <p align="justify"><font face="Arial"><em>wget</em> has many more options 
+    refer to the examples section of the manual page, this tool is very well 
+    documented.</font></p>
+    <div class="NOTE">
+      <table class="NOTE" width="90%" border="0">
+        <tr>
+          <td vAlign="top" align="middle" width="25">
+          <p align="justify"><font face="Arial">
+          <img alt="Note" hspace="5" src="note.gif" width="24" height="24"></font></td>
+          <th vAlign="center" align="left">
+          <p align="justify"><font face="Arial"><b>Alternative website 
+          downloaders</b></font></th>
+        </tr>
+        <tr>
+          <td>
+          <p align="justify"><font face="Arial">&nbsp;</font></td>
+          <td vAlign="top" align="left">
+          <p align="justify"><font face="Arial">You may like to try alternatives 
+          like httrack. A full <span class="ACRONYM">GUI</span> website 
+          downloader written in python and available for GNU/Linux </font></td>
+        </tr>
+      </table>
+    </div>
+    </dd>
+    <div align="justify">
+      <dt><font face="Arial">curl </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial"><em>curl</em> is another remote 
+    downloader. This remote downloader is designed to work without user 
+    interaction and supports a variety of protocols, can upload/download and has 
+    a large number of tricks/work-arounds for various things. It can access 
+    dictionary servers (dict), ldap servers, ftp, http, gopher, see the manual 
+    page for full details. </font></p>
+    <p align="justify"><font face="Arial">To access the full manual (which is 
+    huge) for this command type:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">curl -M</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">For general usage you can use it like
+    <em>wget</em>. You can also login using a user name by using the <em>-u</em> 
+    option and typing your username and password like this:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">curl -u username:password http://www.placetodownload/file</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">To upload using ftp you the <em>-T</em> 
+    option:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">curl -T file_name ftp://ftp.uploadsite.com</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">To continue a file use the <em>-C</em> 
+    option:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">curl -C - -o file http://www.site.com</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    </dd>
+  </dl>
+</div>
+<h1 class="SECT1" align="justify"><font size="3" face="Arial">13.3. Remote 
+Administration Related</font></h1>
+<div class="VARIABLELIST">
+  <dl>
+    <div align="justify">
+      <dt><font face="Arial">ssh </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Secure shell, remotely login on a 
+    machine running the <em>sshd</em> daemon. Once you are logged in you have a 
+    secure shell and are able to execute various commands on that computer such 
+    as copy files, reboot the computer, just like it was your own GNU/Linux PC.</font></p>
+    <p align="justify"><font face="Arial">Or you can use <em>ssh</em> with a 
+    full hostname to connect to a remote machine (as in across the internet).
+    </font></p>
+    <p align="justify"><font face="Arial">Examples:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">ssh hostname</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">Connect to a remote system with your 
+    current username, you will obviously need the password of the user on the 
+    other machine.</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">ssh username@hostname </font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">Connect to a remote system with your a 
+    different username, you will obviously need the password of the user on the 
+    other machine.</font></dd>
+    <div align="justify">
+      <dt><font face="Arial">scp </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Secure copy, part of the ssh package. 
+    Allows you to copy files from one computer to another computer, use<em> -r
+    </em>to copy recursively (copy entire directories and subdirectories).</font></p>
+    <p align="justify"><font face="Arial"><em>scp</em>'s syntax is always</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">scp machineToBeCopiedFrom machineToBeCopiedTo</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">Where either machine can be a local 
+    directory (on the current filesystem /) or a remote machine. Remote machines 
+    are usually <em>machinesFullName:/directory</em> (if you omit the directory 
+    part it will just assume the home directory of the username you are logging 
+    in with).</font></p>
+    <p align="justify"><font face="Arial">The example below copies all files 
+    from the current directory (not including any directories), the command will 
+    login to “new” using the username of the person currently logged in on the 
+    local computer, the files will be copied to the root directory of the remote 
+    computer called “new” (which is probably on the LAN):</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">scp * new:/</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">You could also copy files from another 
+    computer to another computer. Let's say you are on a computer called “p100”. 
+    And you want to copy files (and directories) from “hp166” (in the /tmp 
+    directory and anything below that) to “new” and put the files in new's 
+    temporary directory. You could do:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">scp -r hp166:/tmp new:/tmp</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">Assuming you were logged in as “fred” 
+    you would need passwords for user “fred” on the computers hp166 and new. Add 
+    an <em>user_name@</em> before the computer name to login under a different 
+    user name. </font></p>
+    <p align="justify"><font face="Arial">For example to perform the above 
+    command with user “root” on hp166 and “anon” on new you would type:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">scp -r root@hp166:/tmp anon@new:/tmp</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">To copy from a remote machine to a 
+    local computer you simply do things in reverse:</font></p>
+    <table width="90%" bgColor="#e0e0e0" border="1">
+      <tr>
+        <td><font color="#000000">
+        <div align="justify">
+          <pre class="SCREEN"><font size="3" face="Arial">scp remoteMachine:/mystuff/* .</font></pre>
+        </div>
+        </font></td>
+      </tr>
+    </table>
+    <p align="justify"><font face="Arial">This will copy files on the remote 
+    machine in the directory “mystuff” to your local computer.</font></p>
+    <div class="NOTE">
+      <table class="NOTE" width="90%" border="0">
+        <tr>
+          <td vAlign="top" align="middle" width="25">
+          <p align="justify"><font face="Arial">
+          <img alt="Note" hspace="5" src="note.gif" width="24" height="24"></font></td>
+          <th vAlign="center" align="left">
+          <p align="justify"><font face="Arial"><b>Remote Machines</b></font></th>
+        </tr>
+        <tr>
+          <td>
+          <p align="justify"><font face="Arial">&nbsp;</font></td>
+          <td vAlign="top" align="left">
+          <p align="justify"><font face="Arial">Please note that when working 
+          with a remote machine you need to have a : (colon) after the machine 
+          name even if you want the files in their home directory. Otherwise the 
+          command will fail.</font></td>
+        </tr>
+      </table>
+    </div>
+    <p align="justify">&nbsp;</dd>
+    <div align="justify">
+      <dt><font face="Arial">sftp </font></dt>
+    </div>
+    <dd>
+    <p align="justify"><font face="Arial">Secure ftp, another part of the ssh 
+    package. This command is similar to ftp but uses an encrypted tunnel to 
+    connect to an ftp server and is therefore more secure than just plain <em>
+    ftp</em>.</font></p>
+    <p align="justify"><font face="Arial">The command usage is very similar to
+    <em>ftp</em> (the command-line tool), <em>sftp</em> (once running) uses 
+    commands such as<em> help </em>(for help), <em>put</em> (send files to the 
+    server), <em>get</em> (download files from the server) and various others, 
+    refer to the manual page and internal documentation for further details.</font></p>
+    <div class="TIP">
+      <table class="TIP" width="90%" border="0">
+        <tr>
+          <td vAlign="top" align="middle" width="25">
+          <p align="justify"><font face="Arial">
+          <img alt="Tip" hspace="5" src="tip.gif" width="25" height="24"></font></td>
+          <th vAlign="center" align="left">
+          <p align="justify"><font face="Arial"><b>Graphical programs</b></font></th>
+        </tr>
+        <tr>
+          <td>
+          <p align="justify"><font face="Arial">&nbsp;</font></td>
+          <td vAlign="top" align="left">
+          <p align="justify"><font face="Arial">Sometimes its easier to manage 
+          files with a GUI, many of these programs do have good
+          <span class="ACRONYM">GUI</span> equivalents, try searching the 
+          internet or sites like Sourceforge or Freshmeat.</font></td>
+        </tr>
+      </table>
+    </div>
+    </dd>
+  </dl>
+</div>
+
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

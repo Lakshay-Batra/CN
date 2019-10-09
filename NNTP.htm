@@ -1,0 +1,166 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+span.editsection
+	{}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+<h3 align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">NNTP Protocol</font></span></h3>
+<p align="justify"><font face="Arial">The <em>Network News Transfer Protocol 
+(NNTP)</em> is documented in RFC 977. NNTP is a request-reply protocol in the 
+style of SMTP or FTP. Unlike mail, news does not require separate protocols for 
+user-to-host and host-to-host exchanges. NNTP is used in all cases. NNTP has 
+facilities to support reading newsgroups, posting new articles, and transferring 
+articles between news servers.</font></p>
+<font color="#000000" face="Arial">
+<p align="justify">The NNTP protocol is the delivery mechanism for the USENET 
+newsgroup service. USENET runs on the Internet and other TCP/IP-based networks 
+and provides a way to exchange messages, articles, and bulletins throughout the 
+Internet. Articles are put in central databases throughout the Internet and 
+users access the database to get the articles they need. This reduces network 
+traffic and eliminates the need to store a copy of each article on every 
+subscriber's system.</p>
+<p align="justify">There are thousands of different newsgroups related to 
+computers, social issues, science, the humanities, recreation, and other topics. 
+See &quot;USENET&quot; for more information on USENET itself. This topic discusses the 
+operation of the NNTP protocol.</p>
+<p align="justify">USENET servers use NNTP to exchange news articles among 
+themselves. NNTP is also used by clients who need to read news articles on 
+USENET servers. The server-to-server and user-to-server connections are 
+described here:</p>
+<ul>
+  <b>
+  <li>
+  <p align="justify">Server-to-server exchanges</b>&nbsp;&nbsp;&nbsp; In the server-to-server 
+  exchange, one server either requests the latest articles from another server (<i>pull</i>) 
+  or allows the other server to <i>push</i> new articles to it. In either case, 
+  both servers engage in a conversation in which specific newsgroup information 
+  is requested and then delivered. A primary goal is to prevent the sending 
+  system from sending articles that the receiver already has. Select newsgroups 
+  and articles can be blocked.<br>
+&nbsp;</font><b><font face="Verdana, Arial, Helvetica, sans-serif" color="#000000" size="2"></li>
+  </font><font color="#000000" face="Arial">
+  <li>
+  <p align="justify">User-to-server connections</font></b><font color="#000000" face="Arial">&nbsp;&nbsp;&nbsp; 
+  Users run news readers, which are now included with most Web browsers. The 
+  user first connects with a newsgroup server (usually located at an ISP 
+  (Internet service provider), then downloads a list of available newsgroups. 
+  The user can then subscribe to a newsgroup and begin reading articles 
+  available in that group or post new articles.</li>
+</ul>
+<p align="justify">Before NNCP, USENET servers used UUCP (UNIX-to-UNIX Copy 
+Program) to exchange information. UUCP is a &quot;flood broadcast&quot; mechanism. Hosts 
+send new news articles they receive to other hosts, which in turn forward the 
+news on to other hosts that they feed. Usually, a host receives duplicates of 
+articles and must discard those duplicates-a time-consuming process and waste of 
+bandwidth.</p>
+<p align="justify">NNTP uses an interactive command and response mechanism that 
+lets hosts determine which articles are to be transmitted. A host acting as a 
+client contacts a &quot;server&quot; host using NNTP, and then inquires if any new 
+newsgroups have been created on any of the serving host systems. An 
+administrator can choose to create similar newsgroups on the host he or she 
+manages.</p>
+<p align="justify">During the same NNTP session, the client requests information 
+about new articles that have arrived in all or some of the newsgroups. The 
+server then sends the client a list of new articles and the client can request 
+transmission of some or all of those articles. The client can refuse to accept 
+articles that it already has.</p>
+<p align="justify">Readers interested in the details of NNTP commands and 
+responses should read RFC 977 (A Proposed Standard for the Stream-Based 
+Transmission of News, February 1986).</p>
+<p align="justify">Some organizations may prefer to set up their own USENET 
+systems on their TCP/IP-based intranet rather than deploy groupware and 
+collaborative applications. If you plan on setting up your own news server, 
+refer to &quot;USENET.&quot;</p>
+</font>
+<p align="justify"><font face="Arial"><span lang="EN">NNTP or Network News 
+Transfer Protocol as it is also known, is not a widely known protocol. Typically 
+this is a service that is offered by your ISP and also is one that has spawned 
+its own industry. Company’s such as Supernews and Easynews have grown out of the 
+popularity that are the alt.binaries.* groups. If you are lucky though your ISP 
+offers you good NNTP servers to use. What are binary newsgroups though? Well 
+simply put, they are just as their name indicates ie: binary newsgroups. By 
+binary I mean that you could download pictures, programs, movies, music and so 
+on ie: a binary transfer. There is pretty everything you would ever hope to find 
+in the binary newsgroups. A fair amount of the stuff there is copyrighted 
+material, which should not be downloaded either. Largely due to the wide variety 
+of material made available via the binary groups is why they are so popular with 
+people. What actually makes up the protocol that is used to access these groups 
+and in turn download from them? Well that is what we are going to find out in 
+this article!</span></font></p>
+<h2 align="justify"><font face="Arial" size="3"><span lang="EN">On with the show</span></font></h2>
+<p align="justify"><font face="Arial"><span lang="EN">Well NNTP like almost 
+every protocol follows the client/server model and is also an application layer 
+protocol, as defined by the OSI Reference Model. The protocol uses TCP as its 
+transport protocol and of course the IP protocol for routing purposes. NNTP also 
+allows for both the sending and receipt of information. In other words it will 
+allow you to post messages to newsgroups, as well as download from them, whether 
+that download be an ASCII one or binary in nature. Port 119 is the port 
+associated with NNTP servers, which are also commonly known as USENET 
+newsgroups. </span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">Similar in nature as 
+mentioned earlier to other application layer protocols, NNTP also has a series 
+of status codes, much like HTTP. These status codes are used to convey various 
+conditions back to the NNTP client. The various status codes are grouped as seen 
+below;</span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">1xx – Information message<br>
+2xx – Command is ok<br>
+3xx – Command is ok, continue<br>
+4xx – Command ok, but could not be processed<br>
+5xx – Command not processed (normally due to a server side error)</span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">These messages are quite 
+often seen when you are downloading or uploading material. They will be 
+displayed in your NNTP client. One of the most popular clients is
+<a href="http://www.shemes.com/index.php?p=download" target="_blank" style="color: #000033; text-decoration: underline; text-underline: single">
+Grabit</a>, but there is also NewsBin Pro. NNTP is also a little similar to HTTP 
+in that it has some commands which are similar to the GET, POST, and HEAD of 
+HTTP for example. The NEXT command in NNTP signifies move on to the “next” 
+article in the newsgroup. That command is pretty much straightforward. There is 
+also the POST command, which much it implies, is for posting to a newsgroup. 
+That post could be a request for a specific TV show episode that you missed of 
+your favourite show and lucky for you there is a&nbsp; newsgroup for it. In that case 
+you would post a message requesting somebody upload that tv show episode, which 
+someone hopefully recorded. A complete list of commands and their function can 
+be found
+here. You should never be afraid to read the specific RFC for a protocol. 
+They are usually quite well written and easy to understand. Besides you really 
+need to read them, as they are the definitive source of information when it 
+comes to protocols. </span></font></p>
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+
+</body>
+
+</html>

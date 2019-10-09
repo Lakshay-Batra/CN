@@ -1,0 +1,149 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>HLR</title>
+<style>
+<!--
+h1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	font-size:16.0pt;
+	font-family:Arial;
+	color:#3F4C98}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="justify">&nbsp;</p>
+<p align="center"><b><font face="Arial"><a href="ACN/ACNMAIN.htm">MAIN</a></font></b></p>
+<h1 align="center"><u><span lang="EN-GB"><font size="6" color="#FF0000">HLR</font></span></u></h1>
+<h1 align="justify"><span lang="EN-GB"><font size="3">HLR - Home Location 
+Register</font></span></h1>
+<p class="normal" align="justify"><font face="Arial"><span lang="EN-GB">The Home 
+Location Register is a database within the HPLMN
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+kadovFilePopupInit('a1');
+//-->
+</script>
+(Home Public Land Mobile Network). It provides routing information for MT
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+kadovFilePopupInit('a2');
+//-->
+</script>
+(Mobile Terminated) calls and SMS
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+kadovFilePopupInit('a3');
+//-->
+</script>
+(Short Message Service). It is also responsible for the maintenance of user 
+subscription information. This is distributed to the relevant VLR
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+kadovFilePopupInit('a4');
+//-->
+</script>
+(Visitor Location Register) or SGSN
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+kadovFilePopupInit('a5');
+//-->
+</script>
+(Serving GPRS Support Node) through the attach process and mobility management 
+procedures such as Location Area and Routing Area updates.</span></font></p>
+<p ALIGN="justify"><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+A HLR is a database of user (subscriber) information, i.e., customer profiles, 
+used in mobile (cellular) networks. It is a key component of mobile networks 
+such as GSM, TDMA, and CDMA networks. A HLR contains user information such as 
+account information, account status, user preferences, features subscribed to by 
+the user, user’s current location, etc. The data stored in HLRs for the 
+different types of networks is similar but does differ in some details. </font>
+</p>
+<p ALIGN="justify"><font face="Arial">HLRs are used by the Mobile Switching 
+Centers (MSCs) to originate and deliver arriving mobile calls. </font></p>
+<font FACE="Arial">
+<p ALIGN="justify"><b>What is a Visiting Location Register (VLR)? </b></p>
+</font>
+<p ALIGN="justify"><font face="Arial">A VLR is a database, similar to a HLR, 
+which is used by the mobile network to temporarily hold profiles of roaming 
+users (users outside their home area). This VLR data is based on the user 
+information retrieved from a HLR. MSCs use a VLR to handle roaming users. </font>
+</p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">How are the HLR and VLR used? </p>
+</b></font>
+<p ALIGN="justify"><font face="Arial">Each mobile network has its own HLRs and 
+VLRs. When a MSC detects a mobile user’s presence in the area covered by its 
+network, it first checks a database to determine if the user is in his/her home 
+area or is roaming, i.e., the user is a visitor. </font></p>
+<dir>
+  <dir>
+    <p ALIGN="justify"><font face="Arial">o User in Home Area: HLR has the 
+    necessary information for initiating, terminating, or receiving a call.
+    </font></p>
+    <p ALIGN="justify"><font face="Arial">o User is Roaming: VLR contacts the 
+    user’s HLR to get the necessary information to set up a temporary user 
+    profile. </font></p>
+    <font SIZE="2">
+    <p align="justify">&nbsp;</p>
+  </dir>
+</dir>
+</font>
+<p ALIGN="justify"><font face="Arial">The user’s location is recorded in the HLR, 
+and in case the user roaming, it is also recorded in the VLR. </font></p>
+<p ALIGN="justify"><font face="Arial">Suppose that the user wants to make a 
+call: </font></p>
+<dir>
+  <dir>
+    <p ALIGN="justify"><font face="Arial">o User in Home Area: MSC contacts the 
+    HLR prior to setting up the call. </font></p>
+    <p ALIGN="justify"><font face="Arial">o User is Roaming: MSC contacts the 
+    VLR prior to setting up the call. </font></p>
+    <font SIZE="2">
+    <p align="justify">&nbsp;</p>
+  </dir>
+</dir>
+</font>
+<p ALIGN="justify"><font face="Arial">Suppose that there is a call for the user 
+(call goes to the home MSC): </font></p>
+<dir>
+  <dir>
+    <p ALIGN="justify"><font face="Arial">o User in Home Area: Home MSC delivers 
+    the call immediately. </font></p>
+    <p ALIGN="justify"><font face="Arial">o User is Roaming: Home MSC contacts 
+    the VLR to determine the appropriate switch in the roaming area to handle 
+    the arriving call and then transfers the call to the roaming area MSC.
+    </font></p>
+  </dir>
+</dir>
+<b>
+<p ALIGN="justify"><font face="Arial">What are Some Issues with HLRs? </font>
+</p>
+<dir>
+  <dir>
+    </b><font FACE="Arial">
+    <p ALIGN="justify">o Performance, especially fast lookups. </p>
+    <p ALIGN="justify">o Ability to handle different types of networks, 
+    including 3G networks. </p>
+    <p ALIGN="justify">o Capability/data to support user authentication. </p>
+    <p ALIGN="justify">o Support for data backups, fault tolerance, and 
+    reliability. </p>
+    <p ALIGN="justify">o Scalability. </p>
+  </dir>
+</dir>
+</font>
+<p align="center"><b><font face="Arial"><a href="ACN/ACNMAIN.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+td{font-family:arial,sans-serif }
+td{color:#000}
+.j{width:34em}
+a{font-family:arial,sans-serif }
+a:link{color:#00c}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline"><b>
+<font face="Arial" size="6" color="#FF0000">TCP/IP model</font></b></span></p>
+<p><font face="Arial">&nbsp; <b><i>TCP/IP Model Layers</i></b></font></p>
+<p align="left"><font face="Arial">The TCP/IP model uses four layers that 
+logically span the equivalent of the top six layers of the OSI reference model. 
+The physical layer is not covered by the TCP/IP model because the data link 
+layer is considered the point at which the interface occurs between the TCP/IP 
+stack and the underlying networking hardware. The following are the TCP/IP model 
+layers, starting from the bottom.</font></p>
+<div align="center">
+  <table cellSpacing="2" cellPadding="4" border="0">
+    <caption align="bottom">
+    <p align="center">&nbsp;</p>
+    </caption>
+    <tr>
+      <td vAlign="top" align="middle">
+      <p align="center"><font face="Arial">&nbsp;</font></p>
+      <p align="center"><font face="Arial">
+      <img alt src="tcpiplayers.png" width="484" height="416"></font></td>
+    </tr>
+  </table>
+</div>
+<p>&nbsp;</p>
+<p align="center"><font face="Arial"><b>TCP/IP MODEL</b></font></p>
+<p><font face="Arial">The TCP/IP architectural model has four layers that 
+approximately match six of the seven layers in the OSI Reference Model. The 
+TCP/IP model does not address the physical layer, which is where hardware 
+devices reside. The next three layers—<i>network interface</i>, <i>internet</i> 
+and <i>(host-to-host) transport</i>—correspond to layers 2, 3 and 4 of the OSI 
+model. The TCP/IP <i>application</i> layer conceptually “blurs” the top three 
+OSI layers. It’s also worth noting that some people consider certain aspects of 
+the OSI session layer to be arguably part of the TCP/IP host-to-host transport 
+layer.</font></p>
+<p><font face="Arial"><br>
+</font>
+<s2 align="left"><font face="Arial"><b>Network Interface Layer</b></font></s2><font face="Arial">
+</font></p>
+<p align="left"><font face="Arial">As its name suggests, this layer represents 
+the place where the actual TCP/IP protocols running at higher layers interface 
+to the local network. This layer is somewhat “controversial” in that some people 
+don't even consider it a “legitimate” part of TCP/IP. This is usually because 
+none of the core IP protocols run at this layer. Despite this, the network 
+interface layer is part of the architecture. It is equivalent to the </font>
+<font face="Arial" color="#0101c0">data link layer (layer two) in the OSI 
+Reference Model</font><font face="Arial"> and is also sometimes called the
+<i>link layer</i>. You may also see the name <i>network access layer</i>.</font></p>
+<p align="left"><font face="Arial">On many TCP/IP networks, there is no TCP/IP 
+protocol running at all on this layer, because it is simply not needed. For 
+example, if you run TCP/IP over an Ethernet, then Ethernet handles layer two 
+(and layer one) functions. However, the TCP/IP standards do define protocols for 
+TCP/IP networks that do not have their own layer two implementation. These 
+protocols, the </font>
+<font face="Arial" color="#0101c0">Serial Line Internet Protocol (SLIP) and the 
+Point-to-Point Protocol (PPP)</font><font face="Arial">, serve to fill the 
+gap between the network layer and the physical layer. They are commonly used to 
+facilitate TCP/IP over direct serial line connections (such as dial-up telephone 
+networking) and other technologies that operate directly at the physical layer.</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial">The TCP/IP model does not exactly match the OSI model. 
+There is no universal agreement regarding how to describe TCP/IP with a layered 
+model but it is generally agreed that there are fewer levels than the seven 
+layers of the OSI model. Most descriptions present from three to five layers. In 
+this technical reference document the layers of the TCP/IP model are defined as 
+follows: </font></p>
+<dl>
+  <dt><font face="Arial"><b>Application Layer</b> </font></dt>
+  <dd><font face="Arial">In TCP/IP the Application Layer also includes the OSI 
+  Presentation Layer and Session Layer. In this document an application is any 
+  process that occurs above the Transport Layer. This includes all of the 
+  processes that involve user interaction. The application determines the 
+  presentation of the data and controls the session. In TCP/IP the terms <b>
+  socket</b> and <b>port</b> are used to describe the path over which 
+  applications communicate. There are numerous application level protocols in 
+  TCP/IP, including Simple Mail Transfer Protocol (SMTP) and Post Office 
+  Protocol (POP) used for e-mail, Hyper Text Transfer Protocol (HTTP) used for 
+  the World-Wide-Web, and File Transfer Protocol (FTP). Most application level 
+  protocols are associated with one or more port number. </font>
+  <p>&nbsp;</dd>
+  <dt><font face="Arial"><b>Transport Layer</b> </font></dt>
+  <dd><font face="Arial">In TCP/IP there are two Transport Layer protocols. The 
+  Transmission Control Protocol (TCP) guarantees that information is received as 
+  it was sent. The User Datagram Protocol (UDP) performs no end-to-end 
+  reliability checks. </font>
+  <p>&nbsp;</dd>
+  <dt><font face="Arial"><b>Internet Layer</b> </font></dt>
+  <dd><font face="Arial">In the OSI Reference Model the Network Layer isolates 
+  the upper layer protocols from the details of the underlying network and 
+  manages the connections across the network. The Internet Protocol (IP) is 
+  normally described as the TCP/IP Network Layer. Because of the 
+  Inter-Networking emphasis of TCP/IP this is commonly referred to as the 
+  Internet Layer. All upper and lower layer communications travel through IP as 
+  they are passed through the TCP/IP protocol stack. </font>
+  <p>&nbsp;</dd>
+  <dt><font face="Arial"><b>Network Access Layer</b> </font></dt>
+  <dd><font face="Arial">In TCP/IP the Data Link Layer and Physical Layer are 
+  normally grouped together. TCP/IP makes use of existing Data Link and Physical 
+  Layer standards rather than defining its own. Most RFCs that refer to the Data 
+  Link Layer describe how IP utilizes existing data link protocols such as 
+  Ethernet, Token Ring, FDDI, HSSI, and ATM. The characteristics of the hardware 
+  that carries the communication signal are typically defined by the Physical 
+  Layer. This describes attributes such as pin configurations, voltage levels, 
+  and cable requirements. Examples of Physical Layer standards are RS-232C, 
+  V.35, and IEEE 802.3. </font>
+  <p>&nbsp;</dd>
+</dl>
+<p><font face="Arial">The four layer structure of TCP/IP is built as information 
+is passed down from applications to the physical network layer. When data is 
+sent, each layer treats all of the information it receives from the layer above 
+as data and adds control information to the front of that data. This control 
+information is called a <b>header</b>, and the addition of a header is called <b>
+encapsulation</b>. When data is received, the opposite procedure takes place as 
+each layer removes its header before passing the data to the layer above. </font>
+</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p align="center"><font face="Arial">
+<img alt="Encapsulation" src="ENCAPS.gif" width="722" height="458"></font></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><font face="Arial">
+<img src="sphere01.gif" width="14" height="14"><b> Service</b> : it tells only 
+what the layer does, and not how entities above it access it or how the layer 
+work. <br>
+&nbsp;Interfaces : it tells the processes above it how to access it, and specifies 
+parameters and results. <br>
+<img src="sphere01.gif" width="14" height="14"><b> Protocol</b> : With this 
+definition, the layer can characterize its own protocols, as many as he wants, 
+and change them without affecting software in higher layers. </font></p>
+<p align="justify"><font face="Arial">Main differences between OSI and TCI/IP 
+Reference Models : <br>
+&nbsp; </font></p>
+<center>
+<table cellPadding="3" width="89%" background="tlo_szare2.gif" border="1">
+  <tr>
+    <td>
+    <p align="justify">&nbsp;</td>
+    <td>
+    <p align="justify"><b><font color="#cc6600" face="Arial">OSI Model Reference</font></b></td>
+    <td>
+    <p align="justify">&nbsp;</td>
+    <td>
+    <p align="justify"><b><font color="#cc6600" face="Arial">TCP/IP Model 
+    Reference</font></b></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><b><font color="#993366" face="Arial">Service, interface&nbsp;</font></b><font face="Arial">&nbsp;
+    <br>
+    </font><b><font color="#993366" face="Arial">and protocol</font></b></td>
+    <td>
+    <p align="justify"><font face="Arial">Service, interface and protocol are 
+    not clearly defined. For example, the only real services offered by the 
+    Internet layer are&nbsp; <br>
+    - Send IP Packet&nbsp; <br>
+    - Receive IP Packet</font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img src="r_arrow.gif" width="29" height="30"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">Protocols in the OSI model are better 
+    hidden and can be replaced relatively easily as the technology changes, 
+    which is one of the main objective of layered protocols.</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><b><font color="#993366" face="Arial">Functionalities</font></b></td>
+    <td>
+    <p align="justify"><font face="Arial">Because models were invented before 
+    protocols, functionalities put in each layer are not very optimized.</font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img src="r_arrow.gif" width="29" height="30"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">In this case, the protocols have been 
+    invented before models, so the functionalities are perfectly described.</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><b><font color="#993366" face="Arial">Numbers of layers</font></b></td>
+    <td>
+    <p align="justify"><font face="Arial">Seven layers, Network (Internet), 
+    Transport and Application layers being similar to TCP/IP</font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img src="r_arrow.gif" width="29" height="30"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">Only four layers.</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><b><font color="#993366" face="Arial">Connectionless/</font></b><font face="Arial">&nbsp;
+    <br>
+    </font><b><font color="#993366" face="Arial">Connection-oriented 
+    communication</font></b></td>
+    <td>
+    <p align="justify"><font face="Arial">Both connectionless and 
+    connection-oriented communication are supported in the network layer, but 
+    only connection-oriented communication in the transport layer.</font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img src="r_arrow.gif" width="29" height="30"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">Only one mode in the network layer 
+    (connectionless) but both modes in the transport layer are supported, giving 
+    the users a choice.</font></td>
+  </tr>
+</table>
+</center>
+<p align="center"><font face="Arial">&nbsp;</font><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

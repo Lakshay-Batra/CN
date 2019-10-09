@@ -1,0 +1,417 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+span.editsection
+	{}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+<h3 align="center"><font color="#FF0000">
+<span style="font-family: Arial; text-decoration: underline; text-transform: uppercase">
+<b><font size="6">H</font></b><font size="6">yper<b>t</b>ext <b>T</b>ransfer <b>
+P</b>rotocol</font></span></font></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;Short for <b>H</b>yper<b>t</b>ext <b>T</b>ransfer
+<b>P</b>rotocol, the underlying protocol used by the World Wide Web. HTTP 
+defines how messages are formatted and transmitted, and what actions Web servers 
+and browsers should take in response to various commands. For example, when you 
+enter a URL in your browser, this actually sends an HTTP command to the Web 
+server directing it to fetch and transmit the requested Web page. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The other main 
+standard that controls how the World Wide Web works is HTML, which covers how 
+Web pages are formatted and displayed. </span></p>
+<p style="text-align: justify" nd="3"><span style="font-family: Arial">HTTP is 
+called a <i>stateless</i> protocol because each command is executed 
+independently, without any knowledge of the commands that came before it. This 
+is the main reason that it is difficult to implement Web sites that react 
+intelligently to user input. This shortcoming of HTTP is being addressed in a 
+number of new technologies, including ActiveX, Java, JavaScript and cookies.
+</span></p>
+<p align="justify"><font face="Arial">The Hypertext Transfer Protocol (HTTP) is 
+the de facto standard for transferring World Wide Web documents, although it is 
+designed to be extensible to almost any document format. HTTP Version 1.1 is 
+documented in RFC 2068; version 1.0 (depricated) is documented in RFC 1945.
+</font></p>
+<p align="justify"><font face="Arial">HTTP operates over TCP connections, 
+usually to port 80, though this can be overridden and another port used. After a 
+successful connection, the client transmits a request message to the server, 
+which sends a reply message back. HTTP messages are human-readable, and an HTTP 
+server can be manually operated with a command such as </font><tt>
+<font face="Arial">telnet server 80</font></tt><font face="Arial">. </font></p>
+<p align="justify"><font face="Arial">The simplest HTTP message is &quot;</font><tt><font face="Arial">GET</font></tt><font face="Arial">
+<em>url</em>&quot;, to which the server replies by sending the named document. If the 
+document doesn't exist, the server will probably send an HTML-encoded message 
+stating this. I say <em>probably</em>, because this simple method offers poor 
+error handling and has been deprecated in favor of the more elaborate scheme 
+outlined below. </font></p>
+<p align="justify"><font face="Arial">A complete HTTP 1.0 message begins &quot;</font><tt><font face="Arial">GET</font></tt><font face="Arial">
+<em>url</em> </font><tt><font face="Arial">HTTP/1.0</font></tt><font face="Arial">&quot;. 
+The addition of the third field indicates that full headers are being used. The 
+client may then send additional header fields, one per line, terminating the 
+message with a blank link. The server replies in a similar vein, first with a 
+series of header lines, then a blank line, then the document proper. </font></p>
+<p align="justify"><font face="Arial">Here a sample HTTP 1.0 exchange: </font>
+</p>
+<div align="justify">
+  <pre><font face="Arial" size="3">GET / HTTP/1.0   &gt;
+                 &gt;
+                    &lt; HTTP/1.0 200 OK
+                    &lt; Date: Wed, 18 Sep 1996 20:18:59 GMT
+                    &lt; Server: Apache/1.0.0
+                    &lt; Content-type: text/html
+                    &lt; Content-length: 1579
+                    &lt; Last-modified: Mon, 22 Jul 1996 22:23:34 GMT
+                    &lt;
+                    &lt; <em>HTML document</em>
+</font></pre>
+</div>
+<p align="justify"><font face="Arial">The use of full headers is preferred for 
+several reasons: </font></p>
+<menu>
+  <li>
+  <p align="justify"><font face="Arial">The first line of a server header 
+  includes a response code indicating the success or failure of the operation.
+  </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">One of the server header fields will be
+  </font><tt><font face="Arial">Content-type:</font></tt><font face="Arial">, 
+  which specifies a MIME type to describe how the document should be 
+  interpreted. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">If the document has moved, the server 
+  can specify its new location with a </font><tt><font face="Arial">Location:</font></tt><font face="Arial"> 
+  field, allowing the client to transparently retry the request using the new 
+  URL. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">The </font><tt><font face="Arial">
+  Authorization:</font></tt><font face="Arial"> and </font><tt>
+  <font face="Arial">WWW-Authenticate:</font></tt><font face="Arial"> fields 
+  allow access controls to be placed on Web documents. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">The </font><tt><font face="Arial">
+  Referer:</font></tt><font face="Arial"> field allows the client to tell the 
+  server the URL of the document that triggered this request, permitting savvy 
+  servers to trace clients through a series of requests. </font></li>
+</menu>
+<p align="justify"><font face="Arial">In addition to </font><tt>
+<font face="Arial">GET</font></tt><font face="Arial"> requests, clients can also 
+send </font><tt><font face="Arial">HEAD</font></tt><font face="Arial"> and
+</font><tt><font face="Arial">POST</font></tt><font face="Arial"> requests, of 
+which </font><tt><font face="Arial">POST</font></tt><font face="Arial">s are the 
+most important. </font><tt><font face="Arial">POST</font></tt><font face="Arial">s 
+are used for HTML forms and other operations that require the client to transmit 
+a block of data to the server. After sending the header and the blank line, the 
+client transmits the data. The header must have included a </font><tt>
+<font face="Arial">Content-Length:</font></tt><font face="Arial"> field, which 
+permits the server to determine when all the data has been received. </font></p>
+<p style="text-align: justify; background: #F8FCFF" nd="4"><b>
+<span lang="EN" style="font-family: Arial">Hypertext Transfer Protocol</span></b><span lang="EN" style="font-family: Arial"> 
+(<b>HTTP</b>) is a method used to transfer or convey information on the World 
+Wide Web. Its original purpose was to provide a way to publish and retrieve HTML 
+pages.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Development of HTTP was coordinated 
+by the World Wide Web Consortium and the Internet Engineering Task Force, 
+culminating in the publication of a series of
+<a href="http://en.wikipedia.org/wiki/Request_for_Comments" title="Request for Comments" style="color: #000033; text-decoration: underline; text-underline: single">
+RFCs</a>, most notably RFC 2616 (1999), which defines HTTP/1.1, the version of 
+HTTP in common use today.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">HTTP is a request/response protocol 
+between clients and servers. The originating client, such as a web browser, 
+spider, or other end-user tool, is referred to as the user agent. The 
+destination server, which stores or creates resources such as HTML files and 
+images, is called the origin server. In between the user agent and origin server 
+may be several intermediaries, such as proxies, gateways, and tunnels.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">An HTTP client initiates a request by 
+establishing a Transmission Control Protocol (TCP) connection to a particular 
+port on a remote host (port 80 by default; see List of TCP and UDP port 
+numbers). An HTTP server listening on that port waits for the client to send a 
+request message.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Upon receiving the request, the 
+server sends back a status line, such as &quot;HTTP/1.1 200 OK&quot;, and a message of its 
+own, the body of which is perhaps the requested file, an error message, or some 
+other information.</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">Resources to be accessed by HTTP are 
+identified using Uniform Resource Identifiers (URIs) (or, more specifically, 
+URLs) using the <tt style="font-family: Courier New">
+<span style="font-family: Arial">http:</span></tt> or https URI schemes.</span></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">Request message</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">The request message consists of the following:</span></font></p>
+<p class="MsoNormal" style="text-indent: 0in; margin-left: 0in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial" lang="EN">&nbsp;&nbsp;
+</span><font face="Arial"><span lang="EN">Request line, such as </span></font>
+<tt style="font-family: Arial"><span lang="EN">GET /images/logo.gif HTTP/1.1</span></tt><font face="Arial"><span lang="EN">, 
+which requests the file </span></font><tt style="font-family: Arial">
+<span lang="EN">logo.gif</span></tt><font face="Arial"><span lang="EN"> from the
+</span></font><tt style="font-family: Arial"><span lang="EN">/images</span></tt><font face="Arial"><span lang="EN"> 
+directory </span></font></p>
+<p class="MsoNormal" style="text-indent: 0in; margin-left: 0in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial" lang="EN">&nbsp;&nbsp;
+</span><font face="Arial"><span lang="EN">Headers, such as </span></font>
+<tt style="font-family: Arial"><span lang="EN">Accept-Language: en</span></tt><font face="Arial"><span lang="EN">
+</span></font></p>
+<p class="MsoNormal" style="text-indent: 0in; margin-left: 0in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial" lang="EN">&nbsp;&nbsp;
+</span><font face="Arial"><span lang="EN">An empty line </span></font></p>
+<p class="MsoNormal" style="text-indent: 0in; margin-left: 0in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial" lang="EN">&nbsp;&nbsp;
+</span><font face="Arial"><span lang="EN">An optional message body </span>
+</font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">The request line and headers must all end with CRLF (<i>i.e.</i> 
+a carriage return followed by a line feed). The empty line must consist of only 
+CRLF and no other whitespace.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">In the HTTP/1.1 protocol, all headers except Host are optional.</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">Request methods</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">HTTP defines eight methods (sometimes referred to as &quot;verbs&quot;) 
+indicating the desired action to be performed on the identified resource.</span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">HEAD </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Asks for the response identical to the one 
+that would correspond to a GET request, but without the response body. This is 
+useful for retrieving meta-information written in response headers, without 
+having to transport the entire content. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">GET </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Requests a representation of the specified 
+resource. By far the most common method used on the Web today. Should not be 
+used for operations that cause side-effects (using it for actions in web 
+applications is a common mis-use). See 'safe methods' below. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">POST </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Submits data to be processed (e.g. from an 
+HTML form) to the identified resource. The data is included in the body of the 
+request. This may result in the creation of a new resource or the updates of 
+existing resources or both. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">PUT </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Uploads a representation of the specified 
+resource. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">DELETE </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Deletes the specified resource. </span>
+</font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">TRACE </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Echoes back the received request, so that a 
+client can see what intermediate servers are adding or changing in the request.
+</span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">OPTIONS </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Returns the HTTP methods that the server 
+supports. This can be used to check the functionality of a web server. </span>
+</font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">CONNECT </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">For use with a proxy that can change to being 
+an SSL tunnel. </span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">HTTP servers are supposed to implement at least the GET and HEAD 
+methods and, whenever possible, also the OPTIONS method.</span></font></p>
+<h3 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3">Safe methods</font></span></span></h3>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Some methods (e.g. HEAD or GET) are defined as <b>safe</b>, 
+which means they are intended only for information retrieval and should not 
+change the state of the server (in other words, they should not have side 
+effects). Unsafe methods (such as POST, PUT and DELETE) should be displayed to 
+the user in a special way, typically as buttons rather than links, thus making 
+the user aware of possible obligations (such as a button that causes a financial 
+transaction).</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Despite the required safety of <b><i>GET</i></b> requests, in 
+practice they can cause changes on the server. For example, an HTML page may use 
+a simple hyperlink to initiate deletion of a domain database record, thus 
+causing a change of the server's state as a side-effect of a GET request. This 
+is discouraged, because it can cause problems for Web caching, search engines 
+and other automated agents, who can make unintended changes on the server. 
+Another case is that a GET request may cause the server to create a cache space. 
+This is perfectly fine because the effect is not visible to the client and the 
+client is not responsible for the effect.</span></font></p>
+<h3 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3">Obligated methods</font></span></span></h3>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Methods (eg. POST, PUT, or DELETE) that are intended to cause 
+&quot;real-world&quot; effects are defined as <b>Obligated</b> because the client that 
+initiates the request is responsible for such effects.</span></font></p>
+<h3 style="background: #F8FCFF" align="justify"><span lang="EN"><font size="3">&nbsp;</font><span class="mw-headline"><font size="3">Idempotent 
+methods</font></span></span></h3>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Methods GET, HEAD, PUT and DELETE are defined to be idempotent, 
+meaning that multiple identical requests should have the same effect as a single 
+request. Methods OPTIONS and TRACE, being safe, are inherently idempotent.</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">HTTP versions</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">HTTP has evolved into multiple, mostly backwards-compatible 
+protocol versions. RFC 2145 describes the use of HTTP version numbers. 
+Basically, the client tells in the beginning of the request the version it uses, 
+and the server uses the same or earlier version in the response.</span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">0.9 </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Deprecated. Only supports one command, GET — 
+which does not specify the HTTP version. Does not support headers. Since this 
+version does not support POST, the client can't pass much information to the 
+server. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">HTTP/1.0 (May 1996) </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">This is the first protocol revision to 
+specify its version in communications and is still in wide use, especially by 
+proxy servers. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">HTTP/1.1 (June 1999) </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">Current version; persistent connections 
+enabled by default and works well with proxies. Also supports request 
+pipelining, allowing multiple requests to be sent at the same time, allowing the 
+server to prepare for the workload and potentially transfer the requested 
+resources more quickly to the client. </span></font></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">HTTP/1.2 </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<font face="Arial"><span lang="EN">The initial 1995 working drafts of <i>PEP — 
+an Extension Mechanism for HTTP</i> prepared by W3C and submitted to IETF were 
+aiming to become a distinguishing feature of HTTP/1.2. In later PEP working 
+drafts however the reference to HTTP/1.2 was removed. PEP later became subsumed 
+by the experimental RFC 2774 — <i>HTTP Extension Framework</i>. </span></font>
+</p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">Status codes</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">In HTTP/1.0 and since, the first line of the HTTP response is 
+called the <i>status line</i> and includes a numeric <i>status code</i> (such as 
+&quot;404&quot;) and a textual <i>reason phrase</i> (such as &quot;Not Found&quot;). The way the 
+user agent handles the response primarily depends on the code and secondarily on 
+the response headers. Custom status codes can be used since, if the user agent 
+encounters a code it does not recognize, it can use the first digit of the code 
+to determine the general class of the response. </span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Also, the standard reason phrases are only recommendations and 
+can be replaced with &quot;local equivalents&quot; at the web developer's discretion. If 
+the status code indicated a problem, the user agent might display the reason 
+phrase to the user to provide further information about the nature of the 
+problem. The standard also allows the user agent to attempt to interpret the 
+reason phrase, though this might be unwise since the standard explicitly 
+specifies that status codes are machine-readable and reason phrases are 
+human-readable.</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">Persistent connections</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">In HTTP/0.9 and 1.0, the connection is closed after a single 
+request/response pair. In HTTP/1.1 a keep-alive-mechanism was introduced, where 
+a connection could be reused for more than one request.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Such <i>persistent connections</i> improve lag perceptibly, 
+because the client does not need to re-negotiate the TCP connection after the 
+first request has been sent.</span></font></p>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">Version 1.1 of the protocol also introduced <i>chunked encoding</i> 
+to allow content on persistent connections to be streamed, rather than buffered, 
+and HTTP pipelining, which allows clients to send some types of requests before 
+the previous response has been received, further reducing lag.</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">HTTP session state</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">HTTP can occasionally pose problems for Web developers (Web 
+Applications), because HTTP is stateless. The advantage of a stateless protocol 
+is that hosts don't need to retain information about users between requests, but 
+this forces the use of alternative methods for maintaining users' state, for 
+example, when a host would like to customize content for a user who has visited 
+before. The common method for solving this problem involves the use of sending 
+and requesting cookies. Other methods include server side sessions, hidden 
+variables (when current page is a form), and URL encoded parameters (such as
+</span></font><tt style="font-family: Arial"><span lang="EN">index.php?userid=3</span></tt><font face="Arial"><span lang="EN">).</span></font></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN"><font size="3" face="Arial">Secure HTTP</font></span></span></h2>
+<p style="background: #F8FCFF" align="justify"><font face="Arial">
+<span lang="EN">There are currently two methods of establishing a secure HTTP 
+connection: the https URI scheme and the HTTP 1.1 </span></font>
+<tt style="font-family: Arial"><span lang="EN">Upgrade</span></tt><font face="Arial"><span lang="EN"> 
+header. The https URI scheme has been deprecated by RFC 2817, which introduced 
+the </span></font><tt style="font-family: Arial"><span lang="EN">Upgrade</span></tt><font face="Arial"><span lang="EN"> 
+header; however, as browser support for the </span></font>
+<tt style="font-family: Arial"><span lang="EN">Upgrade</span></tt><font face="Arial"><span lang="EN"> 
+header is nearly non-existent, the https URI scheme is still the dominant method 
+of establishing a secure HTTP connection.</span></font><span lang="EN">&nbsp;</span></p>
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+
+</body>
+
+</html>

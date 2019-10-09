@@ -1,0 +1,392 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="TokenBucket_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman"}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+span.exampleinline
+	{}
+span.gterm
+	{}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"
+	}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	}
+span.renderedqtext
+	{}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="font-family: Arial; text-decoration: underline; font-weight: 700; text-transform: uppercase">
+<font size="6" color="#FF0000">Token Bucket</font></span></p>
+<p><span style="font-size: 12.0pt; font-family: Arial; font-weight: 700">Token 
+Bucket Concepts</span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+When you apply traffic policing to the input or output traffic at an interface, 
+the rate limits and actions specified in the policer configuration are used to 
+enforce a limit on the average throughput rate at the interface while also 
+allowing bursts of traffic up to a maximum number of bytes based on the overall 
+traffic load. Junos&nbsp;OS policers measure traffic-flow conformance to a policing 
+rate&nbsp;limit by using a <i>token&nbsp;bucket&nbsp;algorithm</i>. An algorithm based on a 
+single token bucket allows burst of traffic for short periods, whereas an 
+algorithm based dual token buckets allows more sustained bursts of traffic.</span></p>
+<h2 style="text-align: justify" id="jd0e71">
+<span style="font-size: 12.0pt; font-family: Arial">Single Token Bucket 
+Algorithm</span></h2>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">A 
+single-rate two-color policer limits traffic throughput at an interface based on 
+how the traffic conforms to rate-limit values specified in the policer 
+configuration. Similarly, a hierarchical policer limits traffic throughput at an 
+interface based on how aggregate and premium traffic subflows conform to 
+aggregate and premium rate-limit values specified in the policer configuration. 
+For both two-color policer types, packets in a conforming traffic flow are 
+categorized as <i>green</i>, and packets in a non-conforming traffic flow are 
+categorized as <i>red</i>.</span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+The single token bucket algorithm measures traffic-flow conformance to a 
+two-color policer rate limit as follows:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The token arrival rate represents the single
+  <i>bandwidth&nbsp;limit</i> configured for the policer. You can specify the 
+  bandwidth limit as an absolute number of bits per second by including the
+  <span class="exampleinline">bandwidth-limit&nbsp;<i>bps</i></span> statement. 
+  Alternatively, for single-rate two-color policers only, you can use the
+  <span class="exampleinline">bandwidth-percent&nbsp;<i>percentage</i></span> 
+  statement to specify the bandwidth&nbsp;limit as a percentage of either the 
+  physical interface port speed or the configured <span class="gterm">
+  <span id="njd0e102">logical interface</span></span> shaping rate.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The token bucket depth represents the single
+  <i>burst&nbsp;size</i> configured for the policer. You specify the burst&nbsp;size by 
+  including the <span class="exampleinline">burst-size-limit&nbsp;<i>bytes</i></span> 
+  statement.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">If the bucket is filled to capacity, arriving 
+  tokens “overflow” the bucket and are lost. </span></li>
+</ul>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+When the bucket contains insufficient tokens for receiving or transmitting the 
+traffic at the interface, packets might be dropped or else re-marked with a 
+lower forwarding class, a higher packet loss priority (PLP) level, or both.</span></p>
+<h2 style="text-align: justify" id="jd0e121">
+<span style="font-size: 12.0pt; font-family: Arial">Conformance Measurement for 
+Two-Color Marking</span></h2>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">In 
+two-color-marking policing, a traffic flow whose average arrival or departure 
+rate does&nbsp;not exceed the token arrival rate (bandwidth limit) is considered <i>
+conforming&nbsp;traffic</i>. Packets in a conforming traffic flow (categorized as 
+green traffic) are implicitly marked with a packet loss priority (PLP) level of
+<span class="exampleinline">low</span> and then passed through the interface.</span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+For a traffic flow whose average arrival or departure rate exceeds the token 
+arrival rate, conformance to a two-color policer rate limit depends on the 
+tokens in the bucket. If sufficient tokens remain in the bucket, the flow is 
+considered conforming&nbsp;traffic. If the bucket does&nbsp;not contain sufficient tokens, 
+the flow is considered <i>non-conforming&nbsp;traffic</i>. Packets in a 
+non-conforming traffic flow (categorized as red traffic) are handled according 
+to policing actions. Depending on the configuration of the two-color policer, 
+packets might be implicitly discarded; or the packets might be re-marked with a 
+specified forwarding class, a specified PLP, or both, and then passed through 
+the interface.</span></p>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="padding: 3.75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="" style='width:15pt;
+ height:15pt'>
+ <v:imagedata src="TokenBucket_files/image001.gif" o:href="file:///K:\cnnnn22\Single%20Token%20Bucket%20Algorithm%20-%20Technical%20Documentation%20-%20Support%20-%20Juniper%20Networks_files\note.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=20 height=20
+src="TokenBucket_files/image001.gif" v:shapes="_x0000_s1025"><![endif]></font></span></td>
+    <td style="padding: 3.75pt">
+    <p class="para1" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">Note: </font></span></b>
+    <span style="font-family: Arial"><font size="3">The number of tokens 
+    remaining in the bucket at any given time is a function of the token bucket 
+    depth and the overall traffic load. </font></span></td>
+  </tr>
+</table>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+The token bucket is initially filled to capacity, and so the policer allows an 
+initial traffic burst (back-to-back traffic at average rates that exceed the 
+token arrival rate) up to the size of the token bucket depth. </span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+During periods of relatively low traffic (traffic that arrives at or departs 
+from the interface at average rates below the token arrival rate), unused tokens 
+accumulate in the bucket, but only up to the configured token bucket depth.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Token Bucket Concepts</span></h2>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+When you apply traffic policing to the input or output traffic at an interface, 
+the rate limits and actions specified in the policer configuration are used to 
+enforce a limit on the average throughput rate at the interface while also 
+allowing bursts of traffic up to a maximum number of bytes based on the overall 
+traffic load. Junos&nbsp;OS policers measure traffic-flow conformance to a policing 
+rate&nbsp;limit by using a <i>token&nbsp;bucket&nbsp;algorithm</i>. An algorithm based on a 
+single token bucket allows burst of traffic for short periods, whereas an 
+algorithm based dual token buckets allows more sustained bursts of traffic.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Single Token Bucket 
+Algorithm</span></h2>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">A 
+single-rate two-color policer limits traffic throughput at an interface based on 
+how the traffic conforms to rate-limit values specified in the policer 
+configuration. Similarly, a hierarchical policer limits traffic throughput at an 
+interface based on how aggregate and premium traffic subflows conform to 
+aggregate and premium rate-limit values specified in the policer configuration. 
+For both two-color policer types, packets in a conforming traffic flow are 
+categorized as <i>green</i>, and packets in a non-conforming traffic flow are 
+categorized as <i>red</i>.</span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+The single token bucket algorithm measures traffic-flow conformance to a 
+two-color policer rate limit as follows:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The token arrival rate represents the single
+  <i>bandwidth&nbsp;limit</i> configured for the policer. You can specify the 
+  bandwidth limit as an absolute number of bits per second by including the
+  <span class="exampleinline">bandwidth-limit&nbsp;<i>bps</i></span> statement. 
+  Alternatively, for single-rate two-color policers only, you can use the
+  <span class="exampleinline">bandwidth-percent&nbsp;<i>percentage</i></span> 
+  statement to specify the bandwidth&nbsp;limit as a percentage of either the 
+  physical interface port speed or the configured <span class="gterm">
+  logical interface</span> shaping rate.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The token bucket depth represents the single
+  <i>burst&nbsp;size</i> configured for the policer. You specify the burst&nbsp;size by 
+  including the <span class="exampleinline">burst-size-limit&nbsp;<i>bytes</i></span> 
+  statement.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">If the bucket is filled to capacity, arriving 
+  tokens “overflow” the bucket and are lost. </span></li>
+</ul>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+When the bucket contains insufficient tokens for receiving or transmitting the 
+traffic at the interface, packets might be dropped or else re-marked with a 
+lower forwarding class, a higher packet loss priority (PLP) level, or both.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Conformance Measurement for 
+Two-Color Marking</span></h2>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">In 
+two-color-marking policing, a traffic flow whose average arrival or departure 
+rate does&nbsp;not exceed the token arrival rate (bandwidth limit) is considered <i>
+conforming&nbsp;traffic</i>. Packets in a conforming traffic flow (categorized as 
+green traffic) are implicitly marked with a packet loss priority (PLP) level of
+<span class="exampleinline">low</span> and then passed through the interface.</span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+For a traffic flow whose average arrival or departure rate exceeds the token 
+arrival rate, conformance to a two-color policer rate limit depends on the 
+tokens in the bucket. If sufficient tokens remain in the bucket, the flow is 
+considered conforming&nbsp;traffic. If the bucket does&nbsp;not contain sufficient tokens, 
+the flow is considered <i>non-conforming&nbsp;traffic</i>. Packets in a 
+non-conforming traffic flow (categorized as red traffic) are handled according 
+to policing actions. Depending on the configuration of the two-color policer, 
+packets might be implicitly discarded; or the packets might be re-marked with a 
+specified forwarding class, a specified PLP, or both, and then passed through 
+the interface.</span></p>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td style="padding: 3.75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="" style='width:15pt;height:15pt'>
+ <v:imagedata src="TokenBucket_files/image002.gif" o:href="file:///K:\cnnnn22\Single%20Token%20Bucket%20Algorithm%20-%20Technical%20Documentation%20-%20Support%20-%20Juniper%20Networks_files\note.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=20 height=20
+src="TokenBucket_files/image002.gif" v:shapes="_x0000_s1026"><![endif]></span></td>
+    <td style="padding: 3.75pt">
+    <p class="para1" style="text-align: justify"><b>
+    <span style="font-family: Arial">Note: </span></b>
+    <span style="font-family: Arial">The number of tokens remaining in the 
+    bucket at any given time is a function of the token bucket depth and the 
+    overall traffic load. </span></td>
+  </tr>
+</table>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+The token bucket is initially filled to capacity, and so the policer allows an 
+initial traffic burst (back-to-back traffic at average rates that exceed the 
+token arrival rate) up to the size of the token bucket depth. </span></p>
+<p class="para1" style="text-align: justify"><span style="font-family: Arial">
+During periods of relatively low traffic (traffic that arrives at or departs 
+from the interface at average rates below the token arrival rate), unused tokens 
+accumulate in the bucket, but only up to the configured token bucket depth.</span></p>
+<h1 style="text-align: justify"><span class="renderedqtext">
+<span style="font-size: 12.0pt">&nbsp;</span></span></h1>
+<p class="MsoNormal" style="text-autospace: none"><b>
+<span style="font-family: Arial; color: black">Token Bucket (TB) Algorithm</span></b></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; color: black">• In contrast to the LB, the 
+Token Bucket Algorithm, allows the output rate to vary, depending on the size of 
+the burst.</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; color: #BC0000">• Token: </span>
+<span style="font-family: Arial; color: black">a unit or fixed number of bytes 
+or single packet of fixed size</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; color: #BC0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+• We assume a token=a unit byte</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; color: black">• In the TB algorithm, the bucket 
+holds tokens.</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; color: black">• To transmit a packet of n 
+bytes, the host must capture and destroy n tokens.</span></p>
+<p class="MsoNormal" style="text-autospace: none">• Number of tokens in the 
+bucket <span style="font-family: Wingdings">à</span> Sending burst size</p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• Tokens are generated by a clock at the rate 
+tokens per second (i.e. one token every 1/r sec).</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• The bucket can hold at the most <i>b </i>
+tokens. If a token arrives when the bucket is full, it is discarded.</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• If the number of tokens in the bucket is less 
+than the number of bytes in a packet, no tokens are removed from the bucket, and 
+no packet is injected </span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• (Ini-ally&nbsp; or) Idle hosts can capture and 
+save up b tokens in order to send larger&nbsp; bursts later. </span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial; font-style: italic">Token Bucket Regulator 
+(Shaper )</span></p>
+<p class="MsoNormal" align="center"><span style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" style='width:6in;height:276pt'>
+ <v:imagedata src="TokenBucket_files/image003.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=576 height=368
+src="TokenBucket_files/image004.gif" v:shapes="_x0000_s1027"><![endif]></span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">Remarks </span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• When tokens are not available, TB has 2 
+policies</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – 
+Store packet (shaper)</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – 
+Discard packet (policer)</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• A flow as 2-tuple (input rate, output rate)</span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">&nbsp;• The sum of two regulated flows (b1,r1) &amp; 
+(b2,r2) behave like a regulated flow (b1+b2,r1+r2) </span></p>
+<p class="MsoNormal" style="text-autospace: none">
+<span style="font-family: Arial">• Cascading&nbsp; TB after a LB can shape the burst 
+rate</span></p>
+<h1 style="text-align: justify"><span class="renderedqtext">
+<span style="font-size: 12.0pt">&nbsp;</span></span></h1>
+<h1 style="text-align: justify"><span class="renderedqtext">
+<span style="font-size: 12.0pt">Difference between token bucket and leaky bucket 
+algorithms</span></span></h1>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">Leaky bucket:</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial"><span class="renderedqtext">Parameters: <i>rate</i></span></span></p>
+<ol style="margin-top: 0in; margin-bottom: 0in" start="1" type="1">
+  <li class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+  <span style="font-family: Arial">Smooth out traffic by passing packets only 
+  when there is a token. Does&nbsp; not permit burstiness.</span></span></li>
+  <li class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+  <span style="font-family: Arial">Discards packets for which no tokens are 
+  available (no concept of queue)</span></span></li>
+  <li class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+  <span style="font-family: Arial">Application: Traffic shaping or traffic 
+  policing.</span></span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext"><b>
+<span style="font-family: Arial">Token bucket:</span></b></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">Parameters: <i>rate, burstiness.</i></span></span></p>
+<ol style="margin-top: 0in; margin-bottom: 0in" start="1" type="1">
+  <li class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+  <span style="font-family: Arial">Token bucket smooths traffic too but permits 
+  burstiness - which is equivalent to the number of tokens accumulated in the 
+  bucket.</span></span></li>
+  <li class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+  <span style="font-family: Arial">Discards tokens when bucket is full, but 
+  never discards packets (infinite queue).</span></span></li>
+  <li class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+  <span style="font-family: Arial">Application: Network traffic shaping or rate 
+  limiting.</span></span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">&nbsp;</span></span></p>
+<p class="MsoNormal" style="text-align: justify"><span class="renderedqtext">
+<span style="font-family: Arial">An important difference between two traffic 
+shaping algorithms: token bucket throws away tokens when the bucket is full but 
+never discards packets while leaky bucket discards packets when the bucket is 
+full. Unlike leaky bucket, token bucket allows saving, up to maximum size of 
+bucket n. This means that bursts of up to n packets can be sent at once, giving 
+faster response to sudden bursts of input. Leaky bucket forces bursty traffic to 
+smooth out, token bucket permits burstiness but bounds it. Token bucket has no 
+discard or priority policy. Token bucket when compared to leaky bucket, is easy 
+to implement. Each flow needs just a counter to count tokens and a timer to 
+determine when to add new tokens to the counter.</span></span></p>
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

@@ -1,0 +1,607 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="100VGLAN_files/filelist.xml">
+<title>MAIN</title>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<b>
+<p align="center"><span style="text-transform: uppercase"><u>
+<font face="Arial" size="6" color="#FF0000">100 VG Any-LAN</font></u></span></p>
+</b>
+<p align="justify"><font face="Arial"><b><span lang="EN">100BaseVG</span></b><span lang="EN"> 
+is a 100 Mbit/s Ethernet standard specified to run over four pairs of category 3 
+UTP wires (known as voice grade, hence the &quot;VG&quot;). It is also called <b>
+100VG-Any-LAN</b> because it was defined to carry both Ethernet and token ring 
+frame types.</span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">100BaseVG was originally 
+proposed by Hewlett-Packard, ratified by the ISO in 1995 and was practically 
+extinct by 1998.</span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">100BaseVG started in the 
+IEEE 802.3 committee as Fast Ethernet. One faction wanted to keep CSMA/CD in 
+order to keep it pure Ethernet, even though the collision domain problem limited 
+the distances to one tenth that of 10BASE-T. Another faction wanted to change to 
+a polling architecture from the hub (they called it &quot;Demand Priority Protocol&quot;) 
+in order to maintain the 10baseT distances, and also to make it a deterministic 
+protocol. The first faction argued that, since IEEE 802.3 was the Ethernet 
+committee, it was not the place to develop a different protocol. Thus, the IEEE 
+802.12 committee was formed and standardized 100BaseVG.</span></font></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal" align="justify"><font face="Arial">100VG(Voice Grade) 
+Any-LAN was developed by Hewlett Packard along with others to be the standard for 
+Fast Ethernet. The IEEE gave that title
+to 100BASE T and 100VG Any-LAN wound up getting its own standard of 802.12. It is 
+not Ethernet but it is compatible with <strong>either </strong>802.3 Ethernet <strong>or</strong> 802.5 Token Ring (depending on the 
+manufacturer). 100VG Any-LAN relies on the hub to control network access. </font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">The hub uses:</font></b></p>
+<ul>
+  <li>
+<p class="MsoNormal" align="justify"><font face="Arial"><strong><u>Token Passing</u></strong>, 
+a method where each station receives and passes the right to use the single 
+shared channel on the LAN. All stations are guaranteed access to the network at 
+regular consistent intervals. This provides support for time sensitive 
+applications like voice, video and multimedia. While Ethernet uses a CSMA/CD 
+access scheme. </font></p>
+  </li>
+  <li>
+<p class="MsoNormal" align="justify">&nbsp;</p>
+  </li>
+  <li>
+<p class="MsoNormal" align="justify"><font face="Arial"><strong><u>Demand</u></strong>
+<strong><u>Priority</u></strong> allows one or more stations to send high 
+priority transmissions first. If the hub receives a high priority request, it 
+completes its current transmission and then immediately grants access to the 
+high priority request. When all high priority requests are dealt with, normal 
+operation resumes. Preventing time outs is simple: the hub grants temporary high 
+priority status to normal priority requests. This creates a collision free 
+network and is designed for higher throughput. However, 100 BaseT may be a 
+better choice, depending on your needs. </font></p>
+  </li>
+  <li>
+<p class="MsoNormal" align="justify"><font face="Arial"><strong><u>Cabling</u></strong> 
+on 100VG Any-LAN depends on your needs. 4 pair Category 3 or 4 UTP can be used 
+for a maximum segment length of 100 meters. 4 pair Category 5 can be used for a 
+max segment length of 200 meters. Type 1 STP can be used but you must also use a 
+balun to match impedance. Max Segment length is 100 meters. 62.5/125 micron 
+duplex multimode fiber optic cable ca.n be used for a maximum segment length of 
+2km. This allows most existing cabling to be used with the need for rewiring 
+virtually eliminated.</font></p>
+  </li>
+</ul>
+<p class="MsoNormal" align="center"><font face="Arial">&nbsp;<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" alt="" style='width:420pt;
+ height:319.5pt'>
+ <v:imagedata src="100VGLAN_files/image001.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\100vg%20anylan_files\100vgdig.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=560 height=426
+src="100VGLAN_files/image002.jpg" v:shapes="_x0000_s1026"><![endif]></font></p>
+<p class="MsoNormal" align="center"><b><font face="Arial">1. 100VG Any-LAN Hub<br>
+2. 100VG Any-LAN Network Card<br>
+3. 100VG Any-LAN Hub<br>
+4. 100VG to Ethernet Bridge<br>
+5.10/100 Mbps Ethernet Switch<br>
+6. 4pair Cat5 Color Coded Patch Cables<br>
+7. 4pair Cat5 UTP Cable<br>
+8. 10 Base-T Network Card</font></b></p>
+<p align="justify"><font face="Arial">VG is a new 100 mega bit per second 
+Ethernet and Token Ring networking technology. &nbsp;VG was initially developed by 
+Hewlet Packard and then refined and recently ratified by the IEEE 802.12 
+committee. </font></p>
+<p align="justify"><font face="Arial">The VG specification (802.12) states that 
+the design goals are to: </font></p>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">Provide a <i>minimum </i>data rate of 
+  100 Mb/s, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Provide smooth migration from ISO/IEC 
+  8802-3 (Ethernet) and ISO/IEC 8802-5 (Token Ring) LANs, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Support either ISO/IEC 8802-3 (Ethernet) 
+  or ISO/IEC 8802-5 (Token Ring) frame formats and MAC service interface to the 
+  LLC, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Support a cascaded star topology over 
+  twisted pair Category 3, 4, and 5 and fiber optic wiring, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Allow topologies of 2.5 km and greater 
+  with 3 levels of cascading, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Provide a physical layer bit error rate 
+  of less than 10<sup>-8</sup>, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Provide fair access and bounded latency,
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Provide two priority levels, normal and 
+  high priority, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Provide a low latency service through 
+  high priority for support of multimedia applications over extended networks,
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Support an option for filtering 
+  individually addressed packets at the repeater to enhance privacy, </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">Support network management to monitor 
+  network performance, isolate faults, and control network configuration, </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">Enable low cost implementation and high 
+  levels of integration, and </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Provide for robust operation by testing 
+  the Physical Layer connection before allowing an end node to enter the network 
+  and by removing disruptive nodes. </font></li>
+</ol>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color: black; font-weight: 700">Maximum Topology</span></font></p>
+<p class="MsoNormal" align="center"><font face="Arial">
+<span style="color: black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" alt="100VG-AnyLAN Maximum Topology"
+ style='width:389.25pt;height:192pt'>
+ <v:imagedata src="100VGLAN_files/image003.gif" o:href="http://ckp.made-it.com/pictures/5hub.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=519 height=256
+src="100VGLAN_files/image003.gif" alt="100VG-AnyLAN Maximum Topology" v:shapes="_x0000_s1030"><![endif]></span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color: black">100VG-Any-LAN is a star topology. The maximum amount 
+of repeaters (HUBs) in one network is five. The maximum length of a complete 
+network depends on the cable type used. Cables are discussed below.</span></font></p>
+<p class="MsoNormal" align="justify">&nbsp;</p>
+<p align="justify"><b><font face="Arial"><u>Cable types</u> </font></b></p>
+<p align="justify"><font face="Arial">100VG-Any-LAN supports different cable 
+types which all have their own maximum cable length.</font></p>
+<table>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">4-pair UTP cat 3 or 4</font></td>
+    <td>
+    <p align="justify"><font face="Arial">100 meter</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">4-pair UTP cat 5</font></td>
+    <td>
+    <p align="justify"><font face="Arial">200 meter</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">2-pair STP</font></td>
+    <td>
+    <p align="justify"><font face="Arial">100 meter</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">Duplex fiber 62.5 µ</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2 kilometer</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial"><br>
+<b><u>Detailed description</u> </b></font></p>
+<p align="justify"><font face="Arial">The IEEE 802.12 defines 100VG-Any-LAN 
+according to the OSI layers, with some additional sublayers, as follows:</font></p>
+<center>
+<table border="1">
+  <tr>
+    <td rowSpan="2">
+    <p align="justify"><font face="Arial">2</font></td>
+    <td rowSpan="2">
+    <p align="justify"><font face="Arial">Data Link</font></td>
+    <td>
+    <p align="justify"><font face="Arial">LLC</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">MAC</font></td>
+  </tr>
+  <tr>
+    <td rowSpan="4">
+    <p align="justify"><font face="Arial">1</font></td>
+    <td rowSpan="4">
+    <p align="justify"><font face="Arial">Physical</font></td>
+    <td>
+    <p align="justify"><font face="Arial">PMI</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">MII</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">PMD</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">MDI</font></td>
+  </tr>
+</table>
+</center>
+<p align="justify"><font face="Arial"><b><u>OSI layer 2</u></b><br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial"><strong>LLC</strong><br>
+Identical to IEEE 802.2</font></p>
+<p align="justify"><font face="Arial"><strong>MAC</strong><br>
+The medium access control is called demand priority and is done by the HUB. This 
+maximizes network efficiency, eliminates network collisions and token rotation 
+delays. The demand priority protocol has another advantage which is that it has 
+two levels of priority for each user request. This makes it possible for 
+time-critical applications such as real-time video to get a guaranteed support.<br>
+Demand priority is a method where the station send a request (demand) to the HUB 
+to send packet across the network. The request has two possible priorities; 
+normal and high. The high-priority is used for time critical applications. Since 
+this is a matter of applications the packet info for high- or normal-priority is 
+already in the packets that the MAC-layer receives.<br>
+The HUB scans its ports in a round-robin fashioned way. Each node (station or 
+HUB) may ask to send a packet to the network. A station may if permission is 
+granted send one packet to the HUB, but a lower level HUB may send as many 
+packets as ports available on that HUB, meaning again one packet per station.<br>
+The top level HUB (root) is called level 1 and every step down adds a level. 
+This way 3 levels can be made. Each HUB maintains a list of high- and 
+normal-priority requests. All high-priority requests will be serviced before the 
+normal priority requests. Except when there is so much high-priority data that 
+needs to be transported that it would be impossible for a normal-priority packet 
+to get on the network. When this is the case (there is time-out timer that keeps 
+track of that) the normal-priority request is raised to a high-priority request 
+and gets into the same round-robin schedule and is send.<br>
+How does a HUB know if the attached node is another HUB or a station. This is 
+done a boot time. The first time the HUB or the node is turned on test packets 
+will be send between HUB and node. This is called Link Training. The HUB and the 
+node test the link, so they know the cabling is ok, the pinning is ok and what 
+kind of device is on the HUB port (bridge, router, HUB, station).<br>
+To the packet received from the LLC the MAC-layer adds: node source address, and 
+any required bits to complete the data field. And a FCS (Frame Check Sequence) 
+is added to the end of the packet.</font></p>
+<p align="justify"><font face="Arial"><b><u>OSI layer 1</u></b><br>
+<br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial">The MII (Medium Independent Interface) and 
+MDI (Medium dependent interface) are just what their names indicate: Interfaces. 
+They do not have any other function than interfacing between the different 
+sublayers so they will be described briefly. The PMI (Physical Medium 
+Independent sublayer) and the PMD (Physical Medium Dependent sublayer) are the 
+sublayers which have the actual function descriptions in them.<br>
+A quick overview:</font></p>
+<center>
+<table border="1">
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">MAC</font></td>
+    <td align="middle" colSpan="4">
+    <p align="justify"><font face="Arial">MAC Frame</font></td>
+  </tr>
+  <tr>
+    <td rowSpan="2">
+    <p align="justify"><font face="Arial">PMI</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Scrambler 0</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Scrambler 1</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Scrambler 2</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Scrambler 3</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">5B6B Encoder</font></td>
+    <td>
+    <p align="justify"><font face="Arial">5B6B Encoder</font></td>
+    <td>
+    <p align="justify"><font face="Arial">5B6B Encoder</font></td>
+    <td>
+    <p align="justify"><font face="Arial">5B6B Encoder</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">MMI</font></td>
+    <td align="middle" colSpan="4">
+    <p align="justify"><font face="Arial">Preamble, Start Frame, End Frame 
+    Delimiter</font></td>
+  </tr>
+  <tr>
+    <td rowSpan="2">
+    <p align="justify"><font face="Arial">PMD</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Two-Level NRZ Encoder</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Two-Level NRZ Encoder</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Two-Level NRZ Encoder</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Two-Level NRZ Encoder</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">Transmit Pair 1/2</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Transmit Pair 3/6</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Transmit Pair 4/5</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Transmit Pair 7/8</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify">&nbsp;</td>
+    <td>
+    <p align="justify"><font face="Arial">Channel 0</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Channel 1</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Channel 2</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Channel 3</font></td>
+  </tr>
+</table>
+</center>
+<p align="justify"><font face="Arial"><br>
+<strong>PMI</strong> </font></p>
+<p align="justify"><font face="Arial">The PMI takes the MAC frame octets and 
+divides it into 5 bit quintets which are feed to a scrambler. Each quintet 
+represents a pair on the UTP cable (4 pairs) for 2 wire fiber or 2 pair UTP 
+100VG-Any-LAN uses a multiplexing scheme.</font></p>
+<p align="center"><font face="Arial">
+<img alt="Octets to quintet conversion" src="100vgqui.gif" width="313" height="150">
+</font></p>
+<p align="justify"><font face="Arial">The scrambler scrambles the 5 bit quintets 
+in such away that radio frequency interference and signal crosstalk are reduced 
+to a minimum.<br>
+After that a 5B6B encoding scheme is responsible for putting the 5 bit quintets 
+into 6 bit symbols. This way a balanced data pattern is created containing equal 
+amounts of 1s and 0s. Since there are only 16 balanced symbols available, 16 
+data patterns require two 6 bit symbols. The reason for this is clock 
+synchronization for the receiver circuitry, and it adds an easy way for error 
+checking. </font></p>
+<p align="justify"><font face="Arial"><strong>MII</strong> </font></p>
+<p align="justify"><font face="Arial">The MII adds a preamble, start frame 
+delimiter and end frame delimiter. Everything is now ready for transmission.</font></p>
+<p align="justify"><font face="Arial"><strong>PMD</strong> </font></p>
+<p align="justify"><font face="Arial">The main functions from the PMD are 
+channel multiplexing if needed and NRZ encoding.<br>
+NRZ (NonReturn to Zero) is a two-level signaling mechanism. Per clock cycle one 
+bit is transmitted, where a low voltage represents a 0 and a high voltage an 1. 
+An example for 4 pair UTP is given below:</font></p>
+<table>
+  <tr>
+    <td align="center">
+    <p align="justify"><font face="Arial">Bit Value</font></td>
+    <td rowSpan="3" align="center">
+    <p align="justify"><font face="Arial">
+    <img alt="NRZ Encoding" src="nrz.gif" width="156" height="78"></font></td>
+  </tr>
+  <tr>
+    <td align="center">
+    <p align="justify"><font face="Arial">30 MHz Clock</font></td>
+  </tr>
+  <tr>
+    <td align="center">
+    <p align="justify"><font face="Arial">NRZ Encoded Data</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial"><br>
+<strong>MDI</strong> </font></p>
+<p align="justify"><font face="Arial">For UTP a RJ45 connector is used and for 
+fiber all kinds of fiber connectors are available.</font></p>
+<center>
+<table border="1">
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">&nbsp;</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Male</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Female</font></th>
+  </tr>
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">RJ45</font></th>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="RJ45-male" src="rj45-m.gif" width="56" height="53"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="RJ45-female" src="rj45-f.gif" width="61" height="54"></font></td>
+  </tr>
+</table>
+</center>
+<p align="justify">&nbsp;</p>
+<center>
+<table border="1">
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">&nbsp;</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Male</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Female</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Side</font></th>
+  </tr>
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">ST</font></th>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="ST-male" src="st-m.gif" width="35" height="28"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="ST-female" src="st-f.gif" width="39" height="26"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="ST-side" src="st-s.gif" width="91" height="29"></font></td>
+  </tr>
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">SC</font></th>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SC-male" src="sc-m.gif" width="30" height="27"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SC-female" src="sc-f.gif" width="26" height="26"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SC-side" src="sc-s.gif" width="75" height="19"></font></td>
+  </tr>
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">SMA905</font></th>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SMA905-male" src="sma905-m.gif" width="35" height="28"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SMA905-female" src="sma905-f.gif" width="31" height="26"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SMA905-side" src="sma905-s.gif" width="88" height="27"></font></td>
+  </tr>
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">SMA906</font></th>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SMA906-male" src="sma906-m.gif" width="37" height="30"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SMA906-female" src="sma906-f.gif" width="36" height="27"></font></td>
+    <td>
+    <p align="justify"><font face="Arial">
+    <img alt="SMA906-side" src="sma906-s.gif" width="80" height="27"></font></td>
+  </tr>
+</table>
+</center>
+<p class="MsoNormal" align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial">The<b> physical layout</b> of 
+100VG-Any-LAN is a tree topology. Every 100VG-Any-LAN network has a central hub 
+which can be connected either to other hubs or to workstations. Hubs may be 
+cascaded up to three (3) deep. All 100VG-Any-LAN hubs have one special &quot;Uplink&quot; 
+port which is used to connect it to any port of a higher level hub in the 
+network. To illustrate this scheme, Figure One shows a diagram of the layout of 
+a 100VG-Any-LAN network. Note that at any level, a hub can be connected either 
+to workstations or one or more other hubs. </font></p>
+<p align="center"><font face="Arial">
+<img src="vg3.gif" width="640" height="480"></font></p>
+<p align="center"><font face="Arial"><i><br>
+<b>100VG-Any-LAN Network Topology</b></i></font></p>
+<h1 align="justify"><font color="#ff0000" face="Arial" size="3">How Does It 
+Work?</font></h1>
+<p align="justify"><font face="Arial">100VG-Any-LAN uses a new access scheme 
+called DPA. DPA stands for &quot;Demand Priority Access,&quot; and here's how it works. 
+The hubs are intelligent devices and act as a &quot;traffic cop&quot; for devices wishing 
+to transmit data to the network. Any device wishing to transmit first sends a 
+request to its hub. All of the hubs in the network negotiate among themselves 
+and schedule a time when they will allow the transmission to take place. When 
+the network is available, the hub sends a &quot;go&quot; signal to the device wishing to 
+transmit and the device sends its data.</font></p>
+<p align="justify"><font face="Arial">This scheme may seem to be cumbersome and 
+inefficient, but it is not. The user of the network never even knows that it is 
+happening, and doesn't have to do any special setup to make it work. It all 
+happens in a matter of microseconds, and since there is never a time where more 
+than one device is transmitting data, collisions do not occur like they do in a 
+CSMA/CD network. The end result is that the network's speed is used more 
+efficiently, since bandwidth is not going to be taken up by collisions and 
+retransmitions of data. </font></p>
+<p align="justify"><font face="Arial">A good real-world example of DPA in action 
+would be a formal meeting, such as a Congressional hearing. If everyone who had 
+something to say spoke without any control from the Speaker, the meeting would 
+be a noisy event where nothing got accomplished. Now, if someone wishes to 
+speak, he first raises his hand and waits to be recognized. After being 
+recognized, this person says his piece and then sits back down. No one speaks 
+out of turn, and by the end of the day, all business is complete.</font></p>
+<p align="justify"><font face="Arial">DPA also has a provision for High Priority 
+traffic. If a device has an urgent message to send, it can request High Priority 
+access from the hub. When the hub gets such a request, it will allow the &quot;High 
+Priority&quot; traffic to be sent before any of the lower priority traffic.</font></p>
+<p align="justify"><font face="Arial">Returning to our meeting example, let's 
+say that the House is discussing a mundane topic (such as farm subsidies) and 
+all of a sudden the Navy is attacked by aliens from Space. This is now a far 
+more important topic, so the congressman who knows what just happened asks the 
+Speaker for a few moments to address this new topic. After saying what happened, 
+and answering any questions, the discussion can return to farm subsidies. A 
+final feature of the DPA protocol which is worth noting is that after a low 
+priority request has waited more than 300 microseconds (0.0003 second) it is 
+automatically upgraded to a high priority request. That way, high priority 
+traffic can't &quot;hog&quot; the available speed of the network.</font></p>
+<p align="justify"><font face="Arial">One point worth noting is that the DPA 
+protocol is transparent to the user of the network. Although it is completely 
+different from Ethernet and Token Ring access protocols, the details are all 
+taken care of in the software drivers that the customer loads on workstations 
+and servers. These drivers ship with the NICs, and are standardized. The process 
+the customer goes through to install them is exactly the same as if putting in 
+Fast Ethernet, or any other networking scheme. </font></p>
+<h1 align="justify"><font color="#ff0000" face="Arial" size="3">What 
+Applications Does It Support?</font></h1>
+<p align="justify"><font face="Arial">100VG-Any-LAN is a very good choice for 
+networks where speed is a major concern. Nowadays, file servers and workstations 
+built around high speed processors such as Intel's Pentium chip are creating 
+large amounts of network traffic. Also, the current trend toward bringing full 
+motion video to people's desktops for things such as videoconferencing creates a 
+need for much more speed (bandwidth) than a standard 10 Mb/s Ethernet network 
+can provide. </font></p>
+<p align="center"><font face="Arial">
+<img src="vg2.gif" width="800" height="600"></font></p>
+<p align="center"><b><font face="Arial"><i>100VG-Any-LAN &amp; Switched Ethernet</i></font></b></p>
+<p align="justify"><font face="Arial">Another role where 100VG-Any-LAN excels is 
+as a backbone for switched Ethernet applications. In this application, multiple 
+Ethernet switches, each serving several small Ethernet segments, are 
+interconnected by a 100VG-Any-LAN network. This network topology is very useful 
+in cases where individual users don't require a lot of bandwidth, but segmenting 
+the network is needed to prevent a large number of users from causing 
+congestion. Usually, the file servers for the network are also installed on the 
+100VG-Any-LAN backbone. See Figure Two for an example of how this is done. The 
+nicest part about this type of network layout is that it is very easy to migrate 
+the entire network to 100VG-Any-LAN by simply replacing the Ethernet switches 
+with 100VG-Any-LAN hubs, and replacing any 10 Base-T NICs with 100VG-Any-LAN 
+cards. This saves the customer the expense of rewiring the building - which in 
+many cases can be far higher than the cost of the equipment used to make a 
+100VG-Any-LAN network.</font></p>
+<h1 align="justify"><font color="#ff0000" face="Arial" size="3">Summary</font></h1>
+<p align="justify"><font face="Arial">This article looked at 100VG-Any-LAN 
+technology, and have briefly touched on its DPA protocol. The distance 
+limitations for the network were shown to be 300 Feet from hub to station or hub 
+to hub over Category 3 or 4 cable. If Category 5 is used, the limits are 600 
+feet. We also looked at applications where it can be used to meet a specific 
+network's requirements for high speed, including how integrate 100VG-Any-LAN 
+with Ethernet switching.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

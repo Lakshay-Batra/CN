@@ -1,0 +1,239 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+-->
+</style>
+</head>
+
+<body>
+
+<p class="pB1_Body1" align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<h2 align="center"><font face="Arial" color="#FF0000" size="6">
+<span style="text-transform: uppercase; text-decoration: underline">
+<a name="SECTION00073000000000000000">Distributed Queue Dual Bus</a></span></font></h2>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color: black">A distributed multi-<a href="http://www.atis.org/tg2k/_access.html" style="text-underline: single; text-decoration: none"><font color="#000000">access</font></a>
+</span>network<span style="color: black"> that (a) supports integrated </span>
+communications<span style="color: black"> using a </span>dual bus<span style="color: black"> 
+and distributed </span>queuing<span style="color: black">, (b) provides access 
+to local or metropolitan area networks, and (c) supports </span>connectionless 
+data transfer<span style="color: black">, </span>connection<span style="color: black">-oriented 
+data transfer, and </span>isochronous<span style="color: black"> communications, 
+such as voice communications. </span></font></p>
+<p align="justify"><font face="Arial">In telecommunication, a <b>
+distributed-queue dual-bus network</b> (<b>DQDB</b>) is a distributed 
+multi-access network that (a) supports integrated communications using a dual 
+bus and distributed queuing, (b) provides access to local or metropolitan area 
+networks, and (c) supports connectionless data transfer, connection-oriented 
+data transfer, and isochronous communications, such as voice communications.</font></p>
+<p align="justify"><font face="Arial">IEEE 802.6 is an example of a network 
+providing DQDB access methods.</font></p>
+<h2 align="justify"><font face="Arial" size="3">DQDB Concept of Operation</font></h2>
+<p align="justify"><font face="Arial">The DQDB Medium Access Control (MAC) 
+algorithm is generally credited to Robert Newman who developed this algorithm in 
+his PhD thesis in the 1980s at the University of Western Australia. To 
+appreciate the innovative value of the DQDB MAC algorithm, it must be seen 
+against the background of LAN protocols at that time, which were based on 
+broadcast (such as Ethernet IEEE 802.3) or a ring (like Token Ring IEEE 802.5 
+and FDDI). The DQDB may be thought of as two token rings, one carrying data in 
+each direction around the ring. The ring is broken between two of the nodes in 
+the ring. (An advantage of this is that if the ring breaks somewhere else, the 
+broken link can be closed to form a ring with only one break again. This gives 
+reliability which is important in Metropolitan Area Networks (MAN), where 
+repairs may take longer than in a LAN because the damage may be inaccessible.)</font></p>
+<p align="justify"><font face="Arial">The DQDB standard IEEE 802.6 was developed 
+while ATM (Broadband ISDN) was still in early development, but there was strong 
+interaction between the two standards. ATM cells and DQDB frames were 
+harmonized. They both settled on essentially a 48-byte data frame with a 5-byte 
+header. In the DQDB algorithm, a distributed queue was implemented by 
+communicating queue state information via the header. Each node in a DQDB 
+network maintains a pair of state variables which represent its position in the 
+distributed queue and the size of the queue. The headers on the reverse bus 
+communicated requests to be inserted in the distributed queue so that upstream 
+nodes would know that they should allow DQDB cells to pass unused on the forward 
+bus. The algorithm was remarkable for its extreme simplicity.&nbsp;</font></p>
+<p align="justify"><font face="Arial">The <b>distributed queue dual bus (DQDB)</b> 
+network uses a different kind of MAC method based on the use of a distributed 
+queuing algorithm called <b>queued-packet distributed-switch (QPSX)</b> and a 
+slotted ring arrangement. It uses two unconnected unidirectional buses, which 
+are normally implemented as a series of point-to-point segments. DQDB also 
+expects the use of optical fiber links. Some of the characteristics of DQDB are 
+given in Table. </font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial">
+<img alt src="img380.gif" align="bottom" width="514" height="231"> <br>
+<strong>Table:</strong> <a name="tbldqdb">&nbsp;</a> Some characteristics of DQDB<br>
+&nbsp;</font></p>
+<p align="justify"><font face="Arial">The DQDB LAN or MAN transports data in 
+fixed size <b>cells</b>, which happen to look very much like ATM cells . 
+However, as DQDB offers a MAC service, the MAC frame may need to be segmented 
+into several cells before transmission . The cell structure for DQDB is almost 
+identical to that of an ATM cell. This similarity between the cell structure has 
+been made so that the DQDB will be compatible with B-ISDN. </font></p>
+<p align="center"><font face="Arial">
+<img alt src="img381.gif" align="bottom" width="496" height="129"> <br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial"><strong>Figure:</strong> A DQDB cell<br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial">
+<img alt src="img382.gif" align="bottom" width="447" height="239"> <br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial"><strong>Figure:</strong> A DQDB cell header<br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial">
+<img alt src="img383.gif" align="bottom" width="401" height="309"> <br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial"><strong>Figure:</strong> MAC frame 
+segmentation in DQDB<br>
+A DQDB cell differs from an ATM cell in 
+its header and its payload. In the header of the DQDB cell there is no virtual 
+path identifier (VPI) and the virtual channel identifier (VCI) has an additional 
+4 bits. The first 8 bits of the DQDB header form an access control field (ACF) 
+(in ATM this is the first 8 bits of the VPI). Also, the next 4 bits (the final 4 
+bits of the VPI in ATM) form the first 4 bits of the VCI. </font></p>
+<p align="justify"><font face="Arial">Also, the cell payload is structured:
+</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>Segment type (ST)</b>: identifies the 
+  cell as one of the following: </font></p>
+  <p align="justify">&nbsp;<ul>
+    <li>
+    <p align="justify"><font face="Arial"><b>single segment</b>: only this 
+    segment (no MAC fragmentation was required). </font></p>
+    <p align="justify">&nbsp;</li>
+    <li>
+    <p align="justify"><font face="Arial"><b>first segment</b>: the first cell 
+    of a segmented MAC frame; </font></p>
+    <p align="justify">&nbsp;</li>
+    <li>
+    <p align="justify"><font face="Arial"><b>intermediate segment</b>: the 
+    intermediate cells in a fragmented MAC frame. </font></p>
+    <p align="justify">&nbsp;</li>
+    <li>
+    <p align="justify"><font face="Arial"><b>last segment</b>: the final cell of 
+    a segmented MAC frame&gt; </font></p>
+    </li>
+  </ul>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Message identifier (MID)</b>: the MID 
+  is the same for all DQDB cells from the same MAC frame. This allows the 
+  identification of intermediate segments. </font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Information</b>: (part of) the MAC 
+  frame contents. </font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Length (LEN)</b>: the length of the 
+  information field. </font></p>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>CRC</b>: covering everything the 
+  whole cell payload. </font></p>
+  </li>
+</ul>
+<p align="justify"><font face="Arial">The cell header contains the following 
+information: </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>Access control field (ACF)</b>: this 
+  contains the BUSY and REQUEST bits that are used in the operation of the QPSX 
+  mechanism. The BUSY bit indicates the the slot is in use. The REQUEST bit is 
+  set in a slot by a node that is waiting to transmit. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Virtual channel identifier (VCI)</b>: 
+  This is not used in a DQDB MAN as there are no logical connections which 
+  require multiplexing -- the ST and MID fields in the payload are used instead. 
+  In a DQDB LAN with a private UNI, there is the possibility for applications to 
+  make use of this field. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Payload type (PT)</b>: same as ATM.
+  </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Cell loss priority (CLP)</b>: same as 
+  ATM. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Header error control (HEC)</b>: CRC 
+  for the header. </font></p>
+  </li>
+</ul>
+<p align="justify"><font face="Arial">A DQDB network is comprised of two buses 
+that transmit cells in opposite directions and each node is connected to both 
+buses. The connections are normally point-to-point, but are often depicted in 
+the tapped-bus type configuration as shown in Figure. Both these buses always 
+have a constant number of slots circulating on them. A slot on one bus is copied 
+to the other. </font></p>
+<p align="center"><font face="Arial">
+<img alt src="img384.gif" align="bottom" width="349" height="543"> <br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial"><strong>Figure:</strong> The operation of a 
+DQDB network<br>
+The way that the DQDB network operates is 
+by setting up a notion of a distributed queue at each node. This is done by 
+using a counter -- REQUEST counter (RC) -- that records how many nodes are 
+waiting to transmit ahead of this node in the queue. Consider in Figure which 
+shows a node on the DQDB network. Only the inputs from the two buses to the node 
+are shown, for simplicity. By <em>ahead</em> in the queue we mean any nodes 
+upstream (relative to the flow of cells/slots) from this node. The count of 
+waiting nodes is incremented by counting any set BUSY bits in passing slots on 
+Bus A. The count is decremented by seeing any set REQUEST bits on Bus B. </font></p>
+<p align="justify"><font face="Arial">For this node, we will consider what 
+happens when it wishes to transmit on Bus A. Firstly, it waits for a passing 
+slot on Bus B with an available REQUEST bit, which it then sets to indicate it 
+is waiting to transmit. It then transfers the RC value to a down counter (DC). 
+DC now contains the number of nodes ahead of this node in the queue. DC is 
+decremented by slots passing by with BUSY bits set, indicating slots/cells used 
+by other nodes that are ahead in the queue. When DC becomes 0, then this node 
+can transmit on Bus A. Although we have only considered Bus A, an identical 
+procedure is followed if the node wishes to transmit on Bus B. </font></p>
+<p align="center"><font face="Arial">
+<img alt src="img385.gif" align="bottom" width="214" height="253"> <br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial"><strong>Figure:</strong> DQDB node 
+collecting queue information about Bus A<br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial">
+<img alt src="img386.gif" align="bottom" width="213" height="253"> <br>
+<strong>Figure:</strong> DQDB node waiting to send on Bus A<br>
+&nbsp;</font></p>
+<p align="center"><font face="Arial">
+DQDB also has 4 priority transmission 
+levels, which are also based around a distributed queue system using counters, 
+i.e. each node effectively has 5 queues, with a RC and DC for each queue. The 
+priority levels are indicated by 4 further REQUEST bits in the ACF in the cell 
+header, labeled R1, R2, R3 and R4. The highest priority is R4. To cater for the 
+priority levels, the behavior of RC and DC must be modified as follows: </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">RC must count all request bits of its 
+  priority level or higher. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">DC decrements if an empty cell passes on 
+  Bus A, as this will be used by a waiting node with a higher priority further 
+  downstream. </font></p>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">DC increments if it sees a a REQUEST bit 
+  for a higher priority queue on Bus B. </font></li>
+</ul>
+<p class="pB1_Body1" align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

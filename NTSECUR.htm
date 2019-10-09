@@ -1,0 +1,909 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="NTSECUR_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h4
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h1
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" align="center">
+<span lang="EN-GB" style="font-family: Arial; font-weight: 700; text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">Network security</font></span></p>
+<h4 style="text-align: justify"><a name="SECTION00023140000000000000">
+<span style="font-family: Arial">Security.</span></a><span style="font-family: Arial">
+</span></h4>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">UUCP(Unix-to-Unix Copy), like any other 
+application, has security tradeoffs. Some strong points for its security is that 
+it is fairly limited in what it can do, and it's therefore more difficult to 
+trick into doing something it shouldn't; it's been around a <em>long</em> time, 
+and most its bugs have been discovered, analyzed, and fixed; and because UUCP 
+networks are made up of occasional connections to other hosts, it isn't possible 
+for someone on host <tt style="font-family: Courier New">
+<span style="font-family: Arial">E</span></tt> to directly make contact with 
+host <tt style="font-family: Courier New"><span style="font-family: Arial">B</span></tt>, 
+and take advantage of that connection to do something naughty. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">On the other 
+hand, UUCP typically works by having a system-wide UUCP user account and 
+password. Any system that has a UUCP connection with another must know the 
+appropriate password for the <tt style="font-family: Courier New">
+<span style="font-family: Arial">uucp</span></tt> or
+<tt style="font-family: Courier New"><span style="font-family: Arial">nuucp</span></tt> 
+account. Identifying a host beyond that point has traditionally been little more 
+than a matter of trusting that the host is who it claims to be, and that a 
+connection is allowed at that time. More recently, there has been an additional 
+layer of authentication, whereby both hosts must have the same <em>sequence 
+number</em> , that is a number that is incremented each time a connection is 
+made.</span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">&nbsp;Understanding IP </span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">IP has a number of very important features 
+which make it an extremely robust and flexible protocol. For our purposes, 
+though, we're going to focus on the security of IP, or more specifically, the 
+lack thereof. </span></p>
+<h3 style="text-align: justify"><a name="SECTION00032200000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Attacks Against IP</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">A number of attacks against IP are possible. 
+Typically, these exploit the fact that IP does not perform a robust mechanism 
+for <em>authentication</em> , which is proving that a packet came from where it 
+claims it did. A packet simply claims to originate from a given address, and 
+there isn't a way to be sure that the host that sent the packet is telling the 
+truth. This isn't necessarily a weakness, <em>per se</em> , but it is an 
+important point, because it means that the facility of host authentication has 
+to be provided at a higher layer on the ISO/OSI Reference Model. Today, 
+applications that require strong host authentication (such as cryptographic 
+applications) do this at the application layer. </span></p>
+<h4 style="text-align: justify"><a name="SECTION00032210000000000000">
+<span style="font-family: Arial">IP Spoofing.</span></a><span style="font-family: Arial">
+</span></h4>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">This is where one host claims to have the IP 
+address of another. Since many systems (such as router access control lists) 
+define which packets may and which packets may not pass based on the sender's IP 
+address, this is a useful technique to an attacker: he can send packets to a 
+host, perhaps causing it to take some sort of action. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Additionally, 
+some applications allow login based on the IP address of the person making the 
+request (such as the Berkeley <em>r-commands</em> )[</span><a href="http://www.interhack.net/pubs/network-security/network-security.html#rtm:42bsd-weak" style="color: blue; text-decoration: underline; text-underline: single"><span style="font-family: Arial">2</span></a><span style="font-family: Arial">]. 
+These are both good examples how trusting untrustable layers can provide 
+security that is -- at best -- weak. </span></p>
+<h4 style="text-align: justify"><a name="SECTION00032220000000000000">
+<span style="font-family: Arial">IP Session Hijacking.</span></a><span style="font-family: Arial">
+</span></h4>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial; font-weight: normal">This is 
+a relatively sophisticated attack, first described by Steve Bellovin. This is 
+very dangerous, however, because there are now toolkits available in the 
+underground community that allow otherwise unskilled bad-guy-wannabes to 
+perpetrate this attack. IP Session Hijacking is an attack whereby a user's 
+session is taken over, being in the control of the attacker. If the user was in 
+the middle of email, the attacker is looking at the email, and then can execute 
+any commands he wishes as the attacked user. The attacked user simply sees his 
+session dropped, and may simply login again, perhaps not even noticing that the 
+attacker is still logged in and doing things.</span></h2>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">&nbsp;Denial-of-Service </span>
+</h2>
+<p class="MsoNormal" style="text-align: justify"><em>
+<span style="font-family: Arial">DoS</span></em><span style="font-family: Arial"> 
+(Denial-of-Service) attacks are probably the nastiest, and most difficult to 
+address. These are the nastiest, because they're very easy to launch, difficult 
+(sometimes impossible) to track, and it isn't easy to refuse the requests of the 
+attacker, without also refusing legitimate requests for service. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The premise of a 
+DoS attack is simple: send more requests to the machine than it can handle. 
+There are toolkits available in the underground community that make this a 
+simple matter of running a program and telling it which host to blast with 
+requests. The attacker's program simply makes a connection on some service port, 
+perhaps forging the packet's header information that says where the packet came 
+from, and then dropping the connection. If the host is able to answer 20 
+requests per second, and the attacker is sending 50 per second, obviously the 
+host will be unable to service all of the attacker's requests, much less any 
+legitimate requests (hits on the web site running there, for example). </span>
+</p>
+<p style="text-align: justify"><span style="font-family: Arial">Such attacks 
+were fairly common in late 1996 and early 1997, but are now becoming less 
+popular. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Some things that 
+can be done to reduce the risk of being stung by a denial of service attack 
+include </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Not running your visible-to-the-world servers 
+  at a level too close to capacity </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Using packet filtering to prevent obviously 
+  forged packets from entering into your network address space. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Keeping up-to-date on security-related 
+  patches for your hosts' operating systems. </span></li>
+</ul>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">&nbsp;Unauthorized Access </span>
+</h2>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">``Unauthorized access'' is a very high-level 
+term that can refer to a number of different sorts of attacks. The goal of these 
+attacks is to access some resource that your machine should not provide the 
+attacker. For example, a host might be a web server, and should provide anyone 
+with requested web pages. However, that host should not provide command shell 
+access without being sure that the person making such a request is someone who 
+should get it, such as a local administrator. </span></p>
+<h3 style="text-align: justify"><a name="SECTION00052100000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Executing Commands Illicitly</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">It's obviously undesirable for an unknown and 
+untrusted person to be able to execute commands on your server machines. There 
+are two main classifications of the severity of this problem: normal user 
+access, and administrator access. A normal user can do a number of things on a 
+system (such as read files, mail them to other people, etc.) that an attacker 
+should not be able to do. This might, then, be all the access that an attacker 
+needs. On the other hand, an attacker might wish to make configuration changes 
+to a host (perhaps changing its IP address, putting a start-up script in place 
+to cause the machine to shut down every time it's started, or something 
+similar). In this case, the attacker will need to gain administrator privileges 
+on the host. </span></p>
+<h3 style="text-align: justify"><a name="SECTION00052200000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Confidentiality Breaches</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">We need to examine the threat model: what is it 
+that you're trying to protect yourself against? There is certain information 
+that could be quite damaging if it fell into the hands of a competitor, an 
+enemy, or the public. In these cases, it's possible that compromise of a normal 
+user's account on the machine can be enough to cause damage (perhaps in the form 
+of PR, or obtaining information that can be used against the company, etc.)
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">While many of 
+the perpetrators of these sorts of break-ins are merely thrill-seekers 
+interested in nothing more than to see a shell prompt for your computer on their 
+screen, there are those who are more malicious, as we'll consider next. 
+(Additionally, keep in mind that it's possible that someone who is normally 
+interested in nothing more than the thrill could be persuaded to do more: 
+perhaps an unscrupulous competitor is willing to hire such a person to hurt 
+you.) </span></p>
+<h3 style="text-align: justify"><a name="SECTION00052300000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Destructive Behavior</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Among the destructive sorts of break-ins and 
+attacks, there are two major categories. </span></p>
+<h4 style="text-align: justify"><a name="SECTION00052310000000000000">
+<span style="font-family: Arial">Data Diddling.</span></a><span style="font-family: Arial">
+</span></h4>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">The data diddler is likely the worst sort, 
+since the fact of a break-in might not be immediately obvious. Perhaps he's 
+toying with the numbers in your spreadsheets, or changing the dates in your 
+projections and plans. Maybe he's changing the account numbers for the 
+auto-deposit of certain paychecks. In any case, rare is the case when you'll 
+come in to work one day, and simply know that something is wrong. An accounting 
+procedure might turn up a discrepancy in the books three or four months after 
+the fact. Trying to track the problem down will certainly be difficult, and once
+<em>that</em> problem is discovered, how can any of your numbers from that time 
+period be trusted? How far back do you have to go before you think that your 
+data is safe? </span></p>
+<h4 style="text-align: justify"><a name="SECTION00052320000000000000">
+<span style="font-family: Arial">Data Destruction.</span></a><span style="font-family: Arial">
+</span></h4>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial; font-weight: normal">Some of 
+those perpetrate attacks are simply twisted jerks who like to delete things. In 
+these cases, the impact on your computing capability -- and consequently your 
+business -- can be nothing less than if a fire or other disaster caused your 
+computing equipment to be completely destroyed.</span></h2>
+<h1 style="text-align: justify"><a name="SECTION00060000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Firewalls</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h1>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">As we've seen in our discussion of the Internet 
+and similar networks, connecting an organization to the Internet provides a 
+two-way flow of traffic. This is clearly undesirable in many organizations, as 
+proprietary information is often displayed freely within a corporate <em>
+intranet</em> (that is, a TCP/IP network, modeled after the Internet that only 
+works within the organization). </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">In order to 
+provide some level of separation between an organization's intranet and the 
+Internet, <em>firewalls</em> have been employed. A firewall is simply a group of 
+components that collectively form a barrier between two networks. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A number of 
+terms specific to firewalls and networking are going to be used throughout this 
+section, so let's introduce them all together. </span></p>
+<p class="MsoNormal" style="text-align: justify"><strong>
+<span style="font-family: Arial">Bastion host.</span></strong><span style="font-family: Arial">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">A general-purpose computer used to control 
+access between the internal (private) network (intranet) and the Internet (or 
+any other untrusted network). Typically, these are hosts running a flavor of the 
+Unix operating system that has been customized in order to reduce its 
+functionality to only what is necessary in order to support its functions. Many 
+of the general-purpose features have been turned off, and in many cases, 
+completely removed, in order to improve the security of the machine. </span></p>
+<p class="MsoNormal" style="text-align: justify"><strong>
+<span style="font-family: Arial">Router.</span></strong><span style="font-family: Arial">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">A special purpose computer for connecting 
+networks together. Routers also handle certain functions, such as <em>routing</em> 
+, or managing the traffic on the networks they connect. </span></p>
+<p class="MsoNormal" style="text-align: justify"><strong>
+<span style="font-family: Arial">Access Control List (ACL).</span></strong><span style="font-family: Arial">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">Many routers now have the ability to 
+selectively perform their duties, based on a number of facts about a packet that 
+comes to it. This includes things like origination address, destination address, 
+destination service port, and so on. These can be employed to limit the sorts of 
+packets that are allowed to come in and go out of a given network. </span></p>
+<p class="MsoNormal" style="text-align: justify"><strong>
+<span style="font-family: Arial">Demilitarized Zone (DMZ).</span></strong><span style="font-family: Arial">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">The DMZ is a critical part of a firewall: it is 
+a network that is neither part of the untrusted network, nor part of the trusted 
+network. But, this is a network that connects the untrusted to the trusted. The 
+importance of a DMZ is tremendous: someone who breaks into your network from the 
+Internet should have to get through several layers in order to successfully do 
+so. Those layers are provided by various components within the DMZ. </span></p>
+<p class="MsoNormal" style="text-align: justify"><strong>
+<span style="font-family: Arial">Proxy.</span></strong><span style="font-family: Arial">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">This is the process of having one host act in 
+behalf of another. A host that has the ability to fetch documents from the 
+Internet might be configured as a <em>proxy server</em> , and host on the 
+intranet might be configured to be <em>proxy clients</em> . In this situation, 
+when a host on the intranet wishes to fetch the
+<tt style="font-family: Courier New"><span style="font-family: Arial">&lt;http://www.interhack.net/&gt;</span></tt> 
+web page, for example, the browser will make a connection to the proxy server, 
+and request the given URL. The proxy server will fetch the document, and return 
+the result to the client. In this way, all hosts on the intranet are able to 
+access resources on the Internet without having the ability to direct talk to 
+the Internet. </span></p>
+<h2 style="text-align: justify"><a name="SECTION00061000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Types of Firewalls</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h2>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">There are three basic types of firewalls, and 
+we'll consider each of them. </span></p>
+<h3 style="text-align: justify"><a name="SECTION00061100000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Application Gateways</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">The first firewalls were application gateways, 
+and are sometimes known as proxy gateways. These are made up of bastion hosts 
+that run special software to act as a proxy server. This software runs at the
+<em>Application Layer</em> of our old friend the ISO/OSI Reference Model, hence 
+the name. Clients behind the firewall must be <em>proxitized</em> (that is, must 
+know how to use the proxy, and be configured to do so) in order to use Internet 
+services. Traditionally, these have been the most secure, because they don't 
+allow anything to pass by default, but need to have the programs written and 
+turned on in order to begin passing traffic. </span></p>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellpadding="0">
+    <tr>
+      <td style="padding: .75pt">
+      <p class="MsoNormal" style="text-align: justify"><strong>
+      <span style="font-family: Arial">Figure 5:</span></strong><span style="font-family: Arial"> 
+      A sample application gateway</span></td>
+    </tr>
+    <tr>
+      <td style="padding: .75pt">
+      <p class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1038" type="#_x0000_t75" alt="\begin{figure}&#10;\begin{center}&#10;&#10;\setlength {\unitlength}{0.00041700in}&#10; &#10;\begingr...&#10; ...{375}}&#10;\put(2926,-961){\vector( 0, 1){675}}\end{picture}\end{center}\end{figure}"
+ style='width:232.5pt;height:243.75pt'>
+ <v:imagedata src="NTSECUR_files/image001.gif" o:href="http://www.interhack.net/pubs/network-security/img5.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=310 height=325
+src="NTSECUR_files/image001.gif"
+alt="\begin{figure}&#10;\begin{center}&#10;&#10;\setlength {\unitlength}{0.00041700in}&#10; &#10;\begingr...&#10; ...{375}}&#10;\put(2926,-961){\vector( 0, 1){675}}\end{picture}\end{center}\end{figure}"
+v:shapes="_x0000_s1038"><![endif]></span></td>
+    </tr>
+  </table>
+</div>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;These are also 
+typically the slowest, because more processes need to be started in order to 
+have a request serviced. Figure&nbsp;</span><a href="http://www.interhack.net/pubs/network-security/network-security.html#me:proxy" style="color: blue; text-decoration: underline; text-underline: single"><span style="font-family: Arial">5</span></a><span style="font-family: Arial"> 
+shows a application gateway. </span></p>
+<h3 style="text-align: justify"><a name="SECTION00061200000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Packet Filtering</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Packet filtering is a technique whereby routers 
+have <em>ACLs</em> (Access Control Lists) turned on. By default, a router will 
+pass all traffic sent it, and will do so without any sort of restrictions. 
+Employing ACLs is a method for enforcing your security policy with regard to 
+what sorts of access you allow the outside world to have to your internal 
+network, and vice versa. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">There is less 
+overhead in packet filtering than with an application gateway, because the 
+feature of access control is performed at a lower ISO/OSI layer (typically, the 
+transport or session layer). Due to the lower overhead and the fact that packet 
+filtering is done with routers, which are specialized computers optimized for 
+tasks related to networking, a packet filtering gateway is often much faster 
+than its application layer cousins. Figure&nbsp;6 
+shows a packet filtering gateway. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Because we're 
+working at a lower level, supporting new applications either comes 
+automatically, or is a simple matter of allowing a specific packet type to pass 
+through the gateway. (Not that the <em>possibility</em> of something 
+automatically makes it a good idea; opening things up this way might very well 
+compromise your level of security below what your policy allows.) </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">There are 
+problems with this method, though. Remember, TCP/IP has absolutely no means of 
+guaranteeing that the source address is really what it claims to be. As a 
+result, we have to use layers of packet filters in order to localize the 
+traffic. We can't get all the way down to the actual host, but with two layers 
+of packet filters, we can differentiate between a packet that came from the 
+Internet and one that came from our internal network. We can identify which 
+network the packet came from with certainty, but we can't get more specific than 
+that. </span></p>
+<h3 style="text-align: justify"><a name="SECTION00061300000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Hybrid Systems</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">In an attempt to marry the security of the 
+application layer gateways with the flexibility and speed of packet filtering, 
+some vendors have created systems that use the principles of both. </span></p>
+<div align="center">
+  <table class="MsoNormalTable" border="0" cellpadding="0">
+    <tr>
+      <td style="padding: .75pt">
+      <p class="MsoNormal" style="text-align: justify"><strong>
+      <span style="font-family: Arial">Figure 6:</span></strong><span style="font-family: Arial"> 
+      A sample packet filtering gateway</span></td>
+    </tr>
+    <tr>
+      <td style="padding: .75pt">
+      <p class="MsoNormal" style="text-align: justify">
+      <span style="font-family: Arial"><!--[if gte vml 1]><v:shape id="_x0000_s1039"
+ type="#_x0000_t75" alt="\begin{figure}&#10;\begin{center}&#10;&#10;\setlength {\unitlength}{0.00041700in}&#10; &#10;\begingr...&#10; ...{525}}&#10;\put(2926,-961){\vector( 0, 1){675}}\end{picture}\end{center}\end{figure}"
+ style='width:232.5pt;height:150.75pt'>
+ <v:imagedata src="NTSECUR_files/image002.gif" o:href="http://www.interhack.net/pubs/network-security/img6.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=310 height=201
+src="NTSECUR_files/image002.gif"
+alt="\begin{figure}&#10;\begin{center}&#10;&#10;\setlength {\unitlength}{0.00041700in}&#10; &#10;\begingr...&#10; ...{525}}&#10;\put(2926,-961){\vector( 0, 1){675}}\end{picture}\end{center}\end{figure}"
+v:shapes="_x0000_s1039"><![endif]></span></td>
+    </tr>
+  </table>
+</div>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;In some of these 
+systems, new connections must be authenticated and approved at the application 
+layer. Once this has been done, the remainder of the connection is passed down 
+to the session layer, where packet filters watch the connection to ensure that 
+only packets that are part of an ongoing (already authenticated and approved) 
+conversation are being passed. </span></p>
+<p style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial; font-weight: 700">Secure 
+Modems; Dial-Back Systems </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">If modem access is to be provided, this should 
+be guarded carefully. The <em>terminal server</em> , or network device that 
+provides dial-up access to your network needs to be actively administered, and 
+its logs need to be examined for strange behavior. Its passwords need to be 
+strong -- not ones that can be guessed. Accounts that aren't actively used 
+should be disabled. In short, it's the easiest way to get into your network from 
+remote: guard it carefully. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">There are some 
+remote access systems that have the feature of a two-part procedure to establish 
+a connection. The first part is the remote user dialing into the system, and 
+providing the correct userid and password. The system will then drop the 
+connection, and call the authenticated user back at a known telephone number. 
+Once the remote user's system answers that call, the connection is established, 
+and the user is on the network. This works well for folks working at home, but 
+can be problematic for users wishing to dial in from hotel rooms and such when 
+on business trips. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Other 
+possibilities include one-time password schemes, where the user enters his 
+userid, and is presented with a ``challenge,'' a string of between six and eight 
+numbers. He types this challenge into a small device that he carries with him 
+that looks like a calculator. He then presses enter, and a ``response'' is 
+displayed on the LCD screen. The user types the response, and if all is correct, 
+he login will proceed. These are useful devices for solving the problem of good 
+passwords, without requiring dial-back access. However, these have their own 
+problems, as they require the user to carry them, and they must be tracked, much 
+like building and office keys. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">No doubt many 
+other schemes exist. Take a look at your options, and find out how what the 
+vendors have to offer will help you <em>enforce your security policy 
+effectively.</em> </span></p>
+<h2 style="text-align: justify"><a name="SECTION00072000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Crypto-Capable Routers</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h2>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">A feature that is being built into some routers 
+is the ability to use session encryption between specified routers. Because 
+traffic traveling across the Internet can be seen by people in the middle who 
+have the resources (and time) to snoop around, these are advantageous for 
+providing connectivity between two sites, such that there can be secure routes.
+</span></p>
+<p style="text-align: justify">&nbsp;</p>
+<h2 style="text-align: justify"><a name="SECTION00073000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Virtual Private Networks</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h2>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Given the ubiquity of the Internet, and the 
+considerable expense in private leased lines, many organizations have been 
+building <em>VPNs</em> (Virtual Private Networks). Traditionally, for an 
+organization to provide connectivity between a main office and a satellite one, 
+an expensive data line had to be leased in order to provide direct connectivity 
+between the two offices. Now, a solution that is often more economical is to 
+provide both offices connectivity to the Internet. Then, using the Internet as 
+the medium, the two offices can communicate. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The danger in 
+doing this, of course, is that there is no privacy on this channel, and it's 
+difficult to provide the other office access to ``internal'' resources without 
+providing those resources to everyone on the Internet. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">VPNs provide the 
+ability for two offices to communicate with each other in such a way that it 
+looks like they're directly connected over a private leased line. The session 
+between them, although going over the Internet, is private (because the link is 
+encrypted), and the link is convenient, because each can see each others' 
+internal resources without showing them off to the entire world. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A number of 
+firewall vendors are including the ability to build VPNs in their offerings, 
+either directly with their base product, or as an add-on. If you have need to 
+connect several offices together, this might very well be the best way to do it.
+</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<b>
+<span style="font-family: Arial">&nbsp;</span><a name="SecPPP"><span style="font-size: 12.0pt; font-family: Arial">Security Policy, Procedures, 
+and Practices</span></a></b></p>
+<p style="text-align: justify"><a name="SPolicy"><b><i>
+<span style="font-family: Arial; color: black">Security Policy</span></i></b></a><span style="font-family: Arial; color: black">
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">A 
+policy is a documented high-level plan for organization-wide computer and 
+information security. It provides a framework for making specific decisions, 
+such as which defense mechanisms to use and how to configure services, and is 
+the basis for developing secure programming guidelines and procedures for users 
+and system administrators to follow. Because a security policy is a long-term 
+document, the contents avoid technology-specific issues. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">A 
+security policy covers the following (among other topics appropriate to the 
+organization): </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">high-level description of the technical 
+  environment of the site, the legal environment (governing laws), the authority 
+  of the policy, and the basic philosophy to be used when interpreting the 
+  policy </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">risk analysis that identifies the site's 
+  assets, the threats that exist against those assets, and the costs of asset 
+  loss </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">guidelines for system administrators on how 
+  to manage systems </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">definition of acceptable use for users </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">guidelines for reacting to a site compromise 
+  (e.g., how to deal with the media and law enforcement, and whether to trace 
+  the intruder or shutdown and rebuild the system) </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Factors that contribute to the success of a security policy include management 
+commitment, technological support for enforcing the policy, effective 
+dissemination of the policy, and the security awareness of all users. Management 
+assigns responsibility for security, provides training for security personnel, 
+and allocates funds to security. Technological support for the security policy 
+moves some responsibility for enforcement from individuals to technology. The 
+result is an automatic and consistent enforcement of policies, such as those for 
+access and authentication. Technical options that support policy include (but 
+are not limited to) </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">challenge/response systems for authentication
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">auditing systems for accountability and event 
+  reconstruction </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">encryption systems for the confidential 
+  storage and transmission of data </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">network tools such as firewalls and proxy 
+  servers </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+There are many books and papers devoted to site security policies, including 
+requests for comments RFC 1244 (6) and RFC 1281 (7), guidelines written by the 
+Internet Engineering Task Force. </span></p>
+<p style="text-align: justify"><a name="SecProc"><b><i>
+<span style="font-family: Arial; color: black">Security-Related Procedures</span></i></b></a><span style="font-family: Arial; color: black">
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Procedures are specific steps to follow that are based on the computer security 
+policy. Procedures address such topics as retrieving programs from the network, 
+connecting to the site's system from home or while traveling, using encryption, 
+authentication for issuing accounts, configuration, and monitoring. </span></p>
+<p style="text-align: justify"><a name="SecPrac"><b><i>
+<span style="font-family: Arial; color: black">Security Practices</span></i></b></a><span style="font-family: Arial; color: black">
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+System administration practices play a key role in network security. Checklists 
+and general advice on good security practices are readily available. Below are 
+examples of commonly recommended practices: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Ensure all accounts have a password and that 
+  the passwords are difficult to guess. A one-time password system is 
+  preferable. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Use tools such as MD5 checksums (8), a strong 
+  cryptographic technique, to ensure the integrity of system software on a 
+  regular basis. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Use secure programming techniques when 
+  writing software. These can be found at security-related sites on the World 
+  Wide Web. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Be vigilant in network use and configuration, 
+  making changes as vulnerabilities become known. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Regularly check with vendors for the latest 
+  available fixes and keep systems current with upgrades and patches. </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Regularly check on-line security archives, 
+  such as those maintained by incident response teams, for security alerts and 
+  technical advice. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family: Arial">Audit systems and networks, and regularly 
+  check logs. Many sites that suffer computer security incidents report that 
+  insufficient audit data is collected, so detecting and tracing an intrusion is 
+  difficult. </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-family: Arial">&nbsp;</span><a name="SecTech"><span style="font-size: 12.0pt; font-family: Arial">Security 
+Technology</span></a></b></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">A 
+variety of technologies have been developed to help organizations secure their 
+systems and information against intruders. These technologies help protect 
+systems and information against attacks, detect unusual or suspicious 
+activities, and respond to events that affect security. In this section, the 
+focus is on two core areas: operational technology and cryptography. The purpose 
+of operational technology is to maintain and defend the availability of data 
+resources in a secure manner. The purpose of cryptography is to secure the 
+confidentiality, integrity, and authenticity of data resources. </span></p>
+<p style="text-align: justify"><a name="OpTech"><b><i>
+<span style="font-family: Arial; color: black">Operational Technology</span></i></b></a><span style="font-family: Arial; color: black">
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Intruders actively seek ways to access networks and hosts. Armed with knowledge 
+about specific vulnerabilities, social engineering techniques, and tools to 
+automate information gathering and systems infiltration, intruders can often 
+gain entry into systems with disconcerting ease. System administrators face the 
+dilemma of maximizing the availability of system services to valid users while 
+minimizing the susceptibility of complex network infrastructures to attack. 
+Unfortunately, services often depend on the same characteristics of systems and 
+network protocols that make them susceptible to compromise by intruders. In 
+response, technologies have evolved to reduce the impact of such threats. No 
+single technology addresses all the problems. Nevertheless, organizations can 
+significantly improve their resistance to attack by carefully preparing and 
+strategically deploying personnel and operational technologies. Data resources 
+and assets can be protected, suspicious activity can be detected and assessed, 
+and appropriate responses can be made to security events as they occur.</span></p>
+<p style="text-align: justify"><a name="OTP"><b>
+<span style="font-family: Arial; color: black">One-Time Passwords.</span></b></a><span style="font-family: Arial; color: black"> 
+Intruders often install packet sniffers to capture passwords as they traverse 
+networks during remote log-in processes. Therefore, all passwords should at 
+least be encrypted as they traverse networks. A better solution is to use 
+one-time passwords because there are times when a password is required to 
+initiate a connection before confidentiality can be protected. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+One common example occurs in remote dial-up connections. Remote users, such as 
+those traveling on business, dial in to their organization's modem pool to 
+access network and data resources. To identify and authenticate themselves to 
+the dial-up server, they must enter a user ID and password. Because this initial 
+exchange between the user and server may be monitored by intruders, it is 
+essential that the passwords are not reusable. In other words, intruders should 
+not be able to gain access by masquerading as a legitimate user using a password 
+they have captured. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+One-time password technologies address this problem. Remote users carry a device 
+synchronized with software and hardware on the dial-up server. The device 
+displays random passwords, each of which remains in effect for a limited time 
+period (typically 60 seconds). These passwords are never repeated and are valid 
+only for a specific user during the period that each is displayed. In addition, 
+users are often limited to one successful use of any given password. One-time 
+password technologies significantly reduce unauthorized entry at gateways 
+requiring an initial password. </span></p>
+<p style="text-align: justify"><a name="Firewalls"><b>
+<span style="font-family: Arial; color: black">Firewalls</span></b></a><span style="font-family: Arial; color: black">.</span><span style="font-family: Arial; color: black"> 
+Intruders often attempt to gain access to networked systems by pretending to 
+initiate connections from trusted hosts. They squash the emissions of the 
+genuine host using a denial-of-service attack and then attempt to connect to a 
+target system using the address of the genuine host. To counter these 
+address-spoofing attacks and enforce limitations on authorized connections into 
+the organizations network, it is necessary to filter all incoming and outgoing 
+network traffic. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">A 
+firewall is a collection of hardware and software designed to examine a stream 
+of network traffic and service requests. Its purpose is to eliminate from the 
+stream those packets or requests that fail to meet the security criteria 
+established by the organization. A simple firewall may consist of a filtering 
+router, configured to discard packets that arrive from unauthorized addresses or 
+that represent attempts to connect to unauthorized service ports. More 
+sophisticated implementations may include bastion hosts, on which proxy 
+mechanisms operate on behalf of services. These mechanisms authenticate 
+requests, verify their form and content, and relay approved service requests to 
+the appropriate service hosts. Because firewalls are typically the first line of 
+defense against intruders, their configuration must be carefully implemented and 
+tested before connections are established between internal networks and the 
+Internet. </span></p>
+<p style="text-align: justify"><a name="MonTools"><b>
+<span style="font-family: Arial; color: black">Monitoring Tools</span></b></a><span style="font-family: Arial; color: black">. 
+Continuous monitoring of network activity is required if a site is to maintain 
+confidence in the security of its network and data resources. Network monitors 
+may be installed at strategic locations to collect and examine information 
+continuously that may indicate suspicious activity. It is possible to have 
+automatic notifications alert system administrators when the monitor detects 
+anomalous readings, such as a burst of activity that may indicate a 
+denial-of-service attempt. Such notifications may use a variety of channels, 
+including electronic mail and mobile paging. Sophisticated systems capable of 
+reacting to questionable network activity may be implemented to disconnect and 
+block suspect connections, limit or disable affected services, isolate affected 
+systems, and collect evidence for subsequent analysis. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Tools to scan, monitor, and eradicate viruses can identify and destroy malicious 
+programs that may have inadvertently been transmitted onto host systems. The 
+damage potential of viruses ranges from mere annoyance (e.g., an unexpected 
+&quot;Happy Holidays&quot; jingle without further effect) to the obliteration of critical 
+data resources. To ensure continued protection, the virus identification data on 
+which such tools depend must be kept up to date. Most virus tool vendors provide 
+subscription services or other distribution facilities to help customers keep up 
+to date with the latest viral strains. </span></p>
+<p style="text-align: justify"><a name="SAT"><b>
+<span style="font-family: Arial; color: black">Security Analysis Tools.</span></b></a><span style="font-family: Arial; color: black"> 
+Because of the increasing sophistication of intruder methods and the 
+vulnerabilities present in commonly used applications, it is essential to assess 
+periodically network susceptibility to compromise. A variety of vulnerability 
+identification tools are available, which have garnered both praise and 
+criticism. System administrators find these tools useful in identifying 
+weaknesses in their systems. Critics argue that such tools, especially those 
+freely available to the Internet community, pose a threat if acquired and 
+misused by intruders. </span></p>
+<p style="text-align: justify"><a name="Crypt"><b><i>
+<span style="font-family: Arial; color: black">Cryptography</span></i></b></a><span style="font-family: Arial; color: black">
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+One of the primary reasons that intruders can be successful is that most of the 
+information they acquire from a system is in a form that they can read and 
+comprehend. When you consider the millions of electronic messages that traverse 
+the Internet each day, it is easy to see how a well-placed network snuffer might 
+capture a wealth of information that users would not like to have disclosed to 
+unintended readers. Intruders may reveal the information to others, modify it to 
+misrepresent an individual or organization, or use it to launch an attack. One 
+solution to this problem is, through the use of cryptography, to prevent 
+intruders from being able to use the information that they capture. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Encryption is the process of translating information from its original form 
+(called <i>plaintext</i>) into an encoded, incomprehensible form (called <i>
+ciphertext</i>). Decryption refers to the process of taking ciphertext and 
+translating it back into plaintext. Any type of data may be encrypted, including 
+digitized images and sounds. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Cryptography secures information by protecting its confidentiality. Cryptography 
+can also be used to protect information about the integrity and authenticity of 
+data. For example, checksums are often used to verify the integrity of a block 
+of information. A checksum, which is a number calculated from the contents of a 
+file, can be used to determine if the contents are correct. An intruder, 
+however, may be able to forge the checksum after modifying the block of 
+information. Unless the checksum is protected, such modification might not be 
+detected. Cryptographic checksums (also called message digests) help prevent 
+undetected modification of information by encrypting the checksum in a way that 
+makes the checksum unique. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+The authenticity of data can be protected in a similar way. For example, to 
+transmit information to a colleague by E-mail, the sender first encrypts the 
+information to protect its confidentiality and then attaches an encrypted 
+digital signature to the message. When the colleague receives the message, he or 
+she checks the origin of the message by using a key to verify the sender's 
+digital signature and decrypts the information using the corresponding 
+decryption key. To protect against the chance of intruders modifying or forging 
+the information in transit, digital signatures are formed by encrypting a 
+combination of a checksum of the information and the author's unique private 
+key. A side effect of such authentication is the concept of no repudiation. A 
+person who places their cryptographic digital signature on an electronic 
+document cannot later claim that they did not sign it, since in theory they are 
+the only one who could have created the correct signature. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Current laws in several countries, including the United States, restrict 
+cryptographic technology from export or import across national borders. In the 
+era of the Internet, it is particularly important to be aware of all applicable 
+local and foreign regulations governing the use of cryptography. </span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Information Warfare</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Extensive and widespread dependence on the Internet has called new attention to 
+the importance of information to national security. The term <i>information 
+warfare</i> refers to the act of war against the information resources of an 
+adversary. Like warfare on land or in the air, information warfare is one 
+component of a range of attack strategies for dominating an adversary in order 
+to gain or maintain an objective. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Information warfare is divided into two categories: offensive and defensive. The 
+purpose of offensive information warfare is to attack the information resources 
+of an adversary to gain dominance. Defensive information warfare is the 
+protection of your information assets against attack. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Information assets can take many forms, from messages sent by courier in 
+diplomatic bags to the computers used to analyze enemy positions based on 
+satellite data. In computer security, information assets include digital 
+information, the computers that process them, and the networks that transmit the 
+digital information from place to place. Computer security is a key element for 
+protecting the availability, integrity, and confidentiality of all these 
+information assets. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Internet security protects information assets consisting of computers, 
+information, and networks that are part of the Internet. Internet security is 
+related to information warfare when the Internet contains information assets 
+that are important to the information warfare objective. For example, if an 
+adversary can use the Internet to access battle plans, the Internet is being 
+used for information warfare. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Internet security is important to both offensive and defensive information 
+warfare because the Internet is a global and dependable resource on which many 
+countries rely. Historically, military networks and computers were unreachable 
+by nonmilitary participants. The Internet, however, provides a cost-effective 
+way for military and government units to communicate and participate in 
+achieving objectives. Use of the Internet means that individuals, multinational 
+companies, and terrorist organizations all can gain access to important 
+information resources of governments and military forces. Thus, it is important 
+to address Internet security concerns as a key component of defensive 
+information warfare. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Because the Internet is global, it can be an avenue of attack for offensive 
+information warfare by many governments. One of the battlefields for a future 
+military offensive could very well involve the Internet. Intruder technology (as 
+described in a separate section above) could be used by a government as a weapon 
+against information resources, or used randomly by a terrorist organization 
+against civilian targets. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">In 
+the study of information warfare, there are many new problems to solve that are 
+not evident in other forms of warfare. These problems include identifying the 
+enemy, responding without making your systems vulnerable to attack, and 
+gathering intelligence on the Internet about preparations for a military 
+exercise. These and other problems are likely to be the subject of discussion 
+and investigation for some time to come. </span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">The Future</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Research and development efforts are underway to allow critical applications to 
+operate in the future in a more secure environment than exists today. </span>
+</p>
+<h3 style="text-align: justify"><a name="IP">
+<span style="font-size: 12.0pt; font-family: Arial">Internetworking Protocols</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Most of the network protocols currently in use have changed little since the 
+early definitions of the ARPA research and education network when trust was the 
+norm. To have a secure foundation for the critical Internet applications of the 
+future, severe weaknesses must be addressed: lack of encryption to preserve 
+privacy, lack of cryptographic authentication to identify the source of 
+information, and lack of cryptographic checksums to preserve the integrity of 
+data (and the integrity of the packet routing information itself). New 
+internetworking protocols are under development which uses cryptography to 
+authenticate the originator of a packet and to protect the integrity and 
+confidentiality of data. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+The IETF (Internet Engineering Task Force) Proposed Standard for the Next 
+Generation Internet Protocol (IPng) is being designed to cope with the vastly 
+increased addressing and routing needs associated with the exponential growth of 
+the Internet. IPng provides integral support for authenticating hosts and 
+protecting the integrity and confidentiality of data. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+The first release of IPng is officially termed IPv6 (Internet Protocol version 
+6). Since it is impractical to replace the existing protocol instantly and 
+simultaneously throughout the Internet, IPv6 is designed to coexist with the 
+current version of IP, allowing for a gradual transition over the course of 
+years. Implementations of IPv6 for many routers and host operating systems are 
+underway. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">In 
+the future, authentication protocols will increasingly be supported by 
+technology that authenticates individuals (in the context of their 
+organizational or personal roles) through the use of smart cards, fingerprint 
+readers, voice recognition, retina scans, and so forth. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Protocol design, analysis, and implementation will be the subject of continued 
+research. A primary goal is 100% verifiably secure protocols (that is, protocols 
+as provably secure as the cryptographic algorithms supporting them), but 
+researchers are nowhere near attaining this goal. </span></p>
+<h3 style="text-align: justify"><a name="ID">
+<span style="font-size: 12.0pt; font-family: Arial">Intrusion Detection</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Research is underway to improve the ability of networked systems and their 
+managers to determine that they are, or have been, under attack. Intrusion 
+detection is recognized as a problematic area of research that is still in its 
+infancy. There are two major areas of research in intrusion detection: anomaly 
+detection and pattern recognition. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Research in anomaly detection is based on determining patterns of &quot;normal&quot; 
+behavior for networks, hosts, and users and then detecting behavior that is 
+significantly different (anomalous). Patterns of normal behavior are frequently 
+determined through data collection over a period of time sufficient to obtain a 
+good sample of the typical behavior of authorized users and processes. The basic 
+difficulty facing researchers is that normal behavior is highly variable based 
+on a wide variety of innocuous factors. Many of the activities of intruders are 
+indistinguishable from the benign actions of an authorized user. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+The second major area of intrusion detection research is pattern recognition. 
+The goal here is to detect patterns of network, host, and user activity that 
+match known intruder attack scenarios. One problem with this approach is the 
+variability that is possible within a single overall attack strategy. A second 
+problem is that new attacks, with new attack patterns, cannot be detected by 
+this approach. </span><span style="font-family: Arial">&nbsp;</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

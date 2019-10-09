@@ -1,0 +1,56 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><font color="#FF0000" size="6">
+<span lang="EN-GB" style="font-family: Arial; text-transform: uppercase; font-weight: 700; text-decoration: underline">
+primitives and services</span></font></p>
+<span id="intelliTxt">
+<h2><font face="Arial">Primitives for the Connection-Oriented service. </font> </h2>
+<p><font face="Arial">With this service the primitives can be divided into 4 groups, depending on 
+their function: </font> </p>
+<p>
+<d></p>
+<li><font face="Arial">Making the connection - CONNECT </font> </li>
+<li><font face="Arial">Closing the connection - DISCONNECT </font> </li>
+<li><font face="Arial">Sending information (ie using the connection) - DATA, DATA-ACKNOWLEDGE, 
+EXPEDITED-DATA. </font> </li>
+<li><font face="Arial">Resetting the connection - RESET. </font> </d>
+<p>&nbsp;</p>
+<p><font face="Arial">Basically, you make a connection and close a connection by using the CONNECT 
+and DISCONNECT calls. Data is sent using DATA, DATA-ACKNOWLEDGE, and 
+EXPEDITED-DATA (for those special 
+expedited data transmissions}. If something goes wrong, then the connection 
+can be reset, using the RESET call. </font> </p>
+<h2><font face="Arial">Primitives for the Connectionless service </font> </h2>
+<p><font face="Arial">These primitives are divided into two groups: </font> </p>
+<p>
+<d></li>
+<li><font face="Arial">Send a packet of data - UNITDATA </font> </li>
+<li><font face="Arial">Enquire into the performance of the network - FACILITY, REPORT.
+</font> </d>
+<p><font face="Arial">Packets are sent using UNITDATA. FACILITY lets you inquire 
+to the network about things like average delivery statistics and the like. 
+REPORT is used by the network to tell the host if there is a problem with the 
+network, for example, if a machine has gone down.</font></span><p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

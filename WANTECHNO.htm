@@ -1,0 +1,432 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="WANTECHNO_files/filelist.xml">
+
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p class="pB1_Body1" align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p class="pB1_Body1" align="center"><u><b>
+<font face="Arial" size="6" color="#FF0000">WAN TECHNOLOGIES</font></b></u></p>
+<p align="justify"><font face="Arial">network technology is classified into one 
+of three categories, depending on the size of the network. </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">A <em>Local Area Network</em> (LAN) 
+  spans a single building or campus. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">A <em>Metropolitan Area Network</em> 
+  (MAN) spans a single city. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">A <em>Wide Area Network</em> (WAN) spans 
+  multiple cities, countries, or continents. </font></li>
+</ul>
+<p align="justify"><font face="Arial">The key issue that separates WAN 
+technologies from LAN technologies is <em>scalability</em> - a WAN must be able 
+to grow to connect sites that may be many thousands of miles apart. In addition, 
+a WAN must provide sufficient capacity to allow computers to communicate 
+simultaneously. </font></p>
+<h2 class="center" align="justify"><font size="3" face="Arial">Packet Switching</font></h2>
+<p align="justify"><font face="Arial">The basic component of a WAN is a <em>
+packet switch</em> because it moves packets from one connection to another; it 
+consists of special-purpose hardware with a processor, memory, and I/O 
+connectors. A packet switch is illustrated in Figure 1. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Packet switch" src="packet-switch.gif" width="502" height="197"><br>
+  Figure 1: Packet switch</font></div>
+<p align="justify"><font face="Arial">High-speed I/O devices connect one switch 
+to another. Lower speed devices connnect the switch to an individual computer. 
+The actual hardware depends on the WAN technology and the speed required, and 
+most forms of point-to-point communication are used. </font></p>
+<p align="justify"><font face="Arial">An interconnected set of packet switches 
+forms the WAN. A small WAN is illustrated in Figure 2. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Small WAN" src="small-wan.gif" width="615" height="351"><br>
+  Figure 2: Small WAN</font></div>
+<p align="justify"><font face="Arial">The high-speed connections could be leased 
+data circuits, optical fibres, microwaves, satellite channels, etc. The WAN 
+allows computers to send packets simultaneously. This is known as <em>store and 
+forward</em>, and a packet switch must be capable of buffering incoming packets 
+(store) until it can send them on their way (forward). </font></p>
+<h2 class="center" align="justify"><font size="3" face="Arial">WAN Addressing</font></h2>
+<p align="justify"><font face="Arial">A WAN operates in the same way as a LAN. 
+Each WAN technology defines the frame format to be used and each computer 
+connected to a switch is allocated a physical address. Many WANs use <em>
+hierarchical addressing</em> which simplifies forwarding. The simplest scheme 
+divides an address into two parts, one identifying the packet switch and the 
+other the computer connected to that switch. This is illustrated in Figure 3.
+</font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Hierarchical addresses" src="addresses.gif" width="589" height="212"><br>
+  Figure 3: Hierarchical addresses</font></div>
+<p align="justify"><font face="Arial">In practice, a physical address is 
+represented as a single binary number, with some bits representing the switch 
+and the other bits the computer. </font></p>
+<p align="justify"><font face="Arial">A packet switch uses the destination 
+address to decide how to forward the packet, i.e. which connection to use. It 
+does not keep complete information about all destinations, but has information 
+about the next <em>hop</em> to send the packet nearer its destination. This is 
+called <em>next-hop forwarding</em>, and is illustrated in Figure 4. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Small network" src="small-network.gif" width="622" height="293"><br>
+  Figure 4: Small network</font></div>
+<p align="justify"><font face="Arial">In (a), we have a small network of three 
+packet switches. In (b), we have the next-hop forwarding table for switch 2. 
+Note that next-hop forwarding does not depend on the packet's original source or 
+on the path the packet has taken before arriving at the switch. This is known as
+<em>source independence</em> and is fundamental to packet forwarding. </font>
+</p>
+<h3 align="justify"><font size="3" face="Arial">Routing</font></h3>
+<p align="justify"><font face="Arial">The table containing the next-hop 
+information is called a <em>routing table</em> and the process of forwarding a 
+packet is known as <em>routing</em>. When forwarding a packet, the packet switch 
+only needs to examine the first part of the hierarchical address. This means the 
+routing table can be shortened to contain one entry per destination switch 
+rather than one entry per destination computer. This is illustrated in Figure 5.
+</font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Routing table" src="routing.gif" width="384" height="206"><br>
+  Figure 5: Routing table</font></div>
+<p align="justify"><font face="Arial">This is an abbreviated version of the 
+routing table in Figure 4 (b) made possible by hierarchical addressing. When 
+forwarding to a local computer, the switch uses the second part of the address 
+to select the specific computer. </font></p>
+<h2 class="center" align="justify"><font size="3" face="Arial">WAN Routing</font></h2>
+<p align="justify"><font face="Arial">The capacity of a WAN must be increased as 
+additional computers are connected to the network. These computers are attached 
+to <em>exterior switches</em>. In order to increase capacity, additional <em>
+interior switches</em> are added which do not have computers attached. </font>
+</p>
+<p align="justify"><font face="Arial">The routing tables in both interior and 
+exterior switches must guarantee the following two conditions. </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><em>Universal routing</em> - the routing 
+  table must contain a next-hop route for each possible destination. </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial"><em>Optimal routing</em> - the next-hop 
+  value for a given destination must point to the shortest path to the 
+  destination. </font></li>
+</ul>
+<p align="justify"><font face="Arial">WAN routing can be thought of as a graph. 
+Each <em>node</em> in the graph corresponds to a packet switch and each <em>edge</em> 
+(or link) corresponds to a direct connection between two switches. This is 
+illustrated in Figure 6. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Network graph" src="graph.gif" width="646" height="249"><br>
+  Figure 6: Network graph</font></div>
+<p align="justify"><font face="Arial">In (a), we have the simple WAN from Figure 
+4 (a). In (b), we have the corresponding graph. The graph is simplified because 
+it does not show attached computers. Figure 7 illustrates the routing tables 
+corresponding to the graph. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Routing tables" src="tables.gif" width="680" height="256"><br>
+  Figure 7: Routing tables</font></div>
+<h3 align="justify"><font size="3" face="Arial">Default Routes</font></h3>
+<p align="justify"><font face="Arial">The routing table for node <em>1</em> in 
+Figure 6 has a duplicated entry. This duplication can be removed by having a 
+single <em>default route</em> to replace a list of duplicates. Figure 8 
+illustrates the revised routing tables using default routes. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Default routes" src="default.gif" width="653" height="250"><br>
+  Figure 8: Default routes</font></div>
+<p align="justify"><font face="Arial">The asterisk in the destination column 
+indicates the default route. Note that a default route is optional. For example, 
+the routing table for node <em>3</em> does not need a default route. In our 
+small example, there were a few duplicates, but in a large WAN there could be 
+hundreds of possible duplicates, so saving table space and processing time.
+</font></p>
+<p align="justify"><font face="Arial">The routing table is usually constructed
+<em>dynamically</em>. An initial routing table is constructed when the packet 
+switch is booted; the table is altered as conditions in the network change.
+</font></p>
+<h3 align="justify"><font size="3" face="Arial">Shortest Path</font></h3>
+<p align="justify"><font face="Arial">The shortest path is computed using <em>
+Dijkstra's Algorithm</em> with weights on the edges as a measure of distance, or 
+cost, whatever. The routing table is constructed using these shortest paths. 
+This concept is illustrated in Figure 9. </font></p>
+<div align="center">
+  <font face="Arial">
+  <img alt="Least-weight path" src="weight.gif" width="535" height="260"><br>
+  Figure 9: Least-weight path</font></div>
+<p align="justify"><font face="Arial">The graph has weights assigned to edges 
+and the shortest path between nodes <em>4</em> and <em>5</em> is highlighted. 
+The distance along this path is 19, the sum of the weights on the edges. </font>
+</p>
+<p align="justify"><font face="Arial">Allowing arbitrary weights to be assigned 
+to edges means that one algorithm can be used for different measures of 
+distance. Some WAN technologies assign weights to the number of packet switches 
+along the path, some assign weights to reflect the capacity of underlying 
+connections, and some assign weights to implement administrative policies.
+</font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial">
+<img src="wan-scr-a-lg.gif" border="0" width="540" height="475"></font></p>
+<p class="style6" align="justify"><font face="Arial">Wide Area Network 
+connectivity and throughput validation is a key part of a healthy, 
+cost-effective remote connectivity strategy. With WAN costs typically accounting 
+for the majority of the network’s ongoing operating budget, tracking performance 
+is critical.&nbsp; Network Instruments’ Observer WAN solution provides in-depth 
+metrics for comprehensive WAN flow analysis–making monitoring the WAN as easy as 
+monitoring local network resources.</font></p>
+<p align="justify"><font face="Arial"><strong>WAN Analysis Advantages</strong></font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Manage VoIP communications with included 
+  Expert system </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Monitor up to 16 connections 
+  individually or in aggregate </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Monitor CIR to verify and enforce 
+  Service Level Agreements </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Perform packet captures and review 
+  statistics that adhere to RMON1/RMON2 and HCRMON </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Complete capture and decode of WAN 
+  encapsulation and payload data with detailed packet-by-packet information
+  </font></li>
+</ul>
+<p align="justify"><font face="Arial"><strong>WAN Analysis Features</strong></font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">WAN Vital Signs </font></li>
+  <li>
+  <p align="justify"><font face="Arial">MultiHop Analysis </font></li>
+  <li>
+  <p align="justify"><font face="Arial">WAN Alarms </font></li>
+  <li>
+  <p align="justify"><font face="Arial">WAN Filtering </font></li>
+  <li>
+  <p align="justify"><font face="Arial">WAN Trending </font></li>
+  <li>
+  <p align="justify"><font face="Arial">WAN Reporting </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Real-Time WAN Experts.</font></li>
+</ul>
+<p align="justify"><b><font face="Arial">WAN TECHNOLOGIES:</font></b></p>
+<p align="justify"><font face="Arial">(i) Dial Up</font></p>
+<p align="justify"><font face="Arial">(ii) X.25</font></p>
+<p align="justify"><font face="Arial">(iii) Frame relay</font></p>
+<p align="justify"><font face="Arial">(iv) ATM</font></p>
+<p class="MsoNormal" style="text-align:justify"><b>
+<span style="font-size:13.5pt;
+color:black">WAN Topologies.</span></b><span style="font-size:13.5pt;
+color:black">&nbsp; The phrase<b> WAN Topology</b> refers to the arrangement or 
+relative positioning of links and nodes.&nbsp; This webpage will present several 
+major types of WAN topologies</span><span style="color:black">.</span><span style="font-size:13.5pt;color:black">&nbsp; 
+These topologies can end up being analogous, at greater levels of 
+abstraction/hierarchy, to LAN topologies.</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-size:13.5pt;color:black">The Point To Point WAN.</span></b><span style="font-size:13.5pt;color:black">&nbsp; 
+A <b>Point-To-Point WAN</b> has a remote access link for each major node in the 
+WAN.&nbsp; The link can be anything from a T-3 line to a 56 Kbps dial up line.&nbsp; The 
+following diagram represents a intercity WAN.</span><span style="color:black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1029" type="#_x0000_t75" alt="" style='width:375pt;
+ height:306pt'>
+ <v:imagedata src="WANTECHNO_files/image001.jpg" o:href="file:///D:\CNNN\WAN%20Topologies_files\wan_point_to_point.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=500 height=408
+src="WANTECHNO_files/image001.jpg" v:shapes="_x0000_s1029"><![endif]></span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-size:13.5pt;
+color:black">Its major advantage is that</span><span style="color:black"> </span>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.0in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it is inexpensive 
+relative to the other options</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">Its major disadvantages have to do 
+with </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">vulnerability to 
+failure in key components</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">limited scalability</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 2.0in">
+<span style="font-size: 10.0pt; font-family: Courier New; color: black">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">number of hops and 
+alternative routes are made worse</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">Thus the point-to-point WAN is best 
+when there are only two or three major locations.</span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-size:13.5pt;color:black">The Ring WAN.</span></b><span style="font-size:13.5pt;color:black">&nbsp; 
+The <b>Ring WAN</b> is developed by having point to point connections that 
+connect the major nodes in a ring.&nbsp; </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">This is illustrated in the next 
+image.</span></p>
+<p class="MsoNormal" style="text-align: justify" align="center">
+<span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" alt="" style='width:375pt;height:306pt'>
+ <v:imagedata src="WANTECHNO_files/image002.jpg" o:href="file:///D:\CNNN\WAN%20Topologies_files\wan_ring.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=500 height=408
+src="WANTECHNO_files/image002.jpg" v:shapes="_x0000_s1030"><![endif]></span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-size:13.5pt;
+color:black">Its major advantages over other topologies are</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.0in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">This is an improvement 
+over the point-to-point WAN in that it provides alternative routes</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.0in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">It is less expensive 
+than all but the point-to-point WAN</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">Its biggest disadvantages relative to 
+other topologies are</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it is slightly more 
+expensive than the point-to-point</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it has slightly worse 
+scalability problems the point-to-point</span><span style="color:black"> </span>
+</p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">The Ring WAN is best when used to 
+connect only a few sites.</span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-size:13.5pt;color:black">The Star WAN.</span></b><span style="font-size:13.5pt;color:black">&nbsp; 
+A <b>WAN star</b> is laid out in a star configuration with one location as the 
+&quot;hub&quot;.&nbsp; In this case this hub will make use of something called a <b>
+concentrator router</b>.&nbsp; In the following figure the concentrator router is 
+located in Chicago.</span><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp; </span>
+<span style="color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="" style='width:450pt;height:301.5pt'>
+ <v:imagedata src="WANTECHNO_files/image003.jpg" o:href="file:///D:\CNNN\WAN%20Topologies_files\wan_star.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=600 height=402
+src="WANTECHNO_files/image003.jpg" v:shapes="_x0000_s1033"><![endif]></span><span style="color:black">&nbsp;&nbsp;&nbsp;
+</span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-size:13.5pt;
+color:black">Its major advantages relative to other topologies are</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.0in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it is more scalable</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Courier New; color: black">o<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">relatively easy to add 
+nodes</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.0in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">each node is at most 
+two hops away from any other</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">Its major disadvantage is </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it has a single point 
+of failure at the concentrator router</span><span style="color:black"> </span>
+</p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">To get by some of these problems, 
+network administrators tend to add in some alternative links between sites not 
+at the hub.&nbsp; This increases costs slightly, but gives alternative routes in case 
+of failure or congestion.&nbsp; Providing direct links between all possible pairs of 
+nodes, a <b>full mesh topology</b>, requires a huge expense and is not at all 
+scalable.</span></p>
+<p class="MsoNormal" style="text-align: justify"><span style="color:black">&nbsp;</span><span style="font-size:13.5pt;color:black">This 
+leads to the most typical high volume implementation.</span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-size:13.5pt;color:black">The Multitiered WAN.</span></b><span style="font-size:13.5pt;color:black">&nbsp; 
+A <b>Multitiered WAN</b> makes use of </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">concentrator routers 
+like the star WAN, </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it also links these 
+concentrators together</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it is also likely to 
+have each major node connected to more than one concentrator router</span><span style="color:black">
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: 1.5in">
+<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-size:13.5pt;color:black">it may also have direct 
+links between other nodes</span><span style="color:black"> </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">It is scalable because at worst just 
+one link needs to be added to some concentrator.&nbsp; Though obviously, performance 
+is improved if there are more links.&nbsp; In addition these links can be made due to 
+traffic demands.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-size:13.5pt;color:black">The following diagram represents a 
+multitiered WAN.</span></p>
+<p class="MsoNormal" style="text-align: justify" align="center">
+<span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" alt="" style='width:487.5pt;height:327pt'>
+ <v:imagedata src="WANTECHNO_files/image004.jpg" o:href="file:///D:\CNNN\WAN%20Topologies_files\wan_multitiered.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=650 height=436
+src="WANTECHNO_files/image004.jpg" v:shapes="_x0000_s1032"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: center"><span style="color:black">&nbsp;</span><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

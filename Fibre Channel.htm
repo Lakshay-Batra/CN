@@ -1,0 +1,234 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<b>
+<p align="center">
+<span lang="EN-GB" style="font-family: Arial; text-transform: uppercase; font-weight: 700; text-decoration: underline">
+<font size="6" color="#FF0000">Fibre channel Layering</font></span></p>
+</b>
+<p align="justify"><font face="Arial">At the physical layer, Fibre Channel is 
+frame based. Each frame has a 2KB payload and is protected with a 32-bit CRC. 
+Flow control is credit based. There is never a fear of collision-a packet simply 
+waits until it receives permission to transmit. This flow mechanism maintains 
+maximum throughput even during peak loads. </font></p>
+<p align="justify"><font face="Arial">Different levels of reliability are 
+available depending on the class of service requested by the application. Class 
+1 service provides classic, dedicated, connection based service. It guarantees 
+reliable delivery. More common is Class 2 service, which is connectionless and 
+provides guaranteed delivery with an acknowledgement of receipt. Class 3 service 
+is connectionless without delivery acknowledgement. Classes are available for 
+fractional bandwidth, unidirectional or multicast services. </font></p>
+<p align="justify"><font face="Arial">The specifications for Fibre Channel 
+define a variety of physical topologies: point-to-point, loop and switched.
+</font></p>
+<p align="justify"><font face="Arial">Point-to-point offers dedicated bandwidth 
+between the connected systems. Data may flow directly between two connected 
+endpoints, or multiple devices may share a switch that is dynamically configured 
+for several point-to-point configurations. </font></p>
+<p align="justify"><font face="Arial">A loop topology shares bandwidth with 
+devices attached in a loop configuration. Up to 128 nodes may reside on a loop.
+</font></p>
+<p align="justify"><font face="Arial">The switched topology resembles telephone 
+service-the node provides the desired address and the switch is responsible for 
+making the connection. One switch, or a &quot;fabric&quot; of switches, appears to the 
+node as a single entity. As switches are added or removed, the fabric is 
+responsible for its own reconfiguration. </font></p>
+<p align="justify"><font face="Arial">Fibre channel nodes perform a login 
+process to establish a connection with the appropriate class of service. Login 
+also determines what is attached to the other end of the point-to-point 
+link-whether it is another node, a loop or a switch-and communicates with it 
+appropriately. </font></p>
+<p align="justify"><font face="Arial">Fibre channel provides a transport layer 
+above which any of a variety of protocols may exists. The transport layer 
+provides for common services, which are available to all nodes. These services 
+include a name server (address database), an alias server (for multicasting), a 
+timeserver and others. </font></p>
+<p align="justify"><font face="Arial">Protocols traditionally thought of as 
+either channel or network may co-exist on a single Fibre Channel physical layer. 
+The lower Fibre Channel transport layers are not cognizant of the &quot;ULP&quot; (Upper 
+Layer Protocol). Many ULPs have been specified or are in the process of 
+specification. These include SCSI, IP, HiPPI and ESCON. </font></p>
+<p align="justify"><font face="Arial">Fibre Channel combines high performance 
+with flexibility in class of service, physical topology and protocol layering.</font></p>
+<p class="General4" align="justify"><b><font face="Arial">Protocol Analysis </font>
+</b>
+</p>
+<p class="bodytxt" align="justify"><font face="Arial">Fibre Channel is rich in 
+capability and complexity. The trend towards heterogeneous storage area networks 
+makes testing all the more critical. The difficulty of the validation task is 
+further burdened by Fibre Channel's high data rate and the many reliability 
+features inherent in it's design. Simply identifying the presence of errors is 
+often masked by built-in error recovery features and redundancy at the ordered 
+set level. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">LeCroy's family of storage 
+analysis products combine a powerful triggering and decoding engine with an easy 
+to use graphical interface that removes complexity and trains the eye to 
+understand more information faster. The intuitive use of color and the logical 
+grouping of Sequence and Exchange events help communicate the meaning of fibre 
+channel traffic. The LeCroy <i>Tracer</i> software detects and alerts the user 
+to problems at all functional levels of the Fibre Channel layering including:
+</font></p>
+<ul class="bodytxt">
+  <li>
+  <p align="justify"><font face="Arial"><b>FC-1</b>: Invalid CRC; running 
+  disparity error, invalid 10bit codes </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>FC-2</b>: frame, sequence and 
+  exchange violations </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>FC-4</b>: FCP mapping and SCSI errors
+  </font></li>
+</ul>
+<p class="bodytxt" align="justify"><font face="Arial">The data rate generated by 
+2Gbps fibre channel can exceed 400MB per second (full duplex). This underscores 
+the importance of filtering to isolate the most important traffic. Excluding 
+channels from the recording and truncating the data portion of the payload are 
+frequently used to preserve memory. But FC<i>Tracer</i> goes well beyond these 
+typical strategies with context sensitive filtering. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">FC<i>Tracer</i>'s 
+filtering engine leverages LeCroy's new sequencer capable of monitoring two 
+unrelated series of events in parallel. It can filter different fields based on 
+traffic detected on the link. This powerful triggering and filtering model is 
+particularly useful for trapping intermittent problems on live SANs. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">The FC<i>Tracer</i> 
+protocol analyzer offers special features for system level validation. It 
+combines real-time monitoring with extensive performance metrics that provide 
+visual and statistical information about the nature of the Fibre Channel 
+traffic. These summary reports allow FC<i>Tracer</i> to automatically track SCSI 
+Command completion rates over extended periods allowing users to identify errant 
+or overloaded devices. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Fibre Channel's complexity 
+requires advanced testing capability. By selecting tools appropriate to the 
+task, engineers can minimize the learning curve and reduce time to market for 
+Fibre Channel products. </font></p>
+<p class="General4" align="justify"><font face="Arial">Learn more about Fibre 
+Channel Technology</font></p>
+<p class="General4" align="justify"><font face="Arial">Fibre Channel Overview
+</font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Fibre Channel is a 
+networking standard that is designed to move data through specific devices at 
+specific speeds. Initially, Fibre Channel was used primarily to attach servers 
+to a storage device, such as a RAID array or a tape backup device. More 
+recently, Fibre Channel has evolved as the architecture of choice for many 
+storage area networks. Fibre Channel is ideally suited to this role because it 
+is very reliable, very scalable, and very flexible. It's possible to add more 
+storage without disrupting operations, use a number of backup schemes that don't 
+load the main network, and manage very large data collections that span multiple 
+disks.</font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Fibre Channel is a high 
+speed (100 to 800 Mbps) medium used for data transfer and storage. Fibre Channel 
+provides a logical bi-directional, point-to-point connection between a host and 
+a device. It is essentially a serial data channel created over fiber optic 
+cabling which makes it possible to transfer data at much greater distances than 
+SCSI and ATA interfaces.</font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Fibre Channel is designed 
+to work with either copper wires or with fiber. Although copper is used only for 
+shorter distances, a variety of copper mediums can be used, including telephone 
+wire or coaxial cable. If fiber optic cable is used, distances of about six 
+miles can be achieved with minimal loss of speed. Another advantage of dedicated 
+channel based communication is its ability to provide increased bandwidth than 
+network based links.</font></p>
+<p class="General4" align="justify"><font face="Arial">Features and Benefits
+</font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Storage Area Networks are 
+not new ideas in data storage, however they are increasing in popularity due to 
+high demand by users who need to store large volumes of data. A SAN is a group 
+of storage devices connected via a network of connections to host computer or 
+server. The primary advantages of SANs are: </font></p>
+<ul class="bodytxt">
+  <li>
+  <p align="justify"><font face="Arial">Storage resource pooling/sharing </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">LAN and server-free backup </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Centralized storage resource management
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Data sharing - Large number of users
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Performance - High Speed, Low Latency
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Distance (&gt;10KM) </font></li>
+</ul>
+<p class="General4" align="justify"><font face="Arial">Architecture </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Channels and networks are 
+the two primary ways that data is transferred between devices. Fibre Channel 
+uses channels and frames instead of packets to move data. Each frame is 
+approximately 2KB in size. Of this amount, 1.5 percent is header information. 
+Channels transfer data through switched or direct point-to-point connections and 
+they work by creating a fixed connection between the source and destination 
+devices until the transfer is complete. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Connections are made on 
+Fibre Channel systems through &quot;interconnection components&quot; including switches, 
+hubs, and bridges. The ability of Fibre Channel to use different interconnect 
+devices makes it scalable depending on user needs. For small Fibre Channel 
+networks, hubs and bridges may be used for connecting devices in a topology 
+called Fiber Channel arbitrated Loop (FC- AL). As Fibre Channel networks get 
+larger and network demands increase, switching may be implemented. A switched 
+Fibre Channel network is called a fabric. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Fabric topology permits 
+multiple paths between two ports on the Fabric. Loop topology, on the other 
+hand, there can only be one active circuit at a time. Loop and Fabric topologies 
+can be combined to provide both connectivity and performance. If a link in a 
+point-to-point topology fails, communication between that pair of ports stops. 
+Communication between other point-to-point connected Ports continues. </font>
+</p>
+<p class="bodytxt" align="justify"><font face="Arial">Fiber optics are excellent 
+for transmitting data across a network because they are reliable. They do not 
+have the same problems that are associated with copper cabling such as 
+attenuation (loss of signal strength) and noise. It is also more secure than 
+copper because crosstalk does not occur with Fiber Optic cables. Fibre Channel 
+traffic can also be transmitted over other cable types such as copper, coaxial 
+cables or Unshielded twisted pair (UTP) wires. </font></p>
+<p class="bodytxt" align="justify"><font face="Arial">Class of Service - Fibre 
+Channel technology makes use of classes of service to define communication 
+between devices. </font></p>
+<ul class="bodytxt">
+  <li>
+  <p align="justify"><font face="Arial"><b>Class 1</b> a dedicated channel 
+  between two connection devices. In this configuration, if a host and a device 
+  are connected, no other host can use that connection. The advantage of using 
+  service class 1 is speed and reliability. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Class 2</b> is known as a 
+  &quot;connectionless&quot; service. It a frame-switched link that guarantees delivery of 
+  packets from device to device and packet receipt acknowledgments. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Class 3</b> is called unacknowledged 
+  connectionless service and is good for broadcasts. This configuration allows 
+  multiple transmissions to be sent across the Fibre Channel fabric to multiple 
+  devices. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Class 4</b> is called &quot;intermix&quot;, 
+  which creates a dedicated connection but it also allows class 2 traffic to 
+  access the link. This method is very efficient and it allows for greater 
+  bandwidth because more than one connection can access the system at any time.
+  </font></li>
+</ul>
+<p class="bodytxt" align="justify"><font face="Arial">The Fibre Channel 
+architecture is illustrated in Figure 1. The layers in the table represent 
+different functions that exists within a Fibre channel system. As with the other 
+communcation standards, protocol level analysis is often focused at the link 
+layer (FC-2) and above. </font></p>
+<p class="bodytxt" align="center"><font face="Arial">
+<img alt="Fibre Channel analyzers, Fiber Channel analyzers, Fibre Channel protocol analyzers, Fiber Channel protocol analyzers" src="FClayers.gif" border="0" width="500" height="430">
+<br>
+<b>Figure 1 </b></font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

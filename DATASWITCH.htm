@@ -1,0 +1,93 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="DATASWITCH_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline"><b>
+<font face="Arial" size="5" color="#FF0000">DATA SWITCHING</font></b></span></p>
+<p align="justify"><b><span style="font-family: Arial; color: #333333">Data 
+Switching Function</span></b><span style="font-family: Arial; color: #333333"><br>
+In the past line card designers used bus type architectures such as Peripheral 
+Component Interconnect (PCI) to interconnect devices on their cards. However, 
+when line rates exceeded OC-3 (155 Mbps) these bus type architectures proved to 
+be inefficient. </span></p>
+<p align="center"><span style="font-family: Arial; color: #333333"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1030" type="#_x0000_t75" alt="" style='width:420pt;
+ height:219pt'>
+ <v:imagedata src="DATASWITCH_files/image001.gif" o:href="http://www.idt.com/content/metro_dataswitch_block.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=560 height=292
+src="DATASWITCH_files/image001.gif" v:shapes="_x0000_s1030"><![endif]></span></p>
+<p align="justify"><span style="font-family: Arial; color: #333333">In their place 
+new, high speed, point-to-point, component interconnection standards have been 
+developed. System Packet Interface (SPI) is one of the more popular interfaces 
+used in the packet processing portion of the line card, while standards such as 
+the Common Switch Interface (CSIX) and the Network Processing Forum Streaming 
+Interface (NPSI) are used for the Switch Fabric interface portion of the line 
+card. The SPI-3 specification is designed to operate at up to OC-48 (2.5 Gbps). 
+The SPI-4 specification is designed to operate at up to OC-192 (10 Gbps). Both 
+of these specifications include backpressure signaling and control, and the 
+implementation of up to 256 logical ports. Since these are point-to-point 
+protocols some kind of interface device must be used if more than two devices 
+need to be interconnected on the line card. The IDT Packet Exchange devices 
+provide a single-chip solution for this interconnect problem. In this example, 
+the line card is handling an OC-48 line. The line card design requires that a 
+PHY device, NPU, Security Processor and Fabric Interface chip must be 
+interconnected. The IDT SPI Exchange Device provides data switching between all 
+four devices as well as aggregating the three SPI-3 ports to the NPU’s SPI-4 
+interface. This switching is implemented at the logical port level allowing 
+packets with different logical port tags coming in on the same physical port to 
+be routed to different physical ports. Unlike the SPI-4 specification, the SPI-3 
+specification is not symmetric. The link layer side is not the same as the PHY 
+layer side. The SPI-3 ports on the IDT Packet Exchange Devices can be configured 
+as a link layer device or a PHY device allowing it to be connected to either 
+type of device externally.</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

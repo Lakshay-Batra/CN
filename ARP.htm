@@ -1,0 +1,1150 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="ARP_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+span.editsection
+	{}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+span.command
+	{}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+<h3 align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">Address Resolution Protocol</font></span></h3>
+<p class="MsoNormal" align="justify"><font face="Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="" style='width:.75pt;
+ height:3.75pt'>
+ <v:imagedata src="ARP_files/image001.gif" o:href="http://media.techtarget.com/WhatIs/images/spacer.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=1 height=5
+src="ARP_files/image002.gif" v:shapes="_x0000_s1025"><![endif]><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Address Resolution Protocol (ARP) is a protocol for mapping an Internet Protocol 
+address (IP address) to a physical machine address that is recognized in the 
+local network. For example, in IP Version 4, the most common level of IP in use 
+today, an address is 32 bits long. In an Ethernet local area network, however, 
+addresses for attached devices are 48 bits long. (The physical machine address 
+is also known as a Media Access Control or MAC address.) A table, usually called 
+the ARP cache, is used to maintain a correlation between each MAC address and 
+its corresponding IP address. ARP provides the protocol rules for making this 
+correlation and providing address conversion in both directions. </font></p>
+<h4 align="justify"><font size="3" face="Arial">How ARP Works</font></h4>
+<p class="MsoNormal" align="justify"><font face="Arial">When an incoming packet 
+destined for a host machine on a particular local area network arrives at a 
+gateway, the gateway asks the ARP program to find a physical host or MAC address 
+that matches the IP address. The ARP program looks in the ARP cache and, if it 
+finds the address, provides it so that the packet can be converted to the right 
+packet length and format and sent to the machine. If no entry is found for the 
+IP address, ARP broadcasts a request packet in a special format to all the 
+machines on the LAN to see if one machine knows that it has that IP address 
+associated with it. A machine that recognizes the IP address as its own returns 
+a reply so indicating. ARP updates the ARP cache for future reference and then 
+sends the packet to the MAC address that replied. </font></p>
+<p align="justify"><font face="Arial">Since protocol details differ for each 
+type of local area network, there are separate ARP Requests for Comments (RFC) 
+for Ethernet, ATM,
+<term>Fiber Distributed-Data Interface</term>, HIPPI, and other protocols.
+</font></p>
+<p align="justify"><font face="Arial">There is a Reverse ARP (RARP) for host 
+machines that don't know their IP address. RARP enables them to request their IP 
+address from the gateway's ARP cache. </font></p>
+<p align="justify"><font face="Arial"><span lang="EN">Address Resolution 
+Protocol (ARP) hovers in the shadows of most networks. Because of its 
+simplicity, by comparison to higher layer protocols, ARP rarely intrudes upon 
+the network administrator's routine. All modern IP-capable operating systems 
+provide support for ARP. The uncommon alternative to ARP is static 
+link-layer-to-IP mappings. </span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">ARP defines the exchanges 
+between network interfaces connected to an Ethernet media segment in order to 
+map an IP address to a link layer address on demand. Link layer addresses are 
+hardware addresses (although they are not immutable) on Ethernet cards and IP 
+addresses are logical addresses assigned to machines attached to the Ethernet. 
+Subsequently in this chapter, link layer addresses may be known by many 
+different names: Ethernet addresses, Media Access Control (MAC) addresses, and 
+even hardware addresses. Disputably, the correct term from the kernel's 
+perspective is &quot;link layer address&quot; because this address can be changed (on many 
+Ethernet cards) via command line tools. Nevertheless, these terms are not 
+realistically distinct and can be used interchangeably. </span></font></p>
+<p align="justify"><font face="Arial">The address resolution protocol (arp) is a 
+protocol used by the Internet Protocol (IP) [RFC826], specifically IPv4, to map 
+IP network addresses to the hardware addresses used by a data link protocol. The 
+protocol operates below the network layer as a part of the interface between the 
+OSI network and OSI link layer. It is used when IPv4 is used over Ethernet.</font></p>
+<p align="justify"><font face="Arial">The term address resolution refers to the 
+process of finding an address of a computer in a network. The address is 
+&quot;resolved&quot; using a protocol in which a piece of information is sent by a client 
+process executing on the local computer to a server process executing on a 
+remote computer. The information received by the server allows the server to 
+uniquely identify the network system for which the address was required and 
+therefore to provide the required address. The address resolution procedure is 
+completed when the client receives a response from the server containing the 
+required address.</font></p>
+<p align="justify"><font face="Arial">An Ethernet network uses two hardware 
+addresses which identify the source and destination of each frame sent by the 
+Ethernet. The destination address (all 1's) may also identify a broadcast packet 
+(to be sent to all connected computers). The hardware address is also known as 
+the Medium Access Control (MAC) address, in reference to the standards which 
+define Ethernet. Each computer network interface card is allocated a globally 
+unique 6 byte link address when the factory manufactures the card (stored in a 
+PROM). This is the normal link source address used by an interface. A computer 
+sends all packets which it creates with its own hardware source link address, 
+and receives all packets which match the same hardware address in the 
+destination field or one (or more) pre-selected broadcast/multicast addresses.
+</font></p>
+<p align="justify"><font face="Arial">The Ethernet address is a link layer 
+address and is dependent on the interface card which is used. IP operates at the 
+network layer and is not concerned with the link addresses of individual nodes 
+which are to be used.The address resolution protocol (arp) is therefore used to 
+translate between the two types of address. The arp client and server processes 
+operate on all computers using IP over Ethernet. The processes are normally 
+implemented as part of the software driver that drives the network interface 
+card. </font></p>
+<p align="justify"><font face="Arial">There are four types of arp messages that 
+may be sent by the arp protocol. These are identified by four values in the 
+&quot;operation&quot; field of an arp message. The types of message are:</font></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">ARP request </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">ARP reply </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">RARP request </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">RARP reply </font></li>
+</ol>
+<p align="justify"><font face="Arial">The format of an arp message is shown 
+below:</font></p>
+<p class="MsoNormal" align="center">
+<font face="Arial"><i><!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" alt="" style='width:313.5pt;height:149.25pt'>
+ <v:imagedata src="ARP_files/image003.gif" o:href="http://www.erg.abdn.ac.uk/users/gorry/course/images/arp-header.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=418 height=199
+src="ARP_files/image004.jpg" v:shapes="_x0000_s1029"><![endif]></i></font></p>
+<p class="MsoNormal" align="center">
+<font face="Arial"><i>Format of an arp message used to resolve the remote MAC 
+Hardware Address (HA)</i></font></p>
+<p align="justify"><font face="Arial">To reduce the number of address resolution 
+requests, a client normally <b>caches</b> resolved addresses for a (short) 
+period of time. The arp cache is of a finite size, and would become full of 
+incomplete and obsolete entries for computers that are not in use if it was 
+allowed to grow without check. The arp cache is therefore periodically flushed 
+of all entries. This deletes unused entries and frees space in the cache. It 
+also removes any unsuccessful attempts to contact computers which are not 
+currently running.</font></p>
+<h3 align="justify"><font size="3">Example of use of the Address Resolution 
+Protocol (arp)</font></h3>
+<p align="justify"><font face="Arial">The figure below shows the use of arp when 
+a computer tries to contact a remote computer on the same LAN (known as &quot;sysa&quot;) 
+using the &quot;ping&quot; program. It is assumed that no previous IP datagrams have been 
+received form this computer, and therefore arp must first be used to identify the 
+MAC address of the remote computer.</font></p>
+<p align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" alt="" style='width:338.25pt;height:93.75pt'>
+ <v:imagedata src="ARP_files/image005.gif" o:href="http://www.erg.abdn.ac.uk/users/gorry/course/images/arp-encap.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=451 height=125
+src="ARP_files/image006.jpg" v:shapes="_x0000_s1032"><![endif]></font></p>
+<p align="center" style="text-align: justify">&nbsp;</p>
+<p align="justify"><font face="Arial">The arp request message (&quot;who is X.X.X.X 
+tell Y.Y.Y.Y&quot;, where X.X.X.X and Y.Y.Y.Y are IP addresses) is sent using the 
+Ethernet broadcast address, and an Ethernet protocol type of value 0x806. Since 
+it is broadcast, it is received by all systems in the same collision domain 
+(LAN). This is ensures that is the target of the query is connected to the 
+network, it will receive a copy of the query. Only this system responds. The 
+other systems discard the packet silently.</font></p>
+<p align="justify"><font face="Arial">The target system forms an arp response (&quot;X.X.X.X 
+is hh:hh:hh:hh:hh:hh&quot;, where hh:hh:hh:hh:hh:hh is the Ethernet source address of 
+the computer with the IP address of X.X.X.X). This packet is
+<a href="http://www.erg.abdn.ac.uk/users/gorry/course/intro-pages/uni-b-mcast.html" style="color: #000033; text-decoration: underline; text-underline: single">
+unicast</a> to the address of the computer sending the query (in this case 
+Y.Y.Y.Y). Since the original request also included the hardware address 
+(Ethernet source address) of the requesting computer, this is already known, and 
+doesn't require another arp message to find this out.</font></p>
+<h3 align="center"><font size="3"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="" style='width:411.75pt;height:321pt'>
+ <v:imagedata src="ARP_files/image007.gif" o:href="http://www.erg.abdn.ac.uk/users/gorry/course/images/arp-eg.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=549 height=428
+src="ARP_files/image008.jpg" v:shapes="_x0000_s1033"><![endif]></font></h3>
+<h2 style="text-align:justify"><span style="color:black">2.1.&nbsp;Address Resolution 
+Protocol (ARP)</span></h2>
+<p style="text-align:justify"><span style="color:black">Address Resolution 
+Protocol (ARP) hovers in the shadows of most networks. Because of its 
+simplicity, by comparison to higher layer protocols, ARP rarely intrudes upon 
+the network administrator's routine. All modern IP-capable operating systems 
+provide support for ARP. The uncommon alternative to ARP is static 
+link-layer-to-IP mappings. </span></p>
+<p style="text-align:justify"><span style="color:black">ARP defines the 
+exchanges between network interfaces connected to an Ethernet media segment in 
+order to map an IP address to a link layer address on demand. Link layer 
+addresses are hardware addresses (although they are not immutable) on Ethernet 
+cards and IP addresses are logical addresses assigned to machines attached to 
+the Ethernet. Subsequently in this chapter, link layer addresses may be known by 
+many different names: Ethernet addresses, Media Access Control (MAC) addresses, 
+and even hardware addresses. Disputably, the correct term from the kernel's 
+perspective is &quot;link layer address&quot; because this address can be changed (on many 
+Ethernet cards) via command line tools. Nevertheless, these terms are not 
+realistically distinct and can be used interchangeably. </span></p>
+<h3 style="text-align:justify"><span style="color:black">2.1.1.&nbsp;Overview of 
+Address Resolution Protocol</span></h3>
+<p style="text-align:justify"><span style="color:black">Address Resolution 
+Protocol (ARP) exists solely to glue together the IP and Ethernet networking 
+layers. Since networking hardware such as switches, hubs, and bridges operate on 
+Ethernet frames, they are unaware of the higher layer data carried by these 
+frames. Similarly, IP layer devices, operating on IP packets need to be able to 
+transmit their IP data on Ethernets. ARP defines the conversation by which IP 
+capable hosts can exchange mappings of their Ethernet and IP addressing. </span>
+</p>
+<p style="text-align:justify"><span style="color:black">ARP is used to locate 
+the Ethernet address associated with a desired IP address. When a machine has a 
+packet bound for another IP on a locally connected Ethernet network, it will 
+send a broadcast Ethernet frame containing an ARP request onto the Ethernet. All 
+machines with the same Ethernet broadcast address will receive this packet. If a 
+machine receives the ARP request and it hosts the IP requested, it will respond 
+with the link layer address on which it will receive packets for that IP 
+address. <em>N.B.</em>, the </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">arp_filter</span></code><span style="color:black"> sysctl will 
+alter this behaviour somewhat. </span></p>
+<p style="text-align:justify"><span style="color:black">Once the requestor 
+receives the response packet, it associates the MAC address and the IP address. 
+This information is stored in the
+<a href="http://linux-ip.net/html/ether-arp.html#ether-arp-cache" title="2.1.2.&nbsp;The ARP cache" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color: black; text-decoration: none">arp cache</span></a>. The arp 
+cache can be manipulated with the <strong>ip neighbor</strong> and <strong>arp</strong> 
+commands. To learn how and when to manipulate the arp cache, see Section&nbsp;B.1, “<strong>arp</strong>”.
+</span></p>
+<p style="text-align:justify"><span style="color:black">In Example&nbsp;1.2, “Testing 
+reachability of a locally connected host with <span class="command">ping</span>”, 
+we used <strong>ping</strong> to test reachability of </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">masq-gw</span></code><span style="color:black">. 
+Using a packet sniffer to capture the sequence of packets on the Ethernet as a 
+result of </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">tristan</span></code><span style="color:black">'s attempt to ping, 
+provides an example of ARP <em>in flagrante delicto</em>. Consult the example 
+network map for a visual representation of the network layout in which this 
+traffic occurs. </span></p>
+<p style="text-align:justify"><span style="color:black">This is an archetypal 
+conversation between two computers exchanging relevant hardware addressing in 
+order that they can pass IP packets, and is comprised of two Ethernet frames.
+</span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.1.&nbsp;ARP conversation captured with tcpdump </span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@masq-gw]# <b>tcpdump -ennqti eth0 \( arp or icmp \)</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">tcpdump: listening on eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">0:80:c8:f8:4a:51 ff:ff:ff:ff:ff:ff 42: arp who-has 192.168.99.254 tell 192.168.99.35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://linux-ip.net/html/ether-arp.html#ex-eao-request-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" alt="1" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=1 v:shapes="_x0000_s1034"><![endif]></span></a></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">0:80:c8:f8:5c:73 0:80:c8:f8:4a:51 60: arp reply 192.168.99.254 is-at 0:80:c8:f8:5c:73&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://linux-ip.net/html/ether-arp.html#ex-eao-reply-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1035" type="#_x0000_t75" alt="2" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=2 v:shapes="_x0000_s1035"><![endif]></span></a></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">0:80:c8:f8:4a:51 0:80:c8:f8:5c:73 98: 192.168.99.35 &gt; 192.168.99.254: icmp: echo request (DF)&nbsp;&nbsp;&nbsp; <a href="http://linux-ip.net/html/ether-arp.html#ex-eao-ip-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1036" type="#_x0000_t75" alt="3" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=3 v:shapes="_x0000_s1036"><![endif]></span></a></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">0:80:c8:f8:5c:73 0:80:c8:f8:4a:51 98: 192.168.99.254 &gt; 192.168.99.35: icmp: echo reply&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="http://linux-ip.net/html/ether-arp.html#ex-eao-ip-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1037" type="#_x0000_t75" alt="4" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=4 v:shapes="_x0000_s1037"><![endif]></span></a></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify">
+<span style="color: black; display: none">&nbsp;</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" summary="Callout list">
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eao-request" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1038" type="#_x0000_t75" alt="1" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=1 v:shapes="_x0000_s1038"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">This broadcast 
+    Ethernet frame, identifiable by the destination Ethernet address with all 
+    bits set (ff:ff:ff:ff:ff:ff) contains an ARP request from </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">tristan</span></code><span style="color:black"> 
+    for IP address 192.168.99.254. The request includes the source link layer 
+    address and the IP address of the requestor, which provides enough 
+    information for the owner of the IP address to reply with its link layer 
+    address. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eao-reply" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1039" type="#_x0000_t75" alt="2" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=2 v:shapes="_x0000_s1039"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">The ARP reply from
+    </span><code style="font-family: Courier New">
+    <span style="font-size:
+  10.0pt;color:black">masq-gw</span></code><span style="color:black"> includes 
+    its link layer address and declaration of ownership of the requested IP 
+    address. Note that the ARP reply is a unicast response to a broadcast 
+    request. The payload of the ARP reply contains the link layer address 
+    mapping. </span></p>
+    <p style="text-align:justify"><span style="color:black">The machine which 
+    initiated the ARP request (</span><code style="font-family: Courier New"><span style="font-size:10.0pt;
+  color:black">tristan</span></code><span style="color:black">) now has enough 
+    information to encapsulate an IP packet in an Ethernet frame and forward it 
+    to the link layer address of the recipient (00:80:c8:f8:5c:73). </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eao-ip" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1040" type="#_x0000_t75" alt="3" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=3 v:shapes="_x0000_s1040"><![endif]></span></a><a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eao-ip2" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1041" type="#_x0000_t75" alt="4" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=4 v:shapes="_x0000_s1041"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    The final two packets in Example&nbsp;2.1, “ARP conversation captured with 
+    tcpdump ” display the link layer header and the encapsulated ICMP packets 
+    exchanged between these two hosts. Examining the ARP cache on each of these 
+    hosts would reveal entries on each host for the other host's link layer 
+    address. </span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">This example is the 
+commonest example of ARP traffic on an Ethernet. In summary, an ARP request is 
+transmitted in a broadcast Ethernet frame. The ARP reply is a unicast response, 
+containing the desired information, sent to the requestor's link layer address.
+</span></p>
+<p style="text-align:justify"><span style="color:black">An even rarer usage of 
+ARP is gratuitous ARP, where a machine announces its ownership of an IP address 
+on a media segment. The <strong>arping</strong> utility can generate these 
+gratuitous ARP frames. Linux kernels will respect gratuitous ARP frames. </span>
+</p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.2.&nbsp;Gratuitous ARP reply frames</span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>arping -q -c 3 -A -I eth0 192.168.99.35</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@masq-gw]# <b>tcpdump -c 3 -nni eth2 arp</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">tcpdump: listening on eth2</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">06:02:50.626330 arp reply 192.168.99.35 is-at 0:80:c8:f8:4a:51 (0:80:c8:f8:4a:51) </span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">06:02:51.622727 arp reply 192.168.99.35 is-at 0:80:c8:f8:4a:51 (0:80:c8:f8:4a:51) </span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">06:02:52.620954 arp reply 192.168.99.35 is-at 0:80:c8:f8:4a:51 (0:80:c8:f8:4a:51)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">The frames generated in 
+Example&nbsp;2.2, “Gratuitous ARP reply frames” are ARP replies to a question never 
+asked. This sort of ARP is common in failover solutions and also for nefarious 
+sorts of purposes, such as <strong>ettercap</strong>. </span></p>
+<p style="text-align:justify"><span style="color:black">Unsolicited ARP request 
+frames, on the other hand, are broadcast ARP requests initiated by a host owning 
+an IP address. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.3.&nbsp;Unsolicited ARP request frames</span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>arping -q -c 3 -U -I eth0 192.168.99.35</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@masq-gw]# <b>tcpdump -c 3 -nni eth2 arp</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">tcpdump: listening on eth2</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">06:28:23.172068 arp who-has 192.168.99.35 (ff:ff:ff:ff:ff:ff) tell 192.168.99.35</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">06:28:24.167290 arp who-has 192.168.99.35 (ff:ff:ff:ff:ff:ff) tell 192.168.99.35</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">06:28:25.167250 arp who-has 192.168.99.35 (ff:ff:ff:ff:ff:ff) tell 192.168.99.35</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@masq-gw]# <b>ip neigh show</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">These two uses of
+<strong>arping</strong> can help diagnose Ethernet and ARP 
+problems--particularly hosts replying for addresses which do not belong to them.
+</span></p>
+<p style="text-align:justify"><span style="color:black">To avoid IP address 
+collisions on dynamic networks (where hosts are turning on and off, connecting 
+and disconnecting and otherwise changing IP addresses) duplicate address 
+detection becomes important. Fortunately, <strong>arping</strong> provides this 
+functionality as well. A startup script could include the <strong>arping</strong> 
+utility in duplicate address detection mode to select between IP addresses or 
+methods of acquiring an IP address. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.4.&nbsp;Duplicate Address Detection with ARP</span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>arping -D -I eth0 192.168.99.147; echo $?</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 192.168.99.47 from 0.0.0.0 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.99.47 [00:80:C8:E8:1E:FC] for 192.168.99.47 [00:80:C8:E8:1E:FC] 0.702ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 1 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 1 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">1</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>tcpdump -eqtnni eth2 arp</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">tcpdump: listening on eth2</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">0:80:c8:f8:4a:51 ff:ff:ff:ff:ff:ff 60: arp who-has 192.168.99.147 (ff:ff:ff:ff:ff:ff) tell 0.0.0.0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span lang="PT-BR" style="color: black">0:80:c8:e8:1e:fc 0:80:c8:f8:4a:51 42: arp reply 192.168.99.147 is-at 0:80:c8:e8:1e:fc (0:80:c8:e8:1e:fc)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@masq-gw]# <b>ip neigh show</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">Address Resolution 
+Protocol, which provides a method to connect physical network addresses with 
+logical network addresses is a key element to the deployment of IP on Ethernet 
+networks. </span></p>
+<h3 style="text-align:justify"><span style="color:black">2.1.2.&nbsp;The ARP cache</span></h3>
+<p style="text-align:justify"><span style="color:black">In simplest terms, an 
+ARP cache is a stored mapping of IP addresses with link layer addresses. An ARP 
+cache obviates the need for an ARP request/reply conversation for each IP packet 
+exchanged. Naturally, this efficiency comes with a price. Each host maintains 
+its own ARP cache, which can become outdated when a host is replaced, or an IP 
+address moves from one host to another. The ARP cache is also known as the 
+neighbor table. </span></p>
+<p style="text-align:justify"><span style="color:black">To display the ARP 
+cache, the venerable and cross-platform <strong>arp</strong> admirably 
+dispatches its duty. As with many of the <strong>iproute2</strong> tools, more 
+information is available via <strong>ip neighbor</strong> than with <strong>arp</strong>. 
+Example&nbsp;2.5, “ARP cache listings with <span class="command">arp</span> and
+<span class="command">ip neighbor</span>” below illustrates the differences in 
+the output between the output of these two different tools. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.5.&nbsp;ARP cache listings with <span class="command">arp</span> and
+<span class="command">ip neighbor</span></span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>arp -na</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">? (192.168.99.7) at 00:80:C8:E8:1E:FC [ether] on eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">? (192.168.99.254) at 00:80:C8:F8:5C:73 [ether] on eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>ip neighbor show</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">192.168.99.7 dev eth0 lladdr 00:80:c8:e8:1e:fc nud reachable</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">192.168.99.254 dev eth0 lladdr 00:80:c8:f8:5c:73 nud reachable</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">A major difference 
+between the information reported by <strong>ip neighbor</strong> and <strong>arp</strong> 
+is the state of the proxy ARP table. The only way to list permanently advertised 
+entries in the neighbor table (proxy ARP entries) is with the <strong>arp</strong>.
+</span></p>
+<p style="text-align:justify"><span style="color:black">Entries in the ARP cache 
+are periodically and automatically verified unless continually used. Along with
+</span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">net/ipv4/neigh/$DEV/gc_stale_time</span></code><span style="color:black">, 
+there are a number of other parameters in </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">net/ipv4/neigh/$DEV</span></code><span style="color:black"> 
+which control the expiration of entries in the ARP cache. </span></p>
+<p style="text-align:justify"><span style="color:black">When a host is down or 
+disconnected from the Ethernet, there is a period of time during which other 
+hosts may have an ARP cache entry for the disconnected host. Any other machine 
+may display a neighbor table with the link layer address of the recently 
+disconnected host. Because there is a recently known-good link layer address on 
+which the IP was reachable, the entry will abide. At </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">gc_stale_time</span></code><span style="color:black"> 
+the state of the entry will change, reflecting the need to verify the 
+reachability of the link layer address. When the disconnected host fails to 
+respond ARP requests, the neighbor table entry will be marked as </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">incomplete</span></code><span style="color:black">
+</span></p>
+<p style="text-align:justify"><span style="color:black">Here are a the possible 
+states for entries in the neighbor table. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Table&nbsp;2.1.&nbsp;Active ARP cache entry states</span></b></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" summary="Active ARP cache entry states">
+  <colgroup>
+    <col><col><col>
+  </colgroup>
+  <thead>
+    <tr>
+      <td style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" style="text-align:justify"><b>
+      <span style="color:black">ARP cache entry state</span></b></td>
+      <td style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" style="text-align:justify"><b>
+      <span style="color:black">meaning</span></b></td>
+      <td style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" style="text-align:justify"><b>
+      <span style="color:black">action if used</span></b></td>
+    </tr>
+  </thead>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    permanent</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    never expires; never verified</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reset use counter</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    noarp</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    normal expiration; never verified</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reset use counter</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reachable</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    normal expiration</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reset use counter</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    stale</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    still usable; needs verification</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reset use counter; change state to delay</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    delay</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    schedule ARP request; needs verification</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reset use counter</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    probe</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    sending ARP request</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    reset use counter</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    incomplete</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    first ARP request sent</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    send ARP request</span></td>
+  </tr>
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    failed</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">no 
+    response received</span></td>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    send ARP request</span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">To resume, a host 
+(192.168.99.7) in </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">tristan</span></code><span style="color:black">'s 
+ARP cache on the example network has just been disconnected. There are a series 
+of events which will occur as </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">tristan</span></code><span style="color:black">'s 
+ARP cache entry for 192.168.99.7 expires and gets scheduled for verification. 
+Imagine that the following commands are run to capture each of these states 
+immediately before state change. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.6.&nbsp;ARP cache timeout</span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>ip neighbor show 192.168.99.7</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">192.168.99.7 dev eth0 lladdr 00:80:c8:e8:1e:fc nud reachable</span></code><span style="color:black">&nbsp;&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eact-reachable-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1042" type="#_x0000_t75" alt="1" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=1 v:shapes="_x0000_s1042"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>ip neighbor show 192.168.99.7</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">192.168.99.7 dev eth0 lladdr 00:80:c8:e8:1e:fc nud stale</span></code><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eact-stale-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1043" type="#_x0000_t75" alt="2" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=2 v:shapes="_x0000_s1043"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>ip neighbor show 192.168.99.7</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">192.168.99.7 dev eth0 lladdr 00:80:c8:e8:1e:fc nud delay</span></code><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eact-delay-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1044" type="#_x0000_t75" alt="3" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=3 v:shapes="_x0000_s1044"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>ip neighbor show 192.168.99.7</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">192.168.99.7 dev eth0 lladdr 00:80:c8:e8:1e:fc nud probe</span></code><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eact-probe-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1045" type="#_x0000_t75" alt="4" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=4 v:shapes="_x0000_s1045"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@tristan]# <b>ip neighbor show 192.168.99.7</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">192.168.99.7 dev eth0&nbsp; nud incomplete</span></code><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eact-incomplete-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1046" type="#_x0000_t75" alt="5" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=5 v:shapes="_x0000_s1046"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify">
+<span style="color: black; display: none">&nbsp;</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" summary="Callout list">
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eact-reachable" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1047" type="#_x0000_t75" alt="1" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=1 v:shapes="_x0000_s1047"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    Before the entry has expired for 192.168.99.7, but after the host has been 
+    disconnected from the network. During this time, </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">tristan</span></code><span style="color:black"> 
+    will continue to send out Ethernet frames with the destination frame address 
+    set to the link layer address according to this entry. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eact-stale" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1048" type="#_x0000_t75" alt="2" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=2 v:shapes="_x0000_s1048"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">It 
+    has been </span><code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">gc_stale_time</span></code><span style="color:black"> 
+    seconds since the entry has been verified, so the state has changed to 
+    stale. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eact-delay" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1049" type="#_x0000_t75" alt="3" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=3 v:shapes="_x0000_s1049"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    This entry in the neighbor table has been requested. Because the entry was 
+    in a stale state, the link layer address was used, but now the kernel needs 
+    to verify the accuracy of the address. The kernel will soon send an ARP 
+    request for the destination IP address. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eact-probe" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1050" type="#_x0000_t75" alt="4" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=4 v:shapes="_x0000_s1050"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    The kernel is actively performing address resolution for the entry. It will 
+    send a total of </span><code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">ucast_solicit</span></code><span style="color:black"> 
+    frames to the last known link layer address to attempt to verify 
+    reachability of the address. Failing this, it will send </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">mcast_solicit</span></code><span style="color:black"> 
+    broadcast frames before altering the ARP cache state and returning an error 
+    to any higher layer services. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eact-incomplete" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1051" type="#_x0000_t75" alt="5" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=5 v:shapes="_x0000_s1051"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    After all attempts to reach the destination address have failed, the entry 
+    will appear in the neighbor table in this state. </span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">The remaining neighbor 
+table flags are visible when initial ARP requests are made. If no ARP cache 
+entry exists for a requested destination IP, the kernel will generate </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">mcast_solicit</span></code><span style="color:black"> 
+ARP requests until receiving an answer. During this discovery period, the ARP 
+cache entry will be listed in an <em>incomplete</em> state. If the lookup does 
+not succeed after the specified number of ARP requests, the ARP cache entry will 
+be listed in a <em>failed</em> state. If the lookup does succeed, the kernel 
+enters the response into the ARP cache and resets the confirmation and update 
+timers. </span></p>
+<p style="text-align:justify"><span style="color:black">After receipt of a 
+corresponding ARP reply, the kernel enters the response into the ARP cache and 
+resets the confirmation and update timers. </span></p>
+<p style="text-align:justify"><span style="color:black">For machines not using a 
+static mapping for link layer and IP addresses, ARP provides on demand mappings. 
+The remainder of this section will cover the methods available under linux to 
+control the address resolution protocol. </span></p>
+<h3 style="text-align:justify"><span style="color:black">2.1.3.&nbsp;ARP Suppression</span></h3>
+<p style="text-align:justify"><span style="color:black">Complete ARP suppression 
+is not difficult at all. ARP suppression can be accomplished under linux on a 
+per-interface basis by setting the noarp flag on any Ethernet interface. 
+Disabling ARP will require static neighbor table mappings for all hosts wishing 
+to exchange packets across the Ethernet. </span></p>
+<p style="text-align:justify"><span style="color:black">To suppress ARP on an 
+interface simply use <strong>ip link set dev $DEV arp off</strong> as in 
+Example&nbsp;B.7, “Using <span class="command">ip link set</span> to change device 
+flags” or <strong>ifconfig $DEV -arp</strong> as in Example&nbsp;C.5, “Setting 
+interface flags with <span class="command">ifconfig</span>”. Complete ARP 
+suppression will prevent the host from sending any ARP requests or responding 
+with any ARP replies. </span></p>
+<h3 style="text-align:justify"><span style="color:black">2.1.4.&nbsp;The ARP Flux 
+Problem</span></h3>
+<p style="text-align:justify"><span style="color:black">When a linux box is 
+connected to a network segment with multiple network cards, a potential problem 
+with the link layer address to IP address mapping can occur. The machine may 
+respond to ARP requests from both Ethernet interfaces. On the machine creating 
+the ARP request, these multiple answers can cause confusion, or worse yet, 
+non-deterministic population of the ARP cache. Known as ARP flux, this can lead 
+to the possibly puzzling effect that an IP migrates non-deterministically 
+through multiple link layer addresses. It's important to understand that ARP 
+flux typically only affects hosts which have multiple physical connections to 
+the same medium or broadcast domain. </span></p>
+<p style="text-align:justify"><span style="color:black">This is a simple 
+illustration of the problem in a network where a server has two Ethernet 
+adapters connected to the same media segment. They need not have IP addresses in 
+the same IP network for the ARP reply to be generated by each interface. Note 
+the first two replies received in response to the ARP broadcast request. These 
+replies arrive from conflicting link layer addresses in response to this 
+request. Also notice the greater time required for the sending and receiving 
+hosts to process the broadcast ARP request frames than the unicast frames which 
+follow (probes two and three). </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.7.&nbsp;ARP flux</span></b></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>arping -I eth0 -c 3 10.10.20.67</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 10.10.20.67 from 10.10.20.33 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:7E:71:D4]&nbsp; 11.298ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:E8:1E:FC]&nbsp; 12.077ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:E8:1E:FC]&nbsp; 1.542ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:E8:1E:FC]&nbsp; 1.547ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 3 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 4 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">There are four solutions 
+to this problem. The common solution for kernel 2.4 harnesses the </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+sysctl, while the common solution for kernel 2.2 takes advantage of the </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">hidden</span></code><span style="color:black"> 
+sysctl. These two solutions alter the behaviour of ARP on a per interface basis 
+and only if the functionality has been enabled. </span></p>
+<p style="text-align:justify"><span style="color:black">Alternate solutions 
+which provide much greater control of ARP (possibly documented here at a later 
+date) include Julian Anastasov's <strong>ip arp</strong> tool and his noarp 
+route flag. While these tools were conceived in the course of the Linux Virtual 
+Server project, they have practical application outside this realm. </span></p>
+<h4 style="text-align:justify"><span style="color:black">2.1.4.1.&nbsp;ARP flux 
+prevention with </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">arp_filter</span></code></h4>
+<p style="text-align:justify"><span style="color:black">One method for 
+preventing ARP flux involves the use of </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">net/ipv4/conf/$DEV/arp_filter</span></code><span style="color:
+black">. In short, the use of </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">arp_filter</span></code><span style="color:black"> causes the 
+recipient (in the case below, </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">real-server</span></code><span style="color:black">) to perform a 
+route lookup to determine the interface through which to send the reply, instead 
+of the default behaviour (shown above), replying from all Ethernet interfaces 
+which receive the request. </span></p>
+<p style="text-align:justify"><span style="color:black">The </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+solution can have unintended effects if the only route to the destination is 
+through one of the network cards. In Example&nbsp;2.8, “Correction of ARP flux with
+</span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">conf/$DEV/arp_filter</span></code><span style="color:black">”,
+</span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">real-client</span></code><span style="color:black"> 
+will demonstrate this. This instructive example should highlight the 
+shortcomings of the </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">arp_filter</span></code><span style="color:black"> solution in very 
+complex networks where finer-grained control is required. </span></p>
+<p style="text-align:justify"><span style="color:black">In general, the </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+solution sufficiently solves the ARP flux problem. First, hosts do not generate 
+ARP requests for networks to which they do not have a direct route (see 
+Section&nbsp;4.2, “Routing to Locally Connected Networks”) and second, when such a 
+route exists, the host normally chooses a source address in the same network as 
+the destination. So, the </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+solution is a good general solution, but does not adequately address the 
+occasional need for more control over ARP requests and replies. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.8.&nbsp;Correction of ARP flux with </span></b>
+<code style="font-family: Courier New"><b>
+<span style="font-size:10.0pt;color:black">conf/$DEV/arp_filter</span></b></code></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-server]# <b>echo 1 &gt; /proc/sys/net/ipv4/conf/all/arp_filter</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-server]# <b>echo 1 &gt; /proc/sys/net/ipv4/conf/eth0/arp_filter</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-server]# <b>echo 1 &gt; /proc/sys/net/ipv4/conf/eth1/arp_filter</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-server]# <b>ip address show dev eth0</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">2: eth0: &lt;BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc pfifo_fast qlen 100</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">&nbsp;&nbsp;&nbsp; link/ether 00:80:c8:e8:1e:fc brd ff:ff:ff:ff:ff:ff</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">&nbsp;&nbsp;&nbsp; inet 10.10.20.67/24 scope global eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-server]# <b>ip address show dev eth1</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">3: eth1: &lt;BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc pfifo_fast qlen 100</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">&nbsp;&nbsp;&nbsp; link/ether 00:80:c8:7e:71:d4 brd ff:ff:ff:ff:ff:ff</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">&nbsp;&nbsp;&nbsp; inet 192.168.100.1/24 brd 192.168.100.255 scope global eth1</span></code><span style="color:black">&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eafa-server-setup-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1052" type="#_x0000_t75" alt="1" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=1 v:shapes="_x0000_s1052"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>arping -I eth0 -c 3 10.10.20.67</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 10.10.20.67 from 10.10.20.33 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:E8:1E:FC]&nbsp; 0.882ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:E8:1E:FC]&nbsp; 1.221ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 10.10.20.67 [00:80:C8:E8:1E:FC]&nbsp; 1.487ms&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span></code><a href="http://linux-ip.net/html/ether-arp.html#ex-eafa-expected-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1053" type="#_x0000_t75" alt="2" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=2 v:shapes="_x0000_s1053"><![endif]></span></a></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 3 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 3 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>arping -I eth0 -c 3 192.168.100.1</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 192.168.100.1 from 10.10.20.33 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.100.1 [00:80:C8:E8:1E:FC]&nbsp; 0.877ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.100.1 [00:80:C8:E8:1E:FC]&nbsp; 1.517ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.100.1 [00:80:C8:E8:1E:FC]&nbsp; 1.661ms&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span></code><a href="http://linux-ip.net/html/ether-arp.html#ex-eafa-problemzone-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1054" type="#_x0000_t75" alt="3" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=3 v:shapes="_x0000_s1054"><![endif]></span></a></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 3 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 3 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>ip neighbor del 192.168.100.1 dev eth0</b></span></code><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<a href="http://linux-ip.net/html/ether-arp.html#ex-eafa-clearcache-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1055" type="#_x0000_t75" alt="4" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=4 v:shapes="_x0000_s1055"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>ip address add 192.168.100.2/24 brd + dev eth0</b></span></code><span style="color:black"> <a href="http://linux-ip.net/html/ether-arp.html#ex-eafa-newip-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1056" type="#_x0000_t75" alt="5" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=5 v:shapes="_x0000_s1056"><![endif]></span></a></span></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>arping -I eth0 -c 3 192.168.100.1</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 192.168.100.1 from 192.168.100.2 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.100.1 [00:80:C8:7E:71:D4]&nbsp; 0.804ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.100.1 [00:80:C8:7E:71:D4]&nbsp; 1.381ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 192.168.100.1 [00:80:C8:7E:71:D4]&nbsp; 2.487ms&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</span></code><a href="http://linux-ip.net/html/ether-arp.html#ex-eafa-workaround-text" style="color: blue; text-decoration: underline; text-underline: single"><span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1057" type="#_x0000_t75" alt="6" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=6 v:shapes="_x0000_s1057"><![endif]></span></a></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 3 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 3 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify">
+<span style="color: black; display: none">&nbsp;</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" summary="Callout list">
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eafa-server-setup" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1058" type="#_x0000_t75" alt="1" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=1 v:shapes="_x0000_s1058"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    Set the sysctl variables to enable the </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;
+  color:black">arp_filter</span></code><span style="color:black"> functionality. 
+    After this, you might expect that ARP replies for 10.10.20.67 would only 
+    advertise the link layer address on eth0 (00:80:c8:e8:1e:fc). </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eafa-expected" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1059" type="#_x0000_t75" alt="2" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=2 v:shapes="_x0000_s1059"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    Here is the expected behaviour. Only one reply comes in for the IP 
+    10.10.20.67 after the </span><code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+    sysctl has been enabled. The reply originates from the interface on </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">real-server</span></code><span style="color:black"> 
+    which actually hosts the IP address. Note that the source address on the ARP 
+    queries is 10.10.20.33, and that the ARP query causes </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">real-server</span></code><span style="color:black"> 
+    to perform a route lookup on 10.10.20.33 to choose an interface from which 
+    to send the reply. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eafa-problemzone" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1060" type="#_x0000_t75" alt="3" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=3 v:shapes="_x0000_s1060"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    Here, </span><code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">real-client</span></code><span style="color:black"> 
+    requests the link layer address of the host 192.168.100.1, but the source IP 
+    on the request packet (chosen according to the rules for source address 
+    selection) is 10.10.20.33. When </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">real-server</span></code><span style="color:black"> 
+    looks up a route to this destination, it chooses its eth0, and replies with 
+    the link layer address of its eth0. Conventional networking needs should not 
+    run afoul of this oddity of the </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+    ARP flux prevention technique. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eafa-clearcache" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1061" type="#_x0000_t75" alt="4" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=4 v:shapes="_x0000_s1061"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    Remove the entry in the neighbor table before testing again. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eafa-newip" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1062" type="#_x0000_t75" alt="5" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=5 v:shapes="_x0000_s1062"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">By 
+    adding an IP address in the same network as the intended destination (which 
+    would be rather common where multiple IP networks share the same medium or 
+    broadcast domain), the kernel can now select a different source address for 
+    the ARP request packets. </span></td>
+  </tr>
+  <tr>
+    <td width="5%" valign="top" style="width:5.0%;padding:.75pt .75pt .75pt .75pt">
+    <p style="text-align:justify"><span style="color:black">
+    <a href="file:///K:/cnnnn22/2.1.Â Address%20Resolution%20Protocol%20(ARP).htm#ex-eafa-workaround" style="color: blue; text-decoration: underline; text-underline: single">
+    <span style="color: black; text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1063" type="#_x0000_t75" alt="6" style='width:24pt;height:24pt'/><![endif]--><![if !vml]><img
+border=0 width=32 height=32 src="ARP_files/image009.gif" alt=6 v:shapes="_x0000_s1063"><![endif]></span></a></span></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" style="text-align:justify"><span style="color:black">
+    Note the source address of the ARP queries is now 192.168.100.2. When </span>
+    <code style="font-family: Courier New">
+    <span style="font-size:10.0pt;color:black">real-server</span></code><span style="color:black"> 
+    performs a route lookup for the 192.168.100.0/24 destination, the chosen 
+    path is through eth1. The ARP reply packets now have the correct link layer 
+    address. </span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">In general, the </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">arp_filter</span></code><span style="color:black"> 
+solution should suffice, but this knowledge can be key in determining whether or 
+not an alternate solution, such as an
+<a href="http://linux-ip.net/html/ether-arp-filtering.html" title="2.3.&nbsp;ARP filtering" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color: black; text-decoration: none">ARP filtering solution</span></a> 
+are necessary. </span></p>
+<h4 style="text-align:justify"><span style="color:black">2.1.4.2.&nbsp;ARP flux 
+prevention with </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">hidden</span></code></h4>
+<p style="text-align:justify"><span style="color:black">The ARP flux problem can 
+also be combatted with a
+<a href="http://www.ssi.bg/~ja/#hidden" target="_top" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color: black; text-decoration: none">kernel patch</span></a> by 
+Julian Anastasov, which was incorporated into the 2.2.14+ kernel series, but 
+never into the 2.4+ kernel series. Therefore, the functionality may not be 
+available in all kernels. </span></p>
+<p style="text-align:justify"><span style="color:black">The sysctl </span>
+<code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">net/ipv4/conf/$DEV/hidden</span></code><span style="color:black"> 
+toggles the generation of ARP replies for requested IPs. It marks an interface 
+and all of its IP addresses invisible to other interfaces for the purpose of ARP 
+requests. When an ARP request arrives on any interface, the kernel tests to see 
+if the IP address is locally hosted anywhere on the machine. If the IP is found 
+on any interface, the kernel will generate a reply. </span></p>
+<p style="text-align:justify"><span style="color:black">Since this is not always 
+desirable, the </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">hidden</span></code><span style="color:black"> 
+sysctl can be employed. This prevents the kernel from finding the IP address 
+when testing to see what IP addresses are locally hosted. The kernel can always 
+find IPs hosted on the interface on which the packet arrived, but it cannot find 
+addresses which are </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">hidden</span></code><span style="color:black">.
+</span></p>
+<p style="text-align:justify"><span style="color:black">As shown in Example&nbsp;2.9, 
+“Correction of ARP flux with </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;
+color:black">net/$DEV/hidden</span></code><span style="color:black">”, not only 
+can ARP flux be corrected, but sensitive information about the IP addresses 
+available on a linux box can be safeguarded <a name="idm140337857860656"><sup>
+[14]</sup></a>. This makes the </span><code style="font-family: Courier New">
+<span style="font-size:10.0pt;color:black">hidden</span></code><span style="color:black"> 
+sysctl useful for preventing unwanted IP disclosure via ARP on multi-homed 
+hosts, in addition to preventing ARP flux on hosts connected to the same network 
+medium. </span></p>
+<p class="title" style="text-align:justify"><b><span style="color:black">
+Example&nbsp;2.9.&nbsp;Correction of ARP flux with </span></b>
+<code style="font-family: Courier New"><b>
+<span style="font-size:10.0pt;color:black">net/$DEV/hidden</span></b></code></p>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="90%" style="width: 90.0%; background: #E0E0E0" xmlns="http://www.w3.org/TR/xhtml1/transitional">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>arping -I eth0 -c 1 172.19.22.254</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 172.19.22.254 from 172.19.22.2 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 172.19.22.254 [00:60:F5:08:8A:2D]&nbsp; 0.704ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 172.19.22.254 [00:60:F5:08:8A:2E]&nbsp; 0.844ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 172.19.22.254 [00:60:F5:08:8A:2F]&nbsp; 0.918ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 172.19.22.254 [00:60:F5:08:8A:2C]&nbsp; 0.974ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 1 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 4 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-server]# <b>for i in all eth2 eth3 eth4 eth5 ; do</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">&gt; <b>echo 1 &gt; /proc/sys/net/ipv4/conf/$i/hidden</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">&gt; <b>done</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">[root@real-client]# <b>arping -I eth0 -c 2 172.19.22.254</b></span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code xmlns style="font-family: Courier New"><span style="color:black">ARPING 172.19.22.254 from 172.19.22.2 eth0</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 172.19.22.254 [00:60:F5:08:8A:2D]&nbsp; 0.710ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Unicast reply from 172.19.22.254 [00:60:F5:08:8A:2D]&nbsp; 0.624ms</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Sent 2 probes (1 broadcast(s))</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><code style="font-family: Courier New"><span style="color:black">Received 2 response(s)</span></code></pre>
+    <pre style="text-align: justify; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre>
+    </td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align:justify"><span style="color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="color:black">These are two examples 
+of methods to prevent ARP flux. Other alternatives for correcting this problem 
+are documented in Section&nbsp;2.3, “ARP filtering”, where much more sophisticated 
+tools are available for manipulation and control over the ARP functions of linux.
+</span></p>
+<p class="MsoNormal" align="center"><b><font face="Arial"><a href="Main.htm" style="color: #00c; font-family: arial,sans-serif">MAIN</a></font></b></p>
+
+</body>
+
+</html>

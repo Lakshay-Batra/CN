@@ -1,0 +1,682 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="SNMP_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.brokenlink
+	{}
+h1
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h4
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h5
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" align="center"><a name="xtocid1">
+<span style="font-family: Arial; text-transform: uppercase; font-weight: 700; text-decoration: underline">
+<font size="6" color="#FF0000">Simple Network Management Protocol</font></span></a></p>
+<p style="text-align: justify"><a name="1020550">
+<span style="font-family: Arial">The Simple Network Management Protocol (SNMP) 
+is an application layer protocol that facilitates the exchange of management 
+information between network devices. It is part of the Transmission Control 
+Protocol/Internet Protocol (TCP/IP) protocol suite. SNMP enables network 
+administrators to manage network performance, find and solve network problems, 
+and plan for network growth. </span></a></p>
+<p style="text-align: justify"><span style="font-family: Arial">Two versions of 
+SNMP exist: SNMP version 1 (SNMPv1) and SNMP version 2 (SNMPv2). Both versions 
+have a number of features in common, but SNMPv2 offers enhancements, such as 
+additional protocol operations. Standardization of yet another version of 
+SNMP—SNMP Version 3 (SNMPv3)—is pending. This chapter provides descriptions of 
+the SNMPv1 and SNMPv2 protocol operations. Figure 56-1 illustrates a basic 
+network managed by SNMP.</span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-1: SNMP Facilitates the Exchange of Network Information Between 
+Devices</b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1029" type="#_x0000_t75" alt="" style='width:125.25pt;
+ height:143.25pt'>
+ <v:imagedata src="SNMP_files/image001.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845601.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=167 height=191
+src="SNMP_files/image001.gif" v:shapes="_x0000_s1029"><![endif]></b></span></p>
+<h2 style="text-align: justify"><a name="xtocid3">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Basic Components</span></a></h2>
+<p style="text-align: justify"><span style="font-family: Arial">An SNMP-managed 
+network consists of three key components: managed devices, agents,
+<a name="1020559">and network-management systems (NMSs).</a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A <em>managed 
+device</em> is a network node that contains an SNMP agent and that resides on a 
+managed network. Managed devices collect and store management information and 
+make this information available to NMSs using SNMP. Managed devices, sometimes 
+called network elements, can be routers and access servers, switches and 
+bridges, hubs, computer hosts, or printers.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">An <em>agent</em> 
+is a network-management software module that resides in a managed device. An 
+agent has local knowledge of management information and translates that 
+information into a form compatible with SNMP.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">An <em>NMS</em> 
+executes applications that monitor and control managed devices. NMSs provide the 
+bulk of the processing and memory resources required for network management. One 
+or more NMSs must exist on any managed network.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Figure 56-2 
+illustrates the relationships of these three components. </span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-2: An SNMP-Managed Network Consists of Managed Devices, Agents, and 
+NMSs</b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" alt="" style='width:246pt;height:231pt'>
+ <v:imagedata src="SNMP_files/image002.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845602.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=328 height=308
+src="SNMP_files/image002.gif" v:shapes="_x0000_s1030"><![endif]></b></span></p>
+<h2 style="text-align: justify"><a name="xtocid4">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Basic Commands</span></a></h2>
+<p style="text-align: justify"><a name="1020571">
+<span style="font-family: Arial">Managed devices are monitored and controlled 
+using four basic SNMP commands: <strong>read</strong>, <strong>
+<span style="font-family: Arial">write</span></strong>, <strong>trap</strong>, 
+and traversal operations.</span></a></p>
+<p style="text-align: justify"><span style="font-family: Arial">The </span>
+<strong><span style="font-family: Arial">read</span></strong><span style="font-family: Arial"> 
+command is used by an NMS to monitor managed devices. The NMS examines different 
+variables that are maintained by managed devices.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The </span>
+<strong><span style="font-family: Arial">write</span></strong><span style="font-family: Arial"> 
+command is used by an NMS to control managed devices. The NMS changes the values 
+of variables stored within managed devices.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The </span>
+<strong><span style="font-family: Arial">trap</span></strong><span style="font-family: Arial"> 
+command is used by managed devices to asynchronously report events to the NMS. 
+When certain types of events occur, a managed device sends a trap to the NMS.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Traversal 
+operations are used by the NMS to determine which variables a managed device 
+supports and to sequentially gather information in variable tables, such as a 
+routing table.</span></p>
+<h2 style="text-align: justify">&nbsp;</h2>
+<h2 style="text-align: justify"><a name="xtocid5">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Management Information 
+Base</span></a></h2>
+<p style="text-align: justify"><a name="1020582">
+<span style="font-family: Arial">A <em>Management Information Base (MIB)</em> is 
+a collection of information that is organized hierarchically. MIBs are accessed 
+using a network-management protocol such as SNMP. They are comprised of managed 
+objects and are identified by object identifiers.</span></a></p>
+<p style="text-align: justify"><span style="font-family: Arial">A managed object 
+(sometimes called a MIB object, an object, or a MIB) is one of any number of 
+specific characteristics of a managed device. Managed objects are comprised of 
+one or more object instances, which are essentially variables.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Two types of 
+managed objects exist: scalar and tabular. <em>Scalar objects</em> define a 
+single object instance. <em>Tabular objects</em> define multiple related object 
+instances that are grouped in MIB tables.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">An example of a 
+managed object is at Input, which is a scalar object that contains a single 
+object instance, the integer value that indicates the total number of input 
+AppleTalk packets on a router interface.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">An object 
+identifier (or object ID) uniquely identifies a managed object in the MIB 
+hierarchy. The MIB hierarchy can be depicted as a tree with a nameless root, the 
+levels of which are assigned by different organizations. Figure 56-3 illustrates 
+the MIB tree.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The top-level 
+MIB object IDs belong to different standards organizations, while lower-level 
+object IDs are allocated by associated organizations.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Vendors can 
+define private branches that include managed objects for their own products. 
+MIBs that have not been standardized typically are positioned in the 
+experimental branch.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The managed 
+object at Input can be uniquely identified either by the object 
+name—iso.identified-organization.dod.internet.private.enterprise.cisco.temporary 
+variables.AppleTalk.atInput—or by the equivalent object descriptor, 
+1.3.6.1.4.1.9.3.3.1.<br>
+&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b>Figure&nbsp;56-3: The MIB Tree Illustrates the 
+Various Hierarchies Assigned by Different Organizations <br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1031" type="#_x0000_t75" alt="" style='width:307.5pt;height:351.75pt'>
+ <v:imagedata src="SNMP_files/image003.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845603.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=410 height=469
+src="SNMP_files/image003.gif" v:shapes="_x0000_s1031"><![endif]></b></span></p>
+<h2 style="text-align: justify"><a name="xtocid6">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP and Data Representation</span></a></h2>
+<p style="text-align: justify"><a name="1020600">
+<span style="font-family: Arial">SNMP must account for and adjust to 
+incompatibilities between managed devices. Different computers use different 
+data representation techniques, which can compromise </span></a>
+<span style="font-family: Arial">the capability of SNMP to exchange information 
+between managed devices. SNMP uses a subset of Abstract Syntax Notation One 
+(ASN.1) to accommodate communication between diverse systems.</span></p>
+<h2 style="text-align: justify"><a name="xtocid7">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Version 1</span></a></h2>
+<p style="text-align: justify"><em><span style="font-family: Arial">SNMP version 
+1 (SNMPv1)</span></em><span style="font-family: Arial"> is the initial 
+implementation of the SNMP protocol. It is <a name="1020606">described in 
+Request For Comments (RFC) 1157 and functions within the specifications of the 
+Structure of Management Information (SMI). SNMPv1 operates over protocols such 
+as User Datagram Protocol (UDP), Internet Protocol (IP), OSI Connectionless 
+Network Service (CLNS), AppleTalk Datagram-Delivery Protocol (DDP), and Novell 
+Internet Packet Exchange (IPX). SNMPv1 is widely used and is the <em>de facto</em> 
+network-management protocol in the Internet community.</a></span></p>
+<h3 style="text-align: justify"><a name="xtocid8">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv1 and Structure of 
+Management Information</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">The <em>
+Structure of Management Information (SMI)</em> defines the rules for describing
+<a name="1020609">management information, using Abstract Syntax Notation One 
+(ASN.1). The SNMPv1 SMI is defined in RFC 1155. The SMI makes three key 
+specifications: ASN.1 data types, SMI-specific data types, and SNMP MIB tables.</a></span></p>
+<h4 style="text-align: justify"><a name="xtocid9">
+<span style="font-family: Arial">SNMPv1 and ASN.1 Data Types</span></a></h4>
+<p style="text-align: justify"><a name="1020611">
+<span style="font-family: Arial">The SNMPv1 SMI specifies that all managed 
+objects have a certain subset of Abstract Syntax Notation One (ASN.1) data types 
+associated with them. Three ASN.1 data types are required: name, syntax, and 
+encoding. The name serves as the object identifier (object ID). The syntax 
+defines the data type of the object (for example, integer or string). The SMI 
+uses a subset of the ASN.1 syntax definitions. The encoding data describes how 
+information associated with a managed object is formatted as a series of data 
+items for transmission over </span></a><span style="font-family: Arial">the 
+network.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv1 and SMI-Specific Data 
+Types</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">The <em>SNMPv1 
+SMI</em> specifies the use of a number of SMI-specific data types, which are
+</span><span style="font-family: Arial">divided into two categories: simple data 
+types and application-wide data types.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Three simple 
+data types are defined in the SNMPv1 SMI, all of which are unique values: 
+integers, octet strings, and object IDs. The integer data type is a signed 
+integer in the range of -2,147,483,648 to 2,147,483,647. Octet strings are 
+ordered sequences of 0 to 65,535 octets. Object IDs come from the set of all 
+object identifiers allocated according to the rules specified in ASN.1.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Seven 
+application-wide data types exist in the SNMPv1 SMI: network addresses, 
+counters, </span><span style="font-family: Arial">gauges, </span>
+<span style="font-family: Arial">time ticks, </span>
+<span style="font-family: Arial">opaques, </span>
+<span style="font-family: Arial">integers, and </span>
+<span style="font-family: Arial">unsigned integers. Network addresses represent 
+an address from a particular protocol family. SNMPv1 supports only 32-bit IP 
+addresses. Counters are non-negative integers that increase until they reach a 
+maximum value and then return to zero. In SNMPv1, a 32-bit counter size is 
+specified. Gauges are non-negative integers that can increase or decrease but 
+that retain the maximum value reached. A time tick represents a hundredth of a 
+second since some event. An opaque represents an arbitrary encoding that is used 
+to pass arbitrary information strings that do not conform to the strict data 
+typing used by the SMI. An integer represents signed integer-valued information. 
+This data type redefines the integer data type, which has arbitrary precision in 
+ASN.1 but bounded precision in the SMI. An unsigned integer represents unsigned 
+integer-valued information and is useful when values are always non-negative. 
+This data type redefines the integer data type, which has arbitrary precision in 
+ASN.1 but bounded precision in the SMI.</span></p>
+<h4 style="text-align: justify"><a name="xtocid10">
+<span style="font-family: Arial">SNMP MIB Tables</span></a></h4>
+<p style="text-align: justify"><a name="1020628">
+<span style="font-family: Arial">The SNM</span></a><span style="font-family: Arial">Pv1 
+SMI defines highly structured tables that are used to group the instances of a 
+tabular object (that is, an object that contains multiple variables). Tables are 
+composed of zero or more rows, which are indexed in a way that allows SNMP to 
+retrieve or alter an entire row with a single <strong>Get</strong>, <strong>
+GetNext</strong>, or <strong>Set</strong> command.</span></p>
+<h3 style="text-align: justify"><a name="xtocid11">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv1 Protocol Operations</span></a></h3>
+<p style="text-align: justify"><a name="1020632">
+<span style="font-family: Arial">SNMP is a simple request/response protocol. The 
+network-management system issues a request, and managed devices return 
+responses. This behavior is implemented by using one of four protocol 
+operations: Get, GetNext, Set, and Trap. The </span></a>
+<span style="font-family: Arial">Get operation is used by the NMS to retrieve 
+the value of one or more object instances from an agent. If the agent responding 
+to the Get operation cannot provide values for all the object instances in a 
+list, it does not provide any values. The </span>
+<span style="font-family: Arial">GetNext operation is used by the NMS to 
+retrieve the value of the next object instance in a table or a list within an 
+agent. The Set operation is used by the NMS to set the values of object 
+instances within an agent. The </span><span style="font-family: Arial">Trap 
+operation </span><span style="font-family: Arial">is used by agents to 
+asynchronously inform the NMS of a significant event.</span></p>
+<h2 style="text-align: justify"><a name="xtocid12">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Version 2</span></a></h2>
+<p style="text-align: justify"><a name="1020640"><em>
+<span style="font-family: Arial">SNMP version 2 (SNMPv2)</span></em></a><span style="font-family: Arial"> 
+is an evolution of the initial version, SNMPv1. Originally, SNMPv2 was published 
+as a set of proposed Internet standards in 1993; currently, it is a draft 
+standard. As with SNMPv1, SNMPv2 functions within the specifications of the 
+Structure of Management Information (SMI). In theory, SNMPv2 offers a number of 
+improvements to SNMPv1, including additional protocol operations.</span></p>
+<h3 style="text-align: justify"><a name="xtocid13">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv2 and Structure of 
+Management Information</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">The Structure of 
+Management Information (SMI) defines the rules for describing <a name="1020644">
+management information, using ASN.1.</a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The SNMPv2 SMI 
+is described in RFC 1902. It makes certain additions and enhancements to the 
+SNMPv1 SMI-specific data types, such as including bit strings, network 
+addresses, and counters. Bit strings are defined only in SNMPv2 and comprise 
+zero or more named bits that specify a value. Network addresses represent an 
+address from a particular protocol family. SNMPv1 supports only 32-bit IP 
+addresses, but SNMPv2 can support other types of addresses as well. Counters are 
+non-negative integers that increase until they reach a maximum value and then 
+return to zero. In SNMPv1, a 32-bit counter size is specified. In SNMPv2, 32-bit 
+and 64-bit counters are defined.</span></p>
+<h3 style="text-align: justify"><a name="xtocid14">
+<span style="font-size: 12.0pt; font-family: Arial">SMI Information Modules</span></a></h3>
+<p style="text-align: justify"><a name="1020647">
+<span style="font-family: Arial">The SNMPv2 SMI also specifies information 
+modules, which specify a group of related definitions. Three types of SMI 
+information modules exist: MIB modules, compliance statements, and </span></a>
+<span style="font-family: Arial">capability statements. MIB modules contain 
+definitions of interrelated managed objects. Compliance statements provide a 
+systematic way to describe a group of managed objects that must be implemented 
+for conformance to a standard. Capability statements are used to indicate the 
+precise level of support that an agent claims with respect to a MIB group. An 
+NMS can adjust its behavior toward agents according to the capabilities 
+statements associated with each agent.</span></p>
+<h3 style="text-align: justify"><a name="xtocid15">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv2 Protocol Operations</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">The Get, GetNext, 
+and Set operations used in SNMPv1 are exactly the same as those used in SNMPv2. 
+However, SNMPv2 adds and enhances some protocol operations. The SNMPv2 Trap 
+operation, for example, serves the same function as that used in SNMPv1, but it 
+uses a different message format and is designed to replace the SNMPv1 Trap.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">SNMPv2 also 
+defines two new protocol operations: GetBulk and Inform. The GetBulk operation 
+is used by the NMS to efficiently retrieve large blocks of data, such as 
+multiple rows in a table. <a name="1020653">GetBulk fills a response message 
+with as much of the requested data as will </a><a name="1020654">fit. The Inform 
+operation allows one NMS to send trap information to another NMS and to then 
+receive a response. In SNMPv2, if the agent responding to GetBulk operations 
+cannot provide values for all the variables in a list, it provides partial 
+results.</a></span></p>
+<h2 style="text-align: justify"><a name="xtocid16">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Management</span></a></h2>
+<p style="text-align: justify"><a name="1020656">
+<span style="font-family: Arial">SNMP is a distributed-management protocol. A 
+system can operate exclusively as either an NMS or an agent, or it can perform 
+the functions of both. When a system operates as both an NMS and an agent, 
+another NMS might require that the system query manage devices and provide a 
+summary of the information learned, or that it report locally stored management 
+information.</span></a></p>
+<h2 style="text-align: justify"><a name="xtocid17">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Security</span></a></h2>
+<p style="text-align: justify"><a name="1020659">
+<span style="font-family: Arial">SNMP lacks any authentication capabilities, 
+which results in vulnerability to a variety of security threats. These include 
+masquerading occurrences, modification of information, message sequence and 
+timing modifications, and disclosure. </span></a>
+<span style="font-family: Arial">Masquerading consists of an unauthorized entity 
+attempting to perform management operations by assuming the identity of an 
+authorized management entity. Modification of information involves an 
+unauthorized entity attempting to alter a message generated by an authorized 
+entity so that the message results in unauthorized accounting management or 
+configuration management operations. Message sequence and timing modifications 
+occur when an unauthorized entity reorders, delays, or copies and later replays 
+a message generated by an authorized entity. Disclosure results when an 
+unauthorized entity extracts values stored in managed objects, or learns of 
+notifiable events by monitoring exchanges between managers and agents. Because 
+SNMP does not implement authentication, many vendors do not implement Set 
+operations, thereby reducing SNMP to a monitoring facility.</span></p>
+<h2 style="text-align: justify"><a name="xtocid18">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Interoperability</span></a></h2>
+<p style="text-align: justify"><a name="1020665">
+<span style="font-family: Arial">As presently specified, SNMPv2 is incompatible 
+with SNMPv1 in two key areas: message formats and protocol operations. SNMPv2 
+messages use different header and protocol data unit (PDU) formats than SNMPv1 
+messages. SNMPv2 also uses two protocol operations that are not specified in 
+SNMPv1. Furthermore, RFC 1908 defines two possible SNMPv1/</span></a><span style="font-family: Arial">v2 
+coexistence strategies: proxy agents and bilingual network-management systems.</span></p>
+<h3 style="text-align: justify"><a name="xtocid19">
+<span style="font-size: 12.0pt; font-family: Arial">Proxy Agents</span></a></h3>
+<p style="text-align: justify"><a name="1020669">
+<span style="font-family: Arial">An SNMPv2 agent can act as a proxy agent on 
+behalf of SNMPv1 managed devices, as follows:</span></a></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">An SNMPv2 NMS issues a command intended for 
+  an SNMPv1 agent. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The NMS sends the SNMP message to the SNMPv2 
+  proxy agent. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The proxy agent forwards Get, GetNext, and 
+  Set messages to the SNMPv1 agent unchanged. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">GetBulk messages are converted by the proxy 
+  agent to GetNext messages and then are forwarded to the SNMPv1 agent. </span>
+  </li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">The proxy agent 
+maps SNMPv1 trap messages to SNMPv2 trap messages and then forwards them to the 
+NMS.</span></p>
+<h3 style="text-align: justify"><a name="xtocid20">
+<span style="font-size: 12.0pt; font-family: Arial">Bilingual Network-Management 
+System</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">Bilingual SNMPv2 
+network-management systems support both SNMPv1 and SNMPv2. <a name="1020677">To 
+support this dual-management environment, a management application in the 
+bilingual NMS must contact an agent. The NMS then examines information stored in 
+a local database to determine whether the agent supports SNMPv1 or SNMPv2. Based 
+on the information in the database, the NMS communicates with the agent using 
+the appropriate version of SNMP.</a></span></p>
+<h2 style="text-align: justify"><a name="xtocid21">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Reference: SNMPv1 
+Message Formats</span></a></h2>
+<p style="text-align: justify"><a name="1020680">
+<span style="font-family: Arial">SNMPv1 messages contain two parts: a message 
+header and a protocol data unit (PDU). Figure 56-4 illustrates the basic format 
+of an SNMPv1 message.</span></a></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-4: An SNVPv1 Message Consists of a Header and a PDU </b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" alt="" style='width:139.5pt;height:46.5pt'>
+ <v:imagedata src="SNMP_files/image004.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845604.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=186 height=62
+src="SNMP_files/image004.gif" v:shapes="_x0000_s1032"><![endif]></b></span></p>
+<h3 style="text-align: justify"><a name="xtocid22">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv1 Message Header</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">SNMPv1 message 
+headers contain two fields: Version Number and Community Name. <a name="1020687">
+<br>
+The following d</a><a name="1020689">escriptions summarize these fields:</a></span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Version number</span></strong><span style="font-family: Arial">—Specifies 
+  the version of SNMP used. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Community name</span></strong><span style="font-family: Arial">—Defines 
+  an access environment for a group of NMSs. NMSs within the community are said 
+  to exist within the same administrative domain. Community names serve as a 
+  weak form of authentication because devices that do not know the proper 
+  community name are precluded from SNMP operations. </span></li>
+</ul>
+<h3 style="text-align: justify"><a name="xtocid23">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv1 Protocol Data Unit</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">SNMPv1 PDUs 
+contain a specific command (Get, Set, and so on) and operands that
+<a name="1020694">indicate the object instances involved in the transaction. 
+SNMPv1 PDU fields are variable in length, as prescribed by ASN.1. Figure 56-5 
+illustrates the fields of the SNMPv1 Get, GetNext, Response, and Set PDUs 
+transactions. </a></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-5: SNMPv1 Get, GetNext, Response, and Set PDUs Contain the Same 
+Fields </b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="" style='width:318.75pt;height:47.25pt'>
+ <v:imagedata src="SNMP_files/image005.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845605.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=425 height=63
+src="SNMP_files/image005.gif" v:shapes="_x0000_s1033"><![endif]></b></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+descriptions summarize the fields illustrated in Figure 56-5:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">PDU type</span></strong><span style="font-family: Arial">—Specifies 
+  the type of PDU transmitted. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Request ID</span></strong><span style="font-family: Arial">—Associates 
+  SNMP requests with responses. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Error status</span></strong><span style="font-family: Arial">—Indicates 
+  one of a number of errors and error types. Only the response operation sets 
+  this field. Other operations set this field to zero. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Error index</span></strong><span style="font-family: Arial">—Associates 
+  an error with a particular object instance. Only the response operation sets 
+  this field. Other operations set this field to zero. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Variable bindings</span></strong><span style="font-family: Arial">—Serves 
+  as the data field of the SNMPv1 PDU. Each variable binding associates a 
+  particular object instance with its current value (with the exception of Get 
+  and GetNext requests, for which the value is ignored). </span></li>
+</ul>
+<h3 style="text-align: justify"><a name="xtocid24">
+<span style="font-size: 12.0pt; font-family: Arial">Trap PDU Format</span></a></h3>
+<p style="text-align: justify"><a name="1020708">
+<span style="font-family: Arial">Figure 56-6 illustrates the fields of the 
+SNMPv1 Trap PDU.</span></a></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-6: The SNMPv1 Trap PDU Consists of Eight Fields </b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" alt="" style='width:321.75pt;height:42.75pt'>
+ <v:imagedata src="SNMP_files/image006.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845606.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=429 height=57
+src="SNMP_files/image006.gif" v:shapes="_x0000_s1034"><![endif]></b></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+descriptions summarize the fields illustrated in Figure 56-6:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Enterprise</span></strong><span style="font-family: Arial">—Identifies 
+  the type of managed object generating the trap. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Agent address</span></strong><span style="font-family: Arial">—Provides 
+  the address of the managed object generating the trap. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Generic trap type</span></strong><span style="font-family: Arial">—Indicates 
+  one of a number of generic trap types. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Specific trap code</span></strong><span style="font-family: Arial">—Indicates 
+  one of a number of specific trap codes. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Time stamp</span></strong><span style="font-family: Arial">—Provides 
+  the amount of time that has elapsed between the last network reinitialization 
+  and generation of the trap. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Variable bindings</span></strong><span style="font-family: Arial">—The 
+  data field of the SNMPv1 Trap PDU. Each variable binding associates a 
+  particular object instance with its current value. </span></li>
+</ul>
+<h2 style="text-align: justify"><a name="xtocid25">
+<span style="font-size: 12.0pt; font-family: Arial">SNMP Reference: SNMPv2 
+Message Format</span></a></h2>
+<p style="text-align: justify"><a name="1020724">
+<span style="font-family: Arial">SNMPv2 messages consist of a header and a PDU. 
+Figure 56-7 illustrates the basic format of an SNMPv2 message.</span></a></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-7: SNMPv2 Messages Also Consist of a Header and a PDU </b></span>
+</p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1035" type="#_x0000_t75" alt="" style='width:139.5pt;height:46.5pt'>
+ <v:imagedata src="SNMP_files/image007.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845607.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=186 height=62
+src="SNMP_files/image007.gif" v:shapes="_x0000_s1035"><![endif]></b></span></p>
+<h3 style="text-align: justify"><a name="xtocid26">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv2 Message Header</span></a></h3>
+<p style="text-align: justify"><a name="1020731">
+<span style="font-family: Arial">SNMPv2 message headers contain two fields: 
+Version Number and Community Name. <br>
+The following descriptions summarize these fields:</span></a></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Version number</span></strong><span style="font-family: Arial">—Specifies 
+  the version of SNMP that is being used. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Community name</span></strong><span style="font-family: Arial">—Defines 
+  an access environment for a group of NMSs. NMSs within the community are said 
+  to exist within the same administrative domain. Community names serve as a 
+  weak form of authentication because devices that do not know the proper 
+  community name are precluded from SNMP operations. </span></li>
+</ul>
+<h3 style="text-align: justify"><a name="xtocid27">
+<span style="font-size: 12.0pt; font-family: Arial">SNMPv2 Protocol Data Unit</span></a></h3>
+<p style="text-align: justify"><span style="font-family: Arial">SNMPv2 specifies 
+two PDU formats, depending on the SNMP protocol operation. SNMPv2 PDU fields are 
+variable in length, as prescribed by Abstract Syntax Notation One
+<a name="1020738">(ASN.1).</a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Figure 56-8 
+illustrates the fields of the SNMPv2 Get, GetNext, Inform, Response, Set, and 
+Trap PDUs.</span></p>
+<p style="text-align: justify"><a name="1020740">
+<span style="font-family: Arial">The following descriptions summarize the fields 
+illustrated in Figure 56-8:</span></a></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">PDU type</span></strong><span style="font-family: Arial">—Identifies 
+  the type of PDU transmitted (Get, GetNext, Inform, Response, Set, or Trap).
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Request ID</span></strong><span style="font-family: Arial">—Associates 
+  SNMP requests with responses. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Error status</span></strong><span style="font-family: Arial">—Indicates 
+  one of a number of errors and error types. Only the response operation sets 
+  this field. Other operations set this field to zero. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Error index</span></strong><span style="font-family: Arial">—Associates 
+  an error with a particular object instance. Only the response operation sets 
+  this field. Other operations set this field to zero. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Variable bindings</span></strong><span style="font-family: Arial">—Serves 
+  as the data field of the SNMPv2 PDU. Each variable binding associates a 
+  particular object instance with its current value (with the exception of Get 
+  and GetNext requests, for which the value is ignored). </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-8: SNMPv2 Get, GetNext, Inform, Response, Set, and Trap PDUs 
+Contain the Same Fields </b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1036" type="#_x0000_t75" alt="" style='width:318.75pt;height:47.25pt'>
+ <v:imagedata src="SNMP_files/image008.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845608.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=425 height=63
+src="SNMP_files/image008.gif" v:shapes="_x0000_s1036"><![endif]></b></span></p>
+<h4 style="text-align: justify"><a name="xtocid28">
+<span style="font-family: Arial">GetBulk PDU Format</span></a></h4>
+<p style="text-align: justify"><a name="1020753">
+<span style="font-family: Arial">Figure 56-9 illustrates the fields of the 
+SNMPv2 GetBulk PDU.</span></a></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;56-9: The SNMPv2 GetBulk PDU Consists of Seven Fields </b></span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><b><br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1037" type="#_x0000_t75" alt="" style='width:159.75pt;height:31.5pt'>
+ <v:imagedata src="SNMP_files/image009.gif" o:href="file:///K:\CD2\Windows%20Backup\M.Tech%20CN\Simple%20Network%20Management%20Protocol%20(SNMP)_files\ct845609.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=213 height=42
+src="SNMP_files/image009.gif" v:shapes="_x0000_s1037"><![endif]></b></span></p>
+<p style="text-align: justify"><a name="1020759">
+<span style="font-family: Arial">The following descriptions summarize the fields 
+illustrated in Figure 56-9:</span></a></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">PDU type</span></strong><span style="font-family: Arial">—Identifies 
+  the PDU as a GetBulk operation. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Request ID</span></strong><span style="font-family: Arial">—Associates 
+  SNMP requests with responses. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Non repeaters</span></strong><span style="font-family: Arial">—Specifies 
+  the number of object instances in the variable bindings field that should be 
+  retrieved no more than once from the beginning of the request. This field is 
+  used when some of the instances are scalar objects with only one variable.
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Max repetitions</span></strong><span style="font-family: Arial">—Defines 
+  the maximum number of times that other variables beyond those specified by the 
+  Non repeaters field should be retrieved. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><strong>
+  <span style="font-family: Arial">Variable bindings</span></strong><span style="font-family: Arial">—Serves 
+  as the data field of the SNMPv2 PDU. Each variable binding associates a 
+  particular object instance with its current value (with the exception of Get 
+  and GetNext requests, for which the value is ignored).</span></li>
+</ul>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p class="pB1_Body1" align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p class="pB1_Body1" align="center"><u><b>
+<font size="6" face="Arial" color="#FF0000">WIDE AREA NETWORK</font></b></u></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">WAN</span> is a data 
+communications network that covers a relatively broad geographic area and that 
+often uses transmission facilities provided by common carriers, such as 
+telephone companies. WAN technologies generally function at the lower three 
+layers of the OSI reference model: the physical layer, the data link layer, and 
+the network layer. Figure 3-1 illustrates the relationship between the common 
+WAN technologies and the OSI model. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-1 WAN 
+Technologies Operate at the Lowest Levels of the OSI Model</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020554" hspace="0" src="ct840301.jpg" border="0" width="625" height="491"></font></div>
+<p class="pTC_TableCap" align="justify">&nbsp;</p>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">Point-to-Point 
+Links </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">point-to-point link</span> 
+provides a single, pre-established WAN communications path from the customer 
+premises through a carrier network, such as a telephone company, to a remote 
+network. Point-to-point lines are usually leased from a carrier and thus are 
+often called leased lines. For a point-to-point line, the carrier allocates 
+pairs of wire and facility hardware to your line only. These circuits are 
+generally priced based on bandwidth required and distance between the two 
+connected points. Point-to-point links are generally more expensive than shared 
+services such as Frame Relay. Figure 3-2 illustrates a typical point-to-point 
+link through a WAN. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-2 A Typical 
+Point-to-Point Link Operates Through a WAN to a Remote Network</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020562" height="104" hspace="0" src="ct840302.jpg" width="719" border="0"></font></div>
+<p class="pTC_TableCap" align="justify">&nbsp;</p>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">Circuit 
+Switching </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Switched circuits</span> 
+allow data connections that can be initiated when needed and terminated when 
+communication is complete. This works much like a normal telephone line works 
+for voice communication. Integrated Services Digital Network (ISDN) is a good 
+example of circuit switching. When a router has data for a remote site, the 
+switched circuit is initiated with the circuit number of the remote network. In 
+the case of ISDN circuits, the device actually places a call to the telephone 
+number of the remote ISDN circuit. When the <br>
+two networks are connected and authenticated, they can transfer data. When the 
+data transmission is complete, the call can be terminated. Figure 3-3 
+illustrates an example of this type of circuit. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-3 A 
+Circuit-Switched WAN Undergoes a Process Similar to That Used for a Telephone 
+Call </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020572" hspace="0" src="introwa3.jpg" border="0" width="609" height="393"></font></div>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">Packet 
+Switching </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Packet switching</span> is 
+a WAN technology in which users share common carrier resources. Because this 
+allows the carrier to make more efficient use of its infrastructure, the cost to 
+the customer is generally much better than with point-to-point lines. In a 
+packet switching setup, networks have connections into the carrier's network, 
+and many customers share the carrier's network. The carrier can then create 
+virtual circuits between customers' sites by which packets of data are delivered 
+from one to the other through the network. The section of the carrier's network 
+that is shared is often referred to as a cloud. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">Some examples of 
+packet-switching networks include Asynchronous Transfer Mode (ATM), Frame Relay, 
+Switched Multimegabit Data Services (SMDS), and X.25. Figure <br>
+3-4 shows an example packet-switched circuit. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">The virtual connections 
+between customer sites are often referred to as a virtual circuit. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-4 Packet 
+Switching Transfers Packets Across a Carrier Network </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020583" height="330" hspace="0" src="introwa4.jpg" width="693" border="0"></font></div>
+<p class="pTC_TableCap" align="justify">&nbsp;</p>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">WAN Virtual 
+Circuits </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">virtual circuit</span> is 
+a logical circuit created within a shared network between two network devices. 
+Two types of virtual circuits exist: switched virtual circuits (SVCs) and 
+permanent virtual circuits (PVCs). </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">SVCs</span> are virtual 
+circuits that are dynamically established on demand and terminated when 
+transmission is complete. Communication over an SVC consists of three phases: 
+circuit establishment, data transfer, and circuit termination. The establishment 
+phase involves creating the virtual circuit between the source and destination 
+devices. Data transfer involves transmitting data between the devices over the 
+virtual circuit, and the circuit termination phase involves tearing down the 
+virtual circuit between the source and destination devices. SVCs are used in 
+situations in which data transmission between devices is sporadic, largely 
+because SVCs increase bandwidth used due to the circuit establishment and 
+termination phases, but they decrease the cost associated with constant virtual 
+circuit availability. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">PVC</span> is a 
+permanently established virtual circuit that consists of one mode: data 
+transfer. PVCs are used in situations in which data transfer between devices is 
+constant. PVCs decrease the bandwidth use associated with the establishment and 
+termination of virtual circuits, but they increase costs due to constant virtual 
+circuit availability. PVCs are generally configured by the service provider when 
+an order is placed for service. </font></p>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">WAN Dialup 
+Services </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">Dialup services offer 
+cost-effective methods for connectivity across WANs. Two popular dialup 
+implementations are dial-on-demand routing (DDR) and dial backup. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">DDR</span> is a technique 
+whereby a router can dynamically initiate a call on a switched circuit when it 
+needs to send data. In a DDR setup, the router is configured to initiate the 
+call when certain criteria are met, such as a particular type of network traffic 
+needing to be transmitted. When the connection is made, traffic passes over the 
+line. The router configuration specifies an idle timer that tells the router to 
+drop the connection when the circuit has remained idle for a certain period.
+</font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Dial backup</span> is 
+another way of configuring DDR. However, in dial backup, the switched circuit is 
+used to provide backup service for another type of circuit, such as 
+point-to-point or packet switching. The router is configured so that when a 
+failure is detected on the primary circuit, the dial backup line is initiated. 
+The dial backup line then supports the WAN connection until the primary circuit 
+is restored. When this occurs, the dial backup connection is terminated. </font>
+</p>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">WAN Devices
+</font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">WANs use numerous types 
+of devices that are specific to WAN environments. WAN switches, access servers, 
+modems, CSU/DSUs, and ISDN terminal adapters are discussed in the following 
+sections. Other devices found in WAN environments that are used in WAN 
+implementations include routers, ATM switches, and multiplexers. </font></p>
+<h3 class="p_H_Head2" align="justify"><font size="3" face="Arial">WAN Switch
+</font></h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">WAN switch</span> is a 
+multiport internetworking device used in carrier networks. These devices 
+typically switch such traffic as Frame Relay, X.25, and SMDS, and operate at the 
+data link layer of the OSI reference model. Figure 3-5 illustrates two routers 
+at remote ends of a WAN that are connected by WAN switches. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-5 Two 
+Routers at Remote Ends of a WAN Can Be Connected by WAN Switches </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020616" height="225" hspace="0" src="ct840305.jpg" width="605" border="0"></font></div>
+<h3 class="p_H_Head2" align="justify"><font size="3" face="Arial">Access Server
+</font></h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">An
+<span style="font-weight: normal; font-style: italic">access server</span> acts 
+as a concentration point for dial-in and dial-out connections. Figure 3-6 
+illustrates an access server concentrating dial-out connections into a WAN.
+</font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-6 An Access 
+Server Concentrates Dial-Out Connections into a WAN</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020624" height="308" hspace="0" src="ct840306.jpg" width="641" border="0"></font></div>
+<h3 class="p_H_Head2" align="justify"><font size="3" face="Arial">Modem </font>
+</h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">modem</span> is a device 
+that interprets digital and analog signals, enabling data to be transmitted over 
+voice-grade telephone lines. At the source, digital signals are converted to a 
+form suitable for transmission over analog communication facilities. At the 
+destination, these analog signals are returned to their digital form. Figure 3-7 
+illustrates a simple modem-to-modem connection through a WAN. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-7 A Modem 
+Connection Through a WAN Handles Analog and Digital Signals </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020631" height="129" hspace="0" src="ct840307.jpg" width="671" border="0"></font></div>
+<h3 class="p_H_Head2" align="justify"><font size="3" face="Arial">CSU/DSU </font>
+</h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">channel service 
+unit/digital service unit (CSU/DSU)</span> is a digital-interface device used to 
+connect a router to a digital circuit like a T1. The CSU/DSU also provides 
+signal timing for communication between these devices. Figure 3-8 illustrates 
+the placement of the CSU/DSU in a WAN implementation. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-8 The CSU/DSU 
+Stands Between the Switch and the Terminal </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020638" height="191" hspace="0" src="ct840308.jpg" width="670" border="0"></font></div>
+<h3 class="p_H_Head2" align="justify"><font size="3" face="Arial">ISDN Terminal 
+Adapter </font></h3>
+<p class="pB1_Body1" align="justify"><font face="Arial">An
+<span style="font-weight: normal; font-style: italic">ISDN terminal adapter</span> 
+is a device used to connect ISDN Basic Rate Interface (BRI) connections to other 
+interfaces, such as EIA/TIA-232 on a router. A terminal adapter is essentially 
+an ISDN modem, although it is called a terminal adapter because it does not 
+actually convert analog to digital signals. Figure 3-9 illustrates the placement 
+of the terminal adapter in an ISDN environment. </font></p>
+<p class="pTC_TableCap" align="justify"><font face="Arial">Figure&nbsp;3-9 The 
+Terminal Adapter Connects the ISDN Terminal Adapter to Other Interfaces</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020647" height="201" hspace="0" src="ct840309.jpg" width="613" border="0"></font></div>
+<h2 class="p_H_Head1" align="justify"><font size="3" face="Arial">Review 
+Questions </font></h2>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+are some types of WAN circuits?</span> </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Point-to-point, 
+packet-switched, and circuit-switched. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+is DDR, and how is it different from dial backup?</span> </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>DDR is 
+dial-on-demand routing. DDR dials up the remote site when traffic needs to be 
+transmitted. Dial backup uses the same type of services, but for backup to a 
+primary circuit. When the primary circuit fails, the dial backup line is 
+initiated until the primary circuit is restored. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+is a CSU/DSU used for?</span> </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>A CSU/DSU 
+interfaces a router with a digital line such as a T1. </font></p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+is the difference between a modem and an ISDN terminal adapter?</span> </font>
+</p>
+<p class="pB1_Body1" align="justify"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>A modem converts 
+digital signals into analog for transmission over a telephone line. Because ISDN 
+circuits are digital, the conversion from digital to analog is not required.
+</font></p>
+<p class="pB1_Body1" align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

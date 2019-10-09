@@ -1,0 +1,430 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	background:#6365CE;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	color:white;
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<span class="articleBody">
+<h1 align="center"><font color="#FF0000" face="Arial" size="5">
+<span style="text-transform: uppercase; text-decoration: underline">DV 
+Algorithms</span></font></h1>
+<p><font face="Arial">DV algorithms are also known as Bellman-Ford routing 
+algorithms and Ford-Fulkerson routing algorithms. In these algorithms, every 
+router has a routing table that shows it the best route for any destination. A 
+typical graph and routing table for router J is shown below. </font></p>
+<p align="center"><font face="Arial"><img src="routing-algorithm7.gif" width="240" height="149"></font></p>
+<table cellSpacing="0" cellPadding="3" width="400" align="center" bgColor="lightyellow" border="1">
+  <tr>
+    <td><font face="Arial"><b><center>
+    <p>Destination</p>
+    </center></b></font></td>
+    <td><font face="Arial"><b><center>
+    <p>Weight</p>
+    </center></b></font></td>
+    <td><font face="Arial"><b><center>
+    <p>Line</p>
+    </center></b></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>A</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>8</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>A</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>20</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>A</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>28</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>I</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>D</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>20</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>H</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>E</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>17</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>I</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>F</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>30</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>I</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>G</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>18</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>H</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>H</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>12</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>H</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>I</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>10</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>I</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>J</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>0</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>---</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>K</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>6</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>K</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p>L</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>15</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>K</p>
+    </center></font></td>
+  </tr>
+</table>
+<font size="-1" face="Arial"><center>
+<p><b>A typical network graph and routing table for router J</b></p>
+</center></font>
+<p><font face="Arial">As the table shows, if router J wants to get packets to 
+router D, it should send them to router H. When packets arrive at router H, it 
+checks its own table and decides how to send the packets to D. </font></p>
+<p><font face="Arial">In DV algorithms, each router has to follow these steps:
+</font></p>
+<ol>
+  <li><font face="Arial">It counts the weight of the links directly connected to 
+  it and saves the information to its table. </font></li>
+  <li><font face="Arial">In a specific period of time, it send its table to its 
+  neighbor routers (not to all routers) and receive the routing table of each of 
+  its neighbors. </font></li>
+  <li><font face="Arial">Based on the information in its neighbors' routing 
+  tables, it updates its own. </font></li>
+</ol>
+<p><font face="Arial">One of the most important problems with DV algorithms is 
+called &quot;<b>count to infinity</b>.&quot; Let's examine this problem with an example:
+</font></p>
+<p><font face="Arial">Imagine a network with a graph as shown below. As you see 
+in this graph, there is only one link between A and the other parts of the 
+network. Here you can see the graph and routing table of all nodes: </font></p>
+<p align="center"><font face="Arial"><img src="routing-algorithm8.gif" width="354" height="91"></font></p>
+<table cellSpacing="0" cellPadding="3" width="400" align="center" bgColor="lightyellow" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><font face="Arial"><center>
+    <p><b>A</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><b>B</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><b>C</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><b>D</b></p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p><b>A</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>0,-</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>1,A</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>2,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>3,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p><b>B</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>1,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>0,-</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>2,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>3,D</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p><b>C</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>2,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>1,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>0,-</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>1,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial"><center>
+    <p><b>D</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>3,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>2,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>1,D</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>0,-</p>
+    </center></font></td>
+  </tr>
+</table>
+<font size="-1" face="Arial"><center>
+<p><b>Network graph and routing tables</b></p>
+</center></font>
+<p><font face="Arial">Now imagine that the link between A and B is cut. At this 
+time, B corrects its table. After a specific amount of time, routers exchange 
+their tables, and so B receives C's routing table. Since C doesn't know what has 
+happened to the link between A and B, it says that it has a link to A with the 
+weight of 2 (1 for C to B, and 1 for B to A -- it doesn't know B has no link to 
+A). B receives this table and thinks there is a separate link between C and A, 
+so it corrects its table and changes infinity to 3 (1 for B to C, and 2 for C to 
+A, as C said). Once again, routers exchange their tables. When C receives B's 
+routing table, it sees that B has changed the weight of its link to A from 1 to 
+3, so C updates its table and changes the weight of the link to A to 4 (1 for C 
+to B, and 3 for B to A, as B said). </font></p>
+<p><font face="Arial">This process loops until all nodes find out that the 
+weight of link to A is infinity. This situation is shown in the table below. In 
+this way, experts say DV algorithms have a <b>slow convergence rate</b>.</font></p>
+<table cellSpacing="0" cellPadding="3" width="400" align="center" bgColor="lightyellow" border="1">
+  <tr>
+    <td>&nbsp;</td>
+    <td><font face="Arial"><center>
+    <p><b>B</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><b>C</b></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><b>D</b></p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to A after link cut</font></td>
+    <td><font face="Arial"><center>
+    <p><img src="routing-algorithm-inf.gif" width="14" height="13">,A</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>2,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>3,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to B after 1st updating</font></td>
+    <td><font face="Arial"><center>
+    <p>3,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>2,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>3,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to A after 2nd updating</font></td>
+    <td><font face="Arial"><center>
+    <p>3,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>4,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>3,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to A after 3rd updating</font></td>
+    <td><font face="Arial"><center>
+    <p>5,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>4,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>5,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to A after 4th updating</font></td>
+    <td><font face="Arial"><center>
+    <p>5,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>6,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>5,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to A after 5th updating</font></td>
+    <td><font face="Arial"><center>
+    <p>7,C</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>6,B</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>7,C</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">Sum of weight to A after nth updating</font></td>
+    <td><font face="Arial"><center>
+    <p>...</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>...</p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p>...</p>
+    </center></font></td>
+  </tr>
+  <tr>
+    <td><font face="Arial">
+    <img src="routing-algorithm-inf.gif" width="14" height="13"></font></td>
+    <td><font face="Arial"><center>
+    <p><img src="routing-algorithm-inf.gif" width="14" height="13"></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><img src="routing-algorithm-inf.gif" width="14" height="13"></p>
+    </center></font></td>
+    <td><font face="Arial"><center>
+    <p><img src="routing-algorithm-inf.gif" width="14" height="13"></p>
+    </center></font></td>
+  </tr>
+</table>
+<font size="-1" face="Arial"><center>
+<p><b>The &quot;count to infinity&quot; problem</b></p>
+</center></font>
+<p><font face="Arial">One way to solve this problem is for routers to send 
+information only to the neighbors that are not exclusive links to the 
+destination. For example, in this case, C shouldn't send any information to B 
+about A, because B is the only way to A. </font></p>
+</span>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

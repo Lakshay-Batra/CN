@@ -1,0 +1,726 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Classless Inter</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font face="Arial" size="5" color="#FF0000"><b>Classless Inter-Domain Routing</b></font></span></p>
+
+<p align="justify"><font face="Arial"><b>Classless Inter-Domain Routing</b> (<b>CIDR</b>) 
+is a method of categorizing Internet Protocol (IP) addresses for the purpose of 
+allocating IP addresses to users and for efficiently routing IP packets on the 
+Internet.</font></p>
+<p align="justify"><font face="Arial">During the first decade of the modern 
+Internet after the invention of the Domain Name System (DNS) it became apparent 
+that the devised system based on classful network design of distributing the 
+address space and routing IP packets was not scalable (cf. RFC 1517). To 
+alleviate the shortcomings, the Internet Engineering Task Force published in 
+1993 a new set of standards, RFC 1518 and RFC 1519, to define a new concept of 
+allocation of IP address blocks and new methods of routing IPv4 packets.</font></p>
+<p align="justify"><font face="Arial">An IP address is interpreted in two parts: 
+a network-identifying <b>prefix</b> followed by a <b>host address</b> within 
+that network. In the prior classful network architecture IP address allocations 
+were based on octet (8-bit) boundary segments of the 32-bit IP address, forcing 
+either 8, 16, or 24-bit network prefixes. Thus, the smallest allocation and 
+routing block contained only 256 addresses—too small for most enterprises, and 
+the next larger block contained 65,536 addresses—too large to be used 
+efficiently by even large organizations. This led to inefficiencies in address 
+use as well as routing because the large number of allocated small (class-C) 
+networks with individual route announcements, being geographically dispersed 
+with little opportunity for route aggregation, created heavy demand on routing 
+equipment.</font></p>
+<p align="justify"><font face="Arial">Classless Inter-Domain Routing is based on
+<b>variable-length subnet masking</b> (VLSM) to allow allocation on 
+arbitrary-length prefixes. Variable-length subnet masks are mentioned in RFC 950 
+(1985). CIDR encompasses:</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">the VLSM technique of specifying 
+  arbitrary-length prefixes. A CIDR-compliant address is written with a suffix 
+  indicating the number of bits in the prefix, such as 192.168.0.0/16. This 
+  permits more efficient use of increasingly scarce IPv4 addresses. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">the <b>aggregation</b> of multiple 
+  contiguous prefixes into <b>supernets</b>, and, wherever possible in the 
+  Internet, advertising aggregates, thus reducing the number of entries in the 
+  global routing table. Aggregation hides multiple levels of subnetting from the 
+  Internet routing table, and reverses the process of &quot;subnetting a subnet&quot; with 
+  VLSM. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">the administrative process of allocating 
+  address blocks to organizations based on their actual and short-term projected 
+  need, rather than the very large or very small blocks required by classful 
+  addressing schemes. </font></li>
+</ul>
+<p align="justify"><font face="Arial">While IPv6 maintains the IPv4 CIDR 
+convention of indicating prefix length with a suffix, the IPv4 concept of <i>
+class</i> was abandoned in IPv6.</font></p>
+<p align="justify"><b><font face="Arial"><span class="mw-headline">CIDR blocks</span></font></b></p>
+<p align="justify"><font face="Arial">CIDR is principally a bitwise, 
+prefix-based standard for the interpretation of IP addresses. It facilitates 
+routing by allowing blocks of addresses to be grouped together into single 
+routing table entries. These groups, commonly called <b>CIDR blocks</b>, share 
+an initial sequence of bits in the binary representation of their IP addresses. 
+IPv4 CIDR blocks are identified using a syntax similar to that of IPv4 
+addresses: a four-part dotted-decimal address, followed by a slash, then a 
+number from 0 to 32: <i>A.B.C.D/N</i>. The dotted decimal portion is 
+interpreted, like an IPv4 address, as a 32-bit binary number that has been 
+broken into four octets. The number following the slash is the <b>prefix length</b>, 
+the number of shared initial bits, counting from the left-hand side of the 
+address. When speaking in abstract terms, the dotted-decimal portion is 
+sometimes omitted, thus a <i>/20</i> is a CIDR block with an unspecified 20-bit 
+prefix.</font></p>
+<p align="center"><img border="0" src="CIDR1.JPG" width="597" height="603"></p>
+<p align="justify"><font face="Arial">An IP address is part of a CIDR block, and 
+is said to <i>match</i> the CIDR prefix if the initial N bits of the address and 
+the CIDR prefix are the same. Thus, understanding CIDR requires that IP address 
+be visualized in binary. Since the length of an IPv4 address is fixed at 32 
+bits, an N-bit CIDR prefix leaves <span class="texhtml">32 &#8722; <i>N</i></span> 
+bits unmatched, and there are <span class="texhtml">2<sup>(32 &#8722; <i>N</i>)</sup></span> 
+possible combinations of these bits, meaning that <span class="texhtml">2<sup>(32 
+&#8722; <i>N</i>)</sup></span> IPv4 addresses match a given N-bit CIDR prefix. <i>
+Shorter</i> CIDR prefixes match more addresses, while <i>longer</i> CIDR 
+prefixes match fewer. An address can match multiple CIDR prefixes of different 
+lengths.</font></p>
+<p align="justify"><font face="Arial">CIDR is also used with IPv6 addresses, for 
+which the prefix length can range from 0 to 128, due to the larger number of 
+bits in the address. A similar syntax is used: the prefix is written as an IPv6 
+address, followed by a slash and the number of significant bits in the prefix 
+mask.</font></p>
+<h2 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+Assignment of CIDR blocks</span></font></h2>
+<p align="justify"><font face="Arial">The Internet Assigned Numbers Authority (IANA) 
+issues to Regional Internet Registries (RIRs) large, short-prefix CIDR blocks. 
+For example, 62.0.0.0/8, with over sixteen million addresses, is administered by 
+RIPE NCC, the European RIR. The RIRs, each responsible for a single, large, 
+geographic area (such as Europe or North America), then subdivide these blocks 
+into smaller blocks and issue them publicly. This subdividing process can be 
+repeated several times at different levels of delegation. Large Internet service 
+providers (ISPs) typically obtain CIDR blocks from an RIR, then subdivide them 
+into smaller CIDR blocks for their subscribers, sized according to the size of 
+the subscriber's network. Networks served by a single ISP are encouraged by IETF 
+to obtain IP address space directly from their ISP. Networks served by multiple 
+ISPs, on the other hand, will often obtain independent CIDR blocks directly from 
+the appropriate RIR.</font></p>
+<p align="justify"><img border="0" src="CIDR2.JPG" width="753" height="411"></p>
+<p align="justify"><font face="Arial">For example, in the late 1990s, the IP 
+address 208.130.29.33 (since reassigned) was used by </font><tt>
+<font face="Arial">www.freesoft.org</font></tt><font face="Arial">. An analysis 
+of this address identified three CIDR prefixes. 208.128.0.0/11, a large CIDR 
+block containing over 2 million addresses, had been assigned by ARIN (the North 
+American RIR) to MCI. Automation Research Systems, a Virginia VAR, leased an 
+Internet connection from MCI and was assigned the 208.130.28.0/22 block, capable 
+of addressing just over 1000 devices. ARS used a /24 block for its publicly 
+accessible servers, of which 208.130.29.33 was one.</font></p>
+<p align="justify"><font face="Arial">All of these CIDR prefixes would be used, 
+at different locations in the network. Outside of MCI's network, the 
+208.128.0.0/11 prefix would be used to direct to MCI traffic bound not only for 
+208.130.29.33, but also for any of the roughly two million IP addresses with the 
+same initial 11 bits. Within MCI's network, 208.130.28.0/22 would become 
+visible, directing traffic to the leased line serving ARS. Only within the ARS 
+corporate network would the 208.130.29.0/24 prefix have been used.</font></p>
+<p align="justify">&nbsp;</p>
+<h2 align="justify"><font face="Arial" size="3"><span class="mw-headline">CIDR 
+and masks</span></font></h2>
+<p align="justify"><font face="Arial">A subnet mask is a bitmask that encodes 
+the prefix length in a form similar to an IP address: 32 bits, starting with a 
+number of 1 bits equal to the prefix length, ending with 0 bits, and encoded in 
+four-part dotted-decimal format. A subnet mask encodes the same information as a 
+prefix length, but predates the advent of CIDR.</font></p>
+<p align="justify"><font face="Arial">CIDR uses <b>variable-length subnet masks</b> 
+(<b>VLSM</b>) to allocate IP addresses to subnets according to individual need, 
+rather than some general network-wide rule. Thus the network/host division can 
+occur at any bit boundary in the address. The process can be recursive, with a 
+portion of the address space being further divided into even smaller portions, 
+through the use of masks which cover more bits.</font></p>
+<p align="justify"><font face="Arial">CIDR/VLSM network addresses are now used 
+throughout the public Internet, although they are also used elsewhere, 
+particularly in large private networks. An average desktop LAN user generally 
+does not see them in practice, as their LAN is usually numbered using special 
+private network addresses.</font></p>
+<p align="justify">&nbsp;</p>
+<h2 align="justify"><font face="Arial" size="3"><span class="mw-headline">Prefix 
+aggregation</span></font></h2>
+<p align="justify"><font face="Arial">Another benefit of CIDR is the possibility 
+of <b>routing prefix aggregation</b> (also known as &quot;supernetting&quot; or &quot;route 
+summarization&quot;). For example, sixteen contiguous Class C (/24) networks could 
+now be aggregated together, and advertised to the outside world as a single /20 
+route (if the first 20 bits of their network addresses match). Two aligned 
+contiguous /20s could then be aggregated to a /19, and so forth. This allows a 
+significant reduction in the number of routes that have to be advertised over 
+the Internet, preventing 'routing table explosions' from overwhelming routers, 
+and stopping the Internet from expanding further.</font></p>
+<p align="justify"><font face="Arial">See IPv4 subnetting reference.</font></p>
+<table class="wikitable">
+  <caption>
+  <p align="justify"><font face="Arial">CIDR</font></p>
+  </caption>
+  <tr>
+    <th>
+    <p align="justify"><font face="Arial">IP/CIDR</font></th>
+    <th>
+    <p align="justify"><font face="Arial">&#916; to last IP addr</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Mask</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Hosts (*)</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Class</font></th>
+    <th>
+    <p align="justify"><font face="Arial">Notes</font></th>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/32</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.0</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/256 C</font></td>
+    <td>
+    <p align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/31</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.1</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.254</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/128 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0 ... (2n) ... 254</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/30</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.3</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.252</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/64 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0 ... (4n) ... 252</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/29</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.7</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.248</font></td>
+    <td>
+    <p align="justify"><font face="Arial">8</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/32 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0 ... (8n) ... 248</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/28</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.15</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.240</font></td>
+    <td>
+    <p align="justify"><font face="Arial">16</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/16 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0 ... (16n) ... 240</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/27</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.31</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.224</font></td>
+    <td>
+    <p align="justify"><font face="Arial">32</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/8 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0 ... (32n) ... 224</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/26</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.63</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.192</font></td>
+    <td>
+    <p align="justify"><font face="Arial">64</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/4 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0, 64, 128, 192</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.d<b>/25</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.127</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.128</font></td>
+    <td>
+    <p align="justify"><font face="Arial">128</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1/2 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">d = 0, 128</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/24</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.0.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.255.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">256</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1 C</font></td>
+    <td>
+    <p align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/23</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.1.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.254.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">512</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0 ... (2n) ... 254</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/22</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.3.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.252.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1,024</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0 ... (4n) ... 252</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/21</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.7.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.248.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2,048</font></td>
+    <td>
+    <p align="justify"><font face="Arial">8 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0 ... (8n) ... 248</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/20</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.15.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.240.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4,096</font></td>
+    <td>
+    <p align="justify"><font face="Arial">16 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0 ... (16n) ... 240</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/19</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.31.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.224.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">8,192</font></td>
+    <td>
+    <p align="justify"><font face="Arial">32 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0 ... (32n) ... 224</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/18</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.63.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.192.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">16,384</font></td>
+    <td>
+    <p align="justify"><font face="Arial">64 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0, 64, 128, 192</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.c.0<b>/17</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.127.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.128.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">32,768</font></td>
+    <td>
+    <p align="justify"><font face="Arial">128 C</font></td>
+    <td>
+    <p align="justify"><font face="Arial">c = 0, 128</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/16</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.0.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.255.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">65,536</font></td>
+    <td>
+    <p align="justify"><font face="Arial">256 C = 1 B</font></td>
+    <td>
+    <p align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/15</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.1.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.254.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">131,072</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0 ... (2n) ... 254</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/14</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.3.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.252.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">262,144</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0 ... (4n) ... 252</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/13</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.7.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.248.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">524,288</font></td>
+    <td>
+    <p align="justify"><font face="Arial">8 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0 ... (8n) ... 248</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/12</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.15.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.240.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1,048,576</font></td>
+    <td>
+    <p align="justify"><font face="Arial">16 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0 ... (16n) ... 240</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/11</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.31.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.224.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2,097,152</font></td>
+    <td>
+    <p align="justify"><font face="Arial">32 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0 ... (32n) ... 224</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/10</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.63.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.192.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4,194,304</font></td>
+    <td>
+    <p align="justify"><font face="Arial">64 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0, 64, 128, 192</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.b.0.0<b>/9</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.127.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.128.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">8,388,608</font></td>
+    <td>
+    <p align="justify"><font face="Arial">128 B</font></td>
+    <td>
+    <p align="justify"><font face="Arial">b = 0, 128</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/8</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+0.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">255.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">16,777,216</font></td>
+    <td>
+    <p align="justify"><font face="Arial">256 B = 1 A</font></td>
+    <td>
+    <p align="justify">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/7</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+1.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">254.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">33,554,432</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0 ... (2n) ... 254</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/6</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+3.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">252.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">67,108,864</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0 ... (4n) ... 252</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/5</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+7.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">248.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">134,217,728</font></td>
+    <td>
+    <p align="justify"><font face="Arial">8 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0 ... (8n) ... 248</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/4</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+15.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">240.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">268,435,456</font></td>
+    <td>
+    <p align="justify"><font face="Arial">16 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0 ... (16n) ... 240</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/3</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+31.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">224.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">536,870,912</font></td>
+    <td>
+    <p align="justify"><font face="Arial">32 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0 ... (32n) ... 224</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/2</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+63.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">192.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">1,073,741,824</font></td>
+    <td>
+    <p align="justify"><font face="Arial">64 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0, 64, 128, 192</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">a.0.0.0<b>/1</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+127.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">128.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">2,147,483,648</font></td>
+    <td>
+    <p align="justify"><font face="Arial">128 A</font></td>
+    <td>
+    <p align="justify"><font face="Arial">a = 0, 128</font></td>
+  </tr>
+  <tr>
+    <td>
+    <p align="justify"><font face="Arial">0.0.0.0<b>/0</b></font></td>
+    <td>
+    <p align="justify"><font face="Arial">+255.255.255.255</font></td>
+    <td>
+    <p align="justify"><font face="Arial">000.000.000.000</font></td>
+    <td>
+    <p align="justify"><font face="Arial">4,294,967,296</font></td>
+    <td>
+    <p align="justify"><font face="Arial">256 A</font></td>
+    <td>
+    <p align="justify">&nbsp;</td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial">(*) Note that for routed subnets bigger 
+than /31 or /32, 2 needs to be subtracted from the number of available addresses 
+- the largest address is used as the broadcast address, and typically the 
+smallest address is used to identify the network itself. See RFC 1812 for more 
+detail. It is also common for the gateway IP for that subnet to use an address, 
+meaning that you would subtract 3 from the number of usable hosts that can be 
+used on the subnet.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial">The reason is <b>CIDR -- Classless 
+InterDomain Routing. CIDR</b> was invented several years ago to keep the 
+internet from running out of IP addresses. The &quot;classful&quot; system of allocating 
+IP addresses can be very wasteful; anyone who could reasonably show a need for 
+more that 254 host addresses was given a Class B address block of 65533 host 
+addresses. Even more wasteful were companies and organizations that were 
+allocated Class A address blocks, which contain over 16 Million host addresses! 
+Only a tiny percentage of the allocated Class A and Class B address space has 
+ever been actually assigned to a host computer on the Internet. </font></p>
+<p align="justify"><font face="Arial">People realized that addresses could be 
+conserved if the class system was eliminated. By accurately allocating only the 
+amount of address space that was actually needed, the address space crisis could 
+be avoided for many years. This was first proposed in 1992 as a scheme called <b>
+Supernetting</b>. Under supernetting, the classful subnet masks are extended so 
+that a network address and subnet mask could, for example, specify multiple 
+Class C subnets with one address. For example, If I needed about 1000 addresses, 
+I could supernet 4 Class C networks together: </font></p>
+<div align="justify">
+  <pre><font face="Arial" size="3">192.60.128.0   (11000000.00111100.10000000.00000000)  Class C subnet address
+192.60.129.0   (11000000.00111100.10000001.00000000)  Class C subnet address
+192.60.130.0   (11000000.00111100.10000010.00000000)  Class C subnet address
+192.60.131.0   (11000000.00111100.10000011.00000000)  Class C subnet address
+--------------------------------------------------------
+192.60.128.0   (11000000.00111100.10000000.00000000)  Supernetted Subnet address
+255.255.252.0  (<font color="#0000ff">11111111</font>.<font color="#0000ff">11111111</font>.<font color="#0000ff">111111</font><font color="#990000">00</font>.<font color="#990000">00000000</font>)  Subnet Mask
+192.60.131.255 (11000000.00111100.10000011.11111111)  Broadcast address
+</font></pre>
+</div>
+<p align="justify"><font face="Arial">In this example, the subnet 192.60.128.0 
+includes all the addresses from 192.60.128.0 to 192.60.131.255. As you can see 
+in the binary representation of the subnet mask, the Network portion of the 
+address is 22 bits long, and the host portion is 10 bits long. </font></p>
+<p align="justify"><font face="Arial">Under CIDR, the subnet mask notation is 
+reduced to a simplified shorthand. Instead of spelling out the bits of the 
+subnet mask, it is simply listed as the number of 1s bits that start the mask. 
+In the above example, instead of writing the address and subnet mask as </font>
+</p>
+<div align="justify">
+  <pre><font face="Arial" size="3">192.60.128.0, Subnet Mask 255.255.252.0 
+</font></pre>
+</div>
+<p align="justify"><font face="Arial">the network address would be written 
+simply as: </font></p>
+<div align="justify">
+  <pre><font face="Arial" size="3">192.60.128.0/22
+</font></pre>
+</div>
+<p align="justify"><font face="Arial">which indicates starting address of the 
+network, and number of 1s bits (22) in the network portion of the address. If 
+you look at the subnet mask in binary (<font color="#0000ff"><b>11111111</b></font>.<font color="#0000ff"><b>11111111</b></font>.<font color="#0000ff"><b>111111</b></font><font color="#990000">00</font>.<font color="#990000">00000000</font>), 
+you can easily see how this notation works. </font></p>
+<p align="justify"><font face="Arial">The use of a CIDR notated address is the 
+same as for a Classful address. Classful addresses can easily be written in CIDR 
+notation (Class A = /8, Class B = /16, and Class C = /24) </font></p>
+<p align="justify"><font face="Arial">It is currently almost impossible for an 
+individual or company to be allocated their own IP address blocks. You will 
+simply be told to get them from your ISP. The reason for this is the 
+ever-growing size of the internet routing table. Just 10 years ago, there were 
+less than 5000 network routes in the entire Internet. Today, there are over 
+100,000. Using CIDR, the biggest ISPs are allocated large chunks of address 
+space (usually with a subnet mask of /19 or even smaller); the ISP's customers 
+(often other, smaller ISPs) are then allocated networks from the big ISP's pool. 
+That way, all the big ISP's customers (and their customers, and so on) are 
+accessible via 1 network route on the Internet. But I digress. </font></p>
+<p align="justify"><font face="Arial">It is expected that CIDR will keep the 
+Internet happily in IP addresses for the next few years at least. After that, 
+IPv6, with 128 bit addresses, will be needed. Under IPv6, even sloppy address 
+allocation would comfortably allow a billion unique IP addresses for every 
+person on earth! The complete and gory details of CIDR are documented in 
+RFC1519, which was released in September of 1993. </font></p>
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

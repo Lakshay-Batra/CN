@@ -1,0 +1,289 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>In telecommunication</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="text-transform: uppercase; font-weight: 700; text-decoration: underline">
+<font face="Arial" color="#FF0000" size="5">client-server architecture</font></span></p>
+<p align="justify"><font face="Arial">An architecture in which the user's PC 
+(the client) is the requesting machine and the server is the supplying machine, 
+both of which are connected via a local area network (LAN) or wide area network 
+(WAN). Throughout the late 1980s and early 1990s, client/server was the hot 
+buzzword as applications were migrated from centralized minicomputers and 
+mainframes to networks of desktop computers. </font></p>
+<p align="justify"><font face="Arial"><span class="shw">The Client</span><br>
+<br>
+The client is the user's machine, which contains the user interface (Windows, 
+Mac, etc.) and can perform some or all of the application processing. </font>
+</p>
+<p align="justify"><font face="Arial"><span class="shw">File Servers</span><br>
+<br>
+File servers, which range in size from PCs to mainframes, store data and 
+programs and share those files with the clients. In this case, the server 
+functions as a remote disk drive to the clients. </font></p>
+<p align="justify"><font face="Arial"><span class="shw">True Client/Server</span><br>
+<br>
+To be a true client/server environment, both client and server must share in the 
+business processing. For example, a database server processes requests from the 
+client to look up data or update data in its database. In this case, the server 
+is performing a search at its end to respond to the query received from a 
+client. It is not acting as a remote disk drive; it is fully participating in 
+the transaction. To illustrate this concept, review the examples below. </font>
+</p>
+<p align="center"><img border="0" src="CS_NONE.gif" width="496" height="290"></p>
+<p align="center"><font face="Arial"><span class="shw">Non-Client/Server</span></font></p>
+<p align="justify"><font face="Arial">This example is not &quot;true&quot; client/server 
+because the file server functions like a remote disk drive for loading the 
+database management system (DBMS) software into the client and reading the 
+database as if it were local. All 100,000 records are transmitted to the client 
+for comparing, and the client does all the processing.</font></p>
+<p align="center"><img border="0" src="CS_2.gif" width="492" height="297"></p>
+<p align="center"><font face="Arial"><span class="shw">Two-tier Client/Server</span></font></p>
+<p align="justify"><font face="Arial">This is &quot;true&quot; client/server because the 
+server participates in the business processing. A query generated in the client 
+is sent to the database management system (DBMS) in the server, which responds 
+by searching at the server side and returning only the results of the query. If 
+50 records matched the criteria out of our 100,000-record example, only those 50 
+records are transmitted back to the client; two thousand times less data over 
+the network.</font></p>
+<p align="center"><img border="0" src="CS_3.gif" width="483" height="287"></p>
+<p align="center"><font face="Arial"><span class="shw">Three-tier Client/Server</span></font></p>
+<p align="justify"><font face="Arial">In this case, the processing is divided 
+between two or more servers, one used for application processing and another for 
+database processing. This is very common in large enterprises.</font></p>
+<p align="justify"><font face="Arial"><span class="shw">The Web Is Client/Server<br>
+</span>Because of the Internet, terms such as &quot;Web based&quot; and &quot;Web enabled&quot; 
+replaced the 1990s client/server buzzword, with &quot;client/server&quot; insinuating the 
+old pre-Web way of doing things. However, most client/server systems were 
+modified to include Web access, and the Web &quot;is&quot; naturally a true client/server 
+architecture. </font></p>
+<p align="justify"><font face="Arial">On the server side, the Web uses a 
+multi-tier architecture with interlinked Web servers, application servers, 
+database servers and caching servers. On the client side, user machines commonly 
+execute scripts embedded in countless Web pages. They also execute Java applets, 
+Java programs and rich client applications, all of which means that both client 
+and server are cooperating in tandem.</font></p>
+<h1 align="justify"><font face="Arial" size="3">The Client Server Architecture</font></h1>
+<p align="justify"><font face="Arial">The Internet revolves around the 
+client-server architecture. Your computer runs software called the <strong>
+client</strong> and it interacts with another software known as the <strong>
+server</strong> located at a remote computer. The client is usually a browser 
+such as Internet Explorer, Netscape Navigator or Mozilla. Browsers interact with 
+the server using a set of instructions called protocols. These protocols help in 
+the accurate transfer of data through requests from a browser and responses from 
+the server. There are many protocols available on the Internet. The World Wide 
+Web, which is a part of the Internet, brings all these protocols under one roof. 
+You can, thus, use HTTP, FTP, Telnet, email etc. from one platform - your web 
+browser.</font></p>
+<h2 align="justify">&nbsp;</h2>
+<h2 align="justify"><font face="Arial" size="3">Some common Internet protocols</font></h2>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">HTTP (HyperText transfer Protocol): used 
+  on the World Wide Web (WWW) for transfering web pages and files contained in 
+  web pages such as images. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">FTP (File Transfer protocol): employed 
+  for transfering files from one machine to the other. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">SMTP (Simple Mail Transport Protocol): 
+  used for email. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Telnet Protocol: Used to open telnet 
+  sessions. </font></li>
+</ul>
+<p align="justify"><font face="Arial">The web employs a <strong>connection-less 
+protocol</strong>, which means that after every client-server interaction the 
+connection between the two is lost.<br>
+Let us now examine the client-server inter-communication with three models.</font></p>
+<h2 align="justify">&nbsp;</h2>
+<h2 align="justify"><font face="Arial" size="3">Model #1 of the client-server 
+architecture - Static HTML pages</font></h2>
+<p align="center"><font face="Arial">
+<img alt="Case #1 of the client-server architecture - Client requests for static HTML pages" src="model1.gif" width="390" height="261">
+</font></p>
+<p align="justify"><font face="Arial">The client (browser) requests for an HTML 
+file stored on the remote machine through the server software. The server 
+locates this file and passes it to the client. The client then displays this 
+file on your machine. In this case, the HTML page is static. Static pages do not 
+change until the developer modifies them.</font></p>
+<h2 align="justify">&nbsp;</h2>
+<h2 align="justify"><font face="Arial" size="3">Model #2 of the client-server 
+architecture - CGI Scripts</font></h2>
+<p align="center"><font face="Arial">
+<img alt="Case #2 of the client-server architecture - Client requests for CGI scripts" src="model2.gif" width="369" height="245">
+</font></p>
+<p align="justify"><font face="Arial">The scenario is slightly different for CGI 
+applications. Here the server has to do more work since CGI programs consume the 
+server machine's processing power.<br>
+Let us suppose you come across a searchable form on a web page that runs a CGI 
+program. Let us also suppose you type in the word 'computers' as the search 
+query. Your browser sends your request to the server. The server checks the 
+headers and locates the necessary CGI program and passes it the data from the 
+request including your search query &quot;computers&quot;. The CGI program processes this 
+data and returns the results to the server. The server then sends this formatted 
+in HTML to your browser which in turn displays the HTML page.</font></p>
+<h2 align="justify">&nbsp;</h2>
+<h2 align="justify"><font face="Arial" size="3">Model #3 of the client-server 
+architecture - Server side scripting technologies</font></h2>
+<p align="center"><font face="Arial">
+<img alt="Case #3 of the client-server architecture - Client requests for Dynamic web pages developed using server-side programming languages such as PHP or ASP" src="model3.gif" width="408" height="272">
+</font></p>
+<p align="justify"><font face="Arial">The third case also involves dynamic 
+response generated by the use of server side technologies. There are many server 
+side technologies today.<br>
+<strong><em>Active Server Pages (ASP)</em>:</strong> A Microsoft technology. ASP 
+pages typically have the extension .asp.<br>
+<strong><em>Personal Home Pages (PHP)</em>:</strong> An open source technology. 
+PHP pages typically have .php, .phtml or .php3 file name extensions.<br>
+<strong><em>Java Server Pages</em>:</strong> .jsp pages contain Java code.<br>
+<strong><em>Server Side Includes (SSI)</em>: </strong>Involves the embedding of 
+small code snippets inside the HTML page. An SSI page typically has .shtml as 
+its file extension.</font></p>
+<p align="justify"><font face="Arial">With these server technologies it has 
+become easier to maintain Web pages especially helpful for a large web site. The 
+developer needs to embed the server-side language code inside the HTML page. 
+This code is passed to the appropriate interpreter which processes these 
+instructions and generates the final HTML displayed by the browser. Note, the 
+embedded server-script code is not visible to the client (even if you check the
+<em>source</em> of the page) as the server sends ONLY the HTML code.</font></p>
+<p align="justify">&nbsp;</p>
+<font color="#000000">
+<p align="justify"><font face="Arial"><b>Client/server</b> is network 
+architecture which separates a client (often an application that uses a 
+graphical user interface) from a server. Each instance of the client software 
+can send requests to a <i>server</i>. Specific Types of servers include: 
+application servers, file servers, terminal servers, and mail servers. While 
+their purpose varies somewhat, the basic architecture remains the same.</font></p>
+<p align="justify"><font face="Arial">Although this idea is applied in a variety 
+of ways, on many different kinds of applications, the easiest example to 
+visualize is the current use of web pages on the internet. For example, if you 
+are reading this article on Wikipedia, your computer and web browser would be 
+considered a <i>client</i>, and the computers, databases, and applications that 
+make up Wikipedia would be considered the <i>server</i>. When your web browser 
+requests a particular article from Wikipedia, the Wikipedia server finds all of 
+the information required to display the article in the Wikipedia database, 
+assembles it into a web page, and sends it back to your web browser for you to 
+look at.</font></p>
+<p align="justify"><font face="Arial">Characteristics of a server:</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Passive (slave) </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Waits for requests </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Upon receipt of requests, processes them 
+  and then serves replies </font></li>
+</ul>
+<p align="justify"><font face="Arial">Characteristics of a client:</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Active (master) </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Sends requests </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Waits for and receives server replies
+  </font></li>
+</ul>
+<p align="justify"><font face="Arial">Servers can be stateless or stateful. A 
+stateless server does not keep any information between requests. A stateful 
+server can remember information between requests. The scope of this information 
+can be global or session. A HTTP server for static HTML pages is an example of a 
+stateless server while Apache Tomcat is an example of a stateful server.</font></p>
+<p align="justify"><font face="Arial">The interaction between client and server 
+is often described using sequence diagrams. Sequence diagrams are standardized 
+in the UML.</font></p>
+<p align="justify"><font face="Arial">Another type of network architecture is 
+known as a peer-to-peer architecture because each node or instance of the 
+program is both a &quot;client&quot; and a &quot;server&quot; and each has equivalent 
+responsibilities. Both architectures are in wide use.</font></p>
+<h2 align="justify"><font face="Arial" size="3">Tiered architecture</font></h2>
+<p align="justify"><font face="Arial">A generic client/server architecture has 
+two types of nodes on the network: clients and servers. As a result, these 
+generic architectures are sometimes referred to as &quot;two-tier&quot; architectures.</font></p>
+<p align="justify"><font face="Arial">Some networks will consist of three 
+different kinds of nodes: server, application servers which process data for the 
+clients, and database servers which store data for the application servers. This 
+is called a three-tier architecture.</font></p>
+<p align="justify"><font face="Arial">The advantage of an n-tier architecture 
+compared with a two-tier architecture (or a three-tier with a two-tier) is that 
+it separates out the processing that occurs to better balance the load on the 
+different servers; it is more scalable. The disadvantages of n-tier 
+architectures are:</font></p>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">It puts a more load on the network.
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">It is much more difficult to program and 
+  test software than in two-tier architecture because more devices have to 
+  communicate to complete a users transaction. </font></li>
+</ol>
+<p align="justify">&nbsp;</p>
+<h2 align="justify"><font face="Arial" size="3">Addressing</font></h2>
+<p align="justify"><font face="Arial">Methods of addressing in client server 
+environments can be described as follows</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Machine process addressing; where the 
+  address is divided up as follows process@machine. Therefore 56@453 would 
+  indicate the process 56 on computer 453 </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Name Server; Name servers have an index 
+  of all names and addresses of servers in the relevant domain. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Localization packets; Broadcast messages 
+  are sent out to all computers in the distributed system to determine the 
+  address of the destination computer </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Trader; A trader is a system that 
+  indexes all the services available in a distributed system. A computer 
+  requiring a particular service will check with the trading service for the 
+  address of a computer providing such a service. </font></li>
+</ul>
+<h2 align="justify"><font face="Arial" size="3">Examples</font></h2>
+<p align="justify"><font face="Arial">We connect to the Internet. That could be 
+a good example of Client-Server. The web-server serves the webpages to us and we 
+are the client. There are other types of servers like file server, name server, 
+DNS server, printing server e.t.c. Each of them provides prescribed services to 
+their clients who request for them.</font></p>
+</font>
+<p style="background: #F8FCFF" align="center"><font face="Arial"><b><a href="Main.htm">
+MAIN</a></b></font></p>
+
+</body>
+
+</html>

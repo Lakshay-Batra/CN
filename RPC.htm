@@ -1,0 +1,1499 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="RPC_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+<p style="text-align: center">
+<span style="font-family: Arial; text-transform: uppercase; text-decoration: underline; font-weight: 700">
+<font size="6" color="#FF0000">Remote Procedure Call</font></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Remote Procedure 
+Call (RPC) is an interprocess communication (IPC) mechanism that enables data 
+exchange and invocation of functionality residing in a different process. That 
+process can be on the same computer, on the local area network (LAN), or across 
+the Internet. The Microsoft RPC mechanism uses other IPC mechanisms, such as 
+named pipes, NetBIOS, or Winsock, to establish communications between the client 
+and the server. With RPC, essential program logic and related procedure code can 
+exist on different computers, which is important for distributed applications.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">This section 
+covers the architecture of RPC and the way in which RPC communication takes 
+place.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">RPC Architecture</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">By replacing 
+dedicated protocols and communication methods with a robust and standardized 
+interface, RPC is designed to facilitate communication between client and server 
+processes. The functions contained within RPC are accessible by any program that 
+must communicate using a client/server methodology. The following figure shows 
+the RPC architecture.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">RPC 
+Architecture</span></strong><span style="font-family: Arial"> </span></p>
+<p class="MsoNormal" style="text-align: justify" align="center">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="c4074f08-03e6-47d4-a1f6-216783b19078" o:spid="_x0000_s1025"
+ type="#_x0000_t75" alt="RPC Architecture" style='width:323.25pt;height:254.25pt'>
+ <v:imagedata src="RPC_files/image001.gif" o:href="file:///E:\cnnnn22\How%20RPC%20Works%20%20Remote%20Procedure%20Call%20(RPC)_files\IC196577.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=431 height=339
+src="RPC_files/image001.gif" alt="RPC Architecture" v:shapes="c4074f08-03e6-47d4-a1f6-216783b19078"><![endif]></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+table lists and describes the components and functions of the RPC architecture.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">RPC 
+Components</span></strong><span style="font-family: Arial"> </span></p>
+<h3 style="text-align: justify"><span style="font-size: 12.0pt">&nbsp;</span></h3>
+<table class="MsoNormalTable" border="0" cellpadding="0" responsive="true" summary="table">
+  <tr responsive="true">
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Component </span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Description </span></b></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Client or 
+    server process</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Program or 
+    service that initiates or responds to an RPC request.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">RPC stubs</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Program 
+    subsystems used by a client or server to initiate an RPC request.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Marshalling 
+    engine</span></p>
+    <p style="text-align: justify"><span style="font-family: Arial">(NDR20 or 
+    NDR64)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides a 
+    common RPC interface between RPC clients and servers. NDR20 is used in a 
+    32-bit architecture and NDR64 is optimized for a 64-bit architecture. The 
+    client and the server negotiate which marshalling engine is used for the 
+    communication.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Runtime 
+    application programming interface (API)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides a 
+    direct interface for RPC to clients or servers. RPC clients and servers 
+    typically call the runtime API to initialize RPC and prepare the data 
+    structure that is used to make RPC calls. This runtime API layer also 
+    determines if an RPC request coming from a marshalling engine or directly 
+    from a client or server is going to a local server or a remote server. The 
+    runtime API layer then routes the RPC to the Connection RPC, Datagram RPC, 
+    or Local RPC layers.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Connection 
+    RPC protocol engine</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Used when 
+    the RPC requires a connection–oriented protocol. This layer designates the 
+    connection–oriented protocol to use if the RPC is outgoing or receives an 
+    incoming connection–oriented RPC.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Datagram RPC 
+    protocol engine</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Used when 
+    the RPC requires a connectionless protocol. This layer designates the 
+    connectionless protocol to use if the RPC is outgoing or receives an 
+    incoming connectionless RPC.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Local RPC 
+    protocol engine</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Used when 
+    the server and client are located on the same host.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Registry</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Accessed 
+    when the RPC service first loads. Registry keys may specify IP port ranges 
+    and the device names of network cards that RPC should bind to. Unless APIs 
+    force its use, the registry is not used in normal RPC operations.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Win32 APIs</span></p>
+    <p style="text-align: justify"><span style="font-family: Arial">
+    (kernel32.dll, advapi32.dll, ntdll.dll)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Kernel32.dll 
+    is a Windows NT base API client dynamic-link library (DLL) file that 
+    provides system services for managing threads, memory, and resources.</span></p>
+    <p style="text-align: justify"><span style="font-family: Arial">Advapi32.dll 
+    is an advanced Windows 32 base API DLL file; it is an API services library 
+    that supports security and registry calls.</span></p>
+    <p style="text-align: justify"><span style="font-family: Arial">Ntdll.dll is 
+    an NT layer DLL file that controls Windows NT system functions.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">SSPI</span></p>
+    <p style="text-align: justify"><span style="font-family: Arial">
+    (secur32.dll)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides a 
+    security interface for RPC. Negotiates the use of Kerberos, NTLM, or Secure 
+    Sockets Layer (SSL) for authentication and encryption.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Endpoint 
+    Mapper (EPM)</span></p>
+    <p style="text-align: justify"><span style="font-family: Arial">(rpcss.dll)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Rpcss.dll 
+    primarily provides the infrastructure for COM, but a portion of rpcss.dll is 
+    used for the EPM. An RPC server contacts the EPM to receive dynamic 
+    endpoints and register those endpoints in the EPM database. RPC clients 
+    contact the EPM from the protocol-engine level to resolve endpoints when 
+    establishing a connection with an unknown RPC server endpoint.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Active 
+    Directory</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Used in the 
+    RPC client process only when the security interface specifies Kerberos or 
+    Negotiate as the security provider or when the server uses NTLM as the 
+    security provider.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Network 
+    stack</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Used to pass 
+    RPC requests and replies between a client and a remote server.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Component
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Kernel</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Used to pass 
+    RPC requests and replies between a client and a local server.</span></td>
+  </tr>
+</table>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">RPC Processes and 
+Interactions</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">The RPC 
+components make it easy for clients to call a procedure located in a remote 
+server program. The client and server each have their own address spaces; that 
+is, each has its own memory resource allocated to data used by the procedure. 
+The following figure shows the RPC process.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">RPC 
+Process</span></strong><span style="font-family: Arial"> </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0036_ce0a677-d336-4d2f-8938-d2f5fe993d90" o:spid="_x0000_s1026" type="#_x0000_t75"
+ alt="RPC Process" style='width:198pt;height:190.5pt'>
+ <v:imagedata src="RPC_files/image002.gif" o:href="file:///E:\cnnnn22\How%20RPC%20Works%20%20Remote%20Procedure%20Call%20(RPC)_files\IC196578.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=264 height=254
+src="RPC_files/image002.gif" alt="RPC Process" v:shapes="_x0036_ce0a677-d336-4d2f-8938-d2f5fe993d90"><![endif]></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The RPC process 
+starts on the client side. The client application calls a local stub procedure 
+instead of code implementing the procedure. Stubs are compiled and linked with 
+the client application during development. Instead of containing code that 
+implements the remote procedure, the client stub code retrieves the required 
+parameters from the client address space and delivers them to the client runtime 
+library. The client runtime library then translates the parameters as needed 
+into a standard Network Data Representation (NDR) format for transmission to the 
+server.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">Note</span></strong><span style="font-family: Arial">
+</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify; margin-bottom: 12.0pt">
+  <span style="font-family: Arial">There are two NDR marshalling engines within 
+  the RPC runtime library: NDR20 and NDR64. A 32-bit client initiating the 
+  communication uses the NDR20 marshalling engine; a 64-bit client can use 
+  either the NDR20 or the NDR64 marshalling engine. The same marshalling engine 
+  is used on both the client and the server side, regardless of program 
+  architecture. There is a slight decline in performance when either the client 
+  or server uses an architecture different from the other because the 
+  marshalling engine must do additional translation during the communication.</span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">The client stub 
+then calls functions in the RPC client runtime library (rpcrt4.dll) to send the 
+request and its parameters to the server. If the server is located on the same 
+host as the client, the runtime library can use the Local RPC (LRPC) function 
+and pass the RPC request to the Windows kernel for transport to the server. If 
+the server is located on a remote host, the runtime library specifies an 
+appropriate transport protocol engine and passes the RPC to the network stack 
+for transport to the server. RPC can use other IPC mechanisms, such as named 
+pipes and Winsock, to accomplish the transport. The other IPC mechanisms allow 
+RPC more flexibility in the way in which it completes its communications tasks. 
+For more information about IPC mechanisms, see “Interprocess Communications” on 
+MSDN.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+table lists the network protocols supported by RPC and the type of RPC 
+connection for which the protocol is used.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">
+RPC-Supported Network Protocols</span></strong><span style="font-family: Arial">
+</span></p>
+<h3 style="text-align: justify"><span style="font-size: 12.0pt">&nbsp;</span></h3>
+<table class="MsoNormalTable" border="0" cellpadding="0" responsive="true" summary="table">
+  <tr responsive="true">
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Protocol </span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">RPC Type </span></b></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Protocol
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Transmission 
+    Control Protocol (TCP)</span></td>
+    <td style="padding: .75pt" data-th="
+RPC Type
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Connection–oriented</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Protocol
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Sequenced 
+    Packet Exchange (SPX)</span></td>
+    <td style="padding: .75pt" data-th="
+RPC Type
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Connection–oriented</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Protocol
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Named Pipe</span></td>
+    <td style="padding: .75pt" data-th="
+RPC Type
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Connection–oriented</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Protocol
+">
+    <p style="text-align: justify"><span style="font-family: Arial">HTTP</span></td>
+    <td style="padding: .75pt" data-th="
+RPC Type
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Connection–oriented</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Protocol
+">
+    <p style="text-align: justify"><span style="font-family: Arial">User 
+    Datagram Protocol (UDP)</span></td>
+    <td style="padding: .75pt" data-th="
+RPC Type
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Connectionless</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Protocol
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Cluster 
+    Datagram Protocol (CDP)</span></td>
+    <td style="padding: .75pt" data-th="
+RPC Type
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Connectionless</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">When the server 
+receives the RPC, either locally or from a remote client, the server RPC runtime 
+library functions accept the request and call the server stub procedure. The 
+server stub retrieves the parameters from the network buffer and, using one of 
+the NDR marshalling engines, converts them from the network transmission format 
+to the format required by the server. The server stub calls the actual procedure 
+on the server. The remote procedure then runs, possibly generating output 
+parameters and a return value. When the remote procedure is complete, a similar 
+sequence of steps returns the data to the client.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The remote 
+procedure returns its data to the server stub which, using one of the NDR 
+marshalling engines, converts output parameters to the format required for 
+transmission back to the client and returns them to the RPC runtime library 
+functions. The server RPC runtime library functions transmit the data to the 
+client computer using either LRPC or the network.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The client 
+completes the process by accepting the data over the network and returning it to 
+the calling function. The client RPC runtime library receives the 
+remote-procedure return values, converts the data from its NDR to the format 
+used by the client computer, and returns them to the client stub.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">For Microsoft 
+Windows, the runtime libraries are provided in two parts: an import library, 
+which is linked to the application, and the RPC runtime library, which is 
+implemented as a DLL.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The server 
+application contains calls to the server runtime library functions, which 
+register the server’s interface with the RPC runtime and, optionally, the EPM, 
+and allow the server to accept remote procedure calls. The server application 
+also contains the application-specific remote procedures that are called by the 
+client applications.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">RPC 
+Security Context Multiplexing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></strong></p>
+<p style="text-align: justify"><span style="font-family: Arial">Windows 
+Server&nbsp;2003 Service Pack 1 (SP1) provides RPC security context multiplexing for 
+connection-oriented connections, such as those that use Transmission Control 
+Protocol (TCP). This allows the RPC server to negotiate multiple security 
+contexts over a single connection. For example, when multiple RPC clients 
+establish a connection to an RPC server and a middle-tier RPC server resides 
+between the clients and the destination server, the middle-tier server 
+multiplexes the security context of the additional clients over an already 
+established connection to the destination server. This eliminates the need for 
+the middle-tier RPC server to use one of the exhaustible TCP ports to establish 
+a new connection for each RPC client connecting to the RPC server</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Network Ports Used by RPC</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">RPC server 
+programs typically use dynamic port mappings to avoid conflicts with programs 
+and protocols registered in the range of well-known TCP ports. RPC server 
+programs associate their universally unique identifier (UUID) with a dynamic 
+port and register the combination with the RPC EPM. The EPM provides a single 
+point of contact for RPC clients. The RPC clients contact the EPM and use the 
+server program’s UUID to determine the port being used by the server program. 
+The following table indicates the network ports normally used by RPC.</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">Port 
+Assignments for RPC</span></strong><span style="font-family: Arial"> </span></p>
+<h3 style="text-align: justify"><span style="font-size: 12.0pt">&nbsp;</span></h3>
+<table class="MsoNormalTable" border="0" cellpadding="0" responsive="true" summary="table">
+  <tr responsive="true">
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Service Name </span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">UDP </span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">TCP </span></b></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service Name
+">
+    <p style="text-align: justify"><span style="font-family: Arial">HTTP</span></td>
+    <td style="padding: .75pt" data-th="
+UDP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">80, 443, 593</span></td>
+    <td style="padding: .75pt" data-th="
+TCP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">80, 443, 593</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service Name
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Named Pipes</span></td>
+    <td style="padding: .75pt" data-th="
+UDP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">445</span></td>
+    <td style="padding: .75pt" data-th="
+TCP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">445</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service Name
+">
+    <p style="text-align: justify"><span style="font-family: Arial">RPC Endpoint 
+    Mapper</span></td>
+    <td style="padding: .75pt" data-th="
+UDP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">135</span></td>
+    <td style="padding: .75pt" data-th="
+TCP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">135</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service Name
+">
+    <p style="text-align: justify"><span style="font-family: Arial">RPC Server 
+    Programs</span></td>
+    <td style="padding: .75pt" data-th="
+UDP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">&lt;Dynamically 
+    assigned&gt;</span></td>
+    <td style="padding: .75pt" data-th="
+TCP
+">
+    <p style="text-align: justify"><span style="font-family: Arial">&lt;Dynamically 
+    assigned&gt;</span></td>
+  </tr>
+</table>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;<b>Remote 
+Procedure Call (RPC)</b> is a powerful technology for creating distributed 
+client/server programs. RPC is an inter-process communication technique that 
+allows client and server software to communicate. The Microsoft RPC facility is 
+compatible with the Open Group’s Distributed Computing Environment (DCE) 
+specification for remote procedure calls and is interoperable with other DCE-based 
+RPC systems, such as those for HP-UX and IBM AIX UNIX–based operating systems.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Computer 
+operating systems and programs have steadily gotten more complex over the years. 
+With each release, there are more features. The growing intricacy of systems 
+makes it more difficult for developers to avoid errors during the development 
+process. Often, developers create a solution for their system or application 
+when a nearly identical solution has already been devised. This duplication of 
+effort consumes time and money and adds complexity to already complex systems.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">RPC is designed 
+to mitigate these issues by providing a common interface between applications. 
+RPC serves as a go–between for client/server communications. RPC is designed to 
+make client/server interaction easier and safer by factoring out common tasks, 
+such as security, synchronization, and data flow handling, into a common library 
+so that developers do not have to dedicate the time and effort into developing 
+their own solutions.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Terms and Definitions</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+terms are associated with RPC.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Client</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">A process, such 
+as a program or task, that requests a service provided by another program. The 
+client process uses the requested service without having to “deal” with many 
+working details about the other program or the service.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Server</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">A process, such 
+as a program or task, that responds to requests from a client.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Endpoint</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">The name, port, 
+or group of ports on a host system that is monitored by a server program for 
+incoming client requests. The endpoint is a network-specific address of a server 
+process for remote procedure calls. The name of the endpoint depends on the 
+protocol sequence being used.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Endpoint Mapper (EPM)</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">Part of the RPC 
+subsystem that resolves dynamic endpoints in response to client requests and, in 
+some configurations, dynamically assigns endpoints to servers.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Client Stub</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">Module within a 
+client application containing all of the functions necessary for the client to 
+make remote procedure calls using the model of a traditional function call in a 
+standalone application. The client stub is responsible for invoking the 
+marshalling engine and some of the RPC application programming interfaces 
+(APIs).</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Server Stub</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">Module within a 
+server application or service that contains all of the functions necessary for 
+the server to handle remote requests using local procedure calls.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">RPC Dependencies and 
+Interactions</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">RPC is a 
+client/server technology in the most generic sense. There is a sender and a 
+receiver; data is transferred between them. This can be classic client/server 
+(for example, Microsoft Outlook communicating with a server running Microsoft 
+Exchange Server) or system services within the computer communicating with each 
+other. The latter is especially common. Much of the Windows architecture is 
+composed of services that communicate with each other to accomplish a task. Most 
+services built into the Windows architecture use RPC to communicate with each 
+other.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The following 
+table briefly describes the services in Windows&nbsp;Server&nbsp;2003 that depend on the 
+RPC system service (RPCSS).</span></p>
+<p style="text-align: justify"><strong><span style="font-family: Arial">Services 
+That Depend on RPCSS</span></strong><span style="font-family: Arial"> </span>
+</p>
+<h3 style="text-align: justify"><span style="font-size: 12.0pt">&nbsp;</span></h3>
+<table class="MsoNormalTable" border="0" cellpadding="0" responsive="true" summary="table">
+  <tr responsive="true">
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Service </span></b></td>
+    <td style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial">Description </span></b></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Background 
+    Intelligent Transfer Service</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Transfers 
+    data between clients and servers in the background.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">COM+ Event 
+    System</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Supports 
+    System Event Notification Service (SENS), which provides automatic 
+    distribution of events to subscribing Component Object Model (COM) 
+    components.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">COM+ System 
+    Application</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages the 
+    configuration and tracking of COM+-based components.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">
+    Cryptographic Services</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    three management services: Catalog Database Service, which confirms the 
+    signatures of Windows files; Protected Root Service, which adds and removes 
+    Trusted Root Certification Authority certificates from this computer; and 
+    Key Service, which helps enroll this computer for certificates.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">DHCP Server</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Performs 
+    TCP/IP configuration for DHCP clients, including dynamic assignments of IP 
+    addresses, specification of the WINS and DNS servers, and 
+    connection–specific Domain Name System (DNS) names.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Distributed 
+    Link Tracking Client</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables 
+    client programs to track linked files that are moved within an NTFS volume 
+    to another NTFS volume on the same computer or to an NTFS volume on another 
+    computer. </span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Distributed 
+    Link Tracking Server</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables the 
+    Distributed Link Tracking Client service within the same domain to provide 
+    more reliable and efficient maintenance of links within the domain.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Distributed 
+    Link Transaction Coordinator</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Coordinates 
+    transactions that span multiple resource managers, such as databases, 
+    message queues, and file systems.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">DNS Server</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables DNS 
+    clients to resolve DNS names by answering DNS queries and dynamic update 
+    requests.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Error 
+    Reporting Service</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Collects, 
+    stores, and reports unexpected application failures to Microsoft.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">File 
+    Replication Service</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Allows files 
+    to be automatically copied and maintained simultaneously on multiple 
+    servers.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Help and 
+    Support</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables Help 
+    and Support Center to run on the computer.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Human 
+    Interface Device Access</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables 
+    generic input access to Human Interface Devices (HID), which activates and 
+    maintains the use of predefined hot buttons on keyboards, remote controls, 
+    and other multimedia devices.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Indexing 
+    Service</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Indexes 
+    contents and properties of files on local and remote computers; provides 
+    rapid access to files through flexible querying language.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">IPSec 
+    Services</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    end-to-end security between clients and servers on TCP/IP networks.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Kerberos Key 
+    Distribution Center</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">On domain 
+    controllers, enables users to log on to the network using the Kerberos 
+    authentication protocol.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Logical Disk 
+    Manager</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Detects and 
+    monitors new hard disk drives and sends disk volume information to Logical 
+    Disk Manager Administrative Service for configuration. </span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Logical Disk 
+    Manager Administrative Service</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Configures 
+    hard disk drives and volumes.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Messenger</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Transmits 
+    net send and Alerter service messages between clients and servers. This 
+    service is not related to Windows Messenger.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Microsoft 
+    Software Shadow Copy Provider</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages 
+    software-based volume shadow copies taken by the Volume Shadow Copy service.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Network 
+    Connections</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages 
+    objects in the Network and Dial-Up Connections folder in which you can view 
+    local area network (LAN) and remote connections.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Print 
+    Spooler</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages all 
+    local and network print queues and controls all printing jobs.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Protected 
+    Storage</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Protects 
+    storage of sensitive information, such as private keys and prevents access 
+    by unauthorized services, processes, or users.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Remote 
+    Desktop Help Session Manager</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages and 
+    controls Remote Assistance.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Remote 
+    Registry</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables 
+    remote users to modify registry settings on a computer.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Removable 
+    Storage</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages and 
+    catalogs removable media and operates automated removable media devices.
+    </span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Resultant 
+    Set of Policy Provider</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables a 
+    user to connect to a remote computer, access the Windows Management 
+    Instrumentation (WMI) database for that computer, and either verify the 
+    current Group Policy settings made for the computer or check settings before 
+    they are applied. </span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Routing and 
+    Remote Access</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables 
+    multi-protocol LAN-to-LAN, LAN-to-wide area network (WAN), virtual private 
+    network (VPN), and network address translation (NAT) routing services for 
+    clients and servers on the network.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Security 
+    Accounts Manager</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Upon 
+    startup, signals other services that the Security Accounts Manager (SAM) is 
+    ready to accept requests.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Shell 
+    Hardware Detection</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    notifications for AutoPlay hardware events.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Task 
+    Scheduler</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables a 
+    user to configure and schedule automated tasks on the computer.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Telephony</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    Telephony API (TAPI) support for clients using programs that control 
+    telephony devices and IP-based voice connections.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Telnet</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables a 
+    remote user to log on to a computer and run programs; supports various 
+    TCP/IP Telnet clients, including UNIX-based and Windows-based computers.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Terminal 
+    Services</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Allows users 
+    to connect interactively to a remote computer. Remote Desktop, Fast User 
+    Switching, Remote Assistance, and Terminal Server depend on this service.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Terminal 
+    Services Session Directory</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables a 
+    user connection request to be routed to the appropriate terminal server in a 
+    cluster.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Upload 
+    Manager</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages the 
+    synchronous and asynchronous file transfers between clients and servers on 
+    the network. </span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Virtual Disk 
+    Service</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    software volume and hardware volume management service.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Volume 
+    Shadow Copy</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages and 
+    implements Volume Shadow Copies used for backup and other purposes. </span>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Windows 
+    Audio</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Manages 
+    audio devices for Windows-based programs.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Windows 
+    Image Acquisition (WIA)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    image acquisition services for scanners and cameras.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Windows 
+    Installer</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Installs, 
+    repairs, and removes software according to instructions contained in .MSI 
+    files.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Windows 
+    Internet Name Service (WINS)</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Resolves 
+    NetBIOS names for TCP/IP clients by locating network services that use 
+    NetBIOS names.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Windows 
+    Management Instrumentation</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides a 
+    common interface and object model to access management information about 
+    operating system, devices, applications, and services. If this service is 
+    stopped, most Windows-based software will not function properly. </span>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Wireless 
+    Configuration</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Enables 
+    automatic configuration for IEEE 802.11 adapters.</span></td>
+  </tr>
+  <tr>
+    <td style="padding: .75pt" data-th="
+Service
+">
+    <p style="text-align: justify"><span style="font-family: Arial">WMI 
+    Performance Adapter</span></td>
+    <td style="padding: .75pt" data-th="
+Description
+">
+    <p style="text-align: justify"><span style="font-family: Arial">Provides 
+    performance library information from WMI providers to clients on the 
+    network.</span></td>
+  </tr>
+</table>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">RPC is a 
+powerful technique for constructing distributed, client-server based 
+applications. It is based on extending the notion of conventional, or local 
+procedure calling, so that the called procedure need not exist in the same 
+address space as the calling procedure. The two processes may be on the same 
+system, or they may be on different systems with a network connecting them. By 
+using RPC, programmers of distributed applications avoid the details of the 
+interface with the network. The transport independence of RPC isolates the 
+application from the physical and logical elements of the data communications 
+mechanism and allows the application to use a variety of transports. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">RPC makes the 
+client/server model of computing more powerful and easier to program. When 
+combined with the ONC RPCGEN protocol compiler clients transparently make remote 
+calls through a local procedure interface. </span></p>
+<h1 style="text-align: justify"><a name="SECTION003320000000000000000">
+<span style="font-size: 12.0pt">How RPC Works</span></a><span style="font-size: 12.0pt">
+</span></h1>
+<p style="text-align: justify"><span style="font-family: Arial">An RPC is 
+analogous to a function call. Like a function call, when an RPC is made, the 
+calling arguments are passed to the remote procedure and the caller waits for a 
+response to be returned from the remote procedure. Figure&nbsp;1 shows the flow of 
+activity that takes place during an RPC call between two networked systems. The 
+client makes a procedure call that sends a request to the server and waits. The 
+thread is blocked from processing until either a reply is received, or it times 
+out. When the request arrives, the server calls a dispatch routine that performs 
+the requested service, and sends the reply to the client. After the RPC call is 
+completed, the client program continues. RPC specifically supports network 
+applications. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a name="fig:rpc">&nbsp;</a></span><span style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" alt="" style='width:310.5pt;height:273pt'>
+ <v:imagedata src="RPC_files/image003.gif" o:href="file:///E:\cnnnn22\Remote%20Procedure%20Calls%20(RPC)_files\rpc.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=414 height=364
+src="RPC_files/image003.gif" v:shapes="_x0000_s1027"><![endif]>
+</span></p>
+<p style="text-align: center"><b><span style="font-family: Arial">Fig.&nbsp;1 Remote 
+Procedure Calling Mechanism</span></b></p>
+<p style="text-align: justify"><span style="font-family: Arial">&nbsp;A remote 
+procedure is uniquely identified by the triple: (program number, version number, 
+procedure number) The program number identifies a group of related remote 
+procedures, each of which has a unique procedure number. A program may consist 
+of one or more versions. Each version consists of a collection of procedures 
+which are available to be called remotely. Version numbers enable multiple 
+versions of an RPC protocol to be available simultaneously. Each version 
+contains a a number of procedures that can be called remotely. Each procedure 
+has a procedure number. </span></p>
+<h1 style="text-align: justify"><a name="SECTION003330000000000000000">
+<span style="font-size: 12.0pt">RPC Application Development</span></a><span style="font-size: 12.0pt">
+</span></h1>
+<p style="text-align: justify"><span style="font-family: Arial">Consider an 
+example: </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A client/server 
+lookup in a personal database on a remote machine. Assuming that we cannot 
+access the database from the local machine (via NFS). </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">We use UNIX to 
+run a remote shell and execute the command this way. There are some problems 
+with this method: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">the command may be slow to execute. </span>
+  </li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">You require an login account on the remote 
+  machine. </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">The RPC 
+alternative is to </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Establish an server on the remote machine 
+  that can respond to queries. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Retrieve information by calling a query which 
+  will be quicker than previous approach. </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">To develop an 
+RPC application the following steps are needed: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Specify the protocol for client server 
+  communication </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Develop the client program </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Develop the server program </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">The programs 
+will be compiled separately. The communication protocol is achieved by generated 
+stubs and these stubs and rpc (and other libraries) will need to be linked in.
+</span></p>
+<h2 style="text-align: justify"><a name="SECTION003331000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Defining the Protocol</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">The easiest way 
+to define and generate the protocol is to use a protocol complier such as
+<tt style="font-family: Courier New"><span style="font-family: Arial">rpcgen</span></tt>.
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">For the protocol 
+you must identify the name of the service procedures, and data types of 
+parameters and return arguments. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The protocol 
+compiler reads a definition and automatically generates client and server stubs.
+</span></p>
+<p style="text-align: justify"><tt style="font-family: Courier New">
+<span style="font-family: Arial">rpcgen</span></tt><span style="font-family: Arial"> 
+uses its own language (RPC language or RPCL) which looks very similar to 
+preprocessor directives. </span></p>
+<p style="text-align: justify"><tt style="font-family: Courier New">
+<span style="font-family: Arial">rpcgen</span></tt><span style="font-family: Arial"> 
+exists as a standalone executable compiler that reads special files denoted by a
+<tt style="font-family: Courier New"><span style="font-family: Arial">.x</span></tt> 
+prefix. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">So to compile a 
+RPCL file you simply do </span></p>
+<p style="text-align: justify"><tt style="font-family: Courier New">
+<span style="font-family: Arial">rpcgen rpcprog.x</span></tt><span style="font-family: Arial">
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">This will 
+generate possibly four files: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <tt style="font-family: Courier New"><span style="font-family: Arial">
+  rpcprog_clnt.c</span></tt><span style="font-family: Arial"> -- the client stub
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <tt style="font-family: Courier New"><span style="font-family: Arial">
+  rpcprog_svc.c</span></tt><span style="font-family: Arial"> -- the server stub
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <tt style="font-family: Courier New"><span style="font-family: Arial">
+  rpcprog_xdr.c</span></tt><span style="font-family: Arial"> -- If necessary XDR 
+  (external data representation) filters </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <tt style="font-family: Courier New"><span style="font-family: Arial">
+  rpcprog.h</span></tt><span style="font-family: Arial"> -- the header file 
+  needed for any XDR filters. </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">The external 
+data representation (XDR) is an data abstraction needed for machine independent 
+communication. The client and server need not be machines of the same type.
+</span></p>
+<h2 style="text-align: justify"><a name="SECTION003332000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Defining Client and Server 
+Application Code</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">We must now 
+write the the client and application code. They must communicate via procedures 
+and data types specified in the Protocol. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The service side 
+will have to register the procedures that may be called by the client and 
+receive and return any data required for processing. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The client 
+application call the remote procedure passes any required data and will receive 
+the returned data. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">There are 
+several levels of application interfaces that may be used to develop RPC 
+applications. We will briefly disuss these below before expanding the most 
+common of these in later chapters. </span></p>
+<h2 style="text-align: justify"><a name="SECTION003333000000000000000">
+<span style="font-size: 12.0pt; font-family: Arial">Compliling and running the 
+application</span></a><span style="font-size: 12.0pt; font-family: Arial">
+</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">Let us consider 
+the full compilation model required to run a RPC application. Makefiles are 
+useful for easing the burden of compiling RPC applications but it is necessary 
+to understand the complete model before one can assemble a convenient makefile.
+</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Assume the the 
+client program is called <tt style="font-family: Courier New">
+<span style="font-family: Arial">rpcprog.c</span></tt>, the service program is
+<tt style="font-family: Courier New"><span style="font-family: Arial">rpcsvc.c</span></tt> 
+and that the protocol has been defined in <tt style="font-family: Courier New">
+<span style="font-family: Arial">rpcprog.x</span></tt> and that
+<tt style="font-family: Courier New"><span style="font-family: Arial">rpcgen
+</span></tt>has been used to produce the stub and filter files:
+<tt style="font-family: Courier New"><span style="font-family: Arial">
+rpcprog_clnt.c, rpcprog_svc.c, rpcprog_xdr.c, rpcprog.h</span></tt>. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The client and 
+server program must include (<code style="font-family: Courier New"><span style="font-family: Arial">#include 
+&quot;rpcprog.h&quot;</span></code> </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">You must then:
+</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">compile the client code: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -c&nbsp; rpcprog.c</span></pre>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">compile the client stub: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -c&nbsp; rpcprog_clnt.c</span></pre>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">compile the XDR filter: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -c&nbsp; rpcprog_xdr.c</span></pre>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">build the client executable: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -o rpcprog rpcprog.o rpcprog_clnt.o rpcprog_xdr.c</span></pre>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">compile the service procedures: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -c&nbsp; rpcsvc.c</span></pre>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">compile the server stub: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -c&nbsp; rpcprog_svc.c</span></pre>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">build the server executable: </span></li>
+</ul>
+<pre style="text-align: justify; text-indent: -.25in; tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><span style="font-family: Symbol">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="font-size: 12.0pt; font-family: Arial">cc -o rpcsvc rpcsvc.o rpcprog_svc.o rpcprog_xdr.c</span></pre>
+<p style="text-align: justify"><span style="font-family: Arial">Now simply run 
+the programs <tt style="font-family: Courier New">
+<span style="font-family: Arial">rpcprog</span></tt> and
+<tt style="font-family: Courier New"><span style="font-family: Arial">rpcsvc</span></tt> 
+on the client and server respectively. The server procedures must be registered 
+before the client can call them.</span></p>
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

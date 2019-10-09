@@ -1,0 +1,869 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><font FACE="Arial" size="5" color="#FF0000"><b>
+<span style="text-transform: uppercase; text-decoration: underline">Real-time 
+transport protocol</span></b></font></p>
+<font FACE="Arial">
+<p ALIGN="justify"><b>RTP (Real-time transport protocol)</b></p>
+<i>
+<blockquote>
+<p ALIGN="justify">&#15; </i>only part of puzzle: reservations, OS, . . .</p>
+<i>
+<p ALIGN="justify">&#15; </i>product of Internet Engineering Task Force, AVT WG</p>
+<i>
+<p ALIGN="justify">&#15; </i>RFC 1889, 1890 (to be revised)</p>
+<i>
+<p ALIGN="justify">&#15; </i>initiated by ITU H.323 (conferencing, Internet 
+telephony), RTSP, SIP, . . .</p>
+<i>
+<p ALIGN="justify">&#15; </i>support for functions, but does not restrict 
+implementation</p>
+<i>
+<p align="justify">&#15; </i>compression for low-bandwidth networks: CRTP (RFC 2508)</p>
+</blockquote>
+</font><b><font FACE="Arial">
+<p ALIGN="LEFT">o RTP</p>
+<blockquote>
+  <blockquote>
+    <ul>
+      <li>
+      <p ALIGN="LEFT"><font SIZE="3">uses UDP</li>
+      </font>
+      <li>
+      <p ALIGN="LEFT"><font SIZE="3">defines format of additional information 
+      required by the application (sequence number, time stamps)</li>
+      </font>
+      <li>
+      <p ALIGN="LEFT"><font SIZE="3">uses a special set of messages (RTCP) to 
+      exchange periodic reports</li>
+      </font>
+      <li><font SIZE="3">one RTP session, one media flow</li>
+    </ul>
+  </blockquote>
+</blockquote>
+</font>
+<p ALIGN="center"><img border="0" src="RTP12.JPG" width="553" height="236"></p>
+<p ALIGN="center">From a developer’s perspective, RTP belongs to the application 
+layer rather than the transport layer.</p>
+<p ALIGN="justify">RTP goals</p>
+<blockquote>
+  <p ALIGN="justify">&nbsp;&nbsp;&nbsp;&nbsp; lightweight: </font></b>
+  <font face="Arial">specification and implementation</p>
+  <b>
+  <p ALIGN="justify">&nbsp;&nbsp;&nbsp; flexible: </b>provide mechanism, don’t 
+  dictate algorithms</p>
+  <b>
+  <p ALIGN="justify">&nbsp;&nbsp;&nbsp; protocol-neutral: </b>UDP/IP, ST-II, IPX, 
+  ATM-AALx, . . .</p>
+  <b>
+  <p ALIGN="justify">&nbsp;&nbsp;&nbsp; scalable: </b>unicast, multicast from 2 
+  to <i>O</i>(10</font><sup><font FACE="Arial">7</font></sup><font FACE="Arial">)</p>
+  <b>
+  <p ALIGN="justify">&nbsp;&nbsp;&nbsp; separate control/data: </b>some 
+  functions may be taken over by conference control protocol</p>
+  <b>
+  <p align="justify">&nbsp;&nbsp;&nbsp; secure: </b>support for encryption, 
+  possibly authentication</p>
+</blockquote>
+<b>
+<p ALIGN="center"><img border="0" src="RTP1.JPG" width="291" height="441"></p>
+<p ALIGN="justify">Data transport – RTP</p>
+</b>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">Real-Time Transport Protocol (RTP) = data + control</p>
+    <b>
+    <p ALIGN="justify">data: </b>timing, loss detection, content labeling, 
+    talkspurts, encryption</p>
+    <b>
+    <p ALIGN="justify">control: </b>(RTCP)-&gt; periodic with </font><i>
+    <font FACE="Arial">T ~ </font></i><font FACE="Arial">population</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>QOS feedback</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>membership estimation</p>
+    <i>
+    <p align="justify">&#15; </i>loop detection</p>
+  </blockquote>
+</blockquote>
+</font><font FACE="Arial"><b>
+<p ALIGN="justify">RTP functions</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>segmentation/reassembly done by UDP (or similar)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>resequencing (if needed)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>loss detection for quality estimation, recovery</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>intra-media synchronization: remove delay jitter 
+    through playout buffer</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>intra-media synchronization: drifting sampling 
+    clocks</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>inter-media synchronization (lip sync between audio 
+    and video)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>quality-of-service feedback and rate adaptation</p>
+    <i>
+    <p align="justify">&#15; </i>source identification</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Arial">
+<p ALIGN="justify">RTP mixers, translators, . . .</p>
+<p ALIGN="center"><img border="0" src="RTP2.JPG" width="773" height="351"></p>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">mixer:</p>
+    </font></b><font FACE="Arial"><i>
+    <p ALIGN="justify">&#15; </i>several media stream -&gt; one new stream (new 
+    encoding)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>mixer: reduced bandwidth networks (dial-up)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>appears as new source, with own identifier</p>
+    <b>
+    <p ALIGN="justify">translator:</p>
+    </b><i>
+    <p ALIGN="justify">&#15; </i>single media stream</p>
+    </font><i><font FACE="Arial">
+    <p ALIGN="justify">&#15; may </font></i><font FACE="Arial">convert encoding</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>protocol translation (native ATM <i>&#8596; </i>IP), 
+    firewall</p>
+    <i>
+    <p align="justify">&#15; </i>all packets: source address = translator address</p>
+  </blockquote>
+</blockquote>
+</font>
+<p align="justify">&nbsp;</p>
+<b><font FACE="Arial">
+<p ALIGN="justify">RTP packet header</p>
+<blockquote>
+  <blockquote>
+    <p ALIGN="center"><img border="0" src="RTP3.JPG" width="785" height="503"></p>
+    <p ALIGN="justify"><img border="0" src="RTP3.JPG" width="785" height="503"></p>
+    <p ALIGN="justify">Payload type: </font></b><font face="Arial">audio/video 
+    encoding method; may change during session</p>
+    <b>
+    <p ALIGN="justify">SSRC: </b>sychronization source &#8594; sources pick at random</p>
+    </font><font FACE="AdobePiStd">
+    <p ALIGN="justify"><font face="Arial">&#8594;</font></font><font face="Arial"> may 
+    change after <i>collision</i>!</p>
+    <b>
+    <p ALIGN="justify">sequence number: </b>+1 each packet &#8594; gaps <i>&#17; </i>loss</p>
+    <b>
+    <p ALIGN="justify">P: </b>padding (for encryption)&#8594; last byte has padding 
+    count</p>
+    <b>
+    <p ALIGN="justify">M: </b>marker bit; frame, start of talkspurt &#8594; delay 
+    adjustment</p>
+    <b>
+    <p ALIGN="justify">CC: </b>content source count (for mixers)</p>
+    <b>
+    <p align="justify">CSRC: </b>identifiers of those contributing to (mixed 
+    into) packet</p>
+  </blockquote>
+</blockquote>
+</font>
+<p align="justify">&nbsp;</p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">RTP timestamp</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>+1 per sample (e.g., 160 for 20 ms packets @ 8000 
+    Hz)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>random starting value</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>different fixed rate for each audio PT</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>90 kHz for video</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>several video frames may have same timestamp</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>&nbsp;&#8594; gaps </font><i><font face="Arial">&#8801;</font></i><font FACE="Arial"><i>
+    </i>silence</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>time per packet may vary</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>split video frame (carefully. . . ) across packets</p>
+    <i>
+    <p align="justify">&#15; </i>typical: 20 to 100 ms of audio</p>
+  </blockquote>
+</blockquote>
+<b>
+<p ALIGN="justify">RTP in a network</p>
+</b><i>
+<blockquote>
+  <p ALIGN="justify">&#15; </i>typical: UDP, no fixed port; RTCP port = RTP port 
+  (even) + 1</p>
+  <i>
+  <p ALIGN="justify">&#15; </i>typical UDP size limited to few hundred bytes (OS, 
+  network, fragmentation)</p>
+  <i>
+  <p ALIGN="justify">&#15; </i>native ATM: directly into AAL5 frame</p>
+  <i>
+  <p ALIGN="justify">&#15; </i>encapsulation (length field) for others</p>
+  <i>
+  <p ALIGN="justify">&#15; </i>typically: one media (audio, video, . . . ) per port 
+  pair</p>
+  <i>
+  <p align="justify">&#15; </i>exception: bundled MPEG</p>
+</blockquote>
+<b>
+<p ALIGN="justify">RTP control protocol – types</p>
+</b>
+<blockquote>
+  <p ALIGN="justify">stackable packets, similar to data packets</p>
+  <b>
+  <p ALIGN="justify">sender report (SR): </b>bytes send &#8594; estimate rate;</p>
+  <p ALIGN="justify">timestamp &#8594;&nbsp; synchronization</p>
+  <b>
+  <p ALIGN="justify">reception reports (RR): </b>number of packets sent and 
+  expected &#8594;&nbsp; loss, interarrival</p>
+  <p ALIGN="justify">jitter, round-trip delay</p>
+  <b>
+  <p ALIGN="justify">source description (SDES): </b>name, email, location, . . .</p>
+  <p ALIGN="justify">CNAME (canonical name = user@host) identifies user across 
+  media</p>
+  <b>
+  <p ALIGN="justify">explicit leave (BYE): </b>in addition to time-out</p>
+</blockquote>
+<b>
+<p align="justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+extensions (APP): </b>application-specific (none yet)</p>
+<b>
+<p>&nbsp;</p>
+</b></font>
+<p align="center"><img border="0" src="RTP4.JPG" width="791" height="273"></p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">RTCP announcement interval computation</p>
+</b>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify"><b>Goals:</b></p>
+    <i>
+    <p ALIGN="justify">&#15; </i>estimate current # &amp; identities of participants – 
+    dynamic</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>source description (“SDES”) &#8594;&nbsp; who’s talking?</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>quality-of-service feedback &#8594; adjust sender rate</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>to <i>O</i>(1000) participants, few % of data</p>
+    </font>
+    <p ALIGN="justify"><font FACE="Arial">&#8594; randomized response with rate </font>
+    <i><font face="Arial">&#8593; </font></i><font FACE="Arial">as members </font><i>
+    <font face="Arial">&#8595;</p>
+    <p ALIGN="justify">&#15; </font></i><font FACE="Arial">group size limited by 
+    tolerable age of status</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>gives active senders more bandwidth</p>
+    <i>
+    <p align="justify">&#15; </i>soft state: delete if silent</p>
+  </blockquote>
+</blockquote>
+<b>
+<p ALIGN="justify">RTCP bandwidth scaling</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>every participant: periodically multicast RTCP 
+    packet to same group as data</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>&#8594; everybody knows (eventually) who’s out there</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>session bandwidth:</p>
+    <b>
+    <p ALIGN="justify">– </b>single audio stream</p>
+    <b>
+    <p align="justify">– </b>&nbsp;&#931; of concurrently active video streams</p>
+  </blockquote>
+</blockquote>
+</font>
+<p align="justify">&nbsp;</p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">RTCP bandwidth scaling</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>sender period <i>T</i>:</p>
+    <i>
+    <p ALIGN="justify">T </i>= (# of senders/(0<i>:</i>25*<i> </i>0.05<i>* </i>
+    session bw))*<i> </i>avg. RTCP packet size</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>receivers:</p>
+    <i>
+    <p ALIGN="justify">T </i>= (# of receivers/(0</font><i><font face="Arial">.</font></i><font FACE="Arial">75*0</font><i><font face="Arial">.</font></i><font FACE="Arial">05*session 
+    bw))*<i> </i>avg. RTCP packet size</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>next packet = last packet + max(5 s, <i>T</i>)
+    </font><i><font face="Arial">*</font></i><font FACE="Arial"><i> </i>
+    random(0.5. . . 1.5)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>randomization prevents “bunching”</p>
+    <i>
+    <p align="justify">&#15; </i>to reduce RTCP bandwidth, alternate between SDES 
+    components</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Arial">
+<p ALIGN="justify">RTCP sender reports (SR)</p>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">SSRC of sender: </font></b><font face="Arial">identifies 
+    source of data</p>
+    <b>
+    <p ALIGN="justify">NTP timestamp: </b>when report was sent</p>
+    <b>
+    <p ALIGN="justify">RTP timestamp: </b>corresponding “RTP time” &#8594;&nbsp; lip 
+    sync</p>
+    <b>
+    <p ALIGN="justify">sender’s packet count: </b>total number sent</p>
+    <b>
+    <p ALIGN="justify">sender’s octet count: </b>total number sent</p>
+    <p align="justify">followed by zero or more receiver report</p>
+  </blockquote>
+</blockquote>
+</font>
+<p align="justify">&nbsp;</p>
+<b><font FACE="Arial">
+<p ALIGN="justify">RTCP receiver reports (RR)</p>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">SSRC of source: </font></b><font face="Arial">identifies 
+    who’s being reported on</p>
+    <b>
+    <p ALIGN="justify">fraction lost: </b>binary fraction</p>
+    <b>
+    <p ALIGN="justify">cumulative number of packets lost: </b>long-term loss</p>
+    <b>
+    <p ALIGN="justify">highest sequence number received: </b>compare losses, 
+    disconnect</p>
+    <b>
+    <p ALIGN="justify">interarrival jitter: </b>smoothed interpacket distortion</p>
+    <b>
+    <p ALIGN="justify">LSR: </b>time last SR heard</p>
+    <b>
+    <p align="justify">DLSR: </b>delay since last SR</p>
+  </blockquote>
+</blockquote>
+</font>
+<font FACE="Arial"><b>
+<p ALIGN="justify">Intermedia synchronization</p>
+</b>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">= sync different streams (audio, video, slides, . . . )</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>timestamps are offset with random intervals</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>may not tick at nominal rate</p>
+    <i>
+    <p align="justify">&#15; </i>SRs correlate “real” time (wallclock time) with RTP 
+    ts</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Times New Roman" COLOR="#ff0000">
+<p ALIGN="center"><img border="0" src="RTP5.JPG" width="515" height="167"></p>
+</font><font face="Arial">
+<p ALIGN="justify">Round-trip delay estimation</p>
+</font></b><font FACE="Arial">
+<p align="justify">compute round-trip delay between data sender and receiver</p>
+</font>
+<p align="center"><img border="0" src="RTP6.JPG" width="557" height="299"></p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">RTP: Large groups</p>
+</b>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">How do manage large groups?</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>“movie at ten”</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>channel surfing</p>
+    </font>
+    <p ALIGN="justify"><font FACE="Arial">&#8594; reconsideration: pause and 
+    recomputed interval</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>conditional reconsideration: only if group size 
+    estimate increases</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>unconditional reconsideration: always</p>
+    <i>
+    <p align="justify">&#15; </i>reverse reconsideration to avoid time-outs</p>
+  </blockquote>
+</blockquote>
+<b>
+<p ALIGN="justify">BYE floods</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>avoid BYE floods: don’t send BYE if no RTCP</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>reconsideration</p>
+    <p ALIGN="justify">More general:</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>general bandwidth sharing problem</p>
+    <i>
+    <p align="justify">&#15; </i>“squeaky wheel” network management</p>
+  </blockquote>
+</blockquote>
+</font>
+<p align="justify">&nbsp;</p>
+<font FACE="Arial"><b>
+<p align="justify">Reconsideration: learning curve</p>
+</b></font>
+<p align="center"><img border="0" src="RTP7.JPG" width="568" height="406"></p>
+<font FACE="Arial"><b>
+<p align="justify">Reconsideration: influence of delay</p>
+</b></font>
+<p align="center"><img border="0" src="RTP8.JPG" width="568" height="406"></p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">RTP: Aggregation</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>interconnected IPTel gateways &#8594; several RTP streams 
+    to same destination</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>high overhead: G.729, 30 ms packetization &#8594; 30 
+    bytes audio, 40 bytes IP + UDP</p>
+    <p ALIGN="justify">+ RTP headers</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>with ATM: efficiency = 28%</p>
+    <i>
+    <p align="justify">&#15; </i>solution: bundle several calls into single RTP 
+    session</p>
+  </blockquote>
+</blockquote>
+</font>
+<font FACE="Arial"><b>
+<p align="justify">RTP: Aggregation</p>
+</b></font>
+<blockquote>
+  <p align="center"><img border="0" src="RTP9.JPG" width="467" height="353"></p>
+  <font FACE="Arial"><i>
+  <p ALIGN="justify">&#15; </i>for 24 channels &#8594; efficiency <i>&quot; </i>89%</p>
+  <i>
+  <p align="justify">&#15; </i>signal call-ID using SIP</p>
+</blockquote>
+</font>
+<font FACE="Arial"><b>
+<p ALIGN="justify">Collision detection and resolution</p>
+</b>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">Collision:</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>two sources may pick the same SSRC (“birthday 
+    problem”)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>probability: about 10<i>&#8722;</i>4 if 1000 session 
+    members join more or less simultaneously</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>but: don’t pick one you know about already &#8594; 
+    probability much lower unless</p>
+    <p ALIGN="justify">everyone joins at the same time</p>
+    <i>
+    <p align="justify">&#15; </i>send BYE for old, pick a new identifier</font></p>
+  </blockquote>
+</blockquote>
+<p align="justify">&nbsp;</p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">Loop detection</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>forward packet to same multicast group (directly or 
+    through translators)</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>looks similar to collision, but changing SSRC 
+    doesn’t help</p>
+    <i>
+    <p align="justify">&#15; </i>look at RTCP packets</p>
+  </blockquote>
+</blockquote>
+<b>
+<p ALIGN="justify">RTP for the masses</p>
+</b><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>for 14.4 kb/s stream: 90 B/s <i>&nbsp;</i>&#8776;1 new 
+    site/s</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>takes </font><i><font face="Arial">&#8776; </font></i>
+    <font FACE="Arial">3 hours to get to know 10,000 people &#8594; </font></p>
+    <font FACE="Arial"><b>
+    <p ALIGN="justify">– </b>who cares? (Nielsen!)</p>
+    <b>
+    <p ALIGN="justify">– </b>useless for QOS feedback</p>
+    <b>
+    <p ALIGN="justify">– </b>control rate too high</p>
+    </font><i><font face="Arial">
+    <p ALIGN="justify">&#15; &#8594; </font></i><font FACE="Arial">&nbsp;statistical 
+    sample (sender determines rate): send value [0<i>; </i>1]; pick random</p>
+    <p ALIGN="justify">value; if <i>&lt;</i>, lucky winner &#8594;&nbsp; needs to be 
+    adaptive</p>
+    <i>
+    <p align="justify">&#15; </i>&#8594;&nbsp; report just to sender, instead of multicast</font></p>
+  </blockquote>
+</blockquote>
+<p align="justify">&nbsp;</p>
+<font FACE="Arial"><b>
+<p ALIGN="justify">Adaptive applications</p>
+</b>
+<p ALIGN="justify">Multimedia applications can adjust their data rates:</p>
+<p ALIGN="justify">Audio: encoding parameters (MPEG L3), encoding, sampling 
+rate, mono/stereo</p>
+</font><font FACE="Times New Roman">
+<table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">encoding</font></td>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">sampling rate</font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">&nbsp;bit rate</font></td>
+  </tr>
+  <tr>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">LPC </font></td>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">8,000</font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">&nbsp;5,600</font></td>
+  </tr>
+  <tr>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">GSM </font></td>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">8,000</font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">&nbsp;13,200</font></td>
+  </tr>
+  <tr>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">DVI4 </font></td>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">8,000 </font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">32,000</font></td>
+  </tr>
+  </font><font face="Arial">
+  <tr>
+    <td width="33%">
+    <p align="justify">µ-Law</td>
+    </font><font FACE="Times New Roman">
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">8,000</font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">64,000</font></td>
+  </tr>
+  <tr>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">DVI4 a range of DVI4 and MPEG L3</font></td>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">16,000</font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">64,000</font></td>
+  </tr>
+  <tr>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">L16 stereo</font></td>
+    <td width="33%">
+    <p align="justify"><font FACE="Arial">&nbsp;44,100</font></td>
+    <td width="34%">
+    <p align="justify"><font FACE="Arial">1,411,200</font></td>
+  </tr>
+</table>
+<font face="Arial">
+<p ALIGN="justify">&nbsp;</p>
+</font><b><font face="Arial">
+<p align="justify">Video: frame rate, quantization, image resolution, encoding</p>
+</font><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="center"><img border="0" src="RTP10.JPG" width="556" height="397"></p>
+</font><font face="Arial">
+<p ALIGN="justify">Application control</p>
+</font></b><font face="Arial"><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>networks with QoS guarantees:</p>
+    <p ALIGN="justify">– QoS at call set-up, guaranteed</p>
+    <p ALIGN="justify">– long call durations </font>
+    <font FACE="Times New Roman"><font FACE="Arial">&#8594; network load may change</p>
+    <p ALIGN="justify">– “wrong” guess &#8594;</font><font FACE="Times New Roman"><font FACE="Arial"> 
+    rejected calls or low quality</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>networks w/o QoS or shared reserved link:</p>
+    <p ALIGN="justify">– adapt application to available bandwidth</p>
+    <p ALIGN="justify">– share bandwidth fairly with TCP?</p>
+    <p align="justify">– lowest common demoninator &#8594;</font><font FACE="Times New Roman"><font FACE="Arial"> 
+    mixers, translators</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Times New Roman" COLOR="#ff0000">
+</font><font face="Arial">
+<p ALIGN="justify">TCP-friendly applications</p>
+</font></b><font face="Arial"><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>avoid race due to FEC, aggressive retransmission</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>push aside TCP applications (sometimes ok. . . )</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>avoid congestion collapse</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>avoid being but in “penalty box”</p>
+    <i>
+    <p align="justify">&#15; </i>time scale?</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="justify">&nbsp;</p>
+</font><font face="Arial">
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">TCP-friendly adaptation</p>
+    </font></b><font face="Arial"><i>
+    <p ALIGN="justify">&#15; </i>rate computation (e.g.,):</p>
+    <p ALIGN="justify">– use additive-increase, multiplicative-decrease</p>
+    <p ALIGN="justify">– use loss/RTT equation: throughput = </font>
+    <font FACE="Times New Roman"><font FACE="Arial">1<i>:</i>22/</font><i><font FACE="Arial">R&#8730;p</p>
+    </font><b><font FACE="Times New Roman" COLOR="#ff0000">
+    <p ALIGN="justify"></font></b></i><font FACE="Times New Roman">
+    <b>
+    <font face="Arial">where <i>R </i>is the round-trip time and </font><i>
+    <font FACE="Arial">p &#8776; </font></i><font face="Arial">loss fraction</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>mechanisms:</p>
+    <p ALIGN="justify">– TCP ACKs, without retransmission &#8594;</font><font FACE="Times New Roman"><font FACE="Arial"><i>
+    </i>overhead, no multicast</p>
+    <p align="justify">– RTCP RR &#8594;<i> </i>delay, metric?</p>
+  </blockquote>
+</blockquote>
+</font><font FACE="Times New Roman" COLOR="#ff0000">
+</font><font face="Arial">
+<p ALIGN="justify">&nbsp;</p>
+<p ALIGN="justify">RTP: Status and Issues</p>
+</font></font></b><font FACE="Times New Roman"><font face="Arial">
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">Compression: differential compression for low-speed 
+    point-to-point links &#8594;</p>
+    <p ALIGN="justify">compress IP, UDP, RTP into 1–2 bytes</p>
+    <p ALIGN="justify">Aggregation: trunking of packet streams or Internet 
+    telephony gateways</p>
+    <p ALIGN="justify">Large groups: RTCP feedback for O(10,000); sampling</p>
+    <p align="justify">RTP (RFC 1889, RFC 1890) &#8594;</font><font FACE="Times New Roman"><font FACE="Arial"><i>
+    </i>draft standard</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Times New Roman" COLOR="#ff0000">
+</font><font face="Arial">
+<p ALIGN="justify">&nbsp;</p>
+<p ALIGN="justify">RTP Header Compression</p>
+</font></b><font face="Arial"><i>
+<blockquote>
+  <blockquote>
+    <p ALIGN="justify">&#15; </i>large overhead for IP + UDP + RTP headers: 40 bytes</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>CRTP = lossless differential compression that 
+    reduces overhead to two bytes on</p>
+    <p ALIGN="justify">(low-speed) point-to-point links</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>derived from VJ TCP/IP header compression</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>context: IP address, port, RTP SSRC</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>IP: only packet ID changes</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>UDP: only checksum</p>
+    <i>
+    <p ALIGN="justify">&#15; </i>RTP: second-order difference of timestamp and 
+    sequence number is zero</p>
+    <i>
+    <p align="justify">&#15; </i>resynchronization by NAK &#8594;<i> </i>not good for high 
+    BER, delay</p>
+  </blockquote>
+</blockquote>
+</font><b><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="justify">&nbsp;</p>
+</font><font FACE="Arial">
+<p ALIGN="justify">RTP Header Compression</p>
+</b>
+<i>
+<p ALIGN="justify">&#15; </i>link layer indicates FULL_HEADER, COMPRESSED_UDP, 
+COMPRESSED_RTP,</p>
+<p ALIGN="justify">CONTEXT_STATE (no IP header)</p>
+<i>
+<p ALIGN="justify">&#15; </i>differences are encoded as variable-length fields:</p>
+<b>
+<font FACE="Times New Roman">
+<p ALIGN="center">-16384&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C0 00 00</p>
+<p ALIGN="center">-129&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C0 3F 7F</p>
+<p ALIGN="center">-128&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+80 00</p>
+<p ALIGN="center">-1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+80 7F</p>
+<p ALIGN="center">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+00</p>
+<p ALIGN="center">127&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+7F</p>
+<p ALIGN="center">128&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+80 80&nbsp;&nbsp; </p>
+<p ALIGN="center">16383&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+BF FF&nbsp;&nbsp; </p>
+<p ALIGN="center">16384&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C0 40 00</p>
+<p align="center">4194303&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+FF FF FF</p>
+</font></b></font><b><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="justify">&nbsp;</p>
+</font><font FACE="Arial">
+<p align="justify">CRTP Packet Header</p>
+</font><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="center"><img border="0" src="RTP11.JPG" width="427" height="604"></p>
+</font><font face="Arial">
+<p ALIGN="justify">Some RTP Implementations</p>
+<blockquote>
+  <blockquote>
+    <blockquote>
+      <blockquote>
+        <table border="1" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="58%" id="AutoNumber2" height="178">
+          <tr>
+            <td width="22%" height="19"><font FACE="Times New Roman"><b>
+            <font face="Arial">Tool</font></b></font></td>
+            <td width="18%" height="19"><font FACE="Times New Roman"><b>
+            <font face="Arial">Who</font></b></font></td>
+            <td width="14%" height="19"><font FACE="Times New Roman"><b>
+            <font face="Arial">Media</font></b></font></td>
+            <td width="14%" height="19"><font FACE="Times New Roman"><b>
+            <font face="Arial">RSVP</font></b></font></td>
+            <td width="32%" height="19"><font FACE="Times New Roman"><b>
+            <font face="Arial">Adaptive</font></b></font></td>
+          </tr>
+          <tr>
+            <td width="22%" height="19"><font face="Arial">NeVoT</font></td>
+            <td width="18%" height="19"><font face="Arial">GMD Fokus</font></td>
+            <td width="14%" height="19"><font face="Arial">audio</font></td>
+            <td width="14%" height="19"><font face="Arial">yes </font></td>
+            <td width="32%" height="19"><font face="Arial">not yet</font></td>
+          </tr>
+          <tr>
+            <td width="22%" height="19"><font face="Arial">vic</font></td>
+            <td width="18%" height="19"><font face="Arial">&nbsp;LBNL</font></td>
+            <td width="14%" height="19"><font face="Arial">video</font></td>
+            <td width="14%" height="19"><font face="Arial">no</font></td>
+            <td width="32%" height="19"><font face="Arial">&nbsp;no</font></td>
+          </tr>
+          <tr>
+            <td width="22%" height="19"><font face="Arial">vat </font></td>
+            <td width="18%" height="19"><font face="Arial">LBNL</font></td>
+            <td width="14%" height="19"><font face="Arial">audio</font></td>
+            <td width="14%" height="19"><font face="Arial">no </font></td>
+            <td width="32%" height="19"><font face="Arial">no</font></td>
+          </tr>
+          <tr>
+            <td width="22%" height="19"><font face="Arial">rat </font></td>
+            <td width="18%" height="19"><font face="Arial">UCL</font></td>
+            <td width="14%" height="19"><font face="Arial">audio</font></td>
+            <td width="14%" height="19"><font face="Arial">no</font></td>
+            <td width="32%" height="19"><font face="Arial">&nbsp;no</font></td>
+          </tr>
+          <tr>
+            <td width="22%" height="19"><font face="Arial">Rendezvous</font></td>
+            <td width="18%" height="19"><font face="Arial">INRIA</font></td>
+            <td width="14%" height="19"><font face="Arial">A/V</font></td>
+            <td width="14%" height="19">no</td>
+            <td width="32%" height="19">yes</td>
+          </tr>
+          <tr>
+            <td width="22%" height="19">NetMeeting</td>
+            <td width="18%" height="19">Microsoft</td>
+            <td width="14%" height="19">A/V</td>
+            <td width="14%" height="19">no</td>
+            <td width="32%" height="19">no</td>
+          </tr>
+          <tr>
+            <td width="22%" height="19">IP/TV</td>
+            <td width="18%" height="19">Cisco</td>
+            <td width="14%" height="19">A/V</td>
+            <td width="14%" height="19">no</td>
+            <td width="32%" height="19">no</td>
+          </tr>
+          <tr>
+            <td width="22%" height="18">RM</td>
+            <td width="18%" height="18">G2<font face="Arial"> Real</font></td>
+            <td width="14%" height="18">A/V</td>
+            <td width="14%" height="18">no</td>
+            <td width="32%" height="18">yes</td>
+          </tr>
+        </table>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+</blockquote>
+</font><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="center">&nbsp;</p>
+</font><font FACE="Arial">
+<p ALIGN="LEFT">Multimedia Applications</p>
+</font></b><font FACE="Arial">
+<blockquote>
+  <blockquote>
+    <p ALIGN="LEFT">o Streaming multimedia applications need</p>
+    <ul>
+      <li>
+      <p ALIGN="LEFT">&nbsp;</font></font></font></font></font></font></font></font></font><font FACE="Arial" SIZE="3">hard 
+      real-time guarantees (do not tolerate losses or (excessive) delay jitter: 
+      need </li>
+    </ul>
+    <p ALIGN="LEFT">intserv, diffserv – next chapter)</p>
+</font><font FACE="Times New Roman">
+    <ul>
+      <li>
+      <p ALIGN="LEFT"><font FACE="Arial" SIZE="3">soft real-time guarantees (do 
+      tolerate small losses and delay jitter: need RTP)</li>
+    </ul>
+    </font><font FACE="Arial">
+    <p ALIGN="LEFT">o Soft real time applications</p>
+    <ul>
+      <li>
+      <p ALIGN="LEFT"></font><font FACE="Arial" SIZE="3">should support mulicast</li>
+      </font>
+      <li>
+      <p ALIGN="LEFT"><font FACE="Arial" SIZE="3">cannot wait for lost 
+      packets/segments/datagrams to be retransmitted</li>
+      </font>
+      <li>
+      <p ALIGN="LEFT"></font><font FACE="Arial" SIZE="3">need to associate some 
+      timing information (timestamps) with</li>
+    </ul>
+    <p>packets/segments/datagrams</p>
+    </font>
+  </blockquote>
+</blockquote>
+<b><font FACE="Times New Roman" COLOR="#ff0000">
+<p align="center"><font face="Arial"><a href="Main.htm">MAIN</a></font></p>
+</font></b>
+
+</body>
+
+</html>

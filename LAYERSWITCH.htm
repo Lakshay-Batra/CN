@@ -1,0 +1,833 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="LAYERSWITCH_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+span.hw2
+	{}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+span.brokenlink
+	{}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+   A:link { text-decoration: none } table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm"><u>MAIN</u></a></b></font></p>
+<p align="center">
+<span lang="EN-GB" style="font-family: Arial; font-weight: 700; text-decoration: underline; text-transform: uppercase">
+<font size="6" color="#FF0000">Layer 2 &amp; 3 switching</font></span></p>
+<p align="justify"><font face="Arial">A network device that cross connects 
+clients, servers and network devices. Also known as a &quot;frame switch,&quot; 
+stand-alone LAN switches are common in all Ethernet networks. A four-port switch 
+is also typically built into a wired or wireless router for homes and small 
+business.<br>
+<br>
+LAN switches have been available for Token Ring and FDDI networks, which have 
+mostly given way to Ethernet. ATM switches however are a type of LAN switch that 
+is generally considered in a category by itself . 
+See
+switched Ethernet,
+Token Ring and FDDI.</font></p>
+<h3 align="center"><img border="0" src="HUBS.JPG" width="349" height="687"></h3>
+<h3 align="justify"><font face="Arial"><span class="term_title">
+<font size="3">Switched Ethernet</font></span><font size="3"> <span style="font-weight: 400"> <br>
+<br>
+An Ethernet network that is controlled by a switch instead of a shared hub. The 
+switch cross connects all clients, servers and network devices, giving each 
+sending-receiving pair the full rated transmission speed. Half-duplex speed 
+between nodes is 10 Mbps for Ethernet (10BaseT) and 100 Mbps for Fast Ethernet 
+(100BaseT). Full-duplex is 20 and 200 Mbps. For more connections, a switch port 
+can be wired to another switch or hub.<br>
+<br>
+<b>From Shared to Switched</b><br>
+Migrating from shared Ethernet to switched Ethernet provides a dramatic increase 
+in throughput. For example, a 24-port 100BaseT hub shares the total 200 Mbps 
+bandwidth with all 24 attached nodes. By replacing the hub with a switch, each 
+of the 12 sender/receiver pairs has the full 200 Mbps capacity.<br>
+<br>
+In addition, the migration only requires replacing older hubs with switches. The 
+existing network adapters (NICs) in every computer that were previously 
+connected to the hub are still valid when wired to the switch.</span></font></font></h3>
+<h3 align="center"><img border="0" src="Switch.JPG" width="451" height="321"></h3>
+<h3 align="center">&nbsp;</h3>
+<h3><font face="Arial" size="3">Ethernet Layer 2 Switch:</font></h3>
+<p><font face="Arial">A network device that forwards traffic based on MAC layer 
+(Ethernet or Token Ring) addresses.</font></p>
+<h3><font face="Arial" size="3">Features</font></h3>
+<ul>
+  <li><font face="Arial">Includes a hardware switch engine and a 32-bit 
+  soft-core embedded processor </font></li>
+  <li><font face="Arial">Implements a programmable number of ports </font></li>
+  <li><font face="Arial">Can be implemented in Altera's Stratix II and Cyclone<sup>TM</sup>&nbsp;II 
+  devices </font></li>
+  <li><font face="Arial">Utilizes a Nios<sup>®</sup>&nbsp;II embedded processor for 
+  the table management tasks </font></li>
+  <li><font face="Arial">Stratix<sup>®</sup>&nbsp;II FPGA implementation provides 
+  8-Gbps switching capabilities </font></li>
+  <li><font face="Arial">Allows customization for adding higher 
+  quality-of-service for certain classes of services </font></li>
+</ul>
+<h3><font face="Arial" size="3">Block Diagram</font></h3>
+<p><font face="Arial"><strong><em>Figure 1: Ethernet Layer 2 Switch Block 
+Diagram</em></strong> </font></p>
+<p><font face="Arial">
+<img border="0" src="LAYERS1.jpg" width="745" height="448"></font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Description</b></font></p>
+<p align="justify"><font face="Arial">An Ethernet switch is used to interconnect a number of 
+Ethernet local area networks (LANs) to form a large Ethernet network. Different 
+ports of the switch are connected to different LAN segments. The purpose of the 
+switch is to forward the packets only to the desired destination segment of the 
+network whenever possible, minimizing traffic on the network. MorethanIP, an 
+Altera partner, has developed a flexible Ethernet switching engine that allows 
+designers to implement any additional function to complement the Ethernet switch 
+and to provide connectivity to a large number of standard parts or systems with 
+a single-chip solution.&nbsp;The switch can be implemented in Altera’s 
+high-performance Stratix&nbsp;II family and low-cost Cyclone&nbsp;II family.</font></p>
+<h3 align="justify"><font face="Arial" size="3">Deliverables</font></h3>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Register transfer level (RTL) synthesizable VHDL/Verilog 
+  source code or encrypted netlist </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Configurable VHDL/Verilog verification testbenches
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Scripts for Mentor Graphics<sup>®</sup>&nbsp;LeonardoSpectrum™ 
+  synthesis tool </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Implementation script for the Quartus<sup>®</sup>&nbsp;II 
+  software version 5.0 </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Detailed user guides.</font></li>
+</ul>
+<p align="justify"><font face="Arial"><span class="story">Among their features and 
+characteristics are: <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Auto-sensing.</b> A switch’s auto-sensing capability means it can determine 
+the speed of attached devices and automatically configure the ports for 10-Mbps 
+or 100-Mbps throughput. It does this by reading the speed of the network adapter 
+or network interface card attached to the networked PC or server. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Auto-negotiation.</b> A switch’s ability to automatically negotiate between 
+half- and full-duplex modes is extremely useful for particularly 
+bandwidth-hungry client applications, such as a remote computer-aided design and 
+manufacturing workstation. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+Full-duplex Fast Ethernet mode temporarily shuts down the Ethernet carrier-sense 
+multiple-access with collision detection and loopback functions, allowing the 
+switch to provide a theoretical bandwidth of 200 Mbps; that is, 100 Mbps in each 
+direction. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+But this capability comes at the expense of some of the collision detection 
+features of half-duplex mode and should be only be used for isolated high-speed 
+workstations where collision detection isn’t required. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Top aggregate bandwidth.</b> Aggregate bandwidth is the top theoretical speed 
+limit of each switch and is related to the number of ports employed. Thus, the 
+aggregate bandwidth of an eight-port switch running at 100 Mbps per port is 800 
+Mbps, while it’s 1.6 Gbps for a 16-port switch. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Store-and-forward.</b> The simplest switches operate as cut-through devices, 
+meaning they only examine a packet’s destination before forwarding it. More 
+advanced store-and-forward switches analyze the entire packet before forwarding 
+it. The tradeoff? Store-and-forwarding eliminates many traffic errors but takes 
+longer than the cut-through technique. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Unmanaged.</b> Workgroup switches may be managed or unmanaged. Unmanaged 
+switches are plug-and-play devices and are a good match for small, flat networks 
+with a mixture of 10-Mbps and 100-Mbps legacy devices. They can automatically 
+learn network addresses and can handle both auto-sensing and auto-negotiation.
+<br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+The best thing about them is their price. 3Com Corp.’s Office Connect Dual Speed 
+Switch 8 is priced at $210, and Accton Technology Corp.’s popular CheetahSwitch 
+Workgroup 3008A has been reduced to $199. D-Link Systems Inc.’s DSS8+ can be 
+bought for as low as $87 from third-party vendors, and ARK Technologies’ $75 
+CT2208D unmanaged switch is the cheapest I’ve seen—less than $10 per port.</span></font></p>
+<p align="justify"><font face="Arial"><span class="story">
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Managed.</b> Managed switches, in the $1,000 and up price range, are more 
+expensive because they perform more services. Network management features are 
+important when remote switch management is required, or when several switches 
+are linked as part of a more complex network than a LAN. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+Products such as Allied Telesyn International Corp.’s $1,369, 16-port AT-8118 
+and all of Cisco Systems Inc.’s Catalyst 2900XL models—priced at $964 and 
+up—come with proprietary management software. The software most often combines 
+Simple Network Management Protocol and Remote Monitoring network management 
+standards, with their own network management flavors and a little Web-based 
+management tossed in. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Scalability.</b> Simply adding users to a switch or connecting your switch to 
+a network backbone switch is one way to scale your network upward. Rackmountable 
+switches are more easily scalable than standalone desktop switches. Intel 
+Corp.’s high-end switches with built-in Scalable Stacking Technology incorporate 
+a scalable backplane into the switch stack. But the company’s standalone Express 
+410T and 510T models listed here don’t offer this feature. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>VLAN support.</b> Managed Layer 2 switches such as Accton’s $785 
+CheetahSwitch Workgroup 3514F and all of IBM’s 8275 series can support virtual 
+LANs, either as a bundled or optional feature. A VLAN is a group of network 
+resources or users on different network segments that communicate as if they 
+were on the same wire. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+Users can be linked by media access control addresses, IP addresses, network 
+protocols or even the port numbers of a LAN switch into a virtual grouping that 
+can share network resources and bandwidth. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+VLANs are tied to Layer 2 technology, however, and as Layer 3 switches providing 
+full Gigabit Ethernet wire-speed routing enter the market, they may disappear.
+<br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Diagnostic port LEDs.</b> LED indicators at each switch port generally 
+indicate the activity of the link, such as 10-Mbps or 100-Mbps bandwidth 
+utilization or collision/full-duplex. An on/off switch LED light is included 
+with virtually all switches. <br>
+<img height="9" alt=" " src="clearpixel.gif" width="1" border="0"><br>
+<b>Media compatibility.</b> A big advantage to 100Base-T Fast Ethernet is that 
+it runs over the same 10Base-T media that standard Ethernet uses. 100Base-TX—two 
+pairs of data-grade Category 54 unshielded and shielded twisted-pair wiring—and 
+100Base-FX—two strands of multimode fiber—have emerged as the most popular 
+cabling schemes in most wiring closets, so be sure that your switch supports 
+them with appropriate connectors. The most popular media for Gigabit Ethernet 
+uplinks is 1000Base-SX, which uses multimode fiber, but the more versatile, 
+copper-based 1000Base-CX technology is coming on strong.</span></font></p>
+<p align="justify"><font face="Arial"><b><span class="term_title">Layer 3 Switch</span> <br>
+</b><br>
+A network device that forwards traffic based on layer 3 information at very high 
+speeds. Traditionally, routers, which inspect layer 3, were considerably slower 
+than layer 2 switches. In order to increase routing speeds, many &quot;cut-through&quot; 
+techniques were used, which perform an &quot;inspect the first packet at layer 3 and 
+send the rest at layer 2&quot; type of processing. Ipsilon's IP Switch and 
+Cabletron's SecureFast switches were pioneers in cut-through switching.<br>
+<br>
+As more routing lookup functions were moved from software into the ASIC chips, 
+layer 3 switches could inspect each packet just like a router at high speed 
+without using proprietary cut-through methods. If a layer 3 switch supports 
+packet-by-packet inspection and supports routing protocols, it is called a 
+&quot;routing switch&quot; or &quot;switch router,&quot; which simply means &quot;fast router.&quot; For 
+example, Cisco calls its high-end routers Gigabit Switch Routers.<br>
+<br>
+The more deeply a packet is examined, the more forwarding decisions can be made 
+based upon type of traffic, quality of service and so on. To get to this 
+information means digging into the packet's headers to ferret out the data, 
+which takes processing time. To understand how the packets are formed, see 
+TCP/IP abc's. The following shows what is examined at each layer.<br>
+&nbsp;</font></p>
+<div align="center">
+<pre><font face="Arial" size="3"><b>      Forwarding</b>
+<b>      Decision</b>
+<b>Layer Based on         Examples</b>
+2    MAC address      Ethernet, Token Ring, etc.
+3    Network address  IP, IPX, etc.
+3    Service quality  IP, IPX, etc.
+3    Application      IPX socket
+4    Application      IP socket
+<img border="0" src="Layer%203%20Switch.JPG" width="400" height="510"></font></pre>
+</div>
+<p align="center"><font face="Arial">
+<br>
+<b>Enterprise-class Layer 3 Switch</b><br>
+&nbsp;</font></p>
+<div style="font-size: 80%; text-align: justify">
+  <font face="Arial" size="3">Extreme Networks' BlackDiamond 6800 provides a 
+  non-blocking backplane that can switch 48 million packets per second. It 
+  provides wire-speed IP routing at layer 3 and wire-speed switching at layer 2. 
+  Up to 256 10/100 Ethernet ports or 48 Gigabit Ethernet ports can be 
+  configured. <i>(Image courtesy of Extreme Networks, www.extremenetworks.com)</i></font></div>
+<p align="center"><font face="Arial">
+<img border="0" src="No%20Layer.JPG" width="217" height="436"><br>
+<br>
+<b>Enterprise Class and No Layers</b><br>
+&nbsp;</font></p>
+<div style="font-size: 80%; text-align: justify">
+  <font face="Arial" size="3">In 1886, this 50-line magneto switchboard, made by 
+  Bell Telephone of Canada, was used to switch voice conversations in small 
+  localities. These instruments forged a world of switches and routers that 
+  forward billions of calls and data packets every day. <i>(Image courtesy of 
+  Nortel Networks.)</i></font></div>
+<h1 align="center" style="text-align:justify"><font face="Arial" size="3">Layer 3 
+Switching</font></h1>
+<p align="justify"><font face="Arial"><b>The reason</b><br>
+The idea of switching on layer 3 was first proposed by a company called
+Ipsilon. Different standards emerged and at the moment of writing this 
+document there is still no definitive standard. There are some solutions though 
+that are incorporated in a standard (like ATM). For detailed descriptions see 
+the vendors Web-Sites mentioned.</font></p>
+<p align="justify"><font face="Arial"><b>The problems, or network history in an eye-wink</b></font></p>
+<p align="justify"><font face="Arial"><br>
+Before looking at the solutions it is good to see what is causing the problems.<br>
+First, when networks emerged there was a need to extend the maximum distances, 
+so repeaters were invented. After that, people wanted to connect LANs over Wide 
+Area Networks (WANs). This problem was solved by building bridges. When more and 
+more networks were linked together routers were needed to make the whole thing 
+managable.<br>
+And when we had that we wanted more speed. More speed meant creating switches. 
+The first were just called switches and switched on OSI layer 2, so they were 
+actually switching bridges and now we need more speed and have real time traffic 
+and need 3rd layer switches, which are actually switched routers.<br>
+But since a router is situated on layer 3 it adds delay and there is another 
+problem with routers, they route. This means that data can follow different 
+routes to their destination with as a result that some packages will arrive 
+earlier than packedges send before them. This makes it impossible to run time 
+sensitive applications.</font></p>
+<p align="justify"><font face="Arial"><b>The solutions</b></font></p>
+<p align="justify"><font face="Arial">The problems that need to be solved is the different routes for packages 
+from the same job and the delay added by the routers.<br>
+Solving different routes seems to be the easiest one. Just take a fixed path and 
+the problem is solved, but implementing this is the real problem.<br>
+Solving the delay factor, once there is a fixed path, is actually a piece of 
+cake, because with a fixed path bridging is all that is needed.</font></p>
+<p align="justify"><b><font face="Arial">The propositions for call setup</font></b></p>
+<p align="justify"><font face="Arial">The solution for a fixed path is a call setup, where there 
+is a detection of the destination and an agreement on the path that is used for 
+the time the link is used. The technics used sound like ATM and that is were 
+everyone agrees on; ATM will be the future. But in the meantime we have an 
+installed base of several thousands of routers which are connected through 
+dedicated lines and no ATM. So there is a need for a temporary different 
+solution.</font></p>
+<p align="justify"><font face="Arial">Let's see what the posibilities are on the 3rd and 2nd 
+layer of the OSI reference model:</font></p>
+<div align="center">
+  <table class="MsoNormalTable" border="1" cellpadding="0">
+    <tr>
+      <td rowspan="2" valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="center" style="text-align:justify">
+      <font face="Arial" size="3"><b>Layer 3</b></font></td>
+      <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="justify"><font face="Arial" size="3">Route everywhere</font></td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="justify"><font face="Arial" size="3">Route once, switch 
+      afterwards</font></td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="center" style="text-align:justify">
+      <font face="Arial" size="3"><b>Layer 2/3</b></font></td>
+      <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="justify"><font face="Arial" size="3">Switch here you can, 
+      route where you must</font></td>
+    </tr>
+    <tr>
+      <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="center" style="text-align:justify">
+      <font face="Arial" size="3"><b>Layer 2</b></font></td>
+      <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+      <p class="MsoNormal" align="justify"><font face="Arial" size="3">Switch everywhere</font></td>
+    </tr>
+  </table>
+</div>
+<p align="justify"><font face="Arial">The first option, route everywhere, is the actual router 
+as we know it today. And the last one, switch everywhere, is a real bridge. So 
+those two options are not our concern in this document.</font></p>
+<p align="justify"><font face="Arial"><b>Route once, switch afterwards VS Switch where you can, 
+route where you must</b><br>
+Those two options have a basic different view of the network. The switch where 
+you can device sees the network as being flat and is mainly a bridge. Only when 
+it isn't able to determine where the data must go it will use it routing 
+capabilities.<br>
+The otherone is mainly concerned about routing. It accepts the network as a must 
+route network. Only when it has the knowledge of the path the data ought to go 
+it will switch.<br>
+Later on we will see the importance of those two different views of the network.
+</font></p>
+<p align="justify"><font face="Arial"><b>The technologies</b></font></p>
+<p align="justify"><font face="Arial">The now known architectures can basically be split up into three different 
+functions:</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Routing switch </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Flow switch </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Switched router </font></li>
+</ul>
+<table class="MsoNormalTable" border="0" cellpadding="0" width="100%" style="width: 100.0%">
+  <tr>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" align="justify"><font face="Arial" size="3"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="Conventional Router"
+ style='width:203.25pt;height:89.25pt'>
+ <v:imagedata src="LAYERSWITCH_files/image001.gif" o:href="http://ckp.made-it.com/pictures/3lswcr.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=271 height=119
+src="LAYERSWITCH_files/image001.gif" alt="Conventional Router" v:shapes="_x0000_s1025"><![endif]></font></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p align="justify">
+    <font face="Arial" size="3"><b>The Conventional Router</b><br>
+    This one is added to give you a good comparison. The route calculation and 
+    packet processing take place in the software on layer 3. This means that 
+    packets need to be moved from the layer 2 hardware interface to layer three.<br>
+    The information exchange between the two routers are the standard routing 
+    protocols.</font></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" align="justify"><font face="Arial" size="3"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="Routing Switch" style='width:200.25pt;
+ height:77.25pt'>
+ <v:imagedata src="LAYERSWITCH_files/image002.gif" o:href="http://ckp.made-it.com/pictures/3lswrs.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=267 height=103
+src="LAYERSWITCH_files/image002.gif" alt="Routing Switch" v:shapes="_x0000_s1026"><![endif]></font></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p align="justify">
+    <font face="Arial" size="3"><b>The Routing Switch</b><br>
+    Routing calculations takes place at layer 3 in hardware or software, while 
+    the actual packet processing takes place at layer 2. They are mostly just 
+    like ordinary routers. The speed gain is accomplished by reducing the amount 
+    of features supported and moving as much logic as possible into hardware.<br>
+    The information exchange between the two router switches are the standard 
+    routing protocols.<br>
+    Supported by: e.g. Ascend, Bay Networks, Cisco, Extreme, Foundry, IBM, 
+    Intel, Madge.</font></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" align="justify"><font face="Arial" size="3"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" alt="Flow switch" style='width:201.75pt;
+ height:87pt'>
+ <v:imagedata src="LAYERSWITCH_files/image003.gif" o:href="http://ckp.made-it.com/pictures/3lswfw.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=269 height=116
+src="LAYERSWITCH_files/image003.gif" alt="Flow switch" v:shapes="_x0000_s1027"><![endif]></font></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p align="justify">
+    <font face="Arial" size="3"><b>The Flow switch</b><br>
+    Route calculation and packet processing takes place at layer 3 until a flow 
+    is detected. The flow is then switched at layer 2 through the network. This 
+    way of handling data traffic much looks like ATM or frame relay with a VC 
+    for long lived traffic.<br>
+    The information exchange between two flow switches is accomplished through 
+    flow management protocols.<br>
+    Supported by: e.g. Ipsilon, ATM-forum.</font></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal" align="justify"><font face="Arial" size="3"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" alt="Switched router" style='width:199.5pt;
+ height:85.5pt'>
+ <v:imagedata src="LAYERSWITCH_files/image004.gif" o:href="http://ckp.made-it.com/pictures/3lswsw.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=266 height=114
+src="LAYERSWITCH_files/image004.gif" alt="Switched router" v:shapes="_x0000_s1028"><![endif]></font></td>
+    <td valign="top" style="padding:.75pt .75pt .75pt .75pt">
+    <p align="justify">
+    <font face="Arial" size="3"><b>The Switched router</b><br>
+    Route calculation and packet processing takes place at layer 3. By adding a 
+    tag to the packed information the amount of layer 3 processing is reduced. 
+    According to the Cisco view you need tag-edge routers that add the tag to 
+    non-taged packets and in the rest of the network you need tag-switches which 
+    actually give you the speed gain.<br>
+    The information exchange between two switched routers is accomplished 
+    through the tag distribution protocol.<br>
+    Supported by: e.g. Cisco, Ascend, IBM, 3Com.</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial">None of the above are a world wide standard and none are 
+interchange able with another.</font></p>
+<a target="main" name="Enter">
+<p align="justify"><b><font face="Arial">Enter the Layer 3 Switch</font></b><font face="Arial"><b><br>
+</b>Traditional routers, once the core components of enterprise networks, became 
+a major obstacle to the migration toward next-generation networks. All the magic 
+and alchemy involved in trying to make a software-based router forward packets 
+more quickly created only an illusion of serious Layer 3 routing performance. A 
+fundamental shift in technology was required. </font></p>
+<p align="justify"><font face="Arial">In 1992, 3Com, a pioneer in both Layer 2 switching and 
+traditional routing, began integrating its switching and routing products. The 
+motivation was twofold: to reduce the number of devices to be managed, and to 
+lower the cost of a combined Layer 2 and 3 solution. Though the first solution 
+was mostly software based, subsequent products displayed increasing use of 
+application specific integrated circuits (ASICs)—first for address table 
+queries, then for forwarding packets. In 1997, 3Com delivered its 
+third-generation, fully ASIC-enabled Layer 3 CoreBuilder™ 3500 switch, based on 
+the Flexible Intelligent Routing Engine (FIRE) ASIC. For more information on 
+FIRE, see the white paper &quot;Flexible Intelligent Routing Engine (FIRE): The 
+Third-Generation Layer 3 Switching Architecture from 3Com,&quot; available at 
+www.3com.com. Table 1 shows 3Com's Layer 3 switching product evolution. </font>
+</p>
+<p align="justify"><font face="Arial">&nbsp; </font></p>
+<table cellPadding="5" width="500" border="1">
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><b><font face="Arial">Generation</font></b></td>
+    <td>
+    <p align="justify"><b><font face="Arial">Technology</font></b></td>
+    <td>
+    <p align="justify"><b><font face="Arial">Product</font></b></td>
+    <td>
+    <p align="justify"><b><font face="Arial">Routing Performance</font></b></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">First</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Software</font></td>
+    <td>
+    <p align="justify"><font face="Arial">LANplex® 5000 switch</font></td>
+    <td>
+    <p align="justify"><font face="Arial">50K pps</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Second</font></td>
+    <td>
+    <p align="justify"><font face="Arial">ISE ASIC</font></td>
+    <td>
+    <p align="justify"><font face="Arial">CoreBuilder 2500, 6000 switch</font></td>
+    <td>
+    <p align="justify"><font face="Arial">100K—1.1M pps</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Third</font></td>
+    <td>
+    <p align="justify"><font face="Arial">FIRE ASIC</font></td>
+    <td>
+    <p align="justify"><font face="Arial">CoreBuilder 3500, 9000 switch</font></td>
+    <td>
+    <p align="justify"><font face="Arial">3.5M—64M pps</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial"><br>
+<b><i>Table 1. Layer 3 Switching Product Evolution</i></b></font></a><font face="Arial">
+</font></p>
+<a target="main" name="Router">
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial"><b><i>A Layer 3 Switch Is a Router</i></b></font></p>
+<p align="justify"><font face="Arial"><br>
+Vendors and the trade press alike have tried to apply the term &quot;Layer 3 switch&quot; 
+to various products of the day, succeeding only in confusing IT decision makers. 
+This paper aims to remove that confusion. A Layer 3 switch does everything to a 
+packet that a traditional router does: </font></p>
+<ul type="DISC">
+  <li>
+  <p align="justify"><font face="Arial">Determines forwarding path based on Layer 3 information
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Validates the integrity of the Layer 3 header via 
+  checksum </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Verifies packet expiration and updates accordingly
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Processes and responds to any option information </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">Updates forwarding statistics in the Management 
+  Information Base (MIB) </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Applies security controls if required </font></li>
+</ul>
+<p align="justify"><font face="Arial">Because it is designed to handle high-performance LAN 
+traffic, a Layer 3 switch can be placed anywhere within a network core or 
+backbone, easily and cost-effectively replacing the traditional collapsed 
+backbone router. The Layer 3 switch communicates with the WAN router using 
+industry-standard routing protocols like RIP and OSPF. </font></p>
+</a><a target="main" name="Domains">
+<p align="justify"><font face="Arial"><b><i>Router Interfaces as Layer 2 Switching Domains</i></b></font></p>
+<p align="justify"><font face="Arial"><br>
+The Layer 3 switch has inherent Layer 2 switching domains per interface, 
+allowing for individual subnet bandwidth allocation, along with broadcast 
+containment. Not all interfaces are created equal, so the ability to group ports 
+together, whether based on physical characteristics or protocol information, is 
+an extremely powerful tool for network designers concerned with capacity 
+planning. This architecture is inherently scalable, capable of supporting 
+numerous external Layer 2 switches that reside either in the data center or the 
+wiring closet. </font></p>
+<p align="justify"><font face="Arial">Such a design model preserves the subnetted 
+infrastructure, concurrently boosting performance of those subnets and enabling 
+the deployment of switched 10, 100, or 1000 Mbps right to the desktop if so 
+desired. The concept of &quot;subnet preservation&quot; is the key to effective and 
+trouble-free network migration—it allows gradual migration, helping IT managers 
+to work within their staffing constraints without the need to renumber and 
+reassign their entire network. </font></p>
+<p align="justify"></a><a target="main" name="Policy"></p>
+<p align="justify"><font face="Arial"><b><i>Effective Application of Policy</i></b></font></p>
+<p align="justify"><font face="Arial"><br>
+As previously stated, contemporary Layer 3 switches perform their 
+forwarding—whether Layer 2, Layer 3, unicast, multicast, or broadcast—in 
+hardware. Software is deployed to handle network administration, table 
+management, and exception conditions. Some technologists view the hardware 
+component of a Layer 3 switch as inflexible. In fact, hardware provides the 
+ultimate flexibility not only in performance, but in parallel processing as 
+well. The parallel processing model allows the network device to perform far 
+more operations on packets than previously imagined, especially with respect to 
+the application of policy. </font></p>
+<p align="justify"><font face="Arial">A policy is a mechanism to alter the normal forwarding of 
+a packet through a networking device. Familiar examples include security, load 
+balancing, and protocol option processing. Newer policies include QoS, a way to 
+allocate bandwidth and control propagation delay, in addition to CoS, a way to 
+manage packet prioritization. QoS and CoS policies are not only meant to enable 
+new multimedia applications, such as LAN telephony, but to ensure network 
+response time for mission-critical applications, such as telemedicine. Policy 
+implemented by intelligent networking devices, such as Layer 3 switches, enables 
+the integration of voice, video, and data onto the same infrastructure, a 
+process 3Com calls convergence. </font></p>
+<p align="justify"><font face="Arial">Software-based architectures cannot seamlessly administer 
+policy controls at even moderate rates of speed (beyond 10 Mbps). The Layer 3 
+switch solves the problem, enabling policies to be applied at the same 
+performance levels as ordinary Layer 2 and 3 forwarding. Further innovation 
+allows the Layer 3 switch to apply policy based on Layer 4 information, such as 
+TCP and UDP port information. Forward thinkers refer to this as &quot;Layer 4 
+switching.&quot; The FIRE architecture supports all these policies, all the way to 
+Layer 4. </font></p>
+<p align="justify"><font face="Arial">Even with the massive capacity additions being planned for 
+many networks, effective policy management enabled by Layer 3 switching is key 
+to the protection and availability of critical resources. </font></p>
+<p align="justify"></a><a target="main" name="Ease"></p>
+<p align="justify"><font face="Arial"><b><i>Ease of Management</i></b></font></p>
+<p align="justify"><font face="Arial"><br>
+One of the critical success factors for the Layer 2 switch was its 
+implementation and operational simplicity. Deployment was often as easy as 
+powering on the switch, assigning it an IP address, and making the physical 
+network connections. Routers, on the other hand, required extensive training and 
+forced users to sift through a multitude of arcane commands. Layer 3 switches 
+remove such complexity. Setting up a routed environment is as simple as setting 
+up a Layer 2 switch, defining the routed interface, and enabling the routing 
+protocols. IT managers concerned about their investment in training staff on 
+traditional router platforms must assess whether this is truly an investment, or 
+simply a sunk cost based upon vendor lock-in schemes. </font></p>
+<p align="justify"><font face="Arial">For the network management application perspective, a 
+Layer 3 switch behaves exactly as a legacy router does. Because of its Layer 2 
+component, extensive Remote Monitoring (RMON) capabilities are available. 
+However, since Layer 3 and Layer 4 capabilities are present in the Layer 3 
+switch, higher-layer monitoring is available with RMON2 technology. RMON and 
+RMON2 have historically been deployed with expensive external devices known as 
+probes. Moving the RMON/RMON2 capability into the Layer 3 switch is a major 
+benefit for IT administrators. </font></p>
+<p align="justify"></a><a target="main" name="Routing"></p>
+<p align="justify"><font face="Arial"><b>Layer 3 Switching vs. Traditional Routing</b></font></p>
+<p align="justify"><font face="Arial"><br>
+By now, it should be clear that a Layer 3 switch can be deployed anywhere in the 
+LAN where a traditional router can be or has been used.<br>
+Table 2 compares the two types of devices. The Layer 3 switch has been optimized 
+for high-performance LAN support and is not meant to service wide area 
+connections (although it could easily satisfy the requirements for 
+high-performance MAN connectivity, such as SONET). This optimization boosts the 
+performance of a Layer 3 switch to as much as ten times that of a legacy router, 
+while driving the price down to as little as a tenth. This cost comparison does 
+not include the lower training costs for Layer 3 switch administrators or the 
+increased productivity of a high-performance network. </font></p>
+<p align="justify"><font face="Arial">There is another major architectural difference between a 
+Layer 3 switch and a router. A traditional router organizes bridging (Layer 2) 
+and routing (Layer 3) as peers. A Layer 3 switch layers routing on top of 
+switching, permitting a more natural networking architecture while greatly 
+facilitating scalability.</font></p>
+<table cellPadding="5" width="500" border="1">
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><b><font face="Arial">Characteristic</font></b></td>
+    <td>
+    <p align="justify"><b><font face="Arial">Layer 3 Switch</font></b></td>
+    <td>
+    <p align="justify"><b><font face="Arial">Legacy Router</font></b></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Routes core LAN protocols: IP, IPX, AppleTalk</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Yes</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Yes</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Subnet definition</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Layer 2 switch domain</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Port</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Forwarding architecture</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Hardware</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Software</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">RMON support</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Yes</font></td>
+    <td>
+    <p align="justify"><font face="Arial">No</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Price</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Low</font></td>
+    <td>
+    <p align="justify"><font face="Arial">High</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Forwarding performance</font></td>
+    <td>
+    <p align="justify"><font face="Arial">High</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Low</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">Policy performance</font></td>
+    <td>
+    <p align="justify"><font face="Arial">High</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Low</font></td>
+  </tr>
+  <tr vAlign="top">
+    <td>
+    <p align="justify"><font face="Arial">WAN support</font></td>
+    <td>
+    <p align="justify"><font face="Arial">No</font></td>
+    <td>
+    <p align="justify"><font face="Arial">Yes</font></td>
+  </tr>
+</table>
+<p align="justify"><font face="Arial"><br>
+<b><i>Table 2. Layer 3 Switch vs. Legacy Router</i></b> </font></p>
+</a><a target="main" name="Switch">
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial"><b>The Business Case for a Layer 3 Switch</b></font></p>
+<p align="justify"><font face="Arial">Some IT managers may be concerned about deploying a &quot;new&quot; technology such as 
+Layer 3 switching to their network. But Layer 3 switching is really an 
+integration of two proven technologies: switching and routing. In fact, some 
+Layer 3 switches are running the exact same routing software that has been fully 
+tested and used in mission-critical networks for nearly a decade. So whether the 
+decision maker is an early adopter of technology or more conservative, the Layer 
+3 switch can satisfy both needs. </font></p>
+<p align="justify"><font face="Arial">The first step toward the deployment of next-generation IT 
+infrastructures is to ignore the networking element. Although this may seem 
+absurd, it allows managers to focus on the end users, services, and data without 
+being bound by historical network deficiencies. The network should be 
+transparent. When the requirements for information transfer are known, capacity 
+planning techniques will determine the necessary client and server 
+interconnects. Organizational and security mandates are then applied, yielding 
+the policy and subnetted infrastructure. Cost is then factored in. Finally, the 
+decision is made regarding the appropriate networking products to satisfy these 
+requirements. </font></p>
+<p align="justify"><font face="Arial">Layer 3 switching technology must be considered from two 
+perspectives. First, as a migration tool to move users forward to 
+higher-performance networking, or surprisingly, to squeeze more performance out 
+of what is currently installed. Many users complain about FDDI performance, only 
+to discover that the network is running at less than 20 percent of capacity. The 
+problem is not the network, but rather the devices attached to it. The second 
+perspective addresses what can be done when network performance bottlenecks are 
+removed. A high-performance network enables a variety of steps to reduce costs 
+and enhance security and business operations. The following are examples of 
+several such steps. </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>Server farms</b>. Today, the viability of many 
+  organizations is closely related to their intellectual property, often stored 
+  on databases or server devices. The security and protection of these servers 
+  has been a major goal of IT managers, who have been at odds with the users of 
+  those servers. The point of contention has been the dependence of server 
+  performance on the network topology. The response has been to move servers 
+  within the same subnet or Layer 2 switching domain as users. With data traffic 
+  patterns becoming more distributed, this approach was breaking down. The Layer 
+  3 switch allows servers to be centralized with no performance penalty, 
+  eliminating the cost of numerous server repositories while keeping end users 
+  satisfied. </font></li>
+  <li>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Intranets</b>. Because of its secure nature, along 
+  with its higher capacity, the intranet is becoming a viable corporate 
+  communications vehicle with usage that includes HR record retrieval, major 
+  announcements, computer-based training, and live video broadcasts. Delivering 
+  a wide variety of services, some requiring a huge amount of bandwidth, can 
+  wreak havoc on the old router. The Layer 3 switch, because of its higher 
+  performance, traffic prioritization, and subnet preservation, is ideally 
+  suited for the deployment of intranets. </font></li>
+  <li>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Converged networks</b>. For some time, technological 
+  prognosticators have been extolling the virtues of multimedia and warning of 
+  the excessive demand it will place on IT infrastructures. But many network 
+  managers have been disinclined to integrate their voice, video, and data 
+  traffic, concerned not only with the bandwidth requirements, but fearing the 
+  degraded quality of the respective elements. The ability to recognize and 
+  respond to the unique attributes of voice, data, and video not only makes 
+  their integration viable, but also attractive from a cost and management 
+  perspective. The inherent flow recognition capabilities of Layer 3 switching 
+  enable practical deployment of converged networks without performance 
+  uncertainties. </font></li>
+</ul>
+</a>
+<p align="justify"><a target="main" name="cost"><font face="Arial"><b><i>Cost Savings</i></b></font></a></p>
+<p align="justify"><a target="main" name="cost"><font face="Arial">A traditional router may run U.S. $8,000 to $10,000 per Fast Ethernet interface, 
+while a Layer 3 switch costs less than U.S. $1,000 per port. Surprisingly, 
+greater densities can be achieved with Layer 3 switching, freeing up valuable 
+rack space and saving on physical cabling plant expansion. Training costs 
+plummet, too, as a four- to seven-day legacy router course is replaced with a 
+one- or two-day class for the Layer 3 switch. </font></p>
+<p align="justify"><font face="Arial">Major savings also lie in the ancillary effects of 
+applying Layer 3 switching technology. Cost savings realized through server 
+centralization, notably in physical plant and security, can be substantial, 
+especially when space is at a premium. Other, less tangible effects include 
+improved response time and conformance with SLAs. Clearly, the overall cost of 
+ownership benefits of Layer 3 switches versus routers can be substantial.</font></p>
+</a>
+<p align="center"><b><font face="Arial"><a href="Main.htm"><u>MAIN</u></a></font></b></p>
+
+</body>
+
+</html>

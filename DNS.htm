@@ -1,0 +1,702 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="DNS_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b>
+<a href="../../../../Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+<p class="MsoNormal" align="center"><u><b>
+<font face="Arial" size="6" color="#FF0000">DNS</font></b></u></p>
+<p class="MsoNormal" align="justify"><font face="Arial">The Internet Protocol address is a 32- bit integer. If somebody wants to send a 
+message it is necessary to include the destination address, but people prefer to 
+assign machines pronounceable, easily remembered names (host names). For this 
+reason the Domain Name System is used. These logical names also allow 
+independence from knowing the physical location of a host. A host may be moved 
+to a different network, while the users continue to use the same logical name.
+</font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">The Domain Name System (DNS) is a 
+distributed database used by TCP/IP applications to map between hostnames and IP 
+addresses, and to provide electronic mail routing information. Each site 
+(university department, campus, company, or department within a company, for 
+example) maintains its own database of information and runs a server program 
+that other systems across the Internet can query. The DNS provides the protocol 
+which allows clients and servers to communicate with each other. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">The system accesses the DNS through a 
+resolver. The resolver gets the hostname and returns the IP address or gets an 
+IP address (fig.1) and looks up a hostname. As we can see in fig.1 the resolver 
+returns the IP address before asking the TCP to open a connection or sending a 
+datagram using UDP. </font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1026" type="#_x0000_t75" alt="" style='width:378pt;
+ height:206.25pt'>
+ <v:imagedata src="DNS_files/image001.gif" o:href="http://www2.rad.com/networks/1995/dns/fig1.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=504 height=275
+src="DNS_files/image001.gif" v:shapes="_x0000_s1026"><![endif]></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">&nbsp;<a name="doc2"><b>DNS Organization</b></a></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><br>
+The domain name system uses a hierarchical naming scheme known as domain 
+names, which is similar to the Unix file system tree. The root of the DNS tree is 
+a special node with a null label. The name of each node (except root) has to be 
+up to 63 characters. The domain name of any node in the tree is the list of 
+labels, starting at that node, working up to the root, using a period (&quot;dot&quot;) to 
+separate the labels (individual sections of a name might represent sites or a 
+group, but the domain system simply calls each section a label ). The difference 
+between the Unix file system and the tree of the DNS is that in the DNS we start 
+on the ground and &quot;go up&quot; till the root. Writing them in this order makes it 
+possible to compress messages that contain multiple domain names. Thus, the 
+domain name &quot;tau.ac.il&quot; contains three labels: &quot;tau&quot;, &quot;ac&quot;, and &quot;il&quot;. Any suffix 
+of a label in a domain name is also called a domain. In the above example the 
+lowest level domain is &quot;tau.ac.il&quot; (the domain name for the Tel-Aviv University 
+Academic organization in Israel), the second level domain is &quot;ac.il&quot; (the domain 
+name for Academic organizations of Israel), and the top level domain (for this 
+name) is &quot;il&quot; (the domain name for Israel). The node il is the second level node 
+(after root) (Fig.2) </font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" alt="" style='width:425.25pt;height:330pt'>
+ <v:imagedata src="DNS_files/image002.gif" o:href="http://www2.rad.com/networks/1995/dns/fig2.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=440
+src="DNS_files/image002.gif" v:shapes="_x0000_s1028"><![endif]></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Every node in the tree must have a 
+unique domain name, but the same label can be used at different points in the 
+tree. The top-level domains are divided into three areas: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">1. arpa is a special domain used for 
+  address-to-name mapping. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">2. The seven 3-character domain names 
+  ( generic (organizational) domains). </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">3. The 2-character domains are based 
+  on the country codes. These are called the country (the geographical) domains.
+  </font></li>
+</ul>
+<p class="MsoNormal" align="justify"><font face="Arial">The seven generic domains are depicted 
+in the fig.3 : </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">&nbsp;<b>Domain Name&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Meaning</b></span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">COM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Commercial organizations</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">EDU&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Educational institutions</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Arial">GOV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Government institutions</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Arial">MIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Military groups</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Arial">NET&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Major network support centers</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Arial">ORG&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Organizations other than those above</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+<font face="Arial">·</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: Arial">INT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+International organizations</span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in" align="justify">
+&nbsp;</p>
+<p class="MsoNormal" align="justify"><font face="Arial">Fig.3 The three-character generic domain
+</font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">The Internet scheme can accommodate a 
+wide variety of organizations, and allows each group to choose between 
+geographical or organizational naming hierarchies. Most sites follow the 
+Internet scheme so they can attach their TCP/IP installations to the connected 
+Internet without changing names. The zone is a subtree of the DNS that is 
+administered separately. A common zone is a second-level domain, &quot;ac.il&quot; for 
+example. Thus a lot of second-level domains divide their zone into smaller 
+zones. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Whenever a new system is installed in a 
+zone, the DNS administrator for the zone allocates a name and an IP address for 
+the new system and enters these into the name server's database. A name server 
+is said to have authority for one zone or multiple zones. Often, server software 
+executes on a dedicated processor, and this computing machine is called the name 
+Server. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">The person responsible for a zone must 
+provide a primary name server for that zone and one or more secondary name 
+servers. The main difference between a primary and a secondary is that the 
+primary loads all the information for the zone from disk files, while the 
+secondaries obtain all the information from the primary. When a secondary 
+obtains the information from its primary it is called a zone transfer. </font>
+</p>
+<p class="MsoNormal" align="justify"><font face="Arial">When a new host is added to the zone, 
+the administrator adds the appropriate information (name and IP address) to a 
+disk file on the system running the primary. The primary name server is then 
+notified to reread its configuration files. The secondary query the primary on 
+regular basis (normally every 3 hours) and if the primary contains newer data, 
+the secondary obtains the new data using a zone transfer. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">If the name server doesn't contain the 
+information requested, it must contact another name server. Not every server, 
+however, knows how to contact every other server. Instead, every name server 
+must know how to contact the root name servers. The root servers then know the 
+name and location (i.e. IP address) of each authoritative name servers for all 
+the second-level domains. There are six root servers in the world and every 
+primary name server has to know the address of one of root server. The fig. 2 we 
+can depict the tree of servers fig.4. </font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" alt="" style='width:425.25pt;height:330pt'>
+ <v:imagedata src="DNS_files/image003.gif" o:href="http://www2.rad.com/networks/1995/dns/fig4.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=440
+src="DNS_files/image003.gif" v:shapes="_x0000_s1029"><![endif]></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">In practice, the organization often 
+collects information from all of their sub-zones into a single server. Thus we 
+can depict fig.5 which is more realistic than fig.4. </font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" alt="" style='width:425.25pt;height:330pt'>
+ <v:imagedata src="DNS_files/image004.gif" o:href="http://www2.rad.com/networks/1995/dns/fig5.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=440
+src="DNS_files/image004.gif" v:shapes="_x0000_s1030"><![endif]></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">We have to say that the tree in fig.5 
+shows how a given server can contact other servers only. This tree doesn't 
+indicate physical network connection. Servers may be located at arbitrary 
+locations on the network. Therefore, the tree of servers is a logical connection 
+between servers, which uses the Internet for communication. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">&nbsp;<a name="doc3"><b>DNS Caching</b></a></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><br>
+A fundamental property of the DNS is caching. That is, when a name server 
+receives information about a mapping, it caches that information. Thus a later 
+query for the same mapping can use the cached result, and not result in 
+additional queries to other servers. The DNS uses the caching for optimizing 
+search cost. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>How 
+does it work? </b></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">Every server has a cache for recently 
+used names as well as a record of where the maping information for that name was 
+obtained. When a client ask the server to resolve certain name the server does 
+as follows: </font></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Check if it has authority for the 
+  name. If yes, the server doesn't need caching information. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">if not, the server checks its cache 
+  whether the name has been resolved recently. if yes, the server reports the 
+  caching information to its clients. </font></li>
+</ol>
+<p class="MsoNormal" align="justify"><font face="Arial">We can examine the cache when the server 
+cashed the information once, but didn't change it. Since information about a 
+particular name can change, the server may have incorrect information in its 
+caching table. The <b>Time to Live </b>(TTL) value is used to decide when to age 
+information. Whenever an authority responds to a request, it includes a TTL 
+value in the response which specifies how long it guarantees the binding to 
+remain. </font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><a name="doc4"><b>
+DNS MESSAGE FORMAT</b></a></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><br>
+When the user wants to send a message, it invokes an application program and 
+supplies the name of a machine with which the application must communicate. The 
+application program must find the machine's IP address. It passes the domain 
+name to a local resolver (L.R.) and requests an IP address. The local resolver 
+checks its cache and: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">If the L.R. has an answer, it returns 
+  the answer. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">If the L.R. hasn't one, it sends the 
+  message to the server. The server then returns a similar message that contains 
+  the answer to the questions for which the server has bindings. If the server 
+  can't answer, it sends responsive information about other servers that the 
+  client can contact. </font></li>
+</ul>
+<p class="MsoNormal" style="margin-left: .5in" align="justify"><font face="Arial">Fig.6 shows 
+the DNS message format. </font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" alt="" style='width:425.25pt;height:330pt'>
+ <v:imagedata src="DNS_files/image005.gif" o:href="http://www2.rad.com/networks/1995/dns/fig6.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=440
+src="DNS_files/image005.gif" v:shapes="_x0000_s1032"><![endif]></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify"><font face="Arial">Explanation of 
+Fig.6: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">The IDENTIFICATION is set by the 
+    client and returned by the server. </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">The 16-bit PARAMETER consists of:
+    </font>
+    <ul type="square" style="margin-bottom: 0in">
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">0-th bit field -qr: 0 means the 
+      message is a query,1 means it's a response. </font></li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">1-4 bit fields - OPCODE: </font>
+      <ul type="square" style="margin-bottom: 0in">
+        <li class="MsoNormal">
+        <p align="justify"><font face="Arial">0 -is a normal value (Standard 
+        query). </font></li>
+        <li class="MsoNormal">
+        <p align="justify"><font face="Arial">1 - an inverse query. </font>
+        </li>
+        <li class="MsoNormal">
+        <p align="justify"><font face="Arial">2 - the server status request.
+        </font></li>
+      </ul>
+      </li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">5-th bit field - Authoritative 
+      answer. The name server is authoritative for the domain in the question 
+      section. </font></li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">6-th bit field is set if message 
+      truncated. With UDP this means that the total size of the reply exceeded 
+      512 bytes, and only the first 512 bytes the of the reply were returned.
+      </font></li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">7-th bit field - Recursion 
+      Desired.This bit can be set in a query and is then returned in the 
+      response. </font></li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">8-th bit field - Recursion 
+      Available. </font></li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">9-11 -th bits field has to be 0.
+      </font></li>
+      <li class="MsoNormal">
+      <p align="justify"><font face="Arial">12-15 -th bits field - Return 
+      Code. 0- no error, 3- name error. </font></li>
+    </ul>
+    </li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">The fields labeled NUMBER OF ... 
+    give each a count of entries in the corresponding sections in the message.
+    </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">The QUESTION SECTION contains 
+    queries for which answers are desired. The client fills in only the question 
+    section; the server returns the question and answers with its response. Each 
+    question has Query Domain Name followed by Query Type and Query Class fields 
+    (as depicted in Fig.7.) </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">ANSWER, AUTHORITY, ADDITIONAL 
+    INFORMATION sections consist of a set of resource records that describe 
+    domain names and mappings. Each resource record describes one name (as 
+    depicted in fig.8.). </font></li>
+  </ul>
+</ul>
+<p class="MsoNormal" style="margin-left: .5in" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="" style='width:425.25pt;height:330pt'>
+ <v:imagedata src="DNS_files/image006.gif" o:href="http://www2.rad.com/networks/1995/dns/fig7.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=440
+src="DNS_files/image006.gif" v:shapes="_x0000_s1033"><![endif]></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" alt="" style='width:425.25pt;height:330pt'>
+ <v:imagedata src="DNS_files/image007.gif" o:href="http://www2.rad.com/networks/1995/dns/fig8.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=567 height=440
+src="DNS_files/image007.gif" v:shapes="_x0000_s1034"><![endif]></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify"><font face="Arial">The RESOURCE 
+DOMAIN NAME contains the destination name, and can be in an arbitrary length. 
+The TYPE field specifies the type of the data record. The CLASS field specifies 
+its class. The TIME TO LIVE field contains an integer that specifies the number 
+of seconds information in this resource record can be cached. It is used by 
+clients who have requested a name binding and may want to cache the results. The 
+RESULTS DATA LENGTH field specifies the count of octets in the RESOURCE DATA 
+field.</font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial">&nbsp;</font><font face="Arial" size="3">DNS name structure</font></b></p>
+<p align="justify"><font face="Arial">DNS names are constructed hierarchically. The highest 
+level of the hierarchy being the <b>last</b> component or <b>label</b> of the 
+DNS address. Labels can be up to 63 characters long and are case insensitive. A 
+maximum length of 255 characters is allowed. Labels must start with a letter and 
+can only consist of letters, digits and hyphens. [Unfortunately some 
+administrators construct names that start with digits. This is wrong and can 
+easily cause problems with software that simply inspects the first character of 
+a host address to determine whether a DNS name or an IP address has been 
+quoted.] </font></p>
+<p align="justify"><font face="Arial"><b>Note</b> In the early days of the Internet users in at 
+least one country (the United Kingdom) adopted a similar scheme with the highest 
+hierarchical level appearing first rather than last. I.e. </font><code>
+<font face="Arial">uk.ac.wlv.scit.sun</font></code><font face="Arial"> rather 
+than </font><code><font face="Arial">sunc.scit.wlv.ac.uk</font></code><font face="Arial">. 
+This practice is, fortunately, obsolete. </font></p>
+<p align="justify"><font face="Arial">DNS addresses can be relative or fully qualified. A fully 
+qualified address includes all the labels and is globally unique. A relative 
+address can be converted by appending the local domain information. For example
+</font><code><font face="Arial">sunc.scit.wlv.ac.uk</font></code><font face="Arial"> 
+is a fully qualified name for the host </font><code><font face="Arial">sunc</font></code><font face="Arial"> 
+in the domain </font><code><font face="Arial">scit.wlv.ac.uk</font></code><font face="Arial">. 
+Strictly there should be a stop at the end of a fully qualified name but this is 
+often overlooked. </font></p>
+<p align="justify"><font face="Arial">The final most significant label of a fully qualified name 
+can fall into one of three classes </font></p>
+<p align="justify">&nbsp;</p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>arpa</b> </font>
+  </p>
+  <p align="justify"><font face="Arial">This is a special facility used for reverse translation, 
+  i.e. going from IP address to fully qualified domain address. If everything is 
+  properly configured a suitably framed query for </font><code>
+  <font face="Arial">1.4.220.134.in-addr.arpa</font></code><font face="Arial"> 
+  will return </font><code><font face="Arial">sunc.scit.wlv.ac.uk</font></code><font face="Arial">.
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>3 letter codes</b> </font>
+  </p>
+  <p align="justify"><font face="Arial">The DNS was originally introduced in the United States of 
+  America and the final component of an address was intended to indicate the 
+  type of organization hosting the computer. Some of the three letter final 
+  labels (edu, gov, mil) are still only used by organizations based in the USA, 
+  others can be used anywhere in the world. </font></p>
+  <p align="justify"><font face="Arial">The three letter codes are </font></p>
+  <table border="2">
+    <tr>
+      <th>
+      <p align="justify"><font face="Arial">code </font></th>
+      <th>
+      <p align="justify"><font face="Arial">meaning </font></th>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">com </font></td>
+      <td>
+      <p align="justify"><font face="Arial">Commercial. Now international. </font></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">edu </font></td>
+      <td>
+      <p align="justify"><font face="Arial">Educational. </font></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">gov </font></td>
+      <td>
+      <p align="justify"><font face="Arial">Government. </font></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">int </font></td>
+      <td>
+      <p align="justify"><font face="Arial">International Organization. </font></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">mil </font></td>
+      <td>
+      <p align="justify"><font face="Arial">Military. </font></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">net </font></td>
+      <td>
+      <p align="justify"><font face="Arial">Network related. </font></td>
+    </tr>
+    <tr>
+      <td>
+      <p align="justify"><font face="Arial">org </font></td>
+      <td>
+      <p align="justify"><font face="Arial">Miscellaneous Organization. </font></td>
+    </tr>
+  </table>
+  <p align="justify">&nbsp;</li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Two letter codes</b> </font>
+  </p>
+  <p align="justify"><code><font face="Arial">uk</font></code><font face="Arial"> is used for 
+  the United Kingdom rather than </font><code><font face="Arial">gb</font></code><font face="Arial"> 
+  although there are some </font><code><font face="Arial">.gb</font></code><font face="Arial"> 
+  sites. [This apparently happened because the ISO committee was unaware that 
+  Northern Ireland was part of the United Kingdom but not part of Great 
+  Britain.] </font></p>
+  <p align="justify"><font face="Arial">The two letter code </font><code><font face="Arial">us</font></code><font face="Arial"> 
+  is used by some sites in the United States of America. </font></li>
+</ul>
+<p align="justify"><font face="Arial">In some countries there are sub-domains indicating the 
+type of organization such as </font><code><font face="Arial">ac.</font></code></p>
+<p style="text-align:justify"><b><font color="#FF00FF" size="5">DNS</font></b></p>
+<p style="text-align:justify"><strong><span style="font-family:Arial">1)</span></strong><span style="font-family:Arial"> 
+Short for <strong><i>D</i></strong><em>omain </em><strong><i>
+<span style="font-family:
+Arial">N</span></i></strong><em>ame </em><strong><i>S</i></strong><em><span style="font-family:
+Arial">ystem</span></em> (or <strong><i>S</i></strong><em>ervice</em> or <strong>
+<i>S</i></strong><em><span style="font-family:
+Arial">erver</span></em>), an Internet service that translates <em>
+<span style="font-family:Arial;color:black">domain names</span></em> into IP 
+addresses. Because domain names are alphabetic, they're easier to remember. The 
+Internet however, is really based on IP addresses. Every time you use a domain 
+name, therefore, a DNS service must translate the name into the corresponding IP 
+address. For example, the domain name <em>www.example.com</em> might translate 
+to <em>198.105.232.4</em>.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">The DNS system is, 
+in fact, its own network. If one DNS server doesn't know how to translate a 
+particular domain name, it asks another one, and so on, until the correct IP 
+address is returned.</span></p>
+<p style="text-align:justify"><strong><span style="font-family:Arial">(2)</span></strong><span style="font-family:Arial"> 
+Short for<strong><i> d</i></strong><em>igital </em><strong><i>n</i></strong><em><span style="font-family:
+Arial">ervous </span></em><strong><i>s</i></strong><em>ystem, </em>a term coined 
+by Bill Gates to describe a network of personal computers that make it easier to 
+obtain and understand information.</span></p>
+<h1 style="text-align:justify"><span style="font-size:12.0pt">How the Domain 
+Name System (DNS) works</span></h1>
+<p style="text-align:justify"><span style="font-family:Arial">Content DNS and 
+Resolving DNS services are important to owners of virtual machines or Dedicated 
+Servers, especially those wanting to host the DNS service for their own domains.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">It is assumed you 
+understand what an IP address is, and know the process of registering and using 
+a domain through a domain registrar while possibly being “a little fuzzy” about 
+what the DNS actually does.</span></p>
+<h2 style="text-align:justify" id="the-difference-between-content-and-resolving-dns-services">
+<span style="font-size:12.0pt;font-family:Arial">The difference between Content 
+and Resolving DNS services</span></h2>
+<p style="text-align:justify"><span style="font-family:Arial">From our 
+experience, people expect DNS servers to provide a single service: to convert 
+names such as <code style="font-family: Courier New">
+<span style="font-family: Arial">www.bytemark.co.uk</span></code> to IP 
+addresses such as <code style="font-family: Courier New">
+<span style="font-family: Arial">80.68.80.52</span></code>. Although many DNS 
+servers around the internet operate in this simplistic manner, this view is not 
+a thorough understanding of the system, and may result in security issues if a 
+systems administrator new to DNS tries to set up a server in this fashion. DNS 
+servers should provide one of two services: <em>content</em> or <em>resolution</em> 
+services.</span></p>
+<h3 style="text-align:justify" id="content-servers">
+<span style="font-size:12.0pt">Content servers</span></h3>
+<p style="text-align:justify"><span style="font-family:Arial">A <em>content 
+server</em> is one which actually contains authoritative DNS records. These 
+records are just single pieces of information such as:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family:Arial">the name
+  <code style="font-family: Courier New"><span style="font-family: Arial">
+  www.bytemark.co.uk</span></code> refers to IP address
+  <code style="font-family: Courier New"><span style="font-family: Arial">
+  80.68.88.52</span></code></span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family:Arial">the domain
+  <code style="font-family: Courier New"><span style="font-family: Arial">
+  bytemark.co.uk</span></code> should have its mail delivered to address
+  <code style="font-family: Courier New"><span style="font-family: Arial">
+  80.68.80.228</span></code></span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family:Arial">the IP address
+  <code style="font-family: Courier New"><span style="font-family: Arial">
+  80.68.81.18</span></code> has the name <code style="font-family: Courier New">
+  <span style="font-family: Arial">abc.bytemark.co.uk</span></code></span></li>
+</ul>
+<p style="text-align:justify"><span style="font-family:Arial">These records are 
+“authoritative” because the person who owns the server claims that they are 
+correct in the global naming system, and is asserting that a content DNS service 
+provide these answers to anybody who asks for them. Content servers are usually 
+authoritative for a fixed set of domains, owned or administered by the person 
+who has set the server up.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">If a content 
+server does not itself know the answer to a particular DNS query, it may know 
+that the domain has been delegated to another server, and so may answer with a 
+referral instead. A referral is a hint to the client making the request that it 
+will find the answer from another content server.</span></p>
+<h3 style="text-align:justify" id="resolving-servers">
+<span style="font-size:
+12.0pt">Resolving servers</span></h3>
+<p style="text-align:justify"><span style="font-family:Arial">A resolving 
+server’s job is not to return any authoritative information directly. Its job is 
+to search for information on behalf of clients, and to return it. A resolving 
+server usually remembers past queries so that if a lot of people ask for the 
+same information, it can return it quickly without having to search for it 
+twice. Hence a resolving server is sometimes known as a ‘DNS cache’ or ‘caching 
+DNS resolver’. Most organisations providing internet access to a group of people 
+maintain their own resolving server or servers. They are necessary part of the 
+internet infrastructure because:</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-size: 10.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Most DNS information does not 
+change most of the time. Hence it makes sense for an organisation to set up 
+their own server which will be able to more quickly return DNS information that 
+is commonly requested by that particular organisation.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-size: 10.0pt; font-family: Symbol">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Resolving a DNS query from scratch 
+can be a complicated procedure, and most internet software (e.g., email clients, 
+web browsers) does not need to know how to do it. A commonly-used server to do 
+the job means internet applications need only have to deal with issuing a single 
+question and receiving a single answer.</span></p>
+<h2 style="text-align:justify" id="how-a-dns-query-is-resolved">
+<span style="font-size:12.0pt;font-family:Arial">How a DNS query is resolved</span></h2>
+<p style="text-align:justify"><span style="font-family:Arial">Below we explain 
+what happens when you type <code style="font-family: Courier New">
+<span style="font-family: Arial">www.bytemark.co.uk</span></code> into your 
+computer’s web browser.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">1.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Your web browser asks the 
+resolving DNS server what the address of <code style="font-family: Courier New">
+<span style="font-family: Arial">www.bytemark.co.uk</span></code> is. Your 
+computer already knows where the <strong>local</strong> resolving DNS server is 
+through its network configuration. For customers on the Bytemark network, the 
+resolving DNS servers are <code style="font-family: Courier New">
+<span style="font-family: Arial">80.68.80.24</span></code> and
+<code style="font-family: Courier New"><span style="font-family: Arial">
+80.68.80.25</span></code>. On a linux machine these addresses are listed in
+<code style="font-family: Courier New"><span style="font-family: Arial">/etc/resolv.conf</span></code>.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">2.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The Resolving DNS server does not 
+know the address. So it asks a root server the same question. The 13 root 
+servers have globally well-known IP addresses, and are run by a US-based company 
+called ICANN</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">3.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The root server replies that it 
+does not know, but it gives the address of the server which knows about
+<code style="font-family: Courier New"><span style="font-family: Arial">.uk</span></code> 
+domains. All UK domains are managed by a non-profit organisation called Nominet</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">4.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The resolving DNS server asks the
+<code style="font-family: Courier New"><span style="font-family: Arial">.uk</span></code> 
+server what the address of <code style="font-family: Courier New">
+<span style="font-family: Arial">www.bytemark.co.uk</span></code> is.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">5.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The
+<code style="font-family: Courier New"><span style="font-family: Arial">.uk</span></code> 
+server replies that it does not know, but it gives the address of the server 
+which knows about <code style="font-family: Courier New">
+<span style="font-family: Arial">.bytemark.co.uk</span></code> domain. This 
+server is (finally!) at an IP address which we manage, on one of our servers. We 
+pay Nominet an annual fee (via a domain registrar) to maintain this referral for 
+our domain, and for them to maintain the address as belonging to us.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">6.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The resolving DNS server asks the
+<code style="font-family: Courier New"><span style="font-family: Arial">.bytemark.co.uk</span></code> 
+server what the address of <code style="font-family: Courier New">
+<span style="font-family: Arial">www.bytemark.co.uk</span></code> is.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">7.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">Our server answers the query with 
+the IP address of <code style="font-family: Courier New">
+<span style="font-family: Arial">www.bytemark-hosting.co.uk</span></code>, and 
+marks the response as “authoritative”. This is an assertion that the answer is 
+correct and complete. It also adds to its reply that “this data is valid for 24 
+hours”, so that anyone who is asking can confidently re-use the information for 
+that time without having to issue another query.</span></p>
+<p style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Arial">8.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial">The resolving DNS server finally 
+has its answer, and can reply back to the web browser with the IP address. 
+Crucially it marks its answer as “non-authoritative”, so that the web browser 
+knows it has the information indirectly.</span></p>
+<h3 style="text-align:justify" id="the-commercial-side">
+<span style="font-size:
+12.0pt">The commercial side</span></h3>
+<p style="text-align:justify"><span style="font-family:Arial">Given the above, 
+you should be able to see the technical side of what has become quite a slick 
+commercial process. Your domain registrar, to whom you pay £10 or so per year 
+for their services per domain, ensures that your chosen name is redirected at 
+the content servers of your choice. Your registrar usually has paid to have 
+indirect access to the servers that run the top-level internet domains such as
+<code style="font-family: Courier New"><span style="font-family: Arial">.com</span></code>,
+<code style="font-family: Courier New"><span style="font-family: Arial">.net</span></code>,
+<code style="font-family: Courier New"><span style="font-family: Arial">.co.uk</span></code> 
+and so on.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">If you want to 
+tell your registrar that you wish to handle your own DNS, you need to give them 
+a minimum of two content server IP addresses to delegate to, and after that the 
+technical control over your domain is yours. You need to ensure that the IP 
+addresses which you nominate will respond authoritatively to queries for your 
+domain; if they do not, you have what is sometimes called a ‘lame delegation’.</span></p>
+<h3 style="text-align:justify"><span style="font-size:12.0pt">Multiple answers 
+to DNS queries</span></h3>
+<p style="text-align:justify"><span style="font-family:Arial">Our example above 
+makes a simplification: it pretends that DNS queries only ever have one answer. 
+In fact, certain queries usually return more than one answer. For instance if 
+you ask what the address of <code style="font-family: Courier New">
+<span style="font-family: Arial">www.yahoo.com</span></code> is, you’ll (at the 
+time of writing) get 13 different IPs supplied in the response. Each IP will 
+still respond with Yahoo’s home page, so that if one of them falls over, the 
+others will still keep Yahoo’s front page visible.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">In the example, if 
+you ask which server is responsible for the
+<code style="font-family: Courier New"><span style="font-family: Arial">.uk</span></code> 
+domain, you will get five different IPs supplied in response. All of them should 
+serve the same data; it is very important that machine which server content DNS 
+data for “top-level” domains are always available.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial">While you can 
+perform the same trick for your own web or mail services if you need resilience, 
+you will be forced to supply more than one DNS server when you ask your 
+registrar to re-delegate your domain. That is to say, it is a condition of 
+owning a domain that you must have two separate IPs which will answer 
+authoritatively for it.</span></p>
+<p align="center"><b><font face="Arial">
+<a href="../../../../Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

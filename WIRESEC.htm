@@ -1,0 +1,429 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><font color="#FF0000" size="6">
+<span style="font-family: Arial; font-weight: 700; text-transform: uppercase; text-decoration: underline">
+Wireless Security </span></font></p>
+<p align="justify"><span style="font-family: Arial">&nbsp;There are two approaches commonly used at 
+Rutgers: </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>WPA or possibly WEP for access 
+control and some level of privacy; supplemented by end to end encryption for 
+privacy </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>End to end encryption (typically 
+SSL) for privacy, and special gateway systems for access control (see below) </span></p>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">Generally small 
+installations use the first approach with WPA in &quot;personal&quot; mode, and larger 
+ones the second approach. While it is not common at Rutgers, 
+another possible approach for larger installations would be to use WPA in 
+&quot;enterprise&quot; mode. (However there is a significant user support implication to 
+that, because WPA in enterprise mode requires all of your users to have 802.1x 
+supplicant software on their systems and know how to use it.) </span></p>
+<p align="justify"><span style="font-family: Arial">This document will present WPA, then end to 
+end encryption, and finally the services appropriate for larger installations. 
+If you are planning to set up something for yourself or a few people in a 
+department, we recommend reading about WPA and end to end encryption. </span>
+</p>
+<p align="justify"><span style="font-family: Arial">A few installations use MAC address checks 
+for access control and end to end encryption for privacy. While this probably 
+meets the requirements of the Wireless policy, we do not recommend it. Managing 
+MAC addresses is difficult. It's generally better to use one of the two 
+approaches listed above. </span></p>
+<p class="Heading23" align="justify"><font face="Arial">
+<span style="font-size: 12.0pt; font-weight: 700">WPA and WEP </span></font></p>
+<p align="justify"><span style="font-family: Arial">WPA and WEP are technologies that &quot;encrypt&quot; 
+the traffic on your network. That is, they scramble it so that an attacker can't 
+make any sense of it. To unscramble it at the other end, all systems using it 
+must know a &quot;key&quot; or password. </span></p>
+<p align="justify"><span style="font-family: Arial">Note that WPA is now in a second generation, 
+referred to as WPA2. Unless otherwise specified, this document uses &quot;WPA&quot; to 
+refer to both. </span></p>
+<p align="justify"><span style="font-family: Arial">WPA and WEP provide both access control and 
+privacy. Privacy comes from the encryption. Access control comes from the fact 
+that someone must know the password to use your network. </span></p>
+<p align="justify"><span style="font-family: Arial">For this reason, for small networks, using 
+WPA is enough to meet the requirements of the Wireless policy. However you will 
+still want to make sure that any services that use a password or other private 
+information use SSL or some other type of end to end encryption. </span></p>
+<p align="justify"><span style="font-family: Arial">WEP is significantly less secure than WPA, 
+but can be used until your equipment can be upgraded to support WPA. While WEP 
+is widely regarded as insecure, it is still a lot better than nothing. </span>
+</p>
+<p align="justify"><span style="font-family: Arial">WPA has two modes, personal and enterprise. 
+For small installations you'll want to use personal mode. It just requires a 
+password. Enterprise mode is for larger installations, that have a Radius server 
+that will support WPA. </span></p>
+<p align="justify"><span style="font-family: Arial">The primary problem with WPA in personal 
+mode is that it has a single password, which you must tell to all users. That 
+becomes impractical for larger installations. </span></p>
+<p align="justify"><span style="font-family: Arial">WPA in enterprise mode requires each user to 
+login with their own username and password. That simplifies management in large 
+installations, because you don't have to distribute a common password to all 
+your users. However it is a bit more complex to implement: </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">Each user's system must have special 
+software to let the user login to the network. This software is referred to as 
+an &quot;802.1x supplicant&quot;. </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">The access point must support WPA 
+enterprise mode. The access point is configured to talk to a RADIUS server, 
+which is a central server that actually checks the password. </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">You must have a RADIUS server that 
+supports WPA enterprise mode. While the RADIUS server may have its own list of 
+usernames and passwords, it would be more common for it to talk to an LDAP or 
+Active Directory server, so that users login to the network with the same 
+password that they use for other services. </span></p>
+<p align="justify"><span style="font-family: Arial">For this reason, most large implementations 
+at Rutgers do not use enterprise mode. Instead they use separate gateway boxes 
+for access control, and depend upon end to end encryption for privacy. One can 
+argue that this is not as secure as WPA enterprise mode, but it avoids the 
+support implications of requiring users to login to the network with an 802.1x 
+supplicant. </span></p>
+<p class="Heading34" align="justify"><font face="Arial"><span style="font-size: 12.0pt">Choosing 
+a good password </span></font></p>
+<p align="justify"><span style="font-family: Arial">It is critical to use a good password. There 
+are attacks against WPA that will break your security if your password uses 
+words or any other well-known sequences. WPA allows passwords as long as 63 
+characters. We strongly recommend using a long random password, or at the very 
+least a long phrase (at least 20 characters, but preferably longer). The phrase 
+should not be taken from any web site or published work. Most software saves the 
+password, so you only need to type it once on each system. </span></p>
+<p align="justify"><span style="font-family: Arial">Even better than a long phrase is a truly 
+random password. This generates a random 32-character hex string. You can 
+combine two of them (and leave off one character) to get a 63-character 
+password. </span></p>
+<p class="Heading34" align="justify"><font face="Arial"><span style="font-size: 12.0pt">
+Background </span></font></p>
+<p align="justify"><span style="font-family: Arial">WEP &quot;Wireless Equivalent Privacy&quot; was part 
+of the original wireless specifications, so almost all hardware supports it. 
+Unfortunately it is also fairly insecure. Hackers can easily find out the 
+password and then do anything they want with your network. The software for 
+doing this is widely available. </span></p>
+<p align="justify"><span style="font-family: Arial">WPA &quot;Wifi Protected Access&quot; is a modified 
+version of WEP, which changes the effective key quite often. It is much more 
+secure than WEP. While there are theoretical attacks, it is currently believed 
+that they are not practical <b>as long as you use a good password </b>. </span>
+</p>
+<p align="justify"><span style="font-family: Arial">As of Sept 31, 2003, all new 802.11b and g 
+hardware that is tested for Wi-Fi certification must implement WPA. Thus WPA 
+should now be fairly widely available. </span></p>
+<p align="justify"><span style="font-family: Arial">WPA2 is a second-generation implementation, 
+based on new encryption technology. The original WPA used the WEP encryption, 
+improved by frequent key changes. In contrast, WPA2 is based on new encryption 
+technology, the Advanced Encryption Standard (AES). Certification for WPA2 
+started in September, 2004. As of March 13, 2006, all equipment using the WiFi 
+trademark must be certified for WPA2. </span></p>
+<p align="justify"><span style="font-family: Arial">It is possible to mix WPA and WPA2 clients 
+on a single network. As long as the access point supports WPA2 mixed mode, 
+systems that support WPA2 will use AES and older systems will use WPA (except 
+for broadcast or multicast traffic). </span></p>
+<p class="Heading34" align="justify"><font face="Arial"><span style="font-size: 12.0pt">Other 
+common precautions </span></font></p>
+<p align="justify"><span style="font-family: Arial">There are two other security precautions 
+available in most wireless hardware: </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">MAC address control </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">disabling SSID broadcast </span></p>
+<p align="justify"><span style="font-family: Arial">MAC address control is a feature -- 
+available on most access points -- that causes the access point only to talk to 
+specific wireless devices. Each device (e.g. the wireless card that you put in 
+your laptop) has a &quot;MAC address&quot; assigned to it. This address should be shown on 
+the card. It will be a 12-digit hex number. Sometimes it is shown with 
+punctuation, e.g. 00:07:50:03:6b:c0. 
+Other times it is simply 12 hex digits, e.g. 000750036bc0. You register this 
+address with the access point. The access point will only talk to cards that are 
+registered. </span></p>
+<p align="justify"><span style="font-family: Arial">In my opinion this is not necessary if you 
+are using WPA with reasonably good passwords, at least not if you have just a 
+few users. If you have a large user community, your password is likely to get 
+out. For larger installations, we recommend a gateway box with login controls 
+rather than MAC address control. </span></p>
+<p align="justify"><span style="font-family: Arial">&quot;SSID&quot; is the technical term for the network 
+name. You enter this into the access point when you set it up. (Don't leave the 
+name as the default, or you are likely to conflict with other access points in 
+your area. Normally you use your name or some name associated with your 
+department.) Access points normally advertise this name by broadcasting it 
+regularly. </span></p>
+<p align="justify"><span style="font-family: Arial">This broadcast is used by people as a 
+starting point to find networks to attack. For that reason, most access points 
+let you turn off broadcast of the SSID. Often this is called making it a &quot;closed 
+network.&quot; In theory, closed networks are more secure, because an attacker won't 
+notice them. </span></p>
+<p align="justify"><span style="font-family: Arial">However in practice it is probably not a 
+good idea. First, hacker software has other ways of locating closed networks. 
+Anyone who can break WEP or WPA will be using tools that do not depend upon SSID 
+broadcasts. </span></p>
+<p align="justify"><span style="font-family: Arial">Second, disabling SSID broadcasts makes it 
+more difficult for other people to set up and manage nearby networks. It's 
+useful to see how many networks are operating on each channel, without having to 
+go to hacker tools. </span></p>
+<p class="Heading23" align="justify"><font face="Arial"><span style="font-size: 12.0pt">End to 
+end encryption: SSL, SSH, etc</span></font></p>
+<p align="justify"><span style="font-family: Arial">The approaches described in the previous 
+section all work at the network level. That is, they are based on features of 
+the network cards and access points. This is extremely useful protection, 
+particluarly if you can use WPA or WPA2. </span></p>
+<p align="justify"><span style="font-family: Arial">However most security experts believe that 
+encrypting at the network level isn't enough. Thus we strongly urge you to use 
+end to end encryption. In fact our larger installations depend upon end to end 
+encryption, and do not use WPA. (However they then need a separate method to 
+control access.) </span></p>
+<p align="justify"><span style="font-family: Arial">End to end encrytion means that the whole 
+conversation is encrypted, from your PC to the service you talking to. The most 
+commonly used end to end encryption is SSL. As long as you are using SSL to talk 
+to a web server, your conversation is private. It doesn't matter whether someone 
+can watch your wireless network. They won't be able to make sense of what they 
+are seeing, because it is encrypted. It is possible to use SSL with other 
+services such as email. </span></p>
+<p align="justify"><span style="font-family: Arial">SSH is another common end to end method of 
+encryption. SSH is often used as a replacement for telnet: there are SSH clients 
+that let you log into systems just as telnet would. The difference is that the 
+SSH connection is encrypted. SSH can also be used with other services, such as 
+copying files (a replacement for FTP in many circumstances). </span></p>
+<p align="justify"><span style="font-family: Arial">Thus one way to deal with the privacy 
+problem is to make sure that users only use services that are secured with SSL, 
+SSH, or some other encryption technology. In particular, you would need to make 
+sure that any service that requires a password uses encryption. </span></p>
+<p align="justify"><span style="font-family: Arial">While possible, this solution is going to 
+require great care. You will need to </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>Examine every network service 
+used by your users </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>Verify that they can all be 
+accessed using a secure protocol such as SSL and SSH </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">3.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>Verify that your users have 
+configured their systems to use the secure protocol. (In many cases access is 
+insecure by default -- users need to enable encryption.) </span></p>
+<p align="justify"><span style="font-family: Arial">OIT has largely finished this process for 
+its public services. As of July, 2003, all email and web services using the 
+standard Rutgers password must be handled using SSL or SSH. </span></p>
+<p align="justify"><span style="font-family: Arial">However if you are going to depend upon end 
+to end encryption, you will need to implement similar precautions for your 
+departmental services, and any other services used by your users. </span></p>
+<p class="Heading34" align="justify"><font face="Arial">
+<span style="font-size: 12.0pt; font-weight: 700">Using Valid Certificates
+</span></font></p>
+<p align="justify"><span style="font-family: Arial">If you are going to depend upon end to end 
+encryption, you will need to caution users to pay attention to security 
+warnings. As noted above, it is particularly easy to impersonate a well-known 
+server on a wireless network, or to do what is called a &quot;man in the middle 
+attack.&quot; The best protection against this is the fact that SSH and SSL use 
+digital certificates to verify the identify of the server. </span></p>
+<p align="justify"><span style="font-family: Arial">Unfortunately the user has to pay attention 
+in order to get the benefits of this protection. If you are talking to a fake 
+server, the user will normally see an error message saying that there is 
+something wrong with the certificate presented by the server. If users commonly 
+click through error messages, they may end up talking to a rogue server. That 
+server can then steal their password. If the rogue server passes the transaction 
+through to the real server, the user may never know that their password has been 
+stolen. More ambitious attacks could steal any information that the user has 
+access to, and even change data on servers. </span></p>
+<p align="justify"><span style="font-family: Arial">If we're going to ask users to start paying 
+attention to messages about certificates, this means we are going to have to 
+start using valid certificates on all servers. Currently OIT buys commercial 
+certificates from Verisign or Thawte for our major servers. However experimental 
+or small-scale services may use &quot;self-signed&quot; certificates. These certificates 
+will generate warning messages. </span></p>
+<p align="justify"><span style="font-family: Arial">We suggest that all areas of the University 
+use commercial certificates for any service that is going to be used widely, 
+particularly by wireless users. As an alternative, you may ask the RULink 
+Project to sign a certificate request for you. But if you do this, you'll need 
+to make sure that your users load the RULink Project CA Certificate. </span></p>
+<p class="Heading23" align="justify"><font face="Arial">
+<span style="font-size: 12.0pt; font-weight: 700">Access control </span></font>
+</p>
+<p align="justify"><span style="font-family: Arial">Access control means limiting who can use 
+your network. This is important for two primary reasons: </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">If others are using your network, it is 
+likely to be slower for your authorized users. </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">The University periodically receives 
+reports of abuse from systems on the network. E.g. someone may be sending spam 
+or threatening email. Those reports will be sent to department that operates the 
+network from which the problem originated. If you don't have any way to limit 
+access to your network, you have no way to know who might have done it, nor any 
+way to prevent reoccurrence. </span></p>
+<p align="justify"><span style="font-family: Arial">WPA is intended primarily to protect 
+privacy. However it also provides a reasonable degree of access control, as long 
+as you have few enough users that you can control who has access to the 
+password, or you use WPA in enterprise mode. </span></p>
+<p align="justify"><span style="font-family: Arial">For larger installations, we suggest using a 
+wireless gateway, or WPA operating in enterprise mode. Both of these require the 
+user to login before they get access. Both let you use departmental accounts or 
+the Rutgers NetID. </span></p>
+<p align="justify"><span style="font-family: Arial">Wireless gateways are boxes placed between 
+the wireless network and the rest of RUNet. They keep track of active users (by 
+MAC address), and require a login for a new user. Normally they use a web 
+interface. They trap attempts to access any web site, and put up a login screen.
+</span></p>
+<p align="justify"><span style="font-family: Arial">Rutgers uses two different types of wireless 
+gateway: </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">Bluesocket systems </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<font face="Arial"><span style="font-size: 10.0pt">·</span></font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="font-family: Arial">Linux systems using special-purpose 
+software, such as the system from the New Brunswick computer science department
+</span></p>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">Both provide essentialy 
+the same features, although the Bluesocket systems are easier to manage. The OIT 
+campus divisions are prepared to provide Bluesocket-based service to any 
+department that needs it, on a contract basis. </span></p>
+<p class="Heading23" align="justify"><font face="Arial">
+<span style="font-size: 12.0pt; font-weight: 700">Basic security </span></font>
+</p>
+<p align="justify"><span style="font-family: Arial">The discussion above has focused on issues 
+that are specific to wireless technology. You also need to make sure that all 
+systems you use have good basic security. If you are using general-purpose 
+systems (e.g. Windows or Linux) in any part of your infrastructure, they need to 
+be hardened. If you are using &quot;appliances&quot; or other sorts of dedicated hardware, 
+look carefully at their security. Do they have any remote management, e.g. a web 
+interface? If so, make sure you change any default passwords, and restrict 
+access as much as possible (e.g. just to workstations from which you will 
+actually be doing management, if this is possible). </span></p>
+<p align="justify"><span style="font-family: Arial">These days even access points are 
+&quot;intelligent&quot;, so you need to do the same kind of security checks that you would 
+with any other component. Make sure you have complete documentation for all ways 
+to manage your access points. </span></p>
+<p align="justify"><span style="font-family: Arial">Many devices, including both access points 
+and appliances, permit management using SNMP (Simple Network Management 
+Protocol). This is a standard protocol for managing a variety of devices. There 
+are common tools for dealing with SNMP devices. SNMP management has both good 
+points and dangers. You can sometimes do things using SNMP that you can't using 
+the vendor's GUI interface. E.g. with some products you can disable SSID 
+broadcasts using SNMP but not with their normal interface. However SNMP is also 
+a security issue: it is often shipped using a default password. When you are 
+changing passwords, make sure you change the SNMP password (often called the 
+&quot;community&quot;) as well as the more visible ones. Indeed I would normally disable 
+SNMP unless I'm actually using it. </span></p>
+<p class="Heading23" align="justify"><font face="Arial">
+<span style="font-size: 12.0pt; font-weight: 700">VPNs </span></font></p>
+<p align="justify"><span style="font-family: Arial">Unfortunately SSL and SSH are not yet 
+sufficiently widespread that we can be sure all activity is covered by one or 
+the other of them. Another approach is to use VPN (&quot;virtual private network&quot;) 
+technology. This creates another layer of networking on top of the wireless 
+network. This layer is encrypted. Because VPNs are implemented in software (at 
+least on the user's end), they are independent of any weaknesses in the network 
+technology, and they can be used with any vendor's network cards. Windows and 
+several other operating systems come with the software needed to use a VPN. 
+However you will need to supply something on the other end. </span></p>
+<p align="justify"><span style="font-family: Arial">There are similarities between SSL/SSH and a 
+VPN: both encrypt your communications. The difference is that SSL and SSH are 
+used for individual connections. E.g. when you are talking to a web server using 
+SSL, the specific connection between you and the web server is encrypted using 
+SSL. With a VPN, all of your traffic goes through a single encrypted connection. 
+If every service you talk to supports SSL or SSH, the result is the same. </span>
+</p>
+<p><span style="font-family: Arial">A typical VPN setup will look like this:
+</span></p>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |*access point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user laptop</span></pre>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">normal&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  user laptop</span></pre>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">dept&nbsp;&nbsp;&nbsp; |--- VPN box -----|*access point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user laptop</span></pre>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">network |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; air&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user laptop</span></pre>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; wireless |*access point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user laptop</span></pre>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; support |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user laptop</span></pre>
+<pre style="tab-stops: 45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt; font-size: 10.0pt; font-family: Courier New; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt; background: #EFEFEF"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; network |*access point&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; user laptop</span></pre>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">The two vertical lines 
+represent wired networks. The one on the left is a normal departmental network, 
+part of RUnet. The one to its right is the wireless support network, a separate 
+wired network or VLAN used just to connect access points. Its only connection to 
+RUnet is through the VPN box. The wireless access points are connected to that 
+wireless support network. </span></p>
+<p align="justify"><span style="font-family: Arial">In order to access any system at Rutgers 
+or the Internet, users must first establish a VPN connection to the box. Once 
+the VPN is established, all of their communcations are encrypted. In fact all of 
+their communications go over a single connection to the VPN box. That box then 
+separates out the various connections and sends them to appropriate places 
+within RUnet or the Internet. Because all access to RUnet goes through the VPN 
+box, intruders can't access RUnet. </span></p>
+<p align="justify"><span style="font-family: Arial">The VPN box should be configured so that 
+users must establish a VPN from their laptop to it. In the process of 
+establishing the VPN, they need a username and a password. Thus this approach 
+deals with both access and privacy issues. It deals with access issues, because 
+users must specify a username and password in order to establish the VPN. It 
+deals with privacy issues because all traffic is encrypted. </span></p>
+<p align="justify"><span style="font-family: Arial">The significant drawbacks to VPNs are </span>
+</p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>All users will need to set up VPN 
+software. This may require significant user support. </span></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 75.0pt" align="justify">
+<span style="font-family: Arial">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt">&nbsp;&nbsp;&nbsp;
+</span>There are situations where this 
+approach is probably not practical. The primary one involves guests. </span></p>
+<p class="MsoNormal" align="justify"><span style="font-family: Arial">If you take this approach, 
+you need to think about how you will handle guests. E.g. if you host a 
+conference, and attendees expect to use laptops, it may not be practical to get 
+all of them to set up VPN software. You may also have people from other 
+institutions that need to access their home institutions using a corporate 
+firewall. It is normally not practical to use two VPN's at once. So if someone 
+needs to use VPN software to get into their home network, they probably will not 
+be able to use your wireless VPN. For these reasons people implementing this 
+approach should plan on having the ability for selected users to bypass the VPN. 
+However this bypass needs to be controlled so that normal Rutgers 
+users don't use it. Otherwise their passwords will be compromised. </span></p>
+<p align="justify"><span style="font-family: Arial">During 2003, OIT implemented wireless 
+networking in a number of locations using hardware from Bluesocket. This 
+hardware was configured to require all connections to use a VPN. Unfortunately, 
+we found that there were serious problems configuring client software to use the 
+VPN's. We have run into endless configuration and compatibility problems. Thus 
+as of late October, 2003, we made VPN use optional. We suspect most users will 
+not enable it. Thus OIT will be relying upon end to end encryption for privacy, 
+and on the login system implemented by the Bluesocket systems for access 
+control. </span></p>
+<p class="Heading23" align="justify"><font face="Arial">
+<span style="font-size: 12.0pt; font-weight: 700">Summary </span></font></p>
+<p align="justify"><span style="font-family: Arial">Note that every one of the alternatives 
+below has a significant requirement for user support. If you are going to use 
+wireless networking, you need to be prepared for this. In evaluating 
+network-related hardware. 1. If you currently have a network with no security at 
+all, the easiest thing for you to do is to enable WPA or WEP. </span></p>
+<p align="justify"><span style="font-family: Arial">There is a significant support implication 
+to this approach: you will need to make sure that all users have the proper key 
+or password configured on their system. If you also restrict on the basis of NIC 
+address, you will need to maintain a list of NIC addresses of every one of your 
+users. </span></p>
+<p align="justify"><span style="font-family: Arial">2. For larger installations, we recommend 
+putting a wireless gateway between your wireless network and the rest of the 
+network, or using WPA in Enterprise 
+mode. Note however that WPA in enterprise mode will require all users to have 
+and know how to use 801.1x supplicant software. We do not yet have enough 
+experience to know how practical this is. </span></p>
+<p align="justify"><span style="font-family: Arial">3. In either case, we recommend making sure 
+that all services you provide to users are protected by end to end encryption (SSL, 
+ssh, etc). This is required if you use the Rutgers NetID and password for the 
+service.&nbsp;</span></p>
+<p class="MsoNormal" align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

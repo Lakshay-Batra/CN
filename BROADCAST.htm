@@ -1,0 +1,183 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<b>
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font face="Arial" color="#FF0000" size="6">Broadcast Routing</font></span></p>
+<p ALIGN="LEFT"><font FACE="Arial" COLOR="#339a33">&nbsp;&nbsp;&nbsp; 
+Broadcasting:</font></b><font FACE="Arial" COLOR="#c1c1c1"> </font></p>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-sending a packet to all N receivers</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-routing updates in LS routing</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-service/request advertisement in application layer (e.g.,</font><font FACE="Arial" COLOR="#c1c1c1">
+</font><font FACE="Arial">Novell)</p>
+</font><b>
+<p ALIGN="LEFT"><font FACE="Arial" COLOR="#339a33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Broadcast algorithm 1:</font></b><font FACE="Arial" COLOR="#c1c1c1"> </font>
+<font FACE="Arial">N point-to-point sends</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial" COLOR="#c1c1c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-</font><font FACE="Arial">send packet to every destination, point-to-point</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-wasteful of bandwidth</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-requires knowledge of all destinations</p>
+</font><b>
+<p ALIGN="LEFT"><font FACE="Arial" COLOR="#339a33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Broadcast algorithm 2: </font></b><font FACE="Arial">flooding</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-when node receives a broadcast packet, send it out on</font><font FACE="Arial" COLOR="#c1c1c1">
+</font><font FACE="Arial">every link</p>
+</font>
+<p ALIGN="LEFT"><font FACE="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-node may receive many copies of broadcast packet, hence</p>
+</font><font FACE="Arial" COLOR="#c1c1c1">
+<p ALIGN="LEFT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+-</font><font FACE="Arial">must be able</font><font FACE="Arial" COLOR="#c1c1c1">
+</font><font FACE="Arial">to detect duplicates.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Broadcast Routing – Delivering a packet sent from a 
+source node to all other nodes in the network.</font></p>
+<p class="MsoNormal"><font face="Arial">&nbsp;•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Multicast Routing – </font>
+<span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;</span><font face="Arial">Delivering 
+a packet sent from a source node to a subset of the other nodes in the network.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in"><b>
+<span style="font-size: 12.0pt; font-family: Arial">Broadcast Routing: 
+N-way-unicast</span></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">There are N destinations.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">The source sends a copy of the packet to each 
+destination.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">The source node makes N copies of the packet addresses 
+each copy to a different destination</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">The source transmits the N copies to the N 
+destinations using unicast routing.</font></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><font face="Arial"><b>N-way-unicast Drawbacks</b></font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Drawback: </font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Inefficiency: if the source node is connected to the 
+rest of the network via single link, N separate copies of the same packet will 
+traverse this single link.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Solution:</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Sending only a single copy of the packet over the 
+first hop.</font></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><font face="Arial"><b>Broadcast Routing: Uncontrolled 
+Flooding</b></font></p>
+<p class="MsoNormal" style="margin-left: .25in"><font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">The source node sends a copy of the packet to all of 
+its neighbors.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">When a node receives a broadcast packet, it duplicates 
+the packet and forwards it to all of its neighbors (except the sender).</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">If the graph is connected, at the end of the process 
+every node in the graph will have a copy of the packet. </font></p>
+<p class="MsoNormal"><font face="Arial">&nbsp;</font></p>
+<p class="MsoNormal"><font face="Arial">&nbsp;</font></p>
+<p class="MsoNormal"><font face="Arial"><b>Broadcast Routing: Controlled 
+Flooding</b></font></p>
+<p class="MsoNormal"><font face="Arial">&nbsp;•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-style: normal; font-variant: normal; font-family: Arial; font-weight: 700">&nbsp;&nbsp;
+</span><b><font face="Arial">Sequence number controlled flooding:</font></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">A source node puts its address and broadcast sequence 
+number into a broadcast packet.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">The source sends the packet to all of its neighbors.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Each node maintains a list of the source address and 
+sequence number of each broadcast packet it has received.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">When a node receives a broadcast packet, it checks 
+whether the packet is in the list. If so, the packet is dropped, otherwise, the 
+packet is duplicated and forwarded.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: .5in">
+<font face="Arial">•</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-style: normal; font-variant: normal; font-family: Arial; font-weight: 700">&nbsp;&nbsp;
+</span><b><font face="Arial">Reverse path forwarding (RPF):</font></b></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Router transmits the packet to all of its outgoing 
+links only if the packet arrived on the link that is on its own shortest path 
+back to the source.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Otherwise, the router discard the packet.</font></p>
+<p class="MsoNormal" style="text-indent: -.25in; margin-left: 1.0in">
+<font face="Arial">–</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><font face="Arial">Each router has to know the next neighbor on its 
+unicast shortest path to the sender. </font></p>
+<p ALIGN="LEFT">&nbsp;</p>
+<font FACE="Arial">
+<p ALIGN="LEFT">• <b>Possible solutions Broadcast Routing:</p>
+</b>
+<p ALIGN="LEFT">– Flooding: Each node sends packet on all outgoing links</p>
+<p ALIGN="LEFT">Discard packets received a second time</p>
+<p ALIGN="LEFT">– Spanning Tree Routing: Send packet along a tree that includes 
+all of</p>
+<p ALIGN="LEFT">the nodes in the network</p>
+</font>
+<p>&nbsp;</p>
+<p align="center"><font face="Arial">
+<img src="broadcast.gif" width="650" height="60"><br>
+<img alt="Broadcast Routing Illustration (13.1 KB)" src="broad.gif" border="0" width="647" height="384">
+</font></p>
+<font face="Arial">
+<p>The <b>Broadcast Routing</b> function duplicates the data from the 
+originating device (in this example: serial) to several other devices at the 
+same time. The duplicated data can be selectively routed to specific addresses 
+or ports using the same or different protocols. In this example, a Gateway 1000 
+sends the data to several servers using TCP/IP, FTP and UDP. </p>
+<p>Broadcast routing is designed for uni-directional systems (for example: stock 
+market trade data). The data can be received from any port and directed to 
+anywhere else using the routing functions available through the Gateway. This 
+flexibility can simplify the design of backup systems by allowing the data to be 
+converted to other protocols and topologies.</p>
+</font>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

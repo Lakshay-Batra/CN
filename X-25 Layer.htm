@@ -1,0 +1,301 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h2 class="p_H_Head1" align="center"><font color="#FF0000" size="6">
+<span lang="EN-GB" style="font-family: Arial; text-decoration: underline; text-transform: uppercase">
+X-25 data link layer</span></font></h2>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">X.25</span> is an 
+International Telecommunication Union-Telecommunication Standardization Sector (ITU-T) 
+protocol standard for WAN communications that defines how connections between 
+user devices and network devices are established and maintained. X.25 is 
+designed to operate effectively regardless of the type of systems connected to 
+the network. It is typically used in the packet-switched networks (PSNs) of 
+common carriers, such as the telephone companies. Subscribers are charged based 
+on their use of the network. The development of the X.25 standard was initiated 
+by the common carriers in the 1970s. At that time, there was a need for WAN 
+protocols capable of providing connectivity across public data networks (PDNs). 
+X.25 is now administered as an international standard by the ITU-T. </font></p>
+<h2 class="p_H_Head1"><font face="Arial">X.25 Devices and Protocol Operation
+</font></h2>
+<p class="pB1_Body1"><font face="Arial">X.25 network devices fall into three 
+general categories: data terminal equipment (DTE), data circuit-terminating 
+equipment (DCE), and packet-switching exchange (PSE). Data terminal equipment 
+devices are end systems that communicate across the X.25 network. They are 
+usually terminals, personal computers, or network hosts, and are located on the 
+premises of individual subscribers. DCE devices are communications devices, such 
+as modems and packet switches, that provide the interface between DTE devices 
+and a PSE, and are generally located in the carrier's facilities. PSEs are 
+switches that compose the bulk of the carrier's network. They transfer data from 
+one DTE device to another through the X.25 PSN. Figure 17-1 illustrates the 
+relationships among the three types of X.25 network devices. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-1 DTEs, DCEs, and PSEs Make 
+Up an X.25 Network</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020557" height="248" hspace="0" src="ct841701.jpg" width="552" border="0"></font></div>
+<h3 class="p_H_Head2"><font face="Arial">Packet Assembler/Disassembler </font>
+</h3>
+<p class="pB1_Body1"><font face="Arial">The
+<span style="font-weight: normal; font-style: italic">packet assembler/disassembler 
+(PAD)</span> is a device commonly found in X.25 networks. PADs are used when a 
+DTE device, such as a character-mode terminal, is too simple to implement the 
+full X.25 functionality. The PAD is located between a DTE device and a DCE 
+device, and it performs three primary functions: buffering (storing data until a 
+device is ready to process it), packet assembly, and packet disassembly. The PAD 
+buffers data sent to or from the DTE device. It also assembles outgoing data 
+into packets and forwards them to the DCE device. (This includes adding an X.25 
+header.) Finally, the PAD disassembles incoming packets before forwarding the 
+data to the DTE. (This includes removing the X.25 header.) Figure 17-2 
+illustrates the basic operation of the PAD when receiving packets from the X.25 
+WAN. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-2 The PAD Buffers, 
+Assembles, and Disassembles Data Packets</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020565" height="279" hspace="0" src="x252.jpg" width="552" border="0"></font></div>
+<p class="pTC_TableCap">&nbsp;</p>
+<h3 class="p_H_Head2"><font face="Arial">X.25 Session Establishment </font></h3>
+<p class="pB1_Body1"><font face="Arial">X.25 sessions are established when one 
+DTE device contacts another to request a communication session. The DTE device 
+that receives the request can either accept or refuse the connection. If the 
+request is accepted, the two systems begin full-duplex information transfer. 
+Either DTE device can terminate the connection. After the session is terminated, 
+any further communication requires the establishment of a new session. </font>
+</p>
+<h3 class="p_H_Head2"><font face="Arial">X.25 Virtual Circuits </font></h3>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">virtual circuit</span> is 
+a logical connection created to ensure reliable communication between two 
+network devices. A virtual circuit denotes the existence of a logical, 
+bidirectional path from one DTE device to another across an X.25 network. 
+Physically, the connection can pass through any number of intermediate nodes, 
+such as DCE devices and PSEs. Multiple virtual circuits (logical connections) 
+can be multiplexed onto a single physical circuit (a physical connection). 
+Virtual circuits are demultiplexed at the remote end, and data is sent to the 
+appropriate destinations. Figure 17-3 illustrates four separate virtual circuits 
+being multiplexed onto a single physical circuit. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-3 Virtual Circuits Can Be 
+Multiplexed onto a Single Physical Circuit</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020576" height="179" hspace="0" src="ct841703.jpg" width="552" border="0"></font></div>
+<p class="pB1_Body1"><font face="Arial">Two types of X.25 virtual circuits 
+exist: switched and permanent.
+<span style="font-weight: normal; font-style: italic">Switched virtual circuits</span>
+<span style="font-weight: normal; font-style: italic">(SVCs)</span> are 
+temporary connections used for sporadic data transfers. They require that two 
+DTE devices establish, maintain, and terminate a session each time the devices 
+need to communicate.<span style="font-weight: normal; font-style: italic"> 
+Permanent virtual circuits (PVCs)</span> are permanently established connections 
+used for frequent and consistent data transfers. PVCs do not require that 
+sessions be established and terminated. Therefore, DTEs can begin transferring 
+data whenever necessary because the session is always active. </font></p>
+<p class="pB1_Body1"><font face="Arial">The basic operation of an X.25 virtual 
+circuit begins when the source DTE device specifies the virtual circuit to be 
+used (in the packet headers) and then sends the packets to a locally connected 
+DCE device. At this point, the local DCE device examines the packet headers to 
+determine which virtual circuit to use and then sends the packets to the closest 
+PSE in the path of that virtual circuit. PSEs (switches) pass the traffic to the 
+next intermediate node in the path, which may be another switch or the remote 
+DCE device. </font></p>
+<p class="pB1_Body1"><font face="Arial">When the traffic arrives at the remote 
+DCE device, the packet headers are examined and the destination address is 
+determined. The packets are then sent to the destination DTE device. If 
+communication occurs over an SVC and neither device has additional data to 
+transfer, the virtual circuit is terminated. </font></p>
+<h2 class="p_H_Head1"><font face="Arial">The X.25 Protocol Suite </font></h2>
+<p class="pB1_Body1"><font face="Arial">The X.25 protocol suite maps to the 
+lowest three layers of the OSI reference model. The following protocols are 
+typically used in X.25 implementations: Packet-Layer Protocol (PLP), Link Access 
+Procedure, Balanced (LAPB), and those among other physical-layer serial 
+interfaces (such as EIA/TIA-232, EIA/TIA-449, EIA-530, and G.703). Figure 17-4 
+maps the key X.25 protocols to the layers of the OSI reference model. </font>
+</p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-4 Key X.25 Protocols Map to 
+the Three Lower Layers of the OSI Reference Model </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020590" height="297" hspace="0" src="ct841704.jpg" width="552" border="0"></font></div>
+<h3 class="p_H_Head2"><font face="Arial">Packet-Layer Protocol </font></h3>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">PLP</span> is the X.25 
+network layer protocol. PLP manages packet exchanges between DTE devices across 
+virtual circuits. PLPs also can run over Logical Link Control 2 (LLC2) 
+implementations on LANs and over Integrated Services Digital Network (ISDN) 
+interfaces running Link Access Procedure on the D channel (LAPD). </font></p>
+<p class="pB1_Body1"><font face="Arial">The PLP operates in five distinct modes: 
+call setup, data transfer, idle, call clearing, and restarting. </font></p>
+<p class="pB1_Body1"><font face="Arial">Call setup mode is used to establish 
+SVCs between DTE devices. A PLP uses the X.121 addressing scheme to set up the 
+virtual circuit. The call setup mode is executed on a per-virtual-circuit basis, 
+which means that one virtual circuit can be in call setup mode while another is 
+in data transfer mode. This mode is used only with SVCs, not with PVCs. </font>
+</p>
+<p class="pB1_Body1"><font face="Arial">Data transfer mode is used for 
+transferring data between two DTE devices across a virtual circuit. In this 
+mode, PLP handles segmentation and reassembly, bit padding, and error and flow 
+control. This mode is executed on a per-virtual-circuit basis and is used with 
+both PVCs and SVCs. </font></p>
+<p class="pB1_Body1"><font face="Arial">Idle mode is used when a virtual circuit 
+is established but data transfer is not occurring. <br>
+It is executed on a per-virtual-circuit basis and is used only with SVCs. </font>
+</p>
+<p class="pB1_Body1"><font face="Arial">Call clearing mode is used to end 
+communication sessions between DTE devices and to terminate SVCs. This mode is 
+executed on a per-virtual-circuit basis and is used only with SVCs. </font></p>
+<p class="pB1_Body1"><font face="Arial">Restarting mode is used to synchronize 
+transmission between a DTE device and a locally connected DCE device. This mode 
+is not executed on a per-virtual-circuit basis. It affects all the DTE device's 
+established virtual circuits. </font></p>
+<p class="pB1_Body1"><font face="Arial">Four types of PLP packet fields exist:
+</font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">General 
+Format Identifier (GFI)</span>—Identifies packet parameters, such as whether the 
+packet carries user data or control information, what kind of windowing is being 
+used, and whether delivery confirmation is required. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">Logical 
+Channel Identifier (LCI)</span>—Identifies the virtual circuit across the local 
+DTE/DCE interface. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">Packet 
+Type Identifier (PTI)</span>—Identifies the packet as one of 17 different PLP 
+packet types. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">User 
+Data</span>—Contains encapsulated upper-layer information. This field is present 
+only in data packets. Otherwise, additional fields containing control 
+information are added. </font></p>
+<h3 class="p_H_Head2"><font face="Arial">Link Access Procedure, Balanced </font>
+</h3>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">LAPB</span> is a data link 
+layer protocol that manages communication and packet framing between DTE and DCE 
+devices. LAPB is a bit-oriented protocol that ensures that frames are correctly 
+ordered and error-free. </font></p>
+<p class="pB1_Body1"><font face="Arial">Three types of LAPB frames exist: 
+information, supervisory, and unnumbered. The information frame (I-frame) 
+carries upper-layer information and some control information. I-frame functions 
+include sequencing, flow control, and error detection and recovery. I-frames 
+carry send- and receive-sequence numbers. The supervisory frame (S-frame) 
+carries control information. S-frame functions include requesting and suspending 
+transmissions, reporting on status, and acknowledging the receipt of I-frames. 
+S-frames carry only receive-sequence numbers. The unnumbered frame (U frame) 
+carries control information. U-frame functions include link setup and 
+disconnection, as well as error reporting. U frames carry no sequence numbers.
+</font></p>
+<h3 class="p_H_Head2"><font face="Arial">The X.21bis Protocol </font></h3>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">X.21bis</span> is a 
+physical layer protocol used in X.25 that defines the electrical and mechanical 
+procedures for using the physical medium. X.21bis handles the activation and 
+deactivation of the physical medium connecting DTE and DCE devices. It supports 
+point-to-point connections, speeds up to 19.2 kbps, and synchronous, full-duplex 
+transmission over four-wire media. Figure 17-5 shows the format of the PLP 
+packet and its relationship to the LAPB frame and the X.21bis frame. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-5 The PLP Packet Is 
+Encapsulated Within the LAPB Frame and the X.21bis Frame</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020627" height="372" hspace="0" src="ct841705.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1"><font face="Arial">LAPB Frame Format </font></h2>
+<p class="pB1_Body1"><font face="Arial">LAPB frames include a header, 
+encapsulated data, and a trailer. Figure 17-6 illustrates the format of the LAPB 
+frame and its relationship to the PLP packet and the X.21bis frame. </font></p>
+<p class="pB1_Body1"><font face="Arial">The following descriptions summarize the 
+fields illustrated in Figure 17-6: </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">Flag</span>—Delimits 
+the beginning and end of the LAPB frame. Bit stuffing is used to ensure that the 
+flag pattern does not occur within the body of the frame. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">Address</span>—Indicates 
+whether the frame carries a command or a response. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">Control</span>—Qualifies 
+command and response frames and indicates whether the frame is an I-frame, an 
+S-frame, or a U-frame. In addition, this field contains the frame's sequence 
+number and its function (for example, whether receiver-ready or disconnect). 
+Control frames vary in length depending on the frame type. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">Data</span>—Contains 
+upper-layer data in the form of an encapsulated PLP packet. </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0"><span style="font-weight: bold; font-style: normal">FCS</span>—Handles 
+error checking and ensures the integrity of the transmitted data. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-6 An LAPB Frame Includes a 
+Header, a Trailer, and Encapsulated Data</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020645" height="323" hspace="0" src="ct841706.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1"><font face="Arial">X.121 Address Format </font></h2>
+<p class="pB1_Body1"><font face="Arial">X.121 addresses are used by the X.25 PLP 
+in call setup mode to establish SVCs. Figure <br>
+17-7 illustrates the format of an X.121 address. </font></p>
+<p class="pB1_Body1"><font face="Arial">The X.121 Address field includes the 
+International Data Number (IDN), which consists of two fields: the Data Network 
+Identification Code (DNIC) and the National Terminal Number (NTN). </font></p>
+<p class="pB1_Body1"><font face="Arial">DNIC is an optional field that 
+identifies the exact PSN in which the destination DTE device is located. This 
+field is sometimes omitted in calls within the same PSN. The DNIC has two 
+subfields: Country and PSN. The Country subfield specifies the country in which 
+the destination PSN is located. The PSN field specifies the exact PSN in which 
+the destination DTE device is located. </font></p>
+<p class="pB1_Body1"><font face="Arial">The NTN identifies the exact DTE device 
+in the PSN for which a packet is destined. This field varies in length. </font>
+</p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;17-7 The X.121 Address 
+Includes an IDN Field</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020659" hspace="0" src="ct841707.jpg" border="0" width="552" height="313"></font></div>
+<h2 class="p_H_Head1"><font face="Arial">Summary </font></h2>
+<p class="pB1_Body1"><font face="Arial">X.25 is an ITU-T standard protocol that 
+defines how connections between user devices and network devices are established 
+and maintained, and that operates effectively regardless of the type of systems 
+connected to the network. X.25 devices include DTEs, DCEs, and PSNs. X.25 
+connections contain both SVCs and PVCs within the physical circuit. X.25 uses 
+the following three protocols, which map to the bottom three layers of the OSI 
+reference model: </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">PLP, 
+which maps to the network layer </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">LAPB, 
+which maps to the data link layer </font></p>
+<p class="pBu1_Bullet1"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">X.21bis, 
+EIA/TIA-232, EIA/TIA-449, EIA-530, and G.703, which map to the physical layer
+</font></p>
+<h2 class="p_H_Head1"><font face="Arial">Review Questions </font></h2>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">In 
+what kind of networks does X.25 generally operate? </span></font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>It is typically 
+used in packet-switched networks of common carriers, such as the telephone 
+companies. </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Name 
+the three general categories into which X.25 devices fall. </span></font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>DTEs, DCEs, and 
+PSEs. </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+are the three main functions of the PAD? </span></font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Buffering, packet 
+assembly, and packet disassembly. </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Name 
+the X.25 protocol suite and the layers in the OSI reference model to which they 
+map. </span></font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>PLP: network layer; 
+LAPB: data link layer; X.21bis, EIA/TIA-232, EIA/TIA-449, EIA-530, and G.703: 
+physical layer.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

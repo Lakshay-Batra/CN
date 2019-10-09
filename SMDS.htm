@@ -1,0 +1,482 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="SMDS_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h5 align="center"><font face="Arial" size="6" color="#FF0000">
+<a name="1020551">
+<em style="font-style: normal; text-decoration: underline; text-transform: uppercase">
+Switched Multimegabit Data Service</em></a></font></h5>
+<p align="justify"><font face="Arial"><a name="1020551"><em>Switched 
+Multimegabit Data Service (SMDS)</em> is a high-speed, packet-switched, 
+datagram-based WAN networking technology used for communication over public data 
+networks </a><a name="1020553">(PDNs). SMDS can use fiber- or copper-based 
+media; it supports speeds of 1.544 Mbps over Digital Signal level 1 (DS-1) 
+transmission facilities, or 44.736 Mbps over Digital Signal level 3 (DS-3) 
+transmission facilities. In addition, SMDS data units are large enough to 
+encapsulate entire IEEE 802.3, IEEE 802.5, and Fiber Distributed Data Interface 
+(FDDI) frames. This chapter summarizes the operational elements of the SMDS 
+environment and outlines the underlying protocol. A discussion of related 
+technologies, such as Distributed Queue Dual Bus (DQDB) is also provided. The 
+chapter closes with discussions of SMDS access classes and cell formats.</a></font></p>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid3">SMDS Network 
+Components</a></font></h2>
+<p align="justify"><font face="Arial"><a name="1020555">SMDS networks consist of 
+several underlying devices to provide high-speed data service. These include 
+customer premises equipment (CPE), carrier equipment, and the </a>
+<a name="1020557">subscriber network interface (SNI). CPE is terminal equipment 
+typically owned and maintained by the customer. CPE includes end devices, such 
+as terminals and personal computers, and intermediate nodes, such as routers, 
+modems, and multiplexers. Intermediate nodes, however, sometimes are provided by 
+the SMDS carrier. Carrier equipment generally consists of high-speed WAN 
+switches that must conform to certain network equipment specifications, such as 
+those outlined by Bell Communications Research (Bellcore). These specifications 
+define network operations, the interface between a local carrier network and a 
+long-distance carrier network, and the interface between two switches inside a 
+single carrier network. </a></font></p>
+<p align="justify"><font face="Arial">The SNI is the interface between CPE and 
+carrier equipment. This interface is the point at which the customer network 
+ends and the carrier network begins. The function of the SNI is to render the 
+technology and operation of the carrier SMDS network transparent to the 
+customer. Figure 14-1 illustrates the relationships among these three components 
+of an SMDS network.</font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><br>
+<b>Figure&nbsp;14-1: The SNI Provides an Interface Between the CPE and the Carrier 
+Equipment in SMDS <br>
+<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1031" type="#_x0000_t75" alt="" style='width:234.75pt;
+ height:145.5pt'>
+ <v:imagedata src="SMDS_files/image001.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\Switched%20Multimegabit%20Data%20Service%20(SMDS)_files\ct841401.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=313 height=194
+src="SMDS_files/image001.gif" v:shapes="_x0000_s1031"><![endif]></b></font></p>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid4">SMDS Interface 
+Protocol</a></font></h2>
+<p align="justify"><font face="Arial">The <em>SMDS Interface Protocol (SIP)</em> 
+is used for communications between CPE and SMDS <a name="1020565">carrier 
+equipment. SIP provides connectionless service across the subscriber network 
+interface (SNI), allowing the CPE to access the SMDS network. SIP is based on 
+the IEEE 802.6 Distributed Queue Dual Bus (DQDB) standard for cell relay across 
+metropolitan-area networks (MANs). The DQDB was chosen as the basis for SIP 
+because it is an open standard that supports all the SMDS service features. In 
+addition, DQDB was designed for compatibility with current carrier transmission 
+standards, and it is aligned with emerging standards for Broadband ISDN (BISDN), 
+which will allow it to interoperate with broadband video and voice services. 
+Figure 14-2 illustrates where SIP is used in an SMDS network.</a></font></p>
+<h3 align="justify"><font face="Arial" size="3"><a name="xtocid5">SIP Levels</a></font></h3>
+<p align="justify"><font face="Arial">SIP consists of three levels. SIP Level 3 
+operates at the Media Access Control (MAC) sublayer of the data link layer of 
+the OSI reference model. SIP Level 2 operates at the MAC sublayer of the data 
+link layer. SIP Level 1 operates at the physical layer of the OSI reference 
+model. Figure 14-3 illustrates how SIP maps to the OSI reference model, 
+including the IEEE data link sublayers.</font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><br>
+<b>Figure&nbsp;14-2: SIP Provides Connectionless Service Between the CPE and Carrier 
+Equipment <br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1032" type="#_x0000_t75" alt="" style='width:240.75pt;height:116.25pt'>
+ <v:imagedata src="SMDS_files/image002.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\Switched%20Multimegabit%20Data%20Service%20(SMDS)_files\ct841402.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=321 height=155
+src="SMDS_files/image002.gif" v:shapes="_x0000_s1032"><![endif]></b><br>
+<b>Figure&nbsp;14-3: SIP Provides Services Associated with the Physical and Data Link 
+Layers of the OSI Model <br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="" style='width:294.75pt;height:144.75pt'>
+ <v:imagedata src="SMDS_files/image003.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\Switched%20Multimegabit%20Data%20Service%20(SMDS)_files\ct841403.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=393 height=193
+src="SMDS_files/image003.gif" v:shapes="_x0000_s1033"><![endif]></b></font></p>
+<p align="justify"><font face="Arial">SIP Level 3 begins operation when user 
+information is passed to it in the form of SMDS <a name="1020577">service data 
+units (SDUs). SMDS SDUs then are encapsulated in a SIP Level 3 header and 
+trailer. The resulting frame is called a </a><a name="1020578">Level 3 protocol 
+data unit (PDU). SIP Level 3 PDUs then are passed to SIP Level 2.</a></font></p>
+<p align="justify"><font face="Arial">SIP Level 2, which operates at the Media 
+Access Control (MAC) sublayer of the data link layer, begins operating when it 
+receives SIP Level 3 PDUs. The PDUs then are segmented into uniformly sized 
+(53-octet) Level 2 PD<a name="1020580">Us, called </a><a name="1020581">cells. 
+The cells are passed to SIP Level 1 for placement on the physical medium.</a></font></p>
+<p align="justify"><font face="Arial">SIP Level 1 operates at the physical layer 
+and provides the physical-link protocol that operates at DS-1 or DS-3 rates 
+between CPE devices and the network. SIP Level 1 consists of the transmission 
+system and Physical Layer Convergency Protocol (PLCP) sublayers. The 
+transmission system sublayer defines the characteristics and method of 
+attachment to a DS-1 or DS-3 transmission link. The PLCP specifies how SIP Level 
+2 cells are to be <a name="1020583">arranged relative to the DS-1 or DS-3 frame. 
+PLCP also defines other management information.</a></font></p>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid6">Distributed 
+Queue Dual Bus</a></font></h2>
+<p align="justify"><font face="Arial"><a name="1020585">The <em>Distributed 
+Queue Dual Bus (DQDB) </em>is a data link layer communication protocol </a>
+<a name="1020587">designed for use in metropolitan-area networks (MANs). DQDB 
+specifies a network </a><a name="1020588">topology composed of two 
+unidirectional logical buses that interconnect multiple systems. It is defined 
+in the IEEE 802.6 DQDB standard.</a></font></p>
+<p align="justify"><font face="Arial">An access DQDB describes just the 
+operation of the DQDB protocol (in SMDS, SIP) across a user-network interface 
+(in SMDS, across the SNI). Such operation is distinguished from the operation of 
+a DQDB protocol in any other environment (for example, between carrier equipment 
+within the SMDS PDN).</font></p>
+<p align="justify"><font face="Arial">The access DQDB is composed of the basic 
+SMDS network components:</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>Carrier equipment</strong>—A 
+  switch in the SMDS network operates as one station on <br>
+  the bus. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>CPE</strong>—One or more CPE 
+  devices operate as stations on the bus. </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>SNI</strong>—The SNI acts as the 
+  interface between the CPE and the carrier equipment. </font></li>
+</ul>
+<p align="justify"><font face="Arial">Figure 14-4 depicts a basic access DQDB, 
+with two CPE devices and one switch (carrier equipment) attached to the dual 
+bus. </font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><br>
+<b>Figure&nbsp;14-4: A Basic Access DQDB May Consist of an End Node, a Router, and a 
+Switch <br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" alt="" style='width:175.5pt;height:99pt'>
+ <v:imagedata src="SMDS_files/image004.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\Switched%20Multimegabit%20Data%20Service%20(SMDS)_files\ct841404.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=234 height=132
+src="SMDS_files/image004.gif" v:shapes="_x0000_s1034"><![endif]></b></font></p>
+<p align="justify"><font face="Arial">An SMDS access DQDB typically is arranged 
+in a single-CPE configuration or a multi-CPE configuration.</font></p>
+<p align="justify"><font face="Arial">A single-CPE access DQDB configuration 
+consists of one switch in the carrier SMDS network and one CPE station at the 
+subscriber site. Single-CPE DQDB configurations create a two-node DQDB 
+subnetwork. Communication occurs only between the switch and the one CPE device 
+across the SNI. No contention is on the bus because no other CPE devices attempt 
+to access it.</font></p>
+<p align="justify"><font face="Arial">A multi-CPE configuration consists of one 
+switch in the carrier SMDS network and a number of interconnected CPE devices at 
+the subscriber site (all belonging to the same subscriber). In multi-CPE 
+configurations, local communication between CPE devices is possible. Some local 
+communication will be visible to the switch serving the SNI, and some will not.</font></p>
+<p align="justify"><font face="Arial"><a name="1020602">Contention for the bus 
+by multiple devices requires the use of the DQDB distributed queuing algorithm, 
+which makes implementing a multi-CPE configuration more complicated than 
+implementing a single-CPE configuration.</a></font></p>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid7">SMDS Access 
+Classes</a></font></h2>
+<p align="justify"><font face="Arial"><em>SMDS access classes</em> enable SMDS 
+networks to accommodate a broad range of traffic <a name="1020606">requirements 
+and equipment capabilities. Access classes constrain CPE devices to a sustained 
+or average rate of data transfer by establishing a maximum sustained information 
+transfer rate and a maximum allowed degree of traffic burstiness. (Burstiness, 
+in this context, is the propensity of a network to experience sudden increases 
+in bandwidth demand.) SMDS access classes sometimes are implemented using a 
+credit-management scheme. In this case, a credit-management algorithm creates 
+and tracks a credit balance <br>
+for each customer interface. As packets are sent into the network, the credit 
+balance is decremented. New credits are allocated periodically, up to an 
+established maximum. Credit management is used only on DS-3-rate SMDS 
+interfaces, not on DS-1-rate interfaces.</a></font></p>
+<p align="justify"><font face="Arial">Five access classes are supported for 
+DS-3-rate access (corresponding to sustained information rates). Data rates 
+supported are 4, 10, 16, 25, and 34 Mbps.</font></p>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid8">SMDS 
+Addressing Overview</a></font></h2>
+<p align="justify"><font face="Arial"><a name="1020609">SMDS <em>protocol data 
+units (PDUs)</em> carry both a source and a destination address. SMDS addresses 
+are 10-digit values resembling conventional telephone numbers.</a></font></p>
+<p align="justify"><font face="Arial">The SMDS addressing implementation offers 
+group addressing and security features.</font></p>
+<p align="justify"><font face="Arial">SMDS group addresses allow a single 
+address to refer to multiple CPE stations, which specify the group address in 
+the Destination Address field of the PDU. The network makes multiple copies of 
+the PDU, which are delivered to all members of the group. Group addresses reduce 
+the amount of network resources required for distributing routing information, 
+resolving addresses, and dynamically discovering network resources. SMDS group 
+addressing is analogous to multicasting on LANs. </font></p>
+<p align="justify"><font face="Arial">SMDS implements two security features: 
+source address validation and address screening. <em>Source address validation</em> 
+ensures that the PDU source address is legitimately assigned to the SNI from 
+which it originated. Source address validation prevents address spoofing, in 
+which illegal traffic assumes the source address of a legitimate device. <em>
+Address screening</em> allows a subscriber to establish a private virtual 
+network that excludes unwanted traffic. If an address is disallowed, the data 
+unit is not delivered.</font></p>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid9">SMDS 
+Reference: SIP Level 3 PDU Format</a></font></h2>
+<p align="justify"><font face="Arial"><a name="1020615">Figure 14-5 illustrates 
+the format of the SMDS Interface Protocol (SIP) Level 3 protocol data unit (PDU).
+</a></font></p>
+<p align="justify"><font face="Arial"><a name="1020617">The following 
+descriptions briefly summarize the function of the SIP Level 3 PDU fields 
+illustrated in Figure 14-5.</a></font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><br>
+<b>Figure&nbsp;14-5: A SIP Level 3 Protocol Data Unit Consists of 15 Fields <br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1035" type="#_x0000_t75" alt="" style='width:507pt;height:239.25pt'>
+ <v:imagedata src="SMDS_files/image005.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\Switched%20Multimegabit%20Data%20Service%20(SMDS)_files\ct841405.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=676 height=319
+src="SMDS_files/image006.jpg" v:shapes="_x0000_s1035"><![endif]></b></font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>X+</strong>—Ensures that the SIP 
+  PDU format aligns with the DQDB protocol format. SMDS does not process
+  <a name="1020625">or change the values in these fields, which may be used by 
+  systems connected to the SMDS network. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>RSVD</strong>—Consists of zeros.
+  </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020627"><strong>BEtag</strong>—Forms 
+  an association between the first and last segments of a segmented SIP Level 3 
+  PDU. Both fields contain identical values and are used to detect a condition 
+  in which the last segment of one PDU and the first segment of the next PDU are 
+  both lost, which results in the receipt of an invalid Level 3 PDU. </a></font>
+  </li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020629"><strong>BAsize</strong>—Contains 
+  the buffer allocation size. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>Destination address (DA)</strong>—Consists 
+  of two parts: </font>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>Address type</strong>—Occupies 
+    the 4 most significant bits of the field. The Address Type can be either 
+    1100 or 1110. The former indicates a 60-bit individual address, while the 
+    latter indicates a 60-bit group address. </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>Address</strong>—Gives the 
+    individual or group SMDS address for the destination. SMDS address formats 
+    are consistent with the North American Numbering Plan (NANP). </font></li>
+  </ul>
+  </li>
+</ul>
+<p class="MsoNormal" style="margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: 12.0pt" align="justify">
+<font face="Arial">The 4 most significant bits of the Destination Address 
+subfield contain the value 0001 (the internationally defined country code for 
+North America). The next 40 bits contain the binary-encoded value of the 
+10-digit SMDS <a name="1020635">address. The final 16 (least significant) bits 
+are populated with ones for padding.</a></font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>Source address (SA)</strong>—Consists 
+  of two parts: </font>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>Address type</strong>—Occupies 
+    the 4 most significant bits of the field. The Source Address Type field can 
+    indicate only an individual address. </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>Address</strong>—Occupies the 
+    individual SMDS address of the source. This field follows the same format as 
+    the <a name="1020639">Address subfield of the Destination Address field. </a>
+    </font></li>
+  </ul>
+  </li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020640"><strong>Higher layer 
+  protocol identifier (HLPI)</strong>—Indicates the type of protocol enc</a><a name="1020642">apsulated 
+  in the Information field. The value is not important to SMDS, but it can be 
+  used by certain systems connected to the network. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020643"><strong>Header 
+  extension length (HEL)</strong>—Indicates the number of 32-bit words in the 
+  Header Extension (HE) field. Currently, the field size for SMDS is fixed at 12 
+  bytes. (Thus, the HEL value is always 0011.) </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020645"><strong>Header 
+  extension (HE)</strong>—Contains the SMDS version number. This field also 
+  conveys the carrier-selection value, which is used to select the particular 
+  interexchange carrier to carry SMDS traffic from one local carrier network to 
+  another. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020647"><strong>Information 
+  and Padding (Info + Pad)</strong>—Contains an encapsulated SMDS service data 
+  unit (SDU) and padding that ensures that the field ends on a 32-bit boundary.
+  </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020649"><strong>Cyclic 
+  redundancy check (CRC)</strong>—Contains a value used for error checking. </a>
+  </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020651"><strong>Length</strong>—Indicates 
+  the length of the PDU. </a></font></li>
+</ul>
+<h2 align="justify"><font face="Arial" size="3"><a name="xtocid10">SMDS 
+Reference: SIP Level 2 Cell Format</a></font></h2>
+<p align="justify"><font face="Arial"><a name="1020654">Figure 14-6 illustrates 
+the format of the SMDS Interface Protocol (SIP) Level 2 cell format.</a></font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><br>
+<b>Figure&nbsp;14-6: Seven Fields Comprise the SMDS SIP Level 2 Cell<br>
+<!--[if gte vml 1]><v:shape
+ id="_x0000_s1036" type="#_x0000_t75" alt="" style='width:468.75pt;height:132pt'>
+ <v:imagedata src="SMDS_files/image007.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20IV\Switched%20Multimegabit%20Data%20Service%20(SMDS)_files\ct841406.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=625 height=176
+src="SMDS_files/image008.jpg" v:shapes="_x0000_s1036"><![endif]></b></font></p>
+<p align="justify"><font face="Arial">The following descriptions briefly 
+summarize the functions of the SIP Level 2 PDU fields illustrated in Figure 14- 
+6:</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020662"><strong>Access control</strong>—Contains 
+  different values, depending on the direction of information flow. If the cell 
+  was sent from a switch to a CPE device, only the indication of whether the 
+  Level 3 protocol data unit (PDU) contains information is important. If the 
+  cell was sent from a CPE device to a switch, and if the CPE configuration is 
+  multi-CPE, this field can carry request bits that indicate bids for cells on 
+  the bus going from the switch to the CPE device. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020664"><strong>Network 
+  control information</strong>—Contains a value indicating whether the PDU 
+  contains information. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020666"><strong>Segment type</strong>—Indicates 
+  whether the cell is the first, the last, or a middle cell from a segmented 
+  Level 3 PDU. Four possible segment type values exist: </a></font>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>00</strong>—Continuation of 
+    message </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>01</strong>—End of message
+    </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>10</strong>—Beginning of 
+    message </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial"><strong>11</strong>—Single-segment 
+    message </font></li>
+  </ul>
+  </li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020672"><strong>Message ID</strong>—Associates 
+  Level 2 cells with a Level 3 PDU. The message ID is the same for all the 
+  segments of a given Level 3 PDU. In a multi-CPE configuration, Level 3 PDUs 
+  originating from </a><a name="1020674">different CPE devices must have a 
+  different message ID. This allows the SMDS network receiving interleaved cells 
+  from different Level 3 PDUs to associate each Level 2 cell with the correct 
+  Level 3 PDU. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020675"><strong>Segmentation 
+  unit</strong>—Contains the data portion of the cell. If the Level 2 cell is 
+  empty, this field is populated with zeros. </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><a name="1020677"><strong>Payload length</strong>—Indicates 
+  how many bytes of a Level 3 PDU actually are contained in the Segmentation 
+  Unit field. If the Level 2 cell is empty, this field is populated with zeros.
+  </a></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><strong>Payload cyclic redundancy check</strong><a name="1020679"><strong> 
+  (CRC)</strong>—Contains a CRC value used to detect errors in the following 
+  fields: </a></font>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Segment Type </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Message ID </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Segmentation Unit </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Payload Length </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">Payload CRC </font></li>
+  </ul>
+  </li>
+</ul>
+<p class="MsoNormal" style="margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: 12.0pt" align="justify">
+<font face="Arial">The Payload CRC value does not cover the Access Control or 
+the Network Control Information fields.</font></p>
+<h2 align="justify">&nbsp;</h2>
+<p align="justify"><font face="Arial">SMDS is a high-speed, packet-switched, 
+datagram-based WAN networking technology used for communication over public data 
+networks (PDNs). SMDS can use fiber- or copper-based media. It supports speeds 
+of 1.544 Mbps over DS-1 transmission facilities, or 44.736 Mbps over DS-3 
+transmission facilities.</font></p>
+<p align="justify"><font face="Arial">The following devices comprise SMDS 
+networks:</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Customer premises equipment (CPE) </font>
+  </li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Carrier equipment </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">Subscriber network interface (SNI)
+  </font></li>
+</ul>
+<p align="justify"><font face="Arial">The SNI is the interface between the CPE 
+and carrier equipment; it transparently enables data transmission between the 
+two networks.</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">SMDS uses SIP to communicate between CPE 
+  and the carrier site using the DQDB standard for cell relay across MANs.
+  </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">SIP consist of the following three 
+  levels: </font>
+  <ul type="circle" style="margin-bottom: 0in">
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">SIP Level 3, which operates at the MAC 
+    sublayer of the data link layer of the OSI reference model </font></li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">SIP Level 2, which also operates at 
+    the MAC sublayer of the data link layer of the OSI reference model </font>
+    </li>
+    <li class="MsoNormal">
+    <p align="justify"><font face="Arial">SIP Level 1, which operates at the 
+    physical layer of the OSI reference model </font></li>
+  </ul>
+  </li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">SMDS PDUs carry both a source and a 
+  destination address, and offer both group addressing and security features.</font></li>
+</ul>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

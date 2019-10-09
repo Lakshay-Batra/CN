@@ -1,0 +1,491 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="SDH_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p class="pB1_Body1" align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p align="center">
+<span lang="EN-GB" style="font-family: Arial; font-weight: 700; text-decoration: underline; text-transform: uppercase">
+<font color="#FF0000" size="6">Synchronous Digital Hierarchy</font></span></p>
+<p align="justify"><font face="Arial">SDH (Synchronous Digital Hierarchy) is a 
+standard technology for synchronous data transmission on optical media. It is 
+the international equivalent of
+<term>Synchronous Optical Network</term>. Both technologies provide faster and 
+less expensive network interconnection than traditional PDH (Plesiochronous 
+Digital Hierarchy) equipment. </font></p>
+<p align="justify"><font face="Arial">In digital telephone transmission, 
+&quot;synchronous&quot; means the bits from one call are carried within one transmission 
+frame. &quot;Plesiochronous&quot; means &quot;almost (but not) synchronous,&quot; or a call that 
+must be extracted from more than one transmission frame. </font></p>
+<p align="justify"><font face="Arial">SDH uses the following Synchronous 
+Transport Modules (STM) and rates: STM-1 (155 megabits per second), STM-4 (622 
+Mbps), STM-16 (2.5 gigabits per second), and STM-64 (10 Gbps).</font></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">The <b>Transmission System</b> is traditionally 
+seen as the link between main WAN switching centres. These Transmission Systems 
+consist of large bandwidth highways that form the backbone to the network. They 
+typically serve many customers each with their own requirements so the systems 
+have to be reliable, resilient and flexible. </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span><span style="font-family: Arial">Rather 
+than have two wires for every voice or data conversation, <b>Time Division 
+Multiplexing</b> is used. ITU-T G.704 defines 32 channels of 64Kb/s to form 
+2.048Mb/s where channel 0 is used for framing. You will often see the standard 
+G.703 mentioned with G.704, this is because G.703 defines the unframed physical 
+interface coaxial (75 ohm) or RJ48 (120 ohm) used for the E1/T1 connection at 
+the client premises. Channel 0 is for timing used to synchronise the 
+multiplexers at each end of the link. Channels 1 to 15 and 17 to 31 are for 
+voice or data whilst channel 16 is used for <b>Common Channel Signalling (CCS)</b> 
+or <b>Channel Associated Signalling (CAS)</b>. Every 3.91 microseconds 8 bits 
+from one channel is sent down the line followed by 8 bits from the next channel 
+during the next 3.91 microseconds and so on in a round robin fashion throughout 
+all the channels, thus 32 channels are used once every 125 microseconds. The 
+connection at the end is either a 75 ohm coax, 120 ohm coax or a 150 ohm UTP/STP.
+</span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify"><b>
+<span style="font-family: Arial">&nbsp;</span><font face="Arial" size="3">Plesiochronous 
+Digital Hierarchy (PDH)</font></b><span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">As bandwidth demand grew the technology called
+<b>Plesiochronous Digital Hierarchy (PDH)</b> was developed by ITU-T G.702, 
+whereby the basic primary multiplexer 2.048Mb/s trunks were joined together by 
+adding bits (bit stuffing) which synchronised the trunks at each level of the 
+PDH. 2.048Mb/s was called <b>E1</b> and the hierarchy is based on multiples of 4 
+E1s. </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">E2, 4 x E1 
+  - 8Mb/s </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">E3, 4 x E2 
+  - 34Mb/s </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">E4, 4 x E3 
+  - 140Mb/s </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">E5, 4 x E4 
+  - 565Mb/s </font></span></li>
+</ul>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">The E3 tributaries are faster than the E2 
+tributaries, E2 tributaries are faster than the E1 tributaries and so on. These 
+need to be synchronised with other tributaries, so extra bits are added called
+<b>Justification bits</b>. These tell the multiplexers which bits are data and 
+which are spare. Multiplexers on the same level of the hierarchy remove the 
+spare bits and are synchronised with each other at that level only. Multiplexers 
+on one level operate on a different timing from multiplxers on another level. 
+For instance, the timing between Primary Rate Muxes (combines 30 x 64Kb/s 
+channels into 2.048Mb/s E1) will be different from the timing between 8Mbit 
+muxes (combines up to 4 x 2Mb/s into 8Mb/s). </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" alt="" style='width:465pt;
+ height:328.5pt'>
+ <v:imagedata src="SDH_files/image001.gif" o:href="http://www.rhyshaden.com/images/sdh1.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=620 height=438
+src="SDH_files/image001.gif" v:shapes="_x0000_s1025"><![endif]></span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">Inserting and dropping out traffic from 
+different customers can only happen at the level at which the customer is 
+receiving the traffic. This means that if a 140Mb/s fibre is near a particular 
+site and a new customer requires a 2Mb/s link, then a whole set of 
+demultiplexers are required to do this. </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify"><b>
+<span style="font-family: Arial">&nbsp;</span><font face="Arial" size="3">Synchronous 
+Digital Hierarchy (SDH)</font></b><span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">Management is very inflexible in PDH, so SDH 
+was developed. Synchronous Digital Hierarchy (SDH) originates from Synchronous 
+Optical Network (SONET) in the US. It includes capabilities for bandwidth on 
+demand and is also made up of multiples of E1. <b>STM-1</b> (155Mb/s) is 63 x 
+E1, <b>STM-4</b> (622Mb/s) is 4 x STM-1 and <b>STM-16</b> (2.5Gb/s) is 4 x 
+STM-4. </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span><span style="font-family: Arial">The 
+benefits of SDH are: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">Different 
+  interfaces or different bandwidths can connect (G708, G781). </font></span>
+  </li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">Network 
+  topologies are more flexible. </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">There is 
+  flexibility for growth. </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">The optical 
+  interface is standard (G957). </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><span style="font-family: Arial"><font size="3">Network 
+  Management is easier to perform (G774 and G784). </font></span></li>
+</ul>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">Existing PDH can interface into SDH. There are 
+three G transmission series recommendations that are very important: </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">G.707</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - SDH Bit Rates </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">G.708</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - The SDH Network Node Interface. </font></span></li>
+  <li class="MsoNormal" style="line-height: 21.6pt">
+  <p align="justify"><b><span style="font-family: Arial"><font size="3">G.709</font></span></b><span style="font-family: Arial"><font size="3"> 
+  - Synchronous Multiplexing structure. </font></span></li>
+</ul>
+<p class="MsoNormal" style="line-height: 21.6pt" align="center">
+<span style="font-family: Arial">&nbsp;<!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="" style='width:465pt;height:328.5pt'>
+ <v:imagedata src="SDH_files/image002.gif" o:href="http://www.rhyshaden.com/images/sdh2.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=620 height=438
+src="SDH_files/image002.gif" v:shapes="_x0000_s1026"><![endif]></span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">With the exception of 8Mb/s, different PDH 
+outputs are 'mapped' into <b>Containers (C)</b> and then into fixed size <b>
+Virtual Containers (VC)</b>. When the VC is aligned in the Tributary Unit (TU) a
+<b>Pointer</b> is added which indicates the phase of the particular VC. TU's are 
+then grouped, via Time Division Multiplexing (TDM), into <b>Tributary Unit 
+Groups (TUG)</b>. </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span><span style="font-family: Arial">The 
+TUGs are collated into <b>Administrative Units (AU)</b> via more VCs where more 
+pointers are added (these being fixed relative to the frame). The VCs and the 
+pointers are incorporated into the section overhead of the <b>Synchronous 
+Transport Module (STM)</b>. One AU forms an STM-1, 4 AUs form an STM-4. You can 
+also get STM-16 and STM-64. </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span><span style="font-family: Arial">Let us 
+follow a 2Mb/s pipe through the hierarchy. </span>
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">The 2Mb/s PDH first enters a container <b>C12</b> 
+which compensates for the varying speeds via the use of stuff bits (<b>R</b>). 
+Stuff opportunities are identified by <b>S1</b> and <b>S2</b> and these are 
+controlled by the control bits <b>C1</b> and <b>C2</b> respectively. If the C 
+bits are are 0s then the corresponding S bits contain data and if the C bits are 
+1s then the S bits are not defined. In the diagram below, <b>O</b> represents <b>
+Overhead channel</b> bits and <b>I</b> represents <b>Information</b> bits. &nbsp;</span></p>
+<p class="MsoNormal" align="center" style="text-align: justify; line-height: 21.6pt">
+<span style="font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" alt="" style='width:478.5pt;height:338.25pt'>
+ <v:imagedata src="SDH_files/image003.gif" o:href="http://www.rhyshaden.com/images/sdh3.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=638 height=451
+src="SDH_files/image003.gif" v:shapes="_x0000_s1027"><![endif]></span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+&nbsp;</p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">To create the <b>VC12</b> a <b>Path Overhead (POH)</b> 
+is added. The POH uses Bit Interleaved Parity (BIP) to monitor errors. In 
+addition, there are fault indicators, <b>Far End Block Error (FEBE)</b>, <b>
+Remote Fail Indicator (RFI)</b> and <b>Far End Receive Failure (FERF)</b>. The
+<b>Signal Label</b> is normally set at <b>2</b> to indicate asynchronous data.
+</span><span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">A pointer is added to the VC12 which defines 
+the phase alignment of the VC12 and this changes during transmission. Phase 
+variation can be due to <b>Jitter</b> (from regeneration and multiplexing 
+equipment) and <b>Wander</b> (temperature differences within the transmission 
+media). VC12s created by different multiplexers may not be synchronous so the TU 
+adds a pointer at a fixed position within the TU. The value of the pointer 
+indicates the start of the VC12. If the phase of the VC12 changes then the value 
+of the pointer changes such that if data is running faster than the TU then the 
+pointer value is increased and if the data speed is slower then the pointer 
+value is decreased. This difference in speed can be up to one byte per frame in 
+SDH. </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span><span style="font-family: Arial">The 
+following diagram illustrates three TU12s entering a TUG2 at three different 
+times with the VC12 pointers indicating where the POH is for each: </span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;<!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" alt="" style='width:465pt;height:328.5pt'>
+ <v:imagedata src="SDH_files/image004.gif" o:href="http://www.rhyshaden.com/images/sdh4.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=620 height=438
+src="SDH_files/image004.gif" v:shapes="_x0000_s1028"><![endif]></span></p>
+<p class="MsoNormal" style="line-height: 21.6pt" align="justify">
+<span style="font-family: Arial">&nbsp;</span><span style="font-family: Arial">The 
+TU12 is multiplexed into a TUG 2 along with 2 other TU12s. This is achieved by 
+interleving the bytes of each TU12 in turn. Next, seven TUG 2s are byte 
+interleaved into a TUG 3 and then three TUG 3s can be byte interleaved to form 
+the VC4 (see the SDH diagram above). You can see that 3 x 7 x 3 = 63 2Mb/s 
+circuits can be contained in VC 4. </span></p>
+<p align="justify"><font face="Arial">For the first time in telecommunications 
+history there will be a world-wide, uniform and seamless transmission standard 
+for service delivery. Synchronous digital hierarchy (SDH) provides the 
+capability to send data at multi-gigabit rates over today's single-mode fibre-optics 
+links. This first issue of Technology Watch looks at synchronous digital 
+transmission and evaluates its potential impact. Following issues of TW will 
+look at customer oriented broad-band services that will ride on the back of SDH 
+deployment by PTOs. These will include: </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">Frame relay </font></li>
+  <li>
+  <p align="justify"><font face="Arial">SMDS (Switched Multi-Megabit Data 
+  Service) </font></li>
+  <li>
+  <p align="justify"><font face="Arial">ATM (asynchronous transfer mode) </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">High speed LAN services such as FDDI
+  </font></li>
+</ul>
+<p align="justify"><font face="Arial">Figure 1 shows the relationship between 
+these technologies and services. </font></p>
+<p align="center"><font face="Arial">
+<img src="sdh1.gif" align="bottom" width="415" height="254"> </font></p>
+<p align="center"><font face="Arial"><i>Figure 1 - The Relationship Between 
+Services</i> </font></p>
+<h2 align="justify"><b><font face="Arial" size="3">Overview</font></b></h2>
+<p align="justify"><font face="Arial">The use of synchronous digital 
+transmission by PTOs in their backbone fibre-optic and radio network will put in 
+place the enabling technology that will support many new broad-band data 
+services demanded by the new breed of computer user. However, the deployment of 
+synchronous digital transmission is not only concerned with the provision of 
+high-speed gigabit networks. It has as much to do with simplifying access to 
+links and with bringing the full benefits of software control in the form of 
+flexibility and introduction of network management. </font></p>
+<p align="justify"><font face="Arial">In many respects, the benefits to the PTO 
+will be the same as those brought to the electronics industry when hard wired 
+logic was replaced by the microprocessor. As with that revolution, synchronous 
+digital transmission will not take hold overnight, but deployment will be spread 
+over a decade, with the technology first appearing on new backbone links. The 
+first to feel the benefits will be the PTOs themselves, as demonstrated by the 
+technology's early uptake by many operators including BT. Only later will 
+customers directly benefit with the introduction of new services such as 
+connectionless LAN-to-LAN transmission capability. </font></p>
+<p align="justify"><font face="Arial">According to one market research company 
+it will take until the mid or late 1990s before 70% of revenue for network 
+equipment manufacturers will be derived from synchronous systems. Remembering 
+that this is a multi-billion $ market, this constitutes a radical change by any 
+standard (Figure 2). </font></p>
+<p align="justify"><font face="Arial">Users who extensively use PCs and 
+workstations with LANs, graphic layout, CAD and remote database applications are 
+now looking to the telecommunication service suppliers to provide the means of 
+interlinking these now powerful machines at data rates commensurable with those 
+achieved by their own in-house LANs. They also want to be able to transfer 
+information to other metropolitan and international sites as easily and as 
+quickly as they can to a colleague sitting at the next desk. </font></p>
+<p align="center"><font face="Arial">
+<img src="sdh2.gif" align="bottom" width="409" height="273"> </font></p>
+<p align="center"><i><font face="Arial">Figure 2 - European Revenue Growth of 
+Transmission Equipment </font></i></p>
+<h2 align="justify"><b><font face="Arial" size="3">Plesiochronous Transmission.</font></b></h2>
+<p align="justify"><font face="Arial">Digital data and voice transmission is 
+based on a 2.048Mbit/s bearer consisting of 30 time division multiplexed (TDM) 
+voice channels, each running at 64Kbps (known as E1 and described by the CCITT 
+G.703 specification). At the E1 level, timing is controlled to an accuracy of 1 
+in 1011 by synchronising to a master Caesium clock. Increasing traffic over the 
+past decade has demanded that more and more of these basic E1 bearers be 
+multiplexed together to provide increased capacity. During this time rates have 
+increased through 8, 34, and 140Mbit/s. The highest capacity commonly 
+encountered today for inter-city fibre optic links is 565Mbit/s, with each link 
+carrying 7,680 base channels, and now even this is insufficient. </font></p>
+<p align="justify"><font face="Arial">Unlike E1 2.048Mbit/s bearers, higher rate 
+bearers in the hierarchy are operated plesiochronously, with tolerances on an 
+absolute bit-rate ranging from 30ppm (parts per million) at 8Mbit/s to 15ppm at 
+140Mbit/s. Multiplexing such bearers (known as <i>tributaries </i>in SDH speak) 
+to a higher aggregate rate (e.g. 4 x 8Mbit/s to 1 x 34Mbit/s) requires the 
+padding of each tributary by adding bits such that their combined rate together 
+with the addition of control bits matches the final aggregate rate. 
+Plesiochronous transmission is now often referred to as plesiochronous digital 
+hierarchy (PDH). </font></p>
+<p align="center"><font face="Arial">
+<img src="sdh3.gif" align="bottom" width="429" height="243"> </font></p>
+<p align="center"><font face="Arial"><i>Figure 3 - A typical Plesiochronous Drop 
+&amp; Insert</i> </font></p>
+<p align="justify"><font face="Arial">Because of the large investment in earlier 
+generations of plesiochronous transmission equipment, each step increase in 
+capacity has necessitated maintaining compatibility with what was already 
+installed by adding yet another layer of multiplexing. This has created the 
+situation where each data link has a rigid physical and electrical multiplexing 
+hierarchy at either end. Once multiplexed, there is no simple way an individual 
+E1 bearer can be identified in a PDH hierarchy, let alone extracted, without 
+fully demultiplexing down to the E1 level again as shown in Figure 3. </font>
+</p>
+<p align="justify"><font face="Arial">The limitations of PDS multiplexing are:
+</font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial">A hierarchy of multiplexers at either 
+  end of the link can lead to reduced reliability and resilience, minimum 
+  flexibility, long reconfiguration turn-around times, large equipment volume, 
+  and high capital-equipment and maintenance costs. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">PDH links are generally limited to 
+  point-to-point configurations with full demultiplexing at each switching or 
+  cross connect node. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Incompatibilities at the optical 
+  interfaces of two different suppliers can cause major system integration 
+  problems. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">To add or drop an <i>individual</i> 
+  channel or add a lower rate branch to a backbone link a complete hierarchy of 
+  MUXs is required as shown in figure 3. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Because of these limitations of PDH, the 
+  introduction of an acceptable world-wide synchronous transmission standard 
+  called SDH is welcomed by all. </font></li>
+</ul>
+<h2 align="justify"><b><font face="Arial" size="3">Synchronous Transmission</font></b></h2>
+<p align="justify"><font face="Arial">In the USA in the early 1980s, it was 
+clear that a new standard was required to overcome the limitations presented by 
+PDH networks, so the ANSI (American National Standards Institute) SONET 
+(synchronous optical network) standard was born in 1984. By 1988, collaboration 
+between ANSI and CCITT produced an international standard, a superset of SONET, 
+called synchronous digital hierarchy (SDH). </font></p>
+<p align="justify"><font face="Arial">US SONET standards are based on STS-1 
+(synchronous transport signal) equivalent to 51.84Mbit/s. When encoded and 
+modulated onto a fibre optic carrier STS-1 is known as OC-1. This particular 
+rate was chosen to accommodate a US T-3 plesiochronous payload to maintain 
+backwards compatibility with PDH. Higher data rates are multiples of this up to 
+STS-48, which is 2,488Gbit/s. </font></p>
+<p align="justify"><font face="Arial">SDH is based on an STM-1 (155.52Mbit/s) 
+rate, which is identical to the SONET STS-3 rate. Some higher bearer rates 
+coincide with SONET rates such as: STS-12 and STM-4 = 622Mbit/s, and STS-48 and 
+STM-16 = 2.488Gbit/s. Mercury is currently trialing STM-1 and STM-16 rate 
+equipment. </font></p>
+<p align="justify"><font face="Arial">SDH supports the transmission of all PDH 
+payloads, other than 8Mbit/s, and ATM, SMDS and MAN data. Most importantly, 
+because each type of payload is transmitted in <i>containers</i> synchronous 
+with the STM-1 frame, selected payloads may be inserted or extracted from the 
+STM-1 or STM-N aggregate without the need to fully hierarchically de-multiplex 
+as with PDH systems. </font></p>
+<p align="justify"><font face="Arial">Further, all SDH equipment is software 
+controlled, even down to the individual chip, allowing centralised management of 
+the network configuration, and largely obviates the need for plugs and sockets. 
+A future SDH network could look like Figure 4. </font></p>
+<p align="center"><font face="Arial">
+<img src="sdh4.gif" align="bottom" width="421" height="277"> </font></p>
+<p align="center"><font face="Arial"><i>Figure 4- An Example Future SDH Digital 
+Network</i> </font></p>
+<h2 align="justify"><b><font face="Arial" size="3">Benefits of SDH Transmission</font></b></h2>
+<p align="justify"><font face="Arial">SDH transmission systems have many 
+benefits over PDH: </font></p>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>Software Control </b>allows extensive 
+  use of intelligent network management software for high flexibility, fast and 
+  easy re-configurability, and efficient network management. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Survivability.</b> With SDH, ring 
+  networks become practicable and their use enables automatic reconfiguration 
+  and traffic rerouting when a link is damaged. End-to-end monitoring will allow 
+  full management and maintenance of the whole network. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Efficient drop and insert. </b>SDH 
+  allows simple and efficient cross-connect without full hierarchical 
+  multiplexing or de-multiplexing. A single E1 2.048Mbit/s tail can be dropped 
+  or inserted with relative ease even on Gbit/s links. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Standardisation</b> enables the 
+  interconnection of equipment from different suppliers through support of 
+  common digital and optical standards and interfaces. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Robustness and resilience</b> of 
+  installed networks is increased. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Equipment size and operating costs</b> 
+  are reduced by removing the need for banks of multiplexers and 
+  de-multiplexers. Follow-on maintenance costs are also reduced. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Backwards compatibly</b> will enable 
+  SDH links to support PDH traffic. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>Future proof. </b>SDH forms the 
+  basis, in partnership with ATM (asynchronous transfer mode), of broad-band 
+  transmission, otherwise known as B-ISDN or the precursor of this service in 
+  the form of Switched Multimegabit Data Service, (SMDS). </font></li>
+</ul>
+<h2 align="justify"><b><font face="Arial" size="3">Conclusions</font></b></h2>
+<p align="justify"><font face="Arial">The introduction of synchronous digital 
+transmission in the form of SDH will eventually revolutionise all aspects of 
+public data communication from individual leased lines through to trunk 
+networks. Because of the state-of-the-art nature of SDH and SONET technology, 
+there are extensive field trials taking place in 1992 throughout the world prior 
+to introduction in the 1993 - 1995 time scale. </font></p>
+<p align="justify"><font face="Arial">There is still a lack of understanding of 
+the ramifications of the introduction of SDH within telecommunications 
+operations. In practice, the use of extensive software control will impact 
+positively all parts of the business. It is not so much a question of <i>whether</i> 
+the technology will be taken up, but when. </font></p>
+<p align="justify"><font face="Arial">Introduction of SDH will lead to the 
+availability of many new broad-band data services providing users with increased 
+flexibility. It is in this area where confusion reigns with potential 
+technologies vying for supremacy. These will be discussed in future issues of 
+Technology Watch. </font></p>
+<p align="justify"><font face="Arial">Importantly for PTOs, SDH will bring about 
+more competition between equipment suppliers designing essentially to a common 
+standard. One practical effect could be to force equipment prices down, brought 
+about by the larger volumes engendered by access to world rather than local 
+markets. At least one manufacturer is currently stating that they will be 
+spending up to 80% of their SDH development budgets on management software 
+rather than hardware. Such was the situation in the computer industry in the 
+early 1980s. Not least, it will have a great impact on such issues as staffing 
+levels and required personal skills of personnel within PTOs. </font></p>
+<p align="justify"><font face="Arial">SDH deployment will take a great deal of 
+investment and effort since it replaces the very infrastructure of the world's 
+core communications networks. But it must not be forgotten that there are still 
+many issues to be resolved. </font></p>
+<p align="justify"><font face="Arial">The benefits to be gained in terms of 
+improving operator profitability, and helping them to compete in the new markets 
+of the 1990s, are so high that deployment of SDH is just a question of time.
+</font></p>
+<p class="pB1_Body1" align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

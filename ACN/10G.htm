@@ -1,0 +1,397 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.mw-headline
+	{}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="justify">&nbsp;</p>
+<p align="center"><b><font face="Arial"><a href="ACNMAIN.htm">MAIN</a></font></b></p>
+<p align="center"><u><b><font face="Arial" size="6" color="#FF0000">10G</font></b></u></p>
+<p align="justify"><font face="Arial">In 10/100 and Gigabit Ethernet, the MAC 
+layer works in a linear manner - data moves serially in and out of the MAC layer 
+with all the starting and ending control messages (including clocking and 
+synchronization) embedded inside the datastream. With 10G Ethernet, it is much 
+more complex.</font></p>
+<p align="justify"><font face="Arial">To attain a 10G bit/sec bandwidth rate, 
+the IEEE altered the way that MAC layer interprets signaling. Rather than 
+producing a serial stream, the 10G Ethernet layer operates in parallel to 
+interpret data. The transmit and receive paths each comprise four data lanes, 
+and the datastream broken down into bytes is handled in round-robin fashion 
+across the four lanes, numbered 0 to 3. On the transmit path, for example, the 
+first byte aligns to Lane 0, the second byte to Lane 1, the third byte to Lane 
+2, the fourth byte to Lane 3, the fifth byte back to Lane 0, and so on. </font>
+</p>
+<p align="justify"><font face="Arial">Ethernet frames have clearly defined 
+beginning and ending boundaries, or delimiters. These are marked by special 
+characters and a 12-byte interpacket gap (IPG) that dictates the minimum amount 
+of space or idle time between packets. </font></p>
+<p align="justify"><font face="Arial">Because of the parallel nature of the 10G 
+Ethernet MAC layer, it is impossible to predict the lane in which the ending 
+byte of the previous datastream will fall. This makes finding the starting bit - 
+a requirement for maintaining timing and synchronization - more difficult. The 
+802.3ae standard mandated an elegant solution: the &quot;start control character,&quot; or 
+very first byte of a new data frame, must always align on Lane 0. However, this 
+solution complicates the way the MAC handles the IPG, directly affecting 
+performance. Nevertheless, the IEEE provided three options for the vendors to 
+address this issue: 1) pad (increase), 2) shrink, or 3) average the &quot;minimum&quot; 
+IPG. </font></p>
+<h3 align="justify"><font face="Arial" size="3">Padding increases the IPG</font></h3>
+<p align="justify"><font face="Arial">If the ending character of the previous 
+packet falls into 12th slot in the 12-byte IPG, the MAC layer does nothing and 
+maintains the 12-byte minimum IPG, and the starting character of the next packet 
+automatically aligns in Position A of Lane 0. If, however, the ending character 
+of the previous packet falls into other positions, the MAC layer must add bytes 
+respectively into the IPG to ensure that the starting character of the next 
+packet aligns properly in Position A of Lane 0. This results in a minimum IPG 
+that ranges from 12 to 15 bytes (12-byte minimum plus additional pad). </font>
+</p>
+<p align="justify"><font face="Arial">Increasing the size of the IPG beyond the 
+12-byte minimum decreases the available bandwidth on the 10G Ethernet link by as 
+much as 10%, depending on packet size. </font></p>
+<h3 align="justify"><font face="Arial" size="3">Shrinking the IPG</font></h3>
+<p align="justify"><font face="Arial">After padding bytes to the IPG to ensure 
+the starting character aligns to Position A, the MAC eliminates the middle 
+column of idle characters. This results in an IPG that ranges from eight to 11 
+bytes (12-byte minimum plus padding minus the four idle bytes). </font></p>
+<p align="justify"><font face="Arial">Decreasing the 10G Ethernet IPG by 
+eliminating the middle column of idle bytes provides an additional 5% available 
+bandwidth on the 10G Ethernet link, depending on packet size. </font></p>
+<h3 align="justify"><font face="Arial" size="3">Averaging the IPG</font></h3>
+<p align="justify"><font face="Arial">This option uses a combination of options 
+1 and 3 with the addition of a deficit idle counter, which keeps track of the 
+number of added or deleted idle bytes (ranging from 0 to 3). In some cases, the 
+MAC layer will add and, in others, eliminate bytes. Over the long run, the net 
+result will be an average 12-byte minimum 10G Ethernet IPG. </font></p>
+<p align="justify"><font face="Arial">Averaging the 10G Ethernet IPG ensures 
+that the port delivers 100% of the available bandwidth and lets the connection 
+maintain zero-loss line-rate performance. </font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The <b>10 Gigabit Ethernet</b> or <b>10GE</b> or <b>10GbE</b> or <b>10 GigE</b> 
+standard was first published in 2002 as IEEE Std 802.3ae-2002 and is the fastest 
+of the Ethernet standards. It defines a version of Ethernet with a nominal data 
+rate of 10 Gbit/s, ten times faster than Gigabit Ethernet.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Over the years 
+the following 802.3 standards relating to 10GbE have been published: 
+802.3ae-2002 (fiber -SR, -LR, -ER and -LX4 PMDs), 802.3ak-2004 (-CX4 copper 
+twin-ax InfiniBand type cable), 802.3an-2006 (10GBASE-T copper twisted pair), 
+802.3ap-2007 (copper backplane -KR and -KX4 PMDs) and 802.3aq-2006 (fiber -LRM 
+PMD with enhanced equalization).</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">The 
+802.3ae-2002 and 802.3ak-2004 amendments were consolidated into the IEEE 
+802.3-2005 standard. IEEE 802.3-2005 and the other amendments have been 
+consolidated into IEEE Std 802.3-2008.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10 Gigabit 
+Ethernet supports only full duplex links which can be connected by switches. 
+Half Duplex operation and CSMA/CD (carrier sense multiple access with collision 
+detect) are not supported in 10GbE.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">The 10 Gigabit 
+Ethernet standard encompasses a number of different physical layer (PHY) 
+standards. As of 2008 10 Gigabit Ethernet is still an emerging technology with 
+only 1 million ports shipped in 2007, and it remains to be seen which of the 
+PHYs will gain widespread commercial acceptance. A networking device may support 
+different PHY types by means of pluggable PHY modules.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">At the time 
+the 10 Gigabit Ethernet standards were developed there was much interest in 
+10GbE as a WAN transport and this led to the introduction of the concept of the 
+WAN PHY for 10GbE. This operates at a slightly slower data-rate than the LAN PHY 
+and adds some extra encapsulation. The WAN PHY and LAN PHY are specified to 
+share the same PMDs (Physical Medium Dependent) so 10GBASE-LR and 10GBASE-LW can 
+use the same optics. In terms of number of ports shipped the LAN PHY greatly 
+outsells the WAN PHY.</span></p>
+<p class="MsoNormal" align="justify"><font face="Arial">&nbsp;</font></p>
+<p class="MsoNormal" align="center">
+<img border="0" src="Nortel-10G-ERS-8600.jpg" width="465" height="468"></p>
+<p class="MsoNormal" align="center"><b><font size="4" face="Arial">10 Gigabit Router</font></b></p>
+<p class="MsoNormal" align="justify">&nbsp;</p>
+<p class="MsoNormal" align="justify"><span class="mw-headline"><b>
+<span style="font-family: Arial; color: black">Optical Modules</span></b></span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Optical 
+modules are not specified in 802.3 but by multi-source agreements (MSAs). The 
+relevant MSAs for 10GbE are XENPAK, X2, XPAK, XFP and SFP+.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">When choosing 
+a PHY module consideration should be given to cost, reach, media type, power 
+consumption and size (form factor).</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">In the case of 
+SFP+ consideration also has to be given to whether the module is linear or 
+limiting. Linear SFP+ modules are appropriate for 10GBASE-LRM otherwise limiting 
+modules are preferred. </span></p>
+<p align="justify"><span style="font-family: Arial; color: black">XENPAK was the 
+first MSA for 10GE and has the largest form factor.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">X2 and XPAK 
+were later competing standards with smaller form factors. X2 and XPAK have not 
+been as successful in the market as XENPAK.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">XFP came after 
+X2 and XPAK and is smaller.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">The newest 
+module standard SFP+ (see SFP transceiver) developed by the ANSI T11 fibre 
+channel group is smaller still and lower power than XFP. It is hoped that SFP+ 
+will enable lower cost 10GE optical modules to be produced. SFP+ modules do only 
+optical to electrical conversion, no clock and data recovery, putting a higher 
+burden on the host's channel equalization. SFP+ modules share a common physical 
+form factor with legacy SFP modules, allowing higher port density than XFP and 
+the re-use of existing designs for 24 or 48 ports in a 19&quot; rack width blade.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Optical 
+modules are connected to a host by either a XAUI, XFI or SFI interface.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">XENPAK, X2, 
+and XPAK modules use XAUI to connect to their hosts. XAUI (XGXS) uses a 
+four-lane data channel and is specified in IEEE 802.3 Clause 48.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">XFP modules 
+use a XFI interface and SFP+ modules use a SFI interface. XFI and SFI use a 
+single lane data channel and the encoding specified in IEEE 802.3 Clause 49.</span></p>
+<p class="MsoNormal" align="justify"><b>
+<span style="font-family: Arial; color: black">&nbsp;<span class="mw-headline">Fiber 
+(10GBASE-R)</span></span></b></p>
+<p class="MsoNormal" align="justify">&nbsp;</p>
+<p class="MsoNormal" align="justify">
+<img border="0" src="Netiron_xmr_16000.jpg" width="868" height="651"></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><b>A Router with 10 Gigabit Ethernet 
+Optical Interfaces. The yellow cables are for potentially long range, single 
+mode fiber connections</b></font></p>
+<p class="MsoNormal" align="justify"><span class="mw-headline">
+<span style="font-family: Arial; color: black">&nbsp;</span></span><span style="font-family: Arial; color: black">There 
+are two classifications for optical fiber: single-mode (SMF) and multi-mode (MMF). 
+In SMF light follows a single path through the fiber while in MMF it takes 
+multiple paths resulting in differential mode delay (DMD). SMF is used for long 
+distance communication and MMF is used for distances of less than 300 m. SMF has 
+a narrower core (8.3&nbsp;µm) which makes connecting fibers more difficult. MMF has a 
+wider core (50 or 62.5&nbsp;µm) and is more expensive than SMF. The advantage of MMF 
+for short distances is that because of its wider core it can be driven by lower 
+cost lasers and its connectors are cheaper and more reliable. Its disadvantage 
+is that due to DMD it can work only over short distances. To distinguish SMF 
+from MMF cables, SMF cables are usually yellow, while MMF cables are orange.
+</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">New structured 
+cabling installations use OM3 50&nbsp;µm MMF which has no center defect. OM3 cable 
+can carry 10GBE 300 m using low cost 10GBASE-SR optics or use 10GBASE-LX4 
+without a mode conditioning patch cord..</span></p>
+<p class="MsoNormal" align="justify">
+<span style="font-family: Arial; color: black">Older installations use FDDI 
+grade 62.5&nbsp;µm MMF which has a center defect and is harder for the 10GBE optical 
+modules to drive. For -LX4 a mode conditioning patch cord is needed that adds 
+extra cost to an installation.</span></p>
+<p class="MsoNormal" align="justify"><b>
+<span style="font-family: Arial; color: black">&nbsp;</span><font face="Arial" size="3"><span class="mw-headline">10GBASE-SR</span></font></b></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-SR 
+(&quot;short range&quot;) uses the IEEE 802.3 Clause 49 64B/66B Physical Coding Sublayer 
+(PCS) and 850&nbsp;nm lasers. It delivers serialized data over multi-mode fiber at a 
+line rate of 10.3125 Gbit/s.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Over deployed 
+multi-mode fiber cabling, it has a range of between 26&nbsp;meters (85&nbsp;ft) and 
+82&nbsp;meters (270&nbsp;ft) depending on cable type. Over new 50 &#956;m 2000&nbsp;MHz·km OM3 
+multi-mode fiber (MMF), it has a range of 300&nbsp;meters (980&nbsp;ft). The transmitter 
+can be implemented with a VCSEL (Vertical Cavity Surface Emitting Laser) which 
+is low cost and low power. MMF has the advantage of having lower cost connectors 
+than SMF because of its wider core. OM3 is now the preferred choice for 
+structured optical cabling within buildings.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-SR 
+delivers the lowest cost, lowest power and smallest form factor optical modules.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-LR</span></font></h3>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LR 
+(&quot;long range&quot;) uses the IEEE 802.3 Clause 49 64B/66B Physical Coding Sublayer 
+(PCS) and 1310&nbsp;nm lasers. It delivers serialized data over single-mode fiber at 
+a line rate of 10.3125 Gbit/s.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LR has 
+a specified reach of 10&nbsp;kilometres (6.2&nbsp;mi), but 10GBASE-LR optical modules can 
+often manage distances of up to 25&nbsp;kilometres (16&nbsp;mi) with no data loss.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Fabry-Perot 
+lasers are commonly used in 10GBASE-LR optical modules. Fabry-Perot lasers are 
+more expensive than VCSELs but their high power and focused beam allow efficient 
+coupling into the small core of single mode fiber.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-LRM</span></font></h3>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LRM, 
+(Long Reach Multimode) also known as 802.3aq uses the IEEE 802.3 Clause 49 
+64B/66B Physical Coding Sublayer (PCS) and 1310&nbsp;nm lasers. It delivers 
+serialized data over multi-mode fiber at a line rate of 10.3125 Gbit/s.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LRM 
+supports distances up to 220&nbsp;metres (720&nbsp;ft) on FDDI-grade 62.5&nbsp;µm multi-mode 
+fibre originally installed in the early 1990s for FDDI and 100BaseFX networks 
+and 260&nbsp;metres (850&nbsp;ft) on OM3. 10GBASE-LRM reach is not quite as far as the 
+older 10GBASE-LX4 standard. However it is hoped that 10GBASE-LRM modules will be 
+lower cost and lower power; and because 10GBASE-LRM uses the same PCS as XFI and 
+SFI it fits better with the XFP and SFP+ module MSAs than 10GBASE-LX4.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LRM 
+uses electronic dispersion control (EDC) for receive equalization.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-ER</span></font></h3>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-ER 
+(&quot;extended range&quot;) uses the IEEE 802.3 Clause 49 64B/66B Physical Coding 
+Sublayer (PCS) and 1550&nbsp;nm lasers. It delivers serialized data over single-mode 
+fiber at a line rate of 10.3125&nbsp;Gbit/s.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-ER has 
+a reach of 40&nbsp;kilometres (25&nbsp;mi).</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-ZR</span></font></h3>
+<p align="justify"><span style="font-family: Arial; color: black">Several 
+manufacturers have introduced 80&nbsp;km (50&nbsp;mi) range ER pluggable interfaces under 
+the name 10GBASE-ZR. This 80&nbsp;km PHY is not specified within the IEEE 802.3ae 
+standard and manufacturers have created their own specifications based upon the 
+80&nbsp;km PHY described in the OC-192/STM-64 SDH/SONET specifications.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">The 802.3 
+standard will not be amended to cover the ZR PHY.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-LX4</span></font></h3>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LX4 
+uses the IEEE 802.3 Clause 48 Physical Coding Sublayer (PCS) and coarse WDM.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">It supports 
+ranges of between 240&nbsp;metres (790&nbsp;ft) and 300&nbsp;metres (980&nbsp;ft) over legacy 
+multi-mode cabling. This is achieved through the use of four separate laser 
+sources operating at 3.125 Gbit/s in the range of 1300&nbsp;nm on unique wavelengths. 
+10GBASE-LX4 also supports 10&nbsp;kilometres (6.2&nbsp;mi) over SMF.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">Until 2005 
+10GBASE-LX4 optical modules were cheaper than 10GBASE-LR optical modules.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-LX4 is 
+used by people who want to support both MMF and SMF with a single optical 
+module. Because 10GBASE-LX4 uses four lasers it has a potential cost, size and 
+power disadvantage compared to 10GBASE-LRM.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">When used with 
+legacy MMF an expensive mode conditioning patch cord is needed. The mode 
+conditioning patch cord is a short length of SMF which connects to the MMF in 
+such a way to move the beam away from the central defect in the legacy MMF. This 
+is not needed with OM3.</span></p>
+<h2 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">Copper (10GBASE-X/10GBASE-T)</font></span></span></h2>
+<p align="justify"><span style="font-family: Arial; color: black">10G Ethernet 
+can also run over twin-ax and cat 6a cabling as well as backplanes.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-CX4</span></font></h3>
+<p align="justify"><b><span style="font-family: Arial; color: black">10GBASE-CX4</span></b><span style="font-family: Arial; color: black"> 
+— also known by its working group name <b>802.3ak</b> — transmits over 4-lanes 
+in each direction over copper cabling similar to the variety used in InfiniBand 
+technology. It is designed to work up to a distance of 15&nbsp;m (49&nbsp;ft). This 
+technology has the lowest cost per port of all 10Gb interconnects, at the 
+expense of range. Each device capable of supporting a 10GbE module uses some MSA 
+(Multi-Source Agreement) to provide the actual module connectivity within the 
+device to the outside connector. XENPAK, X2, and XPAK connectors all fit into a 
+standard MSA pinout. CX4 modules exist at least in the XENPAK, X2, and XFP 
+variety, and possible XPAK, although the smaller size makes this configuration 
+more difficult. Each lane of the copper carries 3.125 Gbaud of signaling 
+bandwidth. It is the job of the 802.3ae Clause 48 protocol to manage and 
+synchronize the data flowing between these 4 channels; this functionality is 
+maintained in the PCS. Compare to 10GBASE-R devices, which use the Clause 49 
+protocol. Clause 48 uses an 8 to 10 bit conversion to accommodate better line 
+signaling, but Clause 49 uses a 64 to 66 bit conversion for this accommodation, 
+which leaves the actual overhead for signaling much tighter than the Clause 48.</span></p>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-CX4 
+offers the advantages of low power, low cost and low latency, but has a bigger 
+form factor than SFP+.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">SFP+ 
+Direct Attach (10GSFP+Cu)</span></font></h3>
+<p align="justify"><span style="font-family: Arial; color: black">This uses a 
+passive twin-ax cable assembly and connects directly into an SFP+ housing. It 
+has a range of 10 m and like 10GBASE-CX4 is low power, low cost and low latency 
+with the added advantage of having the small form factor of SFP+. SFP+ Direct 
+Attach is expected to be the optimum solution for reaches of 10 m. </span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-KX4 and 10GBASE-KR</span></font></h3>
+<p align="justify"><b><span style="font-family: Arial; color: black">Backplane 
+Ethernet</span></b><span style="font-family: Arial; color: black"> — also known 
+by its working group name <b>802.3ap</b> — is used in backplane applications 
+such as blade servers and routers/switches with upgradable line cards. 802.3ap 
+implementations are required to operate in an environment comprising up to 1&nbsp;metre 
+(39&nbsp;in) of copper printed circuit board with two connectors. The standard 
+provides for two different implementations at 10Gbit/s: <b>10GBASE-KX4</b> and
+<b>10GBASE-KR</b>. <b>10Gbase-KX4</b> uses the same physical layer coding 
+(defined in IEEE 802.3 Clause 48) as 10GBASE-CX4. <b>10GBASE-KR</b> uses the 
+same coding (defined in IEEE 802.3 Clause 49) as 10GBASE-LR/ER/SR. The 802.3ap 
+standard also defines an optional layer for FEC, a backplane auto-negotiation 
+protocol and link training where the receiver can set a three tap transmit 
+equalizer.</span></p>
+<h3 align="justify"><font face="Arial" size="3"><span class="mw-headline">
+10GBASE-T</span></font></h3>
+<p align="justify"><b><span style="font-family: Arial; color: black">10GBASE-T</span></b><span style="font-family: Arial; color: black">, 
+or <b>IEEE 802.3an-2006</b>, is a standard released in 2006 to provide 10 
+gigabit/second connections over unshielded or shielded twisted pair cables, over 
+distances up to 100&nbsp;meters (330&nbsp;ft). 10GBASE-T cable infrastructure can also be 
+used for 1000BASE-T allowing a gradual upgrade from 1000BASE-T using 
+auto-negotiation to select which speed to use. 10GBASE-T has higher latency and 
+consumes more power than other 10 gigabit Ethernet physical layers. In 2008 
+10GBASE-T silicon is now available from several manufacturers with claimed power 
+dissipation of 6W and a latency approaching 1 microsecond.</span></p>
+<h4 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">Connectors</font></span></span></h4>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-T uses 
+650 MHz versions of the venerable IEC 60603-7 8P8C (commonly, but incorrectly, 
+referred to as RJ-45) connectors already widely used with Ethernet.</span></p>
+<h4 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">Cables</font></span></span></h4>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-T will 
+work up to 55&nbsp;m (180&nbsp;ft) with existing Cat 6 cabling. In order to allow 
+deployment at the usual 100&nbsp;m (328&nbsp;ft), the standard uses a new partitioned 
+Category 6a (a.k.a &quot;augmented Cat6&quot;) cable specification, designed to reduce 
+crosstalk between UTP cables, known as alien crosstalk. Some manufacturers of 
+cable have released &quot;Cat7&quot; cable which is specifically marketed for 10GBASE-T 
+compatibility and claims greater shielding beyond cat6a specifications.</span></p>
+<h4 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">Electrical characteristics</font></span></span></h4>
+<p align="justify"><span style="font-family: Arial; color: black">The 802.3an 
+standard defines the wire-level modulation for 10GBASE-T as a Tomlinson-Harashima 
+precoded (THP) version of pulse-amplitude modulation with 16 discrete levels 
+(PAM-16), encoded in a two-dimensional checkerboard pattern known as DSQ128. 
+Several proposals were considered for wire-level modulation, including PAM with 
+12 discrete levels (PAM-12), 10 levels (PAM-10), or 8 levels (PAM-8), both with 
+and without Tomlinson-Harashima Precoding (THP). PAM-5 is what is used in the 
+older 1000BASE-T gigabit Ethernet standard.</span></p>
+<h2 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">WAN PHY (10GBASE-W)</font></span></span></h2>
+<p align="justify"><span style="font-family: Arial; color: black">10GBASE-SW, 
+10GBASE-LW, 10GBASE-EW, and 10GBASE-ZW are varieties that use the WAN PHY, 
+designed to interoperate with OC-192/STM-64 SDH/SONET equipment using a 
+light-weight SDH/SONET frame running at 9.953 Gbit/s. WAN PHY is used when an 
+enterprise user wishes to transport 10G Ethernet across telco SDH/SONET or 
+previously installed WDM systems without having to directly map the Ethernet 
+frames into SDH/SONET. The WAN PHY variants correspond at the physical layer to 
+10GBASE-SR, 10GBASE-LR, 10GBASE-ER and 10GBASE-ZR respectively, and hence use 
+the same types of fiber and support the same distances. There is no WAN PHY 
+standard corresponding to 10GBASE-LX4 and 10GBASE-CX4 since the original SONET/SDH 
+standard requires a serial implementation. The WAN PHYs use 10GBASE-W as the 
+PCS.</span></p>
+<h2 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">10GbE NICs</font></span></span></h2>
+<p align="justify"><span style="font-family: Arial; color: black">10GbE network 
+interface cards are available from several manufacturers. These plug into 
+ordinary computer servers using PCI express, or PCI-X and connect to the LAN 
+with a choice of PHY modules.</span></p>
+<h2 align="justify"><span class="mw-headline"><span style="font-family: Arial">
+<font size="3">40 Gigabit DWDM</font></span></span></h2>
+<p align="justify"><span style="font-family: Arial; color: black">A number of 
+vendors are offering products based on Dense wavelength-division multiplexing, 
+which allows packing up to 4 light carriers into one single-mode optical fiber, 
+effectively providing 40 Gigabit operation. These products are not related to 
+the upcoming 40 Gigabit Ethernet standard, which will provide 40 Gigabit 
+operation using a single light carrier.</span></p>
+<p align="center"><b><font face="Arial"><a href="ACNMAIN.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

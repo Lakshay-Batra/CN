@@ -1,0 +1,411 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<b>
+<p align="center"><u><font face="Arial" color="#FF0000" size="6">FDDI</font></u></p>
+</b>
+<p><b><span style="font-family:Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Fiber-Distributed Data Interface</span></b><span style="font-family:Arial"> (<b>FDDI</b>) 
+provides a standard for data transmission in a local area network that can 
+extend in range up to 200 kilometers (124 miles). The FDDI protocol uses as its 
+basis the token ring protocol. In addition to covering large geographical areas, 
+FDDI local area networks can support thousands of users. As a standard 
+underlying medium it uses optical fiber (though it can use copper cable, in 
+which case one can refer to CDDI). FDDI uses a dual-attached, counter-rotating 
+token-ring topology.</span></p>
+<p align="justify"><span style="font-family:Arial">FDDI, as a product of 
+American National Standards Institute X3-T9, conforms to the open system 
+interconnect (OSI) model of functional layering of LANs using other protocols. 
+FDDI-II, a version of FDDI, adds the capability to add circuit-switched service 
+to the network so that it can also handle voice and video signals. Work has 
+started to connect FDDI networks to the developing Synchronous Optical Network 
+SONET.</span></p>
+<p align="justify"><span style="font-family:Arial">An FDDI network contains two 
+token rings, one for possible backup in case the primary ring fails. The primary 
+ring offers up to 100 Mbit/s capacity. When a network has no requirement for the 
+secondary ring to do backup, it can also carry data, extending capacity to 200 
+Mbit/s. The single ring can extend the maximum distance; a dual ring can extend 
+100 km (62 miles). FDDI has a larger maximum-frame size than standard 100 Mbit/s 
+Ethernet, allowing better throughput.</span></p>
+<p align="justify"><span style="font-family:Arial">Designers normally construct 
+FDDI rings in the form of a &quot;dual ring of trees&quot; (see network topology). A small 
+number of devices (typically infrastructure devices such as routers and 
+concentrators rather than host computers) connect to both rings - hence the term 
+&quot;dual-attached&quot;. Host computers then connect as single-attached devices to the 
+routers or concentrators. The dual ring in its most degenerate form simply 
+collapses into a single device. Typically, a computer-room contains the whole 
+dual ring, although some implementations have deployed FDDI as a Metropolitan 
+area network.</span></p>
+<p align="justify"><span style="font-family:Arial">FDDI requires this network 
+topology because the dual ring actually passes through each connected device and 
+requires each such device to remain continuously operational (the standard 
+actually allows for optical bypasses, but network engineers consider these 
+unreliable and error-prone). Devices such as workstations and minicomputers that 
+may not come under the control of the network managers are not suitable for 
+connection to the dual ring.</span></p>
+<p align="justify"><span style="font-family:Arial">As an alternative to using a 
+dual-attached connection, a workstation can obtain the same degree of resilience 
+through a dual-homed connection made simultaneously to two separate devices in 
+the same FDDI ring. One of the connections becomes active while the other one is 
+automatically blocked. If the first connection fails, the backup link takes over 
+with no perceptible delay.</span></p>
+<p align="justify"><span style="font-family:Arial">Due to their speed, cost and 
+ubiquity, fast Ethernet and (since 1998) Gigabit Ethernet has largely made FDDI 
+redundant.</span></p>
+<p class="MsoNormal" align="justify">&nbsp;<font face="Arial">FDDI standards comprise:</font></p>
+<ul lastCheckbox="null">
+  <li>
+  <p align="justify"><font face="Arial">ANSI X3T12, supersedes ANSI X3T9.5
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial">ANSI X3T9.5, containing Physical Media 
+  Dependent (PMD) specifications </font></li>
+  <li>
+  <p align="justify"><font face="Arial">ANSI X3T9.5, containing the Physical (PHY) 
+  specifications </font></li>
+  <li>
+  <p align="justify"><font face="Arial">ANSI X3.139, containing Media Access 
+  Control (MAC) specifications </font></li>
+  <li>
+  <p align="justify"><font face="Arial">ANSI X39.5, containing the Station 
+  Management (SMT) specifications.</font></li>
+</ul>
+<p align="justify"><font face="Arial">The <em>Fiber Distributed Data Interface 
+(FDDI)</em> specifies a 100-Mbps token-passing, dual-ring LAN using fiber-optic 
+cable. FDDI is frequently used as high-speed backbone technology because of its 
+support for high bandwidth and greater distances than copper. It should be noted 
+that relatively recently, a related copper specification, called Copper 
+Distributed Data Interface (CDDI), has emerged to provide 100-Mbps service over 
+copper. CDDI is the implementation <br>
+of FDDI protocols over twisted-pair copper wire. This chapter focuses mainly on 
+FDDI specifications and operations, but it also provides a high-level overview 
+of CDDI.</font></p>
+<p align="justify"><a name="1020552"><font face="Arial">FDDI uses dual-ring 
+architecture with traffic on each ring flowing in opposite directions (called 
+counter-rotating). The dual rings consist of a primary and a secondary ring. 
+During normal operation, the primary ring is used for data transmission, and the 
+secondary ring remains idle. As will be discussed in detail later in this 
+chapter, the primary purpose of the dual rings is to provide superior 
+reliability and robustness. Figure 8-1 shows the counter-rotating primary and 
+secondary FDDI rings. </font></p>
+<p align="left"><font face="Arial"><br>
+<b>Figure&nbsp;8-1: FDDI Uses Counter-Rotating Primary and Secondary Rings</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840801.gif" width="412" height="254"></b> </font></p>
+<h3 align="justify"></a><font face="Arial" size="3"><a name="xtocid3">Standards</a></font></h3>
+<p align="justify"><font face="Arial">FDDI was developed by the American 
+National Standards Institute (ANSI) X3T9.5 </font><a name="1020561">
+<font face="Arial">standards committee in the mid-1980s. At the time, high-speed 
+engineering workstations were beginning to tax the bandwidth of existing 
+local-area networks (LANs) based on Ethernet and Token Ring. A new LAN media was 
+needed that could easily support these workstations and their new distributed 
+applications. At the same time, network reliability had become an increasingly 
+important issue as system managers migrated mission-critical applications from 
+large computers to networks. FDDI was developed to fill these needs. After 
+completing the FDDI specification, ANSI submitted FDDI to the International 
+Organization for Standardization (ISO), which created an international version 
+of FDDI that is completely compatible with the ANSI standard version.</font></p>
+<h2 align="justify"></a><font face="Arial" size="3"><a name="xtocid4">FDDI 
+Transmission Media</a></font></h2>
+<p align="justify"><font face="Arial"><a name="1020563">FDDI uses optical fiber 
+as the primary transmission medium, but it also can run over copper cabling. As 
+mentioned earlie</a><a name="1020565">r, FDDI over copper is referred to as <em>
+Copper-Distributed Data Interface (CDDI)</em></a></font><a name="1020566"><font face="Arial">. 
+Optical fiber has several advantages over copper media. In particular, security, 
+reliability, and performance all are enhanced with optical fiber media because 
+fiber does not emit electrical signals. A physical medium that does emit 
+electrical signals (copper) can be tapped and therefore would permit 
+unauthorized access to the data that is transiting the medium. In addition, 
+fiber is immune to electrical interference from radio frequency interference (RFI) 
+and electromagnetic interference (EMI). Fiber historically has supported much 
+higher bandwidth (throughput potential) than copper, although recent 
+technological advances have made copper capable of transmitting at 100 Mbps. 
+Finally, FDDI allows 2 km between stations using multimode fiber, and even 
+longer distances using a single mode.</font></p>
+<p align="justify"></a><a name="1020567"><font face="Arial">FDDI defines two 
+types of optical fiber: single-mode and multimode. A <em>mode</em> is a ray of 
+light that enters the fiber at a particular angle. <em>Multimode</em> fiber uses 
+LED as the light-generating device, while <em>single-mode</em> fiber generally 
+uses lasers. </font></p>
+<p align="justify"><font face="Arial">Multimode fiber allows multiple modes of 
+light to propagate through the fiber. Because these modes of light enter the 
+fiber at different angles, they will arrive at the end of the fiber at different 
+times. This characteristic is known as </font></a><a name="1020570">
+<font face="Arial"><em>modal dispersion</em>. Modal dispersion limits the 
+bandwidth and distances that can be accomplished using multimode fibers. For 
+this reason, multimode fiber is generally used for connectivity within a 
+building or a relatively geographically contained environment.</font></p>
+<p align="justify"><font face="Arial">Single-mode fiber allows only one mode of 
+light to propagate through the fiber. Because only a single mode of light is 
+used, modal dispersion is not present with single-mode fiber. Therefore, 
+single-mode fiber is capable of delivering considerably higher performance 
+connectivity over much larger distances, which is why it generally is used for 
+connectivity between buildings and within environments that are more 
+geographically dispersed. </font></p>
+<p align="justify"><font face="Arial">Figure 8-2 depicts single-mode fiber using 
+a laser light source and multimode fiber using a light emitting diode (LED) 
+light source.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-2: Light Sources Differ for Single-Mode and Multimode Fibers </b>
+</font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840802.gif" width="427" height="179"></b> </font></p>
+<h2 align="justify"></a><font face="Arial" size="3"><a name="xtocid5">FDDI 
+Specifications</a></font></h2>
+<p align="justify"><a name="1020578"><font face="Arial">FDDI specifies the 
+physical and media-access portions of the OSI reference model. FDDI is not 
+actually a single specification, but it is a collection of four separate 
+specifications, each with a specific function. Combined, these specifications 
+have the capability to provide high-speed connectivity between upper-layer 
+protocols such as TCP/IP and IPX, and media such as fiber-optic cabling. </font>
+</p>
+<p align="justify"><font face="Arial">FDDI's four specifications are the Media 
+Access Control (MAC), Physical Layer <br>
+Protocol (PHY), Physical-Medium Dependent (PMD), and Station Management (SMT) 
+specifications. The <em>MAC</em> specification defines how the medium is 
+accessed, including </font></a><font face="Arial"><a name="1020581">frame 
+format, token handling, addressing, algorithms for calculating cyclic redundancy 
+check (CRC) value, and error-recovery mechanisms. The <em>PHY</em> specification 
+defines data encoding/decoding procedures, clocking requirements, and framing, 
+among other functions. The </a><a name="1020582"><em>PMD</em> specification 
+defines the characteristics of the transmission medium, including fiber-optic 
+links, power levels, bit-error rates, optical components, and connectors. The
+</a></font><a name="1020583"><font face="Arial"><em>SMT</em> specification 
+defines FDDI station configuration, ring configuration, and ring control 
+features, including station insertion and removal, initialization, fault 
+isolation and recovery, scheduling, and statistics collection.</font></p>
+<p align="justify"><font face="Arial">FDDI is similar to IEEE 802.3 Ethernet and 
+IEEE 802.5 Token Ring in its relationship with the OSI model. Its primary 
+purpose is to provide connectivity between upper OSI layers of common protocols 
+and the media used to connect network devices. Figure 8-3 illustrates the four 
+FDDI specifications and their relationship to each other and to the IEEE-defined 
+Logical Link Control (LLC) sublayer. The LLC sublayer is a component of Layer 2, 
+the MAC layer, of the OSI reference model.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-3: FDDI Specifications Map to the OSI Hierarchical Model</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840803.gif" width="476" height="326"></b> </font></p>
+<h2 align="justify"></a><font face="Arial" size="3"><a name="1020590">FDDI 
+Station-Attachment Types</a></font></h2>
+<p align="justify"><font face="Arial">One of the unique characteristics of FDDI 
+is that multiple ways actually exist by which to connect FDDI devices. FDDI 
+defines four types of devices: single-attachment station (SAS), dual-attachment 
+station (DAS), single-attached concentrator (SAC), and dual-attached 
+concentrator (DAC).</font></p>
+<p align="justify"><a name="1020593"><font face="Arial">An SAS attaches to only 
+one ring (the primary) through a concentrator. One of the primary advantages of 
+connecting devices with SAS attachments is that the devices will not have any 
+effect on the FDDI ring if they are disconnected or powered off. Concentrators 
+will be covered in more detail in the following discussion.</font></p>
+<p align="justify"></a><a name="1020595"><font face="Arial">Each FDDI DAS has 
+two ports, designated A and B. These ports connect the DAS to the dual FDDI 
+ring. Therefore, each port provides a connection for both the primary and the 
+secondary rings. As you will see in the next section, devices using DAS 
+connections will affect the rings if they are disconnected or powered off. 
+Figure 8-4 shows FDDI DAS A and B ports with attachments to the primary and 
+secondary rings.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-4: FDDI DAS Ports Attach to the Primary and Secondary Rings </b>
+</font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840804.gif" width="434" height="222"></b> </font></p>
+<p align="justify"></a><font face="Arial"><a name="1020602">An <em>FDDI 
+concentrator</em> (also called a <em>dual-attachment concentrator [DAC]</em>) is 
+the building block of an FDDI network. It attaches directly to both the primary 
+and secondary rings and </a></font><a name="1020604"><font face="Arial">ensures 
+that the failure or power-down of any SAS does not bring down the ring. This is 
+particularly useful when PCs, or similar devices that are frequently powered on 
+and off, connect to the ring. Figure 8-5 shows the ring attachments of an FDDI 
+SAS, DAS, and concentrator.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-5: A Concentrator Attaches to Both the Primary and Secondary Rings</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840805.gif" width="351" height="318"></b> </font></p>
+<h2 align="justify"></a><font face="Arial" size="3"><a name="xtocid7">FDDI Fault 
+Tolerance</a></font></h2>
+<p align="justify"><a name="1020611"><font face="Arial">FDDI provides a number 
+of fault-tolerant features. In particular, FDDI's dual-ring environment, the 
+implementation of the optical bypass switch, and dual-homing support make FDDI a 
+resilient media technology. </font></p>
+<h3 align="justify"></a><font face="Arial" size="3"><a name="xtocid8">Dual Ring</a></font></h3>
+<p align="justify"><font face="Arial"><a name="1020614">FDDI's primary 
+fault-tolerant feature is the <em>dual ring</em>. If a station on the dual ring 
+fails or is powered down, or if the cable is damaged, the dual ring is 
+automatically wrapped (doubled back onto itself) into a single ring. When the 
+ring is wrapped, the dual-ring topology </a></font><a name="1020616">
+<font face="Arial">becomes a single-ring topology. Data continues to be 
+transmitted on the FDDI ring without performance impact during the wrap 
+condition. Figure 8-6 and Figure 8-7 illustrate the effect of a ring wrapping in 
+FDDI.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-6: A Ring Recovers from a Station Failure by Wrapping</b> </font>
+</p>
+<p align="center"><font face="Arial"><br>
+<img src="ct840806.gif" width="319" height="340"></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-7: A Ring also Wraps to Withstand a Cable Failure</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840807.gif" width="321" height="343"></b> </font></p>
+<p align="justify"><font face="Arial">When a single station fails, as shown in 
+Figure 8-6, devices on either side of the failed (or powered-down) station wrap, 
+forming a single ring. Network operation continues for the remaining stations on 
+the ring. When a cable failure occurs, as shown in Figure 8-7, devices on either 
+side of the cable fault wrap. Network operation continues for all stations.
+</font></p>
+<p align="justify"><font face="Arial">It should be noted that FDDI truly 
+provides fault tolerance against a single failure only. </font></a>
+<font face="Arial"><a name="1020628">When two or more failures occur, the FDDI 
+ring segments into two or more independent </a></font><a name="1020629">
+<font face="Arial">rings that are incapable of communicating with each other.
+</font></p>
+<h3 align="justify"></a><font face="Arial" size="3"><a name="xtocid9">Optical 
+Bypass Switch</a></font></h3>
+<p align="justify"><a name="1020631"><font face="Arial">An <em>optical bypass 
+switch</em> provides continuous dual-ring operation if a device on the dual ring 
+fails. This is used both to prevent ring segmentation and to eliminate failed 
+stations from the ring. The optical bypass switch performs this function using 
+optical mirrors that pass light from the ring directly to the DAS device during 
+normal operation. If a failure of the DAS device occurs, such as a power-off, 
+the optical bypass switch will pass the light through itself by using internal 
+mirrors and thereby will maintain the ring's integrity. </font></p>
+<p align="justify"><font face="Arial">The benefit of this capability is that the 
+ring will not enter a wrapped condition in case of a device failure. Figure 8-8 
+shows the functionality of an optical bypass switch in an FDDI network. When 
+using the OB, you will notice a tremendous digression of your network as the 
+packets are sent through the OB unit.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-8: The Optical Bypass Switch Uses Internal Mirrors to Maintain a 
+Network</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840808.gif" width="407" height="273"></b> </font></p>
+<h3 align="justify"></a><font face="Arial" size="3"><a name="xtocid10">Dual 
+Homing</a></font></h3>
+<p align="justify"><font face="Arial">Critical devices, such as routers or 
+mainframe hosts, can use a fault-tolerant technique </font><a name="1020640">
+<font face="Arial">called <em>dual homing</em> to provide additional redundancy 
+and to help guarantee operation. In dual-homing situations, the critical device 
+is attached to two concentrators. Figure 8-9 shows a dual-homed configuration 
+for devices such as file servers and routers.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-9: A Dual-Homed Configuration Guarantees Operation</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840809.gif" width="270" height="236"></b> </font></p>
+<p align="justify"><font face="Arial">One pair of concentrator links is declared 
+the active link; the other pair is declared passive. The </font></a>
+<a name="1020647"><font face="Arial">passive link stays in backup mode until the 
+primary link (or the concentrator to which it is attached) is determined to have 
+failed. When this occurs, the passive link automatically activates.</font></p>
+<h2 align="justify"></a><font face="Arial" size="3"><a name="xtocid11">FDDI 
+Frame Format</a></font></h2>
+<p align="justify"><font face="Arial">The FDDI frame format is similar to the 
+format of a<a name="1020649"> Token Ring frame. This is one of the </a></font>
+<a name="1020651"><font face="Arial">areas in which FDDI borrows heavily from 
+earlier LAN technologies, such as Token Ring. FDDI frames can be as large as 
+4,500 bytes. Figure 8-10 shows the frame format of an FDDI data frame and token.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-10: The FDDI Frame Is Similar to That of a Token Ring Frame</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840810.gif" width="668" height="262"></b> </font></p>
+<h3 align="justify"></a><font face="Arial" size="3"><a name="xtocid12">FDDI 
+Frame Fields</a></font></h3>
+<p align="justify"><a name="1020658"><font face="Arial">The following 
+descriptions summarize the FDDI data frame and token fields illustrated in 
+Figure 8-10.</font></p>
+<ul>
+  <li>
+  <p align="justify"></a><a name="1020660"><font face="Arial"><strong>Preamble</strong>—Gives 
+  a unique sequence that prepares each station for an upcoming frame. </font>
+  </li>
+  <li>
+  <p align="justify"></a><a name="1020662"><font face="Arial"><strong>Start 
+  delimiter</strong>—Indicates the beginning of a frame by employing a signaling 
+  pattern that differentiates it from the rest of the frame. </font></li>
+  <li>
+  <p align="justify"></a><a name="1020664"><font face="Arial"><strong>Frame 
+  control</strong>—Indicates the size of the address fields and whether the 
+  frame contains asynchronous or synchronous data, among other control 
+  information. </font></li>
+  <li>
+  <p align="justify"></a><a name="1020666"><font face="Arial"><strong>
+  Destination address</strong>—Contains a unicast (singular), multicast (group), 
+  or broadcast (every station) address. As with Ethernet and Token Ring 
+  addresses, FDDI destination addresses are 6 bytes long. </font></li>
+  <li>
+  <p align="justify"></a><a name="1020668"><font face="Arial"><strong>Source 
+  address</strong>—Identifies the single station that sent the frame. As with 
+  Ethernet and Token Ring addresses, FDDI source addresses are 6 bytes long.
+  </font></li>
+  <li>
+  <p align="justify"></a><a name="1020670"><font face="Arial"><strong>Data</strong>—Contains 
+  either information destined for an upper-layer protocol or control 
+  information. </font></li>
+  <li>
+  <p align="justify"></a><a name="1020672"><font face="Arial"><strong>Frame 
+  check sequence (FCS)</strong>—Is filed by the source station with a calculated 
+  cyclic redundancy check value dependent on frame contents (as with Token Ring 
+  and Ethernet). The destination address recalculates the value to determine 
+  whether the frame was damaged in transit. If so, the frame is discarded.
+  </font></li>
+  <li>
+  <p align="justify"></a><a name="1020674"><font face="Arial"><strong>End 
+  delimiter</strong>—Contains unique symbols; cannot be data symbols that 
+  indicate the end of the frame. </font></li>
+  <li>
+  <p align="justify"></a><a name="1020676"><font face="Arial"><strong>Frame 
+  status</strong>—Allows the source station to determine whether an error 
+  occurred; identifies whether the frame was recognized and copied by a 
+  receiving station. </font></p>
+  <p align="justify">&nbsp;</li>
+</ul>
+<h2 align="justify"></a><font face="Arial" size="3"><a name="xtocid13">Copper 
+Distributed Data Interface</a>:</font></h2>
+<p align="justify"><font face="Arial">Copper Distributed Data Interface (CDDI) 
+is the implementation of FDDI protocols over twisted-pair copper wire. Like 
+FDDI, CDDI provides data rates of 100 Mbps and uses dual-<a name="1020680">ring 
+arc</a></font><a name="1020681"><font face="Arial">hitecture to provide 
+redundancy. CDDI supports distances of about 100 meters from desktop to 
+concentrator.</font></p>
+<p align="justify"><font face="Arial">CDDI is defined by the ANSI X3T9.5 
+Committee. The CDDI standard is officially named the </font></a>
+<a name="1020683"><font face="Arial">Twisted-Pair Physical Medium-Dependent (TP-PMD) 
+standard. It is also referred to as the Twisted-Pair Distributed Data Interface 
+(TP-DDI), consistent with the term Fiber Distributed Data Interface (FDDI). CDDI 
+is consistent with the physical and media-access control layers defined by the 
+ANSI standard. </font></p>
+<p align="justify"><font face="Arial">The ANSI standard recognizes only two 
+types of cables for CDDI: shielded twisted pair (STP) and unshielded twisted 
+pair (UTP). STP cabling has 150-ohm impedance and </font></a><font face="Arial">
+<a name="1020685">adheres to EIA/TIA 568 (IBM Type 1) specifications. UTP is 
+data-grade cabling (Category 5) consisting of four unshielded pairs using 
+tight-pair twists and specially developed </a></font><a name="1020686">
+<font face="Arial">insulating polymers in plastic jackets adhering to EIA/TIA 
+568B specifications. </font></p>
+<p align="justify"><font face="Arial">Figure 8-11 illustrates the CDDI TP-PMD 
+specification in relation to the remaining FDDI specifications.</font></p>
+<p align="justify"><font face="Arial"><br>
+<b>Figure&nbsp;8-11: CDDI TP-PMD and FDDI Specifications Adhere to Different 
+Standards</b></font></p>
+<p align="center"><font face="Arial"><b><br>
+<img src="ct840811.gif" width="482" height="262"></b> </font></p>
+</a>
+<p align="justify"><font face="Arial">The Fiber Distributed Data Interface 
+(FDDI) specifies a 100-Mbps token-passing, dual-ring LAN architecture using 
+fiber-optic cable. FDDI is frequently implemented as a high-speed backbone 
+technology because of its support for high bandwidth and greater distances than 
+copper.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

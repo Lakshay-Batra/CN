@@ -1,0 +1,561 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="VLAN_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h5
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	font-size:13.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;
+	font-style:italic}
+span.pco
+	{}
+span.articlebody1
+	{font-family:Arial;
+	}
+span.Hyperlink56
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single}
+span.atitle1
+	{font-family:Arial;
+	}
+span.smalltitle1
+	{font-family:Arial;
+	font-weight:bold;
+	font-style:normal}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" align="center"><font face="Arial">
+<span style="text-transform: uppercase"><u><b><span style="color: #FF0000">
+<font size="6">VIRTUAL LAN</font></span></b></u></span></font></p>
+<p align="justify"><font face="Arial">A <b>virtual LAN</b>, commonly known as a
+<b>vLAN</b> or as a <b>VLAN</b>, is a method of creating independent logical 
+networks within a physical network. Several VLANs can co-exist within such a 
+network. This helps in reducing the broadcast domain.</font></p>
+<p align="justify"><font face="Arial">A VLAN consists of a network of computers 
+that behave as if connected to the same wire - even though they may actually be 
+physically connected to different segments of a LAN. Network administrators 
+configure VLANs through software rather than hardware, which makes them 
+extremely flexible. One of the biggest advantages of VLANs emerges when 
+physically moving a computer to another location: it can stay on the same VLAN 
+without the need for any hardware reconfiguration.</font></p>
+<p align="justify"><font face="Arial">VLAN 1 is the default VLAN; it can never 
+be deleted. All untagged traffic falls into this VLAN by default.</font></p>
+<h1 style="text-align: justify"><a name="xtocid157790">
+<span style="font-size: 12.0pt">Overview of Routing&nbsp;between&nbsp;</span></a><span style="font-size: 12.0pt">Virtual&nbsp;LANs
+</span></h1>
+<p style="text-align: justify"><span style="font-family: Arial">This chapter 
+provides an overview of virtual LANs (VLANs). It describes the encapsulation 
+protocols used for routing between VLANs and provides some basic information 
+about designing&nbsp;VLANs.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">What Is a Virtual LAN?</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">A <a name="5856">
+VLAN is a switched network that is logically segmented on an organizational 
+basis, by functions, project teams, or applications rather than on a physical or 
+geographical basis. For example, all workstations and servers used by a 
+particular workgroup team can be connected to the same VLAN, regardless of their 
+physical connections to the network or the fact that they might be intermingled 
+with other teams. Reconfiguration of the network can be done through software 
+rather than by physically unplugging and moving devices or wires. </a></span>
+</p>
+<p style="text-align: justify"><span style="font-family: Arial">A VLAN can be 
+thought of as a broadcast domain that exists within a defined set of switches. A 
+VLAN consists of a number of end systems, either hosts or network equipment 
+(such as bridges and routers), connected by a single bridging domain. The 
+bridging domain is supported on various pieces of network equipment; for 
+example, LAN switches that operate bridging protocols between them with a 
+separate bridge group for each VLAN. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">VLANs are 
+created to provide the segmentation services traditionally provided by routers 
+in LAN configurations. VLANs address scalability, security, and network 
+management. Routers in VLAN topologies provide broadcast filtering, security, 
+address summarization, and traffic flow management. None of the switches within 
+the defined group will bridge any frames, not even broadcast frames, between two 
+VLANs. Several key issues need to be considered when designing and building 
+switched LAN internetworks.</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">LAN Segmentation </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Security </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Broadcast Control </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Performance </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Network Management </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Communication between VLANs </span></li>
+</ul>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">LAN Segmentation</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">VLANs allow
+<a name="5774">logical network topologies to overlay the physical switched 
+infrastructure such that any arbitrary collection of LAN ports can be combined 
+into an autonomous user group or community of interest. The technology logically 
+segments the network into separate Layer 2 broadcast domains whereby packets are 
+switched between ports designated to be within the same VLAN. By containing 
+traffic originating on a particular LAN only to other LANs in the same VLAN, 
+switched virtual networks avoid wasting bandwidth, a drawback inherent to 
+traditional bridged and switched networks in which packets are often forwarded 
+to LANs with no need for them. Implementation of VLANs also</a><a name="5777"> 
+improves scalability, particularly in LAN environments that support broadcast- 
+or multicast-intensive protocols and applications that flood packets throughout 
+the network. </a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Figure 8 
+illustrates the difference between traditional physical LAN segmentation and 
+logical VLAN segmentation.</span></p>
+<p class="MsoNormal" style="text-align: center">
+<span style="font-family: Arial"><br>
+<b>Figure&nbsp;8: LAN <a name="5778">Segmentation and VLAN Segmentation</a></b>
+</span></p>
+<p style="text-align: center"><span style="font-family: Arial"><br>
+<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1038" type="#_x0000_t75" alt="" style='width:460.5pt;
+ height:319.5pt'>
+ <v:imagedata src="VLAN_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/s/19/s6619.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=614 height=426
+src="VLAN_files/image002.jpg" v:shapes="_x0000_s1038"><![endif]></span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Security</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">VLANs also
+<a name="5779">improve security by isolating groups. High-security users can be 
+grouped into a VLAN, possible on the same physical segment, and no users outside 
+that VLAN can communicate with&nbsp;them.</a></span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Broadcast Control</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">Just as
+<a name="5780">switches isolate collision domains for attached hosts and only 
+forward appropriate traffic out a particular port, VLANs provide complete 
+isolation between VLANs. A VLAN is a bridging domain and all broadcast and 
+multicast traffic is contained within it.</a></span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Performance</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">The logical
+<a name="5781">grouping of users allows an accounting group to make intensive 
+use of a networked accounting system assigned to a VLAN that contains just that 
+accounting group and its servers. That group's work will not affect other users. 
+The VLAN configuration improves general network performance by not slowing down 
+other users sharing the network.</a></span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Network Management</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">The logical
+<a name="5782">grouping of users allows easier network management. It is not 
+necessary to pull cables to move a user from one network to another. Adds, 
+moves, and changes are achieved by configuring a port into the appropriate VLAN.</a></span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Communication between VLANs</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">Communication 
+between<a name="5784"> </a><a name="5783">VLANs is accomplished through routing, 
+and the traditional security and filtering functions of the router can be used. 
+Cisco&nbsp;IOS software provides network services such as security filtering, quality 
+of service (QoS), and accounting on a per VLAN basis. As switched networks 
+evolve to distributed VLANs, Cisco&nbsp;IOS provides key inter-VLAN communications 
+and allows the network to scale.</a></span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">VLAN Colors</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">VLAN switching<a name="5785"> 
+is accomplished through <em>frame tagging</em> where traffic originating and 
+contained within a particular virtual topology carries a unique VLAN identifier 
+(VLAN ID) as it traverses a common backbone or trunk link. The VLAN ID enables 
+VLAN switching devices to make intelligent forwarding decisions based on the 
+embedded VLAN ID. Each VLAN is differentiated by a <em>color</em>, or VLAN 
+identifier. The unique VLAN ID determines the <em>frame coloring</em> for the 
+VLAN. Packets originating and contained within a particular VLAN carry the 
+identifier that uniquely defines that VLAN (by the VLAN ID). </a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">The VLAN ID 
+allows VLAN switches and routers to selectively forward packets to ports with 
+the same VLAN ID. The switch that receives the frame from the source station 
+inserts the VLAN ID and the packet is switched onto the shared backbone network. 
+When the frame exits the switched LAN, a switch strips header and forwards the 
+frame to interfaces that match the VLAN color. If you are using a Cisco network 
+management product such as VlanDirector, you can actually color code the VLANs 
+and monitor VLAN graphically.</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Why Implement VLANs?</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">Network managers
+<a name="5788">can group logically networks that span all major topologies, 
+including high-speed technologies such as, ATM, FDDI, and Fast Ethernet. By 
+creating virtual LANs, system and network administrators can control traffic 
+patterns and react quickly to relocations and keep up with constant changes in 
+the network due to moving requirements and node relocation just by changing the 
+VLAN member list in the router configuration. They can add, remove, or move 
+devices or make other changes to network configuration using software to make 
+the changes. </a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">Issues regarding 
+benefits of creating VLANs should have been addressed when you developed your 
+network design. Issues to consider include</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Scalability</span><span style="font-family: Arial">
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Performance improvements </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Security</span><span style="font-family: Arial">
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Network additions, moves, and changes </span>
+  </li>
+</ul>
+<h1 style="text-align: justify"><span style="font-size: 12.0pt">Communicating 
+between VLANs</span></h1>
+<p style="text-align: justify"><span style="font-family: Arial">Cisco&nbsp;IOS
+<a name="5795">provides full-feature routing at Layer 3 and translation at Layer 
+2 between VLANs. There are three different protocols available for routing 
+between VLANs:</a></span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Inter-Switch Link (ISL) </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">IEEE 802.10 </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">ATM LAN Emulation </span></li>
+</ul>
+<p style="text-align: justify"><span style="font-family: Arial">All three of 
+these technologies are based on OSI Layer 2 bridge multiplexing mechanisms.</span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Inter-Switch Link Protocol</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">Inter-Switch
+<a name="5799">Link (ISL) protocol is used to inter-connect two VLAN-capable 
+Fast Ethernet devices, such as the Catalyst 5000 or 3000 switches and Cisco 7500 
+routers. The ISL protocol is a packet-tagging protocol that contains a standard 
+Ethernet frame and the VLAN information associated with that frame. The packets 
+on the ISL link contain a standard Ethernet, FDDI, or token-ring frame and the 
+VLAN information associated with that frame. ISL is currently supported only 
+over Fast Ethernet links, but a single ISL link, or trunk, can carry different 
+protocols from multiple VLANs.</a></span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">IEEE 802.10 Protocol</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">The IEEE 802.10
+<a name="5800">protocol provides connectivity between VLANs. Originally 
+developed to address the growing need for security within shared LAN/MAN 
+environments, it incorporates authentication and encryption techniques to ensure 
+data confidentiality and integrity throughout the network. Additionally, by 
+functioning at Layer 2, it is well suited to high-throughput, low-latency 
+switching environments. IEEE 802.10 protocol can run over any LAN or HDLC serial 
+interface.</a></span></p>
+<h5 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">ATM LANE Protocol</span></h5>
+<p style="text-align: justify"><span style="font-family: Arial">The ATM LAN
+<a name="5801">Emulation (LANE) protocol provides a way for legacy LAN users to 
+take advantage of ATM benefits without requiring modifications to end-station 
+hardware or software. LANE emulates a broadcast environment like IEEE 802.3 
+Ethernet on top of an ATM network that is a point-to-point environment.</a></span></p>
+<p style="text-align: justify"><span style="font-family: Arial">LAN Emulation 
+makes ATM function like a LAN. LAN Emulation allows standard LAN drivers like 
+NDIS and ODI to be used. The virtual LAN is transparent to applications. 
+Applications can use normal LAN functions without dealing with the underlying 
+complexities of the ATM implementation. For example, a station can send 
+broadcasts and multicasts, even though ATM is defined as a point-to-point 
+technology and doesn't support any-to-any services.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">To accomplish 
+this, special low-level software is implemented on an ATM client workstation, 
+called the LAN Emulation Client or LEC. The client software communicates with a 
+central control point called a LAN Emulation Server, or LES. A Broadcast and 
+Unknown Server (BUS) acts as a central point to distribute broadcasts and 
+multicasts. The LAN Emulation Configuration Server (LECS) holds a database of 
+LECs and the ELANs the belong to. The database is maintained by a 
+network&nbsp;administrator.</span></p>
+<p style="text-align: justify"><span style="font-family: Arial">These three 
+protocols are described in detail in the <em>Cisco Internetworking Design Guide</em>.
+</span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">VLAN Interoperability</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">Cisco&nbsp;IOS<a name="5804"> 
+features bring added benefits to the VLAN technology. Enhancements to ISL, 
+IEEE&nbsp;802.10, and ATM LAN Emulation (LANE) implementations enable routing of all 
+major protocols between VLANs. These enhancements allow users to create more 
+robust networks incorporating VLAN configurations by providing communications 
+capabilities between VLANs.</a></span></p>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Inter-VLAN Communications</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">The Cisco&nbsp;IOS
+<a name="5805">supports full routing of several protocols over ISL and </a>ATM 
+LANE virtual LANs. IP, Novell IPX, and AppleTalk routing are supported over IEEE 
+802.10 VLANs. Standard routing attributes, such as network advertisements, 
+secondaries, and help addresses are applicable and VLAN routing is fast 
+switched. Table 6 shows protocols supported for each VLAN encapsulation format 
+and corresponding Cisco&nbsp;IOS releases.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial"><br>
+<b>Table&nbsp; 6: Inter-VLAN Routing Protocol Support</b> </span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0">
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">Protocol </font></span></b>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">ISL </font></span></b></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">ATM LANE </font></span></b>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify"><b>
+    <span style="font-family: Arial"><font size="3">IEEE 802.10 </font></span>
+    </b></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">IP </font></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.1 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 10.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.1 </font></span>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Novell IPX (default 
+    encapsulation)</font><a name="5807"><font size="3"> </font></a></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.1 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 10.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.1 </font></span>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Novell IPX (configurable 
+    encapsulation)</font><a name="5808"><font size="3"> </font></a></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 10.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.3 </font></span>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">AppleTalk Phase II</font><a name="5809"><font size="3">
+    </font></a></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 10.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">DECnet</font><a name="5810"><font size="3">
+    </font></a></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.0 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Banyan VINES</font><a name="5811"><font size="3">
+    </font></a></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.2 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+  <tr>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">XNS</font><a name="5812"><font size="3">
+    </font></a></span></td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.3 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">Release 11.2 </font></span>
+    </td>
+    <td valign="top" style="padding: .75pt">
+    <p class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial"><font size="3">&nbsp;</font></span></td>
+  </tr>
+</table>
+<h3 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">VLAN Translation</span></h3>
+<p style="text-align: justify"><span style="font-family: Arial">VLAN translation
+<a name="5813">refers to the ability of the Cisco&nbsp;IOS software to translate 
+between different virtual LANs or between VLAN and non-VLAN encapsulating 
+interfaces at Layer&nbsp;2. Translation is typically used for selective inter-VLAN 
+switching of non-routable protocols and to extend a single VLAN topology </a>
+<a name="5814">across hybrid switching environments. It is also possible to 
+bridge VLANs on the main interface; the VLAN encapsulating header is preserved. 
+Topology changes in one VLAN domain do not affect a different VLAN.</a></span></p>
+<h2 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">Designing Switched VLANs</span></h2>
+<p style="text-align: justify"><span style="font-family: Arial">By the time
+<a name="5815">you are ready to configure routing between VLANs, you will have 
+already defined them through the switches in your network. Issues related to 
+network design and VLAN definition should be addressed during your network 
+design. Refer to the <em>Cisco Internetworking Design Guide</em> and appropriate 
+switch documentation for information on these topics:</a></span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Sharing resources between VLANs </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Load Balancing</span><span style="font-family: Arial">
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Redundant Links</span><span style="font-family: Arial">
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Addressing </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Segmenting Networks with VLANs </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">Segmenting the network into broadcast groups 
+improves network security. Use router access lists based on station addresses, 
+application types, and protocol types. </span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Routers and </span>
+  <span style="font-family: Arial">their Role in Switched Networks </span></li>
+</ul>
+<p class="MsoNormal" style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial">In switched networks, routers perform broadcast 
+management, route processing and distribution, and provide communications 
+between VLANs. Routers provide VLAN access to shared resources and connect to 
+other parts of the network that are either logically segmented with the more 
+traditional subnet approach or require access to remote sites across wide-area 
+links.&nbsp;</span></p>
+<p class="MsoNormal" align="center"><b><font face="Arial"><a href="Main.htm">
+MAIN</a></font></b></p>
+
+</body>
+
+</html>

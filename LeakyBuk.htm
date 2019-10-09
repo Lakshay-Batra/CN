@@ -1,0 +1,251 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="LeakyBuk_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	}
+span.renderedqtext
+	{}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+<p align="center">
+<span style="font-family: Arial; color: #FF0000; text-transform: uppercase; font-weight: 700; text-decoration: underline">
+<font size="6">Leaky Bucket Algorithm</font></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">The Leaky Bucket Algorithm</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+• The <b>Leaky Bucket Algorithm </b>used to control rate in a network. </span>
+</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+• It is implemented as a single-­&#8208;server queue with constant service -me.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+• If the bucket (buffer) overflows then packets are discarded.</span></p>
+<p class="MsoNormal" style="text-align: justify" align="center">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" style='width:431.25pt;
+ height:279pt'>
+ <v:imagedata src="LeakyBuk_files/image001.emz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=372
+src="LeakyBuk_files/image002.gif" v:shapes="_x0000_s1025"><![endif]></span></p>
+<h1 style="text-align: justify"><span class="renderedqtext">
+<span style="font-size: 12.0pt; color: black">&nbsp;</span></span></h1>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">(a) A leaky bucket with water.
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">(b) a leaky bucket with packets.</span></p>
+<blockquote>
+  <p class="MsoNormal" style="text-align: justify; text-autospace: none">
+  <span style="font-family: Arial; color: black">• The leaky bucket enforces a 
+  constant output rate (average rate) regardless of the burst-ness of the input. 
+  Does nothing when input is idle. </span></p>
+  <p class="MsoNormal" style="text-align: justify; text-autospace: none">
+  <span style="font-family: Arial; color: black">• The host injects one packet 
+  per clock&nbsp; -ck onto the network. This results in a uniform flow of packets, 
+  smoothing out bursts and reducing conges-on. </span></p>
+  <p class="MsoNormal" style="text-align: justify; text-autospace: none" align="center">
+  <span style="font-family: Arial; color: black">• When packets have the same 
+  size (as in ATM cells), one packet per –ck is okay. For variable length 
+  packets though, it is better to allow a fixed number of bytes per -ck. E.g. 
+  1024 bytes per –ck will allow one 1024-­&#8208;byte packet or two 512-­&#8208;byte packets 
+  or four 256-­&#8208;byte packets on 1 -ck. The&nbsp; Leaky Bucket Example&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" style='width:431.25pt;height:180.75pt'>
+ <v:imagedata src="LeakyBuk_files/image003.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=241
+src="LeakyBuk_files/image004.jpg" v:shapes="_x0000_s1026"><![endif]></span></p>
+</blockquote>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">(a) Input to a leaky bucket. (b) 
+Output from a leaky bucket</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none"><b>
+<span style="font-family: Arial; color: black">Policing</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Network monitors 
+traffic flows continuously to ensure they meet their traffic contract.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">The process of 
+monitoring and enforcing the traffic flow is called policing.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">When a packet 
+violates the contract, network can discard or tag the packet giving it lower 
+priority</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">If congestion 
+occurs, tagged packets are discarded first</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><span style="font-family: Arial; color: black">Leaky Bucket 
+Algorithm </span></i><span style="font-family: Arial; color: black">is the most 
+commonly used policing mechanism</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in">
+<span style="font-family: Arial; color: black">o Bucket has specified leak rate 
+for average contracted rate</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in">
+<span style="font-family: Arial; color: black">o Bucket has specified depth to 
+accommodate variations in arrival rate</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in">
+<span style="font-family: Arial; color: black">o Arriving packet is <i>
+conforming </i>if it does not result in overflow</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">Leaky Bucket algorithm can be 
+used to police arrival rate of a packet stream</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify" align="center">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" style='width:270pt;height:342pt'>
+ <v:imagedata src="LeakyBuk_files/image005.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=360 height=456
+src="LeakyBuk_files/image006.jpg" v:shapes="_x0000_s1027"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Leaky Bucket</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;</span><span style="font-family: Arial; color: black">Let 
+X = bucket content at last conforming packet arrival</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family: Arial; color: black">Let ta be last conforming packet 
+arrival time = depletion in bucket</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">&nbsp;</p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none"><b>
+<span style="font-family: Arial; color: black">&nbsp;Leaky Bucket Algorithm</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">The above figure 
+shows the leaky bucket algorithm that can be used to police the traffic flow.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">At the arrival of 
+the first packet, the content of the bucket is set to zero and the last 
+conforming time (LCT) is set to the arrival time of the first packet.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">The depth of the 
+bucket is L+I, where l depends on the traffic burstiness.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" style='width:6in;height:312.75pt'>
+ <v:imagedata src="LeakyBuk_files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=576 height=417
+src="LeakyBuk_files/image008.jpg" v:shapes="_x0000_s1028"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Leaky Bucket algorithm used for policing</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">At the arrival of 
+the kth packet, the auxiliary variable X’ records the difference between the 
+bucket content at the arrival of the last conforming packet and the interarrival 
+time between the last conforming packet and the kth packet.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">If the auxiliary 
+variable is greater than L, the packet is considered as nonconforming, otherwise 
+the packet is conforming. The bucket content and the arrival time of the packet 
+are then updated.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none"><b>
+<span style="font-family: Arial; color: black">&nbsp;</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none"><b>
+<span style="font-family: Arial; color: black">Leaky Bucket Example: - </span>
+</b><span style="font-family: Arial; color: black">The operation of the leaky 
+bucket algorithm is illustrated in the below figure.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Here the value I is 
+four packet times, and the value of L is 6 packet times.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">The arrival of the 
+first packet increases the bucket content by four (packet times).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">At the second 
+arrival the content has decreased to three, but four more are added to the 
+bucket resulting in total of seven.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">The fifth packet is 
+declared as nonconforming since it would increase the content to 11, which would 
+exceed L+I (10).</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; text-autospace: none; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Packets 7, 8, 9 and 
+10 arrive back to back after the bucket becomes empty. Packets 7, 8 and 9 are 
+conforming, and the last one is nonconforming.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: -.25in; margin-left: .5in">
+<span style="font-family: Wingdings; color: black">Ø<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial; color: black">Non-conforming 
+packets not allowed into bucket &amp; hence not included in calculations.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" style='width:431.25pt;height:204pt'>
+ <v:imagedata src="LeakyBuk_files/image009.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=575 height=272
+src="LeakyBuk_files/image010.jpg" v:shapes="_x0000_s1029"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Behavior of Leaky Bucket</span></p>
+<p align="center"><b><font face="Arial">
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

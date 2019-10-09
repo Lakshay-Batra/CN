@@ -1,0 +1,291 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+h3
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:Arial;
+	font-weight:bold}
+span.editsection
+	{}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; ">MAIN</a></font></b></p>
+<h3 align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">FTP Protocol</font></span></h3>
+<p align="justify"><font face="Arial">FTP, the File Transfer Protocol&nbsp; is 
+one of oldest Internet protocols still in widespread use. FTP is implemented 
+using the TCP Protocol. </font></p>
+<p align="justify"><font face="Arial">As shown in the following diagram, FTP 
+uses separate command and data connections. The Protocol Interpreter (PI) 
+implements the FTP protocol itself, while the Data Transfer Process (DTP) 
+actually performs data transfer. The FTP protocol and the data transfer use 
+entirely separate TCP sessions. </font></p>
+<div align="justify">
+  <pre><font face="Arial">                                            -------------
+                                            |/---------\|
+                                            ||   User  ||    --------
+                                            ||Interface|&lt;---&gt;| User |
+                                            |\----^----/|    --------
+                  ----------                |     |     |
+                  |/------\|  FTP Commands  |/----V----\|
+                  ||Server|&lt;----------------&gt;|   User  ||
+                  ||  PI  ||   FTP Replies  ||    PI   ||
+                  |\--^---/|                |\----^----/|
+                  |   |    |                |     |     |
+      --------    |/--V---\|      Data      |/----V----\|    --------
+      | File |&lt;---&gt;|Server|&lt;----------------&gt;|  User   |&lt;---&gt;| File |
+      |System|    || DTP  ||   Connection   ||   DTP   ||    |System|
+      --------    |\------/|                |\---------/|    --------
+                  ----------                -------------
+
+                  Server-FTP                   USER-FTP
+</font><font face="Arial" size="3">
+      NOTES: 1. The data connection may be used in either direction.
+             	      2. The data connection need not exist all of the time.
+</font></pre>
+</div>
+<p align="justify"><font face="Arial">FTP servers listen on port 21. Data 
+connections are initiated by the server from its port 20, to a port on the 
+client identified in a PORT command. </font></p>
+<p align="justify">&nbsp;</p>
+<span id="intelliTxt1" nd="1"><span id="intelliTxt2" nd="1">
+<p align="justify"><b><font face="Arial" size="3">FTP Protocol Overview</font></b><font face="Arial"><br>
+&nbsp;A Brief description of File Transfer Protocol </font></p>
+<p align="justify"><font face="Arial">File Transfer Protocol (FTP) requires two 
+programs, a server program, and a client program. Normally the server program 
+offer files to the client program. But in some cases, the server will also allow 
+the client to upload files. </font></p>
+<p align="justify"><font face="Arial"><b>A simple FTP session<br>
+</b>The client program connects to an FTP sever on the internet. Once connected, 
+the FTP server sends a welcome message to the client over the open socket 
+(network) connection.</font></p>
+<font face="Arial"><b>
+<p align="justify"><i>Server</i></b><i>: 220 Sample FTP server ready. Please 
+give user-name&nbsp; <b><br>
+Client</b>: USER anonymous&nbsp; <b><br>
+Server</b>: 331 User name OK. Please give your email address as password&nbsp; <b>
+<br>
+Client</b>: PASS joe@nowhere.comm&nbsp; <b><br>
+Server</b>: 230 User logged in </i></font></p>
+<p align="justify"><font face="Arial">As you can see, the client and server are 
+communicating in plain text. The digits in the server replies are 'reply-codes' 
+defined by the FTP protocol. The uppercase words in the beginning of the client 
+commands, are command verbs that also are defined by the
+<a href="http://www.ftpplanet.com/cgi/FTPplanet.pl?URL=http://www.ftpplanet.com/ftpresources/rfc959.txt" target="_self">
+RFC</a>. The protocol is designed in a way that makes it easy for machines and 
+humans to understand the dialog. In most cases, the client program doesn't have 
+to interoperate the text after the reply code. </font></p>
+<p align="justify"><font face="Arial">Now, the user wants to see the available 
+files and directories, and issues a DIR command in the client program. </font>
+</p>
+<font face="Arial"><b>
+<p align="justify"><i>Client</i></b><i>: TYPE A&nbsp; <b><br>
+Server</b>: 200 Type set to A&nbsp; <b><br>
+Client</b>: PASV&nbsp; <b><br>
+Server</b>: 227 Entering passive mode (193,91,161,12,28,46)&nbsp; <b><br>
+Client</b>: LIST&nbsp; <b><br>
+Server</b>: 150 Opening ASCII mode data connection for /bin/ls&nbsp; <b><br>
+Server</b>: 226 Transfer complete </i></font></p>
+<p align="justify"><font face="Arial">The TYPE command tells the server to send 
+the directory / file listing as plain ASCII, where each line is separated by a 
+CRLF sequence.&nbsp; The PASV command tells the server to prepare for a new socket 
+connection by creating a new socket and then listening for a connection from the 
+client.&nbsp; Now, as you see, things are getting a little more complicated.&nbsp; The 
+server reply includes a IP address and a port number, encoded as 6 different 
+number values, separated by commas.&nbsp; The client must find and understand this 
+address in order to receive the listing. </font></p>
+<p align="justify"><font face="Arial">The LIST command tells the server to give 
+a directory / file listing.&nbsp; Now the server replies with two reply lines...&nbsp; 
+What's happening is that the first line tells the client that the listing is 
+ready and that the client can go on and make a new connection to the server.&nbsp; 
+The client connects to the IP address given by the PASV reply and receives data 
+until there is no more data to get. Then it closes the temporary data connection 
+and switches back to the control connection to get the second reply line, which 
+tells if the server transferred the whole listing. </font></p>
+<p align="justify"><font face="Arial">In order to receive a directory listing, 
+the client and server use two socket connections, one for the control flow 
+(server sends commands, the server replies in plain text) and one for the data 
+connection (which is continuous and goes in one direction only). Every time a 
+directory-listing is sent, the server and client will use another new 
+(temporary) socket connection for the transfer. </font></p>
+<p align="justify"><font face="Arial">The user finds an interesting file, and 
+gives the FTP client the command to get it. </font></p>
+<font face="Arial"><b>
+<p align="justify"><i>Client</i></b><i>: TYPE I&nbsp; <b><br>
+Server</b>: 200 Type set to I&nbsp; <b><br>
+Client</b>: PASV&nbsp; <b><br>
+Server</b>: 227 Entering passive mode (193,91,161,12,28,46)&nbsp; <b><br>
+Client</b>: RETR test.zip&nbsp; <b><br>
+Server</b>: 150 Opening BINARY mode data connection for test.zip&nbsp; <b><br>
+Server</b>: 226 Transfer complete</i> </font></p>
+<p align="justify"><font face="Arial">As you see, the server and client use the 
+exact same method to get a file, as they do to get a directory listing.&nbsp; The 
+only change is that the RETR command is used in stead of the LIST command. In 
+this case, the file was a .zip archive.&nbsp; Since such files can't be translated to 
+text-files (at least not in a safe manner), the FTP client switched to binary 
+mode (TYPE I).&nbsp; File and directory listings can be transferred in both binary 
+and text-mode. Since different operating systems use different means to separate 
+lines in text-files, it is generally a good idea to let the FTP server and FTP 
+client do the conversion. Both know the rules for a ASCII (text) transfer and 
+the client always knows the rules for the local storage of text-files.</font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial"><b>File Transfer Protocol,</b> or FTP, is 
+a protocol used for transferring files from one computer to another - 
+typicallythe from your computer to a web server. FTP is the preferred method of 
+exchanging files because it's faster than other protocols like HTTP or POP. If 
+you need to exchange large files, you should consider FTP.</font></p>
+<p align="justify"><font face="Arial">FTP data is sent and received through 
+computer port 21 and under the TCP protocol. The transfer is asynchronous, 
+meaning not at the same time, and therefore faster than other protocols.</font></p>
+<h3 align="justify"><b><font size="3">Objectives of FTP </font></b>
+<font size="3">were:</font></h3>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">to promote sharing of files (computer 
+  programs and/or data), </font></li>
+  <li>
+  <p align="justify"><font face="Arial">to encourage indirect or implicit (via 
+  programs) use of remote computers, </font></li>
+  <li>
+  <p align="justify"><font face="Arial">to shield a user from variations in file 
+  storage systems among hosts, and </font></li>
+  <li>
+  <p align="justify"><font face="Arial">to transfer data reliably and 
+  efficiently. </font></li>
+</ol>
+<h2 align="justify"><font face="Arial" size="3"><b>Using Windows 95/98/ME/2000 
+Built-in FTP Program<br>
+</b>The FTP client is a DOS command-line client</font></h2>
+<ol>
+  <li>
+  <p align="justify"><font face="Arial">Click Start / Run </font></li>
+  <li>
+  <p align="justify"><font face="Arial">In the field, &quot;Open&quot;, type ftp </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">Click &quot;OK.&quot; </font></li>
+  <li>
+  <p align="justify"><font face="Arial">At the prompt, ftp&gt;, type open. </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">Press [Enter]. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">At the prompt, To: type the ftp address 
+  of the server you want to access. <br>
+  E.g. ftp.mydomain.com.au or mydomain.com.au </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Press [Enter]. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">At the prompt, User, enter your username
+  <br>
+  (your username may be your email address name, or another login that your web 
+  administrator has given you). </font></li>
+  <li>
+  <p align="justify"><font face="Arial">Password: enter your password. It will 
+  not show as you type it. </font></li>
+  <li>
+  <p align="justify"><font face="Arial">To list the files in your home 
+  directory, enter, <b>ls</b> for &quot;list&quot; </font></li>
+  <li>
+  <p align="justify"><font face="Arial">To change to your home directory 
+  (assuming you have one), enter cd <b>public_html</b> or <b>httpdocs</b> </font>
+  </li>
+  <li>
+  <p align="justify"><font face="Arial">To change to the directory on your 
+  computer, where your home page files are located, enter, <b>lcd</b> (directory 
+  name) </font></li>
+</ol>
+<h2 align="justify"><font face="Arial" size="3">Useful FTP Commands</font></h2>
+<ul>
+  <li>
+  <p align="justify"><font face="Arial"><b>ascii</b><br>
+  Changes to text mode. This is necessary for uploading a homepage file (index.html). 
+  The letters &quot;ASCII&quot; stands for &quot;American Standard Code for Information 
+  Interchange&quot; </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>binary</b> <br>
+  Changes to binary mode. Necessary to upload a binary file, such as a picture.
+  </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>dir </b><br>
+  List files, with more info than &quot;Ls&quot; </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>put</b> (filename) <br>
+  Upload (filename) from your machine. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>get</b> (filename) <br>
+  Download (filename) to your machine. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>CD</b> (directory name) <br>
+  Changes directory on the remote machine. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>LCD</b> (directory name) <br>
+  Changes directory on your local (home) computer. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>mget</b> (files) <br>
+  Download multiple files to your machine. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>mput</b> (files) <br>
+  Upload multiple files from your machine. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>bye</b> <br>
+  Close the ftp session. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>quit/close/bye/disconnect</b>: to 
+  disconnect from the FTP server. </font></li>
+  <li>
+  <p align="justify"><font face="Arial"><b>help</b> <br>
+  Shows a list of available ftp commands. </font></li>
+</ul>
+<h2 align="justify"><font face="Arial" size="3"><b>Difference between Binary and 
+ASCII transfers</b></font></h2>
+<p align="justify"><font face="Arial">Binary transfer is for binary files, such 
+as executable, graphic or compressed files. ASCII transfer is for text files, 
+such as HTML documents and pure ASCII text (such as notepad files). </font></p>
+<p align="justify"><font face="Arial">If you use WS-FTP or CuteFTP as your FTP 
+program, tick the AUTO box at the bottom of the program screen to have the 
+software automatically determine which transfer method to use.</font></p>
+<p align="justify"><font face="Arial">If you transfer Binary files using ASCII 
+transfer method, you will corrupt your files on the server, making them 
+unreadable. </font></p>
+<p align="justify"><font face="Arial">If you transfer ASCII files using Binary 
+transfer method you will alter the formatting of the text contained in the file 
+itself. This doesn't seem like such a big deal, until you try to open this file 
+again. </font></p>
+<p align="justify"><font face="Arial">Strange things will happen, such as all 
+the carriage returns being stripped out, or if the uploaded HTML or text file 
+need to be opened by a UNIX-based text editor such as VI or PICO, the user will 
+see a ^M at the end of each line, very ugly and difficult to read.</font></p>
+</span></span>
+<p align="center"><b><font face="Arial">
+<a href="Main.htm" style="color: #00c; ">MAIN</a></font></b></p>
+
+</body>
+
+</html>

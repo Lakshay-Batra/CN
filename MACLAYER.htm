@@ -1,0 +1,336 @@
+<html>
+
+<head>
+<basefont size="4">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+td{font-family:arial,sans-serif }
+td{color:#000}
+.j{width:34em}
+a{font-family:arial,sans-serif }
+a:link{color:#00c}
+		.bodyCopyA { FONT-SIZE: 9pt; FONT-COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif } 
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial" size="3"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+<h3 align="center"><u><b><font face="Arial" color="#FF0000" size="6">MAC LAYER</font></b></u></h3>
+<h1><font size="3" face="Arial">Medium Access Control (MAC)</font></h1>
+<p><font size="3" face="Arial">The Medium Access Control (MAC) protocol is used 
+to provide the data link layer of the </font><font size="3">
+<font face="Arial">Ethernet LAN system. The MAC 
+protocol encapsulates a SDU (payload 
+data) by adding a 14 byte header (Protocol Control Information (PCI)) before the 
+data and appending a 4-byte (32-bit) Cyclic Redundancy Check (CRC) 
+after the data. The entire frame is preceded by a small idle period (the minimum 
+inter-frame gap, 9.6 microsecond (µS)) and a 8 byte preamble.</font></p>
+<p><font face="Arial"><b>Preamble</b></font></p>
+<p><font face="Arial">The purpose of the idle time before transmission starts is 
+to allow a small time interval for the receiver electronics in each of the nodes 
+to settle after completion of the previous frame. A node starts transmission by 
+sending an 8 byte (64 bit) preamble sequence. This consists of 62 alternating 
+1's and 0's followed by the pattern 11. Strictly speaking the last byte which 
+finished with the '11' is known as the &quot;Start of Frame Delimiter&quot;. When encoded 
+using Manchester encoding, at 10 Mbps, the 62 alternating bits produce a 5 MHz 
+square wave.</font></p>
+<p><font face="Arial">The purpose of the preamble is to allow time for the 
+receiver in each node to achieve lock of the receiver Digital Phase Lock Loop which 
+is used to synchronise the receive data clock to the transmit data clock. At the 
+point when the first bit of the preamble is received, each receiver may be in an 
+arbitrary state (i.e. have an arbitrary phase for its local clock). During the 
+course of the preamble it learns the correct phase, but in so doing it may miss 
+(or gain) a number of bits. A special pattern (11), is therefore used to mark 
+the last two bits of the preamble. When this is received, the Ethernet receive 
+interface starts collecting the bits into bytes for processing by the MAC layer.</font></p>
+<p><font face="Arial"><b>Header</b></font></p>
+<center>
+<p><font face="Arial"><i>
+<img src="mac.gif" align="bottom" NATURALSIZEFLAG="3" width="431" height="45"></i></font></p>
+</center><center>
+<p><font face="Arial"><i>MAC encapsulation of a packet of data</i></font></p>
+</center>
+<p style="text-align:justify"><span style="font-family:Arial">The header 
+consists of three parts:</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family:Arial">A 6-byte destination address, which specifies 
+  either a single recipient node (unicast mode), a group of recipient nodes 
+  (multicast mode), or the set of all recipient nodes (broadcast mode). </span>
+  </li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family:Arial">A 6-byte source address, which is set to the 
+  sender's globally unique node address. This may be used by the network layer 
+  protocol to identify the sender, but usually other mechanisms are used (e.g. 
+  arp). Its main function is to allow address learning which may be used to 
+  configure the filter tables in a bridge. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family:Arial">A 2-byte type field, which provides a Service 
+  Access Point (SAP) to identify the type of protocol being carried (e.g. the 
+  values 0x0800 is used to identify the IP network protocol, other values are 
+  used to indicate other network layer protocols). In the case of IEEE 802.3 
+  LLC, this may also be used to indicate the length of the data part. The type 
+  field is also be used to indicate when a Tag field is added to a frame.</span></li>
+</ul>
+<p class="MsoNormal" style="text-align:justify"><span style="font-family:Arial">
+&nbsp;</span><font face="Arial"><b>CRC</b></font></p>
+<p><font face="Arial">The 32-bit CRC</font></font><font size="3" face="Arial"> 
+added at the end of the frame provides error detection in the case where line 
+errors (or transmission collisions in Ethernet) result in corruption of the MAC 
+frame. Any frame with an invalid CRC is discarded by the MAC receiver without 
+further processing. The MAC protocol does not provide any indication that a 
+frame has been discarded due to an invalid CRC.</font></p>
+<h4><font face="Arial">Inter Frame Gap</font></h4>
+<p><font size="3" face="Arial">After transmission of each frame, a transmitter 
+must wait for a period of 9.6 microseconds (at 10 Mbps) to allow the signal to 
+propagate through the receiver electronics at the destination. This period of 
+time is known as the Inter-Frame Gap (IFG). While every transmitter must wait 
+for this time between sending frames, receivers do not necessarily see a 
+&quot;silent&quot; period of 9.6 microseconds. The way in which repeaters operate is such 
+that they may reduce the IFG between the frames which they regenerate.</font><font size="3"></p>
+<p><font face="Arial"><b>Byte Order</b></font></p>
+<p><font face="Arial">It is important to realise that nearly all serial 
+communications systems transmit the least significant bit of 
+each byte first at the physical layer. Ethernet supports broadcast, unicast, and 
+multicast addresses. The appearance of a multicast address on the cable (in this 
+case an IP</font></font><font size="3" face="Arial"> multicast 
+address, with group set to the bit pattern 0xxx xxxx xxxx xxxx xxxx xxxx) is 
+therefore as shown below (bits transmitted from left to right):</font></p>
+<pre><font face="Arial">    0                           23 IP Multicast Address Group  47
+    |                           | &lt;---------------------------&gt;|
+    1000 0000 0000 0000 0111 1010 xxxx xxx0 xxxx xxxx xxxx xxxx
+    |                                     |
+    Multicast Bit                         0 = Internet Multicast
+                                          1 = Assigned for other uses</font></pre>
+<p><font face="Arial" size="3">However, when the same frame is stored in the 
+memory of a computer, the bits are ordered such that the least significant bit 
+of each byte is stored in the right most position (bits transmitted 
+right-to-left within octets, octets transmitted left-to-right):</font></p>
+<pre><font face="Arial">    0                           23                            47
+    |                           |                             |
+    0000 0001 0000 0000 0101 1110 0xxx xxxx xxxx xxxx xxxx xxxx
+            |                     &lt;---------------------------&gt;
+            Multicast Bit          IP Multicast Address Group</font></pre>
+<p><font face="Arial"><b><font size="3">CSMA /CD</font></b></font><font size="3"></p>
+<p><font face="Arial">The Carrier Sense Multiple Access (CSMA) with Collision Detection 
+(CD) protocol is used to control access to the 
+shared Ethernet medium.</font></p>
+<p></font><font face="Arial"><b><font size="3">Receiver Processing Algorithm</font></b></font></p>
+<p>&nbsp;</p>
+<center>
+<p><font face="Arial" size="3">
+<img src="enet-rec-algorithm.gif" align="bottom" NATURALSIZEFLAG="3" width="409" height="230"></font></p>
+</center>
+<h3><font face="Arial" size="3">A Runt Frame</font></h3>
+<p><font face="Arial" size="3">Any frame which is received and which is less 
+than 64 bytes is illegal, and is called a &quot;runt&quot;. In most cases, such frames 
+arise from a collision, and while they indicate an illegal reception, they may 
+be observed on correctly functioning networks. A receiver must discard all runt 
+frames.</font></p>
+<h3><font face="Arial" size="3">A Giant Frame</font></h3>
+<p><font size="3" face="Arial">Any frame which is received and which is greater 
+than the maximum frame size, is called a &quot;giant&quot;. In theory, the </font>
+<font face="Arial" size="3">jabber control circuit 
+in the transceiver should prevent any node from generating such a frame, but 
+certain failures in the physical layer may also give rise to over-sized Ethernet 
+frames. Like runts, giants are discarded by an Ethernet receiver.</font></p>
+<h3><font face="Arial" size="3">A Misaligned Frame</font></h3>
+<p><font size="3" face="Arial">Any frame which does not contain an integral 
+number of received octets (bytes) is also illegal. A receiver has no way of 
+knowing which bits are legal, and how to compute the CRC-32 of the frame. Such 
+frames are therefore also discarded by the Ethernet receiver.</font></p>
+<p class="MsoNormal" style="text-align:justify"><span style="font-family:Arial">
+Other Issues</span></p>
+<p class="MsoNormal" style="text-align:justify"><span style="font-family:Arial">
+<font size="3">The Ethernet standard dictates a minimum size of frame, which 
+requires at least 46 bytes of data to be present in every MAC frame. If the 
+network layer wishes to send less than 46 bytes of data the MAC protocol adds 
+sufficient number of zero bytes (0x00, is also known as null padding characters) 
+to satisfy this requirement. The maximum size of data which may be carried in a 
+MAC frame using Ethernet is 1500 bytes (this is known as the MTU in IP).</font></span><font size="3"></p>
+<p class="MsoNormal" style="text-align:justify"><span style="font-family:Arial">
+A protocol known as the &quot;Address Resolution Protocol&quot; (arp) is used to identify 
+the MAC source address of remote computers when IP is used over an Ethernet LAN.</span></p>
+<p class="MsoNormal" style="text-align:justify"><span style="font-family:Arial">
+Exception to the Rule</span></p>
+<p class="MsoNormal" style="text-align:justify"></font>
+<span style="font-family:Arial"><font size="3">An extension to Ethernet, known 
+as IEEE 802.1p allows for frames to carry a tag. The tag value adds an extra 
+level of PCI to the Ethernet frame header. This increases the size of the total 
+MAC frame when the tag is used. A side effect of this is that NICs and network 
+devices designed to support this extension require a modification to the jabber 
+detection circuit.</font></span></p>
+<p class="MsoNormal" style="text-align:justify"><span style="font-family:Arial">
+&nbsp;</span></p>
+<h3><font face="Arial" size="3">Medium access basics</font></h3>
+<p><font size="3" face="Arial">Before transmitting frames, a station must first 
+gain access to the medium, which is a radio channel that stations share. The 
+802.11 standard defines two forms of medium access, distributed coordination 
+function (DCF) and point coordination function (PCF). DCF is mandatory and based 
+on the CSMA/CA (carrier sense multiple access with collision avoidance) 
+protocol. With DCF, 802.11 stations contend for access and attempt to send 
+frames when there is no other station transmitting. If another station is 
+sending a frame, stations are polite and wait until the channel is free.</font><font size="3"></p>
+<p><font face="Arial">As a condition to accessing the medium, the MAC Layer 
+checks the value of its network allocation vector (NAV), which is a counter 
+resident at each station that represents the amount of time that the previous 
+frame needs to send its frame. The NAV must be zero before a station can attempt 
+to send a frame. Prior to transmitting a frame, a station calculates the amount 
+of time necessary to send the frame based on the frame's length and data rate. 
+The station places a value representing this time in the duration field in the 
+header of the frame. When stations receive the frame, they examine this duration 
+field value and use it as the basis for setting their corresponding NAVs. This 
+process reserves the medium for the sending station.</font></p>
+<p><font face="Arial">An important aspect of the DCF is a random back off timer 
+that a station uses if it detects a busy medium. If the channel is in use, the 
+station must wait a <i>random</i> period of time before attempting to access the 
+medium again. This ensures that multiple stations wanting to send data don't 
+transmit at the same time. The random delay causes stations to wait different 
+periods of time and avoids all of them sensing the medium at exactly the same 
+time, finding the channel idle, transmitting, and colliding with each other. The 
+back off timer significantly reduces the number of collisions and corresponding 
+retransmissions, especially when the number of active users increases.</font></p>
+<p><font face="Arial">With radio-based LANs, a transmitting station can't listen 
+for collisions while sending data, mainly because the station can't have it's 
+receiver on while transmitting the frame. As a result, the receiving station 
+needs to send an acknowledgement (ACK) if it detects no errors in the received 
+frame. If the sending station doesn't receive an ACK after a specified period of 
+time, the sending station will assume that there was a collision (or RF 
+interference) and retransmit the frame. </font></p>
+<p><font face="Arial">For supporting time-bounded delivery of data frames, the 
+802.11 standard defines the optional point coordination function (PCF) where the 
+access point grants access to an individual station to the medium by polling the 
+station during the contention free period. Stations can't transmit frames unless 
+the access point polls them first. The period of time for PCF-based data traffic 
+(if enabled) occurs alternately between contention (DCF) periods. </font></p>
+<p><font face="Arial">The access point polls stations according to a polling 
+list, then switches to a contention period when stations use DCF. This process 
+enables support for both synchronous (i.e., video applications) and asynchronous 
+(i.e., e-mail and Web browsing applications) modes of operation. </font></p>
+<p></font><font size="3" face="Arial">No known wireless NICs or access points on 
+the market today, however, implement PCF.</font></p>
+<h3><font face="Arial" size="3">802.11 MAC Layer Functions</font></h3>
+<p><font size="3" face="Arial">The following summarizes primary 802.11 MAC 
+functions, especially as they relate to infrastructure wireless LANs:</font><font size="3"></p>
+<ul type="disc">
+  <li><font face="Arial"><b>Scanning</b>: The 802.11 standard defines both 
+  passive and active scanning; whereby, a radio NIC searches for access points. 
+  Passive scanning is mandatory where each NIC scans individual channels to find 
+  the best access point signal. Periodically, access points broadcast a beacon, 
+  and the radio NIC receives these beacons while scanning and takes note of the 
+  corresponding signal strengths. The beacons contain information about the 
+  access point, including service set identifier (SSID), 
+  supported data rates, etc. The radio NIC can use this information along with 
+  the signal strength to compare access points and decide upon which one to use. </font>
+  <p><font face="Arial">Optional active scanning is similar, except the radio 
+  NIC initiates the process by broadcasting a probe frame, and all access points 
+  within range respond with a probe response. Active scanning enables a radio 
+  NIC to receive immediate response from access points, without waiting for a 
+  beacon transmission. The issue, however, is that active scanning imposes 
+  additional overhead on the network because of the transmission of probe and 
+  corresponding response frames.</font></li>
+  <li><font face="Arial"><b>Authentication</b>: Authentication is the process of 
+  proving identity, and the 802.11 standard specifies two forms: Open system 
+  authentication and shared key authentication. Open system authentication is 
+  mandatory, and it's a two step process. A radio NIC first initiates the 
+  process by sending an authentication request frame to the access point. The 
+  access point replies with an authentication response frame containing approval 
+  or disapproval of authentication indicated in the Status Code field in the 
+  frame body. </font>
+  <p><font face="Arial">Shared key authentication is an optional four step 
+  process that bases authentication on whether the authenticating device has the 
+  correct WEP (wired equivalent 
+  privacy) key. The radio NIC starts by sending an authentication request frame 
+  to the access point. The access point then places challenge text into the 
+  frame body of a response frame and sends it to the radio NIC. The radio NIC 
+  uses its WEP key to encrypt the challenge text and then sends it back to the 
+  access point in another authentication frame. The access point decrypts the 
+  challenge text and compares it to the initial text. If the text is equivalent, 
+  then the access point assumes that the radio NIC has the correct key. The 
+  access point finishes the sequence by sending an authentication frame to the 
+  radio NIC with the approval or disapproval. </font></li>
+  <li><font face="Arial"><b>Association</b>: Once authenticated, the radio NIC 
+  must associate with the access point before sending data frames. Association 
+  is necessary to synchronize the radio NIC and access point with important 
+  information, such as supported data rates. The radio NIC initiates the 
+  association by sending an association request frame containing elements such 
+  as SSID and supported data rates. The access point responds by sending an 
+  association response frame containing an association ID along with other 
+  information regarding the access point. Once the radio NIC and access point 
+  complete the association process, they can send data frames to each other.
+  </font></li>
+</ul>
+<ul type="disc">
+  <li><font face="Arial"><b>WEP</b>: With the optional WEP enabled, the wireless 
+  NIC will encrypt the body (not header) of each frame before transmission using 
+  a common key, and the receiving station will decrypt the frame upon receipt 
+  using the common key. The 802.11 standard specifies a 40-bit key and no key 
+  distribution method, which makes 802.11 wireless LANs vulnerable to 
+  eavesdroppers. The 802.11i committee, however, is improving 802.11 security by 
+  incorporating </font>
+  <a href="http://www.80211-planet.com/tutorials/article/0,4000,10724_1041171,00.html">
+  <font face="Arial">802.1X</font></a><font face="Arial"> and stronger 
+  encryption into the standard. </font></li>
+</ul>
+<ul type="disc">
+  <li><font face="Arial"><b>RTS/CTS</b>: The optional request-to send and 
+  clear-to-send (RTS/CTS) function allows the access point to control use of the 
+  medium for stations activating RTS/CTS. With most radio NICs, users can set a 
+  maximum frame length threshold whereby the radio NIC will activate RTS/CTS. 
+  For example, a frame length of 1,000 bytes will trigger RTS/CTS for all frames 
+  larger than 1,000 bytes. The use of RTS/CTS alleviates hidden node problems, 
+  that is, where two or more radio NICs can't hear each other and they are 
+  associated with the same access point. </font>
+  <p><font face="Arial">If the radio NIC activates RTS/CTS, it will first send a 
+  RTS frame to access point before sending a data frame. The access point will 
+  then respond with a CTS frame, indicating that the radio NIC can send the data 
+  frame. With the CTS frame, the access point will provide a value in the 
+  duration field of the frame header that holds off other stations from 
+  transmitting until after the radio NIC initiating the RTS can send its data 
+  frame. This avoids collisions between hidden nodes. The RTS/CTS handshake 
+  continues for each frame, as long as the frame size exceeds the threshold set 
+  in the corresponding radio NIC. </font></li>
+  <li><font face="Arial"><b>Power Save Mode:</b> The optional power save mode that a user 
+  can turn on or off enables the radio NIC to conserve battery power when there 
+  is no need to send data. With power save mode on, the radio NIC indicates its 
+  desire to enter &quot;sleep&quot; state to the access point via a status bit located in 
+  the header of each frame. The access point takes note of each radio NIC 
+  wishing to enter power save mode, and buffers packets corresponding to the 
+  sleeping station. </font>
+  <p><font face="Arial">In order to still receive data frames, the sleeping NIC 
+  must wake up periodically (at the right time) to receive regular beacon 
+  transmissions coming from the access point. These beacons identify whether 
+  sleeping stations have frames buffered at the access point and waiting for 
+  delivery to their respective destinations. The radio NICs having awaiting 
+  frames will request them from the access point. After receiving the frames, 
+  the radio NIC can go back to sleep.</font></li>
+  <li></font><font size="3" face="Arial"><b>Fragmentation</b>: The optional 
+  fragmentation function enables an 802.11 station to divide data packets into 
+  smaller frames. This is done to avoid needing to retransmit large frames in 
+  the presence of RF interference. The bits errors resulting from RF 
+  interference are likely to affect a single frame, and it requires less 
+  overhead to retransmit a smaller frame rather than a larger one. As with RTS/CTS, 
+  users can generally set a maximum frame length threshold whereby the radio NIC 
+  will activate fragmentation. If the frame size is larger than the threshold, 
+  the radio NIC will break the packet into multiple frames, with each frame no 
+  larger than the threshold value. </font></li>
+</ul>
+<p align="center"><font face="Arial" size="3"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

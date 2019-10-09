@@ -1,0 +1,845 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="DIGITALSIG_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h4
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h5
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font face="Arial" size="6" color="#FF0000"><b>DIGITAL 
+SIGNATURE</b></font></u></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">A digital signature (not to be confused with a 
+digital certificate) is an electronic signature that can be used to authenticate 
+the identity of the sender of a message or the signer of a document, and 
+possibly to ensure that the original content of the message or document that has 
+been sent is unchanged. Digital signatures are easily transportable, cannot be 
+imitated by someone else, and can be automatically time-stamped. The ability to 
+ensure that the original signed message arrived means that the sender cannot 
+easily repudiate it later. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial">A digital 
+signature can be used with any kind of message, whether it is
+<term>encrypted</term> or not, simply so that the receiver can be sure of the 
+sender's identity and that the message arrived intact. A digital certificate 
+contains the digital signature of the certificate-issuing authority so that 
+anyone can verify that the certificate is real. </span></p>
+<h4 style="text-align: justify">
+<span style="font-size: 12.0pt; font-family: Arial">How It Works</span></h4>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Assume you were going to send the draft of a 
+contract to your lawyer in another town. You want to give your lawyer the 
+assurance that it was unchanged from what you sent and that it is really from 
+you. </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">You copy-and-paste the contract (it's a short 
+  one!) into an e-mail note. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Using special software, you obtain a message 
+  hash (mathematical summary) of the contract. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">You then use a private key that you have 
+  previously obtained from a public-private key authority to encrypt the hash.
+  </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">The encrypted hash becomes your digital 
+  signature of the message. (Note that it will be different each time you send a 
+  message.) </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">At the other end, your lawyer receives the 
+message. </span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">To make sure it's intact and from you, your 
+  lawyer makes a hash of the received message. </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Your lawyer then uses your public key to 
+  decrypt the message hash or summary. </span></li>
+</ol>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">If the hashes match, the received message is 
+valid.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span lang="EN" style="font-family: Arial">&nbsp;</span><span style="font-family: Arial; color: black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">A <b>digital signature</b> is 
+basically a way to ensure that an electronic document (e-mail, spreadsheet, text 
+file, etc.) is <b>authentic</b>. Authentic means that you know who created the 
+document and you know that it has not been altered in any way since that person 
+created it. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+Digital signatures rely on certain types of <b>encryption</b> to ensure 
+authentication. Encryption is the process of taking all the data that one 
+computer is sending to another and encoding it into a form that only the other 
+computer will be able to decode. Authentication is the process of verifying that 
+information is coming from a trusted source. These two processes work hand in 
+hand for digital signatures. </span></p>
+<p style="text-align: justify"><span style="font-family: Arial; color: black">
+There are several ways to authenticate a person or information on a computer:
+</span></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify"><b>
+  <span style="font-family: Arial">Password</span></b><span style="font-family: Arial"> 
+  - The use of a user name and password provide the most common form of 
+  authentication. You enter your name and password when prompted by the 
+  computer. It checks the pair against a secure file to confirm. If either the 
+  name or password do not match, then you are not allowed further access. </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify"><b>
+  <span style="font-family: Arial">Checksum</span></b><span style="font-family: Arial"> 
+  - Probably one of the oldest methods of ensuring that data is correct, 
+  checksums also provide a form of authentication since an invalid checksum 
+  suggests that the data has been compromised in some fashion. A checksum is 
+  determined in one of two ways. Let's say the checksum of a packet is 1 byte 
+  long, which means it can have a maximum value of 255. If the sum of the other 
+  bytes in the packet is 255 or less, then the checksum contains that exact 
+  value. However, if the sum of the other bytes is more than 255, then the 
+  checksum is the remainder of the total value after it has been divided by 256. 
+  Look at this example: </span></li>
+</ul>
+<div align="center">
+  <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt; margin-left: .5in; background: lightyellow">
+    <tr>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 1</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 2</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 3</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 4</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 5</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 6</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 7</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Byte 8</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Total</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Checksum</font></span></b></td>
+    </tr>
+    <tr>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">212</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">232</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">54</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">135</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">244</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">15</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">179</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">80</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">1151</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">127</font></span></b></td>
+    </tr>
+  </table>
+</div>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify"><b>
+  <span style="font-family: Arial">1151 divided by 256 equals 4.496 (round to 4)<br>
+  Multiply 4 X 256 which equals 1024<br>
+  1151 minus 1024 equals 127</span></b></li>
+  <li class="MsoNormal" style="color: black; text-align: justify"><b>
+  <span style="font-family: Arial">CRC (Cyclic Redundancy Check)</span></b><span style="font-family: Arial"> 
+  - CRCs are similar in concept to checksums but they use polynomial division to 
+  determine the value of the CRC, which is usually 16 or 32 bits in length. The 
+  good thing about CRC is that it is very accurate. If a single bit is 
+  incorrect, the CRC value will not match up. Both checksum and CRC are good for 
+  preventing random errors in transmission, but provide little protection from 
+  an intentional attack on your data. The encryption techniques below are much 
+  more secure. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify"><b>
+  <span style="font-family: Arial">Private key encryption</span></b><span style="font-family: Arial"> 
+  -Private key means that each computer has a secret key (code) that it can use 
+  to encrypt a packet of information before it is sent over the network to the 
+  other computer. Private key requires that you know which computers will talk 
+  to each other and install the key on each one. Private key encryption is 
+  essentially the same as a secret code that the two computers must each know in 
+  order to decode the information. The code would provide the key to decoding 
+  the message. Think of it like this. You create a coded message to send to a 
+  friend where each letter is substituted by the letter that is second from it. 
+  So &quot;A&quot; becomes &quot;C&quot; and &quot;B&quot; becomes &quot;D&quot;. You have already told a trusted friend 
+  that the code is &quot;Shift by 2&quot;. Your friend gets the message and decodes it. 
+  Anyone else who sees the message will only see nonsense. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify"><b>
+  <span style="font-family: Arial">Public key encryption</span></b><span style="font-family: Arial"> 
+  - Public key encryption uses a combination of a private key and a public key. 
+  The private key is known only to your computer while the public key is given 
+  by your computer to any computer that wants to communicate securely with it. 
+  To decode an encrypted message, a computer must use the public key provided by 
+  the originating computer and it's own private key. </span></li>
+</ul>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial; color: black">The key is based on a <b>hash 
+value</b>. This is a value that is computed from a base input number using a <b>
+hashing algorithm</b>. The important thing about a hash value is that it is 
+nearly impossible to derive the original input number without knowing the data 
+used to create the hash value. Here's a simple example: </span></p>
+<div align="center">
+  <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="400" style="width: 300.0pt; margin-left: .5in; background: lightyellow">
+    <tr>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Input number</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Hashing 
+      algorithm</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Hash value</font></span></b></td>
+    </tr>
+    <tr>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">10667</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">Input # x 
+      143</font></span></b></td>
+      <td style="padding: 0in">
+      <p class="MsoNormal" style="text-align: justify"><b>
+      <span style="font-family: Arial; color: black"><font size="3">1525381</font></span></b></td>
+    </tr>
+  </table>
+</div>
+<p style="text-align: justify; margin-left: .5in">
+<span style="font-family: Arial; color: black">You can see how hard it would be 
+to determine that the value of 1525381 came from the multiplication of 10667 and 
+143. But if you knew that the multiplier was 143, then it would be very easy to 
+calculate the value of 10667. Public key encryption is much more complex than 
+this example but that is the basic idea. Public keys generally use complex 
+algorithms and very large hash values for encrypting: 40-bit or even 128-bit 
+numbers. A 128-bit number has a possible 2<sup>128</sup> different combinations. 
+That's as many combinations as there are water molecules in 2.7 million olympic 
+size swimming pools. Even the tiniest water droplet you can image has billions 
+and billions of water molecules in it! </span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span style="font-family: Arial; color: black">Digital certificates</span></b><span style="font-family: Arial; color: black"> 
+- To implement public key encryption on a large scale, such as a secure Web 
+server might need, requires a different approach. This is where digital 
+certificates come in. A digital certificate is essentially a bit of information 
+that says the Web server is trusted by an independent source known as a <b>
+Certificate Authority</b>. The Certificate Authority acts as the middleman that 
+both computers trust. It confirms that each computer is in fact who they say 
+they are and then provides the public keys of each computer to the other. </span>
+<span style="font-family: Arial">A digital certificate is an electronic &quot;credit 
+card&quot; that establishes your credentials when doing business or other 
+transactions on the Web. It is issued by a certification authority (CA). It 
+contains your name, a serial number, expiration dates, a copy of the certificate 
+holder's public key (used for encrypting messages and digital signatures), and 
+the digital signature of the certificate-issuing authority so that a recipient 
+can verify that the certificate is real. Some digital certificates conform to a 
+standard, X.509. Digital certificates can be kept in registries so that 
+authenticating users can look up other users' public keys.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial; color: black">&nbsp;The <b>Digital Signature Standard (DSS)</b> is based on a type of public key 
+encryption method that uses the <b>Digital Signature Algorithm (DSA)</b>. DSS is 
+the format for digital signatures that has been endorsed by the US government. 
+The DSA algorithm consists of a private key that only the originator of the 
+document (signer) knows and a public key. </span></p>
+<p class="MsoNormal" style="text-align: justify"><b>
+<span lang="EN" style="font-family: Arial"><font size="5">Benefits 
+of Digital Signatures</font></span></b></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">There 
+are three common reasons for applying a digital signature to communications:</span></p>
+<h3 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Authentication</span></h3>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Public-key cryptosystems allow encryption of a message with a user's private 
+key. The message itself need not be sent in ciphertext. If a hash of the 
+document is generated and and then protected via encryption, the document cannot 
+be altered in any way without changing the hash to match, which, if quality 
+algorithms are properly used, will be quite difficult. By decrypting the hash 
+using the sender's public key, and checking the result against a newly generated 
+hash of the alleged plaintext, the recipient can confirm (with high confidence) 
+that the encryption was done with the sender's private key (and so presumably by 
+the user who should have been the only person able to use that key), and that 
+the message hasn't been altered since it was signed. No recipient can ever be 
+absolutely certain the purported sender is indeed the signer -- ie, the person 
+who used the private key -- since the cryptosystem might have been broken, the 
+key copied, or the whole scheme evaded using social engineering.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">The 
+importance of high confidence in both the message integrity and sender 
+authenticity is especially obvious in a financial context. For example, suppose 
+a bank's branch office sends instructions to the central office in the form <i>(a,b)</i> 
+where <i>a</i> is the account number and <i>b</i> is the amount to be credited 
+to the account. A devious customer may deposit £100, observe the resulting 
+transmission and repeatedly retransmit <i>(a,b)</i>, getting a deposit each time 
+and getting rich in the process. This is an example of a <i>replay attack</i>.</span></p>
+<h3 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Integrity</span></h3>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Both 
+parties will always wish to be confident that a message has not been altered 
+during transmission. Encryption of the message makes it difficult for a third 
+party to <i>read</i> it, but that third party may still be able to <i>alter</i> 
+it, perhaps maliciously, without actually reading it. An example is the <i>
+homomorphism attack</i>: consider a bank which sends instructions from branch 
+offices to the central office in the form <i>(a,b)</i> where <i>a</i> is the 
+account number and <i>b</i> is the amount to be credited to the account. A 
+devious customer may deposit £100, intercept the resulting transmission and then 
+transmit <i>(a,b<sup>3</sup>)</i> to become an instant millionaire.</span></p>
+<h3 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Non-repudiation</span></h3>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In a 
+cryptographic context, the word <i>repudiation</i> refers to the act of 
+disclaiming responsibility for a message (ie, claiming it was sent by some third 
+party, certainly not me; 'I repudiate this message and its contents!&quot;). A 
+message's recipient may insist the sender attach a signature in order to make 
+later repudiation more difficult, since the recipient can show the signed 
+message to a third party (eg, a court) to reinforce a claim as to its origin. 
+However, loss of control over a user's private key will mean that all digitally 
+signatures using that key, and so 'from' that user, are suspect. Noticing that 
+such a loss of control has occurred is not a cryptographic problem, but a human 
+space oen, and is unsolved. Short of special purpose protocols to address this 
+issue, digital signatures alone cannot provide inherent non-repudiation.</span></p>
+<h2 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Implementation of 
+Public-key digital signatures</span></h2>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Public-key digital signature schemes rely on public-key cryptography. In 
+public-key cryptography, each user has a pair of keys: one public and one 
+private. The public key is distributed freely, but the private key is kept 
+secret by the user; another requirement is that it should be computationally 
+infeasible to derive the private key from the public key.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Generally, digital signature schemes include three algorithms:</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">A key generation algorithm </span>
+  </li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">A signing algorithm </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">A verification algorithm </span>
+  </li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">For 
+example, consider a situation in which Bob sends a message to Alice and she 
+wants to be certain it came from him. Bob sends his message to Alice, attaching 
+a digital signature. The digital signature was generated using Bob's private 
+key, and takes the form of a string of bits (normally represented as a string of 
+characters (ie, digits and letters)). On receipt, Alice can then check whether 
+the message really came from Bob by running the verification algorithm on the 
+message together with the signature, using Bob's public key. If they match, then 
+Alice can be confident the message really was from Bob, because quality digital 
+signature algorithms are so designed that it is very difficult to forge a 
+signature to match a given message (unless one has knowledge of the private key, 
+which Bob must keep secret).</span></p>
+<h3 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Association of 
+digital signatures and encryption</span></h3>
+<p align="center"><span lang="EN" style="font-size: 12.0pt; font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Digital_signature_schema.gif" title style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1028" type="#_x0000_t75" alt="" title="&quot;&quot;"
+ style='width:555.75pt;height:413.25pt' o:button="t">
+ <v:imagedata src="DIGITALSIG_files/image001.gif" o:href="file:///H:\ZCD\Education\M.Tech%20CN\UNIT%20VI\Digital%20signature%20-%20Wikipedia,%20the%20free%20encyclopedia_files\500px-Digital_signature_schema.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=741 height=551
+src="DIGITALSIG_files/image002.gif" v:shapes="_x0000_s1028"><![endif]></span></a></span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Digital signatures use encryption techniques but the algorithms are not 
+typically suited for direct encryption of bulk plaintexts; more efficient 
+methods are available. Of course a signed document may be sent encrypted over a 
+public communication channel (eg, the Internet) just as might be any other 
+message.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">More 
+usually, Bob first applies a quality cryptographic hash function to the message, 
+and then digitally signs the resulting hash (see diagram). An insecure hash can 
+compromise the digital signature. For example, if it is possible to generate 
+hash collisions, it might be feasible to forge digital signatures.</span></p>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">There 
+are several reasons to sign such a hash (or message digest) instead of the whole 
+document.</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span lang="EN" style="font-family: Arial">For efficiency:</span></b><span lang="EN" style="font-family: Arial"> 
+  The signature will be much shorter and thus save time since hashing is 
+  generally much faster than signing in actual practice. </span></li>
+  <li class="MsoNormal" style="text-align: justify"><b>
+  <span lang="EN" style="font-family: Arial">The document is intended to be read 
+  by others:</span></b><span lang="EN" style="font-family: Arial"> E.g., 
+  diplomas, birth certificates, identity certificates, driver's licenses, a 
+  contract establishing ownership of something, etc... These documents will be 
+  in clear text, but an accompanying digital signature can be used to verify 
+  that they are neither forged nor altered. </span></li>
+</ul>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">In cryptography, a <b>cryptographic 
+hash function</b> is a hash function with certain additional security properties 
+to make it suitable for use as a primitive in various information security 
+applications, such as authentication and message integrity. A hash function 
+takes a long string (or message) of any length as input and produces a fixed 
+length string as output, sometimes termed a <b>message digest</b> or a <b>
+digital fingerprint</b>.</span></p>
+<p align="center"><span lang="EN" style="font-size: 12.0pt; font-family: Arial">
+<a href="http://en.wikipedia.org/wiki/Image:Hash_function_long.png" title="A hash function at work" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="text-decoration: none"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" alt="A hash function at work" title="&quot;A hash function at work&quot;"
+ style='width:403.5pt;height:258pt' o:button="t">
+ <v:imagedata src="DIGITALSIG_files/image003.png" o:href="http://upload.wikimedia.org/wikipedia/en/thumb/a/a2/Hash_function_long.png/330px-Hash_function_long.png"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=538 height=344
+src="DIGITALSIG_files/image004.jpg" alt="A hash function at work" v:shapes="_x0000_s1033"><![endif]></span></a></span></p>
+<p class="MsoNormal" style="text-align: center; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial; font-weight: 700">A hash function at 
+work</span></p>
+<p style="text-align: justify; background: #F8FCFF">
+<span lang="EN" style="font-family: Arial">In various standards and 
+applications, the two most-commonly used hash functions are MD5 and SHA-1. In 
+2005, security flaws were identified in both algorithms.</span></p>
+<h5 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Using separate key 
+pairs for signing and encryption</span></h5>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">In 
+several countries, a digital signature has a status somewhat like that of a 
+traditional pen and paper signature. Generally, these provisions mean that what 
+is digitally signed legally binds the signer of the document to the terms 
+therein. For that reason, it is often thought best to use separate key pairs for 
+encrypting and signing. Using the encryption key pair a person can engage in an 
+encrypted conversation (eg, about buying a house), but does not legally sign 
+every message he sends. Only when both parties come to an agreement do they sign 
+a contract with their signing keys, and only then are they legally bound by the 
+terms of a specific document. After signing, the document can be sent over the 
+encrypted link.</span></p>
+<h3 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Association of 
+digital signatures and trusted time stamping</span></h3>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Digital signature algorithms security protocols do not inherently do not provide 
+certainty about the date and time at which the underlying document was signed. 
+The signer might, or might not, have included a time stamp with the signature, 
+or the document itself might have a date mentioned on it, but a later reader 
+cannot be certain the signer did not, for instance, backdate the date or time of 
+the signature. Such misuse can be made impracticable by using trusted time 
+stamping in addition to digital signatures.</span></p>
+<h3 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Additional 
+security precautions</span></h3>
+<h5 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Putting the 
+private key on a smart card</span></h5>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">All 
+public key / private key cryptosystems depend entirely on keeping the private 
+key secret. A private key can be stored on a user's computer, and protected by, 
+for instance, a local password, but this has two disadvantages:</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">the user can only sign documents on 
+  that particular computer and </span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span lang="EN" style="font-family: Arial">the security of the private key 
+  completely depends on the&nbsp; of the computer, which is notoriously 
+  unreliable for many PCs and operating systems. </span></li>
+</ul>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">A more 
+secure alternative is to store the private key on a smart card. Many smart cards 
+are deliberately designed to be tamper resistant. In a typical implementation, 
+the hash calculated from the document is sent to the smart card, whose CPU 
+encrypts the hash using the stored private key of the user and returns it. 
+Typically, a user must activate his smart card by entering a personal 
+identification number or PIN code (thus providing a two-factor authentication). 
+Note that it can be sensibly arranged (but is not always done) that the private 
+key never leaves the smart card. If the smart card is stolen, the thief still 
+needs the PIN code to be able to generate a digital signature. This reduces the 
+security of the scheme to that of the PIN system, but is nevertheless more 
+secure than are many PCs.</span></p>
+<h5 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Using smart card 
+readers with a separate keyboard</span></h5>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">
+Entering a PIN code to activate the smart card, commonly requires a numeric 
+keypad. Some card readers have their own numeric keypad. This is safer than 
+using a card reader integrated into a PC, and then entering the PIN using that 
+computer's keyboard. The computer might be running a keystroke logger (by its 
+owner/operators intention or otherwise -- due to a virus, for instance) so that 
+the PIN code becomes compromised. Specialized card readers are less vulnerable, 
+though not invulnerable, against tampering with their software or hardware. And, 
+of course, eavesdropping attacks against all such equipment is of course 
+possible.</span></p>
+<h5 style="text-align: justify">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Other smart card 
+designs</span></h5>
+<p style="text-align: justify"><span lang="EN" style="font-family: Arial">Smart 
+card design is an active field, and there are smart card schemes which are 
+intended to avoid these particular problems, though so far with little security 
+proofs.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial" lang="en-us">Explaining Digital Signature:</span><span lang="EN" style="font-family: Arial">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><font size="4"></p>
+<center>
+<table border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face4.gif" align="middle" width="72" height="85"><br>
+    Bob</font></td>
+    <td><font face="Arial">
+    <img src="trans_half_inch.gif" align="middle" width="36" height="4"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="greenkey.gif" align="middle" width="68" height="34"><br>
+    (Bob's public key) </font>
+    <p><font face="Arial">
+    <img src="redkey.gif" align="middle" width="68" height="34"><br>
+    (Bob's private key)</font></td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">Bob has been given two keys. One of Bob's keys is called a 
+Public Key, the other is called a Private Key. </font></p>
+<font size="4">
+<p>&nbsp;</p>
+<center>
+<table border="0">
+  <tr>
+    <td align="middle" colSpan="3"><font face="Arial">Bob's Co-workers:</font></td>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face1.gif" align="middle" width="72" height="114"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="face2.gif" align="middle" width="72" height="94"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="face3.gif" align="middle" width="72" height="99"></font></td>
+    <td><font face="Arial">
+    <img src="trans_half_inch.gif" align="middle" width="36" height="4"></font></td>
+    <td align="middle" width="150"><font face="Arial">
+    <img src="greenkey.gif" align="middle" width="68" height="34"><br>
+    <font size="3">Anyone can get Bob's Public Key, but Bob keeps his Private 
+    Key to himself</font> </font>
+    <p>&nbsp;</td>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">Pat</font></td>
+    <td align="middle"><font face="Arial">Doug</font></td>
+    <td align="middle"><font face="Arial">Susan</font></td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">Bob's Public key is available to anyone who needs it, but 
+he keeps his Private Key to himself. Keys are used to encrypt information. 
+Encrypting information means &quot;scrambling it up&quot;, so that only a person with the 
+appropriate key can make it readable again. Either one of Bob's two keys can 
+encrypt data, and the other key can decrypt that data. </font></p>
+<p><font face="Arial">Susan (shown below) can encrypt a message using Bob's 
+Public Key. Bob uses his Private Key to decrypt the message. Any of Bob's 
+coworkers might have access to the message Susan encrypted, but without Bob's 
+Private Key, the data is worthless. </font></p>
+<font size="4">
+<p>&nbsp;</p>
+<center>
+<table border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face3.gif" align="middle" width="72" height="99"></font></td>
+    <td><font face="Arial">
+    <img src="trans_half_inch.gif" align="middle" width="36" height="4"></font></td>
+    <td width="100"><font face="Arial">&quot;Hey Bob, how about lunch at Taco Bell. I 
+    hear they have free refills!&quot;</font></td>
+    <td><font face="Arial">
+    <img src="Encrypt_with_pub.gif" align="middle" width="105" height="66"></font></td>
+    <td width="100"><font face="Arial">HNFmsEm6Un BejhhyCGKOK JUxhiygSBCEiC 
+    0QYIh/Hn3xgiK BcyLK1UcYiY lxx2lCFHDC/A </font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face4.gif" align="middle" width="72" height="85"></font></td>
+    <td><font face="Arial">
+    <img src="trans_half_inch.gif" align="middle" width="36" height="4"></font></td>
+    <td width="100"><font face="Arial">HNFmsEm6Un BejhhyCGKOK JUxhiygSBCEiC 
+    0QYIh/Hn3xgiK BcyLK1UcYiY lxx2lCFHDC/A </font></td>
+    <td><font face="Arial">
+    <img src="Decrypt_with_pri.gif" align="middle" width="105" height="66"></font></td>
+    <td width="100"><font face="Arial">&quot;Hey Bob, how about lunch at Taco Bell. I 
+    hear they have free refills!&quot;</font></td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">With his private key and the right software, Bob can put 
+digital signatures on documents and other data. A digital signature is a &quot;stamp&quot; 
+Bob places on the data which is unique to Bob, and is very difficult to forge. 
+In addition, the signature assures that any changes made to the data that has 
+been signed can not go undetected. </font></p>
+<font size="4">
+<p>&nbsp;</p>
+<center>
+<table cellSpacing="5" cellPadding="5" border="0">
+  <tr>
+    <td><font face="Arial">
+    <img src="text.gif" align="middle" width="174" height="207"></font></td>
+    <td><font face="Arial">
+    <img src="hash.gif" align="middle" width="105" height="66"></font></td>
+    <td><font face="Arial">
+    <img src="Message_digest.gif" align="middle" width="79" height="54"></font></td>
+  </tr>
+</table>
+</center>
+<p>&nbsp;</p>
+<table>
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face4.gif" width="72" height="85"></font></td>
+    <td><font face="Arial">To sign a document, Bob's software will crunch down 
+    the data into just a few lines by a process called &quot;hashing&quot;. These few 
+    lines are called a message digest. (It is not possible to change a message 
+    digest back into the original data from which it was created.) </font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<center>
+<table cellSpacing="5" cellPadding="5" border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="Message_digest.gif" width="79" height="54"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="Encrypt_with_pri.gif" width="105" height="66"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="signature.gif" width="79" height="54"></font></td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">Bob's software then encrypts the message digest with his 
+private key. The result is the digital signature. </font></p>
+<font size="4">
+<p>&nbsp;</p>
+<center>
+<table cellSpacing="5" cellPadding="5" border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="signature.gif" width="79" height="54"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="Append.gif" width="105" height="66"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="signed_text.gif" width="174" height="207"></font></td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">Finally, Bob's software appends the digital signature to 
+document. All of the data that was hashed has been signed. </font></p>
+<font size="4">
+<p>&nbsp;</p>
+<center>
+<table cellSpacing="5" cellPadding="5" border="0">
+  <tr>
+    <td align="middle" rowSpan="2"><font face="Arial">
+    <img src="signed_text.gif" width="174" height="207"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="hash.gif" width="105" height="66"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="Message_digest.gif" width="79" height="54"></font></td>
+  </tr>
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="Decrypt_with_pub.gif" width="105" height="66"></font></td>
+    <td align="middle"><font face="Arial">
+    <img src="Message_digest.gif" width="79" height="54"></font></td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">Bob now passes the document on to Pat. </font></p>
+<font size="4">
+<p>&nbsp;</p>
+<table border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face1.gif" width="72" height="114"></font></td>
+    <td><font face="Arial">First, Pat's software decrypts the signature (using 
+    Bob's public key) changing it back into a message digest. If this worked, 
+    then it proves that Bob signed the document, because only Bob has his 
+    private key. Pat's software then hashes the document data into a message 
+    digest. If the message digest is the same as the message digest created when 
+    the signature was decrypted, then Pat knows that the signed data has not 
+    been changed. </font></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<center>
+<p><font face="Arial">Plot complication...</font></p>
+</center>
+<p>&nbsp;</p>
+<table border="0">
+  <tr>
+    <td align="middle"><font face="Arial">
+    <img src="face2.gif" width="72" height="94"></font></td>
+    <td><font face="Arial">Doug (our disgruntled employee) wishes to deceive 
+    Pat. Doug makes sure that Pat receives a signed message and a public key 
+    that appears to belong to Bob. Unbeknownst to Pat, Doug deceitfully sent a 
+    key pair he created using Bob's name. Short of receiving Bob's public key 
+    from him in person, how can Pat be sure that Bob's public key is authentic?
+    </font></td>
+  </tr>
+</table>
+</font>
+<p><font face="Arial">It just so happens that Susan works at the company's 
+certificate authority center. Susan can create a digital certificate for Bob 
+simply by signing Bob's public key as well as some information about Bob. </font>
+</p>
+<font size="4">
+<p>&nbsp;</p>
+<center>
+<table border="0">
+  <tr>
+    <td align="middle">
+    <table cellSpacing="2" cellPadding="2" border="2">
+      <tr>
+        <td bgColor="#ffffff"><font face="Arial">Bob Info: <font size="3"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Name <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Department <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Cubical Number </font></font>
+        <p><font face="Arial">Certificate Info: <font size="3"><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Expiration Date <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Serial Number </font></font></p>
+        <p><font face="Arial">Bob's Public Key: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;<img src="greenkey.gif" align="middle" width="68" height="34">
+        </font></td>
+      </tr>
+    </table>
+    </td>
+    <td align="middle"><font face="Arial">
+    <img src="trans_half_inch.gif" align="middle" width="36" height="4"> </font>
+    </td>
+    <td align="middle"><font face="Arial">
+    <img src="sign_data.gif" align="middle" width="105" height="66"><br>
+    <img src="face3.gif" align="middle" width="72" height="99"> </font></td>
+    <td align="middle"><font face="Arial">
+    <img src="trans_half_inch.gif" align="middle" width="36" height="4"> </font>
+    </td>
+    <td align="middle"><font face="Arial">
+    <img src="certificate.gif" align="middle" width="94" height="94"> </font>
+    </td>
+  </tr>
+</table>
+</center></font>
+<p><font face="Arial">Now Bob's co-workers can check Bob's trusted certificate 
+to make sure that his public key truly belongs to him. In fact, no one at Bob's 
+company accepts a signature for which there does not exist a certificate 
+generated by Susan. This gives Susan the power to revoke signatures if private 
+keys are compromised, or no longer needed. There are even more widely accepted 
+certificate authorities that certify Susan. </font></p>
+<p><font face="Arial">Let's say that Bob sends a signed document to Pat. To 
+verify the signature on the document, Pat's software first uses Susan's (the 
+certificate authority's) public key to check the signature on Bob's certificate. 
+Successful de-encryption of the certificate proves that Susan created it. After 
+the certificate is de-encrypted, Pat's software can check if Bob is in good 
+standing with the certificate authority and that all of the certificate 
+information concerning Bob's identity has not been altered. </font></p>
+<p><font face="Arial">Pat's software then takes Bob's public key from the 
+certificate and uses it to check Bob's signature. If Bob's public key 
+de-encrypts the signature successfully, then Pat is assured that the signature 
+was created using Bob's private key, for Susan has certified the matching public 
+key. And of course, if the signature is valid, then we know that Doug didn't try 
+to change the signed content.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

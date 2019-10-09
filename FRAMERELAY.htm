@@ -1,0 +1,710 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="FRAMERELAY_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h5 align="center">
+<span style="text-transform: uppercase; text-decoration: underline">
+<font face="Arial" size="6" color="#FF0000">Frame Relay</font></span></h5>
+<p class="pb1body1" align="justify"><font face="Arial"><i>Frame Relay</i> is a 
+high-performance WAN protocol that operates at the physical and data link layers 
+of the OSI reference model. Frame Relay originally was designed for use across 
+Integrated Services Digital Network (ISDN) interfaces. Today, it is used over a 
+variety of other network interfaces as well. This chapter focuses on Frame 
+Relay's specifications and applications in the context of WAN services. </font>
+</p>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay is an example 
+of a packet-switched technology. Packet-switched networks enable end stations to 
+dynamically share the network medium and the available bandwidth. The following 
+two techniques are used in packet-switching technology: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1037" type="#_x0000_t75" alt="" style='width:14.25pt;
+ height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1037"><![endif]>Variable-length 
+packets </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1038" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1038"><![endif]>Statistical 
+multiplexing </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Variable-length packets 
+are used for more efficient and flexible data transfers. These packets are 
+switched between the various segments in the network until the destination is 
+reached. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Statistical multiplexing 
+techniques control network access in a packet-switched network. The advantage of 
+this technique is that it accommodates more flexibility and more efficient use 
+of bandwidth. Most of today's popular LANs, such as Ethernet and Token Ring, are 
+packet-switched networks. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay often is 
+described as a streamlined version of X.25, offering fewer of the robust 
+capabilities, such as windowing and retransmission of last data that are offered 
+in X.25. This is because Frame Relay typically operates over WAN facilities that 
+offer more reliable connection services and a higher degree of reliability than 
+the facilities available during the late 1970s and early 1980s that served as 
+the common platforms for X.25 WANs. As mentioned earlier, Frame Relay is 
+strictly a Layer 2 protocol suite, whereas X.25 provides services at Layer 3 
+(the network layer) as well. This enables Frame Relay to offer higher 
+performance and greater transmission efficiency than X.25, and makes Frame Relay 
+suitable for current WAN applications, such as LAN interconnection. </font></p>
+<h3 align="justify"><font size="3" face="Arial">Frame Relay Standardization
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">Initial proposals for the 
+standardization of Frame Relay were presented to the Consultative Committee on 
+International Telephone and Telegraph (CCITT) in 1984. Because of lack of 
+interoperability and lack of complete standardization, however, Frame Relay did 
+not experience significant deployment during the late 1980s. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">A major development in 
+Frame Relay's history occurred in 1990 when Cisco, Digital Equipment Corporation 
+(DEC), Northern Telecom, and StrataCom formed a consortium to focus on Frame 
+Relay technology development. This consortium developed a specification that 
+conformed to the basic Frame Relay protocol that was being discussed in CCITT, 
+but it extended the protocol with features that provide additional capabilities 
+for complex internetworking environments. These Frame Relay extensions are 
+referred to collectively as the Local Management Interface (LMI). </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Since the consortium's 
+specification was developed and published, many vendors have announced their 
+support of this extended Frame Relay definition. ANSI and CCITT have 
+subsequently standardized their own variations of the original LMI 
+specification, and these standardized specifications now are more commonly used 
+than the original version. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Internationally, Frame 
+Relay was standardized by the International Telecommunication 
+Union—Telecommunications Standards Section (ITU-T). In the United States, Frame 
+Relay is an American National Standards Institute (ANSI) standard. </font></p>
+<h2 align="justify"><font size="3" face="Arial">Frame Relay Devices </font></h2>
+<p class="pb1body1" align="justify"><font face="Arial">Devices attached to a 
+Frame Relay WAN fall into the following two general categories: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1039" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1039"><![endif]>Data 
+terminal equipment (DTE) </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1040" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1040"><![endif]>Data 
+circuit-terminating equipment (DCE) </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">DTEs generally are 
+considered to be terminating equipment for a specific network and typically are 
+located on the premises of a customer. In fact, they may be owned by the 
+customer. Examples of DTE devices are terminals, personal computers, routers, 
+and bridges. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">DCEs are carrier-owned 
+internetworking devices. The purpose of DCE equipment is to provide clocking and 
+switching services in a network, which are the devices that actually transmit 
+data through the WAN. In most cases, these are packet switches. Figure 10-1 
+shows the relationship between the two categories of devices. </font></p>
+<p class="ptctablecap" align="center"><font face="Arial">Figure&nbsp;10-1 DCEs 
+Generally Reside Within Carrier-Operated WANs</font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="wp1020580" o:spid="_x0000_s1041" type="#_x0000_t75" alt="" style='width:453pt;
+ height:241.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image003.jpg" o:href="http://www.cisco.com/univercd/illus/i/01/it841001.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=604 height=322
+src="FRAMERELAY_files/image004.jpg" v:shapes="wp1020580"><![endif]></font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The connection between a 
+DTE device and a DCE device consists of both a physical layer component and a 
+link layer component. The physical component defines the mechanical, electrical, 
+functional, and procedural specifications for the connection between the 
+devices. One of the most commonly used physical layer interface specifications 
+is the recommended standard (RS)-232 specification. The link layer component 
+defines the protocol that establishes the connection between the DTE device, 
+such as a router, and the DCE device, such as a switch. This chapter examines a 
+commonly utilized protocol specification used in WAN networking: the Frame Relay 
+protocol. </font></p>
+<h2 align="justify"><font size="3" face="Arial">Frame Relay Virtual Circuits
+</font></h2>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay provides 
+connection-oriented data link layer communication. This means that a defined 
+communication exists between each pair of devices and that these connections are 
+associated with a connection identifier. This service is implemented by using a 
+Frame Relay virtual circuit, which is a logical connection created between two 
+data terminal equipment (DTE) devices across a Frame Relay packet-switched 
+network (PSN). </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Virtual circuits provide 
+a bidirectional communication path from one DTE device to another and are 
+uniquely identified by a data-link connection identifier (DLCI). A number of 
+virtual circuits can be multiplexed into a single physical circuit for 
+transmission across the network. This capability often can reduce the equipment 
+and network complexity required to connect multiple DTE devices. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">A virtual circuit can 
+pass through any number of intermediate DCE devices (switches) located within 
+the Frame Relay PSN. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay virtual 
+circuits fall into two categories: switched virtual circuits (SVCs) and 
+permanent virtual circuits (PVCs). </font></p>
+<h3 align="justify"><font size="3" face="Arial">Switched Virtual Circuits </font>
+</h3>
+<p class="pb1body1" align="justify"><font face="Arial"><i>Switched virtual 
+circuits (SVCs)</i> are temporary connections used in situations requiring only 
+sporadic data transfer between DTE devices across the Frame Relay network. A 
+communication session across an SVC consists of the following four operational 
+states: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1042" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1042"><![endif]><b>Call 
+setup</b>—The virtual circuit between two Frame Relay DTE devices is 
+established. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1043" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1043"><![endif]><b>Data 
+transfer</b>—Data is transmitted between the DTE devices over the virtual 
+circuit. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1044" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1044"><![endif]><b>Idle</b>—The 
+connection between DTE devices is still active, but no data is transferred. If 
+an SVC remains in an idle state for a defined period of time, the call can be 
+terminated. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1045" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1045"><![endif]><b>Call 
+termination</b>—The virtual circuit between DTE devices is terminated. </font>
+</p>
+<p class="pb1body1" align="justify"><font face="Arial">After the virtual circuit 
+is terminated, the DTE devices must establish a new SVC if there is additional 
+data to be exchanged. It is expected that SVCs will be established, maintained, 
+and terminated using the same signaling protocols used in ISDN. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Few manufacturers of 
+Frame Relay DCE equipment support switched virtual circuit connections. 
+Therefore, their actual deployment is minimal in today's Frame Relay networks.
+</font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Previously not widely 
+supported by Frame Relay equipment, SVCs are now the norm. Companies have found 
+that SVCs save money in the end because the circuit is not open all the time.
+</font></p>
+<h3 align="justify"><font size="3" face="Arial">Permanent Virtual Circuits
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial"><i>Permanent virtual 
+circuits (PVCs)</i> are permanently established connections that are used for 
+frequent and consistent data transfers between DTE devices across the Frame 
+Relay network. Communication across a PVC does not require the call setup and 
+termination states that are used with SVCs. PVCs always operate in one of the 
+following two operational states: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1046" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1046"><![endif]><b>Data 
+transfer</b>—Data is transmitted between the DTE devices over the virtual 
+circuit. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1047" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1047"><![endif]><b>Idle</b>—The 
+connection between DTE devices is active, but no data is transferred. Unlike 
+SVCs, PVCs will not be terminated under any circumstances when in an idle state.
+</font></p>
+<p class="pb1body1" align="justify"><font face="Arial">DTE devices can begin 
+transferring data whenever they are ready because the circuit is permanently 
+established. </font></p>
+<h3 align="justify"><font size="3" face="Arial">Data-Link Connection Identifier
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay virtual 
+circuits are identified by <i>data-link connection identifiers (DLCIs)</i>. DLCI 
+values typically are assigned by the Frame Relay service provider (for example, 
+the telephone company). </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay DLCIs have 
+local significance, which means that their values are unique in the LAN, but not 
+necessarily in the Frame Relay WAN. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Figure 10-2 illustrates 
+how two different DTE devices can be assigned the same DLCI value within one 
+Frame Relay WAN. </font></p>
+<p class="ptctablecap" align="justify"><font face="Arial">Figure&nbsp;10-2 A Single 
+Frame Relay Virtual Circuit Can Be Assigned Different DLCIs on Each End of a VC</font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="wp1020617" o:spid="_x0000_s1048" type="#_x0000_t75" alt="" style='width:483pt;
+ height:168pt'>
+ <v:imagedata src="FRAMERELAY_files/image005.jpg" o:href="http://www.cisco.com/univercd/illus/i/02/it841002.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=644 height=224
+src="FRAMERELAY_files/image006.jpg" v:shapes="wp1020617"><![endif]></font></p>
+<h2 align="justify"><font size="3" face="Arial">Congestion-Control Mechanisms
+</font></h2>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay reduces 
+network overhead by implementing simple congestion-notification mechanisms 
+rather than explicit, per-virtual-circuit flow control. Frame Relay typically is 
+implemented on reliable network media, so data integrity is not sacrificed 
+because flow control can be left to higher-layer protocols. Frame Relay 
+implements two congestion-notification mechanisms: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1049" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1049"><![endif]>Forward-explicit 
+congestion notification (FECN) </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1050" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1050"><![endif]>Backward-explicit 
+congestion notification (BECN) </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">FECN and BECN each is 
+controlled by a single bit contained in the Frame Relay frame header. The Frame 
+Relay frame header also contains a Discard Eligibility (DE) bit, which is used 
+to identify less important traffic that can be dropped during periods of 
+congestion. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The <i>FECN bit</i> is 
+part of the Address field in the Frame Relay frame header. The FECN mechanism is 
+initiated when a DTE device sends Frame Relay frames into the network. If the 
+network is congested, DCE devices (switches) set the value of the frames' FECN 
+bit to 1. When the frames reach the destination DTE device, the Address field 
+(with the FECN bit set) indicates that the frame experienced congestion in the 
+path from source to destination. The DTE device can relay this information to a 
+higher-layer protocol for processing. Depending on the implementation, flow 
+control may be initiated, or the indication may be ignored. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The <i>BECN bit</i> is 
+part of the Address field in the Frame Relay frame header. DCE devices set the 
+value of the BECN bit to 1 in frames traveling in the opposite direction of 
+frames with their FECN bit set. This informs the receiving DTE device that a 
+particular path through the network is congested. The DTE device then can relay 
+this information to a higher-layer protocol for processing. Depending on the 
+implementation, flow-control may be initiated, or the indication may be ignored.
+</font></p>
+<h3 align="justify"><font size="3" face="Arial">Frame Relay Discard Eligibility
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">The <i>Discard 
+Eligibility (DE) bit</i> is used to indicate that a frame has lower importance 
+than other frames. The DE bit is part of the Address field in the Frame Relay 
+frame header. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">DTE devices can set the 
+value of the DE bit of a frame to 1 to indicate that the frame has lower 
+importance than other frames. When the network becomes congested, DCE devices 
+will discard frames with the DE bit set before discarding those that do not. 
+This reduces the likelihood of critical data being dropped by Frame Relay DCE 
+devices during periods of congestion. </font></p>
+<h3 align="justify"><font size="3" face="Arial">Frame Relay Error Checking
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay uses a common 
+error-checking mechanism known as the <i>cyclic redundancy check (CRC)</i>. The 
+CRC compares two calculated values to determine whether errors occurred during 
+the transmission from source to destination. Frame Relay reduces network 
+overhead by implementing error checking rather than error correction. Frame 
+Relay typically is implemented on reliable network media, so data integrity is 
+not sacrificed because error correction can be left to higher-layer protocols 
+running on top of Frame Relay. </font></p>
+<h2 align="justify"><font size="3" face="Arial">Frame Relay Local Management 
+Interface </font></h2>
+<p class="pb1body1" align="justify"><font face="Arial">The <i>Local Management 
+Interface (LMI)</i> is a set of enhancements to the basic Frame Relay 
+specification. The LMI was developed in 1990 by Cisco Systems, StrataCom, 
+Northern Telecom, and Digital Equipment Corporation. It offers a number of 
+features (called extensions) for managing complex internetworks. Key Frame Relay 
+LMI extensions include global addressing, virtual circuit status messages, and 
+multicasting. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The LMI global addressing 
+extension gives Frame Relay data-link connection identifier (DLCI) values global 
+rather than local significance. DLCI values become DTE addresses that are unique 
+in the Frame Relay WAN. The global addressing extension adds functionality and 
+manageability to Frame Relay internetworks. Individual network interfaces and 
+the end nodes attached to them, for example, can be identified by using standard 
+address-resolution and discovery techniques. In addition, the entire Frame Relay 
+network appears to be a typical LAN to routers on its periphery. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">LMI virtual circuit 
+status messages provide communication and synchronization between Frame Relay 
+DTE and DCE devices. These messages are used to periodically report on the 
+status of PVCs, which prevents data from being sent into black holes (that is, 
+over PVCs that no longer exist). </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The LMI multicasting 
+extension allows multicast groups to be assigned. Multicasting saves bandwidth 
+by allowing routing updates and address-resolution messages to be sent only to 
+specific groups of routers. The extension also transmits reports on the status 
+of multicast groups in update messages. </font></p>
+<h2 align="justify"><font size="3" face="Arial">Frame Relay Network 
+Implementation </font></h2>
+<p class="pb1body1" align="justify"><font face="Arial">A common private Frame 
+Relay network implementation is to equip a T1 multiplexer with both Frame Relay 
+and non-Frame Relay interfaces. Frame Relay traffic is forwarded out the Frame 
+Relay interface and onto the data network. Non-Frame Relay traffic is forwarded 
+to the appropriate application or service, such as a private branch exchange 
+(PBX) for telephone service or to a video-teleconferencing application. </font>
+</p>
+<p class="pb1body1" align="justify"><font face="Arial">A typical Frame Relay 
+network consists of a number of DTE devices, such as routers, connected to 
+remote ports on multiplexer equipment via traditional point-to-point services 
+such as T1, fractional T1, or 56-Kb circuits. An example of a simple Frame Relay 
+network is shown in Figure 10-3. </font></p>
+<p class="ptctablecap" align="center"><font face="Arial">Figure&nbsp;10-3 A Simple 
+Frame Relay Network Connects Various Devices to Different Services over a WAN
+</font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="wp1020654" o:spid="_x0000_s1051" type="#_x0000_t75" alt="" style='width:465pt;
+ height:408pt'>
+ <v:imagedata src="FRAMERELAY_files/image007.jpg" o:href="http://www.cisco.com/univercd/illus/i/03/it841003.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=620 height=544
+src="FRAMERELAY_files/image008.jpg" v:shapes="wp1020654"><![endif]></font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The majority of Frame 
+Relay networks deployed today are provisioned by service providers that intend 
+to offer transmission services to customers. This is often referred to as a 
+public Frame Relay service. Frame Relay is implemented in both public 
+carrier-provided networks and in private enterprise networks. The following 
+section examines the two methodologies for deploying Frame Relay. </font></p>
+<h3 align="justify"><font size="3" face="Arial">Public Carrier-Provided Networks
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">In public 
+carrier-provided Frame Relay networks, the Frame Relay switching equipment is 
+located in the central offices of a telecommunications carrier. Subscribers are 
+charged based on their network use but are relieved from administering and 
+maintaining the Frame Relay network equipment and service. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Generally, the DCE 
+equipment also is owned by the telecommunications provider. <br>
+DTE equipment either will be customer-owned or perhaps will be owned by the 
+telecommunications provider as a service to the customer. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The majority of today's 
+Frame Relay networks are public carrier-provided networks. </font></p>
+<h3 align="justify"><font size="3" face="Arial">Private Enterprise Networks
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">More frequently, 
+organizations worldwide are deploying private Frame Relay networks. In private 
+Frame Relay networks, the administration and maintenance of the network are the 
+responsibilities of the enterprise (a private company). All the equipment, 
+including the switching equipment, is owned by the customer. </font></p>
+<h2 align="justify"><font size="3" face="Arial">Frame Relay Frame Formats </font>
+</h2>
+<p class="pb1body1" align="justify"><font face="Arial">To understand much of the 
+functionality of Frame Relay, it is helpful to understand the structure of the 
+Frame Relay frame. Figure 10-4 depicts the basic format of the Frame Relay 
+frame, and Figure 10-5 illustrates the LMI version of the Frame Relay frame.
+</font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Flags indicate the 
+beginning and end of the frame. Three primary components make up <br>
+the Frame Relay frame: the header and address area, the user-data portion, and 
+the frame check sequence (FCS). The address area, which is 2 bytes in length, is 
+comprised of 10 <br>
+bits representing the actual circuit identifier and 6 bits of fields related to 
+congestion management. This identifier commonly is referred to as the data-link 
+connection identifier (DLCI). Each of these is discussed in the descriptions 
+that follow. </font></p>
+<h3 align="justify"><font size="3" face="Arial">Standard Frame Relay Frame
+</font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">Standard Frame Relay 
+frames consist of the fields illustrated in Figure 10-4. </font></p>
+<p class="ptctablecap" align="center"><font face="Arial">Figure&nbsp;10-4 Five Fields 
+Comprise the Frame Relay Frame </font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="wp1020678" o:spid="_x0000_s1052" type="#_x0000_t75" alt="" style='width:447pt;
+ height:147.75pt'>
+ <v:imagedata src="FRAMERELAY_files/image009.jpg" o:href="http://www.cisco.com/univercd/illus/i/04/it841004.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=596 height=197
+src="FRAMERELAY_files/image010.jpg" v:shapes="wp1020678"><![endif]></font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The following 
+descriptions summarize the basic Frame Relay frame fields illustrated in Figure 
+10-4. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1053" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1053"><![endif]><b>Flags</b>—Delimits 
+the beginning and end of the frame. The value of this field is always the same 
+and is represented either as the hexadecimal number 7E or as the binary number 
+01111110. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1054" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1054"><![endif]><b>Address</b>—Contains 
+the following information: </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1055" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1055"><![endif]><b>DLCI</b>—The 
+10-bit DLCI is the essence of the Frame Relay header. This value represents the 
+virtual connection between the DTE device and the switch. Each virtual 
+connection that is multiplexed onto the physical channel will be represented by 
+a unique DLCI. The DLCI values have local significance only, which means that 
+they are unique only to the physical channel on which they reside. Therefore, 
+devices at opposite ends of a connection can use different DLCI values to refer 
+to the same virtual connection. </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1056" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1056"><![endif]><b>Extended 
+Address (EA)</b>—The EA is used to indicate whether the byte in which the EA 
+value is 1 is the last addressing field. If the value is 1, then the current 
+byte is determined to be the last DLCI octet. Although current Frame Relay 
+implementations all use a two-octet DLCI, this capability does allow longer 
+DLCIs to be used in the future. The eighth bit of each byte of the Address field 
+is used to indicate the EA. </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1057" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1057"><![endif]><b>C/R</b>—The 
+C/R is the bit that follows the most significant DLCI byte in the Address field. 
+The C/R bit is not currently defined. </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1058" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1058"><![endif]><b>Congestion 
+Control</b>—This consists of the 3 bits that control the Frame Relay 
+congestion-notification mechanisms. These are the FECN, BECN, and DE bits, which 
+are the last 3 bits in the Address field. </font></p>
+<p class="pb3body3" align="justify"><font face="Arial"><i>Forward-explicit 
+congestion notification (FECN)</i> is a single-bit field that can be set to a 
+value of 1 by a switch to indicate to an end DTE device, such as a router, that 
+congestion was experienced in the direction of the frame transmission from 
+source to destination. The primary benefit of the use of the FECN and BECN 
+fields is the capability of higher-layer protocols to react intelligently to 
+these congestion indicators. Today, DECnet and OSI are the only higher-layer 
+protocols that implement these capabilities. </font></p>
+<p class="pb3body3" align="justify"><font face="Arial"><i>Backward-explicit 
+congestion notification (BECN)</i> is a single-bit field that, when set to a 
+value of 1 by a switch, indicates that congestion was experienced in the network 
+in the direction opposite of the frame transmission from source to destination.
+</font></p>
+<p class="pb3body3" align="justify"><font face="Arial">Discard eligibility (DE) 
+is set by the DTE device, such as a router, to indicate that the marked frame is 
+of lesser importance relative to other frames being transmitted. Frames that are 
+marked as &quot;discard eligible&quot; should be discarded before other frames in a 
+congested network. This allows for a basic prioritization mechanism in Frame 
+Relay networks. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1059" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1059"><![endif]><b>Data</b>—Contains 
+encapsulated upper-layer data. Each frame in this variable-length field includes 
+a user data or payload field that will vary in length up to 16,000 octets. This 
+field serves to transport the higher-layer protocol packet (PDU) through a Frame 
+Relay network. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1060" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1060"><![endif]><b>Frame 
+Check Sequence</b>—Ensures the integrity of transmitted data. This value is 
+computed by the source device and verified by the receiver to ensure integrity 
+of transmission. </font></p>
+<h3 align="justify"><font size="3" face="Arial">LMI Frame Format </font></h3>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay frames that 
+conform to the LMI specifications consist of the fields illustrated in Figure 
+10-5. </font></p>
+<p class="ptctablecap" align="center"><font face="Arial">Figure&nbsp;10-5 Nine Fields 
+Comprise the Frame Relay That Conforms to the LMI Format</font></p>
+<p class="MsoNormal" align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="wp1020704" o:spid="_x0000_s1061" type="#_x0000_t75" alt="" style='width:534.75pt;
+ height:126.75pt'>
+ <v:imagedata src="FRAMERELAY_files/image011.jpg" o:href="http://www.cisco.com/univercd/illus/f/e5/frame5.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=713 height=169
+src="FRAMERELAY_files/image012.jpg" v:shapes="wp1020704"><![endif]></font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The following 
+descriptions summarize the fields illustrated in Figure 10-5. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1062" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1062"><![endif]><b>Flag</b>—Delimits 
+the beginning and end of the frame. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1063" type="#_x0000_t75" alt="" style='width:1.5pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=2 height=2
+src="FRAMERELAY_files/image001.gif" v:shapes="_x0000_s1063"><![endif]><b>LMI 
+DLCI</b>—Identifies the frame as an LMI frame instead of a basic Frame Relay 
+frame. The LMI-specific DLCI value defined in the LMI consortium specification 
+is DLCI = 1023. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1064" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1064"><![endif]><b>Unnumbered 
+Information Indicator</b>—Sets the poll/final bit to zero. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1065" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1065"><![endif]><b>Protocol 
+Discriminator</b>—Always contains a value indicating that the frame is an LMI 
+frame. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1066" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1066"><![endif]><b>Call 
+Reference</b>—Always contains zeros. This field currently is not used for any 
+purpose. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1067" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1067"><![endif]><b>Message 
+Typ</b>e—Labels the frame as one of the following message types: </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1068" type="#_x0000_t75" alt="" style='width:12.75pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=17 height=2
+src="FRAMERELAY_files/image013.gif" v:shapes="_x0000_s1068"><![endif]><b>Status-inquiry 
+message</b>—Allows a user device to inquire about the status of the network.
+</font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1069" type="#_x0000_t75" alt="" style='width:12.75pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=17 height=2
+src="FRAMERELAY_files/image013.gif" v:shapes="_x0000_s1069"><![endif]><b>Status 
+message</b>—Responds to status-inquiry messages. Status messages include 
+keepalives and PVC status messages. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1070" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1070"><![endif]><b>Information 
+Elements</b>—Contains a variable number of individual information elements (IEs). 
+IEs consist of the following fields: </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1071" type="#_x0000_t75" alt="" style='width:12.75pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=17 height=2
+src="FRAMERELAY_files/image013.gif" v:shapes="_x0000_s1071"><![endif]><b>IE 
+Identifier</b>—Uniquely identifies the IE. </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1072" type="#_x0000_t75" alt="" style='width:12.75pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=17 height=2
+src="FRAMERELAY_files/image013.gif" v:shapes="_x0000_s1072"><![endif]><b>IE 
+Length</b>—Indicates the length of the IE. </font></p>
+<p class="pbu2bullet2" align="justify"><font face="Arial">–<!--[if gte vml 1]><v:shape
+ id="_x0000_s1073" type="#_x0000_t75" alt="" style='width:12.75pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=17 height=2
+src="FRAMERELAY_files/image013.gif" v:shapes="_x0000_s1073"><![endif]><b>Data</b>—Consists 
+of 1 or more bytes containing encapsulated upper-layer data. </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1074" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1074"><![endif]><b>Frame 
+Check Sequence (FCS)</b>—Ensures the integrity of transmitted data. </font></p>
+<h2 align="justify"><font size="3" face="Arial">Summary </font></h2>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay is a 
+networking protocol that works at the bottom two levels of the OSI reference 
+model: the physical and data link layers. It is an example of packet-switching 
+technology, which enables end stations to dynamically share network resources.
+</font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay devices fall 
+into the following two general categories: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1075" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1075"><![endif]>Data 
+terminal equipment (DTEs), which include terminals, personal computers, routers, 
+and bridges </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1076" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1076"><![endif]>Data 
+circuit-terminating equipment (DCEs), which transmit the data through the 
+network and are often carrier-owned devices (although, increasingly, enterprises 
+are buying their own DCEs and implementing them in their networks) </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">Frame Relay networks 
+transfer data using one of the following two connection types: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1077" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1077"><![endif]>Switched 
+virtual circuits (SVCs), which are temporary connections that are created for 
+each data transfer and then are terminated when the data transfer is complete 
+(not a widely used connection) </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1078" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1078"><![endif]>Permanent 
+virtual circuits (PVCs), which are permanent connections </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">The DLCI is a value 
+assigned to each virtual circuit and DTE device connection point in the Frame 
+Relay WAN. Two different connections can be assigned the same value within the 
+same Frame Relay WAN—one on each side of the virtual connection. </font></p>
+<p class="pb1body1" align="justify"><font face="Arial">In 1990, Cisco Systems, 
+StrataCom, Northern Telecom, and Digital Equipment Corporation developed a set 
+of Frame Relay enhancements called the Local Management Interface (LMI). The LMI 
+enhancements offer a number of features (referred to as extensions) for managing 
+complex internetworks, including the following: </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1079" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1079"><![endif]>Global 
+addressing </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1080" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1080"><![endif]>Virtual 
+circuit status messages </font></p>
+<p class="pbu1bullet1" align="justify"><font face="Arial">•<!--[if gte vml 1]><v:shape
+ id="_x0000_s1081" type="#_x0000_t75" alt="" style='width:14.25pt;height:1.5pt'>
+ <v:imagedata src="FRAMERELAY_files/image001.gif" o:href="http://www.cisco.com/univercd/illus/images/blank.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=19 height=2
+src="FRAMERELAY_files/image002.gif" v:shapes="_x0000_s1081"><![endif]>Multicasting</font></p>
+<p class="MsoNormal" align="center"><font face="Arial">&nbsp;</font><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

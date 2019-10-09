@@ -1,0 +1,224 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.mw-headline
+	{}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+<p align="center"><span style="text-transform: uppercase"><u>
+<font color="#FF0000"><b><span style="font-family: Arial"><font size="6">
+Flooding</font></span></b><span style="font-family: Arial; font-weight: 700"><font size="6">
+</font></span></font></u></span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<b><span style="font-family: Arial">Flooding</span></b><span style="font-family: Arial"> 
+is a simple computer network routing algorithm in which every incoming packet is 
+sent through every outgoing link except the one it arrived on. </span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Flooding is used in bridging and in systems 
+such as Usenet and peer-to-peer file sharing and as part of some routing 
+protocols, including OSPF, DVMRP, and those used in ad-hoc wireless networks.
+</span></p>
+<p style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<img border="0" src="220px-Flood.gif" width="220" height="220"></p>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;</span></span></h2>
+<h2 style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<font size="3">Flooding algorithm</font></h2>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</h2>
+<h2 style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<img border="0" src="220px-FloodAck.gif" width="220" height="220"></h2>
+<h2 style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<font size="3">Flooding algorithm with ack messages</font></h2>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">
+Types</span></span></h2>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">There are generally two types of flooding 
+available, Uncontrolled Flooding and Controlled Flooding.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Uncontrolled Flooding is the fatal law of 
+flooding. All nodes have neighbors and route packets indefinitely. More than two 
+neighbors creates a broadcast storm.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Controlled Flooding has its own two algorithms 
+to make it reliable, SNCF (Sequence Number Controlled Flooding) and RPF (Reverse 
+Path Flooding). In SNCF, the node attaches its own address and sequence number 
+to the packet, since every node has a memory of addresses and sequence numbers. 
+If it receives a packet in memory, it drops it immediately while in RPF, the 
+node will only send the packet forward. If it is received from the next node, it 
+sends it back to the sender.</span></p>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;</span></span></h2>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">
+Algorithm</span></span></h2>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">There are several variants of flooding 
+algorithms. Most work roughly as follows:</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 0in; margin-left: .5in">
+<span style="font-family: Arial">1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial">Each node acts as both a 
+transmitter and a receiver.</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: 0in; margin-left: .5in">
+<span style="font-family: Arial">2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family: Arial">Each node tries to forward every 
+message to every one of its neighbors except the source node.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">This results in every message eventually being 
+delivered to all reachable parts of the network.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Algorithms may need to be more complex than 
+this, since, in some case, precautions have to be taken to avoid wasted 
+duplicate deliveries and infinite loops, and to allow messages to eventually 
+expire from the system. A variant of flooding called <i>selective flooding</i> 
+partially addresses these issues by only sending packets to routers in the same 
+direction. In selective flooding the routers don't send every incoming packet on 
+every line but only on those lines which are going approximately in the right 
+direction.</span></p>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;</span></span></h2>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">
+Advantages</span></span><span style="font-family: Arial">&nbsp;</span></h2>
+<ul style="margin-top: 0in; margin-bottom: 0in" type="disc">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">If a packet can be delivered, it will 
+  (probably multiple times).</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Since flooding naturally utilizes every path 
+  through the network, it will also use the shortest path.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">This algorithm is very simple to implement.</span></li>
+</ul>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span id="Disadvantages"><span class="mw-headline">
+<span style="font-size: 12.0pt; font-family: Arial">&nbsp;</span></span></h2>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">
+Disadvantages</span></span></span><span style="font-family: Arial">&nbsp;</span></h2>
+<ul style="margin-top: 0in; margin-bottom: 0in" type="disc">
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Flooding can be costly in terms of wasted 
+  bandwidth. While a message may only have one destination it has to be sent to 
+  every host. In the case of a ping flood or a denial of service attack, it can 
+  be harmful to the reliability of a computer network.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Messages can become duplicated in the network 
+  further increasing the load on the networks bandwidth as well as requiring an 
+  increase in processing complexity to disregard duplicate messages.</span></li>
+  <li class="MsoNormal" style="text-align: justify">
+  <span style="font-family: Arial">Duplicate packets may circulate forever, 
+  unless certain precautions are taken: </span>
+  <ul style="margin-top: 0in; margin-bottom: 0in" type="circle">
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Use a hop count or a time to live count and 
+    include it with each packet. This value should take into account the number 
+    of nodes that a packet may have to pass through on the way to its 
+    destination.</span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Have each node keep track of every packet 
+    seen and only forward each packet once</span></li>
+    <li class="MsoNormal" style="text-align: justify">
+    <span style="font-family: Arial">Enforce a network topology without loops</span></li>
+  </ul>
+  </li>
+</ul>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">&nbsp;</span></span></h2>
+<h2 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span class="mw-headline"><span style="font-size: 12.0pt; font-family: Arial">
+Examples</span></span></h2>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Open Shortest Path First - Used for 
+transferring updates to the topology (LSAs)</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial"><b>Flooding </b>is the static routing 
+algorithm. In this algorithm, every incoming packet is sent on all outgoing 
+lines except the line on which it has arrived.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">One major problem of this algorithm is that it 
+generates a large number of duplicate packets on the network. </span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Several measures are takes to stop the 
+duplication of packets. These are: </span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">1. One solution is to include a hop counter in 
+the header of each packet. This counter is decremented at each hop along the 
+path. When this counter reaches zero the packet is discarded. Ideally, the hop 
+counter should become zero at the destination hop, indicating that there are no 
+more intermediate hops and destination is reached. This requires the knowledge 
+of exact number of hops from a source to destination. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;2. Another technique is to keep the track of 
+the packed that have been flooded, to avoid sending them a second time. For 
+this, the source router put a sequence number in each packet it receives from 
+its hosts. Each router then needs a list per source router telling which 
+sequence numbers originating at that source have already been seen. If an 
+incoming packet is on the list, it is not flooded. </span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">3. Another solution is to use <strong>selective 
+flooding. </strong>In selective flooding the routers do not send every incoming 
+packet out on every output line. Instead packet is sent only on those lines 
+which are approximately going in the right direction.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;<b>Flooding</b> is a simple routing technique 
+in computer networks where a source or node sends packets through every outgoing 
+link.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Flooding, which is similar to broadcasting, 
+occurs when source packets (without routing data) are transmitted to all 
+attached network nodes. Because flooding uses every path in the network, the 
+shortest path is also used. The flooding algorithm is easy to implement.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Network routing data is not initially included 
+in data packets. A hop count algorithm is used to track network topology, or 
+visited network routes. A packet tries to access all available network routes 
+and ultimately reaches its destination, but there is always the potential for 
+packet duplication. Hop count and some selective flooding techniques are used to 
+avoid communication delay and duplication.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Flooding is also used as a denial of service 
+attack by flooding network traffic to bring down a network service. The service 
+is flooded with many incomplete server connection requests. Due to the number of 
+flooded requests, the server or host is not able to process genuine requests at 
+the same time. A flooding attack fills the server or host memory buffer; once it 
+is full, further connections cannot be made, which results in denial of service.</span></p>
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

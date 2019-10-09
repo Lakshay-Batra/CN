@@ -1,0 +1,939 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p class="pB1_Body1" align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p class="pB1_Body1" align="center"><font face="Arial" color="#FF0000">
+<span style="text-transform: uppercase; font-weight: 700; text-decoration: underline">
+Routing</span></font><font face="Arial"> </font> </p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial;color:black">Routing Techniques Elements</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">i) <i>Performance criterion: Hops</i>, 
+Distance, <i>Speed</i>, Delay, Cost</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">ii) <i>Decision time: Packet</i>, 
+session</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">iii)<i> Decision place: Distributed</i>, 
+centralized, Source</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">iv) <i>Network information source:</i> 
+None, local, <i>adjacent nodes</i>, nodes along route, all nodes</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">v) <i>Routing strategy: </i>Fixed,
+<i>adaptive</i>, random, flooding</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;
+color:black">vi) <i>Adaptive routing update time:</i> Continuous, <i>periodic</i>,
+<i>topology change</i>, major load change</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial;color:black">Routing Algorithm classification</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">Global or decentralized information?</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<i><span style="font-family:Arial;color:black">Global:</span></i></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">• all routers have complete 
+topology, link cost info Eg. link state” algorithms</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<i><span style="font-family:Arial;color:black">Decentralized:</span></i></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">• router knows physically connected 
+neighbors, link costs to neighbors</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black">• iterative process of computation, 
+exchange of info with neighbors Eg. distance vector” algorithms</span></p>
+<p class="MsoNormal" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;
+color:black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial;color:black">Static or dynamic?</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<i><span style="font-family:Arial;color:black">Static:</span></i><span style="font-family:
+Arial;color:black"> routes change slowly over time </span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<i><span style="font-family:Arial;color:black">Dynamic:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></i>
+<span style="font-family:Arial;color:black">• routes change more quickly</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: .5in; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;
+color:black">• periodic update</span></p>
+<p class="MsoNormal" style="text-align: justify; text-indent: .5in; text-autospace: none; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;
+color:black">• in response to link cost changes</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial;color:black"><br clear="all">
+</span><b><span style="font-family:Arial">Routing Algorithms </span></b></p>
+<p class="Default" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• <i>Adaptive algorithm:</i> </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Reflect change in topology </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Get information locally from adjacent routers
+</span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<i><span style="font-family:Arial">• Non Adaptive Algorithm </span></i></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Static routers </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Downloaded to routers when network is booted
+</span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<i><span style="font-family:Arial">• Routing: </span></i></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Principle of Optimality: </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– If router I on optimal path from router I to K 
+then optimal path from J to K also on same route! </span></p>
+<p class="Default" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial">Routing Algorithms (Static)</span></b></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Set of all optimal routes from: Source to a 
+given destination </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– A sink tree! </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Goal of routing algorithm find sink trees that 
+are there! </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Shortest Path Routing: </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Dijkstra </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Uses topology </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Greedy approach </span></p>
+<p class="Default" style="text-align: justify; margin-left: .5in; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Possible shorter path of equal length – need 
+not be unique </span></p>
+<p class="Default" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; text-indent: -30.0pt; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial">Static Routing Algorithms </span></b></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Shortest path routing </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– To send a packet from one node to another find 
+the shortest path between the pair of nodes </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Multipath Routing </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Multiple paths from Node a to node b. </span>
+</p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Randomly choose one of the paths </span></p>
+<p class="Default" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; text-indent: -30.0pt; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial">Static Routing </span></b></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Disadvantages: </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– SSSP and Multipath: </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Require complete knowledge of Network topology 
+to make a good decision. </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Hot potato routing </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Forward on to shortest Queue (defined by 
+hopcount) </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Use hot potato with static routing </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– rank = Shortest Queue + shortest path</span></p>
+<p class="Default" style="text-align: justify; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; text-indent: -30.0pt; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<b><span style="font-family:Arial">Dynamic Routing </span></b></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">&nbsp;</span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">• Distributed Routing: </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Dynamic routing </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Changing topology of the network </span></p>
+<p class="Default" style="text-align: justify; margin-left: 30.0pt; margin-top: 0; margin-bottom: 0">
+<span style="font-family:Arial">– Need to recomputed route continuously</span></p>
+<p class="pB1_Body1" align="center">&nbsp;</p>
+<p class="pB1_Body1" align="center">&nbsp;</p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Routing</span> is the act 
+of moving information across an internetwork from a source to a destination. 
+Along the way, at least one intermediate node typically is encountered. Routing 
+is often contrasted with bridging, which might seem to accomplish precisely the 
+same thing to the casual observer. The primary difference between the two is 
+that bridging occurs at Layer 2 (the link layer) of the OSI reference model, 
+whereas routing occurs at Layer 3 (the network layer). This distinction provides 
+routing and bridging with different information to use in the process of moving 
+information from source to destination, so the two functions accomplish their 
+tasks in different ways. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">The topic of routing has 
+been covered in computer science literature for more than two decades, but 
+routing achieved commercial popularity as late as the mid-1980s. The primary 
+reason for this time lag is that networks in the 1970s were simple, homogeneous 
+environments. Only relatively recently has large-scale internetworking become 
+popular. </font></p>
+<h2 class="p_H_Head1" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Routing 
+Components </font></h2>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing involves two 
+basic activities: determining optimal routing paths and transporting information 
+groups (typically called packets) through an internetwork. In the context of the 
+routing process, the latter of these is referred to as packet switching. 
+Although packet switching is relatively straightforward, path determination can 
+be very complex. </font></p>
+<h3 class="p_H_Head2" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Path 
+Determination </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing protocols use 
+metrics to evaluate what path will be the best for a packet to travel. A metric 
+is a standard of measurement, such as path bandwidth, that is used by routing 
+algorithms to determine the optimal path to a destination. To aid the process of 
+path determination, routing algorithms initialize and maintain routing tables, 
+which contain route information. Route information varies depending on the 
+routing algorithm used. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms fill 
+routing tables with a variety of information. Destination/next hop associations 
+tell a router that a particular destination can be reached optimally by sending 
+the packet to a particular router representing the &quot;next hop&quot; on the way to the 
+final destination. When a router receives an incoming packet, it checks the 
+destination address and attempts to associate this address with a next hop. 
+Figure 5-1 depicts a sample destination/next hop routing table. </font></p>
+<p class="pTC_TableCap" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Figure&nbsp;5-1 
+Destination/Next Hop Associations Determine the Data's Optimal Path </font></p>
+<div align="center">
+  <p style="margin-top: 0; margin-bottom: 0">
+  <font face="Arial">
+  <img id="wp1020566" height="214" hspace="0" src="ct840501.jpg" width="594" border="0"></font></div>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing tables also can 
+contain other information, such as data about the desirability of a path. 
+Routers compare metrics to determine optimal routes, and these metrics differ 
+depending on the design of the routing algorithm used. A variety of common 
+metrics will be introduced and described later in this chapter. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routers communicate with 
+one another and maintain their routing tables through the transmission of a 
+variety of messages. The routing update message is one such message that 
+generally consists of all or a portion of a routing table. By analyzing routing 
+updates from all other routers, a router can build a detailed picture of network 
+topology. A link-state advertisement, another example of a message sent between 
+routers, informs other routers of the state of the sender's links. Link 
+information also can be used to build a complete picture of network topology to 
+enable routers to determine optimal routes to network destinations. </font></p>
+<h3 class="p_H_Head2" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Switching
+</font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Switching algorithms is 
+relatively simple; it is the same for most routing protocols. In most cases, a 
+host determines that it must send a packet to another host. Having acquired a 
+router's address by some means, the source host sends a packet addressed 
+specifically to <br>
+a router's physical (Media Access Control [MAC]-layer) address, this time with 
+the protocol (network layer) address of the destination host. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">As it examines the 
+packet's destination protocol address, the router determines that it either 
+knows or does not know how to forward the packet to the next hop. If the router 
+does not know how to forward the packet, it typically drops the packet. If the 
+router knows how to forward the packet, however, it changes the destination 
+physical address to that of the next hop and transmits the packet. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">The next hop may be the 
+ultimate destination host. If not, the next hop is usually another router, which 
+executes the same switching decision process. As the packet moves through the 
+internetwork, its physical address changes, but its protocol address remains 
+constant, as illustrated in Figure 5-2. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">The preceding discussion 
+describes switching between a source and a destination end system. The 
+International Organization for Standardization (ISO) has developed a 
+hierarchical terminology that is useful in describing this process. Using this 
+terminology, network devices without the capability to forward packets between 
+subnetworks are called <span style="font-weight: normal; font-style: italic">end 
+systems (ESs)</span>, whereas network devices with these capabilities are called
+<span style="font-weight: normal; font-style: italic">intermediate systems (ISs)</span>. 
+ISs are further divided into those that can communicate within routing domains (<span style="font-weight: normal; font-style: italic">intradomain 
+ISs</span>) and those that communicate both within and between routing domains (<span style="font-weight: normal; font-style: italic">interdomain 
+ISs</span>). A routing domain generally is considered a portion of an 
+internetwork under common administrative authority that is regulated by a 
+particular set of administrative guidelines. Routing domains are also called 
+autonomous systems. With certain protocols, routing domains can be divided into 
+routing areas, but intradomain routing protocols are still used for switching 
+both within and between areas. </font></p>
+<p class="pTC_TableCap" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Figure&nbsp;5-2 Numerous 
+Routers May Come into Play During the Switching Process </font></p>
+<div align="center">
+  <p style="margin-top: 0; margin-bottom: 0">
+  <font face="Arial">
+  <img id="wp1020582" height="486" hspace="0" src="ct840502.jpg" width="578" border="0"></font></div>
+<h2 class="p_H_Head1" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Routing 
+Algorithms </font></h2>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Routing algorithms</span> 
+can be differentiated based on several key characteristics. First, the 
+particular goals of the algorithm designer affect the operation of the resulting 
+routing protocol. Second, various types of routing algorithms exist, and each 
+algorithm has a different impact on network and router resources. Finally, 
+routing algorithms use a variety of metrics that affect calculation of optimal 
+routes. The following sections analyze these routing algorithm attributes.
+</font></p>
+<h3 class="p_H_Head2" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Design Goals
+</font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms often 
+have one or more of the following design goals: </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Optimality
+</font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Simplicity 
+and low overhead </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Robustness 
+and stability </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Rapid 
+convergence </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Flexibility
+</font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Optimality</span> refers 
+to the capability of the routing algorithm to select the best route, which 
+depends on the metrics and metric weightings used to make the calculation. For 
+example, one routing algorithm may use a number of hops and delays, but it may 
+weigh delay more heavily in the calculation. Naturally, routing protocols must 
+define their metric calculation algorithms strictly. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms also 
+are designed to be as simple as possible. In other words, the routing algorithm 
+must offer its functionality efficiently, with a minimum of software and 
+utilization overhead. Efficiency is particularly important when the software 
+implementing the routing algorithm must run on a computer with limited physical 
+resources. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms must 
+be <span style="font-weight: normal; font-style: italic">robust</span>, which 
+means that they should perform correctly in <br>
+the face of unusual or unforeseen circumstances, such as hardware failures, high 
+load conditions, and incorrect implementations. Because routers are located at 
+network junction points, they can cause considerable problems when they fail. 
+The best routing algorithms are often those that have withstood the test of time 
+and that have proven stable under a variety of network conditions. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">In addition, routing 
+algorithms must converge rapidly.
+<span style="font-weight: normal; font-style: italic">Convergence</span> is the 
+process of agreement, by all routers, on optimal routes. When a network event 
+causes routes to either go down or become available, routers distribute routing 
+update messages that permeate networks, stimulating recalculation of optimal 
+routes and eventually causing all routers to agree on these routes. Routing 
+algorithms that converge slowly can cause routing loops or network outages.
+</font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">In the routing loop 
+displayed in Figure 5-3, a packet arrives at Router 1 at time t1. Router 1 
+already has been updated and thus knows that the optimal route to the 
+destination calls for Router 2 to be the next stop. Router 1 therefore forwards 
+the packet to Router 2, but because this router has not yet been updated, it 
+believes that the optimal next hop is Router 1. Router 2 therefore forwards the 
+packet back to Router 1, and the packet continues to bounce back and forth 
+between the two routers until Router 2 receives its routing update or until the 
+packet has been switched the maximum number of times allowed. </font></p>
+<p class="pTC_TableCap" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Figure&nbsp;5-3 Slow 
+Convergence and Routing Loops Can Hinder Progress </font></p>
+<div align="center">
+  <p style="margin-top: 0; margin-bottom: 0">
+  <font face="Arial">
+  <img id="wp1020606" height="299" hspace="0" src="ct840503.jpg" width="582" border="0"></font></div>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms 
+should also be flexible, which means that they should quickly and accurately 
+adapt to a variety of network circumstances. Assume, for example, that a network 
+segment has gone down. As many routing algorithms become aware of the problem, 
+they will quickly select the next-best path for all routes normally using that 
+segment. Routing algorithms can be programmed to adapt to changes in network 
+bandwidth, router queue size, and network delay, among other variables. </font>
+</p>
+<h3 class="p_H_Head2" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Algorithm 
+Types </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms can 
+be classified by type. Key differentiators include these: </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Static 
+versus dynamic </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Single-path 
+versus multipath </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Flat 
+versus hierarchical </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Host-intelligent 
+versus router-intelligent </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Intradomain 
+versus interdomain </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Link-state 
+versus distance vector </font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Static Versus 
+Dynamic </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Static routing algorithms</span> 
+are hardly algorithms at all, but are table mappings established by the network 
+administrator before the beginning of routing. These mappings do not change 
+unless the network administrator alters them. Algorithms that use static routes 
+are simple to design and work well in environments where network traffic is 
+relatively predictable and where network design is relatively simple. </font>
+</p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Because static routing 
+systems cannot react to network changes, they generally are considered 
+unsuitable for today's large, constantly changing networks. Most of the dominant 
+routing algorithms today are
+<span style="font-weight: normal; font-style: italic">dynamic routing algorithms</span>, 
+which adjust to changing network circumstances by analyzing incoming routing 
+update messages. If the message indicates that a network change has occurred, 
+the routing software recalculates routes and sends out new routing update 
+messages. These messages permeate the network, stimulating routers to rerun 
+their algorithms and change their routing tables accordingly. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Dynamic routing 
+algorithms can be supplemented with static routes where appropriate. A router of 
+last resort (a router to which all unroutable packets are sent), for example, 
+can be designated to act as a repository for all unroutable packets, ensuring 
+that all messages are at least handled in some way. </font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Single-Path 
+Versus Multipath </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Some sophisticated 
+routing protocols support multiple paths to the same destination. Unlike 
+single-path algorithms, these multipath algorithms permit traffic multiplexing 
+over multiple lines. The advantages of multipath algorithms are obvious: They 
+can provide substantially better throughput and reliability. This is generally 
+called load sharing. </font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Flat Versus 
+Hierarchical </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Some routing algorithms 
+operate in a flat space, while others use routing hierarchies. In a
+<span style="font-weight: normal; font-style: italic">flat routing system</span>, 
+the routers are peers of all others. In a hierarchical routing system, some 
+routers form what amounts to a routing backbone. Packets from nonbackbone 
+routers travel to the backbone routers, where they are sent through the backbone 
+until they reach the general area of the destination. At this point, they travel 
+from the last backbone router through one or more nonbackbone routers to the 
+final destination. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing systems often 
+designate logical groups of nodes, called domains, autonomous systems, or areas. 
+In <span style="font-weight: normal; font-style: italic">hierarchical systems</span>, 
+some routers in a domain can communicate with routers in other domains, while 
+others can communicate only with routers within their domain. In very large 
+networks, additional hierarchical levels may exist, with routers at the highest 
+hierarchical level forming the routing backbone. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">The primary advantage of 
+hierarchical routing is that it mimics the organization of most companies and 
+therefore supports their traffic patterns well. Most network communication 
+occurs within small company groups (domains). Because intradomain routers need 
+to know only about other routers within their domain, their routing algorithms 
+can be simplified, and, depending on the routing algorithm being used, routing 
+update traffic can be reduced accordingly. </font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">
+Host-Intelligent Versus Router-Intelligent </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Some routing algorithms 
+assume that the source end node will determine the entire route. This is usually 
+referred to as <span style="font-weight: normal; font-style: italic">source 
+routing</span>. In source-routing systems, routers merely act as 
+store-and-forward devices, mindlessly sending the packet to the next stop.
+</font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Other algorithms assume 
+that hosts know nothing about routes. In these algorithms, routers determine the 
+path through the internetwork based on their own calculations. In the first 
+system, the hosts have the routing intelligence. In the latter system, routers 
+have the routing intelligence. </font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Intradomain 
+Versus Interdomain </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Some routing algorithms 
+work only within domains; others work within and between domains. The nature of 
+these two algorithm types is different. It stands to reason, therefore, that an 
+optimal intradomain-routing algorithm would not necessarily be an optimal 
+interdomain-routing algorithm. </font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Link-State 
+Versus Distance Vector </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Link-state algorithms</span> 
+(also known as shortest path first algorithms) flood routing information to all 
+nodes in the internetwork. Each router, however, sends only the portion of the 
+routing table that describes the state of its own links. In link-state 
+algorithms, each router builds a picture of the entire network in its routing 
+tables. Distance vector algorithms (also known as Bellman-Ford algorithms) call 
+for each router to send all or some portion of its routing table, but only to 
+its neighbors. In essence, link-state algorithms send small updates everywhere, 
+while distance vector algorithms send larger updates only to neighboring 
+routers. <span style="font-weight: normal; font-style: italic">Distance vector</span> 
+algorithms know only about their neighbors. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Because they converge 
+more quickly, link-state algorithms are somewhat less prone to routing loops 
+than distance vector algorithms. On the other hand, link-state algorithms 
+require more CPU power and memory than distance vector algorithms. Link-state 
+algorithms, therefore, can be more expensive to implement and support. 
+Link-state protocols are generally more scalable than distance vector protocols.
+</font></p>
+<h3 class="p_H_Head3" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Routing 
+Metrics </font></h3>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing tables contain 
+information used by switching software to select the best route. But how, 
+specifically, are routing tables built? What is the specific nature of the 
+information that they contain? How do routing algorithms determine that one 
+route is preferable to others? </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing algorithms have 
+used many different metrics to determine the best route. Sophisticated routing 
+algorithms can base route selection on multiple metrics, combining them in a 
+single (hybrid) metric. All the following metrics have been used: </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Path 
+length </font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Reliability
+</font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Delay
+</font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Bandwidth
+</font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Load
+</font></p>
+<p class="pBu1_Bullet1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">•<img height="2" src="blank.gif" width="19" border="0">Communication 
+cost </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Path length</span> is the 
+most common routing metric. Some routing protocols allow network administrators 
+to assign arbitrary costs to each network link. In this case, path length is the 
+sum of the costs associated with each link traversed. Other routing protocols 
+define hop count, a metric that specifies the number of passes through 
+internetworking products, such as routers, that a packet must take en route from 
+a source to a destination. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Reliability</span>, in the 
+context of routing algorithms, refers to the dependability (usually described in 
+terms of the bit-error rate) of each network link. Some network links might go 
+down more often than others. After a network fails, certain network links might 
+be repaired more easily or more quickly than other links. Any reliability 
+factors can be taken into account in the assignment of the reliability ratings, 
+which are arbitrary numeric values usually assigned to network links by network 
+administrators. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Routing delay</span> 
+refers to the length of time required to move a packet from source to 
+destination through the internetwork. Delay depends on many factors, including 
+the bandwidth of intermediate network links, the port queues at each router 
+along the way, network congestion on all intermediate network links, and the 
+physical distance to be traveled. Because delay is a conglomeration of several 
+important variables, it is a common and useful metric. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Bandwidth</span> refers to 
+the available traffic capacity of a link. All other things being equal, a 
+10-Mbps Ethernet link would be preferable to a 64-kbps leased line. Although 
+bandwidth is a rating of the maximum attainable throughput on a link, routes 
+through links with greater bandwidth do not necessarily provide better routes 
+than routes through slower links. For example, if a faster link is busier, the 
+actual time required to send a packet to the destination could be greater.
+</font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Load</span> refers to the 
+degree to which a network resource, such as a router, is busy. Load can be 
+calculated in a variety of ways, including CPU utilization and packets processed 
+per second. Monitoring these parameters on a continual basis can be 
+resource-intensive itself. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: normal; font-style: italic">Communication cost</span> 
+is another important metric, especially because some companies may not care 
+about performance as much as they care about operating expenditures. Although 
+line delay may be longer, they will send packets over their own lines rather 
+than through the public lines that cost money for usage time. </font></p>
+<h2 class="p_H_Head1" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Network 
+Protocols </font></h2>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routed protocols are 
+transported by routing protocols across an internetwork. In general, routed 
+protocols in this context also are referred to as network protocols. These 
+network protocols perform a variety of functions required for communication 
+between user applications in source and destination devices, and these functions 
+can differ widely among protocol suites. Network protocols occur at the upper 
+five layers of the OSI reference model: the network layer, the transport layer, 
+the session layer, the presentation layer, and the application layer. </font>
+</p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Confusion about the 
+terms <span style="font-weight: normal; font-style: italic">routed protocol</span> 
+and <span style="font-weight: normal; font-style: italic">routing protocol</span> 
+is common. Routed protocols are protocols that are routed over an internetwork. 
+Examples of such protocols are the Internet Protocol (IP), DECnet, AppleTalk, 
+Novell NetWare, OSI, Banyan VINES, and Xerox Network System (XNS). Routing 
+protocols, on the other hand, are protocols that implement routing algorithms. 
+Put simply, routing protocols are used by intermediate systems to build tables 
+used in determining path selection of routed protocols. Examples of these 
+protocols include Interior Gateway Routing Protocol (IGRP), Enhanced Interior 
+Gateway Routing Protocol (Enhanced IGRP), Open Shortest Path First (OSPF), 
+Exterior Gateway Protocol (EGP), Border Gateway Protocol (BGP), Intermediate 
+System-to-Intermediate System (IS-IS), and Routing Information Protocol (RIP). 
+Routed and routing protocols are discussed in detail later in this book. </font>
+</p>
+<p style="background: white; margin-top:0; margin-bottom:0"><span style="color: #333333; font-family: Arial">
+Routing is the process of moving packets through an internetwork, such as
+<span class="klink"><span style="color: green; background: white">the Internet</span></span>.</span></p>
+<p style="background: white; margin-top:0; margin-bottom:0" eiqgs="0" BqFRc="0">
+<span style="color: #333333; font-family: Arial">Routing actually consists of 
+two separate, but related, tasks:</span></p>
+<p class="MsoNormal" style="text-indent: -0.25in; margin-left: 0.5in; background: white; margin-top:0; margin-bottom:0">
+<font face="Arial"><span style="color: #333333">1.</span></font><span style="font-weight: normal; font-style: normal; font-family: Arial; font-variant: normal; color: #333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: #333333; font-family: Arial">Defining paths for the
+<span class="klink"><span style="color: green; background: white">transmission</span></span> 
+of packets through an internetwork. </span></p>
+<p class="MsoNormal" style="text-indent: -0.25in; margin-left: 0.5in; background: white; margin-top:0; margin-bottom:0">
+<font face="Arial"><span style="color: #333333">2.</span></font><span style="font-weight: normal; font-style: normal; font-family: Arial; font-variant: normal; color: #333333">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><span style="color: #333333; font-family: Arial">Forwarding packets based 
+upon the defined paths. </span></p>
+<h2 eiqgs="0" BqFRc="0" style="margin-top: 0; margin-bottom: 0"><span style="font-family: Arial"><font size="3">Routing 
+vs. Bridging and Switching</font></span></h2>
+<p style="background: white; margin-top:0; margin-bottom:0" eiqgs="0" BqFRc="4">
+<span style="color: #333333; font-family: Arial">Routing is distinguished from 
+bridging or switching by operating at the Network Layer of the OSI Model. 
+Bridging and switching occur on the Data Link Layer.</span></p>
+<h2 eiqgs="0" BqFRc="0" style="margin-top: 0; margin-bottom: 0"><span style="font-family: Arial"><font size="3">Static 
+vs. Dynamic Routing</font></span></h2>
+<p style="background: white; margin-top:0; margin-bottom:0" eiqgs="0" BqFRc="0">
+<span style="color: #333333; font-family: Arial">Routing can be accomplished by 
+manually entering the information necessary for packets to reach any part of the 
+internetwork into each router. This is called <i eiqgs="0" BqFRc="0">static 
+routing</i>.</span></p>
+<p style="background: white; margin-top:0; margin-bottom:0" eiqgs="0" BqFRc="2">
+<span style="color: #333333; font-family: Arial">Static routing works reasonably 
+well for very small networks, but does not scale well. When using static 
+routing, the routing tables on each
+<span class="klink"><span style="color: green">router</span></span> must be 
+updated each time the network topology changes -- such as when a network link 
+fails..</span></p>
+<p style="background: white; margin-top:0; margin-bottom:0" eiqgs="0" BqFRc="4">
+<span style="color: #333333; font-family: Arial">In most networks, routing is 
+managed automatically through the use of dynamic routing. In dynamic routing, 
+routing protocols create and maintain the routing tables automatically. Dynamic 
+routing responds much more quickly to network changes (and network failures) 
+than static routing.</span></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial">&nbsp;</font><span id="intelliTxt"><font face="Arial">&nbsp;In 
+internetworking, the process of moving a packet of
+<a class="iAs" style="color: #333333; text-decoration: underline; border-bottom: 1px solid #333333; background-color: transparent" href="#" target="_blank">
+data</a> from source to destination. Routing is usually performed by a dedicated 
+device called a router. Routing is a key feature of the Internet because it 
+enables messages to pass from one computer to another and eventually reach the 
+target machine. Each intermediary computer performs routing by passing along the 
+message to the next computer. Part of this process involves analyzing a <i>
+routing table</i> to determine the best path. </font></p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing is often confused with <i>bridging,</i> which 
+performs a similar function. The principal difference between the two is that 
+bridging occurs at a lower level and is therefore more of a hardware function 
+whereas routing occurs at a higher level where the software component is more 
+important. And because routing occurs at a higher level, it can perform more 
+complex analysis to determine the optimal path for the packet. </font></p>
+<h2 SID92="0" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="3">Interior vs. Exterior 
+Routing Protocols</font></h2>
+<p SID92="0" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Some routing protocols are designed 
+for use within an organization, while other routing protocols are designed for 
+use between organizations.</font></p>
+<p SID92="0" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial">The current lead Interior Gateway 
+Protocol (IGP) is OSPF. Other Interior Gateway Protocols include IS-IS, RIP, and 
+EIGRP.</font></p>
+<p SID92="0" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial">The current lead Exterior Gateway 
+Protocol is BGP. The current revision of BGP is BGP4. There are no other 
+Exterior Gateway Routing protocols in current competition with BGP4.</font></p>
+<h2 SID92="0" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial" size="3">Distance Vector vs. Link 
+State Routing Protocols</font></h2>
+<p SID92="2" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial">Routing protocols such as RIP and 
+EIGRP are Distance Vector routing protocols. These are called Distance Vector 
+protocols because they base routing decisions on the &quot;distance&quot; of the remote
+</font>
+<font style="font-weight: 400; color: blue !important; font-family: Verdana; position: static" color="blue">
+<span class="kLink" style="font-weight: 400; color: blue !important; font-family: Arial; position: relative">
+destination</span></font><font face="Arial"> in terms of the number of network 
+layer hops which the packet will have to traverse.</font></p>
+<p SID92="0" sDQik="0" style="margin-top: 0; margin-bottom: 0"><font face="Arial">OSPF and IS-IS are Link State routing 
+protocols. They are called Link State protocols because they base routing 
+decisions on messages received from other routers in the internetwork which give 
+information about state of the links connected to them.</font></p>
+</span>
+<h2 class="p_H_Head1" align="justify" style="margin-top: 0; margin-bottom: 0"><font size="3" face="Arial">Review 
+Questions </font></h2>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Describe 
+the process of routing packets.</span> </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span> Routing is the act 
+of moving information across an internetwork from a source to a destination.
+</font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+are some routing algorithm types?</span> </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Static, dynamic, 
+flat, hierarchical, host-intelligent, router-intelligent, intradomain, 
+interdomain, link-state, and distance vector. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Describe 
+the difference between static and dynamic routing.</span> </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Static routing is 
+configured by the network administrator and is not capable of adjusting to 
+changes in the network without network administrator intervention. Dynamic 
+routing adjusts to changing network circumstances by analyzing incoming routing 
+update messages without administrator intervention. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">What 
+are some of the metrics used by routing protocols?</span> </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Path length, 
+reliability, delay, bandwidth, load, and communication cost. </font></p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p class="pB1_Body1" align="justify" style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<h2 align="center" style="text-align:center"><font face="Arial" color="#0000FF">
+Routing Algorithms</font></h2>
+<h3><font face="Arial" size="3">Non-Hierarchical Routing</font></h3>
+<p class="MsoNormal"><font face="Arial">In this type of routing, interconnected 
+networks are viewed as a single network, where bridges, routers and gateways are 
+just additional nodes. </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">Every node keeps information about 
+  every other node in the network </font></li>
+  <li class="MsoNormal"><font face="Arial">In case of adaptive routing, the 
+  routing calculations are done and updated for all the nodes. </font></li>
+</ul>
+<p class="MsoNormal"><font face="Arial">The above two are also the disadvantages 
+of non-hierarchical routing, since the table sizes and the routing calculations 
+become too large as the networks get bigger. So this type of routing is feasible 
+only for small networks. </font></p>
+<h3><font face="Arial" size="3">Hierarchical Routing</font></h3>
+<p class="MsoNormal"><font face="Arial">This is essentially a 'Divide and 
+Conquer' strategy. The network is divided into different regions and a router 
+for a particular region knows only about its own domain and other routers. Thus, 
+the network is viewed at two levels: </font></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">The Sub-network level, where each 
+  node in a region has information about its peers in the same region and about 
+  the region's interface with other regions. Different regions may have 
+  different 'local' routing algorithms. Each local algorithm handles the traffic 
+  between nodes of the same region and also directs the outgoing packets to the 
+  appropriate interface. </font></li>
+  <li class="MsoNormal"><font face="Arial">The Network Level, where each region 
+  is considered as a single node connected to its interface nodes. The routing 
+  algorithms at this level handle the routing of packets between two interface 
+  nodes, and is isolated from intra-regional transfer. </font></li>
+</ol>
+<p class="MsoNormal"><font face="Arial">Networks can be organized in hierarchies 
+of many levels; e.g. local networks of a city at one level, the cities of a 
+country at a level above it, and finally the network of all nations. </font></p>
+<p><font face="Arial">In Hierarchical routing, the interfaces need to store 
+information about: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">All nodes in its region which are at 
+  one level below it. </font></li>
+  <li class="MsoNormal"><font face="Arial">Its peer interfaces. </font></li>
+  <li class="MsoNormal"><font face="Arial">At least one interface at a level 
+  above it, for outgoing packages. </font></li>
+</ul>
+<p class="MsoNormal"><font face="Arial">Advantages of Hierarchical Routing :
+</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">Smaller sizes of routing tables.
+  </font></li>
+  <li class="MsoNormal"><font face="Arial">Substantially lesser calculations and 
+  updates of routing tables. </font></li>
+</ul>
+<p class="MsoNormal"><font face="Arial">Disadvantage : </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">Once the hierarchy is imposed on the 
+  network, it is followed and possibility of direct paths is ignored. This may 
+  lead to sub optimal routing. </font></li>
+</ul>
+<h3><font face="Arial" size="3">Source Routing</font></h3>
+<p class="MsoNormal"><font face="Arial">Source routing is similar in concept to 
+virtual circuit routing. It is implemented as under: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">Initially, a path between nodes 
+  wishing to communicate is found out, either by flooding or by any other 
+  suitable method. </font></li>
+  <li class="MsoNormal"><font face="Arial">This route is then specified in the 
+  header of each packet routed between these two nodes. A route may also be 
+  specified partially, or in terms of some intermediate hops. </font></li>
+</ul>
+<p class="MsoNormal"><font face="Arial">Advantages: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">Bridges do not need to lookup their 
+  routing tables since the path is already specified in the packet itself.
+  </font></li>
+  <li class="MsoNormal"><font face="Arial">The throughput of the bridges is 
+  higher, and this may lead to better utilization of bandwidth, once a route is 
+  established. </font></li>
+</ul>
+<p class="MsoNormal"><font face="Arial">Disadvantages: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial">Establishing the route at first needs 
+  an expensive search method like flooding. </font></li>
+  <li class="MsoNormal"><font face="Arial">To cope up with dynamic relocation of 
+  nodes in a network, frequent updates of tables are required, else all packets 
+  would be sent in wrong direction. This too is expensive. </font></li>
+</ul>
+<h3><font face="Arial" size="3">Policy Based Routing</font></h3>
+<p class="MsoNormal"><font face="Arial">In this type of routing, certain 
+restrictions are put on the type of packets accepted and sent. e.g.. The IIT- K 
+router may decide to handle traffic pertaining to its departments only, and 
+reject packets from other routes. This kind of routing is used for links with 
+very low capacity or for security purposes. </font></p>
+<h3><font face="Arial" size="3">Shortest Path Routing</font></h3>
+<p class="MsoNormal"><font face="Arial">Here, the central question dealt with is 
+'How to determine the optimal path for routing ?' Various algorithms are used to 
+determine the optimal routes with respect to some predetermined criteria. A 
+network is represented as a graph, with its terminals as nodes and the links as 
+edges. A 'length' is associated with each edge, which represents the cost of 
+using the link for transmission. Lower the cost, more suitable is the link. The 
+cost is determined depending upon the criteria to be optimized. Some of the 
+important ways of determining the cost are: </font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal"><font face="Arial"><b>Minimum number of hops: </b>If 
+  each link is given a unit cost, the shortest path is the one with minimum 
+  number of hops. Such a route is easily obtained by a breadth first search 
+  method. This is easy to implement but ignores load, link capacity etc. </font>
+  </li>
+  <li class="MsoNormal"><font face="Arial"><b>Transmission and Propagation 
+  Delays: </b>If the cost is fixed as a function of transmission and propagation 
+  delays, it will reflect the link capacities and the geographical distances. 
+  However these costs are essentially static and do not consider the varying 
+  load conditions. </font></li>
+  <li class="MsoNormal"><font face="Arial"><b>Queuing Delays: </b>If the cost of 
+  a link is determined through its queuing delays, it takes care of the varying 
+  load conditions, but not of the propagation delays. </font></li>
+</ul>
+<p class="MsoNormal"><font face="Arial">Ideally, the cost parameter should 
+consider all the above mentioned factors, and it should be updated periodically 
+to reflect the changes in the loading conditions. However, if the routes are 
+changed according to the load, the load changes again. This feedback effect 
+between routing and load can lead to undesirable oscillations and sudden swings.
+</font></p>
+<h3><font face="Arial" size="3">Routing Algorithms</font></h3>
+<p class="MsoNormal"><font face="Arial">As mentioned above, the shortest paths 
+are calculated using suitable algorithms on the graph representations of the 
+networks.&nbsp; Let the network be represented by graph G ( V, E ) and let the number 
+of nodes be 'N'.&nbsp;&nbsp; For all the algorithms discussed below, the costs associated 
+with the links are assumed to be positive.&nbsp; A node has zero cost w.r.t itself.&nbsp; 
+Further, all the links are assumed to be symmetric, i.e.&nbsp; if&nbsp; d<sub>i,j&nbsp;&nbsp;</sub> 
+=&nbsp; cost of link&nbsp; from node i to node j, then d <sub>i,j</sub> = d <sub>j,i</sub> 
+.&nbsp; The graph is assumed to be complete. If there exists no edge between two 
+nodes, then a link of infinite cost is assumed.&nbsp; The algorithms given below find 
+costs of the paths from all nodes to a particular node; the problem is 
+equivalent to finding the cost of paths from a source to all destinations.
+</font></p>
+<h3><font face="Arial" size="3">Bellman-Ford Algorithm</font></h3>
+<p class="MsoNormal"><font face="Arial">This algorithm iterates on the number of 
+edges in a path to obtain the shortest path. Since the number of hops possible 
+is limited (cycles are implicitly not allowed),&nbsp; the algorithm terminates giving 
+the shortest path. </font></p>
+<p><font face="Arial"><b>Notation: </b><br>
+&nbsp;&nbsp;&nbsp; d <sub>i,j&nbsp;</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; Length of path between nodes i and j,&nbsp; 
+indicating the cost of the link. <br>
+&nbsp;&nbsp;&nbsp; h&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; Number of hops. <br>
+&nbsp;&nbsp;&nbsp; D[ i,h]&nbsp;&nbsp; =&nbsp;&nbsp; Shortest path length from node i to node 1, with upto 'h' 
+hops. <br>
+&nbsp;&nbsp;&nbsp; D[ 1,h]&nbsp; =&nbsp;&nbsp; 0&nbsp; for all h . <br>
+&nbsp; <br>
+<b>Algorithm :</b> <br>
+&nbsp; <br>
+&nbsp;&nbsp;&nbsp; Initial condition&nbsp; :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D[ i, 0]&nbsp; =&nbsp; infinity,&nbsp; for all&nbsp; i&nbsp; ( i 
+!= 1 ) </font></p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp; Iteration&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D[i, h+1]&nbsp; = 
+min<sub> </sub>{ d<sub>i,j</sub> + D[j,h] }&nbsp;&nbsp;&nbsp;&nbsp; over all values of j . </font>
+</p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp; Termination&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The algorithm 
+terminates when </font></p>
+<p><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; D[i, h]&nbsp; 
+=&nbsp; D [ i,&nbsp; h+1]&nbsp;&nbsp;&nbsp;&nbsp; for all&nbsp; i . </font></p>
+<p><font face="Arial"><b>Principle: </b><br>
+For zero hops,&nbsp; the minimum length path has length of infinity, for every node.&nbsp; 
+For one hop the shortest-path length associated with a node is equal to the 
+length of the edge between&nbsp; that node and node 1. Hereafter, we increment the 
+number of hops allowed, (from h to h+1 ) and find out whether a shorter path 
+exists through each of the&nbsp; other nodes.&nbsp; If&nbsp; it exists, say through node 'j',&nbsp; 
+then its length must be the sum of the lengths between these two nodes (i.e.&nbsp; d<sub>i,j</sub> 
+) and the shortest path between j and 1 obtainable in upto h paths. If such a 
+path doesn't exist, then the path length remains the same. The algorithm is 
+guaranteed to terminate, since there are utmost N nodes, and so N-1 paths. It 
+has time complexity of O ( N<sup>3</sup> ) . </font></p>
+<h3><font face="Arial" size="3">Dijkstra's Algorithm</font></h3>
+<p><font face="Arial"><b>Notation:</b><br>
+D<sub>i&nbsp;</sub>&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp; Length of shortest path from node 'i' to node 1. <br>
+d<sub>i,j&nbsp;</sub> =&nbsp;&nbsp;&nbsp;&nbsp; Length of path between nodes i and j . </font></p>
+<p><font face="Arial"><b>Algorithm</b><br>
+Each node j&nbsp; is&nbsp; labeled with Dj, which is an estimate of cost of path from node 
+j to node 1. Initially, let the estimates be infinity, indicating that nothing 
+is known about the paths.&nbsp; We now iterate on the length of paths, each time 
+revising our estimate to lower values, as we obtain them. Actually, we divide 
+the nodes into two groups ; the first one, called set P contains the nodes whose 
+shortest distances have been found, and the other Q containing all the remaining 
+nodes. Initially P contains only the node 1. At each step,&nbsp; we select the node 
+that has minimum cost path to node 1. This node is transferred to set P.&nbsp; At the 
+first step, this corresponds to shifting the node closest to 1 in P. Its minimum 
+cost to node 1 is now known. At the next step, select the next closest node from 
+set Q and update the labels corresponding to each node using : </font></p>
+<p class="MsoNormal" align="center" style="text-align:center">
+<font face="Arial"><b>D<sub>j&nbsp;</sub>&nbsp;&nbsp; =&nbsp;&nbsp; min [ D<sub>j</sub>&nbsp; ,&nbsp; D<sub>i</sub>&nbsp; 
++&nbsp; d<sub>j,i&nbsp;</sub>&nbsp; ]</b></font></p>
+<p><font face="Arial"><span style="color:black">Finally, after N-1 iterations, 
+the&nbsp; shortest paths for all nodes are known, and the algorithm terminates. <br>
+&nbsp; </span></font></p>
+<p><font face="Arial"><b><span style="color:black">Principle</span></b><span style="color:black"><br>
+Let the closest node to 1 at some step be i. Then i is shifted to P. Now, for 
+each node j , the closest path to 1 either passes through i or it doesn't.&nbsp; In 
+the first case Dj remains the same. In the second case, the revised estimate of 
+D<sub>j</sub> is the sum D<sub>i&nbsp;</sub> +&nbsp; d<sub>i,j </sub>. So we take the 
+minimum of these two cases and update D<sub>j </sub>accordingly.&nbsp; As each of the 
+nodes get transferred to set P, the estimates get closer to the lowest possible 
+value. When a node is transferred, its shortest path length is known. So finally 
+all the nodes are in P and the D<sub>j </sub>'s represent the minimum costs. The 
+algorithm is guaranteed to terminate in N-1 iterations and&nbsp; its complexity is O( 
+N<sup>2</sup> ). </span></font></p>
+<h3><font face="Arial" size="3"><span style="color:black">The Floyd Warshall 
+Algorithm</span></font></h3>
+<p class="MsoNormal"><font face="Arial"><span style="color:black">This algorithm 
+iterates on the set of nodes that can be used as intermediate nodes on paths. 
+This set grows from a single node ( say node 1 ) at start to finally all the 
+nodes of the graph.&nbsp; At each iteration, we find the shortest path using given 
+set of nodes as intermediate nodes, so that finally all the shortest paths are 
+obtained. </span></font></p>
+<p><font face="Arial"><b><span style="color:black">Notation</span></b><span style="color:black"><br>
+D<sub>i,j</sub> [n]&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp; Length of shortest&nbsp; path between the nodes i and j 
+using only the nodes 1,2,....n as intermediate nodes. </span></font></p>
+<p><font face="Arial"><b><span style="color:black">Initial Condition</span></b><span style="color:black"><br>
+Di,j[0]&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp;&nbsp;&nbsp; d<sub>i,j&nbsp;</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for all nodes i,j . </span></font></p>
+<p><font face="Arial"><b><span style="color:black">Algorithm</span></b><span style="color:black"><br>
+Initially,&nbsp; n = 0.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At each iteration, add next node to n. i.e.&nbsp;&nbsp; </span>
+<span lang="PT-BR" style="color: black">For&nbsp; n = 1,2, .....N-1 , <br>
+<br>
+Di,j[n + 1]&nbsp;&nbsp;&nbsp; =&nbsp; min&nbsp; {&nbsp; D<sub>i,j</sub>[n] ,&nbsp;&nbsp; D<sub>i,n+1</sub>[n]&nbsp; + D<sub>n+1,j</sub>[n]&nbsp; 
+} </span></font></p>
+<p><font face="Arial"><b><span style="color:black">Principle</span></b><span style="color:black"><br>
+Suppose the shortest path between i and j using nodes 1,2,...n is known. Now, if 
+node n+1 is allowed to be an intermediate node, then the shortest path under new 
+conditions either passes through node n+1 or it doesn't. If it does not pass 
+through the node n+1, then D<sub>i,j</sub>[n+1] is same as D<sub>i,j</sub>[n] .&nbsp; 
+Else, we find the cost of the new route, which is obtained from the sum,&nbsp; D<sub>i,n+1</sub>[n] 
++ D<sub>n+1,j</sub>[n]. So we take the minimum of these two cases at each step.&nbsp; 
+After adding all the nodes to the set of intermediate nodes, we obtain the 
+shortest paths between all pairs of nodes together.&nbsp; The complexity of&nbsp; Floyd-Warshall 
+algorithm is O ( N<sup>3</sup> ). </span></font></p>
+<p><font face="Arial"><span style="color:black">It is observed that all the 
+three algorithms mentioned above give comparable performance, depending upon the 
+exact topology of the network. </span></font></p>
+<p class="pB1_Body1" align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

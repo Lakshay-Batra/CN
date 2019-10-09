@@ -1,0 +1,1092 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="Transport_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman"}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h4
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman"}
+h2
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-style:italic}
+ div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center"><u><font color="#FF0000" face="Arial" size="6"><b>TRANSPORT 
+LAYER</b></font></u></p>
+<p align="justify"><font face="Arial"><span lang="EN">In computing and 
+telecommunications, the <b>transport layer</b> is layer four of the seven layer 
+OSI model. It responds to service requests from the session layer and issues 
+service requests to the network layer.</span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">The transport layer 
+provides transparent transfer of data between hosts. It is usually responsible 
+for end-to-end error recovery and flow control, and ensuring complete data 
+transfer. In the Internet protocol suite this function is most commonly achieved 
+by the connection oriented Transmission Control Protocol (TCP). The 
+datagram-type transport, User Datagram Protocol (UDP), provides neither error 
+recovery, nor flow control, leaving these to the application. The purpose of the 
+Transport layer is to provide transparent transfer of data between end users, 
+thus relieving the upper layers from any concern with providing reliable and 
+cost-effective data transfer.</span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span lang="EN">The 
+transport layer usually turns the unreliable and very basic service provided by 
+the Network layer into a more powerful one. There is a long list of services 
+that can be optionally provided at this level. None of them are compulsory, 
+because not all applications want all the services available. Some can be wasted 
+overhead, or even counterproductive in some cases. Connection-Oriented </span>
+</font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span lang="EN">This is normally easier to deal with than 
+connection-less models, so where the Network layer only provides a 
+connection-less service, often a connection-oriented service is built on top of 
+that in the Transport layer. </span></font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial"><span lang="EN">Same 
+Order Delivery </span></font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span lang="EN">The Network layer doesn't generally guarantee 
+that packets of data will arrive in the same order that they were sent, but 
+often this is a desirable feature, so the Transport layer provides it. The 
+simplest way of doing this is to give each packet a number, and allow the 
+receiver to reorder the packets. </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span lang="EN"><b>
+Reliable Data</b> </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span lang="EN">The underlying network may well be noisy, and 
+the data received may not always be the same as the data sent. The Transport 
+layer can fix this: typically by providing a checksum of the data which detects 
+if there has been a glitch of some kind. Of course, error free is impossible, 
+but it is possible to substantially reduce the numbers of undetected errors. 
+This layer may also retransmit packets which have gone missing en route. </span>
+</font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial"><span lang="EN">Flow 
+Control </span></font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span lang="EN">The amount of memory on a computer is 
+limited, and without flow control a larger computer might flood a computer with 
+so much information that it can't hold it all before dealing with it. Nowadays, 
+this is not a big issue, as memory is cheap while bandwidth is comparatively 
+expensive, but in earlier times it was more important. Flow control allows the 
+receiver to say &quot;Whoa!&quot; before it is overwhelmed. Sometimes this is already 
+provided by the network, but where it is not, the Transport layer may add it on.
+</span></font></p>
+<p class="MsoNormal" align="justify"><b><font face="Arial"><span lang="EN">Byte 
+Orientation </span></font></b></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span lang="EN">Rather than dealing with things on a 
+packet-by-packet basis, the Transport layer may add the ability to view 
+communication just as a stream of bytes. This is nicer to deal with than random 
+packet sizes, however, it rarely matches the communication model which will 
+normally be a sequence of messages of user defined sizes. </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial"><span lang="EN"><b>Ports</b>
+</span></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span lang="EN">Ports are essentially ways to address 
+multiple entities in the same location. For example, the first line of a postal 
+address is a kind of port, and distinguishes between different occupants of the 
+same house. Computer applications will each listen for information on their own 
+ports, which is why you can use more than one network-based application at the 
+same time. </span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">On the Internet there are 
+a variety of Transport services, but the two most common are TCP and UDP. TCP is 
+the more complicated, providing a connection and byte oriented stream which is 
+almost error free, with flow control, multiple ports, and same order delivery. 
+UDP is a very simple 'datagram' service, which provides limited error reduction 
+and multiple ports. TCP stands for Transmission Control Protocol, while UDP 
+stands for User Datagram Protocol. Other options are the Datagram Congestion 
+Control Protocol (DCCP) and Stream Control Transmission Protocol (SCTP).</span></font></p>
+<p align="justify"><font face="Arial"><span lang="EN">Some things, such as 
+connection orientation can be implemented at either Transport or Network layer. 
+The idea is that the Network layer implements whatever set of options is 
+easiest: for some underlying networks it is easiest to implement connectionless 
+communication, while for others it is easiest to implement connection oriented 
+communication. The Transport layer uses this simplest set of options to 
+implement whatever combinations of options are actually desired.</span></font></p>
+<h2 align="justify">&nbsp;</h2>
+<h2 align="justify"><span lang="EN"><font size="3">Examples</font></span></h2>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">AEP, AppleTalk Echo 
+  Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">ATP, AppleTalk 
+  Transaction Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">CUDP, Cyclic UDP </span>
+  </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">DCCP, Datagram 
+  Congestion Control Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">FCP, Fiber Channel 
+  Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">FCIP, Fiber Channel over 
+  TCP/IP </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">IL, IL Protocol </span>
+  </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">iSCSI, Internet Small 
+  Computer System Interface </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">NBP, Name Binding 
+  Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">NetBEUI, NetBIOS 
+  Extended User Interface </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">SPX, Sequenced Packet 
+  Exchange </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">RTMP, Routing Table 
+  Maintenance Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">SCTP, Stream Control 
+  Transmission Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">SCSI, Small Computer 
+  System Interface </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">SSL, Secure Socket Layer
+  </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">TCP, Transmission 
+  Control Protocol </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">TLS, Transport Layer 
+  Security </span></font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><span lang="EN">UDP, User Datagram 
+  Protocol </span></font></li>
+</ul>
+<p align="justify"><font face="Arial"><b>Datagram:</b> A
+<em style="font-style: normal">datagram</em> is an independent, self-contained 
+message sent over the network whose arrival, arrival time, and content are not 
+guaranteed. In packet switching, a self-contained packet, independent of other 
+packets, that contains information sufficient for routing from the originating 
+data terminal equipment (DTE) to the destination DTE without relying on prior 
+exchanges between the equipment and the network. <i>Note:</i> Unlike virtual 
+call service, when datagrams are sent there are no call establishment or 
+clearing procedures. Thus, the network may not be able to provide protection 
+against loss, duplication, or misdelivery.</font></p>
+<p align="justify"><font face="Arial">The transport layer is the fourth layer of 
+the OSI reference model. It provides transparent transfer of data between end 
+systems using the services of the network layer (e.g. IP) below to move PDUs of 
+data between the two communicating systems. </font></p>
+<p align="justify"><font face="Arial">The transport service is said to perform 
+&quot;peer to peer&quot; communication, with the remote (peer) transport entity. The data 
+communicated by the transport layer is encapsulated in a transport layer PDU and 
+sent in a network layer SDU. The network layer nodes (i.e. Intermediate Systems 
+(IS)) transfer the transport PDU intact, without decoding or modifying the 
+content of the PDU. In this way, only the peer transport entities actually 
+communicate using the PDUs of the transport protocol.</font></p>
+<p align="center" style="text-align: justify"><font face="Arial"><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1059" type="#_x0000_t75" alt="" style='width:316.5pt;
+ height:151.5pt'>
+ <v:imagedata src="Transport_files/image001.gif" o:href="file:///D:\CD2\Windows%20Backup\M.Tech%20CN\UNIT%20V\Transport%20Layer%20Protocol_files\peer-layer.gif"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=422 height=202
+src="Transport_files/image001.gif" v:shapes="_x0000_s1059"><![endif]></i></font></p>
+<p align="center" style="text-align: justify"><font face="Arial"><i>Two End 
+Systems connected by an Intermediate System (in this case a router) The figure 
+shows the various protocol layers drawn with reference to the OSI reference 
+model</i></font></p>
+<p align="justify"><font face="Arial">The transport layer relieves the upper 
+layers from any concern with providing reliable and cost effective data 
+transfer. It provides end-to-end control and information transfer with the 
+quality of service needed by the application program. It is the first true 
+end-to-end layer, implemented in all End Systems (ES).</font></p>
+<p align="justify"><font face="Arial">The Internet Protocol (IP) provides a set 
+of transport layer protocols:</font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">The User Datagram Protocol (UDP) <i>
+  (Best Effort Service)</i> </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><i>The Lighweight User Datagram Protocol 
+  (UDP-Lite) (Best Effort Service)</i> </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><i>The Datagram Congestion Control 
+  Protocol (DCCP) (Best Effort Service)</i> </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial">The Transmission Control Protocol (TCP)
+  <i>(Reliable Service)</i> </font></li>
+  <li class="MsoNormal">
+  <p align="justify"><font face="Arial"><i>The Stream Control Transport Protocol 
+  (Control Plane)</i> </font></li>
+</ul>
+<p align="center">&nbsp;</p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">The transport layer hides details of any 
+network-dependent information from the higher layers by providing transparent 
+data transfer. The transport layer is concerned with machine to machine transfer 
+rather than process to process. The transport layer will split data into smaller 
+packets dispatch those packets and at the receiver reassemble the data in the 
+correct sequence. </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">The transport layer may provide the following 
+services to the session layer: </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">(i) The establishment and release of transport 
+connections. </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span style="color:#300000">This is done by means of 
+transport addresses and <a name="tle">transport service data units</a> (TSDUs) 
+Each session entity has a transport address associated with it and connections 
+are between transport addresses. There may be more than one transport connection 
+between two endpoints. One transport connection may support more than one 
+session- entity </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">(ii) Data transfer in accordance with the required 
+quality of </span></font></p>
+<p class="MsoNormal" style="margin-left:.5in" align="justify">
+<font face="Arial"><span style="color:#300000">service. The transport layer 
+attempts to provide the quality of service required by its associated 
+session-entity using the service provided by the network layer. </span></font>
+</p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">(iii) To achieve these the transport layer may need 
+to incorporate the following functions: </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">1. Transport address to network address mapping.
+</span></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span style="color:#300000">Transport connections are 
+end-to-end. These are mapped onto network addresses that identify the endpoints. 
+One transport entity may serve more than one session entity and several 
+transport addresses may be associated with one network address. </span></font>
+</p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">2. Multiplexing and splitting of transport 
+connections. </span></font></p>
+<p class="MsoNormal" style="margin-left: .5in" align="justify">
+<font face="Arial"><span style="color:#300000">A number of transport connections 
+may be carried on one network connection and a transport connection may be split 
+between a number of different network connections. </span></font></p>
+<p class="MsoNormal" align="justify"><font face="Arial">
+<span style="color:#300000">Also the layer will provide the following functions 
+- </span></font></p>
+<ul type="disc" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: #300000">
+  <p align="justify"><font face="Arial">Sequencing </font></li>
+  <li class="MsoNormal" style="color: #300000">
+  <p align="justify"><font face="Arial">Flow Control </font></li>
+  <li class="MsoNormal" style="color: #300000">
+  <p align="justify"><font face="Arial">Error detection and recover</font></li>
+</ul>
+  <p align="justify">&nbsp;<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<b><span style="font-family:Arial;color:black">Characteristics of Transport 
+Layer </span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">The function of transport layer is 
+to provide a reliable end-to-end communications service. It also provides data 
+transfer service for the user layers above and shield the upper layers from the 
+details of underlying network. This may include message error control and flow 
+control functions. Optionally, it may provide for other transport services such 
+as <b>multiplexing</b> (of multiple transport connection to a single network 
+connectivity), <b>inverse multiplexing</b> (mapping a single transport 
+connection to a multiple number of network connection, for performance 
+purposes). Figure shows the relationship between the sub-network and end hosts.
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">The transport layer is the first 
+layer that always resides in the end DTE’s. Also note that the transport layer 
+uses the services of the network layer and shields the upper layers from the 
+details of the network connections and types of network used. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">OSI transport protocol</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">To deal with different types of data 
+transfer and different network services, International Standards Organization 
+(ISO) has defined 5 classes of transport services with naming convention from 
+class 0, 1, 2, 3 and 4 in 1984. The choice of class is determined by the service 
+desired: </span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">the quality of service 
+and functionality</span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">the underlying network 
+service available.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">The ISO/OSI TP (<u>T</u>ransport <u>
+P</u>rotocol) standard defines three types of network services to be used with 
+various TP classes as given below: </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Types</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Type A </span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">This type of network refers to the 
+connection with both acceptable error rate and acceptable rate of signalled 
+failures. Packet delivery assurance and sequencing are guaranteed. In this type 
+of network, the transport layer needs not worry about the quality and mis-sequencing 
+of packets from the underlying network. A network with virtual circuit services 
+is a typical example. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Type B </span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">This type of network refers to the 
+connections with acceptable error rate but unacceptable rate of signaled errors. 
+The transport layer for this type of network must provide capability to recover 
+from signaled errors. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Type C </span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">This type of network refers to the 
+connections with unacceptable error rate. The transport layer must be capable to 
+recover from signaled failures and also handle the mis-sequenced packets from 
+the underlying network. Internet protocol of TCP/IP, datagram based networks and 
+certain Local area networks are typical example of this type of network 
+services. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Due to different nature of network 
+services, transport layer must be configured to specify the quality of service (QOS) 
+with appropriate classes of protocol. In Transport Layer 4, there are five 
+classes of protocol procedure from class 0 to 5 to incorporate the quality of 
+service of underlying network. The table below shows the description of classes 
+of protocol together with associated underlying network types:</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="624" style="width: 6.5in">
+  <tr>
+    <td width="59" valign="top" style="width:44.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Class </span></td>
+    <td width="92" valign="top" style="width:69.0pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Network connection type</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+    <td width="458" valign="top" style="width:343.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Basic functions required of 
+    class </span></td>
+  </tr>
+  <tr>
+    <td width="59" valign="top" style="width:44.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0 </span></td>
+    <td width="92" valign="top" style="width:69.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">A </span></td>
+    <td width="458" style="width:343.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Simple class with set up/ close 
+    connection. If there is an error with the underlying network, the transport 
+    layer simply releases the connection and informs the status to upper layer.
+    </span></td>
+  </tr>
+  <tr>
+    <td width="59" valign="top" style="width:44.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">1 </span></td>
+    <td width="92" valign="top" style="width:69.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">B </span></td>
+    <td width="458" style="width:343.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Basic failure recovery. This 
+    class allows the transport layer to retain and re-synchronize the numbered 
+    data. It is also capable to perform re-connection in the event of network 
+    failure. </span></td>
+  </tr>
+  <tr>
+    <td width="59" valign="top" style="width:44.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">2 </span></td>
+    <td width="92" valign="top" style="width:69.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">A </span></td>
+    <td width="458" style="width:343.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Multiplexing. This class is an 
+    enhancement to class 0 to support the multiplexing of several transport 
+    connections into a single network service. It also supports message flow 
+    control to avoid congestion, but does not support the recovery from 
+    signalled failures. That is why this type of class must work with type A 
+    network. </span></td>
+  </tr>
+  <tr>
+    <td width="59" valign="top" style="width:44.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">3 </span></td>
+    <td width="92" valign="top" style="width:69.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">B </span></td>
+    <td width="458" style="width:343.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Failure recovery and 
+    multiplexing. This class is an enhancement of class 2 to support the 
+    recovery from network failure. In this class, the data will be buffered in 
+    the sender to allow for data re-transmission. </span></td>
+  </tr>
+  <tr>
+    <td width="59" valign="top" style="width:44.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">4 </span></td>
+    <td width="92" valign="top" style="width:69.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">C </span></td>
+    <td width="458" style="width:343.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Error detection and recovery. 
+    This class is an extension of class 2 and 3 to support the flow control 
+    functions. That is why this class is designed to work with type C network.
+    </span></td>
+  </tr>
+</table>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Why class 0 cannot work with type B 
+or C network. </span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Type C or B network is an unreliable 
+network and may occasionally cause signaled failure to the transport layer to 
+frequently stop the connection. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Transport Services</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">The transport services are broadly 
+classified into connection management and data transfer as shown in figure. The 
+data transfer is further classified into normal data transfer and urgent data 
+transfer (Expedited). The expedited data is equivalent to sending control 
+characters to abort a remote program. Error detection and handling are also 
+supported by means of message checksum and message sequencing. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Connection establishment</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">To establish a connection, the part 
+A as shown in figure will send out a standard message, T_CONNECT_REQUEST to Part 
+B through the underlying network. These types of message are specified by ISO to 
+include the address of calling and called side (Party A and Part B in figure and 
+quality of service as described above. The called side (Party B) will process 
+the received message and may respond to the calling side with an acceptance or 
+reject message depending on the current state of called side and the correctness 
+of message received. Once calling side receives the CONFIRM message it will 
+process this request by sending a reply to upper layer. The transport service 
+primitives to establish a connection is based on ISO 1984a, table 3, section 2.
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="624" style="width: 6.5in">
+  <tr>
+    <td width="188" valign="top" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Primitive</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+    <td width="425" valign="top" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Parameters</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_CONNECT.request </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Called address, calling address, 
+    Expedited data option, Quality of services, TS user data </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_CONNECT.indication </span>
+    </td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Called address, calling address, 
+    Expedited data option, Quality of services, TS user data </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_CONNECT.response </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Quality of service, Responding 
+    Address, Expedited Data option, TS User data </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_CONNECT.confirm </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Quality of service, Responding 
+    address, Expedited Data option, TS User Data </span></td>
+  </tr>
+</table>
+<p><span style="font-family:Arial;color:black">Additional explanation is as 
+follows: </span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="624" style="width: 6.5in">
+  <tr>
+    <td width="140" valign="top" style="width:105.0pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Term</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+    <td width="473" valign="top" style="width:354.75pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Description</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+  </tr>
+  <tr>
+    <td width="140" style="width:105.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Expedited data Option </span>
+    </td>
+    <td width="473" style="width:354.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Indication as to whether the 
+    option is requested (.Request) or will be made available (.Confirm) </span>
+    </td>
+  </tr>
+  <tr>
+    <td width="140" style="width:105.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Quality of service </span></td>
+    <td width="473" style="width:354.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">User’s requirements for 
+    throughput (Octets/Sec), transit delay, reliability, and priority of the 
+    connection </span></td>
+  </tr>
+  <tr>
+    <td width="140" style="width:105.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">TS User Data </span></td>
+    <td width="473" style="width:354.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Up to 32 Octets of user data 
+    that can be appended in the connection message. </span></td>
+  </tr>
+</table>
+<p style="text-align:justify"><b><span style="font-family:Arial;color:black">
+Data transfer</span></b><span style="font-family:Arial;color:black"> </span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">Figure 
+shows the data transfer between two parties using T_DATA_REQUEST. &nbsp;There is no 
+acknowledgement by the receiving transport user. The transport layer protocol is 
+responsible for current delivery. TSDU’s (Transport Service Data Units) are 
+always delivered in sequence to the receiving transport user. Also, the 
+transport layer may segment a TSDU into multiple transport protocol data units (TPDU).
+</span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="624" style="width: 6.5in">
+  <tr>
+    <td width="188" valign="top" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Primitive</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+    <td width="425" valign="top" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Parameters</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_DATA.request </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Transport service user data
+    </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_DATA.indication </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Transport Service User data
+    </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_EXPEDITED_DATA.request </span>
+    </td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Transport service user data
+    </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_EXPEDITED_DATA.indication
+    </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Transport service user data
+    </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_UNIT_DATA.request </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Called address, calling address, 
+    Quality of service, security parameters, TS user data </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_UNIT_DATA.indication </span>
+    </td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Called address, calling address, 
+    quality of service, security parameters, TS user data </span></td>
+  </tr>
+  <tr>
+    <td width="188" style="width:141.0pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">T_UNIT_DATA.confirm </span></td>
+    <td width="425" style="width:318.75pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Result, Reason </span></td>
+  </tr>
+</table>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Expedited data (Max 16 octets of 
+user data) bypasses normal data end-to-end flow control. The transport layer 
+ensures that expedited data will not be delivered to the receiving transport 
+user later than any normal data sent after it. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">ISO connectionless data service does 
+not include confirmation. It is up to the service user to handle retransmission 
+where necessary. Below is a state transition diagram for possible allowed 
+sequence of TS primitives at a transport connection. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Connection termination</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">There are two procedures of 
+terminating a connection by <i>Exchange of TPDU’s successful connection, class-2 
+transport protocol</i> and <i>Exchange of TPDUs, successful connection, class-4 
+transport protocol</i>. For the former case, the called party simply responds 
+the DISCONNECTION_CONFIRM message to terminate the call as shown in figure.
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Protocol Operation</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">As in other layers, primitives 
+across the layer boundaries would invoke exchange of pdu between the peer 
+(transport) layer and vice versa. In the following class 4 transport protocol 
+(over type C network connection) and class 2 transport protocol (over type A 
+network connection) are described. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Below is a table for transport 
+protocol data units with appropriate code to identify the message format. </span>
+</p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="624" style="width: 6.5in">
+  <tr>
+    <td width="203" valign="top" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">TPDU Type</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+    <td width="203" valign="top" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Code</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+    <td width="203" valign="top" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <b><span style="font-family:Arial;color:black">Amount of data carried</span></b><span style="font-family:Arial;color:black">
+    </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">CR, connection request </span>
+    </td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">1110 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">= 32 octets </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">CC,,connection confirm </span>
+    </td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">1101 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">= 32 octets </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">DR,,disconnect request </span>
+    </td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">1000 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">= 64 octets </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">DC,,disconnect confirm </span>
+    </td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">1100 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">none </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">GR,,graceful close request*
+    </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0011 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">none </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">ERR,,TPDU error </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0111 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">none </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">DT,,data </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">1111 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">up to negotiated length </span>
+    </td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">ED,,expedited data** </span>
+    </td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0001 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt"><u>
+    <span style="font-family:Arial;color:black">&nbsp;16 octets</span></u><span style="font-family:Arial;color:black">
+    </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">AK,,acknowledgement </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0110 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">none </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">EA,,expedited data 
+    acknowledgement** </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0010 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">none </span></td>
+  </tr>
+  <tr>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">UD,,unit data </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">0100 </span></td>
+    <td width="203" style="width:152.25pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">up to maximum value of network 
+    service data data unit (NSDU) </span></td>
+  </tr>
+</table>
+<p style="margin:0in;margin-bottom:.0001pt"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt"><b>
+<span style="font-family:Arial;color:black">Example of TCP protocol </span></b>
+</p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">The TCP/IP (Transmission Control 
+Protocol/Internet Protocol) is a de facto commercial standard designed to solve 
+above-mentioned communications problems. It combines the <b>connectionless</b> 
+layer 3 protocol (IP) and the transport layer 4 protocol resembling class 4 of 
+X.224 (ISO 8073). TCP/IP has been widely used on the <b>ARPANET</b> and is now a 
+commonly used commercial product. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Figure depicts the four conceptual 
+layers that build on a hardware. The application layer is the highest layer to 
+allow users to invoke application programs that access services available across 
+a TCP/IP internet. The duty of transport layer (TCP) is to provide end-to-end 
+communication from one application program to another using port number. It is 
+connection oriented protocol and regulates the flow of information and provides 
+reliable message transportation in sequence. The duty of internet (IP) is to 
+handle communication from one machine to another. It accepts a request to send a 
+packet from the transport layer with an identification of the machine. TCP/IP 
+has been widely tested as a robust product with error recovery and can tolerate 
+error rates including duplication, damage and lost messages. A typical example 
+of The TCP/IP protocols and functions grouped by their layers from <i>network</i> 
+up to <i>application</i> is: </span></p>
+<p align="center"><span style="font-family:Arial;color:black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1060" type="#_x0000_t75" style='width:495pt;height:109.5pt'>
+ <v:imagedata src="Transport_files/image002.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=660 height=146
+src="Transport_files/image003.jpg" v:shapes="_x0000_s1060"><![endif]></span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">TCP/IP is a connection oriented 
+end-to-end protocol that is ideal for a wide spectrum communications. One of the 
+TCP/IP’s key benefits is that it provides a set of standard applications 
+including File Transfer Protocol(FTP), Simple Mail Transfer Protocol (SMTP), 
+Terminal emulation services (Telnet), and User Datagram Protocol (UDP). TCP/IP 
+implementations are available for MS-DOS/Windows, Windows 95/98, Windows NT and 
+OS/2 based personal computers, Unix based workstations, a range of minicomputers 
+and mainframes running INM’s MVS. Below summaries the function groups that are 
+supported by TCP/IP protocols. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Physical Layer/Data Link layer</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">TCP/IP can support a 
+few configurations including: </span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Token Ring </span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Ethernet V2 </span>
+</p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">IEE 802.3 </span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">IBM PC Network </span>
+</p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Serial Line such as 
+City Link Plus through COM1 or COM.</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">Transport protocols</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">It consists of two protocols namely:
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">Transmission Control 
+protocol (TCP) (Connection-oriented) </span></p>
+<p style="text-align: justify; text-indent: 0in; margin-left: .5in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Symbol; color: black">·<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style="font-family:Arial;color:black">User datagram protocol 
+(UDP) (Connectionless-oriented)</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">User datagram protocol (UDP)</span></b><span style="font-family:Arial;color:black">
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">It provides an unreliable mode of 
+communication between source and destination with a minimum of protocol overhead
+</span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">&nbsp;</span></b></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify"><b>
+<span style="font-family:Arial;color:black">TCP</span></b><span style="font-family:
+Arial;color:black"> </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">It provides a reliable communication 
+method for delivering packets between machines through a network. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Original versions of TCP layer 3 
+were expected to offer connection oriented transmission. but as the APARNET grew 
+and included packet radio subnets, satellite channels etc., the end-to-end 
+reliability decreased and this forced a change to tolerate unreliable subnets. 
+Based on ISO 8073/X.224). </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">A TCP transport entity accepts 
+arbitrarily long messages from user processes, breaks them up into pieces not 
+exceeding 64K byes, and sends each piece as a separate datagram. the network 
+layer gives no guarantee that datagrams will be delivered properly, so it is up 
+to TCP to time out and re-transmit them as needed. Datagrams that do arrive may 
+well do so in the wrong order; it is also up to reassemble them into messages in 
+the proper sequence. </span></p>
+<p style="margin:0in;margin-bottom:.0001pt;text-align:justify">
+<span style="font-family:Arial;color:black">Every byte of data transmitted by 
+TCP has its own private sequence number which is 32 bits wide to make sure that 
+old duplicates have long since vanished by the time the sequence numbers have 
+wrapped around. The header format is: </span></p>
+<table class="MsoNormalTable" border="1" cellpadding="0" width="624" style="width: 6.5in">
+  <tr>
+    <td width="14" colspan="32" valign="top" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <span style="font-family:Arial;color:black">Bit Position </span></td>
+  </tr>
+  <tr>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <span style="font-family:Arial;color:black">1 </span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width: 10.5pt; padding: .75pt; background: #E1E2E5">
+    <span style="font-family:Arial;color:black">32 </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="15" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Source port </span></td>
+    <td width="14" colspan="17" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:
+    Arial;color:black">Destination</span><span style="font-family:Arial;color:black"> 
+    Port </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="32" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Sequence Number </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="32" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Piggyback acknowledgement number
+    </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="4" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">TCP header length </span></td>
+    <td width="14" colspan="5" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal"><span style="font-family:Arial;color:black">&nbsp;</span></td>
+    <td width="14" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">URG </span></td>
+    <td width="14" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">ACK </span></td>
+    <td width="14" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">EOM </span></td>
+    <td width="14" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">RST </span></td>
+    <td width="14" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">SYN </span></td>
+    <td width="14" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">FIN </span></td>
+    <td width="14" colspan="17" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Window </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="15" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Checksum </span></td>
+    <td width="14" colspan="17" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Urgent pointer </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="32" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">Options </span></td>
+  </tr>
+  <tr>
+    <td width="14" colspan="32" valign="top" style="width:10.5pt;padding:.75pt .75pt .75pt .75pt">
+    <span style="font-family:Arial;color:black">User data............. </span>
+    </td>
+  </tr>
+</table>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

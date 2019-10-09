@@ -1,0 +1,549 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+h1
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:18.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h1 style="background: #F8FCFF" align="center">
+<span lang="EN" style="font-family: Arial; text-transform: uppercase; text-decoration: underline">
+<font size="6" color="#FF0000">IPsec</font></span></h1>
+<p style="background: #F8FCFF" align="justify"><b>
+<span lang="EN" style="font-family: Arial">IPsec</span></b><span lang="EN" style="font-family: Arial"> 
+(<b>IP security</b>) is a suite of protocols for securing Internet Protocol (IP) 
+communications by encrypting and/or authenticating each IP packet in a data 
+stream. IPsec also includes protocols for cryptographic key establishment.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">There are two modes of <b>IPsec</b> 
+operation: <b>transport mode</b> and <b>tunnel mode</b>.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">In <b>transport mode</b> only the 
+payload (message) of the IP packet is encrypted. It is fully-routable since the 
+IP header is sent as plain text; however, it can not cross NAT interfaces, as 
+this will invalidate its hash value. <b>Transport mode</b> is used for 
+host-to-host communications.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">In <b>tunnel mode</b>, the entire IP 
+packet is encrypted. It must then be encapsulated into a new IP packet for 
+routing to work. <b>Tunnel mode</b> is used for network-to-network 
+communications (secure tunnels between routers) or host-to-network and 
+host-to-host communications over the Internet.</span></p>
+<p style="background: #F8FCFF" align="justify"><b>
+<span lang="EN" style="font-family: Arial">IPsec</span></b><span lang="EN" style="font-family: Arial"> 
+is implemented by a set of cryptographic protocols for (1) securing packet flows 
+and (2) Internet key exchange. Of the former, there are two:</span></p>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify; background: #F8FCFF"><b>
+  <span lang="EN" style="font-family: Arial">Authentication Header</span></b><span lang="EN" style="font-family: Arial"> 
+  (<b>AH</b>) provides authentication, payload (message) and IP header integrity 
+  - and with some cryptography algorithm also non-repudiation - but it does not 
+  offer confidentiality. </span></li>
+  <li class="MsoNormal" style="text-align: justify; background: #F8FCFF"><b>
+  <span lang="EN" style="font-family: Arial">Encapsulating Security Payload</span></b><span lang="EN" style="font-family: Arial"> 
+  (<b>ESP</b>) provides data confidentiality, payload (message) integrity, and 
+  with some cryptography algorithm also authentication. </span></li>
+</ul>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">In some countries message encryption 
+is prohibited by law and <b>ESP</b> protocol can not be used. In this case <b>AH</b> 
+provides entire <b>IPsec</b> functionality (without confidentiality).</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Originally <b>AH</b> was only used 
+for integrity and <b>ESP</b> was used only for encryption; authentication 
+functionality was added subsequently to <b>ESP</b> due to performance 
+advantages. The key exchange protocols is defined by IPsec, include the IKE 
+(Internet Key Exchange) protocol and its successor, IKEv2.</span></p>
+<p style="background: #F8FCFF" align="justify"><b>
+<span lang="EN" style="font-family: Arial">IPsec</span></b><span lang="EN" style="font-family: Arial"> 
+protocols operate at the network layer, layer 3 of the OSI model. Other Internet 
+security protocols in widespread use, such as SSL and TLS, operate from the 
+transport layer up (OSI layers 4 - 7). This makes IPsec more flexible, as it can 
+be used for protecting both TCP and UDP-based protocols, but increases its 
+complexity and processing overhead, as it cannot rely on TCP (layer 4 OSI model) 
+to manage reliability and fragmentation.</span></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Current status as 
+a standard</span></span></h2>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">IPsec is an obligatory part of IPv6, 
+and is optional for use with IPv4. While the standard is designed to be 
+indifferent to IP versions, current widespread deployment and experience 
+concerns IPv4 implementations. IPsec protocols were originally defined by RFCs 
+1825–1829, published in 1995. In 1998, these documents were obsoleted by RFCs 
+2401–2412. 2401–2412 are not compatible with 1825–1829, although they are 
+conceptually identical. In December 2005 third generation documents, RFCs 
+4301–4309, were produced. They are largely a superset of 2401–2412.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">It is unusual to see any product that 
+offers RFC1825–1829 support. &quot;ESP&quot; generally refers to 2406, while ESPbis refers 
+to 4303.</span></p>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Design intent</span></span></h2>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">IPsec was intended to provide either
+<b>transport mode</b>: end-to-end security of packet traffic in which the 
+end-point computers do the security processing, or <b>tunnel mode</b>: 
+portal-to-portal communications security in which security of packet traffic is 
+provided to several machines (even to whole LANs) by a single node.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">IPsec can be used to create Virtual 
+Private Networks (VPN) in either mode, and this is the dominant use. Note, 
+however, that the security implications are quite different between the two 
+operational modes.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">End-to-end communication security on 
+an Internet-wide scale has been slower to develop than many had expected. Part 
+of the reason is that no universal, or universally trusted, Public Key 
+Infrastructure (PKI) has emerged (DNSSEC was originally envisioned for this); 
+part is that many users understand neither their needs nor the available options 
+well enough to promote inclusion in vendors' products.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Since the Internet Protocol does not 
+inherently provide any security capabilities, IPsec was introduced to provide 
+security services such as:</span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="text-align: justify; background: #F8FCFF">
+  <span lang="EN" style="font-family: Arial">Encrypting traffic (So it can not 
+  be read in its transmission) </span></li>
+  <li class="MsoNormal" style="text-align: justify; background: #F8FCFF">
+  <span lang="EN" style="font-family: Arial">Integrity validation (Ensuring 
+  traffic has not been modified along its path) </span></li>
+  <li class="MsoNormal" style="text-align: justify; background: #F8FCFF">
+  <span lang="EN" style="font-family: Arial">Authenticating the Peers (Both ends 
+  are sure they are communicating with a trusted entity the traffic is intended 
+  for) </span></li>
+  <li class="MsoNormal" style="text-align: justify; background: #F8FCFF">
+  <span lang="EN" style="font-family: Arial">Anti-Replay (Protect against 
+  session replay) </span></li>
+</ol>
+<h2 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Technical details</span></span></h2>
+<h3 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Authentication 
+Header (AH)</span></span></h3>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Authentication Header (AH) is 
+intended to guarantee connectionless integrity and data origin authentication of 
+IP datagrams. Further, it can optionally protect against replay attacks by using 
+the sliding window technique and discarding old packets. AH protects the IP 
+payload and all header fields of an IP datagram except for mutable fields, i.e. 
+those that might be altered in transit. Mutable, therefore unauthenticated, IP 
+header fields include TOS, Flags, Fragment Offset, TTL and Header Checksum. AH 
+operates directly on top of IP using IP protocol number 51.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">An AH packet diagram:</span></p>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; background: #F9F9F9">
+  <tr>
+    <td style="border: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">1</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">2</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">3</span></td>
+  </tr>
+  <tr>
+    <td style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0 1 2 3 4 5 6 7</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0 1 2 3 4 5 6 7</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0 1 2 3 4 5 6 7</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0 1 2 3 4 5 6 7</span></td>
+  </tr>
+  <tr>
+    <td style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">Next Header</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">Payload Length</span></td>
+    <td colspan="2" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">RESERVED</span></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">Security Parameters Index (SPI)</span></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">Sequence Number</span></td>
+  </tr>
+  <tr>
+    <td colspan="4" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt" align="center">
+    <p align="justify"><span style="font-family: Arial">Authentication Data 
+    (variable)</span></td>
+  </tr>
+</table>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">Field meanings:</span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">Next Header&nbsp; </span>
+</p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Identifies the protocol of the 
+transferred data. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">Payload Length&nbsp;
+</span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Size of AH packet. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">RESERVED&nbsp; </span>
+</p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Reserved for future use (all zero 
+until then). </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">Security Parameters 
+Index (SPI)&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Identifies the security parameters in 
+combination with IP address. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">Sequence Number&nbsp;
+</span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">A monotonically increasing number, 
+used to prevent replay attacks. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial; font-weight: 700">Authentication 
+Data&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Contains the data necessary to 
+authenticate the packet. </span></p>
+<h3 style="background: #F8FCFF" align="justify"><span class="mw-headline">
+<span lang="EN" style="font-size: 12.0pt; font-family: Arial">Encapsulating 
+Security Payload (ESP)</span></span></h3>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">The Encapsulating Security Payload 
+(ESP) extension header provides origin authenticity, integrity, and 
+confidentiality protection of a packet. ESP also supports encryption-only and 
+authentication-only configurations, but using encryption without authentication 
+is strongly discouraged. Unlike the AH header, the IP packet header is not 
+accounted for. ESP operates directly on top of IP using IP protocol number 50.</span></p>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">An ESP packet diagram:</span></p>
+<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: medium none; background: #F9F9F9">
+  <tr>
+    <td colspan="8" style="border: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0</span></td>
+    <td colspan="8" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">1</span></td>
+    <td colspan="8" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">2</span></td>
+    <td colspan="8" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">3</span></td>
+  </tr>
+  <tr>
+    <td style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">1</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">2</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">3</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">4</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">5</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">6</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">7</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">1</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">2</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">3</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">4</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">5</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">6</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">7</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">1</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">2</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">3</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">4</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">5</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">6</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">7</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">0</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">1</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">2</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">3</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">4</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">5</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">6</span></td>
+    <td style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">7</span></td>
+  </tr>
+  <tr>
+    <td colspan="32" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">Security Parameters Index (SPI)</span></td>
+  </tr>
+  <tr>
+    <td colspan="32" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" style="margin: 12.0pt 0in" align="justify">
+    <span style="font-family: Arial">Sequence Number</span></td>
+  </tr>
+  <tr>
+    <td colspan="32" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: medium none; padding: 2.4pt">
+    <p align="justify"><span style="font-family: Arial">Payload * (variable)</span></td>
+  </tr>
+  <tr>
+    <td colspan="8" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" align="justify"><span style="font-family: Arial">&nbsp;</span></td>
+    <td colspan="24" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: 1.0pt solid #AAAAAA; border-bottom: medium none; padding: 2.4pt">
+    <p class="MsoNormal" align="justify"><span style="font-family: Arial">
+    Padding (0-255 bytes)</span></td>
+  </tr>
+  <tr>
+    <td colspan="8" style="border-left: 1.0pt solid #AAAAAA; border-right: medium none; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" align="justify"><span style="font-family: Arial">&nbsp;</span></td>
+    <td colspan="8" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" align="justify"><span style="font-family: Arial">&nbsp;</span></td>
+    <td colspan="8" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" align="justify"><span style="font-family: Arial">Pad 
+    Length</span></td>
+    <td colspan="8" style="border-left: medium none; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p class="MsoNormal" align="justify"><span style="font-family: Arial">Next 
+    Header</span></td>
+  </tr>
+  <tr>
+    <td colspan="32" style="border-left: 1.0pt solid #AAAAAA; border-right: 1.0pt solid #AAAAAA; border-top: medium none; border-bottom: 1.0pt solid #AAAAAA; padding: 2.4pt">
+    <p align="justify"><span style="font-family: Arial">Authentication Data 
+    (variable)</span></td>
+  </tr>
+  <![if !supportMisalignedColumns]>
+  <tr height="0">
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+    <td width="15" style="border: medium none">
+    <p align="justify">&nbsp;</td>
+  </tr>
+  <![endif]>
+</table>
+<p style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Field meanings:</span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Security Parameters Index (SPI)&nbsp;
+</span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Identifies the security parameters in 
+combination with IP address </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Sequence Number&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">A monotonically increasing number, 
+used to prevent replay attacks. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Payload Data&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">The data to be transferred. </span>
+</p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Padding&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Used with some block ciphers to pad 
+the data to the full length of a block. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Pad Length&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Size of padding in bytes. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Next Header&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Identifies the protocol of the 
+transferred data. </span></p>
+<p class="MsoNormal" style="background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Authentication Data&nbsp; </span></p>
+<p class="MsoNormal" style="margin-left: .5in; background: #F8FCFF" align="justify">
+<span lang="EN" style="font-family: Arial">Contains the data used to 
+authenticate the packet. </span></p>
+<p class="MsoNormal" align="justify"><span lang="EN" style="font-family: Arial">
+&nbsp;</span><span style="font-family: Arial">&nbsp;Short for
+<b><i>IP Sec</i></b><i>urity,</i> a set of protocols developed by the IETF to 
+support secure exchange of packets at the IP layer. IPsec has been deployed 
+widely to implement Virtual Private Networks (VPNs). </span></p>
+<p align="justify"><span style="font-family: Arial">IPsec supports two 
+encryption modes: Transport and Tunnel. Transport mode encrypts only the data 
+portion (<i>payload</i>) of each packet, but leaves the header untouched. The 
+more secure Tunnel mode encrypts both the header and the payload. On the 
+receiving side, an IPSec-compliant device decrypts each packet. </span></p>
+<p align="justify"><span style="font-family: Arial">For IPsec to work, the 
+sending and receiving devices must share a public key. This is accomplished 
+through a protocol known as <i>Internet Security Association and Key Management 
+Protocol/Oakley (ISAKMP/Oakley), </i>which allows the receiver to obtain a 
+public key and authenticate the sender using digital certificates. </span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

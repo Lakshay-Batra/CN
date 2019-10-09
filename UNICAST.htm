@@ -1,0 +1,417 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="UNICAST_files/filelist.xml">
+<title>MAIN</title>
+<style>
+<!--
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+span.text-base
+	{}
+span.pagetitle
+	{}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:3.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:Arial;
+	font-weight:bold}
+-->
+</style>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+<p align="center"><font color="#FF0000" size="6" face="Arial">
+<span style="text-transform: uppercase; text-decoration: underline; font-weight: 700">
+Unicast, Broadcast &amp; Multicast</span></font></p>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Arial">Unicast</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Unicast is a one-to one connection between the 
+client and the server. Unicast uses IP delivery methods such as Transmission 
+Control Protocol (TCP) and User Datagram Protocol (UDP), which are session-based 
+protocols. When a Windows Media Player client connects using unicast to a 
+Windows Media server, that client has a direct relationship to the server. Each 
+unicast client that connects to the server takes up additional bandwidth. For 
+example, if you have 10 clients all playing 100-kilobits per second (Kbps) 
+streams, those clients as a group are taking up 1,000 Kbps. If you have only one 
+client playing the 100 Kbps stream, only 100 Kbps is being used. </span></p>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Arial">Multicast</span></h3>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">Multicast is a true broadcast. The multicast 
+source relies on multicast-enabled routers to forward the packets to all client 
+subnets that have clients listening. There is no direct relationship between the 
+clients and Windows Media server. The Windows Media server generates an .nsc 
+(NetShow channel) file when the multicast station is first created. Typically, 
+the .nsc file is delivered to the client from a Web server. This file contains 
+information that the Windows Media Player needs to listen for the multicast. 
+This is similar to tuning into a station on a radio. Each client that listens to 
+the multicast adds no additional overhead on the server. In fact, the server 
+sends out only one stream per multicast station. The same load is experienced on 
+the server whether only one client or 1,000 clients are listening <br>
+<br>
+<span class="text-base">Important:</span> Multicast on the Internet is generally 
+not practical because only small sections of the Internet are multicast-enabled. 
+Multicast in corporate environments where all routers are multicast-enabled can 
+save quite a bit of bandwidth.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Arial">Types of Messages</span></h3>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">We actually have three different methods of 
+sending messages over computer networks. Those methods are <strong>unicast</strong>,
+<strong>multicast</strong> and <strong>broadcast</strong>.</span></p>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Arial">Unicast Message</span></h3>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">When using unicast method, one device will send 
+the message to exactly one destination device. If some device needs to send a 
+message to multiple devices, it will have to send multiple unicast messages, 
+each message addressed to a specific device. So, the sender has to send a 
+separate message to each destination device, and to do that it has to know the 
+exact IP address of each destination device. Remember that in unicasting, each 
+packet is destined for only one device.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">In our example we have one source device, and 
+multiple destination devices which belong to different groups of devices (marked 
+with color). As we can see on the picture, unicast messages will be sent to 
+specific devices by using the specific IP address of the device, as the 
+destination address in the packet.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" align="center">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;</span><span style="font-family: Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1028" type="#_x0000_t75" alt="Unicast"
+ style='width:284.25pt;height:194.25pt'>
+ <v:imagedata src="UNICAST_files/image001.jpg" o:href="file:///E:\cnnnn22\The%20Difference%20Between%20Unicast,%20Multicast%20and%20Broadcast%20Messages%20_%20Utilize%20Windows_files\1_Unicast.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=379 height=259
+src="UNICAST_files/image001.jpg" alt=Unicast v:shapes="_x0000_s1028"><![endif]></span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" align="center">&nbsp;</p>
+<p style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Unicast Message</span></p>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</h3>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Arial">Broadcast Message</span></h3>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">The second method of sending messages is called 
+the broadcasting. Broadcast is a packet that’s sent to all devices on specific 
+network. The destination address in the packet is the special broadcast address. 
+If the packet has a broadcast address, all devices that receive that message 
+will process it. So, all devices on the same network segment will see the same 
+message. Another thing to remember is that routers don’t forward broadcast 
+messages. The router will receive the broadcast traffic, but it will not forward 
+it through the router.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<!--[if gte vml 1]><v:shape
+ id="_x0000_s1026" type="#_x0000_t75" alt="Broadcast" style='width:284.25pt;
+ height:194.25pt'>
+ <v:imagedata src="UNICAST_files/image002.jpg" o:href="file:///E:\cnnnn22\The%20Difference%20Between%20Unicast,%20Multicast%20and%20Broadcast%20Messages%20_%20Utilize%20Windows_files\2_Broadcast.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=379 height=259
+src="UNICAST_files/image002.jpg" alt=Broadcast v:shapes="_x0000_s1026"><![endif]></span></p>
+<p style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Broadcast Message&nbsp;&nbsp;&nbsp; </span></p>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</h3>
+<h3 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt; font-family: Arial">Multicast Message</span></h3>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Multicasting identifies logical groups of 
+computers. A single message can then be sent to the group.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" alt="Multicast" style='width:284.25pt;
+ height:194.25pt'>
+ <v:imagedata src="UNICAST_files/image003.jpg" o:href="file:///E:\cnnnn22\The%20Difference%20Between%20Unicast,%20Multicast%20and%20Broadcast%20Messages%20_%20Utilize%20Windows_files\3_Multicast.jpg"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=379 height=259
+src="UNICAST_files/image003.jpg" alt=Multicast v:shapes="_x0000_s1027"><![endif]></span></p>
+<p style="text-align: center; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Multicast Message</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial"><b>Multicasting </b>uses the Internet Group 
+Management Protocol (IGMP) to identify groups and group members. Routers will 
+also use IGMP to send messages to subnets that have group members.&nbsp;The router 
+actually doesn’t keep track of which hosts are members of which group, only that 
+the subnet contains at least one member for each group. If we have multiple 
+routers, they will communicate and exchange information about multicast groups 
+that they have.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Each host on the network can belong to multiple 
+multicast groups. Hosts can join or leave groups at any time.&nbsp;Multicast groups 
+are identified by special IP addresses between the range of 224.0.0.0 and 
+239.255.255.255. Each group is assigned it’s own address. Addresses within the 
+224.0.0.0 range are reserved for local subnet communications.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">When we use a switch to connect hosts, 
+multicast messages are actually forwarded to all hosts on the hub or the switch. 
+As you should know, devices actually use MAC addresses to communicate on the 
+local network segment. When the device on the local segment needs to send a 
+multicast message, it will use a frame with a special MAC address. Special 
+multicast addresses in the MAC address begin with 01-00-5E. The remaining 
+portion of the MAC address is a modified format of the multicast IP address. 
+When the switch receives the frame with the multicast MAC address, it will 
+forward the frame out all ports to all connected devices. In this case, even 
+devices that are not members of the original IP multicast group will see the 
+frame. However, devices that don’t belong to the IP multicast group will not 
+process the frame since they will check the destination IP address. If we want 
+to avoid this problem in which devices which don’t belong to the original IP 
+multicast group still receive packets, we have to implement switches that are 
+capable of <strong>IGMP snooping</strong>. IGMP snooping feature enables 
+switches to check which device belongs to which multicast group. In that case, 
+when a message arrives at the switch addressed to a specific group using the 
+special frame address, the switch will forward that frame to the individual 
+group members. It will not forward the frame to the devices that are not a 
+member of the group. Only the switch with IGMP snooping can do that.&nbsp;So, the 
+switch controls forwarding the frames to specific group members. The router 
+keeps track of which subnets have group members.</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify"><b><span class="pagetitle">
+<span style="font-family: Arial">Unicast and Multicast Routers: Routing 
+Protocols</span></span></b><span style="font-family: Arial"><b><br>
+</b><br clear="all">
+* A metric is the cost assigned for passage of a packet through a network.
+</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* A router consults its routing table to 
+determine the best path for a packet. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* An autonomous system (AS) is a group of 
+networks and routers under the authority of a single administration. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* RIP and OSPF are popular interior routing 
+protocols used to update routing tables in an AIS. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* RIP is based on distance vector routing, in 
+which each router shares, at regular intervals, its knowledge about the entire 
+AS with its neighbor. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* A RIP routing table entry consists of a 
+destination network address, the hop count to that destination, and the IP 
+address of the next router. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* OSPF divides an AS into areas, defined as 
+collections of networks, hosts, and routers. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* OSPF is based on link state routing, in which 
+each router sends the state of its neighborhood to every other router in the 
+area. A packet is sent only if there is a change in the neighborhood. </span>
+</p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* OSPF defines four types of links (networks): 
+point-to-point, transient, stub, and virtual. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* Five types of link state advertisments (LSAs) 
+disperse information in OSPF: router link, network link, summary link to 
+network, summary link to AS boundary router, and external link. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* A router compiles all the information from 
+the LSAs it receives into a link state database. This database is common to all 
+routers in an area. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* An LSA is a mutifield entry in a link state 
+update packet. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* BGP is an interautonomous system routing 
+protocol used to upadate routing tables. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* BGP is based on a routing method called path 
+vector routing. In this method, the ASs through which a packet must pass are 
+explicitly listed. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* There are four types of BGP messages: open, 
+update, keep-alive, and notification. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* The Internet Group Management Protocol (IGMP) 
+helps multicast routers create and update a list of loyal members related to a 
+router interface. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* The three IGMP message types are the query 
+message, the membership report, and the leave report. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* A host or router can have membership in a 
+group. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* A host maintains a list of processes that 
+have membership in a group. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* A router maintains a list of groupids that 
+shows group membership for each interface. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* Multicasting applications include distributed 
+databases, information dissemination, teleconferencing, and distance learning.
+</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* For efficient multicasting we use a 
+shortest-path spanning tree to represent the communication path. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* In a source-based tree approach to multicast 
+routing, the source--group combinations determines the tree. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* In a group-based tree approach to multicast 
+routing, the group determines the tree. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* DVRMP is a multicast routing protocol that 
+uses the distance routing protocol to create a source-based tree. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* In reverse path forwarding (RPF), the router 
+forwards only the packets that have traveled the shortest path from the source 
+to the router. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* Reverse path broadcasting (RPB) creates a 
+shortest-path broadcast tree from the source to each destination. It guarantees 
+that each destination receives one and only one copy of the packet. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* Reverse path multicasting (RPM) adds pruning 
+and grafting to RPB to create a multicast shortest-path tree that supports 
+dynamic membership changes. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* MOSPF is a multicast protocol that uses 
+multicast link state routing to create a source-based least-cost tree. </span>
+</p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* The Core-Based Tree (CBT) protocol is a 
+multicast routing protocol that uses a core as the root of the tree. </span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* PIM-DM is a source-based routing protocol 
+that uses RPF and pruning and grafting strategies to handle multicasting. </span>
+</p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* PIM-SM is a group-shared routing protocol 
+that is similar to CBT and u ses a rendzvous point as the source of the tree.
+</span></p>
+<p class="MsoNormal" style="text-align: justify">
+<span style="font-family: Arial">* For multicasting between two noncontiguous 
+multicast routers, we make a multicast backbone (MBONE) to enable tunneling.
+</span></p>
+<h1 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt">Unicast</span></h1>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Unicast is the term used to describe 
+communication where a piece of information is sent from one point to another 
+point. In this case there is just one sender, and one receiver.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Unicast transmission, in which a packet is sent 
+from a single source to a specified destination, is still the predominant form 
+of transmission on LANs and within the Internet. All LANs (e.g. Ethernet) and IP 
+networks support the unicast transfer mode, and most users are familiar with the 
+standard unicast applications (e.g. http, smtp, ftp and telnet) which employ the 
+TCP transport protocol.</span></p>
+<h1 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</h1>
+<h1 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt">Broadcast</span></h1>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Broadcast is the term used to describe 
+communication where a piece of information is sent from one point to all other 
+points. In this case there is just one sender, but the information is sent to 
+all connected receivers.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Broadcast transmission is supported on most 
+LANs (e.g. Ethernet), and may be used to send the same message to all computers 
+on the LAN (e.g. the address resolution protocol (arp) uses this to send an 
+address resolution query to all computers on a LAN). Network layer protocols 
+(such as IPv4) also support a form of broadcast that allows the same packet to 
+be sent to every system in a logical network (in IPv4 this consists of the IP 
+network ID and an all 1's host number).</span></p>
+<h1 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;</h1>
+<h1 style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-size: 12.0pt">Multicast</span></h1>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Multicast is the term used to describe 
+communication where a piece of information is sent from one or more points to a 
+set of other points. In this case there is may be one or more senders, and the 
+information is distributed to a set of receivers (theer may be no receivers, or 
+any other number of receivers).</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">One example of an application which may use 
+multicast is a video server sending out networked TV channels. Simultaneous 
+delivery of high quality video to each of a large number of delivery platforms 
+will exhaust the capability of even a high bandwidth network with a powerful 
+video clip server. This poses a major salability issue for applications which 
+required sustained high bandwidth. One way to significantly ease scaling to 
+larger groups of clients is to employ multicast networking.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Multicasting is the networking technique of 
+delivering the same packet simultaneously to a group of clients. IP multicast 
+provides dynamic many-to-many connectivity between a set of senders (at least 1) 
+and a group of receivers. The format of IP multicast packets is identical to 
+that of unicast packets and is distinguished only by the use of a special class 
+of destination address (class D IPv4 address) which denotes a specific multicast 
+group. Since TCP supports only the unicast mode, multicast applications must use 
+the UDP transport protocol.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">Unlike broadcast transmission (which is used on 
+some local area networks), multicast clients receive a stream of packets only if 
+they have previously elect to do so (by joining the specific multicast group 
+address). Membership of a group is dynamic and controlled by the receivers (in 
+turn informed by the local client applications). The routers in a multicast 
+network learn which sub-networks have active clients for each multicast group 
+and attempt to minimise the transmission of packets across parts of the network 
+for which there are no active clients.</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">The multicast mode is useful if a group of 
+clients require a common set of data at the same time, or when the clients are 
+able to receive and store (cache) common data until needed. Where there is a 
+common need for the same data required by a group of clients, multicast 
+transmission may provide significant bandwidth savings (up to 1/N of the 
+bandwidth compared to N separate unicast clients).</span></p>
+<p style="text-align: justify; margin-left: 0in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">
+<span style="font-family: Arial">The majority of installed LANs (e.g. Ethernet) 
+are able to support the multicast transmission mode. Shared LANs (using 
+hubs/repeaters) inherently support multicast, since all packets reach all 
+network interface cards connected to the LAN. The earliest LAN network interface 
+cards had no specific support for multicast and introduced a big performance 
+penalty by forcing the adaptor to receive all packets (promiscuous mode) and 
+perform software filtering to remove all unwanted packets. Most modern network 
+interface cards implement a set of multicast filters, relieving the host of the 
+burden of performing excessive software filtering.</span></p>
+<p align="center"><font face="Arial"><b>
+<a href="file:///C:/Program%20Files/Computer%20Network/Main.htm">MAIN</a></b></font></p>
+
+</body>
+
+</html>

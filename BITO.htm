@@ -1,0 +1,107 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	}
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+h3
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:13.5pt;
+	font-family:"Times New Roman";
+	font-weight:bold}
+p.body-text
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	}
+-->
+</style>
+</head>
+
+<body>
+
+<p class="MsoNormal" align="center"><b><font face="Arial">
+<a style="color: #00c" href="Main.htm">MAIN</a></font></b></p>
+<p class="MsoNormal" align="center"><font color="#FF0000" size="6"><b>
+<span lang="EN" style="font-family: Arial; text-transform: uppercase; text-decoration: underline">
+Bit- oriented protocol</span></b></font></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><b><span lang="EN" style="font-family: Arial">Bit-oriented 
+protocol</span></b><span lang="EN" style="font-family: Arial"> is a 
+communications protocol that sees the transmitted data as an <i>opaque</i> 
+stream of bits with no semantics, or meaning. Control codes are defined in terms 
+of bit sequences instead of characters. Bit oriented protocol can transfer data 
+frames regardless of frame contents.</span></p>
+<p class="MsoNormal"><span lang="EN" style="font-family: Arial">&nbsp;&nbsp;</span><span style="font-family: Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+A communications protocol that uses individual bits within the byte as control 
+codes, such as IBM's SDLC. Contrast with byte-oriented protocol.</span></p>
+<blockquote>
+  <p class="MsoNormal"><span style="font-family: Arial">A communications 
+  protocol in which individual bits within a byte are used as control codes.</span></p>
+</blockquote>
+<p class="MsoNormal"><span style="font-family: Arial">&nbsp;</span></p>
+<p class="MsoNormal" align="justify"><b><span style="font-family: Arial">Bit-oriented protocol</span></b><span style="font-family: Arial"> 
+is a communications protocol that sees the transmitted data as an <i>opaque</i> 
+stream of bits with no semantics, or meaning. Control codes are defined in terms 
+of bit sequences instead of characters. Bit oriented protocol can transfer data 
+frames regardless of frame contents.</span></p>
+<p class="MsoNormal" align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial">One way to send information from one 
+machine to another is to use a bit stream broken down into frames. Each frame 
+starts and ends with a specific flag, namely 01111110 (0, 6 ones, 0). Since the 
+flag may come up as a valid byte to send in a message, we'll employ bit 
+stuffing. That is, whenever 5 consecutive ones are seen in the message, the 
+sender inserts a 0, then continues on. The receiver has to remove that, so when 
+the receiver sees 5 ones, it has to look at the next bit. If the next bit is a 
+0, the 0 is ignored, and the receiver continues on. If the next bit is a 1 
+followed by a 0, the receiver has gotten the flag to signify the end of a frame.
+</font></p>
+<h3 align="justify"><font face="Arial" size="3">Input:</font></h3>
+<p align="justify"><font face="Arial">The input will be a bit-stuffed bit stream 
+representing frames sent to you. The stream may span multiple input lines. No 
+singe line of input will be longer than 80 characters. There may be extraneous 
+bits in the bit stream (ie, bits that are not apart of a frame). These should be 
+ignored. There are no blank lines in the input. </font></p>
+<h3 align="justify"><font face="Arial" size="3">Output:</font></h3>
+<p align="justify"><font face="Arial">Your program is to take the bit stream, 
+unstuff it, and print the resulting message. We'll use the 8-bit ASCII table for 
+the conversions. After printing the message, your program should print 2 newline 
+characters then go onto the next message. </font></p>
+<h3 align="justify"><font face="Arial" size="3">Sample input:</font></h3>
+<p align="justify"><font face="Arial">01111110011000010110110000100111011<br>
+1010001101000011011110111001001111110<br>
+0101010101111110<br>
+011010000110111101110111011001000111100100001010<br>
+01111110<br>
+&nbsp;</font></p>
+<h3 align="justify"><font face="Arial" size="3">Sample Output:</font></h3>
+<div align="justify">
+  <pre><font face="Arial" size="3">al'thor
+
+howdy
+</font></pre>
+</div>
+<p class="MsoNormal" align="center"><b><font face="Arial">
+<a style="color: #00c" href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

@@ -1,0 +1,423 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+.2 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-style: normal;
+}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p class="pB1_Body1" align="center"><u><b>
+<font size="6" color="#FF0000" face="Arial">LAN PROTOCOLS</font></b></u></p>
+<p class="pB1_Body1"><font face="Arial">This chapter introduces the various 
+media-access methods, transmission methods, topologies, and devices used in a 
+local-area network (LAN). Topics addressed focus on the methods and devices used 
+in Ethernet/IEEE 802.3, Token Ring/IEEE 802.5, and Fiber Distributed Data 
+Interface (FDDI). Subsequent chapters in Part II, &quot;LAN Protocols,&quot; address 
+specific protocols in more detail. Figure 2-1 illustrates the basic layout of 
+these three implementations. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-1 Three LAN Implementations 
+Are Used Most Commonly</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020551" height="342" hspace="0" src="introlaa.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1"><font face="Arial" size="3">What Is a LAN? </font></h2>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">LAN</span> is a high-speed 
+data network that covers a relatively small geographic area. It typically 
+connects workstations, personal computers, printers, servers, and other devices. 
+LANs offer computer users many advantages, including shared access to devices 
+and applications, file exchange between connected users, and communication 
+between users via electronic mail and other applications. </font></p>
+<h2 class="p_H_Head1"><font face="Arial" size="3">LAN Protocols and the OSI Reference 
+Model </font></h2>
+<p class="pB1_Body1"><font face="Arial">LAN protocols function at the lowest two 
+layers of the OSI reference model, as discussed in Chapter 1, &quot;Internetworking 
+Basics,&quot; between the physical layer and the data link layer. Figure 2-2 
+illustrates how several popular LAN protocols map to the OSI reference model.
+</font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-2 Popular LAN Protocols 
+Mapped to the OSI Reference Model</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020562" height="299" hspace="0" src="ct840202.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1"><font face="Arial" size="3">LAN Media-Access Methods </font></h2>
+<p class="pB1_Body1"><font face="Arial">Media contention occurs when two or more 
+network devices have data to send at the same time. Because multiple devices 
+cannot talk on the network simultaneously, some type of method must be used to 
+allow one device access to the network media at a time. This is done in two main 
+ways: carrier sense multiple access collision detect (CSMA/CD) and token 
+passing. </font></p>
+<p class="pB1_Body1"><font face="Arial">In networks using
+<span style="font-weight: normal; font-style: italic">CSMA/CD</span> technology 
+such as Ethernet, network devices contend for the network media. When a device 
+has data to send, it first listens to see if any other device is currently using 
+the network. If not, it starts sending its data. After finishing its 
+transmission, it listens again to see if a collision occurred. A collision 
+occurs when two devices send data simultaneously. When a collision happens, each 
+device waits a random length of time before resending its data. In most cases, a 
+collision will not occur again between the two devices. Because of this type of 
+network contention, the busier a network becomes, the more collisions occur. 
+This is why performance of Ethernet degrades rapidly as the number of devices on 
+a single network increases. </font></p>
+<p class="pB1_Body1"><font face="Arial">In<span style="font-weight: normal; font-style: italic"> 
+token-passing</span> networks such as Token Ring and FDDI, a special network 
+frame called a token is passed around the network from device to device. When a 
+device has data to send, it must wait until it has the token and then sends its 
+data. When the data transmission is complete, the token is released so that 
+other devices may use the network media. The main advantage of token-passing 
+networks is that they are deterministic. In other words, it is easy to calculate 
+the maximum time that will pass before a device has the opportunity to send 
+data. This explains the popularity of token-passing networks in some real-time 
+environments such as factories, where machinery must be capable of communicating 
+at a determinable interval. </font></p>
+<p class="pB1_Body1"><font face="Arial">For CSMA/CD networks, switches segment 
+the network into multiple collision domains. This reduces the number of devices 
+per network segment that must contend for the media. By creating smaller 
+collision domains, the performance of a network can be increased significantly 
+without requiring addressing changes. </font></p>
+<p class="pB1_Body1"><font face="Arial">Normally CSMA/CD networks are 
+half-duplex, meaning that while a device sends information, it cannot receive at 
+the time. While that device is talking, it is incapable of also listening for 
+other traffic. This is much like a walkie-talkie. When one person wants to talk, 
+he presses the transmit button and begins speaking. While he is talking, no one 
+else on the same frequency can talk. When the sending person is finished, he 
+releases the transmit button and the frequency is available to others. </font>
+</p>
+<p class="pB1_Body1"><font face="Arial">When switches are introduced, 
+full-duplex operation is possible. Full-duplex works much like a telephone—you 
+can listen as well as talk at the same time. When a network device is attached 
+directly to the port of a network switch, the two devices may be capable of 
+operating in full-duplex mode. In full-duplex mode, performance can be 
+increased, but <br>
+not quite as much as some like to claim. A 100-Mbps Ethernet segment is capable 
+of transmitting 200 Mbps of data, but only 100 Mbps can travel in one direction 
+at a time. Because most data connections are asymmetric (with more data 
+traveling in one direction than the other), the gain is not as great as many 
+claim. However, full-duplex operation does increase the throughput of most 
+applications because the network media is no longer shared. Two devices on a 
+full-duplex connection can send data as soon as it is ready. </font></p>
+<p class="pB1_Body1"><font face="Arial">Token-passing networks such as Token 
+Ring can also benefit from network switches. In large networks, the delay 
+between turns to transmit may be significant because the token is passed around 
+the network. </font></p>
+<h2 class="p_H_Head1"><font face="Arial" size="3">LAN Transmission Methods </font></h2>
+<p class="pB1_Body1"><font face="Arial">LAN data transmissions fall into three 
+classifications: unicast, multicast, and broadcast. <br>
+In each type of transmission, a single packet is sent to one or more nodes.
+</font></p>
+<p class="pB1_Body1"><font face="Arial">In a
+<span style="font-weight: normal; font-style: italic">unicast transmission</span>, 
+a single packet is sent from the source to a destination on a network. First, 
+the source node addresses the packet by using the address of the destination 
+node. The package is then sent onto the network, and finally, the network passes 
+the packet to its destination. </font></p>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">multicast transmission</span> 
+consists of a single data packet that is copied and sent to a specific subset of 
+nodes on the network. First, the source node addresses the packet by using a 
+multicast address. The packet is then sent into the network, which makes copies 
+of the packet and sends a copy to each node that is part of the multicast 
+address. </font></p>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">broadcast transmission</span> 
+consists of a single data packet that is copied and sent to all nodes on the 
+network. In these types of transmissions, the source node addresses the packet 
+by using the broadcast address. The packet is then sent on to the network, which 
+makes copies of the packet and sends a copy to every node on the network. </font>
+</p>
+<h2 class="p_H_Head1"><font face="Arial" size="3">LAN Topologies </font></h2>
+<p class="pB1_Body1"><font face="Arial">LAN topologies define the manner in 
+which network devices are organized. Four common LAN topologies exist: bus, 
+ring, star, and tree. These topologies are logical architectures, but the actual 
+devices need not be physically organized in these configurations. Logical bus 
+and ring topologies, for example, are commonly organized physically as a star. A
+<span style="font-weight: normal; font-style: italic">bus topology</span> is a 
+linear LAN architecture in which transmissions from network stations propagate 
+the length of the medium and are received by all other stations. Of the three
+<br>
+most widely used LAN implementations, Ethernet/IEEE 802.3 networks—including 
+100BaseT—implement a bus topology, which is illustrated in Figure 2-3. </font>
+</p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-3 Some Networks Implement a 
+Local Bus Topology </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020605" height="85" hspace="0" src="ct840203.jpg" width="552" border="0"></font></div>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">ring topology</span> is a 
+LAN architecture that consists of a series of devices connected to one another 
+by unidirectional transmission links to form a single closed loop. Both Token 
+Ring/IEEE 802.5 and FDDI networks implement a ring topology. Figure 2-4 depicts 
+a logical ring topology. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-4 Some Networks Implement a 
+Logical Ring Topology </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020611" height="296" hspace="0" src="ct840204.jpg" width="552" border="0"></font></div>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">star topology</span> is a 
+LAN architecture in which the endpoints on a network are connected to a common 
+central hub, or switch, by dedicated links. Logical bus and ring topologies are 
+often implemented physically in a star topology, which is illustrated in Figure 
+2-5. </font></p>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">tree topology</span> is a 
+LAN architecture that is identical to the bus topology, except that branches 
+with multiple nodes are possible in this case. Figure 2-5 illustrates a logical 
+tree topology. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-5 A Logical Tree Topology 
+Can Contain Multiple Nodes</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020620" height="211" hspace="0" src="ct840205.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1"><font face="Arial" size="3">LAN Devices </font></h2>
+<p class="pB1_Body1"><font face="Arial">Devices commonly used in LANs include 
+repeaters, hubs, LAN extenders, bridges, LAN switches, and routers. </font></p>
+<div class="Note1B">
+  <font face="Arial"><img src="note.gif" width="28" height="25"></font></div>
+<hr class="Cautn1table">
+<p class="pN1_Note1"><font face="Arial"><b>Note </b>
+<img height="2" src="blank.gif" width="1" border="0">Repeaters, hubs, and LAN 
+extenders are discussed briefly in this section. The function and operation of 
+bridges, switches, and routers are discussed generally in Chapter 4, &quot;Bridging 
+and Switching Basics,&quot; and Chapter 5, &quot;Routing Basics.&quot; </font></p>
+<hr class="Cautn1table">
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">repeater</span> is a 
+physical layer device used to interconnect the media segments of an extended 
+network. A repeater essentially enables a series of cable segments to be treated 
+as a single cable. Repeaters receive signals from one network segment and 
+amplify, retime, and retransmit those signals to another network segment. These 
+actions prevent signal deterioration caused by long cable lengths and large 
+numbers of connected devices. Repeaters are incapable of performing complex 
+filtering and other traffic processing. In addition, all electrical signals, 
+including electrical disturbances and other errors, are repeated and amplified. 
+The total number of repeaters and network segments that can be connected is 
+limited due to timing and other issues. Figure 2-6 illustrates a repeater 
+connecting two network segments. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-6 A Repeater Connects Two 
+Network Segments </font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020630" height="172" hspace="0" src="ct840206.jpg" width="552" border="0"></font></div>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">hub</span> is a physical 
+layer device that connects multiple user stations, each via a dedicated cable. 
+Electrical interconnections are established inside the hub. Hubs are used to 
+create a physical star network while maintaining the logical bus or ring 
+configuration of the LAN. In some respects, a hub functions as a multiport 
+repeater. </font></p>
+<p class="pB1_Body1"><font face="Arial">A
+<span style="font-weight: normal; font-style: italic">LAN extender</span> is a 
+remote-access multilayer switch that connects to a host router. LAN extenders 
+forward traffic from all the standard network layer protocols (such as IP, IPX, 
+and AppleTalk) and filter traffic based on the MAC address or network layer 
+protocol type. LAN extenders scale well because the host router filters out 
+unwanted broadcasts and multicasts. However, LAN extenders are not capable of 
+segmenting traffic or creating security firewalls. Figure 2-7 illustrates 
+multiple LAN extenders connected to the host router through a WAN. </font></p>
+<p class="pTC_TableCap"><font face="Arial">Figure&nbsp;2-7 Multiple LAN Extenders Can 
+Connect to the Host Router Through a WAN</font></p>
+<div align="center">
+  <font face="Arial">
+  <img id="wp1020639" height="356" hspace="0" src="ct840207.jpg" width="552" border="0"></font></div>
+<h2 class="p_H_Head1"><font face="Arial" size="3">Review Questions </font></h2>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Describe 
+the type of media access used by Ethernet.</span> </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Ethernet uses 
+carrier sense multiple access collision detect (CSMA/CD). Each network station 
+listens before and after transmitting data. If a collision is detected, both 
+stations wait a random time before trying to resend. </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Describe 
+the type of media access used by Token Ring.</span> </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>Token Ring passes a 
+special type of packet called a token around the network. If a network device 
+has data to send, it must wait until it has the token to send it. After the data 
+has been sent, the token is released back on the network. </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">Q—</span><span style="font-weight: normal; font-style: italic">Describe 
+unicast, multicast, and broadcast transmissions.</span> </font></p>
+<p class="pB1_Body1"><font face="Arial">
+<span style="font-weight: bold; font-style: normal">A—</span>A unicast is a 
+transmission from one source to one destination. A multicast is a transmission 
+from one source to many stations that register to receive the traffic. A 
+broadcast is a transmission from one source to every station on the local 
+network segment. </font></p>
+<p><font face="Arial">The components in a Local Area Network can be connected in a few ways, which 
+is call LAN topologies. There exit 4 basic LAN topologies:</font></p>
+<p><font face="Arial">Star: All stations are connected by cable (or wireless) to a central point, 
+such as hub or a switch. If the central node is operating in a broadcast fashion 
+such as a Hub, transmission of a frame from one station to the node is 
+retransmitted on all of the outgoing links. In this case, although the 
+arrangement is physically a star, it is logically a bus. In the case of the 
+central node acting as switch, an incoming frame is processed in the node and 
+then retransmitted on an outgoing link to the destination station. Ethernet 
+protocols (IEEE 802.3) are often used in the Star topology LAN.</font></p>
+<p><font face="Arial">Ring: All nodes on the LAN are connected in a loop and their Network 
+Interface Cards (NIC) are working as repeaters. There is no starting or ending 
+point. Each node will repeat any signal that is on the network regardless its 
+destination. The destination station recognizes its address and copies the frame 
+into a local buffer as it goes by. The frame continues to circulate until it 
+returns to the source station, where it is removed. Token Ring (IEEE 802.5) is 
+the most popular Ring topology protocol. FDDI (IEEE 802.6) is another protocol 
+used in the Ring topology, which is based on the Token Ring.</font></p>
+<p><font face="Arial">Bus: All nodes on the LAN are connected by one linear cable, which is called 
+the shared medium. Every node on this cable segment sees transmissions from 
+every other station on the same segment. At each end of the bus is a terminator, 
+which absorbs any signal, removing it from the bus. This medium cable apparently 
+is the single point of failure. Ethernet (IEEE 802.3) is the protocols used for 
+this type of LAN.</font></p>
+<p><font face="Arial">Tree: The tree topology is a logical extension of the bus topology. The 
+transmission medium is a branching cable with no closed loops. The tree layout 
+begins at a point called the head-end, where one or more cables start, and each 
+of these may have branches. The branches in turn may have additional branches to 
+allow quite complex layouts. </font> </p>
+<p align="center"><font face="Arial"><br>
+<img alt="LAN Architecture and Topologies: Bus, Star, Ring and Tree" src="lanat.gif" width="391" height="374"></font></p>
+<p align="center"><font face="Arial"><b>LAN Architecture and Topologies: Bus, Star, Ring and Tree</b><br>
+&nbsp;</font></p>
+<p><font face="Arial">Local 
+Area Networks (LANs) use one of the following physical layout designs. These 
+designs are referred to as 'topologies'.</font></p>
+<table cellSpacing="0" cellPadding="3" width="50%" align="center" border="1" height="184">
+  <tr>
+    <th height="19"><font face="Arial">Topology</font></th>
+    <th height="19"><font face="Arial">Types</font></th>
+  </tr>
+  <tr>
+    <td height="18"><font face="Arial">Bus</font></td>
+    <td height="18"><font face="Arial">(Logical Ethernet)</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font face="Arial">Hub and Spoke (Star)</font></td>
+    <td height="18"><font face="Arial">(Physical Ethernet)</font></td>
+  </tr>
+  <tr>
+    <td height="19"><font face="Arial"><em>Hybrid (Bus &amp; Star)</em></font></td>
+    <td height="19"><font face="Arial">Ethernet</font></td>
+  </tr>
+  <tr>
+    <td height="18">
+    <font face="Arial">Point To Point / Daisy Chaining </font> </td>
+    <td height="18"><font face="Arial">Serial</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font face="Arial">Point to Multipoint</font></td>
+    <td height="18">
+    <font face="Arial">Frame Relay</font></td>
+  </tr>
+  <tr>
+    <td height="18"><font face="Arial">Ring</font></td>
+    <td height="18"><font face="Arial">FDDI, Token 
+    Ring</font></td>
+  </tr>
+</table>
+<h2><font size="3" face="Arial">Foreword</font></h2>
+<p><font face="Arial">I will use a few terms in this tutorial that need explanation before we get 
+started.</font></p>
+<dl>
+  <dt><font face="Arial">Station </font> </dt>
+  <dd><font face="Arial">A <em>station</em> is a computer 
+  workstation or computing device attached to a network. </font> </dd>
+  <dt><font face="Arial">Segment </font> </dt>
+  <dd><font face="Arial">A <em>segment</em> is a cable between any two stations or network devices, 
+  or between any station and network device. </font> </dd>
+  <dt><font face="Arial">Network Device </font> </dt>
+  <dd><font face="Arial">A <em>network device</em> is any device used to interconnect segments of 
+  the network. </font> </dd>
+</dl>
+<p><font face="Arial">Why do I use these terms? Because the standards documentation uses them and I 
+really should be consistent because the Cisco and Network+ tests use these same 
+terms as the documented standards for most protocols. If you ever suffer from 
+insomnia and need to read the documented standards (which WILL put you to 
+sleep), I don't want you getting confused--that would muddle your dreams and we 
+wouldn't want <em>that</em>, would we?</font></p>
+<h2><b><font size="3" face="Arial">BUS TOPOLOGY</font></b></h2>
+<p><span style="font-family:Arial">Networks employing a bus topology use a 
+common physical connection for communication. That means the physical media is 
+shared between stations. When one station transmits on the bus, all devices hear 
+the transmission. If more than one device transmits at the same time, the two 
+transmissions will collide with each other and both transmissions will destroy 
+each other.</span></p>
+<p class="MsoNormal"><span style="font-family:Arial">When two or more of these 
+devices attempts to access the network bus at the same time, some method must be 
+used to prevent a collision (CSMA/CD). Historically, bus networks used coaxial 
+cable as their medium of transmission. Token Bus, Ethernet (Thinnet and Thicknet) 
+are common examples of bus topologies. Although some installations of Ethernet 
+using coaxial cable still exist, all modern installations now use a hub and 
+spoke or star topology.</span></p>
+<p align="center"><font face="Arial">
+    <img src="topology_bus.png" width="260" height="235"></font></p>
+<h2><b><font size="3" face="Arial">HUB AND SPOKE (STAR)</font></b></h2>
+<p><font face="Arial">Please note that this is not called a <em>hub and spoke</em> 
+    design because there is a network hub in the drawing. This drawing is to 
+    show how a <em>star</em> or <em>hub and spoke</em> network resembles the hub 
+    and spokes of a wheel. The Hub and Spoke topology refers to a network 
+    topology where there is a central connection point to which multiple devices 
+    are connected. </font></p>
+    <p><font face="Arial">A network hub device is not the only device usable in this configuration. 
+    A switch may also be used and in some cases, a router. Ethernet utilizing 
+    twisted pair still considered a bus architecture from a logical standpoint; 
+    however, physically, an
+    Ethernet network can be <em>physically</em> wired as a hub and spoke 
+    model.</font><p>&nbsp;</p>
+<p align="center"><font face="Arial">
+    <img src="topology_star.gif" border="0" width="247" height="196"></font></p>
+<h2><b><font size="3" face="Arial">RING</font></b></h2>
+<p><font face="Arial">Ring topologies are similar to bus 
+    topologies, except they transmit in one direction only from station to 
+    station. Typically, a ring architecture will use separate physical ports and 
+    wires for transmit and receive. </font></p>
+    <p><font face="Arial">Token Ring is one example of a network technology that uses a ring 
+    topology. </font>
+<p align="center"><font face="Arial">
+    <img src="topology_ring.gif" width="240" height="186"></font></p>
+<h2><b><font size="3" face="Arial">POINT TO POINT (Daisy Chaining)</font></b></h2>
+<p><font face="Arial">Point to Point topologies are simplest and most 
+    straightforward. You must picture them as a chain of devices and another 
+    name for this type of connectivity is called <em>daisy chaining</em>. Most 
+    computers can 'daisy chain' a series of serial devices from one of its 
+    serial ports. Networks of routers are often configured as point-to-point 
+    topologies.</font></p>
+<p align="center"><font face="Arial">
+    <img src="topology_pt2pt.gif" width="251" height="77"></font></p>
+<h2><b><font size="3" face="Arial">POINT TO MULTIPOINT</font></b></h2>
+<p><font face="Arial">This is not quite the same as a hub and 
+    spoke configuration. In a hub and 
+    spoke topology, all transmissions from all devices pass through the 
+    hub--the hub broadcasts all communication from any single device to all 
+    other devices connected to it. </font></p>
+    <p><font face="Arial">In a multipoint topology the hub can send to one or more systems based on 
+    an address.
+    Frame Relay is the most common technology to implement this scheme, and 
+    it is typically used as a WAN 
+    technology. All the remote connection points are connected to a single
+    Frame Relay switch or router port, and communication between sites is 
+    managed by that central point. In hub and spoke, all spokes or only one 
+    spoke hears a given transmission. In point to multipoint, any number of 
+    remote stations can be accessed.</font></p>
+<p align="center"><font face="Arial">
+    <img src="topology_multipoint.gif" border="0" width="163" height="176"></font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

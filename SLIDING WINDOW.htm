@@ -1,0 +1,449 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="SLIDING%20WINDOW_files/filelist.xml">
+<title>MAIN</title>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="font-family: Arial; color: red; font-weight: 700; text-decoration: underline; text-transform: uppercase">
+<font size="6">Sliding Window Protocol</font></span></p>
+<ul>
+  <li>
+<p align="justify"><span style="font-family: Arial">A One-Bit Sliding Window 
+Protocol </span></p>
+  </li>
+  <li>
+<p align="justify"><span style="font-family: Arial">A Protocol Using Go Back N</span></p>
+  </li>
+  <li>
+<p align="justify"><span style="font-family: Arial">A Protocol Using Selective 
+Repeat</span></p>
+  </li>
+</ul>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1043" type="#_x0000_t75" style='position:absolute;
+ margin-left:-282.75pt;margin-top:-12pt;width:435pt;height:240pt;z-index:1;
+ mso-position-vertical:absolute'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image001.jpg" o:title="3-13"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:84px;top:204px;width:580px;height:320px'><img
+width=580 height=320 src="SLIDING%20WINDOW_files/image002.jpg" v:shapes="_x0000_s1043"></span><![endif]></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+A sliding window of size 1, with a 3-bit sequence number.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+(a) Initially.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+(b) After the first frame has been sent.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+(c) After the first frame has been received.</font></p>
+<p class="MsoNormal" style="margin-top: 0; margin-bottom: 0"><font face="Arial">
+(d) After the first acknowledgement has been received.</font></p>
+<p align="center">&nbsp;</p>
+<p align="center"><span style="font-family: Arial; font-weight: 700">
+<font size="4">A One-Bit Sliding Window</font></span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1027" type="#_x0000_t75" style='position:absolute;left:79.5pt;
+ top:561.75pt;width:525pt;height:311.25pt;z-index:0'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image003.jpg" o:title="3-14"
+  cropbottom="34617f"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:0;left:106px;top:749px;width:700px;height:415px'><img
+width=700 height=415 src="SLIDING%20WINDOW_files/image004.jpg" v:shapes="_x0000_s1027"></span><![endif]></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1028" type="#_x0000_t75" style='position:absolute;left:78pt;top:874.5pt;
+ width:508.5pt;height:336pt;z-index:0'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image003.jpg" o:title="3-14"
+  croptop="31036f"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:0;left:104px;top:1166px;width:678px;height:448px'><img
+width=678 height=448 src="SLIDING%20WINDOW_files/image005.jpg" v:shapes="_x0000_s1028"></span><![endif]></font></p>
+<p align="justify"><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1029" type="#_x0000_t75" style='position:absolute;left:58.5pt;
+ top:1224.75pt;width:549.75pt;height:276pt;z-index:0'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image006.jpg" o:title="3-15"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:0;left:78px;top:1633px;width:733px;height:368px'><img
+width=733 height=368 src="SLIDING%20WINDOW_files/image007.jpg" v:shapes="_x0000_s1029"></span><![endif]></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none">&nbsp;</p>
+<p class="MsoNormal" align="center" style="text-align: center; text-autospace: none">
+<span style="font-weight: 700"><font size="5" face="Arial">A Protocol Using Go 
+Back N</font></span></p>
+<p><font face="Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1030" type="#_x0000_t75" style='position:absolute;margin-left:97.5pt;
+ margin-top:24.75pt;width:440.25pt;height:352.5pt;z-index:1'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image008.jpg" o:title="3-16"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:1;left:140px;top:1932px;width:587px;height:470px'><img
+width=587 height=470 src="SLIDING%20WINDOW_files/image009.jpg" v:shapes="_x0000_s1030"></span><![endif]></font></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: -48.0pt; text-autospace: none; margin-left: 48.0pt">
+<font face="Arial"><span style="font-size: 14.5pt; color: black">Pipelining and 
+error recovery.&nbsp; Effect on an error when</span></font></p>
+<p class="MsoNormal" style="text-indent: -48.0pt; text-autospace: none; margin-left: 48.0pt">
+<font face="Arial"><span style="font-size: 14.5pt; color: #3333CC">(a)</span><span style="font-size: 14.5pt; color: black"> 
+Receiver’s window size is 1.</span></font></p>
+<p class="MsoNormal" style="text-indent: -48.0pt; text-autospace: none; margin-left: 48.0pt">
+<font face="Arial"><span style="font-size: 14.5pt; color: #3333CC">(b)</span><span style="font-size: 14.5pt; color: black"> 
+Receiver’s window size is large.</span></font></p>
+<p class="MsoNormal" style="text-indent: -48.0pt; text-autospace: none; margin-left: 48.0pt">&nbsp;</p>
+<p class="MsoNormal" style="text-indent: -48.0pt; text-autospace: none; margin-left: 48.0pt" align="center">
+<span style="font-family: Arial; font-weight: 700"><font size="4">Sliding Window 
+Protocol Using Go Back N</font></span></p>
+<p class="MsoNormal" style="text-indent: -48.0pt; text-autospace: none; margin-left: 48.0pt">&nbsp;</p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1045" type="#_x0000_t75" style='width:505.5pt;height:427.5pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image010.jpg" o:title="3-17a"
+  cropbottom="23851f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=674 height=570
+src="SLIDING%20WINDOW_files/image011.jpg" v:shapes="_x0000_s1045"><![endif]></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1033" type="#_x0000_t75" style='width:516.75pt;height:272.25pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image010.jpg" o:title="3-17a"
+  croptop="40985f" cropright="3837f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=689 height=363
+src="SLIDING%20WINDOW_files/image012.jpg" v:shapes="_x0000_s1033"><![endif]></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1034" type="#_x0000_t75" style='width:513.75pt;height:297.75pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image013.jpg" o:title="3-17b"
+  cropbottom="36885f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=685 height=397
+src="SLIDING%20WINDOW_files/image014.jpg" v:shapes="_x0000_s1034"><![endif]></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1035" type="#_x0000_t75" style='width:522pt;height:394.5pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image013.jpg" o:title="3-17b"
+  croptop="28456f" cropbottom="-255f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=696 height=526
+src="SLIDING%20WINDOW_files/image015.jpg" v:shapes="_x0000_s1035"><![endif]></span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1037" type="#_x0000_t75" style='width:527.25pt;height:190.5pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image016.jpg" o:title="3-18"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=703 height=254
+src="SLIDING%20WINDOW_files/image017.jpg" v:shapes="_x0000_s1037"><![endif]></span></p>
+<p align="center"><span style="font-family: Arial; font-weight: 700">Simulation 
+of multiple timers in software. </span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Arial; font-weight: 700">
+<font size="4">A Sliding Window Protocol Using Selective Repeat</font></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1038" type="#_x0000_t75" style='width:498.75pt;height:412.5pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image018.jpg" o:title="3-19a"
+  cropbottom="27064f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=665 height=550
+src="SLIDING%20WINDOW_files/image019.jpg" v:shapes="_x0000_s1038"><![endif]></span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1039" type="#_x0000_t75" style='width:555.75pt;height:323.25pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image018.jpg" o:title="3-19a"
+  croptop="38522f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=741 height=431
+src="SLIDING%20WINDOW_files/image020.jpg" v:shapes="_x0000_s1039"><![endif]></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1040" type="#_x0000_t75" style='width:537.75pt;height:429.75pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image021.jpg" o:title="3-19b"
+  cropbottom="27351f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=717 height=573
+src="SLIDING%20WINDOW_files/image022.jpg" v:shapes="_x0000_s1040"><![endif]></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1041" type="#_x0000_t75" style='width:576.75pt;height:330.75pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image021.jpg" o:title="3-19b"
+  croptop="38097f"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=769 height=441
+src="SLIDING%20WINDOW_files/image023.jpg" v:shapes="_x0000_s1041"><![endif]></span></p>
+<p align="center"><span style="font-size: 12.0pt; font-family: Arial"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1042" type="#_x0000_t75" style='width:537.75pt;height:143.25pt;
+ mso-position-horizontal-relative:char;mso-position-vertical:absolute;
+ mso-position-vertical-relative:line'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image024.jpg" o:title="3-20"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=717 height=191
+src="SLIDING%20WINDOW_files/image025.jpg" v:shapes="_x0000_s1042"><![endif]></span></p>
+<p class="MsoNormal">&nbsp;</p>
+<p class="MsoNormal"><font face="Arial">(a) Initial situation with a window size 
+seven.</font></p>
+<p class="MsoNormal"><font face="Arial">(b) After seven frames sent and 
+received, but not acknowledged.</font></p>
+<p class="MsoNormal"><font face="Arial">(c) Initial situation with a window size 
+of four.</font></p>
+<p><span style="font-size: 12.0pt; font-family: Arial">(d) After four frames 
+sent and received, but not acknowledged</span></p>
+<font color="#000000">
+<p align="center"><b><font size="5" face="Arial">MAIN WINDOW</font></b></p>
+</font><font face="Times New Roman,Times,Times NewRoman" color="#000000">
+<p align="left">&nbsp;</p>
+<font color="#000000" face="Arial">
+<p align="center">
+<img id="Bild7" hspace="0" src="program.gif" align="top" border="0" width="500" height="568"></p>
+</font>
+<p align="left">&nbsp;</p>
+<font color="#000000" face="Arial">
+<p align="left">Sliding windows usually start out with a given size, however, 
+more sophisticated protocols will dynamically adapt the window size, trying to 
+find an agreed-upon size between sender and receiver. </p>
+<p align="left">The characteristics of sliding windows used at the sender and 
+receiver usually involve (but do not have to !) </p>
+<ol type="a">
+  <li>error correction (by retransmission), </li>
+  <li>flow control and </li>
+  <li>message ordering by sender (FIFO). </li>
+</ol>
+<p align="left">The latter property can easily be incorporated in a sliding 
+window protocol, but sometimes, it is preferred to be implemented as a separate 
+protocol for easier maintenance / replaceability.</font></font></p>
+<p align="left"><font face="Arial">Sliding window is used by most connection 
+oriented network protocol, among others, the Point-to-Point protocol (PPP) which 
+many people use to establish their home PC as&nbsp; temporary Internet node via a 
+phone-line connection to an existing node. In fact, TCP also uses sliding 
+window. </font></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none"><b>
+<span style="font-family:Arial;color:black">Sliding Window Protocol</span></b></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• For large link parameter a, stop 
+and wait protocol is inefficient</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• A universally accepted flow 
+control procedure is the sliding window protocol</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– Frames and acknowledgements are 
+numbered using sequence numbers</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– Sender maintains a list of 
+sequence numbers (frames) it is allowed to transmit, called sending window</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– Receiver maintains a list of 
+sequence numbers it is prepared to receive, called receiving window</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– A sending window of size N means 
+that sender can send up to N frames without the need for an ACK</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– A window size of N implies buffer 
+space for N frames</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– For n-bit sequence number, we have 
+2<sup>n</sup> numbers: 0, 1, · · · , 2<sup> n</sup> &#8722;1, but the maximum window 
+size N = 2<sup> n</sup> -1 (not 2<sup> n</sup> )</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">– ACK3 means that receiver has 
+received frame 0 to frame 2 correctly, ready to receive frame 3 (and rest of N 
+frames within window)</span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-family:Arial;
+color:black">• In error-free case, efficiency or maximum link utilisation of 
+sliding window protocol is:</span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-family:Arial;
+color:black"><!--[if gte vml 1]><v:shape
+ id="_x0000_s1046" type="#_x0000_t75" style='width:189pt;height:54pt'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image026.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=252 height=72
+src="SLIDING%20WINDOW_files/image027.jpg" v:shapes="_x0000_s1046"><![endif]></span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-family:Arial;
+color:black">Thus it is able to maintain efficiency for large link parameter a: 
+just use large widow size N</span></p>
+<p class="MsoNormal" style="text-align:justify">
+<span style="font-family:Arial;
+color:black">&nbsp;</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• Note that U = 1 means that link 
+has no idle time: there are always something in it, either data frames or ACKs</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• Consider the case of 3-bit 
+sequence number with maximum window size N = 7</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none" align="center">
+<span style="font-family:Arial;color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <!--[if gte vml 1]><v:shape
+ id="_x0000_s1047" type="#_x0000_t75" style='width:378pt;height:271.5pt'>
+ <v:imagedata src="SLIDING%20WINDOW_files/image028.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=504 height=362
+src="SLIDING%20WINDOW_files/image029.jpg" v:shapes="_x0000_s1047"><![endif]></span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• This illustration shows that 
+Sending and receiving windows can shrink or grow during operation The receiver 
+do not need to acknowledge every frames</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• If both sending and receiving 
+window sizes are N = 1, the sliding window protocol reduces to the stop-and-wait
+</span></p>
+<p class="MsoNormal" style="text-align: justify; text-autospace: none">
+<span style="font-family:Arial;color:black">• In practice, error control must be 
+incorporated with flow control, and we next discuss two common error control 
+mechanisms</span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><b><font size="5" face="Arial">Sliding Window Protocols</font></b><font face="Arial"><font size="5">
+</font><br>
+assumes two-way communication (full duplex). It uses two types of frames: </p>
+<ol type="1">
+  <li>Data </li>
+  <li>Ack (sequence number of last correctly received frame) </li>
+</ol>
+<p align="left">The basic idea of sliding window protocol is that both sender 
+and receiver keep a ``window'' of acknowledgment. The sender keeps the value of 
+expected acknowledgment; while the receiver keeps the value of expected 
+receiving frame. When it receives an acknowledgment from the receiver, the 
+sender advances the window. When it receives the expected frame, the receiver 
+advances the window</font></p>
+<p align="justify"><b><font face="Arial" size="4">Stop-And-Wait</font></b></p>
+<p><b><font size="4" face="Arial">One Bit Sliding Window Protocol </font></b>
+</p>
+<font face="Arial">
+<p>One bit sliding window protocol is also called Stop-And-Wait protocol. In 
+this protocol, the sender sends out one frame, waits for acknowledgment before 
+sending next frame, thus the name Stop-And-Wait. </p>
+<p>Problem with Stop-And-Wait protocol is that it is very inefficient. At any 
+one moment, only in frame is in transition. The sender will have to wait at 
+least one round trip time before sending next. The waiting can be long for a 
+slow network such as satellite link. </font></p>
+<p align="justify"><b><font face="Arial" size="4">Go-Back-n</font></b></p>
+<p><font face="Arial">If there is one frame k missing, the receiver simply 
+discard all subsequent frames k+1, k+2, ..., sending no acknowledgments. So the 
+sender will retransmit frames from k onwards. Figure 3-15(a) on page 208. This 
+effectively sets the receiver window size to be 1. </p>
+<p>This can be a waste of bandwidth. </font></p>
+<p align="center"><font face="Arial">
+<img id="Bild18" hspace="0" src="sample1.gif" align="top" border="0" width="652" height="259"></font></p>
+<p align="justify"><b><font face="Arial" size="4">Selective Repeat</font></b></p>
+<p align="justify"><font face="Arial">Another strategy is to re-send only the 
+ones that are actually lost or damaged. The receiver buffers all the frames 
+after the lost one. When the sender finally noticed the problem (e.g. no ack for 
+the lost frame is received within time-out limit), the sender retransmits the 
+frame in question. </font></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><font face="Arial">
+<img id="Bild19" hspace="0" src="sample2.gif" align="top" border="0" width="679" height="273"></font></p>
+<p><font face="Arial">The main window can be subdivided roughly into four areas:
+</font></p>
+<ol type="1">
+  <li><font face="Arial">area 1 represents the receiver </font></li>
+  <li><font face="Arial">area 2 the sender </font></li>
+  <li><font face="Arial">area number 3 represents the channel, with which the 
+  two computers are interconnected and over which the communication takes place.
+  </font></li>
+  <li><font face="Arial">In the area 4, the logs of all events takes place. It 
+  also represents the History-Chart, in such a way as to enable the 
+  reconstruction of the data transfer which happened. </font></li>
+</ol>
+<p align="justify"><b><font face="Arial">Sender (Area number 2)</font></b></p>
+<p><font face="Arial">The representation assumes that the implementation of the 
+Sliding-Window protocol takes place on Stack n. Layer n+1 represents the 
+&quot;data-supplier&quot; for the protocol. It is represented through the 
+text-input-field. </font></p>
+<p><font face="Arial">One can hand over individual data-packages with the &quot; Step 
+&quot; button. So that the animation speed can be adjusted. </font></p>
+<p align="justify"><b><font face="Arial">Receiver (Area number 1)</font></b></p>
+<p><font face="Arial">It is similar to the sender. The only difference is that 
+the step button here controls the data transfer from the layer n+1 to the layer 
+n.&nbsp; The received Packetes is presented in the&nbsp; input text field. </font></p>
+<p align="justify"><b><font face="Arial">Channel (Area number 3)</font></b></p>
+<p align="justify"><font face="Arial">Represent the network channel. By clicking 
+on it with the right mouse button. One can simulate errors.</font></p>
+<p align="justify"><b><font face="Arial">History-Chart (Area number 4)</font></b></p>
+<p align="justify"><font face="Arial">One can adjust the number of messages to 
+be displayed in this area.</font></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

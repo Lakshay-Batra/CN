@@ -1,0 +1,185 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<p align="center">
+<span style="text-transform: uppercase; text-decoration: underline"><b>
+<font face="Arial" size="5" color="#FF0000">CIRCUIT SWITCHING</font></b></span></p>
+<p align="left"><font face="Arial">One fundamental way of differentiating 
+networking technologies is on the basis of the method they use to determine the 
+path between devices over which information will flow. In highly simplified 
+terms, there are two approaches: either a path can be set up between the devices 
+in advance, or the data can be sent as individual data elements over a variable 
+path.</font></p>
+<p>
+<s1 align="left"><font face="Arial"><b><i>Circuit Switching</i></b></font></s1><font face="Arial">
+</font></p>
+<p align="left"><font face="Arial">In this networking method, a connection 
+called a <i>circuit</i> is set up between two devices, which is used for the 
+whole communication. Information about the nature of the circuit is maintained 
+by the network. The circuit may either be a fixed one that is always present, or 
+it may be a circuit that is created on an as-needed basis. Even if many 
+potential paths through intermediate devices may exist between the two devices 
+communicating, only one will be used for any given dialog. This is illustrated 
+in </font>
+<font face="Arial" color="#0000ff">Figure 1</font><font face="Arial">.</font></p>
+<p>&nbsp;</p>
+<p align="center"><font face="Arial">
+      <img src="funcircuitswitching.png" width="590" height="220" align="left"></font></p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center">&nbsp;</p>
+<p align="center"><font face="Arial"><b>Fgure 1: Circuit Switching</b></font></p>
+<p><font face="Arial">In a circuit-switched network, before communication can 
+occur between two devices, a circuit is established between them. This is shown 
+as a thick blue line for the conduit of data from Device <i>A</i> to Device <i>B</i>, 
+and a matching purple line from <i>B</i> back to <i>A</i>. Once set up, all 
+communication between these devices takes place over this circuit, even though 
+there are other possible ways that data could conceivably be passed over the 
+network of devices between them. Contrast this diagram to </font>
+<font face="Arial" color="#0000ff">Figure 2</font><font face="Arial">.<br>
+&nbsp;</font></p>
+<p align="left"><font face="Arial">The classic example of a circuit-switched 
+network is the telephone system. When you call someone and they answer, you 
+establish a circuit connection and can pass data between you, in a steady stream 
+if desired. That circuit functions the same way regardless of how many 
+intermediate devices are used to carry your voice. You use it for as long as you 
+need it, and then terminate the circuit. The next time you call, you get a new 
+circuit, which may (probably will) use different hardware than the first circuit 
+did, depending on what's available at that time in the network.</font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial"><b><i>Packet Switching</i></b></font></p>
+<p align="left"><font face="Arial">In this network type, no specific path is 
+used for data transfer. Instead, the data is chopped up into small pieces called
+<i>packets</i> and sent over the network. The packets can be routed, combined or 
+fragmented, as required to get them to their eventual destination. On the 
+receiving end, the process is reversed—the data is read from the packets and 
+re-assembled into the form of the original data. A packet-switched network is 
+more analogous to the postal system than it is to the telephone system (though 
+the comparison isn't perfect.) An example is shown in </font>
+<font face="Arial" color="#0000ff">Figure 2</font><font face="Arial">.</font></p>
+<p align="center"><font face="Arial">
+      <img alt src="funpacketswitching.png" width="590" height="220"></font></p>
+<p align="center"><font face="Arial"><b>Figure 2: Packet Switching</b></font></p>
+<p align="center"><font face="Arial">In a packet-switched network, no circuit is 
+set up prior to sending data between devices. Blocks of data, even from the same 
+file or communication, may take any number of paths as it journeys from one 
+device to another. Compare this to </font>
+<font face="Arial" color="#0000ff">Figure 1</font></p>
+<p align="center">&nbsp;</p>
+<p align="left"><font face="Arial"><b><i>Comparing Circuit Switching and Packet 
+Switching</i></b></font></p>
+<p align="left"><font face="Arial">A common temptation when considering 
+alternatives such as these is to ask which is “better”—and as usually is the 
+case, the answer is “neither”. There are places where one is more suited than 
+the other, but if one were clearly superior, both methods wouldn't be used.</font></p>
+<p align="left"><font face="Arial">One important issue in selecting a switching 
+method is whether the network medium is <i>shared</i> or <i>dedicated</i>. Your 
+phone line can be used for establishing a circuit because you are the only one 
+who can use it—assuming you can keep that pesky 
+wife/husband/child/sister/brother/father/mother off the phone.</font></p>
+<p align="left"><font face="Arial">However, this doesn't work well in LANs, 
+which typically use a single shared medium and baseband signaling. If two 
+devices were to establish a connection, they would “lock out” all the other 
+devices for a long period of time. It makes more sense to chop the data into 
+small pieces and send them one at a time. Then, if two other devices want to 
+communicate, <i>their</i> packets can be interspersed and everyone can share the 
+network.</font></p>
+<p align="left"><font face="Arial">The ability to have many devices communicate 
+simultaneously without dedicated data paths is one reason why packet switching 
+is becoming predominant today. However, there are some disadvantages of packet 
+switching compared to circuit switching. One is that since all data does not 
+take the same, predictable path between devices, it is possible that some pieces 
+of data may get lost in transit, or show up in the incorrect order. In some 
+situations this does not matter, while in others it is very important indeed.</font></p>
+<p align="left"><font face="Arial">While the theoretical difference between 
+circuit and packet switching is pretty clear-cut, understanding how they are 
+used is a bit more complicated. One of the major issues is that in modern 
+networks, they are often combined. For example, suppose you connect to the 
+Internet using a dial-up modem. You will be using IP datagrams (packets) to 
+carry higher-layer data, but it will be over the circuit-switched telephone 
+network. Yet the data may be sent over the telephone system in digital 
+packetized form. So in some ways, both circuit switching and packet switching 
+are being used concurrently.</font></p>
+<h1><font face="Arial" size="3">Circuit Switching</font></h1>
+<p><span style="font-family:Arial">A type of communications in which a dedicated 
+channel (or <i>circuit</i>) is established for the duration of a transmission. 
+The most ubiquitous circuit-switching network is the telephone
+<a href="file:///C:/Program%20Files/Computer%20Network/CRCTSWITCH.htm##" target="_blank" style="color: blue; text-decoration: underline; text-underline: single">
+<span style="color:#333333">system</span></a>, which links together wire 
+segments to create a single unbroken line for each telephone call. </span></p>
+<p><span style="font-family:Arial">The other common communications method is 
+packet switching, which divides messages into packets and sends each packet 
+individually. The Internet is based on a packet-switching protocol, TCP/IP.
+</span></p>
+<p><span style="font-family:Arial">Circuit-switching systems are ideal for 
+communications that require data to be transmitted in real-time. 
+Packet-switching networks are more efficient if some amount of delay is 
+acceptable. </span></p>
+<p><span style="font-family:Arial">Circuit-switching networks are sometimes 
+called <i>connection-oriented</i> networks. Note, however, that although packet 
+switching is essentially connectionless, a packet switching network can be made 
+connection-oriented by using a higher-level protocol. TCP, for example, makes IP 
+networks connection-oriented.</span></p>
+<span id="intelliTxt">
+<font face="Arial">
+<p>The three most common switch methods are:</p>
+<p>1. <b>Cut-through&nbsp;-</b> Streams data so that the first part of a packet exits 
+the switch before the rest of the packet has finished entering the switch, 
+typically within the first 12 bytes of an Ethernet frame. </p>
+<p>2. <b>Store-and-Forward&nbsp;-</b> The entire frame is copied into the switch's 
+memory buffer and it stays there while the switch processes the Cyclical 
+Redundancy Check (CRC) to look for errors in the frame. If the frame contains no 
+errors, it will be forwarded. If a frame contains an error, it will be dropped. 
+Obviously, this method has higher latency than cut-through but there will be no 
+fragments or bad frames taking up bandwidth. </p>
+<p>3. <b>Fragment-free Switching</b>&nbsp;-&nbsp;Think of this as a hybrid of cut-through 
+and store-and-forward. The switch reads only the first 64 bytes of the frame 
+into buffer before forwarding it (think of a truck...<br>
+&nbsp;</p>
+</font>
+<p><b><font face="Arial">Packet Swiching</font></b></p>
+</span>
+<p><span style="font-family:Arial">Refers to protocols in which messages are 
+divided into packets before they are sent. Each packet is then transmitted 
+individually and can even follow different routes to its destination. Once all 
+the packets forming a message arrive at the destination, they are recompiled 
+into the original message. </span></p>
+<p><span style="font-family:Arial">Most modern Wide Area Network (WAN) 
+protocols, including TCP/IP, X.25, and Frame Relay, are based on 
+packet-switching technologies. In contrast, normal telephone service is based on 
+a circuit-switching technology, in which a dedicated line is allocated for 
+transmission between two parties. Circuit-switching is ideal when data must be 
+transmitted quickly and must arrive in the same order in which it's sent. This 
+is the case with most real-time data, such as live audio and video. Packet 
+switching is more efficient and robust for data that can withstand some delays 
+in transmission, such as e-mail messages and Web pages. </span></p>
+<p><span style="font-family:Arial">A new technology, ATM, attempts to combine 
+the best of both worlds -- the guaranteed delivery of circuit-switched networks 
+and the robustness and efficiency of packet-switching networks.</span>&nbsp;</p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>

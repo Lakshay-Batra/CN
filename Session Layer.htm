@@ -1,0 +1,209 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>MAIN</title>
+<style>
+<!--
+span.klink
+	{}
+h2
+	{margin-right:0in;
+	margin-left:0in;
+	background:#6365CE;
+	font-size:9.0pt;
+	font-family:"Times New Roman";
+	color:white;
+	font-weight:bold}
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0in; margin-right:0in; margin-top:0in}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><font face="Arial"><b><a href="Main.htm">MAIN</a></b></font></p>
+<h1 align="center"><font color="#FF0000" face="Arial">
+<span style="text-transform: uppercase; text-decoration: underline">SESSION&nbsp; 
+LAYER</span></font></h1>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The 
+fifth layer in the OSI Reference Model is the <i BqFRc="0" eiqgs="0">session 
+layer</i>. As we proceed up the OSI layer stack from the bottom, the session 
+layer is the first one where pretty much all practical matters related to the 
+addressing, packaging and delivery of data are left behind—they are functions of 
+layers four and below. It is the lowest of the three upper layers, which 
+collectively are concerned mainly with <span class="klink">software application</span> 
+issues and not with the details of network and internet implementation.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The 
+name of this layer tells you much about what it is designed to do: to allow 
+devices to establish and manage <i BqFRc="0" eiqgs="0">sessions</i>. In general 
+terms, a session is a persistent logical linking of two software application 
+processes, to allow them to exchange data over a prolonged period of time. In 
+some discussions, these sessions are called <i BqFRc="0" eiqgs="0">dialogs</i>; 
+they are roughly analogous to a telephone call made between two people.</span></p>
+<p style="text-align:justify">
+<s1 align="left"><b><i BqFRc="0" eiqgs="0">
+<span style="font-family:Arial;color:black">Application Program Interfaces 
+(APIs)</span></i></b></s1><span style="font-family:Arial;color:black"> </span>
+</p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The 
+primary job of session layer protocols is to provide the means necessary to set 
+up, manage, and end sessions. In fact, in some ways, session layer
+<span class="klink">software products</span> are more sets of tools than 
+specific protocols. These session-layer tools are normally provided to higher 
+layer protocols through command sets often called <span class="klink">
+<i BqFRc="0" eiqgs="0">application program interfaces</i></span> or
+<i BqFRc="0" eiqgs="0">APIs</i>.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">Common 
+APIs include NetBIOS, TCP/IP Sockets and Remote Procedure Calls (RPCs). They 
+allow an application to accomplish certain high-level communications over the 
+network easily, by using a standardized set of services. Most of these 
+session-layer tools are of primary interest to the developers of
+<span class="klink">application software</span>. The programmers use the APIs to 
+write software that is able to communicate using TCP/IP without having to know 
+the implementation details of how TCP/IP works.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">For 
+example, the Sockets interface lies conceptually at layer five and is used by 
+TCP/IP application programmers to create sessions between <span class="klink">
+software programs</span> over the Internet on the UNIX operating system. Windows 
+Sockets similarly lets programmers create Windows software that is 
+Internet-capable and able to interact easily with other <span class="klink">
+software</span> that uses that interface. (Strictly speaking, Sockets is not a 
+protocol, but rather a programming method.)</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">&nbsp;</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The <b>
+session layer</b> is level five of the seven level OSI model. It responds to 
+service requests from the presentation layer and issues service requests to the 
+transport layer.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The 
+Session layer provides the mechanism for managing the dialogue between end-user 
+application processes. It provides for either full duplex or half-duplex 
+operation and establishes checkpointing, adjournment, termination, and restart 
+procedures.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The 
+Session layer is typically completely unused, but it does have a few places 
+where it is useful. The idea is to allow information on different streams, 
+perhaps originating from different sources, to be properly combined. In 
+particular, it deals with synchronization issues, and ensuring nobody ever sees 
+inconsistent versions of data, and similar things.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">One 
+application which is fairly intuitively clear is web conferencing. Here, we want 
+to make sure that the streams of audio and video match up - or in other words, 
+that we do not have lipsync problems. We may also want to do &quot;floor control&quot; - 
+ensuring that the person displayed on screen and whose words are relayed is the 
+one selected by the speaker, or by some other criteria.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">
+Another big application is in live TV programs, where streams of audio and video 
+need to be seamlessly merged from one to the other so that we do not have half a 
+second of blank airtime, or half a second when we transmit two pictures 
+simultaneously.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">In 
+brief: the session layer establishes, manages and terminates connections 
+(sessions) among cooperating applications. It also adds traffic flow 
+information.</span></p>
+<h2 style="text-align:justify">
+<span style="font-size:12.0pt;font-family:Arial;
+color:black">Examples</span></h2>
+<ul type="disc" lastCheckbox="null" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">ADSP, AppleTalk Data Stream Protocol </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">ASP, AppleTalk Session Protocol </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">H.245, Call Control Protocol for Multimedia 
+  Communication </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">iSNS, Internet Storage Name Service </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">L2F, Layer 2 Forwarding Protocol </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">L2TP, Layer 2 Tunnelling Protocol </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">NetBIOS, Network Basic Input Output System
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">PAP, Printer Access Protocol </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">PPTP, Point-to-Point Tunnelling Protocol
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">RPC, Remote Procedure Call Protocol </span>
+  </li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">RTP, Real-time Transport Protocol </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">RTCP, Real-time Transport Control Protocol
+  </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">SMPP, Short Message Peer-to-Peer </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">SCP, Secure Copy Protocol </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">SSH, Secure Shell </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">ZIP, Zone Information Protocol </span></li>
+</ul>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The
+<em><span style="font-family:Arial">session</span></em> layer tracks 
+connections, also called sessions. The <em><span style="font-family:Arial">
+session</span></em> layer should keep track of multiple file downloads requested 
+by a particiular FTP application, or multiple telnet connections from a single 
+terminal client, or web page retrievals from a web server.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">With 
+TCP/IP this functionality is handled by application software addressing a 
+connection to a remote machine and using a different local port number for each 
+connection.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">The
+<em><span style="font-family:Arial">session</span></em> layer performs the 
+following functions:</span></p>
+<ol start="1" type="1" style="margin-bottom: 0in">
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">Communication with the Presentation layer 
+  above. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">Organize and manage one or more connections 
+  per application, between hosts. </span></li>
+  <li class="MsoNormal" style="color: black; text-align: justify">
+  <span style="font-family:Arial">Communication with the Transport layer below.
+  </span></li>
+</ol>
+<h3 style="text-align:justify"><font face="Arial">
+<span style="font-size:12.0pt;color:black">EXAMPLE</span></font></h3>
+<p style="text-align:justify"><em><span style="font-family:Arial;color:black">
+Sessions</span></em><span style="font-family:Arial;color:black"> are used to 
+keep track of individual connections to remote servers. Your web browser is an 
+excellent example of the use of <em><span style="font-family:Arial">sessions</span></em>.</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">Your 
+web browser (an <em><span style="font-family:Arial">application</span></em> 
+layer object) opens a web page. That page contains text, graphics, Macromedia 
+Flash objects and perhaps a Java applet. The graphics, the Flash object and the 
+Java applet are all stored as separate files on the web server. To access them, 
+a separate download must be started. Your web browser opens a separate <em>
+<span style="font-family:Arial">session</span></em> to the web server to 
+download each of the individual files. The <em><span style="font-family:Arial">
+session</span></em> layer keeps track of which packets and data belong to which 
+file and keeps track of where they go (in this case, to your web browser).</span></p>
+<p style="text-align:justify"><span style="font-family:Arial;color:black">In 
+most modern Internet applications, the <em><span style="font-family:Arial">
+session</span></em>, <em><span style="font-family:Arial">presentation</span></em> 
+and <em><span style="font-family:Arial">application</span></em> layers are 
+usually rolled together inside the application itself, thus, your web browser 
+performs all functions of the <em><span style="font-family:Arial">session</span></em>,
+<em><span style="font-family:Arial">presentation </span></em>and <em>
+<span style="font-family:Arial">application</span></em> layers.</span></p>
+<p align="center"><b><font face="Arial"><a href="Main.htm">MAIN</a></font></b></p>
+
+</body>
+
+</html>
